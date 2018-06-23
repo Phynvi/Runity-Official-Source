@@ -27,11 +27,10 @@ import java.util.Optional;
  *
  * @author Ryley Kimmel <ryley.kimmel@live.com>
  * @author lare96 <http://github.com/lare96>
- * @author Red_Bracket
- * @author Adam_6723
+ * @author Adam_6723 <- DID LIKE HALF OF THESE POTIOSN BECAUSE RETARDED ASHPIRE NEVER DID IT. 
  */
 public enum PotionData {
-	//suer range potion effect added.
+	//suer range potion effect added. testing for commits. testtestest
 	 SUPER_RANGEPOTION(11722, 11723, 11724, 11725) {
 	        @Override
 	        public void onEffect(Player player) {
