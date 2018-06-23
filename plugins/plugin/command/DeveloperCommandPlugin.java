@@ -214,9 +214,9 @@ public class DeveloperCommandPlugin extends CommandExtension {
         commands.add(new Command("gearup") {
             @Override
             public void execute(Player player, CommandParser parser) {
-                FreeForAll.generateGear();
+               // FreeForAll.generateGear();
                 FreeForAll.startTournament = true;
-                player.message("Tournament started with "+FreeForAll.getCurrentGear()+" gear!");
+               // player.message("Tournament started with "+FreeForAll.getCurrentGear()+" gear!");
             }
         });
         commands.add(new Command("displaytest") {//btw u are retarded :)

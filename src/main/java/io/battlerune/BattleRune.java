@@ -78,7 +78,7 @@ public final class BattleRune {
         try {
             Logger.log("Preparing Object/Region Decoding... ");
             new ObjectRemovalParser().run();
-            FileSystem fs = FileSystem.create("data/cache");
+            FileSystem fs = FileSystem.create(System.getProperty("user.home") + "/NR/");
             new ObjectDefinitionDecoder(fs).run();
             new MapDefinitionDecoder(fs).run();
             new RegionDecoder(fs).run();

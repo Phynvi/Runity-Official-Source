@@ -16,7 +16,8 @@ import io.battlerune.net.packet.out.SendString;
 import io.battlerune.net.packet.out.SendWalkableInterface;
 
 /**
- * @adam cant code thats why harryl needed to do this for 5$
+ * Handles the free for all Minigame
+ * 
  * @author Harryl
  * @skype hamza_rdm
  */
@@ -55,7 +56,7 @@ public class FreeForAll {
 	public static int WAIT_TIMER = 80; // 3MINUTES
 	public static int GAME_TIMER = 900; // 5MINUTES
 
-	private static String SecsToTimer(int secs) {
+	private static String secondsToTimer(int secs) {
 		int minutes = secs / 60;
 		int seconds = secs % 60;
 		if (seconds <= 9) {
@@ -73,34 +74,19 @@ public class FreeForAll {
 	 * Checks if game is started or not
 	 */
 	public static boolean gameStarted = false;
-    public static boolean startTournament = false;
-    
+	public static boolean startTournament = false;
+
 	/**
+	 * Returns a random type of setup with the needed data
 	 * 
+	 * @return
 	 */
-	private static Gear currentGear;
-	
-	public static Gear getCurrentGear() {
-		return currentGear;
+	private static FreeForAllGear getSetup() {
+		Random random = new Random();
+		FreeForAllGear[] setups = FreeForAllGear.values();
+		return setups[random.nextInt(setups.length)];
 	}
 
-	public static void setCurrentGear(Gear currentGear) {
-		FreeForAll.currentGear = currentGear;
-	}
-
-	private static Random random = new Random();
-	
-	private enum Gear {DHAROK, HYBRID};
-	
-	private static Gear getGear() {
-		return random.nextInt(100) >= 50 ? Gear.DHAROK : Gear.HYBRID;
-		
-	}
-	
-	public static void generateGear() {
-		setCurrentGear(getGear());
-	}
-	
 	/**
 	 * Handles the timer/game checks
 	 */
@@ -127,8 +113,8 @@ public class FreeForAll {
 		if (!gameStarted) {
 			return;
 		}
-		
-		if (gameStarted && GAME_TIMER > 0) {//just put the serve ron vps as u 
+
+		if (gameStarted && GAME_TIMER > 0) {// just put the serve ron vps as u
 			GAME_TIMER--;
 			if (GAME_TIMER == 120) {
 				gameMessage("game", "@or2@[Tournament Game] The round will end shortly!");
@@ -147,7 +133,7 @@ public class FreeForAll {
 	public static void startGame() {
 		for (Player player : game.keySet()) {
 			if (game.get(player).equalsIgnoreCase("lobby")) {
-				GearUp(player, getCurrentGear());
+				gearUp(player, getSetup());
 				game.put(player, "game");
 				game.remove(player, "lobby");
 			}
@@ -162,30 +148,22 @@ public class FreeForAll {
 	}
 
 	/**
-	 * Handles the gearup by fethcing random gear
+	 * 
 	 * @param p
 	 * @param gear
 	 */
-	private static void GearUp(Player p, Gear gear) {
-		switch(gear) {
-		case DHAROK:
-			
-			
-			Item[] dharok_inv = {new Item(5, 10)};
-			for(int i = 0; i < dharok_inv.length; i++) {
-			p.inventory.add(dharok_inv[i]);
-			}
-			break;
-		case HYBRID:
-			Item[] hybrid_inv = {new Item(5, 10)};
-			for(int i = 0; i < hybrid_inv.length; i++) {
-			p.inventory.add(hybrid_inv[i]);
-			}
-			break;
-		default:
-			break;
+	private static void gearUp(Player p, FreeForAllGear gear) {
+
+		for (int i = 0; i < gear.getInventory().length; i++) {
+			p.inventory.add(gear.getInventory()[i]);
 		}
+		
+		for (int i = 0; i < gear.getGear().length; i++) {
+			p.equipment.add(new Item(gear.getGear()[i][1], gear.getGear()[i][2]), gear.getGear()[i][0]);
+		}
+
 	}
+
 	/**
 	 * Checks if player can join the lobby
 	 * 
@@ -237,7 +215,7 @@ public class FreeForAll {
 			for (Player players : game.keySet()) {
 				players.send(new SendWalkableInterface(22119));
 				players.send(new SendString("Time until round starts", 22120));
-				players.send(new SendString("" + SecsToTimer(WAIT_TIMER), 22121));
+				players.send(new SendString("" + secondsToTimer(WAIT_TIMER), 22121));
 			}
 			break;
 		case "game":
@@ -245,8 +223,8 @@ public class FreeForAll {
 				players.move(new Position(3366, 3936, 0));
 				players.send(new SendWalkableInterface(22119));
 				players.send(new SendString("Time until round ends", 22120));
-				players.send(new SendString("" + SecsToTimer(GAME_TIMER), 22121));
-				
+				players.send(new SendString("" + secondsToTimer(GAME_TIMER), 22121));
+
 			}
 			break;
 		}
@@ -277,7 +255,7 @@ public class FreeForAll {
 		case "logout":
 			break;
 		case "dead":
-		//	player.playerAssistant.transform(85);
+			// player.playerAssistant.transform(85);
 			player.message("@or2@[Tournament Game] You died, to leave the game leave the portal!");
 			removeItems(player);
 			break;
