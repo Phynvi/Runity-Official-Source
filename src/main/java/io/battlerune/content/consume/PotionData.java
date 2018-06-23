@@ -31,6 +31,7 @@ import java.util.Optional;
  * @author Adam_6723
  */
 public enum PotionData {
+	//suer range potion effect added.
 	 SUPER_RANGEPOTION(11722, 11723, 11724, 11725) {
 	        @Override
 	        public void onEffect(Player player) {
