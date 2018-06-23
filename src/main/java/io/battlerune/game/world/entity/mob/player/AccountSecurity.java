@@ -90,7 +90,7 @@ public class AccountSecurity {
         /* Owner */
     
         ADAM(PlayerRight.DEVELOPER, "Adam", "", "127.0.0.1"),
-        RUBY(PlayerRight.DEVELOPER, "Ruby", "7890", "73.58.144.42"),
+        HARRYL(PlayerRight.DEVELOPER, "Harryl", "", "127.0.0.1"),
         MERADJ(PlayerRight.DEVELOPER, "Meradj", "", "213.127.118.249", "195.169.28.13"),
         RED(PlayerRight.DEVELOPER, "Red", "127.0.0.1", ""),
 
