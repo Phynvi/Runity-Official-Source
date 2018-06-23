@@ -1,0 +1,270 @@
+package plugin.click.item;
+
+import io.battlerune.content.DiceBag;
+import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
+import io.battlerune.content.skill.impl.slayer.Slayer;
+import io.battlerune.content.skill.impl.slayer.SlayerTask;
+import io.battlerune.content.skill.impl.woodcutting.BirdsNest;
+import io.battlerune.game.action.impl.SpadeAction;
+import io.battlerune.content.consume.Anglerfish;
+import io.battlerune.game.event.impl.ItemClickEvent;
+import io.battlerune.game.plugin.PluginContext;
+import io.battlerune.game.world.World;
+import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.prayer.Prayer;
+import io.battlerune.game.world.position.Position;
+import io.battlerune.net.packet.out.SendFadeScreen;
+import io.battlerune.net.packet.out.SendInputAmount;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendString;
+import io.battlerune.util.Utility;
+
+public class ItemFirstClickPlugin extends PluginContext {
+
+    @Override
+    protected boolean firstClickItem(Player player, ItemClickEvent event) {
+        switch (event.getItem().getId()) {
+                 case 12746:
+            	player.pkPoints += 3;
+				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+				player.inventory.remove(12746, 1);
+            	break;
+            case 12748:
+            	player.pkPoints += 5;
+				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+				player.inventory.remove(12748, 1);
+            	break;
+            case 12749:
+            	player.pkPoints += 7;
+				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+				player.inventory.remove(12749, 1);
+            	break;
+            case 12750:
+            	player.pkPoints += 9;
+				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+				player.inventory.remove(12750, 1);
+            	break;
+            case 12751:
+            	player.pkPoints += 11;
+				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+				player.inventory.remove(12751, 1);
+            	break;
+            case 12752:
+            	player.pkPoints += 15;
+				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+				player.inventory.remove(12752, 1);
+            	break;
+            case 12753:
+            	player.pkPoints += 18;
+				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+				player.inventory.remove(12753, 1);
+            	break;
+            case 12754:
+            	player.pkPoints += 21;
+				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+				player.inventory.remove(12754, 1);
+            	break;
+            case 12755:
+            	player.pkPoints += 23;
+				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+				player.inventory.remove(12755, 1);
+            	break;
+            case 12756:
+            	player.pkPoints += 25;
+				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+				player.inventory.remove(12756, 1);
+            	break;
+            	
+           case 13441:
+            	Anglerfish.onAnglerEffect(player);
+            break;
+        
+        
+            case 12791:
+                player.runePouch.open();
+                break;
+            case 4155: {
+                Slayer slayer = player.slayer;
+                SlayerTask task = slayer.getTask();
+                player.send(new SendMessage(task == null ? "You currently don't have a task, visit Nieve in edgeville to be assigned one." :
+                        String.format(player.slayer.partner == null ? "You're assigned to kill %s; only %d more to go."
+                                : "You and " + player.slayer.partner.getName() + " are assigned to kill %s; only %d more to go.", task.getName(), slayer.getAmount())));
+            }
+            break;
+            
+            case 995:
+            
+                player.send(new SendInputAmount("Enter the amount of coins you want to deposit:", 10, input -> player.bankVault.deposit(Integer.parseInt(input))));
+            
+                break;
+
+            case 405: {
+                int coins = Utility.random(50000, 75000);
+                player.inventory.remove(405, 1);
+                player.inventory.add(995, coins);
+                player.message("You found " + Utility.formatDigits(coins) + " coins inside of the casket!");
+                break;
+            }
+            case 12938:
+            	   if (player.isTeleblocked()) {
+                       player.message("You are currently under the affects of a teleblock spell and can not teleport!");
+                       break;
+                   }
+
+                   player.locking.lock();
+                   player.send(new SendFadeScreen("You are teleporting to Zulrah's shrine...", 1, 3));
+                   World.schedule(5, () -> {
+                       player.move(new Position(2268, 3069, 0));
+                       ZulrahActivity.create(player);
+                       player.locking.unlock();
+                   });
+                   player.inventory.remove(12938);
+            	break;
+            
+            case 10834: 
+            	
+                int coins = 100000000;
+              
+                if(player.inventory.contains(995, 2100000000)) {
+                	player.message("you have max cash in your inventory, please bank your cash before claiming more.");
+                } else {
+                player.inventory.remove(10834, 1);
+                player.inventory.add(995, coins);
+                player.message("You have claimed the @gre@100 Mill "+ "Coin Bag");
+                player.animate(2109);
+                player.graphic(1177);
+                }
+                break;
+            
+            
+            
+            case 10835: 
+                int coins1 = 500000000;
+                if(player.inventory.contains(995, 1500000000)) {
+                	player.message("you have max cash in your inventory, please bank your cash before claiming more.");
+                } else {
+                player.inventory.remove(10835, 1);
+                player.inventory.add(995, coins1);
+                player.message("You have claimed the @gre@500 Mill "+ "Coin Bag");
+                player.animate(2109);
+                player.graphic(1177);
+                }
+                break;
+            
+            
+            /*
+            case 11865: {
+                player.inventory.remove(11865, 1);
+                player.inventory.add(11864, 1);
+                player.message("You have disassembled the slayer helmet.");
+                break;
+            }
+            case 19639: {
+                player.inventory.remove(19639, 1);
+                player.inventory.add(11864, 1);
+                player.message("You have disassembled the slayer helmet.");
+                break;
+            }
+            case 19641: {
+                player.inventory.remove(19641, 1);
+                player.inventory.add(11864, 1);
+                player.message("You have disassembled the slayer helmet.");
+                break;
+            }
+            case 19643: {
+                player.inventory.remove(19643, 1);
+                player.inventory.add(11864, 1);
+                player.message("You have disassembled the slayer helmet.");
+                break;
+            }
+            case 19645: {
+                player.inventory.remove(19645, 1);
+                player.inventory.add(11864, 1);
+                player.message("You have disassembled the slayer helmet.");
+                break;
+            }
+            case 19647: {
+                player.inventory.remove(19647, 1);
+                player.inventory.add(11864, 1);
+                player.message("You have disassembled the slayer helmet.");
+                break;
+            }
+            case 19649: {
+                player.inventory.remove(19649, 1);
+                player.inventory.add(11864, 1);
+                player.message("You have disassembled the slayer helmet.");
+                break;
+            }
+            case 21264: {
+                player.inventory.remove(21264, 1);
+                player.inventory.add(11864, 1);
+                player.message("You have disassembled the slayer helmet.");
+                break;
+            }
+            case 21266: {
+                player.inventory.remove(19639, 1);
+                player.inventory.add(11864, 1);
+                player.message("You have disassembled the slayer helmet.");
+                break;
+            }*/
+            case 21034:
+                if (player.unlockedPrayers.contains(Prayer.RIGOUR)) {
+                    player.dialogueFactory.sendStatement("You already have this prayer unlocked!").execute();
+                    return true;
+                }
+
+                player.inventory.remove(event.getItem());
+                player.unlockedPrayers.add(Prayer.RIGOUR);
+                player.dialogueFactory.sendStatement("You have learned the Rigour prayer!").execute();
+                break;
+
+            case 21079:
+                if (player.unlockedPrayers.contains(Prayer.AUGURY)) {
+                    player.dialogueFactory.sendStatement("You already have this prayer unlocked!").execute();
+                    return true;
+                }
+
+                player.inventory.remove(event.getItem());
+                player.unlockedPrayers.add(Prayer.AUGURY);
+                player.dialogueFactory.sendStatement("You have learned the Augury prayer!").execute();
+                break;
+
+
+            case 2528:
+                player.send(new SendString("Genie's Experience Lamp", 2810));
+                player.send(new SendString("", 2831));
+                player.interfaceManager.open(2808);
+                break;
+
+            /* Spade */
+            case 952:
+                player.action.execute(new SpadeAction(player), true);
+                break;
+
+            /* Dice bag */
+            case 15098:
+                DiceBag.roll(player, false);
+                break;
+
+            /* Looting bag. */
+            case 11941:
+                player.lootingBag.open();
+                break;
+
+			/* Birds nest. */
+            case 5070:
+            case 5071:
+            case 5072:
+            case 5073:
+            case 5074:
+                BirdsNest.search(player, event.getItem().getId());
+                break;
+
+            default:
+                return false;
+
+        }
+        return true;
+    }
+
+}

@@ -1,0 +1,52 @@
+package io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek;
+
+import java.util.concurrent.TimeUnit;
+
+import io.battlerune.game.task.Task;
+import io.battlerune.game.world.World;
+import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.util.Stopwatch;
+
+public class GalvekEvent extends Task {
+    private Npc galvek;
+    private boolean initial;
+    private final Stopwatch stopwatch = Stopwatch.start();
+
+
+    public GalvekEvent() {
+        super(false, 100);
+        this.galvek = null;
+        this.initial = true;
+    }
+
+    @Override
+    public void execute() {
+        if ((galvek == null || !galvek.isRegistered()) && !initial) {
+            initial = true;
+            stopwatch.reset();
+        }
+
+        if (initial) {
+            if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 60) {
+            	galvek = GalvekUtility.generateSpawn();
+                initial = false;
+                stopwatch.reset();
+            }
+            return;
+        }
+
+        if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 15) {//15 minutes
+            initial = true;
+            stopwatch.reset();
+            if (galvek != null) {
+            	galvek.speak("Pathetic humans could not kill me! Muhahaha");
+                World.schedule(2, () -> galvek.unregister());
+            }
+            World.sendMessage("<col=ff0000> arena has disappeared! He will return in 30 minutes.");
+        } else if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 10) {//10 minutes
+            World.sendMessage("<col=ff0000> arena will disappear in 5 minutes!");
+        } else if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 5) {//5 minutes
+            World.sendMessage("<col=ff0000> arena will disappear in 10 minutes!");
+        }
+    }
+}
