@@ -32,7 +32,7 @@ import java.util.Optional;
 public enum PotionData {
 	//suer range potion effect added. testing for commits.
 	 SUPER_RANGEPOTION(11722, 11723, 11724, 11725) { 
-	        @Override
+	        @Override//fixed now
 	        public void onEffect(Player player) {
 	            PotionData.onBasicEffect(player, Skill.RANGED, BoostType.SUPER_RANGE);
 	       
