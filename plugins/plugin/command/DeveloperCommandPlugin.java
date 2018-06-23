@@ -215,7 +215,7 @@ public class DeveloperCommandPlugin extends CommandExtension {
             @Override
             public void execute(Player player, CommandParser parser) {
                // FreeForAll.generateGear();
-                FreeForAll.startTournament = true;
+               // FreeForAll.startTournament = true;
                // player.message("Tournament started with "+FreeForAll.getCurrentGear()+" gear!");
             }
         });
@@ -341,7 +341,7 @@ public class DeveloperCommandPlugin extends CommandExtension {
             @Override
             public void execute(Player player, CommandParser parser) {
                 FreeForAll.gameStarted = false;
-                FreeForAll.startTournament = false;
+                //FreeForAll.startTournament = false;
                 FreeForAll.game.clear();
                 FreeForAll.WAIT_TIMER += 80;
                 FreeForAll.GAME_TIMER += 900;

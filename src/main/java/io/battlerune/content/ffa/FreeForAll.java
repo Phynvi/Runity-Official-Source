@@ -55,7 +55,9 @@ public class FreeForAll {
 	 */
 	public static int WAIT_TIMER = 80; // 3MINUTES
 	public static int GAME_TIMER = 900; // 5MINUTES
+	public static int OVERALL_TIMER = 10800; //3 HOURS
 
+	
 	private static String secondsToTimer(int secs) {
 		int minutes = secs / 60;
 		int seconds = secs % 60;
@@ -71,10 +73,10 @@ public class FreeForAll {
 	private final static int PLAYERS_NEEDED = 2;
 
 	/**
-	 * Checks if game is started or not
+	 * Checks if game is started or not / lobby is open or not
 	 */
 	public static boolean gameStarted = false;
-	public static boolean startTournament = false;
+	public static boolean lobbyOpen = false;
 
 	/**
 	 * Returns a random type of setup with the needed data
@@ -91,39 +93,57 @@ public class FreeForAll {
 	 * Handles the timer/game checks
 	 */
 	public static void sequence() {
-		if (!startTournament || gameStarted) {
+		if (!gameStarted && !lobbyOpen) {
+			
+			if (OVERALL_TIMER > 0) {
+				OVERALL_TIMER--;
+				
+				if (OVERALL_TIMER == 3600) {
+					World.sendMessage("[Tournament] The tournament will open it doors in 1 hour!");
+				}
+			}
+			
+			if (OVERALL_TIMER <= 0) {
+				lobbyOpen = true;
+				OVERALL_TIMER += 350;
+				World.sendMessage("[Tournament] The tournament doors have been opened! ::tournament to join!");
+			}	
 			return;
 		}
-		if (WAIT_TIMER > 0 && getPlayers("lobby") >= PLAYERS_NEEDED) { // && getPlayers("lobby") >= PLAYERS_NEEDED
-			WAIT_TIMER--;
-			if (WAIT_TIMER == 60) {
-				World.sendMessage("@or2@[Tournament] The Tournament Starts Shortly, Join It Now!");
+		
+		if (gameStarted && !lobbyOpen) {
+
+			if (GAME_TIMER > 0) {
+				GAME_TIMER--;
+				
+				if (GAME_TIMER == 120) {
+					gameMessage("game", "@or2@[Tournament Game] The round will end shortly!");
+				}
+				
+				updateInterface("game");
 			}
+
+			if (gameStarted && GAME_TIMER <= 0) {
+				endGame();
+			}	
+			return;
+		}
+
+		if (WAIT_TIMER > 0 && getPlayers("lobby") >= PLAYERS_NEEDED && lobbyOpen) { 
+			WAIT_TIMER--;
+
+			if (WAIT_TIMER == 60) {
+				World.sendMessage("@or2@[Tournament] The Tournament will start shortly, Join now ::tournament!");
+			}
+
 			updateInterface("lobby");
 		}
 
 		if (WAIT_TIMER <= 0) {
+			lobbyOpen = false;
 			gameStarted = true;
 			WAIT_TIMER += 180;
 			startGame();
-		}
-	}
-
-	public static void gameSequence() {
-		if (!gameStarted) {
-			return;
-		}
-
-		if (gameStarted && GAME_TIMER > 0) {// just put the serve ron vps as u
-			GAME_TIMER--;
-			if (GAME_TIMER == 120) {
-				gameMessage("game", "@or2@[Tournament Game] The round will end shortly!");
-			}
-			updateInterface("game");
-		}
-
-		if (gameStarted && GAME_TIMER <= 0) {
-			endGame();
 		}
 	}
 
@@ -157,7 +177,7 @@ public class FreeForAll {
 		for (int i = 0; i < gear.getInventory().length; i++) {
 			p.inventory.add(gear.getInventory()[i]);
 		}
-		
+
 		for (int i = 0; i < gear.getGear().length; i++) {
 			p.equipment.add(new Item(gear.getGear()[i][1], gear.getGear()[i][2]), gear.getGear()[i][0]);
 		}
@@ -175,11 +195,14 @@ public class FreeForAll {
 			player.message("@or2@[Tournament] Please wait for the next tournament to start!");
 			return false;
 		}
-		/*
-		 * for (int i = 0; i < 11; i++) { if (player.equipment.get(i).getId() > 0) {
-		 * player.message("@or2@[Tournament] Please bank your equipment!"); return
-		 * false; } }
-		 */
+
+		/* for (int i = 0; i < 11; i++) {
+			if (player.equipment.get(i).getId() > 0) {
+				player.message("@or2@[Tournament] Please bank your equipment!");
+				return false;
+			}
+		} */
+
 		if (player.inventory.getFreeSlots() != 28) {
 			player.message("@or2@[Tournament] Please bank your items!");
 			return false;
@@ -197,8 +220,7 @@ public class FreeForAll {
 			if (lobbyCheck(player)) {
 				game.put(player, "lobby");
 				player.move(new Position(3292, 4959, 0));
-				player.message("@or2@[FFA] The game will start shortly!");
-				player.send(new SendPlayerOption(PlayerOption.ATTACK, false));
+				player.message("@or2@[Tournament] The game will start shortly!");
 				player.send(new SendPlayerOption(PlayerOption.ATTACK, false));
 			}
 		}
@@ -212,19 +234,22 @@ public class FreeForAll {
 	public static void updateInterface(String type) {
 		switch (type) {
 		case "lobby":
-			for (Player players : game.keySet()) {
-				players.send(new SendWalkableInterface(22119));
-				players.send(new SendString("Time until round starts", 22120));
-				players.send(new SendString("" + secondsToTimer(WAIT_TIMER), 22121));
+			for (Player player : game.keySet()) {
+				if (game.get(player).equalsIgnoreCase("lobby")) {
+					player.send(new SendWalkableInterface(22119));
+					player.send(new SendString("Time until round starts", 22120));
+					player.send(new SendString("" + secondsToTimer(WAIT_TIMER), 22121));
+				}
 			}
 			break;
 		case "game":
-			for (Player players : game.keySet()) {
-				players.move(new Position(3366, 3936, 0));
-				players.send(new SendWalkableInterface(22119));
-				players.send(new SendString("Time until round ends", 22120));
-				players.send(new SendString("" + secondsToTimer(GAME_TIMER), 22121));
-
+			for (Player player : game.keySet()) {
+				if (game.get(player).equalsIgnoreCase("game")) {
+					player.move(new Position(3366, 3936, 0));
+					player.send(new SendWalkableInterface(22119));
+					player.send(new SendString("Time until round ends", 22120));
+					player.send(new SendString("" + secondsToTimer(GAME_TIMER), 22121));
+				}
 			}
 			break;
 		}

@@ -175,15 +175,15 @@ public class PlayerCommandPlugin extends CommandExtension {
             }
         });
 
-        commands.add(new Command("ffa") {
+        commands.add(new Command("ffa", "tournament") {
             @Override
             public void execute(Player player, CommandParser parser) {
               if (FreeForAll.game.containsKey(player)) {
-        			player.message("@or2@[Tournament] You are already in the game!");
+        			player.message("@or2@[Tournament] You are already in the lobby!");
         			return;
         	   }
-               if(!FreeForAll.startTournament) {
-            	  player.message("@or2@[Tournament] Please wait till the tournament has been activated!");
+               if(!FreeForAll.lobbyOpen) {
+            	  player.message("@or2@[Tournament] Please wait till the tournament doors have been opened");
             	  return;
                }
                player.send(new SendFadeScreen("@or2@Joining The Tournament, Please Wait!", 1, 3));

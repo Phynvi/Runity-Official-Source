@@ -222,7 +222,6 @@ public final class World {
                 PestControl.sequenceMinigame();
                 BattleRealm.sequenceMinigame();
                 FreeForAll.sequence();
-                FreeForAll.gameSequence();
             } catch (Exception ex) {
                 logger.error("Error sequencing pest control or BattleRealm", ex);
             }
