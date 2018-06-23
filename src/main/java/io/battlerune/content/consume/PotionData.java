@@ -31,6 +31,13 @@ import java.util.Optional;
  * @author Adam_6723
  */
 public enum PotionData {
+	 SUPER_RANGEPOTION(11722, 11723, 11724, 11725) {
+	        @Override
+	        public void onEffect(Player player) {
+	            PotionData.onBasicEffect(player, Skill.RANGED, BoostType.SUPER_RANGE);
+	       
+	        }
+	    },
 	 SANFEW_POTIONS(10925, 10927, 10929, 10931) {
 	        @Override
 	        public void onEffect(Player player) {
@@ -55,6 +62,10 @@ public enum PotionData {
             PotionData.onOverloadEffect(player, Skill.ATTACK, BoostType.OVERLOAD);
             PotionData.onOverloadEffect(player, Skill.STRENGTH, BoostType.OVERLOAD);
             PotionData.onOverloadEffect(player, Skill.DEFENCE, BoostType.OVERLOAD);
+            PotionData.onOverloadEffect(player, Skill.RANGED, BoostType.OVERLOAD);
+            PotionData.onOverloadEffect(player, Skill.MAGIC, BoostType.OVERLOAD);
+
+
         }
     },
     SUPER_COMBAT_POTION(12695, 12697, 12699, 12701) {
@@ -585,9 +596,10 @@ public enum PotionData {
     private enum BoostType {
         NORMAL(3, .10F),
         RANGING(4, .10F),
+        SUPER_RANGE(4, .16F),
         MAGIC(4, 0),
         SUPER(5, .15F),
-        OVERLOAD(6, .23F)
+        OVERLOAD(6, .21F)
         ;
 
         /**
