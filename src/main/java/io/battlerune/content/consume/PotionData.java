@@ -30,8 +30,8 @@ import java.util.Optional;
  * @author Adam_6723 <- DID LIKE HALF OF THESE POTIOSN BECAUSE RETARDED ASHPIRE NEVER DID IT. 
  */
 public enum PotionData {
-	//suer range potion effect added. testing for commits. testtestest
-	 SUPER_RANGEPOTION(11722, 11723, 11724, 11725) {
+	//suer range potion effect added. testing for commits.
+	 SUPER_RANGEPOTION(11722, 11723, 11724, 11725) { 
 	        @Override
 	        public void onEffect(Player player) {
 	            PotionData.onBasicEffect(player, Skill.RANGED, BoostType.SUPER_RANGE);
@@ -47,7 +47,7 @@ public enum PotionData {
 	            player.skills.get(Skill.PRAYER).modifyLevel(level -> level + (int) Math.floor(9 + (realLevel * 0.25)));
 	            player.skills.refresh(Skill.PRAYER);
 	        }
-	    },
+	    },//u needa put your username not email
     STAMINA__POTION(12625, 12627, 12629, 12631) {
         @Override
         public void onEffect(Player player) {
