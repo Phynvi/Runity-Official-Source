@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class RegionManager {
 
     /** The active (loaded) region map. */
-    private final Map<Integer, Region> activeRegions = new HashMap<>();
+    private final static Map<Integer, Region> activeRegions = new HashMap<>();
 
     /**
      * Sends an action to {@link Mob} instance which is within a {@code
@@ -102,7 +102,7 @@ public class RegionManager {
      * @param position The position.
      * @return The regions surrounding the position.
      */
-    public Region[] getSurroundingRegions(Position position) {
+    public static Region[] getSurroundingRegions(Position position) {
         Region target = getRegion(position.getX(), position.getY());
 
         if (target.getSurroundingRegions().isPresent()) {
@@ -147,7 +147,7 @@ public class RegionManager {
      * @param y The y coordinate.
      * @return The region.
      */
-    public Region getRegion(int x, int y) {
+    public static Region getRegion(int x, int y) {
         return activeRegions.computeIfAbsent(hash(x, y), k -> new Region(x, y));
     }
 

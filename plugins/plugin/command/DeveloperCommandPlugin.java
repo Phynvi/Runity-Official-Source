@@ -85,8 +85,7 @@ public class DeveloperCommandPlugin extends CommandExtension {
              }
          });
 
-
-
+        
         commands.add(new Command("longbroadcast") {
             @Override
             public void execute(Player player, CommandParser parser) {

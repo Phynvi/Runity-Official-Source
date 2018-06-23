@@ -85,6 +85,11 @@ public class Region {
         return getBlock(height).getNpcs();
     }
 
+    /** @return the game objects with the given position */
+    public List<GameObject> getGameObjects(Position position) {
+        return getBlock(position.getHeight()).getGameObjects(position);
+    }
+    
     /** @return the ground item with the given id at the given position */
     public GroundItem getGroundItem(int id, Position position) {
         return getBlock(position.getHeight()).getGroundItem(id, position);
