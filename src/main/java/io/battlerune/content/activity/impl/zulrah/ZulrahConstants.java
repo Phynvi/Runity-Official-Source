@@ -6,6 +6,7 @@ import io.battlerune.game.world.position.Position;
  * Holds all the zulrah constants.
  *
  * @author Daniel.
+ * @author Adam Temporarily removed zulrah ID 2043 Due to it causing LOADS of issues.
  */
 public class ZulrahConstants {
 
