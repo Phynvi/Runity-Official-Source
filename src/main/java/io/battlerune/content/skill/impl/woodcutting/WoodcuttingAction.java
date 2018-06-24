@@ -87,7 +87,7 @@ public class WoodcuttingAction extends Action<Player> {
             
               if(getMob().equipment.contains(13241)) {
             	getMob().skills.addExperience(Skill.WOODCUTTING,  tree.experience * Config.MINING_MODIFICATION * 5);
-            	getMob().message("You are now recieving 5x Firemaking Experience.");
+            	getMob().message("You are now recieving 5x Woodcutting Experience.");
             }
 
             

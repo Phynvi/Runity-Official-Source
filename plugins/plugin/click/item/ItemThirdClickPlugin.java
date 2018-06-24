@@ -11,6 +11,10 @@ public class ItemThirdClickPlugin extends PluginContext {
     protected boolean thirdClickItem(Player player, ItemClickEvent event) {
         switch (event.getItem().getId()) {
         
+        case 12418:    
+        	player.message("@red@To Dismantle this item, use a chisel on the item!");
+        	break;
+        
         
         case 12436:
             player.send(new SendMessage("You have failed to slash the web apart."));

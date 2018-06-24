@@ -1,14 +1,14 @@
 package io.battlerune.content.writer.impl;
 
-import io.battlerune.content.quest.Quest;
 import io.battlerune.content.quest.QuestManager;
-import io.battlerune.content.quest.QuestState;
-import io.battlerune.content.writer.InterfaceWriter;
-import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendColor;
 import io.battlerune.net.packet.out.SendScrollbar;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.net.packet.out.SendTooltip;
+import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.content.quest.Quest;
+import io.battlerune.content.quest.QuestState;
+import io.battlerune.content.writer.InterfaceWriter;
 
 /**
  * Class handles writing on the quest tab itemcontainer.

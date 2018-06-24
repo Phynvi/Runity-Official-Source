@@ -16,7 +16,7 @@ public class ZulrahConstants {
     public static final int MAXIMUM_SNAKELINGS = 4;
 
     /** The zulrah identifications. */
-    public static final Integer[] ZULRAH_IDS = new Integer[]{2042, 2043, 2044};
+    public static final Integer[] ZULRAH_IDS = new Integer[]{2042, 2044};
 
     /** All the possible positions zulrah can move to. */
     public static final Position[] LOCATIONS = {new Position(2266, 3072), new Position(2276, 3074), new Position(2273, 3064)};

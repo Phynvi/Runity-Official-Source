@@ -54,6 +54,7 @@ public final class DonationService {
                     //$10 DONATOR BOND
                     case 10:
                         if (player.inventory.add(new Item(DonatorBond.BOND_10.item, quantity))) {
+                        	player.message("To update your rank, please relog.");
                             claimed = true;
                         }
                         break;
@@ -61,6 +62,7 @@ public final class DonationService {
                     //$50 DONATOR BOND
                     case 20:
                         if (player.inventory.add(new Item(DonatorBond.BOND_50.item, quantity))) {
+                        	player.message("To update your rank, please relog.");
                             claimed = true;
                         }
                         break;
@@ -68,6 +70,7 @@ public final class DonationService {
                     //$100 DONATOR BOND
                     case 21:
                         if (player.inventory.add(new Item(DonatorBond.BOND_100.item, quantity))) {
+                        	player.message("To update your rank, please relog.");
                             claimed = true;
                         }
                         break;
@@ -75,6 +78,7 @@ public final class DonationService {
                     //$200 DONATOR BOND
                     case 22:
                         if (player.inventory.add(new Item(DonatorBond.BOND_200.item, quantity))) {
+                        	player.message("To update your rank, please relog.");
                             claimed = true;
                         }
                         break;
@@ -82,6 +86,7 @@ public final class DonationService {
                     //$500 DONATOR BOND
                     case 23:
                         if (player.inventory.add(new Item(DonatorBond.BOND_500.item, quantity))) {
+                        	player.message("To update your rank, please relog.");
                             claimed = true;
                         }
                         break;

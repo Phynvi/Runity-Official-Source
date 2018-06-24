@@ -320,7 +320,7 @@ public enum RangedAmmunition {
             return getDefinition("Adamant bolts");
         }
     },
-    RUNITE_BOLTS(true, 9144, 9291, 9298, 9305, 9341, 9244, 9342, 9245) {
+    RUNITE_BOLTS(true, 9144, 9291, 9298, 9305, 9341, 9244, 9342, 9245, 10159, 10158) {
         @Override
         protected CombatProjectile getProjectile() {
             return getDefinition("Runite bolts");
@@ -523,6 +523,8 @@ public enum RangedAmmunition {
             case 9243:
             case 9244:
             case 9245:
+            case 10159:
+            case 10158:
                 return getDefinition(new Item(id).getName()).getStart();
         }
         int itemId;
@@ -590,6 +592,8 @@ public enum RangedAmmunition {
             case 9243:
             case 9244:
             case 9245:
+            case 10159:
+            case 10158:
                 return getDefinition(new Item(id).getName()).getAnimation();
         }
         return getProjectile().getAnimation();
@@ -607,6 +611,8 @@ public enum RangedAmmunition {
             case 9243:
             case 9244:
             case 9245:
+            case 10159:
+            case 10158:
                 return getDefinition(new Item(id).getName()).getEnd();
         }
         return getProjectile().getEnd();
@@ -624,6 +630,8 @@ public enum RangedAmmunition {
             case 9243:
             case 9244:
             case 9245:
+            case 10159:
+            case 10158:
                 return getDefinition(new Item(id).getName()).getEffect();
         }
         return getProjectile().getEffect();

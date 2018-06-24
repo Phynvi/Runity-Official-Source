@@ -7,7 +7,10 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 
 /**
- * @author Adam_#6723 testcommit
+ * 
+ * @author Adam_#6723
+ * Handles the preset button interface!
+ * 
  */
 
 public class NewPresetsButtonPlugin extends PluginContext {
@@ -60,7 +63,7 @@ public class NewPresetsButtonPlugin extends PluginContext {
 	 * @param player
 	 */
 
-	public void sendMelee123Dialogue(Player player) {
+	public void sendMelee126Dialogue(Player player) {
 
 		DialogueFactory factory = player.dialogueFactory;
 		factory.sendNpcChat(306, "Would you like this preset for 100k? " + player.getName());
@@ -94,8 +97,8 @@ public class NewPresetsButtonPlugin extends PluginContext {
 	 * @param player
 	 */
 	public void Melee126(Player player) {
-		if (player.inventory.contains(995, 100000) || player.bank.contains(995, 100000)) {
-			player.inventory.remove(995, 100000);
+		if (player.bank.contains(995, 100000)) {
+			player.bank.remove(995, 100000);
 
 			if (!player.equipment.isEmpty() || !player.inventory.isEmpty()) {
 				player.bank.depositeInventory();
@@ -112,14 +115,15 @@ public class NewPresetsButtonPlugin extends PluginContext {
 			}
 
 		} else {
-			player.message("You don't have enough!");
+			player.message("You need to have 100k in the bank!");
 		}
 
 	}
 
 	public void Hybrid126(Player player) {
-		if (player.inventory.contains(995, 100000)) {
-			player.inventory.remove(995, 100000);
+		if (player.bank.contains(995, 100000)) {
+			player.bank.remove(995, 100000);
+
 
 			if (!player.equipment.isEmpty() || !player.inventory.isEmpty()) {
 				player.bank.depositeInventory();
@@ -136,14 +140,15 @@ public class NewPresetsButtonPlugin extends PluginContext {
 			}
 
 		} else {
-			player.message("You don't have enough!");
+			player.message("You need to have 100k in the bank!");
 		}
 
 	}
 
 	public void tribrid126(Player player) {
-		if (player.inventory.contains(995, 100000)) {
-			player.inventory.remove(995, 100000);
+		if (player.bank.contains(995, 100000)) {
+			player.bank.remove(995, 100000);
+
 
 			if (!player.equipment.isEmpty() || !player.inventory.isEmpty()) {
 				player.bank.depositeInventory();
@@ -160,7 +165,7 @@ public class NewPresetsButtonPlugin extends PluginContext {
 			}
 
 		} else {
-			player.message("You don't have enough!");
+			player.message("You need to have 100k in the bank!");
 		}
 
 	}
@@ -168,7 +173,7 @@ public class NewPresetsButtonPlugin extends PluginContext {
 	@Override
 	protected boolean onClick(Player player, int button) {
 		if (button == -23029) {
-			sendMelee123Dialogue(player);
+			sendMelee126Dialogue(player);
 		}
 
 		if (button == -23028) {
