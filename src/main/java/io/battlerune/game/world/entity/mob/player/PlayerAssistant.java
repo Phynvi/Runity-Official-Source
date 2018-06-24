@@ -617,6 +617,7 @@ public class PlayerAssistant {
     /** Gets the KDR of the player. */
     public String kdr() {
         double KDR = (player.kill / (double) player.death);
+        
         return Double.isNaN(KDR) ? "0.0" : String.format("%.2f", KDR);
     }
 
