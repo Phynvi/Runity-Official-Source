@@ -30,18 +30,18 @@
   "banned-members": [],
   "members": [
     {
-      "name": "Adam",
-      "joined": "2018/05/08",
-      "rank": "SYSTEM",
+      "name": "Ethan12",
+      "joined": "2018/05/27",
+      "rank": "MEMBER",
       "exp-gained": 0.0,
       "npc-kills": 0,
       "player-kills": 0,
       "total-level": 0
     },
     {
-      "name": "Ethan12",
-      "joined": "2018/05/27",
-      "rank": "MEMBER",
+      "name": "Adam",
+      "joined": "2018/06/25",
+      "rank": "SYSTEM",
       "exp-gained": 0.0,
       "npc-kills": 0,
       "player-kills": 0,

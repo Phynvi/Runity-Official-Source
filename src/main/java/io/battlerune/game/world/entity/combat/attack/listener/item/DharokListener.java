@@ -17,7 +17,7 @@ public class DharokListener extends SimplifiedListener<Mob> {
 	public int modifyDamage(Mob attacker, Mob defender, int damage) {
 		int health = attacker.getMaximumHealth() - attacker.getCurrentHealth();
 		if (health < 0) health = 0;
-		return damage + damage * health / 100;
+		return (int) (damage + damage  * 1.25 * health / 100);
 	}
 
 }
