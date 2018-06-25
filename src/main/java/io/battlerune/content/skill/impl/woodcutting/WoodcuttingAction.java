@@ -101,11 +101,12 @@ public class WoodcuttingAction extends Action<Player> {
           
             if (tree == TreeData.WILLOW_TREE || tree == TreeData.WILLOW_TREE1) {
                 getMob().forClan(channel -> channel.activateTask(ClanTaskKey.CHOP_WILLOW_LOG, getMob().getName()));
-            } else if (tree == TreeData.YEW_TREE) {
+            } 
+            if (tree == TreeData.YEW_TREE) {
                 getMob().forClan(channel -> channel.activateTask(ClanTaskKey.YEW_LOG, getMob().getName()));
                 AchievementHandler.activate(getMob(), AchievementKey.CUT_YEWTREE, 1);
 
-            } else if (tree == TreeData.MAGIC_TREE) {
+            } if (tree == TreeData.MAGIC_TREE) {
                 getMob().forClan(channel -> channel.activateTask(ClanTaskKey.MAGIC_LOG, getMob().getName()));
                 AchievementHandler.activate(getMob(), AchievementKey.CUT_MAGICTREE, 1);
             }

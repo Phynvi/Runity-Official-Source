@@ -27,6 +27,7 @@ public enum CurrencyType {
     PRESTIGE_POINTS(8, new PrestigePointCurrency()),
     KOLODION_POINTS(9, new KolodionsPointCurrency()),
     GRACEFUL_TOKEN(10, new ItemCurrency(11849)),
+    PET_TOKENS(10, new ItemCurrency(20527)),
     SKILLING_POINTS(11, new SkillingPointCurrency()),
     BOSS_POINTS(12, new BossPointCurrency()), 
     TRIVIA_POINTS(13, new TriviaPointCurrency()), 
@@ -70,6 +71,9 @@ public enum CurrencyType {
                 break;
             case GRACEFUL_TOKEN:
                 value = Utility.formatDigits(player.inventory.contains(11849) ? player.inventory.computeAmountForId(11849) : 0);
+                break;
+            case PET_TOKENS:
+                value = Utility.formatDigits(player.inventory.contains(20527) ? player.inventory.computeAmountForId(20527) : 0);
                 break;
             case KOLODION_POINTS:
                 value = Utility.formatDigits(player.kolodionPoints);

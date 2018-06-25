@@ -2,6 +2,7 @@ package plugin.command;
 
 import io.battlerune.Config;
 import io.battlerune.content.achievement.AchievementHandler;
+import io.battlerune.content.dailyachievement.DailyAchievementHandler;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.emote.EmoteHandler;
 import io.battlerune.content.skill.impl.magic.Spellbook;
@@ -229,6 +230,7 @@ public class AdminCommandPlugin extends CommandExtension {
             public void execute(Player player, CommandParser parser) {
                 player.skills.master();
                 AchievementHandler.completeAll(player);
+                DailyAchievementHandler.completeAll(player);
                 EmoteHandler.unlockAll(player);
                 player.send(new SendMessage("Your account is now maxed out.", MessageColor.BLUE));
             }

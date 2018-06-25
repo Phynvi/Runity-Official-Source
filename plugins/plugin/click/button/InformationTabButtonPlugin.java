@@ -60,7 +60,7 @@ public class InformationTabButtonPlugin extends PluginContext {
                      }).execute();
             	break;
             case 29429:
-            	player.slayer.open(SlayerTab.MAIN);
+            	player.interfaceManager.open(42500);
             	break;
             	/** here**/
             case 29423:

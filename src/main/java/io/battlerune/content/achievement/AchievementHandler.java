@@ -53,7 +53,7 @@ public class AchievementHandler {
                 }
                 player.playerAchievements.replace(achievement.getKey(), achievement.getAmount());
             }
-            player.send(new SendMessage("You have successfully mastered all achievements."));
+            player.send(new SendMessage("You have successfully Normal mastered all achievements."));
         }
     }
 

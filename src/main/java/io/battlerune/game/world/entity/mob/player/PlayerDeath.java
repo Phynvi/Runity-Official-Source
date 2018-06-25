@@ -6,6 +6,8 @@ import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.bot.BotUtility;
 import io.battlerune.content.bot.PlayerBot;
+import io.battlerune.content.dailyachievement.DailyAchievementHandler;
+import io.battlerune.content.dailyachievement.DailyAchievementKey;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.OnKillEvent;
 import io.battlerune.content.ffa.FreeForAll;
@@ -122,6 +124,10 @@ public final class PlayerDeath extends MobDeath<Player> {
 
                 if (!PlayerKilling.contains(playerKiller, mob.lastHost)) {
                     AchievementHandler.activate(playerKiller, AchievementKey.KILLER, 1);
+               //     DailyAchievementHandler.activate(playerKiller, DailyAchievementKey.KILLER, 1);
+               //     DailyAchievementHandler.activate(playerKiller, DailyAchievementKey.KILL_SKOTIZO, 1);
+
+                    
                     playerKiller.send(new SendMessage(Utility.randomElement(DEATH_MESSAGES).replace("$VICTIM", mob.getName())));
                     PlayerKilling.handle(playerKiller, mob);
                 } else {

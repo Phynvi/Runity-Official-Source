@@ -4085,7 +4085,7 @@
   
   {
     "name": "Pet Store",
-    "currency": "COINS",
+    "currency": "PET_TOKENS",
     "restock": true,
     "sellType": "NONE",
     "scroll": 1,

@@ -65,7 +65,7 @@ public class DailyAchievementHandler {
 				}
 				player.playerAchievements1.replace(achievement.getKey(), achievement.getAmount());
 			}
-			player.send(new SendMessage("You have successfully mastered all achievements."));
+			player.send(new SendMessage("You have successfully mastered all Daily achievements."));
 		}
 	}
 
