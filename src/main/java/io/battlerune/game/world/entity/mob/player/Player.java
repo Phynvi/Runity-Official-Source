@@ -461,6 +461,8 @@ public class Player extends Mob {
         if (Config.X4_EXPERIENCE) {
             //  message("X4 experience is currently active!");
         }
+        
+        Toolkit.TOOLS.forEach(t -> toolkit.fill(t.getId()));
     }
 
     private final boolean canLogout() {

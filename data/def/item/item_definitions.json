@@ -102388,6 +102388,7 @@
     "high-alch": 600003,
     "base-value": 1000006,
     "street-value": 8780431,
+    "destroy-message": "Dismantle",
     "weight": 1.0,
     "stand-animation": 813,
     "walk-animation": 1146,

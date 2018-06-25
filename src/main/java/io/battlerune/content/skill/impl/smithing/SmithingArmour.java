@@ -1,5 +1,7 @@
 package io.battlerune.content.skill.impl.smithing;
 
+import java.util.Optional;
+
 import com.google.common.collect.ImmutableMap;
 
 import io.battlerune.Config;
@@ -12,11 +14,9 @@ import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.net.packet.out.SendItemOnInterfaceSlot;
 import io.battlerune.net.packet.out.SendMessage;
-import io.battlerune.net.packet.out.SendRemoveInterface;
 import io.battlerune.net.packet.out.SendString;
+import io.battlerune.util.ItemIdentifiers;
 import io.battlerune.util.StringUtils;
-
-import java.util.Optional;
 
 /**
  * Holds functionality for creating items on an anvil.
@@ -78,7 +78,7 @@ public final class SmithingArmour extends ProducingSkillAction {
             return false;
         }
 
-        if (!player.inventory.containsAny(2347, 2949)) {
+        if (!player.inventory.containsAny(2347, 2949) && !player.toolkit.contains(ItemIdentifiers.HAMMER)) {
             player.send(new SendMessage("You need a hammer to forge items."));
             return true;
         }

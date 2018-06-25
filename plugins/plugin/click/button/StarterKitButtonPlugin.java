@@ -1,8 +1,12 @@
 package plugin.click.button;
 
+import static io.battlerune.content.StarterKit.refresh;
+
+import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
+
 import io.battlerune.Config;
 import io.battlerune.content.StarterKit;
-import io.battlerune.content.Toolkit;
 import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.content.dialogue.Expression;
 import io.battlerune.game.plugin.PluginContext;
@@ -15,11 +19,6 @@ import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendSpecialAmount;
 import io.battlerune.util.MessageColor;
 import io.battlerune.util.Utility;
-
-import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
-
-import static io.battlerune.content.StarterKit.refresh;
 
 public class StarterKitButtonPlugin extends PluginContext {
 
@@ -81,7 +80,6 @@ public class StarterKitButtonPlugin extends PluginContext {
         CombatSpecial.restore(player, 100);
         player.send(new SendSpecialAmount());
         Arrays.stream(kit.getItems()).forEach(player.inventory::add);
-        Toolkit.TOOLS.forEach(t -> player.toolkit.fill(t.getId()));
 
         if (kit.getRight() != PlayerRight.PLAYER) {
             player.settings.acceptAid = false;

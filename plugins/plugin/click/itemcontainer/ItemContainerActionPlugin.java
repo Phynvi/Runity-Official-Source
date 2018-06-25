@@ -70,7 +70,7 @@ public class ItemContainerActionPlugin extends PluginContext {
                     return true;
                 }
                 if (player.attributes.get("TOOLKIT_KEY", Boolean.class)) {
-                    player.toolkit.deposit(removeId, removeSlot, 1);
+//                    player.toolkit.deposit(removeId, removeSlot, 1);
                     return true;
                 }
                 break;
@@ -81,9 +81,6 @@ public class ItemContainerActionPlugin extends PluginContext {
 
             case InterfaceConstants.DONATOR_DEPOSIT:
                 player.donatorDeposit.withdraw(removeId, removeSlot, 1);
-                break;
-            case InterfaceConstants.TOOLKIT_INTERFACE:
-                player.toolkit.withdraw(removeId, removeSlot, 1, false);
                 break;
 
             case InterfaceConstants.WITHDRAW_BANK:

@@ -2,6 +2,7 @@ package io.battlerune.game.world.entity.mob.player;
 
 import io.battlerune.Config;
 import io.battlerune.content.StarterKit;
+import io.battlerune.content.Toolkit;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityType;
 import io.battlerune.content.activity.GroupActivity;
@@ -85,6 +86,7 @@ public class PlayerAssistant {
         Pets.onLogin(player);
         EmoteHandler.refresh(player);
         ClanChannelHandler.onLogin(player);
+        player.getFarming().doConfig();
     }
 
     /** Sets the effects for the player. */
@@ -105,6 +107,7 @@ public class PlayerAssistant {
 
     /** initializes the player's random bs. */
     private void initialize() {
+    	//Toolkit.TOOLS.forEach(t -> player.toolkit.fill(t.getId()));
         player.getCombat().resetTimers(-CombatConstants.COMBAT_LOGOUT_COOLDOWN);
         player.send(new SendEntityFeed(null, 0, 0));
         player.send(new SendString(PlayerRight.isManagement(player) ? "Open management panel" : "www.Nearreality.io", 29404));
