@@ -21,11 +21,12 @@ public enum DailyAchievementList {
     CATCH_A_SALMON(100, DailyAchievementKey.CATCH_A_SALMON, DailyAchievementDifficulty.EASY, "Catch 100 Salmon Fish"),  
     TRIVIABOT(25, DailyAchievementKey.TRIVIABOT, DailyAchievementDifficulty.EASY, "Answer 25 TriviaBot questions"),
     HIGH_ALCHEMY(100, DailyAchievementKey.HIGH_ALCHEMY, DailyAchievementDifficulty.EASY, "Cast high alchemy spell 100 times"),
-    SKILL_MASTERY(3, DailyAchievementKey.SKILL_MASTERY, DailyAchievementDifficulty.EASY, "Achieve level 99 in 3 skill"),
     KILLER(10, DailyAchievementKey.KILLER, DailyAchievementDifficulty.EASY, "Kill 10 players"),
-    CUT100TREES1(500, DailyAchievementKey.CUT100TREES, DailyAchievementDifficulty.EASY, "Chop down 500 trees"),
     KILL_KRAKEN_I(25, DailyAchievementKey.KILL_KRAKEN, DailyAchievementDifficulty.EASY, "Kill Kraken 25 Times"),
-    STEAL_FROM_STALL(30, DailyAchievementKey.STEAL_FROM_STALL, DailyAchievementDifficulty.EASY, "Steal from a stall"),
+    KILLER_1(10, DailyAchievementKey.KILLER, DailyAchievementDifficulty.EASY, "Kill 10 pLAYERS"),
+    KILL_GALVEK(1, DailyAchievementKey.KILL_GLOD, DailyAchievementDifficulty.MEDIUM, "Kill Glod 1 Time"),
+
+
 
     /* Medium achievements */
     CUT100TREES(500, DailyAchievementKey.CUT100TREES, DailyAchievementDifficulty.MEDIUM, "Cut 500 Trees (any)"),

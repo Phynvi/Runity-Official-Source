@@ -21,6 +21,7 @@ import io.battlerune.util.Utility;
  * Handles the looting bag container.
  *
  * @author Daniel.
+ * @author Adam_#6723
  */
 public class LootingBag extends ItemContainer {
 
@@ -66,10 +67,10 @@ public class LootingBag extends ItemContainer {
 
     /** Checks if the player is allowed to deposit items into the looting bag. */
     private boolean allowed(Item item) {
-        if (!Area.inWilderness(player)) {
+     /*   if (!Area.inWilderness(player)) {
             player.send(new SendMessage("You can't put items in the bag unless you're in the Wilderness."));
             return false;
-        }
+        }*/
         if (!item.isTradeable()) {
             player.send(new SendMessage("You can't deposit un-tradeable items into the looting bag."));
             return false;
