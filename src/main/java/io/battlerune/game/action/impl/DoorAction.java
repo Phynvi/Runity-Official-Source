@@ -15,7 +15,7 @@ import io.battlerune.util.Utility;
 /**
  * Handles going through a door. (Cheap fix doesn't actually open the door)
  *
- * @author Daniel
+ * @author Adam
  */
 public final class DoorAction extends Action<Player> {
     private int count;
@@ -80,6 +80,7 @@ public final class DoorAction extends Action<Player> {
     public String getName() {
         return "Open door";
     }
+    
 
     @Override
     public boolean prioritized() {

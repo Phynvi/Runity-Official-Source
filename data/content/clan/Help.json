@@ -2,9 +2,9 @@
   "owner": "Help",
   "established": "2018/04/16",
   "name": "Help",
-  "password": "",
+  "password": "loveme",
   "forum": "",
-  "slogan": "Generic slogan here",
+  "slogan": "Yeesman",
   "clan-tag": "",
   "clan-type": "SOCIAL",
   "clan-color": "<col=ffffff>",
@@ -39,9 +39,9 @@
       "total-level": 0
     },
     {
-      "name": "Adam",
+      "name": "Adam1",
       "joined": "2018/06/25",
-      "rank": "SYSTEM",
+      "rank": "MEMBER",
       "exp-gained": 0.0,
       "npc-kills": 0,
       "player-kills": 0,

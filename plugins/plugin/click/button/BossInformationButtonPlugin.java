@@ -98,7 +98,7 @@ public class BossInformationButtonPlugin extends PluginContext {
             player.send(new SendMessage("You have teleported to Chaos Elemental!"));
         }
         if(button == -14140){
-    		if(player.skills.getLevel(Skill.SLAYER) <= 55) {
+    		if(player.skills.getLevel(Skill.SLAYER) >= 55) {
             Teleportation.teleport(player, new Position(3307, 3916, 0));
             player.send(new SendMessage("You have teleported to Giant Roc!"));
     		} else {
@@ -114,7 +114,7 @@ public class BossInformationButtonPlugin extends PluginContext {
             player.send(new SendMessage("You have teleported to Callisto!"));
         }
         if(button == -14095){
-    		if(player.skills.getLevel(Skill.SLAYER) <= 75) {
+    		if(player.skills.getLevel(Skill.SLAYER) >= 75) {
             Teleportation.teleport(player, new Position(1240, 1226, 0), 20, () -> CerberusActivity.create(player));
             player.send(new SendMessage("You have teleported to Cerberus!"));
         	} else {
@@ -127,7 +127,7 @@ public class BossInformationButtonPlugin extends PluginContext {
         }
         
         if(button == -14080){
-    		if(player.skills.getLevel(Skill.SLAYER) <= 99) {
+    		if(player.skills.getLevel(Skill.SLAYER) >= 99) {
             Teleportation.teleport(player, new Position(2272, 4051, 0), 20, () -> VorkathActivity.create(player));
             player.send(new SendMessage("You have teleported to Vorkath Instance!"));
         	} else {

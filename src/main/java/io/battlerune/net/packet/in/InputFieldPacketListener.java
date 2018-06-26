@@ -52,8 +52,11 @@ public class InputFieldPacketListener implements PacketListener {
                 player.forClan(clan -> {
                     if (clan.canManage(clan.getMember(player.getName()).orElse(null))) {
                         clan.setSlogan(player, context);
+                        player.message("The new clan slogan is: " + context + ".");
                     }
                 });
+                break;
+                
             case 42108: {
                 player.forClan(clan -> {
                     if (clan.canManage(clan.getMember(player.getName()).orElse(null))) {

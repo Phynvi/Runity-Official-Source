@@ -624,6 +624,24 @@ public class ObjectFirstClickPlugin extends PluginContext {
                     player.action.execute(new LadderAction(player, object, new Position(player.getX(), player.getY(), 1), PlayerRight::isDonator, "You need to be a donator to use this shortcut!"));
                 }
                 break;
+                
+                /** START OF DOOR SYSTEM, BECAUSE HARRYL THE FUCKER WILL NOT WRITE A NEW ONE SO I HAVE TO USE THIS BULLSHIT !!!!?!?!?!?!**/
+                
+            case 1727://RIGHT DOOR
+                if (player.getY() <= object.getY()) {
+                    player.action.execute(new DoorAction(player, object, new Position(3337, 3896, 0), Direction.NORTH));
+                } else {
+                    player.action.execute(new DoorAction(player, object, new Position(3337, 3895, 0), Direction.SOUTH));
+                }
+                break;
+
+            case 1728://LEFT DOOR
+                if (player.getY() <= object.getY()) {
+                    player.action.execute(new DoorAction(player, object, new Position(3336, 3896, 0), Direction.NORTH));
+                } else {
+                    player.action.execute(new DoorAction(player, object, new Position(3336, 3895, 0), Direction.SOUTH));
+                }
+                break;
 
             case 2111://SLAYER DOOR
                 if (player.getY() <= object.getY()) {
@@ -664,6 +682,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
                     player.action.execute(new DoorAction(player, object, new Position(3445, 3554, 2), Direction.SOUTH));
                 }
                 break;
+                
+                
+                
+                /** END OF DOORS.CFG KAPPA HONESTLY THIS IS JUST AS BAD FUCK ME UP THE ASS! **/
 
             case 21738:
                 if (player.skills.getLevel(Skill.AGILITY) < 12) {
