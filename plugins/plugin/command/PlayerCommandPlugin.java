@@ -232,6 +232,14 @@ public class PlayerCommandPlugin extends CommandExtension {
             	player.bankVault.value();
             }
         });
+        
+        commands.add(new Command("shops", "store", "shop", "stores") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+            	   Teleportation.teleport(player, Config.STORES_POSITION);
+                   player.message("Here you will find all the stores that are irrelavant to take space up at home");	
+            }
+        });
 
         commands.add(new Command("drops", "drop", "droplist", "droptable") {
             @Override

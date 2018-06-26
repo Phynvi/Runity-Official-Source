@@ -6,13 +6,11 @@ import io.battlerune.Config;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.impl.fightcaves.FightCaves;
 import io.battlerune.content.activity.impl.pestcontrol.PestControl;
-import io.battlerune.content.activity.impl.recipefordisaster.RecipeForDisaster;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
 import io.battlerune.content.combat.cannon.CannonManager;
 import io.battlerune.content.dialogue.impl.WellOfGoodwillDialogue;
 import io.battlerune.content.masterminer.Util;
 import io.battlerune.content.quest.QuestManager;
-import io.battlerune.content.quest.impl.RFD;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.staff.PanelType;
@@ -68,11 +66,6 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 
         switch (id) {
-        
-        case 12356:
-            Teleportation.teleport(player, Config.DEFAULT_POSITION);
-            player.message("You have left the quest.");
-        	break;
             case 27215: {
                 if (!player.itemDelay.elapsed(2, TimeUnit.SECONDS)) {
                     return true;
@@ -634,6 +627,23 @@ public class ObjectFirstClickPlugin extends PluginContext {
                 
                 /** START OF DOOR SYSTEM, BECAUSE HARRYL THE FUCKER WILL NOT WRITE A NEW ONE SO I HAVE TO USE THIS BULLSHIT !!!!?!?!?!?!**/
                 
+            case 25813://SEERS DOOR
+            	if (player.getY() <= object.getY()) {
+                    player.action.execute(new DoorAction(player, object, new Position(2704, 3463, 0), Direction.WEST));
+                } else {
+                    player.action.execute(new DoorAction(player, object, new Position(2703, 3463, 0), Direction.EAST));
+                }
+                break;
+
+            case 25814://SEERS DOOR
+                if (player.getY() <= object.getY()) {
+                    player.action.execute(new DoorAction(player, object, new Position(2704, 3462, 0), Direction.WEST));
+                } else {
+                    player.action.execute(new DoorAction(player, object, new Position(2703, 3462, 0), Direction.EAST));
+                }
+                break;
+            
+            
             case 1727://RIGHT DOOR
                 if (player.getY() <= object.getY()) {
                     player.action.execute(new DoorAction(player, object, new Position(3337, 3896, 0), Direction.NORTH));

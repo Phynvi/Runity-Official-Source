@@ -189,6 +189,10 @@ public final class Config {
 
     /** The default, i.e. onSpawn, location. */
     public static final Position DEFAULT_POSITION = new Position(3086, 3501, 0);
+    
+    /** **/
+    public static final Position STORES_POSITION = new Position(3164, 3470, 0);
+    
     public static final Position LUMBRIDGE = new Position(3222, 3218, 0);
 
     /** The donator zone. */

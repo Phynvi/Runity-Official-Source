@@ -41,7 +41,31 @@ public class NpcFirstClickPlugin extends PluginContext {
             case 7481:
                 player.dialogueFactory.sendDialogue(new VoteDialogue());
                 break;
+                
+            case 2152:
+                Store.STORES.get("Bob's Brilliant Axes").open(player);
+            break;
 
+            case 5450:
+                Store.STORES.get("Zaff's Superior Staffs").open(player);
+            	break;
+            	
+            case 3115:
+                Store.STORES.get("Zeke’s Superior Scimitars").open(player);
+            	break;
+            	
+            case 5452:
+                Store.STORES.get("Varrock Swordshop").open(player);
+            	break;
+            	
+            case 5451:
+                Store.STORES.get("Dommik's Crafting Store").open(player);
+            	break;
+            	
+            case 5449:
+                Store.STORES.get("Skiller Shop").open(player);
+            	break;
+            
             case 5789:
                 player.send(new SendString("Agility Ticket Exchange", 8383));
                 player.interfaceManager.open(8292);
@@ -50,6 +74,17 @@ public class NpcFirstClickPlugin extends PluginContext {
             case 2186:
                 Store.STORES.get("The Tzhaar Tokkul Store").open(player);
                 break;
+                
+            case 305:
+                DialogueFactory factory1 = player.dialogueFactory;
+                factory1.sendOption("Open Culinaromancer's Food Store", () -> Store.STORES.get("Culinaromancer's Food Store").open(factory1.getPlayer()), 
+                		"Open Culinaromancer's Items Store", () -> Store.STORES.get("Culinaromancer's Items Store").open(factory1.getPlayer()),
+                		"Nevermind", factory1::clear);
+                       factory1.execute();
+
+                
+            
+            	break;
 
             case 2180: {
                 DialogueFactory factory = player.dialogueFactory;

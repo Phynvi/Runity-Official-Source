@@ -4321,6 +4321,584 @@
       }
     ]
   },
+//Lumbridge
+
+
+{
+    "name": "Bob's Brilliant Axes",
+    "currency": "COINS",
+    "restock": true,
+    "sellType": "NONE",
+    "scroll": 1,
+    "items": [
+      {
+        "id": 1265, //Bronze Pickaxe
+        "amount": 10,
+        "value": 1
+      },
+      {
+        "id": 1351, //Bronze Axe
+        "amount": 10,
+        "value": 16
+      },
+      {
+        "id": 1349, //Iron Axe
+        "amount": 10,
+        "value": 56
+      },
+      {
+        "id": 1353, //Steel Axe
+        "amount": 10,
+        "value": 200
+      },
+      {
+        "id": 1363, //Iron Battleaxe
+        "amount": 10,
+        "value": 182
+      },
+      {
+        "id": 1365, //Steel Battleaxe
+        "amount": 10,
+        "value": 650
+      },
+      {
+        "id": 1369, //Mithril Battleaxe
+        "amount": 10,
+        "value": 1690
+      }
+    ]
+  },
+
+{
+    "name": "Culinaromancer's Food Store",
+    "currency": "COINS",
+    "restock": true,
+    "sellType": "NONE",
+    "scroll": 1,
+    "items": [
+      {
+        "id": 1973, //Chocolate bar
+        "amount": 10,
+        "value": 13
+      },
+      {
+        "id": 1982, //Tomato
+        "amount": 10,
+        "value": 5
+      },
+      {
+        "id": 1987, //Grapes
+        "amount": 10,
+        "value": 1
+      },
+      {
+        "id": 2283, //Pizza base
+        "amount": 10,
+        "value": 5
+      },
+      {
+        "id": 1927, //Bucket of milk
+        "amount": 10,
+        "value": 7
+      },
+      {
+        "id": 6697, //Pat of butter
+        "amount": 10,
+        "value": 5
+      },
+      {
+        "id": 2313, //Pie dish
+        "amount": 10,
+        "value": 3
+      },
+      {
+        "id": 1923, //Bowl
+        "amount": 10,
+        "value": 5
+      },
+      {
+        "id": 1931, //Pot
+        "amount": 10,
+        "value": 1
+      },
+      {
+        "id": 8986, //Bucket
+        "amount": 10,
+        "value": 2
+      },
+      {
+        "id": 1985, //Cheese
+        "amount": 10,
+        "value": 5
+      },
+      {
+        "id": 1955, //Cooking apple
+        "amount": 10,
+        "value": 1
+      },
+      {
+        "id": 2516, //Pot of flour
+        "amount": 10,
+        "value": 13
+      },
+      {
+        "id": 1944, //Egg
+        "amount": 10,
+        "value": 5
+      },
+      {
+        "id": 2130, //Pot of cream
+        "amount": 10,
+        "value": 3
+      },
+      {
+        "id": 2007, //Spice
+        "amount": 10,
+        "value": 299
+      },
+      {
+        "id": 1887, //Cake tin
+        "amount": 10,
+        "value": 13
+      },
+      {
+        "id": 1935, //Jug
+        "amount": 10,
+        "value": 1
+      },
+      {
+        "id": 1980, //Empty cup
+        "amount": 10,
+        "value": 2
+      }
+    ]
+  },
+
+{
+    "name": "Culinaromancer's Items Store",
+    "currency": "COINS",
+    "restock": true,
+    "sellType": "NONE",
+    "scroll": 1,
+    "items": [
+      {
+        "id": 7453, //Hardleather gloves
+        "amount": 10,
+        "value": 65
+      },
+      {
+        "id": 7454, //Bronze gloves
+        "amount": 10,
+        "value": 130
+      },
+      {
+        "id": 7455, //Iron gloves
+        "amount": 10,
+        "value": 325
+      },
+      {
+        "id": 7456, //Steel gloves
+        "amount": 10,
+        "value": 650
+      },
+      {
+        "id": 7457, //Black gloves
+        "amount": 10,
+        "value": 1300
+      },
+      {
+        "id": 7458, //Mithril gloves
+        "amount": 10,
+        "value": 1950
+      },
+      {
+        "id": 7459, //Adamant gloves
+        "amount": 10,
+        "value": 3250
+      },
+      {
+        "id": 7460, //Rune gloves
+        "amount": 10,
+        "value": 6500
+      },
+      {
+        "id": 7461, //Dragon gloves
+        "amount": 10,
+        "value": 130000
+      },
+      {
+        "id": 7462, //Barrows gloves
+        "amount": 10,
+        "value": 130000
+      },
+      {
+        "id": 7433, //Wooden spoon
+        "amount": 10,
+        "value": 45
+      },
+      {
+        "id": 7435, //Egg whisk
+        "amount": 10,
+        "value": 65
+      },
+      {
+        "id": 7437, //Spork
+        "amount": 10,
+        "value": 422
+      },
+      {
+        "id": 7439, //Spatula
+        "amount": 10,
+        "value": 2496
+      },
+      {
+        "id": 7441, //Frying pan
+        "amount": 10,
+        "value": 2158
+      },
+      {
+        "id": 7443, //Skewer
+        "amount": 10,
+        "value": 4160
+      },
+      {
+        "id": 7445, //Rolling pin
+        "amount": 10,
+        "value": 18720
+      },
+      {
+        "id": 7447, //Steel Axe
+        "amount": 10,
+        "value": 10400
+      },
+      {
+        "id": 7449, //Meat tenderiser
+        "amount": 10,
+        "value": 53950
+      },
+      {
+        "id": 7451, //Cleaver
+        "amount": 10,
+        "value": 33280
+      }
+    ]
+  },
+
+
+//Alkharid
+
+{
+    "name": "Louie Legs",
+    "currency": "COINS",
+    "restock": true,
+    "sellType": "NONE",
+    "scroll": 1,
+    "items": [
+      {
+        "id": 1075, //Bronze platelegs
+        "amount": 10,
+        "value": 80
+      },
+      {
+        "id": 1067, //Iron platelegs
+        "amount": 10,
+        "value": 280
+      },
+      {
+        "id": 1069, //Steel platelegs
+        "amount": 10,
+        "value": 1000
+      },
+      {
+        "id": 1077, //Black platelegs
+        "amount": 10,
+        "value": 1920
+      },
+      {
+        "id": 1071, //Mithril platelegs
+        "amount": 10,
+        "value": 2600
+      },
+      {
+        "id": 1073, //Adamant platelegs
+        "amount": 10,
+        "value": 6400
+      }
+    ]
+  },
+
+{
+    "name": "Ranael's Super Skirt Store",
+    "currency": "COINS",
+    "restock": true,
+    "sellType": "NONE",
+    "scroll": 1,
+    "items": [
+      {
+        "id": 1087, //Bronze plateskirt
+        "amount": 10,
+        "value": 80
+      },
+      {
+        "id": 1081, //Iron plateskirt
+        "amount": 10,
+        "value": 280
+      },
+      {
+        "id": 1083, //Steel plateskirt
+        "amount": 10,
+        "value": 1000
+      },
+      {
+        "id": 1089, //Black plateskirt
+        "amount": 10,
+        "value": 1920
+      },
+      {
+        "id": 1085, //Mithril plateskirt
+        "amount": 10,
+        "value": 2600
+      },
+      {
+        "id": 1091, //Adamant plateskirt
+        "amount": 10,
+        "value": 6400
+      }
+    ]
+  },
+
+{
+    "name": "Zeke’s Superior Scimitars",
+    "currency": "COINS",
+    "restock": true,
+    "sellType": "NONE",
+    "scroll": 1,
+    "items": [
+      {
+        "id": 1321, //Bronze scimitar
+        "amount": 10,
+        "value": 32
+      },
+      {
+        "id": 1323, //Iron scimitar
+        "amount": 10,
+        "value": 112
+      },
+      {
+        "id": 1325, //Steel scimitar
+        "amount": 10,
+        "value": 400
+      },
+      {
+        "id": 1329, //Mithril scimitar
+        "amount": 10,
+        "value": 1040
+      }
+    ]
+  },
+
+{
+    "name": "Dommik's Crafting Store",
+    "currency": "COINS",
+    "restock": true,
+    "sellType": "NONE",
+    "scroll": 1,
+    "items": [
+      {
+        "id": 1755, //Chisel
+        "amount": 10,
+        "value": 14
+      },
+      {
+        "id": 1592, //Ring mould
+        "amount": 10,
+        "value": 5
+      },
+      {
+        "id": 1597, //Necklace mould
+        "amount": 10,
+        "value": 5
+      },
+      {
+        "id": 1595, //Amulet mould
+        "amount": 10,
+        "value": 5
+      },
+      {
+        "id": 1733, //Needle
+        "amount": 10,
+        "value": 1
+      },
+      {
+        "id": 1734, //Thread
+        "amount": 10,
+        "value": 4
+      },
+      {
+        "id": 1599, //Holy mould
+        "amount": 10,
+        "value": 5
+      },
+      {
+        "id": 2976, //Sickle mould
+        "amount": 10,
+        "value": 10
+      },
+      {
+        "id": 5523, //Tiara mould
+        "amount": 10,
+        "value": 100
+      }
+    ]
+  },
+
+//Varrock
+
+{
+    "name": "Zaff's Superior Staffs",
+    "currency": "COINS",
+    "restock": true,
+    "sellType": "NONE",
+    "scroll": 1,
+    "items": [
+      {
+        "id": 1391, //Battlestaff
+        "amount": 10,
+        "value": 7000
+      },
+      {
+        "id": 1379, //Staff
+        "amount": 10,
+        "value": 15
+      },
+      {
+        "id": 1389, //Magic staff
+        "amount": 10,
+        "value": 200
+      },
+      {
+        "id": 1381, //Staff of air
+        "amount": 10,
+        "value": 1500
+      },
+      {
+        "id": 1383, //Staff of water
+        "amount": 10,
+        "value": 1500
+      },
+      {
+        "id": 1385, //Staff of earth
+        "amount": 10,
+        "value": 1500
+      },
+      {
+        "id": 1387, //Staff of fire
+        "amount": 10,
+        "value": 1500
+      }
+    ]
+  },
+
+{
+	    "name": "Varrock Swordshop",
+	    "currency": "PET_TOKENS",
+	    "restock": true,
+	    "sellType": "NONE",
+	    "scroll": 1,
+	    "items": [
+	      {
+        "id": 1277, //Bronze sword
+        "amount": 10,
+        "value": 26
+      },
+      {
+        "id": 1279, //Iron sword
+        "amount": 10,
+        "value": 91
+      },
+      {
+        "id": 1281, //Steel sword
+        "amount": 10,
+        "value": 325
+      },
+      {
+        "id": 1283, //Black sword
+        "amount": 10,
+        "value": 624
+      },
+      {
+        "id": 1383, //Mithril sword
+        "amount": 10,
+        "value": 845
+      },
+      {
+        "id": 1287, //Adamant sword
+        "amount": 10,
+        "value": 2080
+      },
+      {
+        "id": 1387, //Bronze longsword
+        "amount": 10,
+        "value": 40
+      },
+      {
+        "id": 1293, //Iron longsword
+        "amount": 10,
+        "value": 140
+      },
+      {
+        "id": 1295, //Steel longsword
+        "amount": 10,
+        "value": 500
+      },
+      {
+        "id": 1297, //Black longsword
+        "amount": 10,
+        "value": 960
+      },
+      {
+        "id": 1299, //Mithril longsword
+        "amount": 10,
+        "value": 1300
+      },
+      {
+        "id": 1301, //Adamant longsword
+        "amount": 10,
+        "value": 3200
+      },
+      {
+        "id": 1205, //Bronze dagger
+        "amount": 10,
+        "value": 10
+      },
+      {
+        "id": 1203, //Iron dagger
+        "amount": 10,
+        "value": 21
+      },
+      {
+        "id": 1207, //Steel dagger
+        "amount": 10,
+        "value": 125
+      },
+      {
+        "id": 1217, //Black dagger
+        "amount": 10,
+        "value": 240
+      },
+      {
+        "id": 1209, //Magic staff
+        "amount": 10,
+        "value": 325
+      },
+      {
+        "id": 1211, //Adamant dagger
+        "amount": 10,
+        "value": 800
+      }
+    ]
+  },
+  
   {
     "name": "Crafting Store",
     "currency": "COINS",

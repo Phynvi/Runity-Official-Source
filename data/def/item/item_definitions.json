@@ -64577,15 +64577,20 @@
   },
   {
     "id": 8055,
-    "name": "Saradomin symbol"
+    "name": "Saradomin symbol",
+    "tradeable": false
+
   },
   {
     "id": 8056,
-    "name": "Zamorak symbol"
+    "name": "Zamorak symbol",
+    "tradeable": false
+
   },
   {
     "id": 8057,
-    "name": "Guthix symbol"
+    "name": "Guthix symbol",
+    "tradeable": false
   },
   {
     "id": 8058,
@@ -64597,7 +64602,8 @@
   },
   {
     "id": 8060,
-    "name": "Guthix icon"
+    "name": "Guthix icon",
+    "tradeable": false
   },
   {
     "id": 8061,
@@ -105632,7 +105638,9 @@
     "low-alch": 13840,
     "high-alch": 20760,
     "base-value": 34600,
+    "tradeable": false,
     "street-value": 123300
+    
   },
   {
     "id": 13257,

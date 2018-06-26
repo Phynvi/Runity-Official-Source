@@ -10,7 +10,7 @@ import io.battlerune.game.world.position.Position;
  */
 public enum Teleport {
     /* Minigames */
-    ARENA("Arena", TeleportType.MINIGAMES, new Position(2540, 4717, 0), false, new int[]{2412, 2413, 2414}, "You will be teleported in a safe area", ""),
+    ARENA("Mage Arena", TeleportType.MINIGAMES, new Position(2540, 4717, 0), false, new int[]{2412, 2413, 2414}, "You will be teleported in a safe area", ""),
     DUEL_ARENA("Duel Arena", TeleportType.MINIGAMES, new Position(3365, 3265, 0), false, new int[]{-1, 995}, "The place to be if you want to lose bank", "Stake at your own risk!"),
     GAMBLE("Gamble", TeleportType.MINIGAMES, new Position(2459, 3094, 0), false, new int[]{-1, 995}, "The place to be if you want to lose bank", "Here comes the money!"),
     BARROWS("Barrows", TeleportType.MINIGAMES, new Position(3565, 3315, 0), true, new int[]{-1, 7462}, "43 Prayer is highly recommended", "Don't forget your spade!"),
