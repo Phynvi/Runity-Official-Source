@@ -6,11 +6,13 @@ import io.battlerune.Config;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.impl.fightcaves.FightCaves;
 import io.battlerune.content.activity.impl.pestcontrol.PestControl;
+import io.battlerune.content.activity.impl.recipefordisaster.RecipeForDisaster;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
 import io.battlerune.content.combat.cannon.CannonManager;
 import io.battlerune.content.dialogue.impl.WellOfGoodwillDialogue;
 import io.battlerune.content.masterminer.Util;
 import io.battlerune.content.quest.QuestManager;
+import io.battlerune.content.quest.impl.RFD;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.staff.PanelType;
@@ -66,6 +68,11 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 
         switch (id) {
+        
+        case 12356:
+            Teleportation.teleport(player, Config.DEFAULT_POSITION);
+            player.message("You have left the quest.");
+        	break;
             case 27215: {
                 if (!player.itemDelay.elapsed(2, TimeUnit.SECONDS)) {
                     return true;

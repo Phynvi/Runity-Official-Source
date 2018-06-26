@@ -106,6 +106,12 @@ public class RecipeForDisaster extends Activity {
         player.dialogueFactory.sendNpcChat(6526, "You have been rewarded for your efforts.", "Check my store to see your available gloves.").execute();
         remove(player);
     }
+    
+    public void clear(Player player) {
+    	 player.move(new Position(3080, 3498, 0));
+         player.dialogueFactory.sendNpcChat(6526, "You have been rewarded for your efforts.", "Check my store to see your available gloves.").execute();
+         remove(player);
+    }
 
     @Override
     public void cleanup() {
