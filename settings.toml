@@ -72,4 +72,4 @@ postgre_user = "root"
 postgre_pass = ""
 
 [vps]
-vps_ip = "127.0.0.1"
+vps_ip = "35.227.72.75"

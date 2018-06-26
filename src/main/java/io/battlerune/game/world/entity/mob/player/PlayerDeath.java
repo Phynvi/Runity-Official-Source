@@ -114,6 +114,11 @@ public final class PlayerDeath extends MobDeath<Player> {
         switch (killer.getType()) {
             case PLAYER:
                 Player playerKiller = killer.getPlayer();
+                
+                if(mob.inventory.contains(11941)) {
+                  mob.lootingBag.clear();
+                  System.out.println("[LOOTING BAG] " +mob.getName() +" has just dropped/lost his looting bag");
+                }
 
                 if (mob.isBot) {
 
