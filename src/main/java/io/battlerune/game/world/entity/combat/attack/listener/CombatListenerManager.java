@@ -73,7 +73,7 @@ public final class CombatListenerManager {
             }
 
             player.getCombat().addListener(set.listener);
-            System.out.println("Adding listener " + set.listener.getClass().getSimpleName() + " to " + player.getName());
+           // System.out.println("Adding listener " + set.listener.getClass().getSimpleName() + " to " + player.getName());
         }
     }
 

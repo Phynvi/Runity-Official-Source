@@ -1,5 +1,18 @@
 package plugin.command;
 
+import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.getModifiedMaxHit;
+import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.rollDefensive;
+import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.rollOffensive;
+
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.EnumSet;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import io.battlerune.Config;
 import io.battlerune.content.activity.impl.VorkathActivity;
 import io.battlerune.content.activity.impl.cerberus.CerberusActivity;
@@ -8,10 +21,12 @@ import io.battlerune.content.bot.PlayerBot;
 import io.battlerune.content.bot.objective.BotObjective;
 import io.battlerune.content.clanchannel.ClanRepository;
 import io.battlerune.content.clanchannel.channel.ClanChannel;
+import io.battlerune.content.dailyachievement.DailyAchievementHandler;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.ffa.FreeForAll;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
+import io.battlerune.content.presetInterface.PresetInterfaceHandler;
 import io.battlerune.content.skill.SkillRepository;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.store.Store;
@@ -19,7 +34,6 @@ import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.plugin.extension.CommandExtension;
 import io.battlerune.game.task.Task;
-import io.battlerune.content.dailyachievement.DailyAchievementHandler;
 import io.battlerune.game.task.impl.ObjectPlacementEvent;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
@@ -54,18 +68,12 @@ import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.MessageColor;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
-import io.battlerune.util.parser.impl.*;
-
-import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.EnumSet;
-import java.util.Optional;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.*;
+import io.battlerune.util.parser.impl.CombatProjectileParser;
+import io.battlerune.util.parser.impl.GlobalObjectParser;
+import io.battlerune.util.parser.impl.NpcDropParser;
+import io.battlerune.util.parser.impl.NpcForceChatParser;
+import io.battlerune.util.parser.impl.NpcSpawnParser;
+import io.battlerune.util.parser.impl.StoreParser;
 
 public class DeveloperCommandPlugin extends CommandExtension {
 
@@ -937,6 +945,14 @@ player.message("clurd.");
             public void execute(Player player, CommandParser parser) {
                 player.setVisible(!player.isVisible());
                 player.send(new SendMessage(String.format("You are now %s.", player.isVisible() ? "visible" : "hidden")));
+            }
+        });
+        
+        commands.add(new Command("preset") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+            	PresetInterfaceHandler preset = new PresetInterfaceHandler();
+            	preset.open(player);
             }
         });
 

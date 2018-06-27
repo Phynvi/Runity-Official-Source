@@ -185,6 +185,12 @@ public class NewPresetsButtonPlugin extends PluginContext {
 			send126tribridDialouge(player);
 
 		}
+		
+		
+		/** Closes the interface! **/
+		if(button == -23034) {
+			player.interfaceManager.close();
+		}
 
 		return false;
 	}

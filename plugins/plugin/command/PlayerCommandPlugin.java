@@ -14,6 +14,7 @@ import io.battlerune.content.activity.impl.school.SchoolActivity;
 import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.content.emote.EmoteHandler;
 import io.battlerune.content.ffa.FreeForAll;
+import io.battlerune.content.presetInterface.PresetInterfaceHandler;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.teleport.TeleportHandler;
 import io.battlerune.content.triviabot.TriviaBot;
@@ -202,6 +203,13 @@ public class PlayerCommandPlugin extends CommandExtension {
             @Override
             public void execute(Player player, CommandParser parser) {
                 RoyaltyProgram.open(player);
+            }
+        });
+        commands.add(new Command("preset") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+            	PresetInterfaceHandler preset = new PresetInterfaceHandler();
+            	preset.open(player);
             }
         });
         

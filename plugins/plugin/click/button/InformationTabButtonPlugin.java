@@ -7,6 +7,7 @@ import io.battlerune.content.Skillguides.AttackApp;
 import io.battlerune.content.achievement.AchievementInterface;
 import io.battlerune.content.activity.ActivityType;
 import io.battlerune.content.famehall.FameHandler;
+import io.battlerune.content.presetInterface.PresetInterfaceHandler;
 import io.battlerune.content.skill.impl.magic.teleport.TeleportType;
 import io.battlerune.content.skill.impl.slayer.SlayerTab;
 import io.battlerune.content.staff.PanelType;
@@ -60,7 +61,8 @@ public class InformationTabButtonPlugin extends PluginContext {
                      }).execute();
             	break;
             case 29429:
-            	player.interfaceManager.open(42500);
+                PresetInterfaceHandler presets = new PresetInterfaceHandler();
+                presets.open(player);
             	break;
             	/** here**/
             case 29423:
