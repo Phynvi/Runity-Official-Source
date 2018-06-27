@@ -33,8 +33,8 @@ public enum CookData {
 	SEA_TURTLE(395, 82, 150, 397, 399, 212.0D),
 	CAVEFISH(15264, 88, 150, 15266, 15268, 214.0D),
 	MANTA_RAY(389, 91, 150, 391, 393, 216.0D),
+	ANGLERFISH(13439, 84, 175, 13441, 13443, 220.0D),
 	DARK_CRAB(11934, 90, 185, 11936, 11938, 225.0D);
-
 	private final int item;
 	
 	private final int level;
@@ -43,14 +43,15 @@ public enum CookData {
 	
 	private final double exp;
 	
-	private final int noBurn;
-	
 	private final int burnt;
 
-	CookData(int item, int level, int noBurn, int cooked, int burnt, double exp) {
+	private final int noBurn;
+	
+
+	CookData(int item, int level, int noBurnrate, int cooked, int burnt, double exp) {
 		this.item = item;
 		this.level = level;
-		this.noBurn = noBurn;
+		this.noBurn = noBurnrate;
 		this.cooked = cooked;
 		this.burnt = burnt;
 		this.exp = exp; 

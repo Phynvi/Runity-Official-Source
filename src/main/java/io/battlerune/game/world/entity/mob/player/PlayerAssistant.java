@@ -59,6 +59,7 @@ import java.util.function.Consumer;
  * Method handles small methods for players that do not have any parent class.
  *
  * @author Daniel | Obey
+ * @author Adam_#6723
  */
 public class PlayerAssistant {
 
@@ -110,8 +111,8 @@ public class PlayerAssistant {
     	//Toolkit.TOOLS.forEach(t -> player.toolkit.fill(t.getId()));
         player.getCombat().resetTimers(-CombatConstants.COMBAT_LOGOUT_COOLDOWN);
         player.send(new SendEntityFeed(null, 0, 0));
-        player.send(new SendString(PlayerRight.isManagement(player) ? "Open management panel" : "www.Nearreality.io", 29404));
-        player.send(new SendTooltip(PlayerRight.isManagement(player) ? "Open management panel" : "Open website www.Nearreality.io", 29404));
+        player.send(new SendString(PlayerRight.isManagement(player) ? "Open management panel" : "www.runity.io", 29404));
+        player.send(new SendTooltip(PlayerRight.isManagement(player) ? "Open management panel" : "Open website www.runity.io", 29404));
         player.send(new SendSpecialAmount());
         InterfaceWriter.write(new InformationWriter(player));
     }

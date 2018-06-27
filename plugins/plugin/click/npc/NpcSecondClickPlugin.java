@@ -22,7 +22,7 @@ public class NpcSecondClickPlugin extends PluginContext {
                 break;
 
             case 7481:
-                Store.STORES.get("NR Vote Store").open(player);
+                Store.STORES.get("Runity Vote Store").open(player);
                 break;
 
             case 1602:

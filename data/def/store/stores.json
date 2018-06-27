@@ -1670,6 +1670,18 @@
       {
         "id": 7398,
         "amount": 100
+      },
+      {
+        "id": 2417,
+        "amount": 100
+      },
+      {
+          "id": 2416,
+          "amount": 100
+      },
+      {
+          "id": 2415,
+          "amount": 100
       }
     ]
   },
@@ -1747,7 +1759,7 @@
     ]
   },
   {
-    "name": "NR Vote Store",
+    "name": "Runity Vote Store",
     "currency": "VOTE_POINTS",
     "restock": true,
     "sellType": "NONE",

@@ -268,7 +268,7 @@ public class PlayerCommandPlugin extends CommandExtension {
         commands.add(new Command("vote") {
             @Override
             public void execute(Player player, CommandParser parser) {
-                player.send(new SendURL("https://www.nearreality.io/vote"));
+                player.send(new SendURL("https://www.runity.io/vote"));
             }
         });
         commands.add(new Command("train", "tran", "start") {
@@ -425,13 +425,13 @@ public class PlayerCommandPlugin extends CommandExtension {
         commands.add(new Command("donate", "webstore") {
             @Override
             public void execute(Player player, CommandParser parser) {
-                player.send(new SendURL("https://www.nearreality.io/store"));
+                player.send(new SendURL("https://www.runity.io/store"));
             }
         });
         commands.add(new Command("Disord", "discord") {
             @Override
             public void execute(Player player, CommandParser parser) {
-                player.send(new SendURL("https://www.nearreality.io/store"));
+                player.send(new SendURL("https://www.runity.io/store"));
             }
         });
 
@@ -539,7 +539,7 @@ public class PlayerCommandPlugin extends CommandExtension {
         commands.add(new Command("players") {
             @Override
             public void execute(Player player, CommandParser parser) {
-                player.send(new SendMessage("There are currently " + World.getPlayerCount() + " players playing Near Reality!", MessageColor.RED));
+                player.send(new SendMessage("There are currently " + World.getPlayerCount() + " players playing Runity!", MessageColor.RED));
             }
         });
 

@@ -287,7 +287,7 @@ public enum RangedAmmunition {
     BLURITE_BOLTS(true, 9139, 9286, 9293, 9300, 9335, 9237) {
         @Override
         protected CombatProjectile getProjectile() {
-            return getDefinition("Near Reality bolts");
+            return getDefinition("Blurite bolts");
         }
     },
     IRON_BOLTS(true, 9140, 9287, 9294, 9301, 880, 9238) {
@@ -420,7 +420,7 @@ public enum RangedAmmunition {
         }
     },
 
-    CHINCHOMPA(false, 10033) {
+    CHINCHOMPA(false, 10033, 11959) {
         @Override
         protected CombatProjectile getProjectile() {
             return getDefinition("Chinchompa");

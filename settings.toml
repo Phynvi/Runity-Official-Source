@@ -24,7 +24,7 @@ max_npcs = 33000
 max_bots = 30
 npc_definition_limit = 8205
 item_definition_limit = 22517
-combat_modifier = 100.0
+combat_modifier = 1500.0
 agility_modifier = 50.0
 cooking_modifier = 50.0
 crafting_modifier = 50.0
@@ -32,9 +32,9 @@ firemaking_modifier = 50.0
 fletching_modifier = 50.0
 herblore_modifier = 50.0
 hunter_modifier = 50.0
-magic_modifier = 50.0
+magic_modifier = 1500.0
 mining_modifier = 50.0
-prayer_modifier =  50.0
+prayer_modifier =  250.0
 runecrafting_modifier = 50.0
 slayer_modifier = 50.0
 woodcutting_modifier = 50.0
@@ -72,4 +72,4 @@ postgre_user = "root"
 postgre_pass = ""
 
 [vps]
-vps_ip = "35.227.72.75"
+vps_ip = "127.0.0.1"

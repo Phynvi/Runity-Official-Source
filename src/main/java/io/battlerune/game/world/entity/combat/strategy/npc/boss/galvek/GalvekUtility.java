@@ -22,7 +22,7 @@ public class GalvekUtility {
         SpawnData spawn = SpawnData.generate();
         Npc Galvek = new Npc(8095, spawn.position, 10, Direction.NORTH);
         World.sendMessage("<col=8714E6> Galvek has just spawned! He is located at " + spawn.location + "!", "<col=8714E6> First clan to kill him will be rewarded handsomely!");
-        World.sendMessage("to enter the Galvek do ::Galvek and rid this beast from the world of Near Reality!");
+        World.sendMessage("to enter the Galvek do ::Galvek and rid this beast from the world of Runity!");
         World.sendBroadcast(1, "The Galvek boss has spawned enter by doing ::Galvek", true);
         for(int x = 1; x < 5; x++) {
         	System.out.println("Galvek Spawned!!!");

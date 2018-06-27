@@ -82,7 +82,7 @@ public class ClanChannelHandler {
             }
             return;
         }
-        if (!channel.getOwner().equals("Osroyale") && channel.activeSize() >= 80) {
+        if (!channel.getOwner().equals("help") && channel.activeSize() >= 80) {
             player.send(new SendMessage("Connection was refused: Channel currently full!"));
             return;
         }

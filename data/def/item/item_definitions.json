@@ -53586,6 +53586,8 @@
   {
     "id": 6570,
     "name": "Fire cape",
+    "destroyable": true,
+    "destroy-message": "Destroy",
     "low-alch": 26002,
     "high-alch": 39004,
     "base-value": 65007,
@@ -82023,6 +82025,8 @@
   {
     "id": 10566,
     "name": "Fire cape",
+    "destroyable": true,
+    "destroy-message": "Destroy",
     "weight": 1.8,
     "equipment-slot": "CAPE",
     "attack-stab": 1,
@@ -82666,6 +82670,8 @@
   {
     "id": 10637,
     "name": "Fire cape",
+    "destroyable": true,
+    "destroy-message": "Destroy",
     "low-alch": 24000,
     "high-alch": 36000,
     "base-value": 60000,
@@ -92984,15 +92990,20 @@
   {
     "id": 11959,
     "name": "Black chinchompa",
+    "destroy-message": "Release",
     "stackable": true,
-    "low-alch": 96,
-    "high-alch": 144,
-    "base-value": 240,
-    "street-value": 2748,
+    "low-alch": 64,
+    "high-alch": 96,
+    "base-value": 160,
+    "street-value": 1709,
     "equipment-slot": "WEAPON",
-    "weapon-interface": "SALAMANDER",
+    "weapon-interface": "CHINCHOMPA",
     "attack-ranged": 80,
-    "ranged-strength": 30
+    "ranged-strength": 15,
+    "ranged-type": "THROWN",
+    "allowed": [
+      "RED_CHINCHOMPA"
+    ]
   },
   {
     "id": 11960,
@@ -115548,7 +115559,10 @@
     "id": 20445,
     "tradeable": false,
     "name": "Fire cape (broken)",
+    "destroy-message": "Destroy",
     "weight": 1.8,
+    "destroy-message": "Destroy",
+    "destroyable": true,
     "equipment-slot": "CAPE"
   },
   {
@@ -120310,14 +120324,19 @@
   {
     "id": 21282,
     "name": "Infernal max hood",
+    "destroy-message": "Destroy",
     "tradeable": false,
+    "destroyable": true,
+
     "weight": 0.4,
     "equipment-slot": "HELM"
   },
   {
     "id": 21284,
     "name": "Infernal max cape",
+    "destroy-message": "Destroy",
     "tradeable": false,
+    "destroyable": true,
     "weight": 0.4,
     "equipment-slot": "CAPE",
     "attack-stab": 4,
@@ -120336,7 +120355,9 @@
   {
     "id": 21285,
     "name": "Infernal max cape",
+    "destroy-message": "Destroy",
     "tradeable": false,
+    "destroyable": true,
     "low-alch": 39600,
     "high-alch": 59400,
     "base-value": 99000,
@@ -120358,13 +120379,17 @@
   {
     "id": 21287,
     "name": "Infernal cape (broken)",
+    "destroy-message": "Destroy",
     "tradeable": false,
+    "destroyable": true,
     "weight": 1.8,
     "equipment-slot": "CAPE"
   },
   {
     "id": 21289,
     "name": "Infernal max cape (broken)",
+    "destroy-message": "Destroy",
+    "destroyable": true,
     "tradeable": false,
     "weight": 0.4,
     "equipment-slot": "CAPE"
@@ -120384,7 +120409,9 @@
     "id": 21295,
 	"tradeable": false,
     "name": "Infernal cape",
+    "destroy-message": "Destroy",
     "low-alch": 32000,
+    "destroyable": true,
     "high-alch": 48000,
     "base-value": 80000,
     "weight": 1.8,
@@ -120406,7 +120433,9 @@
     "id": 21297,
 	"tradeable": false,
     "name": "Infernal cape",
+    "destroy-message": "Destroy",
     "weight": 1.8,
+    "destroyable": true,
     "equipment-slot": "CAPE",
     "attack-stab": 4,
     "attack-slash": 4,

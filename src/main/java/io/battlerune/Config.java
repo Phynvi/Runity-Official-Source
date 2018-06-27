@@ -22,10 +22,10 @@ import java.math.BigInteger;
 public final class Config {
 
     /** The latest announcement thread link. */
-    public static final String LATEST_ANNOUNCEMENT_THREAD = "http://nearreality.io/forums/index.php?/topic/5-rebirth-of-near-reality/&tab=comments#comment-11";
+    public static final String LATEST_ANNOUNCEMENT_THREAD = "http://runity.io/forums/index.php?/topic/5-rebirth-of-near-reality/&tab=comments#comment-11";
 
     /** The latest update thread link. */
-    public static final String LATEST_UPDATE_THREAD = "http://nearreality.io/forums/index.php?/topic/3-updates-of-04012018/&tab=comments#comment-7";
+    public static final String LATEST_UPDATE_THREAD = "http://runity.io/forums/index.php?/topic/3-updates-of-04012018/&tab=comments#comment-7";
 
     /** The welcome marquee. */
     public static final String[] WELCOME_MARQUEE = {
@@ -45,7 +45,7 @@ public final class Config {
     public static final String[] WELCOME_ANNOUNCEMENT = {
             "Major closed-beta updates",
             "[ March 30th ]",
-            "Hello Near Reality community. On",
+            "Hello Runity community. On",
             "4/10/18, we will be pushing",
             "major updates that include..."
     };
@@ -289,9 +289,9 @@ public final class Config {
 
     /** Messages that are sent periodically to all players. */
     public static final String[] MESSAGES = {
-            "The owner & founder of Near Reality is Adam.",
-            "Near Reality game developers are Adam",
-            "Our website is located at: http://Nearreality.io",
+            "The owner & founder of Runity is Adam.",
+            "Runity game developers are Adam",
+            "Our website is located at: http://runity.io",
             "Add more security to your account by setting a bank pin.",
             "Tired of constantly re-gearing? Set a preset!",
             "Have any ideas on how we could improve our gameplay? Post on forums!.",

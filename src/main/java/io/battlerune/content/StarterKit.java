@@ -41,7 +41,7 @@ public class StarterKit {
     public enum KitData {
         NORMAL(PlayerRight.PLAYER, new String[]{
                 "",
-                "Play Near Reality as a normal player.",
+                "Play Runity as a normal player.",
                 "As a normal player you will have no restrictions at all."
         },  new Item[]{new Item(3842)}, new Item(10828, 1), new Item(1127, 1), new Item(1079, 1),
                 new Item(3105), new Item(386, 300), new Item(565, 1000), new Item(555, 5000), new Item(560, 4000),

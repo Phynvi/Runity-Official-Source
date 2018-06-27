@@ -345,7 +345,7 @@ public class SkillManager {
                //adam should disable levling up stopping skills anaomly player.action.clearNonWalkableActions(); // causes flax task to stop upon leveling up
                 showLevelUpInterface(player, skill);
                 if (newMax == 99)
-                    World.sendMessage("<col=7B44B3>Near Reality: <col=" + player.right.getColor() + ">" + player.getName() + " </col>has just reached level 99 in <col=7B44B3>" + Skill.getName(skill.getSkill()) + "</col>!");
+                    World.sendMessage("<col=7B44B3>Runity: <col=" + player.right.getColor() + ">" + player.getName() + " </col>has just reached level 99 in <col=7B44B3>" + Skill.getName(skill.getSkill()) + "</col>!");
             } else {
                 player.send(new SendMessage("Congratulations, you have reached " + Utility.getAOrAn(Skill.getName(skill.getSkill())) + " " + Skill.getName(skill.getSkill()) + " level of " + skill.getMaxLevel() + "."));
             }

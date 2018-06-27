@@ -114,7 +114,7 @@ public final class NpcDropManager {
             if (killer.settings.dropNotification && item.getValue() > 1_000_000) {
                 String name = item.getName();
                 killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + name + " (" + Utility.formatDigits(item.getValue()) + " coins)"));
-                World.sendMessage("<col=BA383E>Near Reality: <col=" + killer.right.getColor() + ">" + killer.getName() + " </col>has just received " + Utility.getAOrAn(name) + " <col=BA383E>" + name + " </col>from <col=BA383E>" + npc.getName() + "</col>!");
+                World.sendMessage("<col=BA383E>Runity: <col=" + killer.right.getColor() + ">" + killer.getName() + " </col>has just received " + Utility.getAOrAn(name) + " <col=BA383E>" + name + " </col>from <col=BA383E>" + npc.getName() + "</col>!");
             } else if (killer.settings.untradeableNotification && !item.isTradeable()) {
                 killer.send(new SendMessage("<col=F5424B>Untradeable Drop Notification: </col>" + item.getName()));
             }

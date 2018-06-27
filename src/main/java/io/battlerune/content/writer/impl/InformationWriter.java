@@ -40,6 +40,8 @@ public class InformationWriter extends InterfaceWriter {
             "     - Royalty Level: <col=FFB83F>" + player.royaltyLevel,
             "     - Slayer Task: <col=FFB83F>" + (player.slayer.getTask() == null ? "None" : player.slayer.getTask().getName() + "(" + player.slayer.getAmount() + ")"),
             "     - PK Points: <col=FFB83F>" + Utility.formatDigits(player.pkPoints),
+            "     - Boss Points: <col=FFB83F>" + Utility.formatDigits(player.bossPoints),
+            "     - Trivia Points: <col=FFB83F>" + Utility.formatDigits(player.triviaPoints),
             "     - Vote Points: <col=FFB83F>" + Utility.formatDigits(player.votePoints),
             "     - Total Vote: <col=FFB83F>" + Utility.formatDigits(player.totalVotes),
             "     - Kills: <col=FFB83F>" + player.kill,

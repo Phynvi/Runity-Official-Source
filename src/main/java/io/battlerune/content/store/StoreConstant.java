@@ -21,7 +21,7 @@ public class StoreConstant {
             "Slayer Store",
             "Ironman Store",
             "Ironman Donator Store",
-            "Near Reality Vote Store",
+            "Runity Vote Store",
             "The Tzhaar Tokkul Store",
     };
 }
