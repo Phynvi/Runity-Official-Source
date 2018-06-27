@@ -28,7 +28,7 @@ import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 /**
- * Handles Skotizo's stategy.
+ * Handles Gano Strategy
  *
  * @author Adam Trinity
  */

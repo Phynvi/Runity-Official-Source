@@ -97849,8 +97849,11 @@
     "high-alch": 90000,
     "base-value": 150000,
     "street-value": 1289233177,
-    "weight": 1.0,
+    "stand-animation": 808,
+    "walk-animation": 819,
     "equipment-slot": "WEAPON",
+    "weapon-interface": "LONGSWORD",
+    "weight": 1.8,
     "req-defence": 45,
     "attack-stab": 60,
     "attack-slash": 72,
@@ -119840,7 +119843,7 @@
   },
 {
     "id": 21216,
-    "name": "Abyssal whip",
+    "name": "White whip",
     "noted-id": 21216,
     "low-alch": 48000,
     "high-alch": 72000,
@@ -119857,7 +119860,7 @@
   },
   {
     "id": 21217,
-     "name": "Abyssal whip",
+     "name": "Iron whip",
     "noted-id": 21217,
     "low-alch": 48000,
     "high-alch": 72000,
@@ -119874,7 +119877,7 @@
   },
   {
     "id": 21218,
-     "name": "Abyssal whip",
+     "name": "Steel whip",
     "noted-id": 21218,
     "low-alch": 48000,
     "high-alch": 72000,
@@ -119891,7 +119894,7 @@
   },
   {
     "id": 21219,
-     "name": "Abyssal whip",
+     "name": "Black whip",
     "noted-id": 21219,
     "low-alch": 48000,
     "high-alch": 72000,
@@ -119908,7 +119911,7 @@
   },
   {
     "id": 21220,
-     "name": "Abyssal whip",
+     "name": "Mithril whip",
     "noted-id": 21220,
     "low-alch": 48000,
     "high-alch": 72000,
@@ -119925,7 +119928,7 @@
   },
   {
     "id": 21221,
-     "name": "Abyssal whip",
+     "name": "Adamant whip",
     "noted-id": 21221,
     "low-alch": 48000,
     "high-alch": 72000,
@@ -119942,7 +119945,7 @@
   },
   {
     "id": 21222,
-     "name": "Abyssal whip",
+     "name": "Rune whip",
     "noted-id": 21222,
     "low-alch": 48000,
     "high-alch": 72000,
@@ -119959,7 +119962,7 @@
   },
   {
     "id": 21223,
-     "name": "Abyssal whip",
+     "name": "Dragon whip",
     "noted-id": 21223,
     "low-alch": 48000,
     "high-alch": 72000,
@@ -119976,7 +119979,7 @@
   },
   {
     "id": 21224,
-     "name": "Abyssal whip",
+     "name": "Barrows whip",
     "noted-id": 21224,
     "low-alch": 48000,
     "high-alch": 72000,
@@ -120010,7 +120013,7 @@
   },
   {
     "id": 21226,
-    "name": "Abyssal whip",
+    "name": "Pink whip",
     "noted-id": 21226,
     "low-alch": 48000,
     "high-alch": 72000,
@@ -120027,7 +120030,7 @@
   },
   {
     "id": 21227,
-     "name": "Abyssal whip",
+     "name": "Element whip",
     "noted-id": 21227,
     "low-alch": 48000,
     "high-alch": 72000,
@@ -120044,7 +120047,7 @@
   },
   {
     "id": 21228,
-        "name": "Abyssal whip",
+    "name": "Frost whip",
     "noted-id": 21228,
     "low-alch": 48000,
     "high-alch": 72000,

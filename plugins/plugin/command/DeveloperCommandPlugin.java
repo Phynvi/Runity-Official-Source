@@ -27,6 +27,7 @@ import io.battlerune.content.ffa.FreeForAll;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.presetInterface.PresetInterfaceHandler;
+import io.battlerune.content.refer.ReferralHandler;
 import io.battlerune.content.skill.SkillRepository;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.store.Store;
@@ -953,6 +954,13 @@ player.message("clurd.");
             public void execute(Player player, CommandParser parser) {
             	PresetInterfaceHandler preset = new PresetInterfaceHandler();
             	preset.open(player);
+            }
+        });
+        
+        commands.add(new Command("refferal") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+            	ReferralHandler.open(player);
             }
         });
 

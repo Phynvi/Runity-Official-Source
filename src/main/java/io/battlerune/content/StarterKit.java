@@ -35,6 +35,8 @@ public class StarterKit {
         Arrays.stream(kit.getEquipment()).forEach(player.equipment::manualWear);
         player.send(new SendConfig(1085, kit.ordinal()));
         player.send(new SendItemOnInterface(57521, kit.getItems()));
+        player.equipment.refresh();
+        player.inventory.refresh();
     }
 
     /** Holds the starter kit data. */

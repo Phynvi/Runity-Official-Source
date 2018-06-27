@@ -549,6 +549,13 @@ public class ObjectFirstClickPlugin extends PluginContext {
                 } else if (player.getPosition().matches(2907, 9697)) {
                     player.move(new Position(2907, 9698));
                 }
+                
+                
+                if (player.getPosition().matches(2958, 3821) || player.getPosition().matches(2959, 3821)) {
+                    player.move(new Position(2957, 3821));
+                } else if (player.getPosition().matches(2957, 3821) || player.getPosition().matches(2956, 3821)) {
+                    player.move(new Position(2958, 3821));
+                }
                 break;
 
             case 1521:
@@ -557,6 +564,16 @@ public class ObjectFirstClickPlugin extends PluginContext {
                 } else if (player.getPosition().matches(2908, 9697)) {
                     player.move(new Position(2908, 9698));
                 }
+                
+                
+                
+                
+                if (player.getPosition().matches(2958, 3820) || player.getPosition().matches(2959, 3820)) {
+                    player.move(new Position(2957, 3820));
+                } else if (player.getPosition().matches(2957, 3820) || player.getPosition().matches(2956, 3820)) {
+                    player.move(new Position(2958, 3820));
+                }
+                
                 break;
 
             case 2623: {
@@ -1072,6 +1089,16 @@ public class ObjectFirstClickPlugin extends PluginContext {
                 player.move(new Position(player.getX() < 2974 ? 2974 : 2970, player.getY(), player.getHeight()));
                 break;
             }
+            
+            case 411:
+            if (player.skills.getLevel(Skill.PRAYER) < player.skills.getMaxLevel(Skill.PRAYER)) {
+                player.animate(new Animation(645));
+                player.skills.setLevel(Skill.PRAYER, player.skills.getMaxLevel(Skill.PRAYER));
+                player.send(new SendMessage("You recharge your prayer points."));
+            } else {
+                player.send(new SendMessage("Your prayer is already full."));
+            }
+            break;
 
             case 26366:
             case 26365:

@@ -42,7 +42,7 @@ public class Ballista extends PlayerRangedStrategy {
 
     @Override
     public int modifyAccuracy(Player attacker, Mob defender, int roll) {
-        return roll * 5 / 4;
+        return roll * 4 / 3;
     }
 
     @Override

@@ -73,6 +73,7 @@ public class StarterKitButtonPlugin extends PluginContext {
         player.interfaceManager.close();
         player.newPlayer = false;
         player.needsStarter = false;
+        player.equipment.refresh();
         //ClanChannelHandler.connect(player, "help");
         //player.clanTag = "help";
         //player.clanChannel.

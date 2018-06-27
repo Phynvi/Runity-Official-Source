@@ -420,13 +420,13 @@ public enum RangedAmmunition {
         }
     },
 
-    CHINCHOMPA(false, 10033, 11959) {
+    CHINCHOMPA(false, 10033) {
         @Override
         protected CombatProjectile getProjectile() {
             return getDefinition("Chinchompa");
         }
     },
-    RED_CHINCHOMPA(false, 10034) {
+    RED_CHINCHOMPA(false, 10034, 11959) {
         @Override
         protected CombatProjectile getProjectile() {
             return getDefinition("Red chinchompa");
