@@ -40,6 +40,7 @@ import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
 import io.battlerune.game.world.entity.combat.attack.listener.CombatListenerManager;
 import io.battlerune.game.world.entity.combat.hit.Hit;
+import io.battlerune.game.world.entity.combat.hit.HitIcon;
 import io.battlerune.game.world.entity.combat.hit.Hitsplat;
 import io.battlerune.game.world.entity.combat.strategy.CombatStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.arena.ArenaUtility;
@@ -66,6 +67,7 @@ import io.battlerune.net.packet.out.SendBanner;
 import io.battlerune.net.packet.out.SendInputAmount;
 import io.battlerune.net.packet.out.SendInputMessage;
 import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendPoison;
 import io.battlerune.util.MessageColor;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
@@ -954,6 +956,47 @@ player.message("clurd.");
             public void execute(Player player, CommandParser parser) {
             	PresetInterfaceHandler preset = new PresetInterfaceHandler();
             	preset.open(player);
+            }
+        });
+        commands.add(new Command("debug1") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+                player.damage(new Hit(player.getVenomDamage().getAndIncrement(2), Hitsplat.DISEASE, HitIcon.NONE));
+
+            }
+        });
+        commands.add(new Command("debug2") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+                player.damage(new Hit(player.getVenomDamage().getAndIncrement(2), Hitsplat.CRITICAL, HitIcon.MELEE));
+
+            }
+        });
+        commands.add(new Command("debug3") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+                player.damage(new Hit(player.getVenomDamage().getAndIncrement(2), Hitsplat.VENOM, HitIcon.MELEE));
+
+            }
+        });
+        commands.add(new Command("poison") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+                player.send(new SendMessage("You have been poisoned!"));
+                player.send(new SendPoison(SendPoison.PoisonType.VENOM));
+            }
+        });
+        
+        commands.add(new Command("unpoison") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+             player.unpoison();
+            }
+        });
+        commands.add(new Command("unpoison2") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+                player.send(new SendPoison(SendPoison.PoisonType.NO_POISON));
             }
         });
         

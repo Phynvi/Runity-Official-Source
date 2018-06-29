@@ -44,8 +44,8 @@ public final class CombatPoisonEffect extends CombatEffect {
                 .retrieve(Equipment.HELM_SLOT)
                 .filter(helm -> helm.getId() == 13197 || helm.getId() == 13199 || helm.getId() == 12931)
                 .isPresent()) {
-            return false;
-        }
+            return true;
+        } //ADAM INCASE THIS DOESN'T WORK REFER BACK TO HERE.
 
         if (mob.isPlayer()) {
             Player player = mob.getPlayer();
@@ -59,9 +59,9 @@ public final class CombatPoisonEffect extends CombatEffect {
         return true;
     }
 
-    @Override
+    @Override //removed the !mob.isPoisoned(); ADAM DID THIS :d
     public boolean removeOn(Mob mob) {
-        boolean remove = mob.isVenomed() || !mob.isPoisoned() || mob.isDead();
+        boolean remove = mob.isVenomed() || /* !mob.isPoisoned() */!mob.isPoisoned() || mob.isDead();
         if (remove && mob.isPlayer()) {
             Player player = (Player) mob;
             player.send(new SendPoison(SendPoison.PoisonType.NO_POISON));
@@ -109,6 +109,10 @@ public final class CombatPoisonEffect extends CombatEffect {
             if (name.endsWith("(p++)")) {
                 return Optional.of(PoisonType.SUPER_MELEE);
             }
+            if(name.endsWith("tentacle")) {
+                return Optional.of(PoisonType.SUPER_MELEE);
+            }
+            
         }
         return Optional.empty();
     }

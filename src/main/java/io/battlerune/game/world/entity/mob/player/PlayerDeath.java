@@ -17,7 +17,9 @@ import io.battlerune.content.writer.impl.InformationWriter;
 import io.battlerune.game.Animation;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.World;
+import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.attack.listener.CombatListenerManager;
+import io.battlerune.game.world.entity.combat.effect.CombatEffectType;
 import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.MobDeath;
@@ -164,6 +166,9 @@ public final class PlayerDeath extends MobDeath<Player> {
         }
 
         mob.unpoison();
+        CombatUtil.cancelEffect(mob, CombatEffectType.POISON);
+        CombatUtil.cancelEffect(mob, CombatEffectType.VENOM);
+
         mob.runEnergy = 100;
         mob.skulling.unskull();
         mob.skills.restoreAll();
