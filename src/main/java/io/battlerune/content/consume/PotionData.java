@@ -30,6 +30,33 @@ import java.util.Optional;
  * @author Adam_6723 <- DID LIKE HALF OF THESE POTIOSN BECAUSE RETARDED ASHPIRE NEVER DID IT. 
  */
 public enum PotionData {
+	
+	//do not ask why im adding this lol
+	 GODLY_POTION(20944, 20943, 20942, 20941) {
+	        @Override
+	        public void onEffect(Player player) {
+	            PotionData.onBasicEffect(player, Skill.ATTACK, BoostType.OVERLOAD);
+	            PotionData.onBasicEffect(player, Skill.STRENGTH, BoostType.OVERLOAD);
+	            PotionData.onBasicEffect(player, Skill.DEFENCE, BoostType.OVERLOAD);
+	            PotionData.onBasicEffect(player, Skill.MAGIC, BoostType.OVERLOAD);
+	            PotionData.onBasicEffect(player, Skill.RANGED, BoostType.OVERLOAD);
+	            PotionData.onBasicEffect(player, Skill.PRAYER, BoostType.OVERLOAD);
+	            PotionData.onEnergyEffect(player, true);
+	            player.staminaExpireTime = System.currentTimeMillis() + 1000*120;
+	            player.energyRate = 200;
+	            PotionData.onAntiPoisonEffect(player, true, 1000);
+	            PotionData.onAgilityEffect(player);
+	            PotionData.onAntiFireEffect(player, false);
+	            PotionData.onPrayerEffect(player, true);
+	            PotionData.onPrayerEffect(player, false);
+
+
+
+
+
+	        }
+	    },
+	
 	//suer range potion effect added. testing for commits.
 	 SUPER_RANGEPOTION(11722, 11723, 11724, 11725) { 
 	        @Override//fixed now
@@ -203,6 +230,7 @@ public enum PotionData {
         @Override
         public void onEffect(Player player) {
             PotionData.onAntiFireEffect(player, false);
+            
         }
     },
     SUPER_ANTIFIRE_POTIONS(15304, 15305, 15306, 15307) {

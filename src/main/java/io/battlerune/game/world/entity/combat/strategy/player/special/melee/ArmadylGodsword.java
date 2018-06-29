@@ -12,7 +12,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 /** @author Michael | Chex
  * @editor adam 
  * Fixed several alarming issue's with the AGS.
- *  
+ * Adjusted the damage ratio too. 
  *  
  *  */
 
@@ -50,7 +50,7 @@ public class ArmadylGodsword extends PlayerMeleeStrategy {
 
 	@Override
 	public int modifyDamage(Player attacker, Mob defender, int damage) {
-		return (int) (damage * 1.525);
+		return (int) (damage * 1.575);
 	}
 
 	public static ArmadylGodsword get() {

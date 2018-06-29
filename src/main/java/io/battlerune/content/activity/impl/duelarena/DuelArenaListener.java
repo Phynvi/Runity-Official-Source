@@ -58,7 +58,7 @@ public class DuelArenaListener extends ActivityListener<DuelArenaActivity> {
                 Item weapon = player.equipment.getWeapon();
                 String name = weapon.getName().toLowerCase();
 
-                if (!name.contains("dragon dagger") && !name.contains("abyssal whip") && !name.contains("abyssal tentacle")) {
+                if (!name.contains("dragon dagger") && !name.contains("abyssal whip") && !name.contains("abyssal tentacle") && !name.contains("lime whip")) {
                     player.send(new SendMessage("You can only use a whip or dragon dagger!"));
                     return false;
                 }

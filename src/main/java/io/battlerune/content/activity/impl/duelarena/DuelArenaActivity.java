@@ -113,8 +113,8 @@ public class DuelArenaActivity extends Activity {
 
         if (rules.contains(DuelRule.ONLY_WHIP_DDS)) {
             final String name = item.getName() == null ? "null" : item.getName().toLowerCase();
-            if (!name.contains("dragon dagger") && !name.contains("abyssal whip") && !name.contains("abyssal tentacle")) {
-                player.send(new SendMessage("You can only use a whip or dragon dagger!"));
+            if (!name.contains("dragon dagger") && !name.contains("abyssal whip") && !name.contains("abyssal tentacle")  && !name.contains("lime whip")) {
+                player.send(new SendMessage("You can only use a whip or dragon dagger!"));//
                 return false;
             }
         }
