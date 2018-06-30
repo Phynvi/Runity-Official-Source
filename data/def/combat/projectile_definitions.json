@@ -80,6 +80,86 @@
     }
   },
   {
+	    "name": "Galvek Venom Dragonfire",
+	    "end": {
+	      "id": 1472,
+	      "delay": 0,
+	      "height": 6553600,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 1470,
+	      "delay": 5,
+	      "duration": 85,
+	      "startHeight": 90,
+	      "endHeight": 25
+	    }
+	  },
+	  {
+	    "name": "Galvek Pink Dragonfire",
+	    "end": {
+	      "id": 1473,
+	      "delay": 0,
+	      "height": 6553600,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 1471,
+	      "delay": 5,
+	      "duration": 85,
+	      "startHeight": 90,
+	      "endHeight": 25
+	    }
+	  },
+	  {
+	    "name": "Galvek Ranged",
+	    "end": {
+	      "id": 1460,
+	      "delay": 0,
+	      "height": 0,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 1459,
+	      "delay": 5,
+	      "duration": 85,
+	      "startHeight": 90,
+	      "endHeight": 25
+	    }
+	  },
+	  {
+	    "name": "Galvek Magic",
+	    "end": {
+	      "id": 1480,
+	      "delay": 0,
+	      "height": 6553600,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 1479,
+	      "delay": 5,
+	      "duration": 85,
+	      "startHeight": 90,
+	      "endHeight": 25
+	    }
+	  },
+	  {
+	    "name": "Galvek Frozen Special",
+	    "end": {
+	      "id": 1480,
+	      "delay": 0,
+	      "height": 6553600,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 1490,
+	      "delay": 5,
+	      "duration": 85,
+	      "startHeight": 90,
+	      "endHeight": 25
+	    }
+	  },
+  {
     "name": "Wind Strike",
     "max-hit": 2,
     "animation": {
@@ -2556,6 +2636,21 @@
       "endHeight": 31
     }
   },
+  {
+	    "name": "Metalic Galvek dragonfire",
+	    "animation": {
+	      "id": 81,
+	      "delay": 0,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 393,
+	      "delay": 50,
+	      "duration": 75,
+	      "startHeight": 90,
+	      "endHeight": 25
+	    }
+	  },
   {
     "name": "Tentacle Blast",
     "max-hit": 2,

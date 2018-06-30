@@ -44,6 +44,7 @@ import io.battlerune.game.world.entity.combat.hit.HitIcon;
 import io.battlerune.game.world.entity.combat.hit.Hitsplat;
 import io.battlerune.game.world.entity.combat.strategy.CombatStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.arena.ArenaUtility;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility;
 import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.UpdateFlag;
@@ -224,6 +225,14 @@ public class DeveloperCommandPlugin extends CommandExtension {
             @Override
             public void execute(Player player, CommandParser parser) {
                 Teleportation.teleport(player, Config.RAIDS);
+
+            }
+        });
+        
+        commands.add(new Command("galvek") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+                GalvekUtility.generateSpawn();
 
             }
         });

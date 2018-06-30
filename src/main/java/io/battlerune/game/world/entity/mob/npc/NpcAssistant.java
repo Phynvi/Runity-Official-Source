@@ -100,6 +100,7 @@ public class NpcAssistant {
         put(3164, FlockleaderGeerin::new);
         put(3165, FlightKilisa::new);
         put(8095, Galvek::new);
+        put(8096, Galvek::new);
         put(7858, Justiciar::new);
         put(7860, Porazdir::new);
         put(7859, Derwen::new);

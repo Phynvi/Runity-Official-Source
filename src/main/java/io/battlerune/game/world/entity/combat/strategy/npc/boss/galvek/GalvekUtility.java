@@ -19,7 +19,7 @@ public class GalvekUtility {
 
     public static Npc generateSpawn() {
     	
-        SpawnData spawn = SpawnData.generate();
+    	SpawnData1 spawn = SpawnData1.generate();
         Npc Galvek = new Npc(8095, spawn.position, 10, Direction.NORTH);
         World.sendMessage("<col=8714E6> Galvek has just spawned! He is located at " + spawn.location + "!", "<col=8714E6> First clan to kill him will be rewarded handsomely!");
         World.sendMessage("to enter the Galvek do ::Galvek and rid this beast from the world of Runity!");
@@ -62,6 +62,8 @@ public class GalvekUtility {
             player.clanChannel.message("Hell yeah boys! We just killed Galvek!! We earned 10,000 EXP & 5 CP.");
         }
             World.sendMessage("<col=8714E6> Galvek has been defeated by " + player.getName() + ", a solo individual with balls of steel!");
+            
+            //TODO Iterate it over the spawnData, and if the spawndata is equal to the correct value from that enum, than edit the Positions.
 			
             /** Generates a random item from the int array list. **/
             
@@ -87,7 +89,7 @@ public class GalvekUtility {
 
           		    Position position6 = new Position(2270 + Utility.random(1, 5), 5342 + Utility.random(2, 10), 0);
           		    Position position7 = new Position(2256 + Utility.random(2, 8), 5345 + Utility.random(3, 5), 0);
-          		    Position position8 = new Position(2265 + Utility.random(3, 2), 5339 + Utility.random(4, 5), 0);
+          		    Position position8 = new Position(2265 + Utility.random(2, 3), 5339 + Utility.random(4, 5), 0);
           		
           			if(Utility.random(1, 200) == 200) {
               		    GroundItem.createGlobal(player, item2, position);  
@@ -121,23 +123,23 @@ public class GalvekUtility {
         Galvek.unregister();
     }
 
-    public enum SpawnData {
-        LEVEL_18("lvl 46 wild near Spider Hill", new Position(3135, 3888, 0)),
-        LEVEL_19("lvl 16 wild near Bone Yard", new Position(3273, 3648, 0)),
-        LEVEL_28("lvl 51 wild near Rogues Castle", new Position(3266, 3924, 0)),
+    public enum SpawnData1 {
+        LEVEL_46("lvl 46 wild near Spider Hill", new Position(3135, 3888, 0)),
+        LEVEL_16("lvl 16 wild near Bone Yard", new Position(3273, 3648, 0)),
+        LEVEL_51("lvl 51 wild near Rogues Castle", new Position(3266, 3924, 0)),
         LEVEL_41("lvl 41 wild near 19 Portal", new Position(3197, 3670, 0)),
-        LEVEL_52("lvl 52 wild near obelisk", new Position(3304, 3929, 0)),
+        LEVEL_47("lvl 47 wild near obelisk", new Position(3308, 3892, 0)),
         LEVEL_53("lvl 53 wild near scorpia's cave entrance", new Position(3211, 3944, 0));
 
         public final String location;
         public final Position position;
 
-        SpawnData(String location, Position position) {
+        SpawnData1(String location, Position position) {
             this.location = location;
             this.position = position;
         }
 
-        public static SpawnData generate() {
+        public static SpawnData1 generate() {
             return Utility.randomElement(values());
         }
     }
