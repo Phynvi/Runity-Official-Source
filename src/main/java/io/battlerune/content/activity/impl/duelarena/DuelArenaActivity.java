@@ -203,7 +203,7 @@ public class DuelArenaActivity extends Activity {
             players.forEach(it -> it.speak(Integer.toString(4 - count)));
         } else if (count == 4) {
             players.forEach(it -> it.speak("FIGHT!"));
-            //start();
+          //  start();
         } 
 
         count++;
