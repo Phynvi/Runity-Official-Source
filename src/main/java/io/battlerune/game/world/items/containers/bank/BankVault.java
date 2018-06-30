@@ -15,7 +15,6 @@ import io.battlerune.util.Utility;
  *
  * @author Daniel
  * @since 12-1-2017.
- * @edited by Adam_#6723
  */
 public class BankVault {
 

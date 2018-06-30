@@ -190,6 +190,9 @@ public final class Config {
     /** The default, i.e. onSpawn, location. */
     public static final Position DEFAULT_POSITION = new Position(3086, 3501, 0);
     
+    
+    public static final Position RAIDS = new Position(1233, 3566, 0);
+
     /** **/
     public static final Position STORES_POSITION = new Position(3164, 3470, 0);
     

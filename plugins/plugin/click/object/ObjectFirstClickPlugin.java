@@ -93,6 +93,43 @@ public class ObjectFirstClickPlugin extends PluginContext {
             	player.move(2272, 4054);
                 break;
     */
+         
+            
+            //Raids Entrance Door!
+            case 29777:
+                player.send(new SendFadeScreen("Welcome to the Raids!", 1, 3));
+                player.move(new Position(3308, 5193, 0));
+            	break;
+            	
+            /**
+             * Raids First Wave out of 3 on the first floor.
+             * This wave has three different rooms that players potientally land in.
+             * The bosses will be easier due to the fact that Raids will be possible to solo.
+             */
+            case 29789:
+            	if (player.getY() <= object.getY()) {
+                
+            if(Utility.random(1, 3 ) == 1) {
+            	player.move(new Position(3307, 5208, 0));
+            	player.message("You have entered the first boss wave, there's no turning back now! MUHAHAH");
+            	player.message("[RAIDS] NPC W.E WaveeE");
+
+            }
+            if(Utility.random(1, 3) == 2) {
+            	player.move(new Position(3343, 5258, 0));
+            	player.message("You have entered the first boss wave, there's no turning back now! MUHAHAH");
+            	player.message("[RAIDS] NPC W.E Wave");
+
+            }
+            if(Utility.random(1, 3) == 3) {
+            	player.move(new Position(3280, 5249, 0));
+            	player.message("You have entered the first boss wave, there's no turning back now! MUHAHAH");
+            	player.message("[RAIDS] Vespula Wave");
+            }
+       }
+            break;
+            	
+            	
             case 23555:
                 if (player.skills.getLevel(Skill.AGILITY) <= 52) {
                     player.message("You cannot complete this course");

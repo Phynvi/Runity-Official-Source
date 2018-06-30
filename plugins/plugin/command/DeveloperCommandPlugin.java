@@ -220,6 +220,13 @@ public class DeveloperCommandPlugin extends CommandExtension {
                 }
             }
         });
+        commands.add(new Command("raids") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+                Teleportation.teleport(player, Config.RAIDS);
+
+            }
+        });
 
         commands.add(new Command("gearup") {
             @Override

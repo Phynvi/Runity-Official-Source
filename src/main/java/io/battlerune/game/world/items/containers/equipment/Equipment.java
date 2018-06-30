@@ -34,8 +34,7 @@ import java.util.stream.IntStream;
  * The container that manages the equipment for a player.
  *
  * @author lare96 <http://github.com/lare96>  <--- Useless fucking cunt, so many unresolved issues he left out.
- * @author Adam_#6723 Because lare96 did a fucking shit job with this.
- * @author 
+ * @author adam Trinity Because lare96 did a fucking shit job with this.
  */
 public final class Equipment extends ItemContainer {
 
