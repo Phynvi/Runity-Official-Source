@@ -1,12 +1,13 @@
 package plugin.click.button;
 
 
-import io.battlerune.content.activity.impl.VorkathActivity;
 import io.battlerune.content.activity.impl.cerberus.CerberusActivity;
 import io.battlerune.content.activity.impl.kraken.KrakenActivity;
+import io.battlerune.content.activity.impl.vorkath.VorkathActivity;
 import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
+import io.battlerune.content.store.Store;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -127,19 +128,14 @@ public class BossInformationButtonPlugin extends PluginContext {
         }
         
         if(button == -14080){
-    		if(player.skills.getLevel(Skill.SLAYER) >= 99) {
-            Teleportation.teleport(player, new Position(2272, 4051, 0), 20, () -> VorkathActivity.create(player));
-            player.send(new SendMessage("You have teleported to Vorkath Instance!"));
-        	} else {
-    			player.message("You need a Slayer Level of 99 to teleport to this boss!");
-        	}
-        }
-        
+    			DialogueFactory factory = player.dialogueFactory;
+                factory.sendOption("Pay 100,000 coins for instanced vorkath?", () -> VorkathActivity.CreatePaidInstance(player), 
+                		"avoid paying, and head over to the non-instanced version?", () -> VorkathActivity.CreateUnPaidInstance(player),
+                		"Nevermind", factory::clear);
+        		factory.execute();
 
-
-
-
-
+                
+        	} 
         return false;
     }
 }

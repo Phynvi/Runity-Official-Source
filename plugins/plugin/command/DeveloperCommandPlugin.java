@@ -14,8 +14,8 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import io.battlerune.Config;
-import io.battlerune.content.activity.impl.VorkathActivity;
 import io.battlerune.content.activity.impl.cerberus.CerberusActivity;
+import io.battlerune.content.activity.impl.vorkath.VorkathActivity;
 import io.battlerune.content.activity.randomevent.impl.MimeEvent;
 import io.battlerune.content.bot.PlayerBot;
 import io.battlerune.content.bot.objective.BotObjective;

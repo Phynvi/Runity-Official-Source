@@ -13,7 +13,7 @@ public class Hit {
     private int damage;
 
     /** The hitsplat type. */
-    private Hitsplat hitsplat;
+    protected Hitsplat hitsplat;
 
     /** The hit icon. */
     private HitIcon hitIcon;
@@ -31,7 +31,7 @@ public class Hit {
      */
     public Hit(int damage, Hitsplat hitsplat, HitIcon hitIcon, boolean accurate) {
         this.damage = damage;
-        this.hitsplat = hitsplat;
+        this.setHitsplat(hitsplat);
         this.hitIcon = hitIcon;
         this.accurate = accurate;
     }
@@ -145,17 +145,21 @@ public class Hit {
     }
 
     public void set(Hitsplat hitsplat) {
-        this.hitsplat = hitsplat;
+        this.setHitsplat(hitsplat);
     }
 
     public void setAs(Hit other) {
         this.damage = other.damage;
         this.hitIcon = other.hitIcon;
-        this.hitsplat = other.hitsplat;
+        this.setHitsplat(other.getHitsplat());
         this.accurate = other.accurate;
     }
 
     public void setAccurate(boolean accurate) {
         this.accurate = accurate;
     }
+
+	public void setHitsplat(Hitsplat hitsplat) {
+		this.hitsplat = hitsplat;
+	}
 }

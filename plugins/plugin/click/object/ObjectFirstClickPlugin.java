@@ -88,11 +88,11 @@ public class ObjectFirstClickPlugin extends PluginContext {
             }
             
             
-        /*    case 31990:
+           case 31990:
             	player.animate(839);
-            	player.move(2272, 4054);
+            	player.move(new Position(2272, 4054));
                 break;
-    */
+   
          
             
             //Raids Entrance Door!
