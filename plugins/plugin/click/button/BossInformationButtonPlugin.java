@@ -116,8 +116,11 @@ public class BossInformationButtonPlugin extends PluginContext {
         }
         if(button == -14095){
     		if(player.skills.getLevel(Skill.SLAYER) >= 75) {
-            Teleportation.teleport(player, new Position(1240, 1226, 0), 20, () -> CerberusActivity.create(player));
-            player.send(new SendMessage("You have teleported to Cerberus!"));
+    			DialogueFactory factory = player.dialogueFactory;
+                factory.sendOption("Pay 75,000 coins for instanced Cerberus?", () -> CerberusActivity.CreatePaidInstance(player), 
+                		"avoid paying, and head over to the non-instanced version?", () -> CerberusActivity.CreateUnPaidInstance(player),
+                		"Nevermind", factory::clear);
+        		factory.execute();
         	} else {
     			player.message("You need a Slayer Level of 75 And above to teleport to this boss!");
         	}

@@ -107,27 +107,19 @@ public class VorkathActivity extends Activity {
 		player.face(vorkath.getPosition());
 		pause();
 	}
-
-
-
 	@Override
 	public boolean canTeleport(Player player) {
 		return true;
 	}
-
 	@Override
     public void finish() {
         boolean successfull = vorkath.isDead();
-
         cleanup();
         remove(player);
-
         if (successfull) {
             player.activityLogger.add(ActivityLog.VORKATH);
             AchievementHandler.activate(player, AchievementKey.VORKATH);
             player.message("Congratulations, you have killed the Vorkath. Fight duration: @red@" + Utility.getTime(player.gameRecord.end(ActivityType.VORKATH)) + "</col>.");
-
-
             restart(10, () -> {
                 if (Area.inVorkath(player)) {
                     create(player);
@@ -137,30 +129,24 @@ public class VorkathActivity extends Activity {
             });
         }
     }
-
 	@Override
 	public void cleanup() {
 		if (vorkath != null && vorkath.isRegistered())
 			vorkath.unregister();
 	}
-
 	@Override
 	protected boolean clickObject(Player player, ObjectInteractionEvent event) {
 		return true;
 	}
-
-
 	@Override
 	protected Optional<VorkathActivityListener> getListener() {
 		return Optional.of(listener);
 	}
-	
 	 @Override
 	    public void onLogout(Player player) {
 	        cleanup();
 	        remove(player);
 	    }
-
 	    @Override
 	    public void onDeath(Mob mob) {
 	        if (mob.isNpc() && mob.getNpc().equals(vorkath)) {
@@ -170,7 +156,6 @@ public class VorkathActivity extends Activity {
 
 	        super.onDeath(mob);
 	    }
-
 	    @Override
 	    public void onRegionChange(Player player) {
 	        if (!Area.inVorkath(player)) {
@@ -178,17 +163,12 @@ public class VorkathActivity extends Activity {
 	            remove(player);
 	        }
 	    }
-
 	    @Override
 	    public ActivityDeathType deathType() {
 	        return ActivityDeathType.PURCHASE;
 	    }
-
-
 	    @Override
 	    public ActivityType getType() {
 	        return ActivityType.VORKATH;
 	    }
-	    
-
 }

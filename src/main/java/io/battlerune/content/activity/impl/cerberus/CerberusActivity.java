@@ -6,10 +6,13 @@ import java.util.Optional;
 import java.util.Set;
 
 import io.battlerune.Config;
+import io.battlerune.content.ActivityLog;
 import io.battlerune.content.achievement.AchievementHandler;
 import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityType;
+import io.battlerune.content.dialogue.DialogueFactory;
+import io.battlerune.content.dialogue.Expression;
 import io.battlerune.content.event.impl.ObjectInteractionEvent;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.game.world.World;
@@ -46,6 +49,26 @@ public class CerberusActivity extends Activity {
 		player.gameRecord.start();
 		return minigame;
 	}
+	
+	  public static void CreatePaidInstance(Player player) {
+		   if(player.bank.contains(995, 75000)) {
+			   player.bank.remove(995, 75000);
+	           Teleportation.teleport(player, new Position(1240, 1226, 0), 20, () -> CerberusActivity.create(player));
+	           player.send(new SendMessage("You have teleported to the Instanced Version of Cerberus"));
+	           player.send(new SendMessage("75,000 coins has been taken out of your bank, as a fee."));
+
+			   } else {
+	   			DialogueFactory factory = player.dialogueFactory;
+	       	   Teleportation.teleport(player, new Position(1240, 1226, 0));
+	           factory.sendNpcChat(5608, Expression.HAPPY, "You need to have 75,000 in your bank!");
+	           player.message("You need to have 75,000 in your bank!");
+			   }
+	   }
+	   
+	   public static void CreateUnPaidInstance(Player player) {
+	       player.send(new SendMessage("You have teleported to the Non-Instanced Version of Cerberus"));
+	      	  Teleportation.teleport(player, new Position(1240, 1226, 0));
+	   }
 
 	@Override
 	public void onDeath(Mob mob) {
@@ -125,9 +148,27 @@ public class CerberusActivity extends Activity {
 	public boolean canTeleport(Player player) {
 		return true;
 	}
-
+	//new method = good code.
 	@Override
-	public void finish() {
+    public void finish() {
+        boolean successfull = cerberus.isDead();
+        cleanup();
+        remove(player);
+        if (successfull) {
+            player.activityLogger.add(ActivityLog.CERBERUS);
+            player.message("Congratulations, you have killed the Cerberus. Fight duration: @red@" + Utility.getTime(player.gameRecord.end(ActivityType.CERBERUS)) + "</col>.");
+            restart(10, () -> {
+                if (Area.inCerberus(player)) {
+                    create(player);
+                } else {
+                    remove(player);
+                }
+            });
+        }
+    }
+
+	/*@Override
+	public void finish() { //old method, shit code
 		cleanup();
 
 		if (completed) {
@@ -139,7 +180,7 @@ public class CerberusActivity extends Activity {
 
 		remove(player);
 		player.message("Please teleport back to Cerberus to fight him again!");
-	}
+	}*/
 
 	@Override
 	public void cleanup() {
