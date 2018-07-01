@@ -268,19 +268,22 @@ public class Galvek extends MultiStrategy {
             attacker.animate(new Animation(7904, UpdatePriority.HIGH));
             PROJECTILE.send(attacker, new Position(2277, 4057));
             //TODO Iterate it over the spawnData, and if the spawndata is equal to the correct value from that enum, than edit the Position of the Tsunami NPC.
-
             
-           
+            //done
             
-            if(GalvekUtility.SpawnData1.LEVEL_46 != null) {
+           SpawnData1 data = GalvekUtility.spawn;
             World.schedule(4, () -> {
-                Npc tsunami = new Npc(8099, new Position(3141, 3896, 0)) {
+                Npc tsunami = new Npc(8099, data.getTsunami()) {
+    	
                     @Override
                     public void appendDeath() {
                         super.appendDeath();
                     
                     }
                 };
+              	for(int x = 1; x < 10; x++) {
+            		System.out.println("SPAWNING TSUNAMI");
+            	}
                 tsunami.register();
                 tsunami.walkTo(defender, () -> {
                     World.sendGraphic(new Graphic(1460, true), tsunami.getPosition());
@@ -288,26 +291,6 @@ public class Galvek extends MultiStrategy {
                     tsunami.unregister();
                 });
             });
-            }
-            
-            if(GalvekUtility.SpawnData1.LEVEL_16 != null) {
-                World.schedule(4, () -> {
-                    Npc tsunami = new Npc(8099, new Position(3266, 3651, 0)) {
-                        @Override
-                        public void appendDeath() {
-                            super.appendDeath();
-                        
-                        }
-                    };
-                    tsunami.register();
-                    tsunami.walkTo(defender, () -> {
-                        World.sendGraphic(new Graphic(1460, true), tsunami.getPosition());
-                        defender.damage(new Hit(60 * tsunami.getCurrentHealth() / tsunami.getMaximumHealth()));
-                        tsunami.unregister();
-                    });
-                });
-                }
-            
             
         }
 
