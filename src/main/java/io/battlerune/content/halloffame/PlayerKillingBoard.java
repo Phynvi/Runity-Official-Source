@@ -5,7 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -22,10 +26,12 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
  */
 public class PlayerKillingBoard {
 
-	static List<FameBoardPlayer> player = new ArrayList<>();
-
+	static List<FameBoardPlayer> player = new ArrayList<FameBoardPlayer>();
+	static List<FameBoardPlayer> ordered_players = new ArrayList<FameBoardPlayer>();
+	
 	public static void main(String[] args) {
 		load();
+	
 	}
 
 	public static void load() {
@@ -44,6 +50,10 @@ public class PlayerKillingBoard {
 		}
 		System.out.println("Added " + player.size() + " Players to the database!");
 
+	}
+	
+	private static FameBoardPlayer getOrderedList() {
+		return Collections.max(player, new FameBoardComparer());
 	}
 
 	private static PlayerRight getPlayerRank(String username) {
