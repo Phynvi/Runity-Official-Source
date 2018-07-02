@@ -14,6 +14,9 @@ import io.battlerune.content.activity.impl.school.SchoolActivity;
 import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.content.emote.EmoteHandler;
 import io.battlerune.content.ffa.FreeForAll;
+import io.battlerune.content.halloffame.FameBoard;
+import io.battlerune.content.halloffame.FameBoardInterface;
+import io.battlerune.content.halloffame.PlayerKillingBoard;
 import io.battlerune.content.presetInterface.PresetInterfaceHandler;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.teleport.TeleportHandler;
@@ -110,6 +113,66 @@ public class PlayerCommandPlugin extends CommandExtension {
             }
         });
         
+        commands.add(new Command("commands", "command") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+                player.send(new SendString("Commands List", 37103));
+                player.send(new SendString("", 37107));
+
+                // reset
+                for (int i = 0; i < 50; i++) {
+                    player.send(new SendString("", i + 37111));
+                }
+
+                final Set<String> set = new HashSet<>();
+                int count = 0;
+
+                for (CommandExtension extension : extensions) {
+
+                    if (!extension.canAccess(player)) {
+                        continue;
+                    }
+
+                    final String clazzName = extension.getClass().getSimpleName().replace("CommandPlugin", "");
+
+                    player.send(new SendString(clazzName + " Commands", count + 37111));
+                    count++;
+
+                    for (Map.Entry<String, Command> entry : extension.multimap.entries()) {
+                        if (count >= 100) {
+                            break;
+                        }
+
+                        if (set.contains(entry.getKey())) {
+                            continue;
+                        }
+
+                        final Command command = entry.getValue();
+
+                        final StringBuilder builder = new StringBuilder();
+
+                        for (int i = 0; i < command.getNames().length; i++) {
+                            String name = command.getNames()[i];
+                            builder.append("::");
+                            builder.append(name);
+                            if (i < command.getNames().length - 1) {
+                                builder.append(", ");
+                            }
+                        }
+
+                        player.send(new SendString(builder.toString(), count + 37111));
+
+                        set.addAll(Arrays.asList(command.getNames()));
+
+                        count++;
+                    }
+                }
+
+                player.send(new SendScrollbar(37100, count * 22));
+                player.interfaceManager.open(37100);
+
+            }
+        });
         commands.add(new Command("defaultbank") {
             @Override
             public void execute(Player player, CommandParser parser) {
@@ -120,7 +183,13 @@ public class PlayerCommandPlugin extends CommandExtension {
                 player.bank.open();
             }
         });
-        
+        commands.add(new Command("nigger") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+            	PlayerKillingBoard.load();
+                FameBoardInterface.open(FameBoard.PVP, player);
+            }
+        });
         commands.add(new Command("resetskills", "resetskill", "reset") {
             @Override
             public void execute(Player player, CommandParser parser) {

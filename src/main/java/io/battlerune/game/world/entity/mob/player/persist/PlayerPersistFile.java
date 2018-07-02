@@ -555,6 +555,18 @@ public final class PlayerPersistFile implements PlayerPersistable {
                 }
             },
 
+            new PlayerJSONProperty("player-index") {
+                @Override
+                void read(Player player, JsonElement property) {
+                    player.setIndex(property.getAsInt());
+                }
+
+                @Override
+                Object write(Player player) {
+                    return player.getIndex();
+                }
+            },
+            
             new PlayerJSONProperty("kills") {
                 @Override
                 void read(Player player, JsonElement property) {
