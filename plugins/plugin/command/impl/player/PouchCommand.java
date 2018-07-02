@@ -15,7 +15,7 @@ public class PouchCommand implements Command {
 		} else {
 
 			player.send(new SendInputAmount("Enter the amount of coins you want to withdraw:", 10,
-			input -> player.bankVault.withdraw(Long.parseLong(input))));
+					input -> player.bankVault.withdraw(Long.parseLong(input))));
 		}
 	}
 
@@ -23,5 +23,4 @@ public class PouchCommand implements Command {
 	public boolean canUse(Player player) {
 		return true;
 	}
-
 }

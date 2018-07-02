@@ -45,7 +45,8 @@ public final class CommandPacketListener implements PacketListener {
 		player.forClan(channel -> channel.activateTask(ClanTaskKey.SEND_CLAN_MESSAGE, player.getName()));
 
 		String[] command = input.split(" ");
-		Command plugin = CommandManager.plugin.get(input);
+		
+		Command plugin = CommandManager.plugin_input.get(input);
 		if (player != null && plugin != null) {
 			if (plugin.canUse(player)) {
 				plugin.execute(player, command);
