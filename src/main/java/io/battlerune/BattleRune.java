@@ -8,6 +8,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import io.battlerune.content.WellOfGoodwill;
 import io.battlerune.content.activity.record.GlobalRecords;
 import io.battlerune.content.clanchannel.ClanRepository;
+import io.battlerune.content.command.CommandManager;
 import io.battlerune.content.itemaction.ItemActionRepository;
 import io.battlerune.content.mysterybox.MysteryBox;
 import io.battlerune.content.skill.SkillRepository;
@@ -89,12 +90,12 @@ public final class BattleRune {
         NpcDefinition.createParser().run();
         new CombatProjectileParser().run();
         CombatListenerManager.load();
+        CommandManager.load();
         new NpcSpawnParser().run();
         new NpcDropParser().run();
         new NpcForceChatParser().run();
         new StoreParser().run();
         new GlobalObjectParser().run();
-
     }
 
     /**

@@ -5,16 +5,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 
 /**
  * Handles the loading and fetching data for the player killing board statistics
@@ -24,39 +22,55 @@ import io.battlerune.game.world.entity.mob.player.Player;
  */
 public class PlayerKillingBoard {
 
-	public static List<Player> player = new ArrayList<>();
+	static List<FameBoardPlayer> player = new ArrayList<>();
 
 	public static void main(String[] args) {
-		player.clear();
 		load();
 	}
 
 	public static void load() {
-		File char_dir = new File("./data/profile/save/");
-		File[] chars = char_dir.listFiles();
+		File dir = new File("./data/profile/save/");
+		File[] chars = dir.listFiles();
+		String name;
 
 		for (int i = 0; i < chars.length; i++) {
-			if (!player.contains(
-					World.getPlayerBySlot(getPlayerIndex(chars[i].getName().toString().replaceAll(".json", ""))).get())
-					&& !World.getPlayerBySlot(getPlayerIndex(chars[i].getName().toString().replaceAll(".json", "")))
-							.get().isBot
-					&& World.getPlayerBySlot(getPlayerIndex(chars[i].getName().toString().replaceAll(".json", "")))
-							.get() != null) {
-				player.add(World.getPlayerBySlot(getPlayerIndex(chars[i].getName().toString().replaceAll(".json", "")))
-						.get());
+			name = chars[i].getName().replaceAll(".json", "");
+			for (int j = 0; j < player.size(); j++) {
+				if (player.get(j).getUsername().equalsIgnoreCase(name)) {
+					player.remove(j);
+				}
 			}
+			player.add(new FameBoardPlayer(getPlayerRank(name), name, getPlayerKills(name)));
 		}
+		System.out.println("Added " + player.size() + " Players to the database!");
 
-		System.out.println("Loaded " + player.size() + " Player [Pvp board] data!");
 	}
 
-	private static int getPlayerIndex(String player) {
-		try (FileReader fileReader = new FileReader("./data/profile/save/" + player + ".json")) {
+	private static PlayerRight getPlayerRank(String username) {
+		try (FileReader fileReader = new FileReader("./data/profile/save/" + username + ".json")) {
 			JsonParser fileParser = new JsonParser();
+			Gson builder = new GsonBuilder().create();
 			JsonObject reader = (JsonObject) fileParser.parse(fileReader);
 
-			if (reader.has("player-index")) {
-				return reader.get("player-index").getAsInt();
+			if (reader.has("player-rights")) {
+				return builder.fromJson(reader.get("player-rights"), PlayerRight.class);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	private static int getPlayerKills(String username) {
+		try (FileReader fileReader = new FileReader("./data/profile/save/" + username + ".json")) {
+			JsonParser fileParser = new JsonParser();
+			Gson builder = new GsonBuilder().create();
+			JsonObject reader = (JsonObject) fileParser.parse(fileReader);
+
+			if (reader.has("kills")) {
+				return reader.get("kills").getAsInt();
 			}
 
 		} catch (FileNotFoundException e) {
