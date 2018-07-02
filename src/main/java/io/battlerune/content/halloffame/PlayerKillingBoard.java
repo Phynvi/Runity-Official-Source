@@ -36,8 +36,12 @@ public class PlayerKillingBoard {
 		File[] chars = char_dir.listFiles();
 
 		for (int i = 0; i < chars.length; i++) {
-			if (!player.contains(World
-					.getPlayerBySlot(getPlayerIndex(chars[i].getName().toString().replaceAll(".json", ""))).get())) {
+			if (!player.contains(
+					World.getPlayerBySlot(getPlayerIndex(chars[i].getName().toString().replaceAll(".json", ""))).get())
+					&& !World.getPlayerBySlot(getPlayerIndex(chars[i].getName().toString().replaceAll(".json", "")))
+							.get().isBot
+					&& World.getPlayerBySlot(getPlayerIndex(chars[i].getName().toString().replaceAll(".json", "")))
+							.get() != null) {
 				player.add(World.getPlayerBySlot(getPlayerIndex(chars[i].getName().toString().replaceAll(".json", "")))
 						.get());
 			}
