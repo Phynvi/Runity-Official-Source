@@ -18,8 +18,8 @@ public class NewPresetsButtonPlugin extends PluginContext {
 	/** RuneZerker Inventory! Array **/
 	public Item[] Melee126Inventory() {
 		return new Item[] { new Item(12695), new Item(3024, 2), new Item(9075, 80), new Item(1215), new Item(3024),
-				new Item(6685), new Item(560, 40), new Item(391), new Item(391), new Item(391), new Item(557, 200),
-				new Item(391, 12), new Item(3144, 4),
+				new Item(6685), new Item(560, 40), new Item(391, 3), new Item(557, 200),
+				new Item(391, 12), new Item(3144, 3),
 
 		};
 	}

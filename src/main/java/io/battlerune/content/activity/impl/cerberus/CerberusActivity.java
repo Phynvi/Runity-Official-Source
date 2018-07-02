@@ -111,7 +111,6 @@ public class CerberusActivity extends Activity {
 		if (id == CERBERUS) {
 			cerberus = null;
 			 Teleportation.teleport(player, Config.DEFAULT_POSITION, 20, () -> {
-                 player.send(new SendMessage("Welcome to the donator zone, " + player.getName() + "!"));
              });
 		} else {
 			ghosts.remove(mob.getNpc());

@@ -138,8 +138,8 @@ public class Slayer {
             return;
         }
 
-        if (points < 100) {
-            player.message("You need 100 slayer points to block a task.");
+        if (points < 100 && !PlayerRight.isDonator(player) || !PlayerRight.isDeveloper(player)) {
+            player.message("You need 100 slayer points to block a task, unless you are a donator.");
             return;
         }
 
@@ -152,9 +152,10 @@ public class Slayer {
             player.message("This task is already blocked... but how did you get it again? mmm...");
             return;
         }
-
         blocked.add(task);
+        if(!PlayerRight.isDonator(player) || !PlayerRight.isDeveloper(player)) {
         points -= 100;
+        }
         task = null;
         amount = 0;
         totalCancelled++;
@@ -175,7 +176,8 @@ public class Slayer {
     }
 
     /** Activates killing a slayer npc. */
-    public void activate(Npc npc, int killAmount, boolean partnerKilled) {
+    @SuppressWarnings("static-access")
+	public void activate(Npc npc, int killAmount, boolean partnerKilled) {
         if (task != null) {
             if (task.valid(npc.id)) {
                 amount -= killAmount;
@@ -210,6 +212,25 @@ public class Slayer {
                     }
                     else
                     {
+                    	if(PlayerRight.isDonator(player)) {
+                    		rewardPts*= 2;
+                    	}
+                    	if(PlayerRight.isSuper(player)) {
+                    		rewardPts*= 2;
+                    	}
+                    	if(PlayerRight.isExtreme(player)) {
+                    		rewardPts*= 3;
+                    	}
+                    	if(PlayerRight.isElite(player)) {
+                    		rewardPts*= 3;
+                    	}
+                    	if(PlayerRight.isKing(player)) {
+                    		rewardPts*= 4;
+                    	}
+                    	if(PlayerRight.isSupreme(player)) {
+                    		rewardPts*= 4;
+                    	}
+                    	
                         player.message("Congratulations, you have completed your assigned task! You have earned " + rewardPts + " slayer points!");
                     }
                     points += rewardPts;

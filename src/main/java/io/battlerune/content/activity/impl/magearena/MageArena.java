@@ -149,7 +149,7 @@ public class MageArena extends Activity {
             dialogue = new String[]{"Muhahaha!", "What did I say?! Pathetic!!", "Pay me and try again."};
         } else {
             //points += 15;
-            player.setkolodionPoints(player.getkolodionPoints() + 15);
+              player.setkolodionPoints(player.getkolodionPoints() + 15);
     		  player.message("<img=14>You now have @red@" + player.getkolodionPoints() + " Kolodion Points!"); 
             dialogue = new String[]{"Well I'll be a goblin's ballsack!", "You actually did it! You have proven me wrong.", "Jump into that pool and earn claim your reward."};
             player.send(new SendMessage("You have completed Kolodion's arena. Final time: @red@" + Utility.getTime(time) + "</col>. Earned Points: @red@" + player.getkolodionPoints() + "</col>."));

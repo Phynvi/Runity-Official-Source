@@ -16,7 +16,7 @@ public class RottenTomatoePlugin extends PluginContext {
 
     @Override
     protected boolean itemOnNpc(Player player, ItemOnNpcEvent event) {
-        if (!PlayerRight.isDonator(player))
+        if (!PlayerRight.isDonator(player) || !PlayerRight.isDeveloper(player) || !PlayerRight.isManagement(player))
             return false;
 
         Item item = event.getUsed();

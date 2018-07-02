@@ -10,12 +10,6 @@ public class PresetInterfaceHandler {
 	 * @param player
 	 */
          public void open(Player player) {
-        	 if(player == null) {
-        		 return;
-        	 }
-        	 if(player.getCombat().inCombat()) {
-        		 return;
-        	 }
              player.inventory.refresh();
              player.equipment.refresh();
         	 sendStrings(player);
