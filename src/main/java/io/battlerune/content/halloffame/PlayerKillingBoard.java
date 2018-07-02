@@ -35,7 +35,7 @@ public class PlayerKillingBoard {
 		File char_dir = new File("./data/profile/save/");
 		File[] chars = char_dir.listFiles();
 
-		for (int i = 0; i < chars.length; i++) {
+		for (int i = 0; i < chars.length; i++){
 			if (!player.contains(
 					World.getPlayerBySlot(getPlayerIndex(chars[i].getName().toString().replaceAll(".json", ""))).get())
 					&& !World.getPlayerBySlot(getPlayerIndex(chars[i].getName().toString().replaceAll(".json", "")))
