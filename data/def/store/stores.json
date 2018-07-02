@@ -407,6 +407,33 @@
 			    "restock": true,
 			    "sellType": "NONE",
 			    "items": [
+			              {
+							     "id": 7462,
+							     "value": 1,
+							     "amount": 100
+							  },
+			              {
+								     "id": 10551,
+								     "value": 1,
+								     "amount": 100
+								  },
+			              {
+									     "id": 10548,
+									     "value": 1,
+									     "amount": 100
+									  },
+			              {
+										     "id": 6570,
+										     "value": 1,
+										     "amount": 100
+										  },  
+			              
+			              {
+											     "id": 21295,
+											     "value": 1,
+											     "amount": 100
+											  },    
+			              
 			      {
 			        "id": 4745,
 			        "value": 50,
@@ -913,6 +940,26 @@
       }
     ]
   },
+  {
+	    "name": "Exclusive Donator Store",
+	    "currency": "COINS",
+	    "restock": true,
+	    "sellType": "NONE",
+	    "items": [
+	      {
+	        "id": 10033,
+	        "amount": 1000
+	      },
+	      {
+	        "id": 10034,
+		    "amount": 1000
+		  },
+	      {
+	        "id": 11959,
+	        "amount": 1000
+	      }
+	    ]
+	  },
   {
     "name": "The Royal Store",
     "currency": "ROYAL_POINT",

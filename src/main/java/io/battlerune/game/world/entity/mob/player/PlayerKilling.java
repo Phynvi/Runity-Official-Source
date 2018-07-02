@@ -40,10 +40,12 @@ public class PlayerKilling {
     
     	/** User has a 1/100 Chance of recieveing a blood key.**/
     	int Random_Chance = Utility.random(1, 100);
-        if(Random_Chance == 5) {
+        if(Random_Chance == 5 && PlayerRight.isDonator(killer)) {
         	killer.inventory.add(6640, 1);
         killer.message("The gods have looked down upon you and smiled! They have rewarded you with" + "@red@ 1x Blood Key!");
         World.sendMessage("<col=8714E6> A blood crystal was given to " + killer.getName() + ", a clan member of " + killer.clanChannel.getName() + "!");
+        World.sendMessage("<col=8714E6> To get a chance of obtaining a blood key, you must be a donator or higher!");
+
         }
 
         killer.forClan(channel -> {

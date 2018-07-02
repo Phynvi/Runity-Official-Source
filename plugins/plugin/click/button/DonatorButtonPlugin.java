@@ -44,26 +44,31 @@ public class DonatorButtonPlugin extends PluginContext {
         }
         
         if(button == -15099) {
-            Store.STORES.get("PK Supply Store").open(player);
+            Store.STORES.get("Pk Rewards Shop 1").open(player);
        //  player.message("Donator's can purchase the pets from here! They are untradeable but have amazing benefits!");
         }
         
         if(button == -15095) {
         	
-        	int length = PlayerRight.isDonator(player) ? 60 : 2;
+        	player.message("This feature has been disabled, alternatively you can use the command ::bank");
+        	
+        	/*int length = PlayerRight.isDonator(player) ? 60 : 2;
             if (!player.BankerPetDelay.elapsed(length, TimeUnit.MINUTES)) {
                 player.dialogueFactory.sendNpcChat(396, "You can only do this once every " + length + " minutes!", "Time Passed: " + Utility.getTime(player.BankerPetDelay.elapsedTime())).execute();
                 return true;
             }
             Pets.onSpawn(player, 83, true);
             player.message("You have been granted a personalised Banker NPC For the next 30 Minutes!"); 	
-             
+             */
         	
         }
     
         	
         
         if(button == -15103) {
+        	
+        	player.message("This feature has been disabled, alternatively you can Sarah the nurse located at home.");
+
         /*	
         	 if (!player.restoreDelay.elapsed(15, TimeUnit.MINUTES) && !player.getCombat().inCombat()) {
                  player.dialogueFactory.sendNpcChat(1152, "You can only do this once every " + 2 + " minutes!", "Time Passed: " + Utility.getTime(player.restoreDelay.elapsedTime())).execute();

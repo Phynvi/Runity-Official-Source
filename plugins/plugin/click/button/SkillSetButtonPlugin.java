@@ -4,6 +4,7 @@ import io.battlerune.content.SkillSet;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.UpdateFlag;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.net.packet.out.SendMessage;
@@ -14,10 +15,10 @@ public class SkillSetButtonPlugin extends PluginContext {
 	 * (author adam trinity)
 	 * @see io.battlerune.game.plugin.PluginContext#onClick(io.battlerune.game.world.entity.mob.player.Player, int)
 	 */
-    //@SuppressWarnings("static-access")
-	//@Override
-   // protected boolean onClick(Player player, int button) {
-    	/*
+    @SuppressWarnings("static-access")
+	@Override
+    protected boolean onClick(Player player, int button) {
+    	
         if (!SkillSet.SkillData.forButton(button).isPresent()) {
             return false;
         }
@@ -33,6 +34,10 @@ public class SkillSetButtonPlugin extends PluginContext {
             player.message("Please remove all your equipment before doing this!");
             return true;
         }
+        if(!PlayerRight.isDonator(player)) {
+        	player.message("You have to be a Donator to be able to set your Melee combat stats!");
+        	return true;
+        }
         //if(player.right.isDeveloper(player)) {
         
         SkillSet.SkillData data = SkillSet.SkillData.forButton(button).get();
@@ -47,6 +52,6 @@ public class SkillSetButtonPlugin extends PluginContext {
        // }
         return true;
         
-    }*/
+    }
 }
 

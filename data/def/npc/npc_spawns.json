@@ -2072,6 +2072,16 @@
     }
   },
   {
+	    "id": 5919,
+	    "facing": "SOUTH",
+	    "radius": 0,
+	    "position": {
+	      "x": 3083,
+	      "y": 3511,
+	      "height": 0
+	    }
+	  },
+  {
 	    "id": 305,
 	    "facing": "SOUTH",
 	    "radius": 0,
