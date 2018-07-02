@@ -1,10 +1,14 @@
 package plugin.command;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import io.battlerune.Config;
 import io.battlerune.content.activity.impl.cerberus.CerberusActivity;
 import io.battlerune.content.activity.impl.vorkath.VorkathActivity;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
-import io.battlerune.content.skill.impl.slayer.SlayerTask;
 import io.battlerune.game.plugin.extension.CommandExtension;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
@@ -13,11 +17,76 @@ import io.battlerune.game.world.entity.mob.player.command.CommandParser;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendScrollbar;
+import io.battlerune.net.packet.out.SendString;
 
 public class DonatorCommandPlugin extends CommandExtension {
 
     @Override
     protected void register() {
+    	
+    	commands.add(new Command("commands", "command") {
+            @Override
+            public void execute(Player player, CommandParser parser) {
+                player.send(new SendString("Commands List", 37103));
+                player.send(new SendString("", 37107));
+
+                // reset
+                for (int i = 0; i < 50; i++) {
+                    player.send(new SendString("", i + 37111));
+                }
+
+                final Set<String> set = new HashSet<>();
+                int count = 0;
+
+                for (CommandExtension extension : extensions) {
+
+                    if (!extension.canAccess(player)) {
+                        continue;
+                    }
+
+                    final String clazzName = extension.getClass().getSimpleName().replace("CommandPlugin", "");
+
+                    player.send(new SendString(clazzName + " Commands", count + 37111));
+                    count++;
+
+                    for (Map.Entry<String, Command> entry : extension.multimap.entries()) {
+                        if (count >= 100) {
+                            break;
+                        }
+
+                        if (set.contains(entry.getKey())) {
+                            continue;
+                        }
+
+                        final Command command = entry.getValue();
+
+                        final StringBuilder builder = new StringBuilder();
+
+                        for (int i = 0; i < command.getNames().length; i++) {
+                            String name = command.getNames()[i];
+                            builder.append("::");
+                            builder.append(name);
+                            if (i < command.getNames().length - 1) {
+                                builder.append(", ");
+                            }
+                        }
+
+                        player.send(new SendString(builder.toString(), count + 37111));
+
+                        set.addAll(Arrays.asList(command.getNames()));
+
+                        count++;
+                    }
+                }
+
+                player.send(new SendScrollbar(37100, count * 22));
+                player.interfaceManager.open(37100);
+
+            }
+        });
+        
+    	
         commands.add(new Command( "donorzone", "dzone") {
             @Override
             public void execute(Player player, CommandParser parser) {
