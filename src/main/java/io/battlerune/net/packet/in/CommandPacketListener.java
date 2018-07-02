@@ -1,12 +1,9 @@
 package io.battlerune.net.packet.in;
 
-import java.util.Arrays;
-
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
-import io.battlerune.game.event.impl.CommandEvent;
-import io.battlerune.game.plugin.PluginManager;
+import io.battlerune.content.command.Command;
+import io.battlerune.content.command.CommandManager;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.command.CommandParser;
 import io.battlerune.game.world.entity.mob.player.relations.ChatMessage;
 import io.battlerune.net.packet.ClientPackets;
 import io.battlerune.net.packet.GamePacket;
@@ -23,35 +20,37 @@ import io.battlerune.util.Utility;
 @PacketListenerMeta(ClientPackets.PLAYER_COMMAND)
 public final class CommandPacketListener implements PacketListener {
 
-    @Override
-    public void handlePacket(Player player, GamePacket packet) {
-        final String input = packet.getRS2String().trim().toLowerCase();
+	@Override
+	public void handlePacket(Player player, GamePacket packet) {
+		final String input = packet.getRS2String().trim().toLowerCase();
 
-        if (input.isEmpty() || input.length() > ChatMessage.CHARACTER_LIMIT) {
-            return;
-        }
+		if (input.isEmpty() || input.length() > ChatMessage.CHARACTER_LIMIT) {
+			return;
+		}
 
-        final CommandParser parser = CommandParser.split(input, " ");
+		if (input.startsWith("/")) {
+			if (player.punishment.isMuted()) {
+				player.message("You can not send clan messages while muted!");
+				return;
+			}
 
-        if (parser.getCommand().startsWith("/")) {
-            if (player.punishment.isMuted()) {
-                player.message("You can not send clan messages while muted!");
-                return;
-            }
+			player.forClan(channel -> {
+				final String line = input;
+				channel.chat(player.getName(), Utility.capitalizeSentence(line));
 
-            player.forClan(channel -> {
-                CommandParser copy = CommandParser.split(input, "/");
-                if (copy.hasNext()) {
-                    final String line = copy.nextLine();
-                    channel.chat(player.getName(), Utility.capitalizeSentence(line));
-                }
-            });
-            return;
-        }
+			});
+			return;
+		}
 
-        player.forClan(channel -> channel.activateTask(ClanTaskKey.SEND_CLAN_MESSAGE, player.getName()));
+		player.forClan(channel -> channel.activateTask(ClanTaskKey.SEND_CLAN_MESSAGE, player.getName()));
 
-        PluginManager.getDataBus().publish(player, new CommandEvent(parser));
-    }
+		String[] command = input.split(" ");
+		Command plugin = CommandManager.plugin.get(input);
+		if (player != null && plugin != null) {
+			if (plugin.canUse(player)) {
+				plugin.execute(player, command);
+			}
+		}
+	}
 
 }

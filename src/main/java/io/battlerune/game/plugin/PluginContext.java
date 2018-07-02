@@ -6,13 +6,11 @@ import org.apache.logging.log4j.Logger;
 import io.battlerune.Config;
 import io.battlerune.game.event.*;
 import io.battlerune.game.event.impl.*;
-import io.battlerune.game.event.impl.log.CommandLogEvent;
 import io.battlerune.game.event.impl.log.PickupItemLogEvent;
 import io.battlerune.game.event.listener.PlayerEventListener;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.game.world.entity.mob.player.command.CommandParser;
 import io.battlerune.net.packet.out.SendMessage;
 
 /**
@@ -52,8 +50,6 @@ public class PluginContext implements PlayerEventListener {
                 return handleItemOnObjectEvent(player, (ItemOnObjectEvent) event);
             } else if (event instanceof ItemOnPlayerEvent) {
                 return handleItemOnPlayerEvent(player, (ItemOnPlayerEvent) event);
-            } else if (event instanceof CommandEvent) {
-                return handleCommandEvent(player, (CommandEvent) event);
             } else if (event instanceof ItemContainerContextMenuEvent) {
                 return handleItemContainerContextMenuEvent(player, (ItemContainerContextMenuEvent) event);
             } else if (event instanceof DropItemEvent) {
@@ -210,20 +206,6 @@ public class PluginContext implements PlayerEventListener {
     }
 
     protected boolean modifiableXItemContainer(Player player, ItemContainerContextMenuEvent event) {
-        return false;
-    }
-
-    private boolean handleCommandEvent(Player player, CommandEvent event) {
-        if (handleCommand(player, event.getParser())) {
-            if (Config.LOG_PLAYER) {
-                World.getDataBus().publish(new CommandLogEvent(player, event.getParser()));
-            }
-            return true;
-        }
-        return false;
-    }
-
-    protected boolean handleCommand(Player player, CommandParser parser) {
         return false;
     }
 
