@@ -3,6 +3,8 @@ package io.battlerune.content.consume;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 
+import io.battlerune.Config;
+import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.game.task.impl.AntiVenomTask;
 import io.battlerune.game.task.impl.SuperAntipoisonTask;
 import io.battlerune.game.world.World;
@@ -13,6 +15,7 @@ import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.net.packet.out.SendConfig;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendPoison;
@@ -505,6 +508,11 @@ public enum PotionData {
     
     
     private static void onOverloadEffect(Player player, int skill, BoostType type) {
+    	if(Area.inWilderness(player)) {
+    		Teleportation.teleport(player, Config.DEFAULT_POSITION);
+    		player.send(new SendMessage("You are not allowed to drink overloads in the wilderness!"));
+    		return;
+    	}
         modifySkill(player, skill, type.amount, type.base);
         for(int i = 0; i < 2 ; i++) {
         player.animate(3170);
