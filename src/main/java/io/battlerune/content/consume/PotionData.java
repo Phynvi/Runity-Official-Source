@@ -89,11 +89,11 @@ public enum PotionData {
       OVERLOAD(11730, 11731, 11732, 11733) {
         @Override
         public void onEffect(Player player) {
-            PotionData.onOverloadEffect(player, Skill.ATTACK, BoostType.OVERLOAD);
-            PotionData.onOverloadEffect(player, Skill.STRENGTH, BoostType.OVERLOAD);
-            PotionData.onOverloadEffect(player, Skill.DEFENCE, BoostType.OVERLOAD);
-            PotionData.onOverloadEffect(player, Skill.RANGED, BoostType.OVERLOAD);
-            PotionData.onOverloadEffect(player, Skill.MAGIC, BoostType.OVERLOAD);
+            PotionData.onOverloadEffect(player, Skill.ATTACK, BoostType.OVERLOAD, true);
+            PotionData.onOverloadEffect(player, Skill.STRENGTH, BoostType.OVERLOAD, true);
+            PotionData.onOverloadEffect(player, Skill.DEFENCE, BoostType.OVERLOAD, true);
+            PotionData.onOverloadEffect(player, Skill.RANGED, BoostType.OVERLOAD, true);
+            PotionData.onOverloadEffect(player, Skill.MAGIC, BoostType.OVERLOAD, true);
 
 
         }
@@ -104,7 +104,7 @@ public enum PotionData {
             PotionData.onBasicEffect(player, Skill.ATTACK, BoostType.SUPER);
             PotionData.onBasicEffect(player, Skill.STRENGTH, BoostType.SUPER);
             PotionData.onBasicEffect(player, Skill.DEFENCE, BoostType.SUPER);
-        }
+        }//its got two seperate json files for datas, for loading what, not sure but i think it loads 503 and osrs rev
     },
     ZAMORAK_BREW(2450, 189, 191, 193) {
         @Override
@@ -507,18 +507,31 @@ public enum PotionData {
     }
     
     
-    private static void onOverloadEffect(Player player, int skill, BoostType type) {
-    	if(Area.inWilderness(player)) {
+    private static void onOverloadEffect(Player player, int skill, BoostType type, boolean hasOverloadEffect) {
+    	if(Area.inWilderness(player) && hasOverloadEffect == true) {
     		Teleportation.teleport(player, Config.DEFAULT_POSITION);
+    		player.skills.restoreAll();
     		player.send(new SendMessage("You are not allowed to drink overloads in the wilderness!"));
     		return;
     	}
+    	 int health = player.getCurrentHealth();
+         int damage = health - 1;
+
+         if (damage <= 0) {
+             player.message("You better not eat that!");
+             return;
+         }
+         
+         if (player.getCombat().inCombat()) {
+             player.message("You can not eat this while in combat!");
+             return;
+         }
+         hasOverloadEffect = true;
         modifySkill(player, skill, type.amount, type.base);
-        for(int i = 0; i < 2 ; i++) {
         player.animate(3170);
-        player.damage(new Hit(Utility.random(5, 8)));
+        player.damage(new Hit(5));
         player.speak("OUCH!");
-        }
+        
     }
 
 
