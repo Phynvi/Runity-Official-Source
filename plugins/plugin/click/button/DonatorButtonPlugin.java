@@ -49,7 +49,7 @@ public class DonatorButtonPlugin extends PluginContext {
         }
         
         if(button == -15095) {
-        	
+        	player.interfaceManager.open(15500);
         	player.message("This feature has been disabled, alternatively you can use the command ::bank");
         	
         	/*int length = PlayerRight.isDonator(player) ? 60 : 2;

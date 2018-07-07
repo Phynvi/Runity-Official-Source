@@ -9,7 +9,7 @@ public class DonatorBankCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		if(Area.inWilderness(player)) {
+		if(Area.inWilderness(player) && (!PlayerRight.isDeveloper(player))) {
     		player.message("You cannot open the bank in the wilderness.");
     	} else {
         player.bank.open();

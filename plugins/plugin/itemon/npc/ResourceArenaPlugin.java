@@ -28,13 +28,14 @@ public class ResourceArenaPlugin extends PluginContext {
 
         Item item = event.getUsed();
 
-        if (!SkillRepository.isSkillingItem(item.getId())) {
+     /*   if (!SkillRepository.isSkillingItem(item.getId())) {
             player.dialogueFactory.sendNpcChat(6599, "You can only note skilling items obtained from", "this area.").execute();
             return true;
-        }
+        }*/
 
         if (item.isNoted()) {
-            player.dialogueFactory.sendNpcChat(6599, "I do not un-note items, I only note them!").execute();
+        //    player.dialogueFactory.sendNpcChat(6599, "I do not un-note items, I only note them!").execute();
+            item.unnoted();
             return true;
         }
 
