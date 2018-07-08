@@ -22,12 +22,10 @@ public final class CommandPacketListener implements PacketListener {
 
 	@Override
 	public void handlePacket(Player player, GamePacket packet) {
-		final String input = packet.getRS2String().trim().toLowerCase();
-
-		if (input.isEmpty() || input.length() > ChatMessage.CHARACTER_LIMIT) {
-			return;
-		}
-
+		String input = packet.getRS2String();	
+		String[] parts = input.split(" ");
+        parts[0] = parts[0].toLowerCase();
+        
 		if (input.startsWith("/")) {
 			if (player.punishment.isMuted()) {
 				player.message("You can not send clan messages while muted!");
@@ -43,13 +41,11 @@ public final class CommandPacketListener implements PacketListener {
 		}
 
 		player.forClan(channel -> channel.activateTask(ClanTaskKey.SEND_CLAN_MESSAGE, player.getName()));
-
-		String[] command = input.split(" ");
 		
-		Command plugin = CommandManager.plugin_input.get(input);
-		if (player != null && plugin != null) {
+		Command plugin = CommandManager.plugin_input.get(parts[0]);
+		if (plugin != null) {
 			if (plugin.canUse(player)) {
-				plugin.execute(player, command);
+				plugin.execute(player, parts);
 			}
 		}
 	}

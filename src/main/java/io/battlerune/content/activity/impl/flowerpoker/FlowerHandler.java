@@ -49,6 +49,9 @@ public class FlowerHandler {
 		World.schedule(new ObjectPlacementEvent(gameObject, 50));
 
 		player.message("You have planted " + ItemDefinition.get(getTempFlower().getItemId()).getName());
+		
+		
+		//player.getForceMovement().getStart().
 	}
 
 	public static boolean onFlower(Mob mob) {

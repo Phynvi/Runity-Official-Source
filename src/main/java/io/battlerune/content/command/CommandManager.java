@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import plugin.command.impl.owner.ItemCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
 import plugin.command.impl.player.CommandList;
-import plugin.command.impl.player.DeveloperMasterCommand;
 import plugin.command.impl.player.DiceCommand;
 import plugin.command.impl.player.DiscordCommand;
 import plugin.command.impl.player.DonateCommand;
@@ -38,7 +38,6 @@ import plugin.command.impl.player.Wests;
 
 /**
  * Stores Commands
- * 
  * @author hamza
  *
  */
@@ -94,11 +93,10 @@ public class CommandManager {
 
 
 		/*
-		 * @Developer Commands
+		 * @Owner, @Developer Commands
 		 */
-		plugin.put(new String[] { "master", "masterr" }, new DeveloperMasterCommand());
+		plugin.put(new String[] { "item" }, new ItemCommand());
 
-		
 	
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {

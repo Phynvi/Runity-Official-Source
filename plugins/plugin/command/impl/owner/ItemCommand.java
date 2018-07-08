@@ -1,0 +1,31 @@
+package plugin.command.impl.owner;
+
+import io.battlerune.content.command.Command;
+import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.game.world.items.Item;
+import io.battlerune.util.parser.old.defs.ItemDefinition;
+
+public class ItemCommand implements Command {
+
+	@Override
+	public void execute(Player player, String[] command) {
+		int itemId = Integer.parseInt(command[1]);
+		int amount = Integer.parseInt(command[2]);
+
+		
+		if (player.inventory.getFreeSlots() > amount) {
+			player.inventory.add(new Item(itemId, amount));
+			player.message("[Item Spawner] Added " + amount + " [Amount] : " + itemId + " [Item id]");
+		} else {
+			player.message("[Item Spawner] Please bank your inventory!");
+		}
+
+	}
+
+	@Override
+	public boolean canUse(Player player) {
+		return true;
+	}
+
+}

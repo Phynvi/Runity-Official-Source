@@ -15,7 +15,7 @@ import io.battlerune.net.packet.out.SendPlayerOption;
 
 /**
  * 
- * @author AminR/adamtrinity
+ * @author Nerik#8690
  *
  */
 public class LastManStanding {

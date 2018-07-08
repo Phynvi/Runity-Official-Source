@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 /**
  * Holds all the achievements
  *
- * @author Adam_#6723
+ * @author Nerik#8690
  */
 public enum AchievementList {
     /* Easy achievements */
