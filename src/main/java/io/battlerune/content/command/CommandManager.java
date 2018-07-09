@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import plugin.command.impl.owner.ItemCommand;
+import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
@@ -96,7 +97,7 @@ public class CommandManager {
 		 * @Owner, @Developer Commands
 		 */
 		plugin.put(new String[] { "item" }, new ItemCommand());
-
+		plugin.put(new String[] { "master", "max" }, new MasterCommand());
 	
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {
