@@ -8,6 +8,7 @@ import plugin.command.impl.owner.DeveloperInstanceCommand;
 import plugin.command.impl.owner.ItemCommand;
 import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
+
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
@@ -102,7 +103,7 @@ public class CommandManager {
 		plugin.put(new String[] { "master" }, new MasterCommand());
 		plugin.put(new String[] { "instance" }, new DeveloperInstanceCommand());
 		plugin.put(new String[] { "spawncustoms" }, new SpawnCustomCommand());
-
+		plugin.put(new String[] { "master", "max" }, new MasterCommand());
 	
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {

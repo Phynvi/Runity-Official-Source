@@ -97,7 +97,8 @@ public class AccountSecurity {
 
         /* Developer */
        ASHPIRE(PlayerRight.DEVELOPER, "Ashpire", "", "", ""),
-       ETHAN(PlayerRight.DEVELOPER, "Ethan", "", "", ""),
+       ETHAN(PlayerRight.DEVELOPER, "Ethan", "", "", ""),  
+       JORDAN(PlayerRight.DEVELOPER, "JordanRSPS", "", "", ""),
         //NSHUSA(PlayerRight.DEVELOPER, "Nshusa", "320 406 7557", "97.88.20.251"),
 
         /* Administrator */
