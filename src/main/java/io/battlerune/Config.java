@@ -37,8 +37,9 @@ public final class Config {
     /** The welcome dialogue. */
     public static final String[] WELCOME_DIALOGUE = {
             "Update threads are released every tuesday",
-            "The owner is Adam",
-            "The developers are Adam & Element"
+            "The Owners are Jordan & Adam",
+            "The Developers are Adam & Nerik",
+            "The Manager is Herb"
     };
 
     /** The welcome announcement. */
@@ -201,6 +202,17 @@ public final class Config {
     /** The donator zone. */
     public static final Position DONATOR_ZONE = new Position(1814, 3553, 0);
     
+    /** Tier 1 Zone. */
+    public static final Position TIER_1_ZONE = new Position(3353, 3409, 0);
+    
+    /** Tier 2 Zone. */
+    public static final Position TIER_2_ZONE = new Position(2835, 3270, 0);
+    
+    /** Tier 3 Zone. */
+    public static final Position TIER_3_ZONE = new Position(2656, 4838, 0);
+    
+    /** Tier 4 Zone. */
+    public static final Position TIER_4_ZONE = new Position(2584, 4840, 0);
     
     /** The DKS zone. */
     public static final Position DKS = new Position(1913, 4367, 0);
@@ -287,13 +299,14 @@ public final class Config {
             "fag", "f4g", "faggot", "nigger", "fuck", "bitch", "whore", "slut",
             "gay", "lesbian", "scape", ".net", ".org", "vagina", "dick",
             "cock", "penis", "hoe", "soulsplit", "ikov", "retard", "cunt",
-            "g ay", "ga y", "g a y", "h o e" ,"o r g", "osroyale", "OS royale", "osr"
+            "g ay", "ga y", "g a y", "h o e" ,"o r g", "osroyale", "OS royale", "osr",
+            "niger"
     };
 
     /** Messages that are sent periodically to all players. */
     public static final String[] MESSAGES = {
-            "The owner & founder of Runity is Adam.",
-            "Runity game developers are Adam",
+            "The owner & founder of Runity is Jordan & Adam.",
+            "Runity game developers are Adam & Harry",
             "Our website is located at: http://runity.io",
             "Add more security to your account by setting a bank pin.",
             "Tired of constantly re-gearing? Set a preset!",
@@ -303,7 +316,7 @@ public final class Config {
             "Did you know you can change your combat level by clicking on the skill?",
             "You can do ::commands for a list of commands!",
             "Royalty rewards are given every 30 minutes! ::royaltyprogram",
-            "Saying you don't need privacy because you have nothing to hide is like saying you   don't need free speech because you have nothing to say."
+            "Saying you don't need privacy because you have nothing to hide is like saying you don't need free speech because you have nothing to say."
     };
 
     /**

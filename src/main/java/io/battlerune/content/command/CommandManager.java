@@ -36,6 +36,10 @@ import plugin.command.impl.player.SkillAreaCommand;
 import plugin.command.impl.player.SkullCommand;
 import plugin.command.impl.player.SlayerTaskCommand;
 import plugin.command.impl.player.StuckCommand;
+import plugin.command.impl.player.Tier1Teleport;
+import plugin.command.impl.player.Tier2Teleport;
+import plugin.command.impl.player.Tier3Teleport;
+import plugin.command.impl.player.Tier4Teleport;
 import plugin.command.impl.player.VaultCommand;
 import plugin.command.impl.player.VoteCommand;
 import plugin.command.impl.player.Wests;
@@ -55,6 +59,10 @@ public class CommandManager {
 		 * @Player Commands
 		 */
 		plugin.put(new String[] { "home", "hom" }, new HomeCommand());
+		plugin.put(new String[] { "tier1", "tierone" }, new Tier1Teleport());
+		plugin.put(new String[] { "tier2", "tiertwo" }, new Tier2Teleport());
+		plugin.put(new String[] { "tier3", "tierthree" }, new Tier3Teleport());
+		plugin.put(new String[] { "tier4", "tierfour" }, new Tier4Teleport());
 		plugin.put(new String[] { "pouch" }, new PouchCommand());
 		plugin.put(new String[] { "commands", "command", "commandlist" }, new CommandList());
 		plugin.put(new String[] { "fameboard", "fame" }, new FameBoardCommand());
