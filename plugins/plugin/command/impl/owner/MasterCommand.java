@@ -12,6 +12,7 @@ public class MasterCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] parts) {
+		
 		 player.skills.master();
          AchievementHandler.completeAll(player);
          EmoteHandler.unlockAll(player);
