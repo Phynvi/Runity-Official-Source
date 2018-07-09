@@ -1,4 +1,4 @@
-package plugin.command.impl.player;
+package plugin.command.impl.owner;
 
 import io.battlerune.content.command.Command;
 import io.battlerune.game.world.entity.mob.player.Player;

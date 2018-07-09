@@ -71,7 +71,8 @@ public abstract class GsonParser extends GenericParser {
                 initialize(array.size());
                 for (index = 0; index < array.size(); index++) {
                     JsonObject data = (JsonObject) array.get(index);
-                    parse(data);
+                    parse(data);//the id is to big u gotta lower it, its literally +1 from before, and 22517 is the last item in OSRS's cache
+                    //well like u see the fucking console says outofbounds idk if u can read, yeah i know what it says, its just stupid l000l
                 }
             } else if (element.isJsonObject()) {
                 parse(element.getAsJsonObject());

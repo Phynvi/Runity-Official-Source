@@ -5,23 +5,21 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 
-public class ItemCommand implements Command {
+public class SpawnCustomCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		int itemId = Integer.parseInt(command[1]);
-		int amount = Integer.parseInt(command[2]);
-
-		
-		if (player.inventory.getFreeSlots() > amount) {
-			player.inventory.add(new Item(itemId, amount));
-			player.message("[Item Spawner] Added " + amount + " [Amount] : " + itemId + " [Item id]");
-			
-		} else {
-			player.message("[Item Spawner] Please bank your inventory!");
-		}
+		player.inventory.addAll(CustomList());
+		player.message("Spawned 1x Dragon Slayer Set");
+		player.message("Spawned 1x Zaros Set");
 
 	}
+	
+	public Item[] CustomList() {
+		return new Item[] { new Item(21777), new Item(22123), new Item(21954), new Item(22099), new Item(22078),
+		};
+	}
+	
 
 	@Override
 	public boolean canUse(Player player) {
@@ -31,5 +29,4 @@ public class ItemCommand implements Command {
 		player.speak("Hey everyone, i just tried doing something silly.");
 		return false;
 	}
-
 }
