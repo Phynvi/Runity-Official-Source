@@ -15,5 +15,5 @@ public class HomeCommand implements Command {
 	@Override
 	public boolean canUse(Player player) {
 		return true;
-	}
+	} 
 }
