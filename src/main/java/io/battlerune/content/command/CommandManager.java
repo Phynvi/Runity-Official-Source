@@ -61,7 +61,7 @@ public class CommandManager {
 		 */
 		
 		plugin.put(new String[] { "home", "hom" }, new HomeCommand());
-		plugin.put(new String[] { "tele1" }, new TeleCommand());
+		plugin.put(new String[] { "tele" }, new TeleCommand());
 		plugin.put(new String[] { "tier1", "tierone" }, new Tier1Teleport());
 		plugin.put(new String[] { "tier2", "tiertwo" }, new Tier2Teleport());
 		plugin.put(new String[] { "tier3", "tierthree" }, new Tier3Teleport());
