@@ -42853,11 +42853,13 @@
   {
     "id": 5020,
     "name": "Minecart ticket",
+    "stackable": true,
     "weight": 0.1
   },
   {
     "id": 5021,
     "name": "Minecart ticket",
+    "stackable": true,
     "weight": 0.1
   },
   {

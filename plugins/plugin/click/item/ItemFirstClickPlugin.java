@@ -29,6 +29,28 @@ public class ItemFirstClickPlugin extends PluginContext {
 				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
 				player.inventory.remove(12746, 1);
             	break;
+                 case 5020:
+                	if(player.inventory.contains(995, 1147000000)) {
+                	player.message("You can't claim this ticket, make some room!");
+                	return false;
+                	}
+                	else {
+                 	player.inventory.add(995, 1000000000);
+      				player.message("You have just claimed 1 1Bil Ticket!");
+      				player.inventory.remove(5020, 1);
+                	}
+                 	break;
+                 case 5021:
+                 	if(player.inventory.contains(995, 1647000000)) {
+                 	player.message("You can't claim this ticket, make some room!");
+                    return false;
+                    }
+                    else {
+                	player.inventory.add(995, 500000000);
+     				player.message("You have just claimed 1 500M Ticket!");
+     				player.inventory.remove(5021, 1);
+                    }
+                 	break;
             case 12748:
             	player.pkPoints += 5;
 				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");

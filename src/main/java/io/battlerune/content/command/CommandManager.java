@@ -13,6 +13,7 @@ import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
 import plugin.command.impl.player.CommandList;
+import plugin.command.impl.player.DZone;
 import plugin.command.impl.player.DiceCommand;
 import plugin.command.impl.player.DiscordCommand;
 import plugin.command.impl.player.DonateCommand;
@@ -59,6 +60,7 @@ public class CommandManager {
 		 * @Player Commands
 		 */
 		plugin.put(new String[] { "home", "hom" }, new HomeCommand());
+
 		plugin.put(new String[] { "tier1", "tierone" }, new Tier1Teleport());
 		plugin.put(new String[] { "tier2", "tiertwo" }, new Tier2Teleport());
 		plugin.put(new String[] { "tier3", "tierthree" }, new Tier3Teleport());
@@ -101,6 +103,7 @@ public class CommandManager {
 		 */
 		
 		plugin.put(new String[] { "bank", "banks" }, new DonatorBankCommand());
+		plugin.put(new String[] { "donatorzone", "dzone" }, new DZone());
 
 
 
