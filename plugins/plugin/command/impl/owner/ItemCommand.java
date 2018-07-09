@@ -9,7 +9,6 @@ public class ItemCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		
 		int itemId = Integer.parseInt(command[1]);
 		int amount = Integer.parseInt(command[2]);
 
