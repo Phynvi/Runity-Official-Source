@@ -12,21 +12,15 @@ public class ItemCommand implements Command {
 		int itemId = Integer.parseInt(command[1]);
 		int amount = Integer.parseInt(command[2]);
 
-		
-		if (player.inventory.getFreeSlots() > amount) {
-			player.inventory.add(new Item(itemId, amount));
-			player.message("[Item Spawner] Added " + amount + " [Amount] : " + itemId + " [Item id]");
-			
-		} else {
-			player.message("[Item Spawner] Please bank your inventory!");
-		}
+		player.inventory.add(new Item(itemId, amount));
+		player.message("[Item Spawner] Added " + amount + " [Amount] : " + itemId + " [Item id]");
 
 	}
 
 	@Override
 	public boolean canUse(Player player) {
-		if(PlayerRight.isDeveloper(player)) {
-		return true;
+		if (PlayerRight.isDeveloper(player)) {
+			return true;
 		}
 		player.speak("Hey everyone, i just tried doing something silly.");
 		return false;
