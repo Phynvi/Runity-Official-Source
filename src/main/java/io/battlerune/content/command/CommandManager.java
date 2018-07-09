@@ -8,7 +8,7 @@ import plugin.command.impl.owner.DeveloperInstanceCommand;
 import plugin.command.impl.owner.ItemCommand;
 import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
-
+import plugin.command.impl.owner.TeleCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
@@ -61,7 +61,7 @@ public class CommandManager {
 		 */
 		
 		plugin.put(new String[] { "home", "hom" }, new HomeCommand());
-
+		plugin.put(new String[] { "tele" }, new TeleCommand());
 		plugin.put(new String[] { "tier1", "tierone" }, new Tier1Teleport());
 		plugin.put(new String[] { "tier2", "tiertwo" }, new Tier2Teleport());
 		plugin.put(new String[] { "tier3", "tierthree" }, new Tier3Teleport());
