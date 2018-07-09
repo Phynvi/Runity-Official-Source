@@ -59,6 +59,7 @@ public class CommandManager {
 		/*
 		 * @Player Commands
 		 */
+		
 		plugin.put(new String[] { "home", "hom" }, new HomeCommand());
 
 		plugin.put(new String[] { "tier1", "tierone" }, new Tier1Teleport());
