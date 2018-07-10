@@ -29,6 +29,30 @@ public class ItemFirstClickPlugin extends PluginContext {
 				player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
 				player.inventory.remove(12746, 1);
             	break;
+                 case 10028:
+                     int random = Utility.random(1, 5);
+                     int random1 = Utility.random(1, 15);
+                     int random2 = Utility.random(1, 25);
+                     if(player.inventory.getFreeSlots() <= 3) {
+                     player.message("You do not have enough inventory space to open this box!");
+                     return false;
+                     }
+                     if(random == 4) {
+                     player.inventory.add(995, 10000000);
+                     player.message("@gre@You were lucky and received 10 Million GP!");
+                     }
+                     if(random1 == 14) {
+                     player.inventory.add(995, 15000000);
+                     player.message("@blu@You were lucky and received 15 Million GP!");
+                     }
+                     if(random2 == 24) {
+                     player.inventory.add(995, 20000000);
+                     player.message("@red@You were lucky and received 20 Million GP!");
+                     }
+                     player.inventory.remove(10028, 1);
+                     player.inventory.add(995, 5000000);
+                     break;
+                     
                  case 5020:
                 	if(player.inventory.contains(995, 1147000000)) {
                 	player.message("You can't claim this ticket, make some room!");
@@ -39,6 +63,10 @@ public class ItemFirstClickPlugin extends PluginContext {
       				player.message("You have just claimed 1 1Bil Ticket!");
       				player.inventory.remove(5020, 1);
                 	}
+                	player.inventory.remove(10028, 1);
+                    player.message("@red@You were unfortunate on this day, " + player.getName() + "!");
+                    player.inventory.add(995, 5000000);
+                    player.inventory.add(1, 1);
                  	break;
                  case 5021:
                  	if(player.inventory.contains(995, 1647000000)) {

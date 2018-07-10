@@ -119,7 +119,7 @@ public class CommandManager {
 		plugin.put(new String[] { "instance" }, new DeveloperInstanceCommand());
 		plugin.put(new String[] { "spawncustoms" }, new SpawnCustomCommand());
 		plugin.put(new String[] { "master", "max" }, new MasterCommand());
-		plugin.put(new String[] { "master", "max" }, new FindCommand());
+		plugin.put(new String[] { "find", "finditem" }, new FindCommand());
 
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {
