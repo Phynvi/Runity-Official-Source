@@ -41,6 +41,7 @@ import plugin.command.impl.player.Tier1Teleport;
 import plugin.command.impl.player.Tier2Teleport;
 import plugin.command.impl.player.Tier3Teleport;
 import plugin.command.impl.player.Tier4Teleport;
+import plugin.command.impl.player.TrainZone;
 import plugin.command.impl.player.VaultCommand;
 import plugin.command.impl.player.VoteCommand;
 import plugin.command.impl.player.Wests;
@@ -61,6 +62,7 @@ public class CommandManager {
 		 */
 		
 		plugin.put(new String[] { "home", "hom" }, new HomeCommand());
+		plugin.put(new String[] { "train", "training" }, new TrainZone());
 		plugin.put(new String[] { "tele" }, new TeleCommand());
 		plugin.put(new String[] { "tier1", "tierone" }, new Tier1Teleport());
 		plugin.put(new String[] { "tier2", "tiertwo" }, new Tier2Teleport());
