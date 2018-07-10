@@ -91352,6 +91352,26 @@
     "weight": 2.0
   },
   {
+	    "id": 17804,
+	    "name": "Zaros godsword",
+	    "two-handed": true,
+	    "low-alch": 500000,
+	    "high-alch": 750000,
+	    "base-value": 1250000,
+	    "street-value": 31770372,
+	    "weight": 11.0,
+	    "stand-animation": 7053,
+	    "walk-animation": 7052,
+	    "run-animation": 7043,
+	    "equipment-slot": "WEAPON",
+	    "weapon-interface": "GODSWORD_SWORD",
+	    "req-attack": 75,
+	    "attack-slash": 132,
+	    "attack-crush": 80,
+	    "bonus-strength": 132,
+	    "bonus-prayer": 8
+	  },
+  {
     "id": 11802,
     "name": "Armadyl godsword",
     "two-handed": true,
