@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import plugin.command.impl.owner.DeveloperInstanceCommand;
+import plugin.command.impl.owner.FindCommand;
 import plugin.command.impl.owner.ItemCommand;
 import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
@@ -118,7 +119,8 @@ public class CommandManager {
 		plugin.put(new String[] { "instance" }, new DeveloperInstanceCommand());
 		plugin.put(new String[] { "spawncustoms" }, new SpawnCustomCommand());
 		plugin.put(new String[] { "master", "max" }, new MasterCommand());
-	
+		plugin.put(new String[] { "master", "max" }, new FindCommand());
+
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {
 			for (int i = 0; i < map.getKey().length; i++) {
