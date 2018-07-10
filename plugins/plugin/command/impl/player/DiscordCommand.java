@@ -5,6 +5,10 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendURL;
 
+/**
+ * @author Adam_#6723
+ */
+
 public class DiscordCommand implements Command {
 
 	@Override

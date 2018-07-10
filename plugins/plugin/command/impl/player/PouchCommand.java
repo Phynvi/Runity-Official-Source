@@ -5,6 +5,11 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.net.packet.out.SendInputAmount;
 
+
+/**
+ * @author Adam_#6723
+ */
+
 public class PouchCommand implements Command {
 
 	@Override

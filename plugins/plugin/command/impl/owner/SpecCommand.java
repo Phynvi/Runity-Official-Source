@@ -1,21 +1,26 @@
 package plugin.command.impl.owner;
 
 import io.battlerune.content.command.Command;
-import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
+import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.game.world.position.Position;
 
-public class TeleCommand implements Command {
+
+/**
+ * 
+ * @author Adam_#6723
+ *
+ */
+
+public class SpecCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] parts) {
-
-		Teleportation.teleport(player, new Position(Integer.parseInt(parts[1]),
-				Integer.parseInt(parts[2]), Integer.parseInt(parts[3])));
-		
-		player.message("You have teleported to : " + parts[1] + " - " + parts[2] + " - " + parts[3]);
-	}
+	       int amount = 2000;
+           CombatSpecial.restore(player, amount);
+       }
+	
+	
 
 	@Override
 	public boolean canUse(Player player) {
@@ -25,5 +30,4 @@ public class TeleCommand implements Command {
 		player.speak("Hey everyone, i just tried doing something silly.");
 		return false;
 	}
-
 }

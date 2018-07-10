@@ -8,6 +8,10 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.MessageColor;
 
+/**
+ * @author Adam_#6723
+ */
+
 public class MasterCommand implements Command {
 
 	@Override
@@ -23,8 +27,9 @@ public class MasterCommand implements Command {
 	@Override
 	public boolean canUse(Player player) {
 		if(PlayerRight.isDeveloper(player)) {
-			return true;
+		return true;
 		}
+		player.speak("Hey everyone, i just tried doing something silly.");
 		return false;
 	}
 

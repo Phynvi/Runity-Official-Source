@@ -4,11 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import plugin.command.impl.owner.AnimationCommand;
 import plugin.command.impl.owner.DeveloperInstanceCommand;
 import plugin.command.impl.owner.FindCommand;
+import plugin.command.impl.owner.GraphicCommand;
 import plugin.command.impl.owner.ItemCommand;
 import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
+import plugin.command.impl.owner.SpecCommand;
 import plugin.command.impl.owner.TeleCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
@@ -49,7 +52,7 @@ import plugin.command.impl.player.Wests;
 
 /**
  * Stores Commands
- * @author hamza
+ * @author hamza <-- retard for re-doing the command system now adam has to reimplement the commands.... ty you 4ner
  *
  */
 public class CommandManager {
@@ -120,6 +123,9 @@ public class CommandManager {
 		plugin.put(new String[] { "spawncustoms" }, new SpawnCustomCommand());
 		plugin.put(new String[] { "master", "max" }, new MasterCommand());
 		plugin.put(new String[] { "find", "finditem" }, new FindCommand());
+		plugin.put(new String[] { "anim", "performanim" }, new AnimationCommand());
+		plugin.put(new String[] { "gfx", "graphic" }, new GraphicCommand());
+		plugin.put(new String[] { "spec", "special" }, new SpecCommand());
 
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {

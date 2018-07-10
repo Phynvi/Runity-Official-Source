@@ -195,6 +195,9 @@ public class PlayerAssistant {
             if (item.getId() == 13111) {
                 return ValyrianSwordStrategy.get();
             }
+            if (item.getId() == 11063) {
+                return ToxicGlaiveStrategy.get();
+            }
 
             if (item.getId() == 11907) {
                 return TridentOfTheSeasStrategy.get();

@@ -31,6 +31,7 @@ import io.battlerune.game.world.entity.combat.strategy.player.special.melee.Drag
 import io.battlerune.game.world.entity.combat.strategy.player.special.melee.GraniteMaul;
 import io.battlerune.game.world.entity.combat.strategy.player.special.melee.SaradominGodsword;
 import io.battlerune.game.world.entity.combat.strategy.player.special.melee.SaradominSword;
+import io.battlerune.game.world.entity.combat.strategy.player.special.melee.ToxicGlaiveSpecialAttack;
 import io.battlerune.game.world.entity.combat.strategy.player.special.melee.ZamorakGodsword;
 import io.battlerune.game.world.entity.combat.strategy.player.special.range.ArmadylCrossbow;
 import io.battlerune.game.world.entity.combat.strategy.player.special.range.Ballista;
@@ -122,6 +123,8 @@ public enum CombatSpecial {
             }
         }
     },
+    
+    TOXIC_GLAIVE(new int[]{11063}, 50, ToxicGlaiveSpecialAttack.get()),
 
     /* Other **/
     SARADOMIN_SWORD(new int[]{11838, 12809}, 100, SaradominSword.get()),
@@ -140,6 +143,7 @@ public enum CombatSpecial {
 
         }
     },
+
     INFERNAL_HARPOON(new int[]{21031, 21028}, 100, DefaultMelee.get()) {
         @Override
         public void enable(Player player) {
@@ -147,8 +151,8 @@ public enum CombatSpecial {
                 player.send(new SendMessage("You do not have enough special energy left!"));
                 return;
             }
-            player.animate(new Animation(7393, UpdatePriority.HIGH));
-            player.graphic(new Graphic(246, true, UpdatePriority.HIGH));
+            player.animate(new Animation(439, UpdatePriority.HIGH));
+            player.graphic(new Graphic(255, true, UpdatePriority.HIGH));
             player.send(new SendMessage("Your chances of catching fishes has increased by x2!"));
             player.speak("You plebs ain't got x2 Fishing rate like me ;)");
             drain(player, 100);

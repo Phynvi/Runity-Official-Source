@@ -11066,7 +11066,7 @@ public class ItemIdentifiers {
     public static final int GOBLIN_VILLAGE_SPHERE = 11060;
     public static final int ANCIENT_MACE = 11061;
     public static final int ZANIK_SLICE_ = 11062;
-    public static final int NULL_1215 = 11063;
+    public static final int ICY_GLAIVE = 11063;
     public static final int ANCIENT_MACE_2 = 11064;
     public static final int BRACELET_MOULD = 11065;
     public static final int BRACELET_MOULD_2 = 11066;

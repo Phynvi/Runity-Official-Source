@@ -5,6 +5,10 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 
+/**
+ * @author Adam_#6723
+ */
+
 public class SpawnCustomCommand implements Command {
 
 	@Override

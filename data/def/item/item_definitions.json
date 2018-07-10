@@ -40218,6 +40218,24 @@
     "bonus-strength": 105
   },
   {
+	    "id": 11063,
+	    "name": "Toxic Glaive",
+	    "stackable": false,
+	    "low-alch": 83200,
+	    "high-alch": 124800,
+	    "base-value": 208000,
+	    "weight": 1.8,
+	    "equipment-slot": "WEAPON",
+	    "weapon-interface": "LONGSWORD",
+	    "req-attack": 60,
+	    "attack-stab": 58,
+	    "attack-slash": 69,
+	    "attack-crush": -2,
+	    "defence-slash": 3,
+	    "defence-crush": 2,
+	    "bonus-strength": 71
+	  },
+  {
     "id": 4719,
     "name": "Dharok's greataxe",
     "destroy-message": "Drop (If you drop this item it will break. Are you sure you want to drop it?)",

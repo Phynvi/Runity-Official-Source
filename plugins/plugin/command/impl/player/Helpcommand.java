@@ -10,6 +10,10 @@ import io.battlerune.net.packet.out.SendItemOnInterface;
 import io.battlerune.net.packet.out.SendScrollbar;
 import io.battlerune.net.packet.out.SendString;
 
+/**
+ * @author Adam_#6723
+ */
+
 public class Helpcommand implements Command {
 
 	@Override
