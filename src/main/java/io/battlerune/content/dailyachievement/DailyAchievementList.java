@@ -20,7 +20,7 @@ public enum DailyAchievementList {
     KILLER(10, DailyAchievementKey.KILLER, DailyAchievementDifficulty.EASY, "Kill 10 players"),
     KILL_KRAKEN_I(25, DailyAchievementKey.KILL_KRAKEN, DailyAchievementDifficulty.EASY, "Kill Kraken 25 Times"),
     KILLER_1(10, DailyAchievementKey.KILLER, DailyAchievementDifficulty.EASY, "Kill 10 pLAYERS"),
-    KILL_GALVEK(2, DailyAchievementKey.KILL_GLOD, DailyAchievementDifficulty.MEDIUM, "Kill Glod 2 Time"),
+    KILL_GALVEK(2, DailyAchievementKey.KILL_GALVEK, DailyAchievementDifficulty.MEDIUM, "Kill Glod 2 Time"),
     KILL_SKOTIZO(3, DailyAchievementKey.KILL_SKOTIZO, DailyAchievementDifficulty.HARD, "Kill the Skotizo 3 Times"),
 
 

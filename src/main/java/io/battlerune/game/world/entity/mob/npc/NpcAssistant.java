@@ -93,6 +93,7 @@ public class NpcAssistant {
         put(3130, Tstanon::new);
         put(5862, Cerberus::new);
         put(3131, Zakln::new);
+        put(6477, MutantTarn::new);
         put(3132, Balfrug::new);
         put(3162, KreeArra::new);
         put(8060, Vorkath::new);

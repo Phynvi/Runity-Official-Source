@@ -7,6 +7,8 @@ import io.battlerune.content.achievement.AchievementHandler;
 import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuildUtility;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
+import io.battlerune.content.dailyachievement.DailyAchievementHandler;
+import io.battlerune.content.dailyachievement.DailyAchievementKey;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.OnKillEvent;
 import io.battlerune.game.Animation;
@@ -141,8 +143,8 @@ public final class NpcDeath extends MobDeath<Npc> {
                         playerKiller.activityLogger.add(ActivityLog.GALVEK);
                         
                         AchievementHandler.activate(playerKiller, AchievementKey. KILL_GALVEK, 1);
-
-                        
+                        DailyAchievementHandler.activate(playerKiller, DailyAchievementKey.KILL_GALVEK, 1);
+                        System.out.print("Daily Achievement Progress Made");
                       if(PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
                     	  playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
 						  playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");

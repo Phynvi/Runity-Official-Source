@@ -27,7 +27,7 @@ public class GalvekEvent extends Task {
         }
 
         if (initial) {
-            if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 60) {
+            if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 45) {
             	galvek = GalvekUtility.generateSpawn();
                 initial = false;
                 stopwatch.reset();
@@ -41,12 +41,13 @@ public class GalvekEvent extends Task {
             if (galvek != null) {
             	galvek.speak("Pathetic humans could not kill me! Muhahaha");
                 World.schedule(2, () -> galvek.unregister());
+                World.sendMessage("[GALVEK] You have failed to kill me! Muhahaha");
             }
-            World.sendMessage("<col=ff0000> arena has disappeared! He will return in 30 minutes.");
+            World.sendMessage("<col=ff0000> Galvek has disappeared! He will return in 30 minutes.");
         } else if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 10) {//10 minutes
-            World.sendMessage("<col=ff0000> arena will disappear in 5 minutes!");
+            World.sendMessage("<col=ff0000> Galvek will disappear in 5 minutes!");
         } else if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 5) {//5 minutes
-            World.sendMessage("<col=ff0000> arena will disappear in 10 minutes!");
+            World.sendMessage("<col=ff0000> Galvek will disappear in 10 minutes!");
         }
     }
 }

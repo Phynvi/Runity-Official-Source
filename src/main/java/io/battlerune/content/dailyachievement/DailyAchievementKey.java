@@ -66,5 +66,6 @@ public enum DailyAchievementKey {
     BURN100ANY,
     COOK_A_SALMON,
     BURN_AN_OAK_LOG,
-    POTION_MAKING
+    POTION_MAKING, 
+    KILL_GALVEK,
 }

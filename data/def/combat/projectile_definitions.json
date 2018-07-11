@@ -128,6 +128,22 @@
 	    }
 	  },
 	  {
+		    "name": "Mutant Tarn Ranged",
+		    "end": {
+		      "id": 552,
+		      "delay": 0,
+		      "height": 0,
+		      "priority": "HIGH"
+		    },
+		    "projectile": {
+		      "id": 551,
+		      "delay": 5,
+		      "duration": 85,
+		      "startHeight": 90,
+		      "endHeight": 25
+		    }
+		  },
+	  {
 	    "name": "Galvek Magic",
 	    "end": {
 	      "id": 1480,
