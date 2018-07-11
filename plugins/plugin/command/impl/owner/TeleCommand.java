@@ -12,9 +12,9 @@ public class TeleCommand implements Command {
 	public void execute(Player player, String[] parts) {
 
 		Teleportation.teleport(player, new Position(Integer.parseInt(parts[1]),
-				Integer.parseInt(parts[2]), Integer.parseInt(parts[3])));
+				Integer.parseInt(parts[2])));
 		
-		player.message("You have teleported to : " + parts[1] + " - " + parts[2] + " - " + parts[3]);
+		player.message("You have teleported to : " + parts[1] + " - " + parts[2]);
 	}
 
 	@Override

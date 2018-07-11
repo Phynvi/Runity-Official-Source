@@ -87,7 +87,11 @@ public class PackOpeningPlugin extends PluginContext {
         /* MAGE Arena Rewards */
         MAGE_ARENA_II(3062, new Item(13333, 1),  new Item(13335, 1), new Item(13331, 1),  
   			  new Item(12638, 1), new Item(12637, 1), new Item(12639, 1),
-  			  new Item(6760, 1), new Item(6762, 1), new Item(6764, 1))
+  			  new Item(6760, 1), new Item(6762, 1), new Item(6764, 1)),
+    	
+    	   /* MAGE Arena Rewards */
+        ANTI_SANTA_BOX(12898, new Item(12892, 1),  new Item(12893, 1), new Item(12896, 1),  
+  			  new Item(12894, 1), new Item(12895, 1), new Item(13192, 1))
 
         ;
     	

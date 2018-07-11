@@ -17738,6 +17738,35 @@
     ]
   },
   {
+	    "id": 3274,
+	    "type": "WEAPON",
+	    "name": "Phoenix Bow",
+	    "requirements": [
+	      {
+	        "level": 70,
+	        "skill": 4
+	      }
+	    ],
+	    "bonuses": [
+	      0,
+	      0,
+	      0,
+	      0,
+	      100,
+
+	      0,
+	      0,
+	      0,
+	      0,
+	      0,
+
+	      0,
+	      70,
+	      0,
+	      0
+	    ]
+	  },
+  {
     "id": 4215,
     "type": "WEAPON",
     "name": "Crystal bow 9/10",

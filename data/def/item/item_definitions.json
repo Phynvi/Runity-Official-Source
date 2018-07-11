@@ -102364,7 +102364,7 @@
   },
   {
     "id": 12898,
-    "name": "Antisanta's coal box (full)"
+    "name": "Antisanta's set! and 100$ Bond"
   },
   {
     "id": 12899,
@@ -124170,6 +124170,71 @@
     "defence-ranged": 80
     
 },
+  {
+    "id": 3273,
+    "name": "Ice Katana",
+    "low-alch": 16,
+    "high-alch": 24,
+    "base-value": 40,
+    "street-value": 15,
+    "weight": 1.8,
+    "stand-animation": 808,
+    "walk-animation": 819,
+    "equipment-slot": "WEAPON",
+    "weapon-interface": "LONGSWORD",
+    "attack-stab": 4,
+    "attack-slash": 5,
+    "attack-crush": -2,
+    "defence-slash": 3,
+    "defence-crush": 2,
+    "bonus-strength": 7
+  },
+  {
+	    "id": 3275,
+	    "name": "Dragon Slayer Platebody",
+	    "low-alch": 26000,
+	    "high-alch": 39000,
+	    "base-value": 65000,
+	    "street-value": 43487,
+	    "weight": 9.9,
+	    "equipment-slot": "BODY",
+	    "req-defence": 40,
+	    "attack-magic": -30,
+	    "attack-ranged": -10,
+	    "defence-stab": 82,
+	    "defence-slash": 80,
+	    "defence-crush": 72,
+	    "defence-magic": -6,
+	    "defence-ranged": 80
+	    
+},
+  {
+    "id": 3274,
+    "name": "Phoenix bow",
+    "two-handed": true,
+    "noted-id": 20998,
+    "low-alch": 36000,
+    "high-alch": 54000,
+    "base-value": 90000,
+    "street-value": 208957337,
+    "weight": 1.8,
+    "equipment-slot": "WEAPON",
+    "weapon-interface": "LONGBOW",
+    "req-ranged": 75,
+    "attack-ranged": 70,
+    "ranged-strength": 20,
+    "bonus-prayer": 4,
+    "ranged-type": "SHOT",
+    "allowed": [
+      "BRONZE_ARROW",
+      "IRON_ARROW",
+      "STEEL_ARROW",
+      "MITHRIL_ARROW",
+      "ADAMANT_ARROW",
+      "RUNE_ARROW",
+      "DRAGON_ARROW"
+    ]
+  },
   {
     "id": 22125,
     "name": "Superior dragon bones",

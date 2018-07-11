@@ -5,8 +5,9 @@ import io.battlerune.game.world.entity.combat.strategy.player.PlayerRangedStrate
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
-
-/** @author Michael | Chex */
+/**
+ * @author Adam_#6723
+ */
 public class TwistedBowStrategy extends PlayerRangedStrategy {
     private static final TwistedBowStrategy INSTANCE = new TwistedBowStrategy();
 
