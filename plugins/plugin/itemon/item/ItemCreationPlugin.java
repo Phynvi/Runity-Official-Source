@@ -260,7 +260,7 @@ public class ItemCreationPlugin extends PluginContext {
         	 player.inventory.remove(12831, 1);
         	 player.inventory.remove(12827, 1);
         	 player.inventory.add(12825, 1);
-        	 player.inventory.add(5025, 2147000);
+        	 player.inventory.add(5020, 2147000);
             player.message("@red@You have merged both items!!");
              return true;
          }

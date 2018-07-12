@@ -19,7 +19,6 @@ public class PlayerGuideHandler {
              player.inventory.refresh();
              player.equipment.refresh();
              sendGuideNames(player);
-             sendStrings(player);
         	 player.interfaceManager.open(56000);
         	 
          }
@@ -29,16 +28,10 @@ public class PlayerGuideHandler {
      * @param player
      */
     public void sendGuideNames(Player player) {
-        player.send(new SendString("Money making guide", 56051, true));
-    }
-    
-    /**
-     * Sends the contents of each guide to the itnerface
-     * @param player
-     */
-    
-    public void sendStrings(Player player) {
-    	
-    }
+        player.send(new SendString("Economy Info", 56051, true));
+        player.send(new SendString("Money making", 56052, true));
+        player.send(new SendString("Becoming meradj", 56053, true));
 
+    }
+    
 }
