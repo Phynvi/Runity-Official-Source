@@ -3,6 +3,11 @@ package io.battlerune.content.playerguide;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendString;
 
+/**
+ * Handles the interface opening
+ * @author Nerik#8690
+ *
+ */
 public class PlayerGuideHandler {
 
 	/**
@@ -12,8 +17,8 @@ public class PlayerGuideHandler {
 	 * @param player
 	 */
 	public void open(Player player) {
-		sendGuideNames(player);
 		player.interfaceManager.open(56000);
+		sendGuideNames(player);
 
 	}
 
