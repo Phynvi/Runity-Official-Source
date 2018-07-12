@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import io.battlerune.content.PlayerGuideHandler;
 import plugin.command.impl.owner.AnimationCommand;
 import plugin.command.impl.owner.DeveloperInstanceCommand;
 import plugin.command.impl.owner.DownCommand;

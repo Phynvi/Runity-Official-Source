@@ -28,6 +28,7 @@ public class FreeForAll {
 	 */
 	public static HashMap<Player, String> game = new HashMap<Player, String>();
 
+	
 	public static int getPlayers(String type) {
 		switch (type) {
 		case "game":
