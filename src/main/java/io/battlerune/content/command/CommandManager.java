@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import io.battlerune.content.PlayerGuideHandler;
 import plugin.command.impl.owner.AnimationCommand;
 import plugin.command.impl.owner.DeveloperInstanceCommand;
 import plugin.command.impl.owner.DownCommand;
@@ -14,6 +15,7 @@ import plugin.command.impl.owner.InterfaceCommand;
 import plugin.command.impl.owner.ItemCommand;
 import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.owner.NpcCommand;
+import plugin.command.impl.owner.PlayerGuideCommand;
 import plugin.command.impl.owner.PnpcCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
 import plugin.command.impl.owner.SpecCommand;
@@ -138,6 +140,7 @@ public class CommandManager {
 		plugin.put(new String[] { "god", "beast" }, new GodCommand());
 		plugin.put(new String[] { "interface", "int" }, new InterfaceCommand());
 		plugin.put(new String[] { "npc", "spawnnpc" }, new NpcCommand());
+		plugin.put(new String[] { "guide", "openguide" }, new PlayerGuideCommand());
 
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {

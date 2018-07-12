@@ -255,6 +255,15 @@ public class ItemCreationPlugin extends PluginContext {
             player.message("You have crushed up the unicorn horn.");
             return true;
         }
+        //adam
+        if ((used.getId() == 12831 || with.getId() == 12831) && (with.getId() == 10028 || with.getId() == 10028)) {
+        	 player.inventory.remove(12831, 1);
+        	 player.inventory.remove(12827, 1);
+        	 player.inventory.add(12825, 1);
+        	 player.inventory.add(5025, 2147000);
+            player.message("@red@You have merged both items!!");
+             return true;
+         }
 
         if (!ItemCreation.CreationData.forItems(used, with).isPresent()) {
             return false;
