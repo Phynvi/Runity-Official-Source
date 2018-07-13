@@ -1194,7 +1194,13 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
             /* Grand exchange. */
             case 26044:
-                PersonalStore.openPanel(player);
+                player.message("Personal stores are currently undergoing testing!" + "You've been warned.");
+                if (PlayerRight.isIronman(player)) {
+                    player.send(new SendMessage("As an iron man you may not access player owned stores!"));
+                    return true;
+                }
+                PersonalStore.openMenu(player);
+
                 break;
 
             /*AFK Tree*/

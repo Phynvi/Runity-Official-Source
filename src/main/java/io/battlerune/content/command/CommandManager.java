@@ -14,6 +14,7 @@ import plugin.command.impl.owner.InterfaceCommand;
 import plugin.command.impl.owner.ItemCommand;
 import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.owner.NpcCommand;
+import plugin.command.impl.owner.ObjectCommand;
 import plugin.command.impl.owner.PlayerGuideCommand;
 import plugin.command.impl.owner.PnpcCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
@@ -140,6 +141,7 @@ public class CommandManager {
 		plugin.put(new String[] { "interface", "int" }, new InterfaceCommand());
 		plugin.put(new String[] { "npc", "spawnnpc" }, new NpcCommand());
 		plugin.put(new String[] { "guide", "openguide" }, new PlayerGuideCommand());
+		plugin.put(new String[] { "obj", "object" }, new ObjectCommand());
 
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {

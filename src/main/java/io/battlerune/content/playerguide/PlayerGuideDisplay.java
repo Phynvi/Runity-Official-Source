@@ -17,7 +17,7 @@ public class PlayerGuideDisplay {
 				//General display
 				player.send(new SendString("[Information]", 56006, true));
 				player.send(new SendString("Difficulty: " + data.getDifficulty(), 56007, true));
-				player.send(new SendString("N/A", 56008, true));
+				player.send(new SendString("Title: " + data.getTitle(), 56008, true));
 				
 				//Title display
 				player.send(new SendString(data.getTitle(), 56012, true));

@@ -31,6 +31,17 @@
     }
   },
   {
+	    "id": 26044,
+	    "name": "Market",
+	    "type": 10,
+	    "rotation": "SOUTH",
+	    "position": {
+	      "x": 3090,
+	      "y": 3496,
+	      "z": 0
+	    }
+	  },
+  {
     "id": 6943,
     "name": "Bank (Outside Gamble)",
     "type": 10,

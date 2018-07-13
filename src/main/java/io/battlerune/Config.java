@@ -387,6 +387,13 @@ public static final int[][] SIDEBAR_INTERFACE = {
 
     /** TEMP VARS - WILL BE DELETED AFTER BETA IS FINISHED */
     public final static int[] TAB_AMOUNT = {7, 46, 19, 42, 41, 15, 21, 4, 0, 0,};
+    
+    
+    public final static Item[] NOT_ALLOWED = {
+            new Item(22301), new Item(22307),
+       };
+    
+    
     public final static Item[] BANK_ITEMS = {
             new Item(995, 10000), new Item(11665, 10000), new Item(11663, 10000), new Item(11664, 10000), new Item(8840, 10000),
             new Item(8839, 10000), new Item(8842, 10000), new Item(4151, 10000), new Item(11802, 10000), new Item(11804, 10000),
