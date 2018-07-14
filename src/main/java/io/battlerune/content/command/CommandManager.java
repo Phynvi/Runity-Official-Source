@@ -5,9 +5,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import plugin.command.impl.owner.AnimationCommand;
+import plugin.command.impl.owner.ArenaSpawnCommand;
 import plugin.command.impl.owner.DeveloperInstanceCommand;
 import plugin.command.impl.owner.DownCommand;
 import plugin.command.impl.owner.FindCommand;
+import plugin.command.impl.owner.GalvekSpawnCommand;
 import plugin.command.impl.owner.GodCommand;
 import plugin.command.impl.owner.GraphicCommand;
 import plugin.command.impl.owner.InterfaceCommand;
@@ -142,6 +144,8 @@ public class CommandManager {
 		plugin.put(new String[] { "npc", "spawnnpc" }, new NpcCommand());
 		plugin.put(new String[] { "guide", "openguide" }, new PlayerGuideCommand());
 		plugin.put(new String[] { "obj", "object" }, new ObjectCommand());
+		plugin.put(new String[] { "arenas", "spawnarena" }, new ArenaSpawnCommand());
+		plugin.put(new String[] { "galveks", "spawngalvek" }, new GalvekSpawnCommand());
 
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {

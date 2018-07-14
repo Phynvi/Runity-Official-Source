@@ -7,7 +7,6 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.ground.GroundItem;
 import io.battlerune.game.world.position.Position;
-import io.battlerune.net.packet.out.SendBanner;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.MessageColor;
 import io.battlerune.util.Utility;
@@ -53,7 +52,7 @@ public class ArenaUtility {
             player.clanChannel.addExperience(10000);
             World.sendMessage("<col=8714E6> arena has been defeated by " + player.getName() + ", a clan member of " + player.clanChannel.getName() + "!");
             player.clanChannel.message("Hell yeah boys! We just killed arena!! We earned 10,000 EXP & 5 CP.");
-        } else {
+        } 
             World.sendMessage("<col=8714E6> arena has been defeated by " + player.getName() + ", a solo individual with balls of steel!");
 			
             /** Generates a random item from the int array list. **/
@@ -105,7 +104,7 @@ public class ArenaUtility {
 
            
             
-            }
+            
 
         arena.unregister();
     }

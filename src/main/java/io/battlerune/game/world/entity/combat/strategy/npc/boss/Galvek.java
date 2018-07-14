@@ -4,7 +4,6 @@ import static io.battlerune.game.world.entity.combat.CombatUtil.createStrategyAr
 
 import java.util.Collections;
 import java.util.Deque;
-import java.util.EnumSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,7 +24,6 @@ import io.battlerune.game.world.entity.combat.strategy.npc.MultiStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.NpcMagicStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.NpcMeleeStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.NpcRangedStrategy;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.arena.ArenaUtility.SpawnData;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility.SpawnData1;
 import io.battlerune.game.world.entity.combat.strategy.npc.impl.DragonfireStrategy;
@@ -34,12 +32,11 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.object.CustomGameObject;
 import io.battlerune.game.world.pathfinding.TraversalMap;
 import io.battlerune.game.world.position.Position;
-import io.battlerune.net.packet.out.SendWidget;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 /**
- * The combat definition for Vorkath.
+ * The combat definition for Galvek.
  *
  * @author Adam_#6723
  */
