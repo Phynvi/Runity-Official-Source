@@ -135,6 +135,8 @@ public class Galvek extends MultiStrategy {
             });
             
         }
+        
+        
 
         private TickableTask DragonFire(Mob attacker, Mob defender, Projectile projectile) {
             return new TickableTask(false, 1) {
@@ -173,16 +175,17 @@ public class Galvek extends MultiStrategy {
                 @Override
                 protected void tick() {
                     if (tick == 1) { //replace this object with the one ethan sends.
-                        object = new CustomGameObject(32000, position);
+                        object = new CustomGameObject(32378, position);
                         object.register();
-                    } else if (tick == 13) {
+                    } else if (tick == 5) {
                         object.unregister();
                         cancel();
                         return;
                     }
 
                     if (defender.getPosition().equals(position)) {
-                        defender.writeDamage(new Hit(Utility.random(1, 10)));
+                        defender.graphic(287);
+                        defender.writeDamage(new Hit(Utility.random(1, 50)));
                     }
                 }
             };

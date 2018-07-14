@@ -105,6 +105,7 @@ public class NpcAssistant {
         put(7858, Justiciar::new);
         put(7860, Porazdir::new);
         put(7859, Derwen::new);
+        put(7585, IceDemon::new);
         put(6766, LizardShaman::new);
         put(6767, LizardShaman::new);
     }};
