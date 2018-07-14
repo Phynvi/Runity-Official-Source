@@ -80,6 +80,22 @@
     }
   },
   {
+	    "name": "Mutant tarn randomAttack",
+	    "end": {
+	      "id": 868,
+	      "delay": 0,
+	      "height": 6553600,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 579,
+	      "delay": 5,
+	      "duration": 85,
+	      "startHeight": 90,
+	      "endHeight": 25
+	    }
+	  },
+  {
 	    "name": "Galvek Venom Dragonfire",
 	    "end": {
 	      "id": 1472,
@@ -2667,6 +2683,21 @@
 	      "endHeight": 25
 	    }
 	  },
+  {
+		    "name": "Mutant Tarn FireAttack",
+		    "animation": {
+		      "id": 1155,
+		      "delay": 0,
+		      "priority": "HIGH"
+		    },
+		    "projectile": {
+		      "id": 1175,
+		      "delay": 50,
+		      "duration": 75,
+		      "startHeight": 90,
+		      "endHeight": 25
+		    }
+		  },
   {
     "name": "Tentacle Blast",
     "max-hit": 2,

@@ -2,16 +2,13 @@ package io.battlerune.game.world.entity.combat.strategy.npc.boss;
 
 import static io.battlerune.game.world.entity.combat.CombatUtil.createStrategyArray;
 
-import java.util.Collections;
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
 
 import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.Projectile;
 import io.battlerune.game.UpdatePriority;
-import io.battlerune.game.task.TickableTask;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
 import io.battlerune.game.world.entity.combat.CombatUtil;
@@ -27,8 +24,6 @@ import io.battlerune.game.world.entity.combat.strategy.npc.NpcRangedStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.impl.DragonfireStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
-import io.battlerune.game.world.object.CustomGameObject;
-import io.battlerune.game.world.pathfinding.TraversalMap;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
@@ -157,6 +152,7 @@ public class MutantTarn extends MultiStrategy {
                 shadow.walkTo(defender, () -> {
                     World.sendGraphic(new Graphic(1460, true), shadow.getPosition());
                     defender.damage(new Hit(randomHit * shadow.getCurrentHealth() / shadow.getMaximumHealth()));
+                    defender.graphic(287);
                     shadow.unregister();
                 });
             });
@@ -178,7 +174,7 @@ public class MutantTarn extends MultiStrategy {
 
     private static class DragonfireAttack extends DragonfireStrategy {
         DragonfireAttack() {
-            super(CombatProjectile.getDefinition("Metalic Galvek dragonfire"));
+            super(CombatProjectile.getDefinition("Mutant Tarn FireAttack"));
         }
 
         @Override
@@ -199,7 +195,7 @@ public class MutantTarn extends MultiStrategy {
 
     private static class VenomDragonfireAttack extends DragonfireStrategy {
         VenomDragonfireAttack() {
-            super(CombatProjectile.getDefinition("Galvek Venom Dragonfire"));
+            super(CombatProjectile.getDefinition("Mutant tarn randomAttack"));
         }
 
         @Override
@@ -223,7 +219,6 @@ public class MutantTarn extends MultiStrategy {
         @Override
         public CombatHit[] getHits(Npc attacker, Mob defender) {
             CombatHit combatHit = CombatUtil.generateDragonfire(attacker, defender, 75, true);
-           // combatHit.setHitsplat(Hitsplat.VENOM);
             return new CombatHit[]{combatHit};
         }
     }
