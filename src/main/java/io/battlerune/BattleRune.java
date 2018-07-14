@@ -2,6 +2,7 @@ package io.battlerune;
 
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -52,6 +53,9 @@ import io.battlerune.util.parser.impl.NpcSpawnParser;
 import io.battlerune.util.parser.impl.ObjectRemovalParser;
 import io.battlerune.util.parser.impl.PacketSizeParser;
 import io.battlerune.util.parser.impl.StoreParser;
+import io.battlerune.util.sql.MySqlCommands;
+import io.battlerune.util.sql.MySqlConnector;
+import io.battlerune.util.sql.MySqlLogHandler;
 import plugin.click.item.ClueScrollPlugin;
 
 public final class BattleRune {
@@ -73,6 +77,13 @@ public final class BattleRune {
 
     private void processSequentialStatupTasks() {
         Logger.log("Preparing Sequential Start Up Tasks...");
+        if(Config.MY_SQL) {
+        	try {
+				MySqlConnector.run();
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+        }
         try {
             Logger.log("Preparing Object/Region Decoding... ");
             new ObjectRemovalParser().run();
@@ -93,6 +104,7 @@ public final class BattleRune {
         new NpcForceChatParser().run();
         new StoreParser().run();
         new GlobalObjectParser().run();
+        MySqlLogHandler.run(MySqlCommands.INSERT, "Harryl has used ::commands");
     }
 
     /**
