@@ -44,7 +44,6 @@ import io.battlerune.io.PacketListenerLoader;
 import io.battlerune.util.GameSaver;
 import io.battlerune.util.Logger;
 import io.battlerune.util.Stopwatch;
-import io.battlerune.util.database.MySQLDatabase;
 import io.battlerune.util.parser.impl.CombatProjectileParser;
 import io.battlerune.util.parser.impl.GlobalObjectParser;
 import io.battlerune.util.parser.impl.NpcDropParser;
@@ -67,8 +66,6 @@ public final class BattleRune {
     private static final NetworkService networkService = new NetworkService();
 
     private static final BattleRune INSTANCE = new BattleRune();
-
-    private static final MySQLDatabase database = new MySQLDatabase(Config.GLOBAL_DATABASE);
 
     private BattleRune() {
 
@@ -146,15 +143,6 @@ public final class BattleRune {
     public void start() throws Exception {
 
         Logger.tag();
-        if (Config.FORUM_INTEGRATION) {
-//            ForumService.start(); // used to check users logging in with website credentials
-            getDatabase().prepare("runity.io", "runity_root", "JNfIn3IvH5$V");
-
-            if (Config.LIVE_SERVER) {
-//                PostgreService.start(); // used to start the postgres connection pool
-//                WebsitePlayerCountService.getInstance().startAsync(); // used to display player count on website
-            }
-        }
 
         Logger.log(String.format("Game Engine=%s", Config.PARALLEL_GAME_ENGINE ? "Parallel": "Sequential"));
         processSequentialStatupTasks();
@@ -190,10 +178,6 @@ public final class BattleRune {
 
     public static BattleRune getInstance() {
         return INSTANCE;
-    }
-
-    public static MySQLDatabase getDatabase() {
-        return database;
     }
 
 }
