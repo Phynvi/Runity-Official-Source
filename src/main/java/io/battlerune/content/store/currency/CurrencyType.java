@@ -16,6 +16,7 @@ import java.util.Optional;
  * @since 4-1-2017.
  */
 public enum CurrencyType {
+	
     COINS(0, new ItemCurrency(995)),
     TOKKUL(1, new ItemCurrency(6529)),
     DONATOR_POINTS(2, new DonatorPointCurrency()),

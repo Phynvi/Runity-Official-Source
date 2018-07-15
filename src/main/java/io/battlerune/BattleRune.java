@@ -104,7 +104,7 @@ public final class BattleRune {
         new NpcForceChatParser().run();
         new StoreParser().run();
         new GlobalObjectParser().run();
-        MySqlLogHandler.run(MySqlCommands.INSERT, "Harryl has used ::commands");
+       // MySqlLogHandler.run(MySqlCommands.INSERT, "Harryl has used ::commands");
     }
 
     /**

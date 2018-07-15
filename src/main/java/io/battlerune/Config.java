@@ -443,9 +443,7 @@ public static final int[][] SIDEBAR_INTERFACE = {
     public static final int USERNAME_MIN_CHARACTERS = 3;
     public static final int PASSWORD_MAX_CHARACTERS = 20;
 
-	public static final boolean MY_SQL = true;
-
-	//public static final Position BOTSPAWN = null;
+	public static final boolean MY_SQL = false;
 
     static {
         try {

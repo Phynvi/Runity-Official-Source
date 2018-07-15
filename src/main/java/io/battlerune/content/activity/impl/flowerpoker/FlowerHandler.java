@@ -2,39 +2,48 @@ package io.battlerune.content.activity.impl.flowerpoker;
 
 import java.util.Random;
 
-
 import io.battlerune.game.Animation;
 import io.battlerune.game.task.impl.ObjectPlacementEvent;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.Mob;
+import io.battlerune.game.world.entity.mob.movement.Movement;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.game.world.object.CustomGameObject;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.object.ObjectDirection;
 import io.battlerune.game.world.object.ObjectType;
+import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
 import io.battlerune.game.world.region.RegionManager;
+
 /**
  * Handles the flower clicking
+ * 
  * @author Harryl / Nerik#8690
  *
  */
 public class FlowerHandler {
 
-	private static Random random = new Random();
-	private static FlowerData[] flower = FlowerData.values();
-	private static FlowerData tempFlower;
+	private Player player;
+	private Random random = new Random();
+	private FlowerData[] flower = FlowerData.values();
+	private FlowerData tempFlower;
+	private Movement movement = new Movement(player);
 
-	public static FlowerData getTempFlower() {
+	public FlowerHandler(Player player) {
+		this.player = player;
+	}
+	
+	public FlowerData getTempFlower() {
 		return tempFlower;
 	}
 
-	public static void setTempFlower(FlowerData tempFlower) {
-		FlowerHandler.tempFlower = tempFlower;
+	public void setTempFlower(FlowerData tempFlower) {
+		this.tempFlower = tempFlower;
 	}
 
-	public static void plantFlower(Player player) {
+	public void plantFlower() {
 		setTempFlower(getFlower());
 
 		if (onFlower(player)) {
@@ -49,12 +58,9 @@ public class FlowerHandler {
 		World.schedule(new ObjectPlacementEvent(gameObject, 50));
 
 		player.message("You have planted " + ItemDefinition.get(getTempFlower().getItemId()).getName());
-		
-		
-		//player.getForceMovement().getStart().
 	}
 
-	public static boolean onFlower(Mob mob) {
+	private boolean onFlower(Mob mob) {
 		for (Region region : RegionManager.getSurroundingRegions(mob.getPosition())) {
 			for (GameObject object : region.getGameObjects(mob.getPosition())) {
 				if (mob.getPosition().equals(object.getPosition())) {
@@ -65,7 +71,7 @@ public class FlowerHandler {
 		return false;
 	}
 
-	private static FlowerData getFlower() {
+	private FlowerData getFlower() {
 		return flower[random.nextInt(flower.length)];
 	}
 }

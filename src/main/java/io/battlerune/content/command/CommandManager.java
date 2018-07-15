@@ -17,6 +17,7 @@ import plugin.command.impl.owner.ItemCommand;
 import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.owner.NpcCommand;
 import plugin.command.impl.owner.ObjectCommand;
+import plugin.command.impl.owner.PlantFlowerCommand;
 import plugin.command.impl.owner.PlayerGuideCommand;
 import plugin.command.impl.owner.PnpcCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
@@ -74,7 +75,7 @@ public class CommandManager {
 		/*
 		 * @Player Commands
 		 */
-		
+		plugin.put(new String[] { "plant" }, new PlantFlowerCommand());
 		plugin.put(new String[] { "home", "hom" }, new HomeCommand());
 		plugin.put(new String[] { "train", "training" }, new TrainZone());
 		plugin.put(new String[] { "tele" }, new TeleCommand());

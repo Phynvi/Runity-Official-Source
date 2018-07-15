@@ -75,6 +75,25 @@ public class Movement {
         finish();
     }
 
+    /*public void stepAway(Character character) {
+		if(character.getMovementQueue().canWalk(-1, 0))
+			character.getMovementQueue().walkStep(-1, 0);
+		else if(character.getMovementQueue().canWalk(1, 0))
+			character.getMovementQueue().walkStep(1, 0);
+		else if(character.getMovementQueue().canWalk(0, -1))
+			character.getMovementQueue().walkStep(0, -1);
+		else if(character.getMovementQueue().canWalk(0, 1))
+			character.getMovementQueue().walkStep(0, 1);
+	}
+    public boolean canWalk(int deltaX, int deltaY) {
+		final Position to = new Position(mob.getPlayer().getPosition().getX()+deltaX, mob.getPlayer().getPosition().getY()+deltaY, mob.getPlayer().getPosition().getHeight());
+		if(mob.getPlayer().getPosition().getHeight() == -1 
+				&& to.getHeight() == -1 && mob.getPlayer().isNpc()) {
+			return true;
+		}
+		return false;
+	}
+    */
     /** Handles mob walking to a certain position. */
     public void walkTo(Position position) {
         reset();

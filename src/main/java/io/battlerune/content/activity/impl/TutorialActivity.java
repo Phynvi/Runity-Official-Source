@@ -16,6 +16,7 @@ import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.teleport.TeleportHandler;
 import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
+import io.battlerune.game.event.email.EmailInputListener;
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
@@ -322,6 +323,7 @@ public class TutorialActivity extends Activity {
         if (player.needsStarter) {
             StarterKit.open(player);
         }
+        EmailInputListener.input(player);
     }
 
     @Override
