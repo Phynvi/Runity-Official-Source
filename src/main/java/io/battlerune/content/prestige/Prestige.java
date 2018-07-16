@@ -19,7 +19,7 @@ import io.battlerune.util.Utility;
 /**
  * Handles the prestige class.
  *
- * @author Daniel.
+ * @author Daniel. test
  */
 public class Prestige {
 

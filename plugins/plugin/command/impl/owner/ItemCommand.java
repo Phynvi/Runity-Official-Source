@@ -11,7 +11,6 @@ public class ItemCommand implements Command {
 	public void execute(Player player, String[] command) {
 		int itemId = Integer.parseInt(command[1]);
 		int amount = Integer.parseInt(command[2]);
-
 		player.inventory.add(new Item(itemId, amount));
 		player.message("[Item Spawner] Added " + amount + " [Amount] : " + itemId + " [Item id]");
 

@@ -35625,6 +35625,23 @@
     "ranged-strength": 28
   },
   {
+	    "id": 20690,
+	    "name": "Darthmaul whip",
+	    "noted-id": 4152,
+	    "low-alch": 48000,
+	    "high-alch": 72000,
+	    "base-value": 120001,
+	    "street-value": 1727509,
+	    "weight": 0.45,
+	    "walk-animation": 1660,
+	    "run-animation": 1661,
+	    "equipment-slot": "WEAPON",
+	    "weapon-interface": "WHIP",
+	    "req-attack": 70,
+	    "attack-slash": 82,
+	    "bonus-strength": 82
+	  },
+  {
     "id": 4151,
     "name": "Abyssal whip",
     "noted-id": 4152,
@@ -35915,6 +35932,24 @@
     "id": 4179,
     "name": "Stick"
   },
+  {
+	    "id": 14581,
+	    "name": "Darthmaul platelegs",
+	    "low-alch": 2,
+	    "high-alch": 3,
+	    "base-value": 6,
+	    "street-value": 186482,
+	    "weight": 9.0,
+	    "equipment-slot": "LEGS",
+	    "req-defence": 60,
+	    "attack-magic": -21,
+	    "attack-ranged": -7,
+	    "defence-stab": 68,
+	    "defence-slash": 66,
+	    "defence-crush": 63,
+	    "defence-magic": -4,
+	    "defence-ranged": 65
+	  },
   {
     "id": 4180,
     "name": "Dragon platelegs",
@@ -38697,6 +38732,15 @@
     "street-value": 2600
   },
   {
+	    "id": 14582,
+	    "name": "Darthmaul helm",
+	    "low-alch": 312,
+	    "high-alch": 468,
+	    "base-value": 780,
+	    "street-value": 780,
+	    "equipment-slot": "HELM"
+	  },
+  {
     "id": 4506,
     "name": "Decorative helm",
     "low-alch": 312,
@@ -40234,6 +40278,46 @@
     "weight": 1.0
   },
   {
+	    "id": 13689,
+	    "name": "Silver chain",
+	    "noted-id": 19554,
+	    "low-alch": 80800,
+	    "high-alch": 121200,
+	    "base-value": 202000,
+	    "street-value": 16162009,
+	    "equipment-slot": "AMULET",
+	    "req-hitpoints": 75,
+	    "attack-stab": 15,
+	    "attack-slash": 15,
+	    "attack-crush": 15,
+	    "bonus-strength": 10,
+	    "bonus-prayer": 2
+	  },
+  {
+		    "id": 13687,
+		    "name": "Magma axe",
+		    "destroy-message": "Drop (If you drop this item it will break. Are you sure you want to drop it?)",
+		    "two-handed": true,
+		    "noted-id": 4719,
+		    "low-alch": 83200,
+		    "high-alch": 124800,
+		    "base-value": 208000,
+		    "weight": 13.0,
+		    "stand-animation": 2065,
+		    "walk-animation": 2064,
+		    "run-animation": 1664,
+		    "equipment-slot": "WEAPON",
+		    "weapon-interface": "GREATAXE",
+		    "req-attack": 70,
+		    "req-strength": 70,
+		    "attack-stab": -4,
+		    "attack-slash": 103,
+		    "attack-crush": 95,
+		    "attack-magic": -4,
+		    "defence-ranged": -1,
+		    "bonus-strength": 105
+		  },
+  {
     "id": 4718,
     "name": "Dharok's greataxe",
     "destroy-message": "Drop (If you drop this item it will break. Are you sure you want to drop it?)",
@@ -40286,6 +40370,26 @@
     "base-value": 208000,
     "weight": 13.0
   },
+  {
+	    "id": 14583,
+	    "name": "Darthmaul platebody",
+	    "destroy-message": "Drop (If you drop this item it will break. Are you sure you want to drop it?)",
+	    "noted-id": 4721,
+	    "low-alch": 112000,
+	    "high-alch": 168000,
+	    "base-value": 280000,
+	    "street-value": 1740989,
+	    "weight": 9.0,
+	    "equipment-slot": "BODY",
+	    "req-defence": 70,
+	    "attack-magic": -30,
+	    "attack-ranged": -10,
+	    "defence-stab": 122,
+	    "defence-slash": 120,
+	    "defence-crush": 107,
+	    "defence-magic": -6,
+	    "defence-ranged": 132
+	  },
   {
     "id": 4720,
     "name": "Dharok's platebody",
@@ -40496,6 +40600,24 @@
     "defence-ranged": 10
   },
   {
+	    "id": 19914,
+	    "name": "Imperial helm",
+	    "low-alch": 5200,
+	    "high-alch": 7800,
+	    "base-value": 13000,
+	    "weight": 1.0,
+	    "equipment-slot": "HELM",
+	    "req-defence": 70,
+	    "req-ranged": 70,
+	    "attack-magic": -1,
+	    "attack-ranged": 7,
+	    "defence-stab": 6,
+	    "defence-slash": 9,
+	    "defence-crush": 12,
+	    "defence-magic": 6,
+	    "defence-ranged": 10
+	  },
+  {
     "id": 4733,
     "name": "Karil's coif",
     "destroy-message": "Drop (If you drop this item it will break. Are you sure you want to drop it?)",
@@ -40671,6 +40793,24 @@
     "weight": 4.0
   },
   {
+	    "id": 19917,
+	    "name": "Imperial platebody",
+
+	    "low-alch": 112000,
+	    "high-alch": 168000,
+	    "base-value": 280000,
+	    "weight": 9.0,
+	    "equipment-slot": "BODY",
+	    "req-defence": 70,
+	    "attack-magic": -30,
+	    "attack-ranged": -10,
+	    "defence-stab": 122,
+	    "defence-slash": 120,
+	    "defence-crush": 107,
+	    "defence-magic": -6,
+	    "defence-ranged": 132
+	  },
+  {
     "id": 4749,
     "name": "Torag's platebody",
     "destroy-message": "Drop (If you drop this item it will break. Are you sure you want to drop it?)",
@@ -40700,6 +40840,23 @@
     "base-value": 280000,
     "weight": 9.0
   },
+  {
+	    "id": 19920,
+	    "name": "Imperial platelegs",
+	    "low-alch": 110000,
+	    "high-alch": 165000,
+	    "base-value": 275000,
+	    "weight": 9.0,
+	    "equipment-slot": "LEGS",
+	    "req-defence": 70,
+	    "attack-magic": -21,
+	    "attack-ranged": -7,
+	    "defence-stab": 85,
+	    "defence-slash": 82,
+	    "defence-crush": 83,
+	    "defence-magic": -4,
+	    "defence-ranged": 92
+	  },
   {
     "id": 4751,
     "name": "Torag's platelegs",
@@ -45392,6 +45549,20 @@
     "defence-ranged": 7
   },
   {
+	    "id": 14584,
+	    "name": "darthmaul gloves",
+	    "low-alch": 100,
+	    "high-alch": 150,
+	    "base-value": 250,
+	    "weight": 0.4,
+	    "equipment-slot": "GLOVES",
+	    "defence-stab": 2,
+	    "defence-slash": 2,
+	    "defence-crush": 2,
+	    "defence-magic": 2,
+	    "defence-ranged": 2
+	  },
+  {
     "id": 5556,
     "name": "Rogue gloves",
     "low-alch": 100,
@@ -45405,6 +45576,20 @@
     "defence-magic": 2,
     "defence-ranged": 2
   },
+  {
+	    "id": 14585,
+	    "name": "darthmaul boots",
+	    "low-alch": 100,
+	    "high-alch": 150,
+	    "base-value": 250,
+	    "weight": 0.4,
+	    "equipment-slot": "BOOTS",
+	    "defence-stab": 2,
+	    "defence-slash": 2,
+	    "defence-crush": 2,
+	    "defence-magic": 2,
+	    "defence-ranged": 2
+	  },
   {
     "id": 5557,
     "name": "Rogue boots",
@@ -49639,6 +49824,15 @@
     "equipment-slot": "BOOTS"
   },
   {
+	    "id": 14586,
+	    "name": "darthmaul",
+	    "low-alch": 20,
+	    "high-alch": 30,
+	    "base-value": 50,
+	    "weight": 2.0,
+	    "equipment-slot": "CAPE"
+	  },
+  {
     "id": 6070,
     "name": "Mourner cloak",
     "low-alch": 20,
@@ -50760,6 +50954,17 @@
     "high-alch": 120,
     "base-value": 200
   },
+  {
+	    "id": 13686,
+	    "name": "Magma shield",
+	    "noted-id": 6216,
+	    "low-alch": 1200,
+	    "high-alch": 1800,
+	    "base-value": 3000,
+	    "street-value": 12405,
+	    "block-animation": 1156,
+	    "equipment-slot": "SHIELD"
+	  },
   {
     "id": 6215,
     "name": "Broodoo shield (10)",
@@ -57831,6 +58036,30 @@
     "base-value": 30
   },
   {
+	    "id": 13208,
+	    "name": "Malevolent 2h sword",
+	    "two-handed": true,
+	    "noted-id": 7407,
+	    "low-alch": 88000,
+	    "high-alch": 132000,
+	    "base-value": 220000,
+	    "street-value": 158688,
+	    "weight": 3.0,
+	    "stackable": false,
+	    "stand-animation": 2561,
+	    "walk-animation": 2064,
+	    "run-animation": 2563,
+	    "equipment-slot": "WEAPON",
+	    "weapon-interface": "TWO_HANDED_SWORD",
+	    "req-attack": 60,
+	    "attack-stab": -4,
+	    "attack-slash": 92,
+	    "attack-crush": 80,
+	    "attack-magic": -4,
+	    "defence-ranged": -1,
+	    "bonus-strength": 93
+	  },
+  {
     "id": 7158,
     "name": "Dragon 2h sword",
     "two-handed": true,
@@ -59286,6 +59515,24 @@
     "base-value": 15,
     "street-value": 41
   },
+  {
+	    "id": 13207,
+	    "name": "Purgatory Offhand",
+	    "low-alch": 652,
+	    "high-alch": 979,
+	    "base-value": 1632,
+	    "weight": 4.0,
+	    "block-animation": 1156,
+	    "equipment-slot": "SHIELD",
+	    "req-defence": 10,
+	    "attack-magic": -8,
+	    "attack-ranged": -2,
+	    "defence-stab": 17,
+	    "defence-slash": 19,
+	    "defence-crush": 18,
+	    "defence-magic": -1,
+	    "defence-ranged": 18
+	  },
   {
     "id": 7332,
     "name": "Black shield (h1)",
@@ -79110,6 +79357,24 @@
     "weight": 1.0
   },
   {
+	    "id": 13209,
+	    "name": "Purgatory helm",
+	    "low-alch": 14080,
+	    "high-alch": 21120,
+	    "base-value": 35200,
+	    "street-value": 11738,
+	    "weight": 2.7,
+	    "equipment-slot": "HELM",
+	    "req-defence": 40,
+	    "attack-magic": -6,
+	    "attack-ranged": -2,
+	    "defence-stab": 30,
+	    "defence-slash": 32,
+	    "defence-crush": 27,
+	    "defence-magic": -1,
+	    "defence-ranged": 30
+	  },
+  {
     "id": 10286,
     "name": "Rune helm (h1)",
     "noted-id": 10287,
@@ -84706,6 +84971,24 @@
     "street-value": 1853709,
     "weight": 0.2
   },
+  {
+	    "id": 13210,
+	    "name": "Purgatory platebody",
+	    "low-alch": 26000,
+	    "high-alch": 39000,
+	    "base-value": 65000,
+	    "street-value": 43487,
+	    "weight": 9.9,
+	    "equipment-slot": "BODY",
+	    "req-defence": 40,
+	    "attack-magic": -30,
+	    "attack-ranged": -10,
+	    "defence-stab": 82,
+	    "defence-slash": 80,
+	    "defence-crush": 72,
+	    "defence-magic": -6,
+	    "defence-ranged": 80
+	  },
   {
     "id": 10798,
     "name": "Rune platebody (g)",
@@ -101696,6 +101979,26 @@
     "name": "Pet dark core"
   },
   {
+	    "id": 18908,
+	    "name": "Mystical spirit shield",
+	    "noted-id": 12818,
+	    "low-alch": 800000,
+	    "high-alch": 1200000,
+	    "base-value": 2000000,
+	    "street-value": 626587759,
+	    "weight": 2.0,
+	    "block-animation": 1156,
+	    "equipment-slot": "SHIELD",
+		"req-defence": 75,
+	    "req-prayer": 70,
+	    "defence-stab": 63,
+	    "defence-slash": 65,
+	    "defence-crush": 75,
+	    "defence-magic": 2,
+	    "defence-ranged": 57,
+	    "bonus-prayer": 3
+	  },
+  {
     "id": 12817,
     "name": "Elysian spirit shield",
     "noted-id": 12818,
@@ -115485,6 +115788,23 @@
     "defence-ranged": 80
   },
   {
+	    "id": 13212,
+	    "name": "Purgatory platelegs",
+	    "low-alch": 120,
+	    "high-alch": 180,
+	    "base-value": 300,
+	    "street-value": 41181,
+	    "weight": 9.0,
+	    "equipment-slot": "LEGS",
+	    "attack-magic": -21,
+	    "attack-ranged": -7,
+	    "defence-stab": 51,
+	    "defence-slash": 49,
+	    "defence-crush": 47,
+	    "defence-magic": -4,
+	    "defence-ranged": 49
+	  },
+  {
     "id": 20422,
     "name": "Rune platelegs",
     "low-alch": 120,
@@ -115621,6 +115941,13 @@
     "weight": 0.25,
     "equipment-slot": "BOOTS"
   },
+  {
+	    "id": 13213,
+	    "name": "Purgatory boots",
+	    "street-value": 578320,
+	    "weight": 0.25,
+	    "equipment-slot": "BOOTS"
+	  },
   {
     "id": 20434,
     "name": "Evil chicken feet",
@@ -119740,6 +120067,14 @@
     "base-value": 1150
   },
   {
+	    "id": 13214,
+	    "name": "Purgatory gauntlets",
+	    "low-alch": 520,
+	    "high-alch": 780,
+	    "base-value": 1300,
+	    "equipment-slot": "GLOVES"
+	  },
+  {
     "id": 21180,
     "name": "Flamtaer bracelet",
     "noted-id": 21181,
@@ -119775,6 +120110,24 @@
     "high-alch": 1500,
     "base-value": 2500
   },
+  {
+	    "id": 13661,
+	    "name": "Purgatory wings",
+	    "weight": 0.4,
+	    "equipment-slot": "CAPE",
+	    "attack-stab": 1,
+	    "attack-slash": 1,
+	    "attack-crush": 1,
+	    "attack-magic": 1,
+	    "attack-ranged": 1,
+	    "defence-stab": 11,
+	    "defence-slash": 11,
+	    "defence-crush": 11,
+	    "defence-magic": 11,
+	    "defence-ranged": 11,
+	    "bonus-strength": 4,
+	    "bonus-prayer": 2
+	  },
   {
     "id": 21186,
     "name": "Fire max cape",
@@ -121875,6 +122228,25 @@
     "base-value": 12500,
     "weight": 2.0
   },
+  {
+	    "id": 13662,
+	    "name": "Purgatory longsword",
+	    "low-alch": 12800,
+	    "high-alch": 19200,
+	    "base-value": 32000,
+	    "weight": 2.0,
+	    "stand-animation": 808,
+	    "walk-animation": 819,
+	    "equipment-slot": "WEAPON",
+	    "weapon-interface": "LONGSWORD",
+		"req-attack": 50,
+	    "attack-stab": 56,
+	    "attack-slash": 65,
+	    "attack-crush": -2,
+	    "defence-slash": 3,
+	    "defence-crush": 2,
+	    "bonus-strength": 62
+	  },
   {
     "id": 21646,
     "name": "Granite longsword",

@@ -6,7 +6,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 
 /**
- * @author Adam_#6723
+ * @author Adam_#6723 test
  */
 
 public class SpawnCustomCommand implements Command {

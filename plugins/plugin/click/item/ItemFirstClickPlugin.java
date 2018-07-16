@@ -19,7 +19,7 @@ import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
 
-public class ItemFirstClickPlugin extends PluginContext {
+public class ItemFirstClickPlugin extends PluginContext { //etest
 
     @Override
     protected boolean firstClickItem(Player player, ItemClickEvent event) {
