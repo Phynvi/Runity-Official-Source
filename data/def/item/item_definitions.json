@@ -619,6 +619,18 @@
     "defence-crush": 3
   },
   {
+	    "id": 17157,
+	    "name": "Death full helm",
+	    "low-alch": 4,
+	    "high-alch": 6,
+	    "base-value": 10,
+	    "weight": 2.0,
+	    "equipment-slot": "HELM",
+	    "defence-stab": 4,
+	    "defence-slash": 5,
+	    "defence-crush": 3
+	  },
+  {
     "id": 75,
     "name": "Khazard armour",
     "low-alch": 4,
@@ -699,6 +711,18 @@
     "defence-slash": 1,
     "defence-crush": 1
   },
+  {
+	    "id": 17158,
+	    "name": "Death boots",
+	    "low-alch": 2,
+	    "high-alch": 3,
+	    "base-value": 6,
+	    "weight": -4.5,
+	    "equipment-slot": "BOOTS",
+	    "defence-stab": 1,
+	    "defence-slash": 1,
+	    "defence-crush": 1
+	  },
   {
     "id": 89,
     "name": "Boots of lightness",
@@ -8802,6 +8826,24 @@
     "defence-ranged": 10
   },
   {
+	    "id": 17159,
+	    "name": "Death platelegs",
+	    "low-alch": 112,
+	    "high-alch": 168,
+	    "base-value": 280,
+	    "street-value": 117,
+	    "weight": 9.0,
+	    "equipment-slot": "LEGS",
+	    "req-defence": 1,
+	    "attack-magic": -21,
+	    "attack-ranged": -7,
+	    "defence-stab": 11,
+	    "defence-slash": 10,
+	    "defence-crush": 10,
+	    "defence-magic": -4,
+	    "defence-ranged": 10
+	  },
+  {
     "id": 1068,
     "name": "Iron platelegs",
     "stackable": true,
@@ -14017,6 +14059,20 @@
 	    "defence-crush": 1,
 	    "bonus-strength": 10
 	  },
+  {
+		    "id": 17160,
+		    "name": "Soulflare",
+		    "destroy-message": "You can get a replacement from Diango or Thessalia.",
+		    "weight": 3.0,
+		    "equipment-slot": "WEAPON",
+		    "weapon-interface": "SCYTHE",
+		    "attack-stab": 3,
+		    "attack-slash": 8,
+		    "attack-crush": 3,
+		    "defence-slash": 3,
+		    "defence-crush": 1,
+		    "bonus-strength": 10
+		  },
   {
     "id": 1419,
     "name": "Scythe",
@@ -23775,6 +23831,25 @@
     "street-value": 1853709,
     "weight": 0.2
   },
+  {
+	    "id": 17162,
+	    "name": "Death platebody",
+	    "noted-id": 2584,
+	    "low-alch": 1536,
+	    "high-alch": 2304,
+	    "base-value": 3840,
+	    "street-value": 3421,
+	    "weight": 9.0,
+	    "equipment-slot": "BODY",
+	    "req-defence": 10,
+	    "attack-magic": -30,
+	    "attack-ranged": -10,
+	    "defence-stab": 41,
+	    "defence-slash": 40,
+	    "defence-crush": 30,
+	    "defence-magic": -6,
+	    "defence-ranged": 40
+	  },
   {
     "id": 2583,
     "name": "Black platebody (t)",
@@ -35641,6 +35716,23 @@
 	    "attack-slash": 82,
 	    "bonus-strength": 82
 	  },
+  {
+		    "id": 17180,
+		    "name": "Corrupt whip",
+		    "noted-id": 4152,
+		    "low-alch": 48000,
+		    "high-alch": 72000,
+		    "base-value": 120001,
+		    "street-value": 1727509,
+		    "weight": 0.45,
+		    "walk-animation": 1660,
+		    "run-animation": 1661,
+		    "equipment-slot": "WEAPON",
+		    "weapon-interface": "WHIP",
+		    "req-attack": 70,
+		    "attack-slash": 82,
+		    "bonus-strength": 82
+		  },
   {
     "id": 4151,
     "name": "Abyssal whip",
@@ -74949,6 +75041,16 @@
 			    "equipment-slot": "CAPE"
 			  },
   {
+				    "id": 3929,
+					"tradeable": false,
+				    "name": "Owner cape",
+				    "low-alch": 39600,
+				    "high-alch": 59400,
+				    "base-value": 99000,
+				    "weight": 0.4,
+				    "equipment-slot": "CAPE"
+				  },
+  {
     "id": 9747,
 	"tradeable": false,
     "name": "Attack cape",
@@ -101980,7 +102082,7 @@
   },
   {
 	    "id": 18908,
-	    "name": "Mystical spirit shield",
+	    "name": "Inferno spirit shield",
 	    "noted-id": 12818,
 	    "low-alch": 800000,
 	    "high-alch": 1200000,
@@ -101998,6 +102100,66 @@
 	    "defence-ranged": 57,
 	    "bonus-prayer": 3
 	  },
+  {
+		    "id": 4062,
+		    "name": "Inferno spirit shield",
+		    "noted-id": 12818,
+		    "low-alch": 800000,
+		    "high-alch": 1200000,
+		    "base-value": 2000000,
+		    "street-value": 626587759,
+		    "weight": 2.0,
+		    "block-animation": 1156,
+		    "equipment-slot": "SHIELD",
+			"req-defence": 75,
+		    "req-prayer": 70,
+		    "defence-stab": 63,
+		    "defence-slash": 65,
+		    "defence-crush": 75,
+		    "defence-magic": 2,
+		    "defence-ranged": 57,
+		    "bonus-prayer": 3
+		  },
+  {
+			    "id": 13722,
+			    "name": "Upgraded Lava spirit shield",
+			    "noted-id": 12818,
+			    "low-alch": 800000,
+			    "high-alch": 1200000,
+			    "base-value": 2000000,
+			    "street-value": 626587759,
+			    "weight": 2.0,
+			    "block-animation": 1156,
+			    "equipment-slot": "SHIELD",
+				"req-defence": 75,
+			    "req-prayer": 70,
+			    "defence-stab": 63,
+			    "defence-slash": 65,
+			    "defence-crush": 75,
+			    "defence-magic": 2,
+			    "defence-ranged": 57,
+			    "bonus-prayer": 3
+			  },
+  {
+				    "id": 13718,
+				    "name": "Lava spirit shield",
+				    "noted-id": 12818,
+				    "low-alch": 800000,
+				    "high-alch": 1200000,
+				    "base-value": 2000000,
+				    "street-value": 626587759,
+				    "weight": 2.0,
+				    "block-animation": 1156,
+				    "equipment-slot": "SHIELD",
+					"req-defence": 75,
+				    "req-prayer": 70,
+				    "defence-stab": 63,
+				    "defence-slash": 65,
+				    "defence-crush": 75,
+				    "defence-magic": 2,
+				    "defence-ranged": 57,
+				    "bonus-prayer": 3
+				  },
   {
     "id": 12817,
     "name": "Elysian spirit shield",
@@ -120129,6 +120291,24 @@
 	    "bonus-prayer": 2
 	  },
   {
+		    "id": 17181,
+		    "name": "Corrupt Torva wings",
+		    "weight": 0.4,
+		    "equipment-slot": "CAPE",
+		    "attack-stab": 1,
+		    "attack-slash": 1,
+		    "attack-crush": 1,
+		    "attack-magic": 1,
+		    "attack-ranged": 1,
+		    "defence-stab": 11,
+		    "defence-slash": 11,
+		    "defence-crush": 11,
+		    "defence-magic": 11,
+		    "defence-ranged": 11,
+		    "bonus-strength": 4,
+		    "bonus-prayer": 2
+		  },
+  {
     "id": 21186,
     "name": "Fire max cape",
     "weight": 0.4,
@@ -123512,6 +123692,18 @@
     "equipment-slot": "HELM"
   },
   {
+	    "id": 17163,
+	    "name": "Raptor helm",
+	    "weight": 0.4,
+	    "equipment-slot": "HELM"
+	  },
+  {
+		    "id": 17166,
+		    "name": "Flame Raptor helm",
+		    "weight": 0.4,
+		    "equipment-slot": "HELM"
+		  },
+  {
     "id": 21902,
     "name": "Dragon crossbow",
     "noted-id": 21903,
@@ -124591,6 +124783,47 @@
 	  },
   
   {
+		    "id": 17172,
+		    "name": "Legion Helmet",
+		    "low-alch": 36000,
+		    "high-alch": 54000,
+		    "base-value": 90000,
+		    "weight": 2.2,
+		    "equipment-slot": "HELM",
+		    "req-defence": 10,
+		    "attack-magic": 3,
+		    "attack-ranged": 3,
+		    "stackable": false,
+		    "defence-stab": 30,
+		    "defence-slash": 32,
+		    "defence-crush": 27,
+		    "defence-magic": 10,
+		    "defence-ranged": 30,
+		    "req-defence": 70
+		  },
+  
+  {
+			    "id": 17173,
+			    "name": "Legion Platebody",
+			    "low-alch": 26000,
+			    "high-alch": 39000,
+			    "stackable": false,
+			    "base-value": 65000,
+			    "street-value": 43487,
+			    "weight": 9.9,
+			    "equipment-slot": "BODY",
+			    "req-defence": 40,
+			    "attack-magic": -30,
+			    "attack-ranged": -10,
+			    "defence-stab": 82,
+			    "defence-slash": 80,
+			    "defence-crush": 72,
+			    "defence-magic": -6,
+			    "defence-ranged": 80
+			    
+	},
+  
+  {
 		    "id": 22304,
 		    "name": "Zaros Platebody",
 		    "low-alch": 26000,
@@ -124609,6 +124842,106 @@
 		    "defence-magic": -6,
 		    "defence-ranged": 80
 		    
+},
+  {
+    "id": 17174,
+    "name": "Legion Platelegs",
+    "low-alch": 26000,
+    "high-alch": 39000,
+    "base-value": 65000,
+    "street-value": 43487,
+    "stackable": false,
+    "weight": 9.9,
+    "equipment-slot": "LEGS",
+    "req-defence": 40,
+    "attack-magic": -30,
+    "attack-ranged": -10,
+    "defence-stab": 82,
+    "defence-slash": 80,
+    "defence-crush": 72,
+    "defence-magic": -6,
+    "defence-ranged": 80
+    
+},
+  {
+    "id": 17179,
+    "name": "Corrupt Torva Platelegs",
+    "low-alch": 26000,
+    "high-alch": 39000,
+    "base-value": 65000,
+    "street-value": 43487,
+    "stackable": false,
+    "weight": 9.9,
+    "equipment-slot": "LEGS",
+    "req-defence": 40,
+    "attack-magic": -30,
+    "attack-ranged": -10,
+    "defence-stab": 82,
+    "defence-slash": 80,
+    "defence-crush": 72,
+    "defence-magic": -6,
+    "defence-ranged": 80
+    
+},
+  {
+    "id": 17164,
+    "name": "Raptor Platebody",
+    "low-alch": 26000,
+    "high-alch": 39000,
+    "stackable": false,
+    "base-value": 65000,
+    "street-value": 43487,
+    "weight": 9.9,
+    "equipment-slot": "BODY",
+    "req-defence": 40,
+    "attack-magic": -30,
+    "attack-ranged": -10,
+    "defence-stab": 82,
+    "defence-slash": 80,
+    "defence-crush": 72,
+    "defence-magic": -6,
+    "defence-ranged": 80
+    
+},
+  {
+    "id": 17178,
+    "name": "Corrupt Torva Platebody",
+    "low-alch": 26000,
+    "high-alch": 39000,
+    "stackable": false,
+    "base-value": 65000,
+    "street-value": 43487,
+    "weight": 9.9,
+    "equipment-slot": "BODY",
+    "req-defence": 40,
+    "attack-magic": -30,
+    "attack-ranged": -10,
+    "defence-stab": 82,
+    "defence-slash": 80,
+    "defence-crush": 72,
+    "defence-magic": -6,
+    "defence-ranged": 80
+    
+},
+  {
+    "id": 17167,
+    "name": "Flame Raptor Platebody",
+    "low-alch": 26000,
+    "high-alch": 39000,
+    "stackable": false,
+    "base-value": 65000,
+    "street-value": 43487,
+    "weight": 9.9,
+    "equipment-slot": "BODY",
+    "req-defence": 40,
+    "attack-magic": -30,
+    "attack-ranged": -10,
+    "defence-stab": 82,
+    "defence-slash": 80,
+    "defence-crush": 72,
+    "defence-magic": -6,
+    "defence-ranged": 80
+    
 },
 {
 	    "id": 22307,
@@ -124631,6 +124964,47 @@
 	    
 },
   
+{
+    "id": 17165,
+    "name": "Raptor Platelegs",
+    "low-alch": 26000,
+    "high-alch": 39000,
+    "base-value": 65000,
+    "street-value": 43487,
+    "stackable": false,
+    "weight": 9.9,
+    "equipment-slot": "LEGS",
+    "req-defence": 40,
+    "attack-magic": -30,
+    "attack-ranged": -10,
+    "defence-stab": 82,
+    "defence-slash": 80,
+    "defence-crush": 72,
+    "defence-magic": -6,
+    "defence-ranged": 80
+    
+},
+
+{
+  "id": 17168,
+  "name": "Flame Raptor Platelegs",
+  "low-alch": 26000,
+  "high-alch": 39000,
+  "base-value": 65000,
+  "street-value": 43487,
+  "stackable": false,
+  "weight": 9.9,
+  "equipment-slot": "LEGS",
+  "req-defence": 40,
+  "attack-magic": -30,
+  "attack-ranged": -10,
+  "defence-stab": 82,
+  "defence-slash": 80,
+  "defence-crush": 72,
+  "defence-magic": -6,
+  "defence-ranged": 80
+  
+},
   
   {
 	    "id": 21777,
@@ -124652,6 +125026,44 @@
 	    "req-defence": 70
 	  },
   {
+		    "id": 17154,
+		    "name": "Lava Torva Full Helm",
+		    "low-alch": 36000,
+		    "high-alch": 54000,
+		    "base-value": 90000,
+		    "weight": 2.2,
+		    "equipment-slot": "HELM",
+		    "req-defence": 10,
+		    "attack-magic": 3,
+		    "stackable": false,
+		    "attack-ranged": 3,
+		    "defence-stab": 30,
+		    "defence-slash": 32,
+		    "defence-crush": 27,
+		    "defence-magic": 10,
+		    "defence-ranged": 30,
+		    "req-defence": 70
+		  },
+  {
+			    "id": 17177,
+			    "name": "Corrupt Torva Full Helm",
+			    "low-alch": 36000,
+			    "high-alch": 54000,
+			    "base-value": 90000,
+			    "weight": 2.2,
+			    "equipment-slot": "HELM",
+			    "req-defence": 10,
+			    "attack-magic": 3,
+			    "stackable": false,
+			    "attack-ranged": 3,
+			    "defence-stab": 30,
+			    "defence-slash": 32,
+			    "defence-crush": 27,
+			    "defence-magic": 10,
+			    "defence-ranged": 30,
+			    "req-defence": 70
+			  },  
+  {
 		    "id": 22123,
 		    "name": "Dragon Slayer Platebody",
 		    "low-alch": 26000,
@@ -124672,6 +125084,47 @@
 		    
   },
   {
+	    "id": 17153,
+	    "name": "Lava Torva Platebody",
+	    "low-alch": 26000,
+	    "high-alch": 39000,
+	    "base-value": 65000,
+	    "stackable": false,
+	    "street-value": 43487,
+	    "weight": 9.9,
+	    "equipment-slot": "BODY",
+	    "req-defence": 40,
+	    "attack-magic": -30,
+	    "attack-ranged": -10,
+	    "defence-stab": 82,
+	    "defence-slash": 80,
+	    "defence-crush": 72,
+	    "defence-magic": -6,
+	    "defence-ranged": 80
+	    
+},
+  
+  {
+    "id": 17155,
+    "name": "Lava Torva Platelegs",
+    "low-alch": 26000,
+    "high-alch": 39000,
+    "stackable": false,
+    "base-value": 65000,
+    "street-value": 43487,
+    "weight": 9.9,
+    "equipment-slot": "LEGS",
+    "req-defence": 40,
+    "attack-magic": -30,
+    "attack-ranged": -10,
+    "defence-stab": 82,
+    "defence-slash": 80,
+    "defence-crush": 72,
+    "defence-magic": -6,
+    "defence-ranged": 80
+    
+},
+  {
 	    "id": 21954,
 	    "name": "Dragon Slayer Platelegs",
 	    "low-alch": 26000,
@@ -124690,6 +125143,46 @@
 	    "defence-magic": -6,
 	    "defence-ranged": 80
 	    
+},
+  {
+    "id": 17175,
+    "name": "Corrupt Torva Boots",
+    "low-alch": 26000,
+    "high-alch": 39000,
+    "base-value": 65000,
+    "street-value": 43487,
+    "stackable": false,
+    "weight": 9.9,
+    "equipment-slot": "BOOTS",
+    "req-defence": 40,
+    "attack-magic": -30,
+    "attack-ranged": -10,
+    "defence-stab": 82,
+    "defence-slash": 80,
+    "defence-crush": 72,
+    "defence-magic": -6,
+    "defence-ranged": 80
+    
+},
+  {
+    "id": 17176,
+    "name": "Corrupt Torva gloves",
+    "low-alch": 26000,
+    "high-alch": 39000,
+    "base-value": 65000,
+    "street-value": 43487,
+    "stackable": false,
+    "weight": 9.9,
+    "equipment-slot": "GLOVES",
+    "req-defence": 40,
+    "attack-magic": -30,
+    "attack-ranged": -10,
+    "defence-stab": 82,
+    "defence-slash": 80,
+    "defence-crush": 72,
+    "defence-magic": -6,
+    "defence-ranged": 80
+    
 },
   {
     "id": 22099,
@@ -124754,6 +125247,28 @@
     "defence-crush": 2,
     "bonus-strength": 7
   },
+  {
+	    "id": 11642,
+	    "name": "Death Katana",
+	    "low-alch": 16,
+	    "high-alch": 24,
+	    "base-value": 40,
+	    "street-value": 15,
+	    
+	    "stackable": false,
+
+	    "weight": 1.8,
+	    "stand-animation": 808,
+	    "walk-animation": 819,
+	    "equipment-slot": "WEAPON",
+	    "weapon-interface": "LONGSWORD",
+	    "attack-stab": 4,
+	    "attack-slash": 5,
+	    "attack-crush": -2,
+	    "defence-slash": 3,
+	    "defence-crush": 2,
+	    "bonus-strength": 7
+	  },
   {
 	    "id": 3275,
 	    "name": "Dragon Slayer Platebody",
@@ -124897,6 +125412,20 @@
     "defence-slash": 1,
     "defence-crush": 2
   },
+
+{
+	    "id": 17156,
+	    "name": "Death Gloves",
+	    "low-alch": 2,
+	    "high-alch": 3,
+	    "base-value": 6,
+	    "street-value": 3,
+	    "stackable": false,
+	    "weight": 0.2,
+	    "equipment-slot": "GLOVES",
+	    "defence-slash": 1,
+	    "defence-crush": 2
+	  },
   
 
 {

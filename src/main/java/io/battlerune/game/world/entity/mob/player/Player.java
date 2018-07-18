@@ -109,6 +109,27 @@ import java.util.function.Consumer;
  * @author Michael | Chex
  */
 public class Player extends Mob {
+	
+	
+	   /**
+     * Changes the NPC that's being displayed on the floating teleport button
+     * @param npcId - The identifier for the NPC to display
+     */
+    public void sendTeleportButtonNpc(int npcId) {
+    	send(new SendString(""+npcId, 45621));
+    }
+    /**
+     * Will make the floating teleport button appear on the player's screen
+     */
+    public void sendTeleportButton() {
+    	send(new SendString("1", 45600));
+    }
+    /**
+     * Will hide the floating teleport button on the player's screen
+     */
+    public void hideTeleportButton() {
+    	send(new SendString("0", 45600));
+    }
 
     private static final Logger logger = LogManager.getLogger();
     private int memberId = -1;
@@ -432,6 +453,13 @@ public class Player extends Mob {
         security.login();
 
         getFarming().doConfig();
+
+        /**
+         * Sends the teleport button for the hoverable NPC Event teleport system.
+         * Only call upon this method, when an event has scheduled, it is currently turned on for testing purposes, for now.
+         */
+        
+        sendTeleportButton();
 
 
 
