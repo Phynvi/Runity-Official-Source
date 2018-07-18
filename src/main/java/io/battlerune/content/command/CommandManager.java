@@ -8,6 +8,9 @@ import plugin.command.impl.owner.AnimationCommand;
 import plugin.command.impl.owner.ArenaSpawnCommand;
 import plugin.command.impl.owner.DeveloperInstanceCommand;
 import plugin.command.impl.owner.DownCommand;
+import plugin.command.impl.owner.EventBossInterfaceHide;
+import plugin.command.impl.owner.EventBossInterfaceShow;
+import plugin.command.impl.owner.EventBossSystem;
 import plugin.command.impl.owner.FindCommand;
 import plugin.command.impl.owner.GalvekSpawnCommand;
 import plugin.command.impl.owner.GodCommand;
@@ -147,6 +150,9 @@ public class CommandManager {
 		plugin.put(new String[] { "obj", "object" }, new ObjectCommand());
 		plugin.put(new String[] { "arenas", "spawnarena" }, new ArenaSpawnCommand());
 		plugin.put(new String[] { "galveks", "spawngalvek" }, new GalvekSpawnCommand());
+		plugin.put(new String[] { "event", "system" }, new EventBossSystem());
+		plugin.put(new String[] { "show", "showboss" }, new EventBossInterfaceShow());
+		plugin.put(new String[] { "hide", "hideboss" }, new EventBossInterfaceHide());
 
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {

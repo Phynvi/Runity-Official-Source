@@ -18,9 +18,11 @@ import io.battlerune.util.Utility;
 public class GalvekUtility {
 
 	public static SpawnData1 spawn;
+	
+	public static boolean activated;
 
 	public static Npc generateSpawn() {
-
+		activated = true;
 		spawn = SpawnData1.generate();
 		Npc Galvek = new Npc(8095, spawn.position, 10, Direction.NORTH);
 		World.sendBroadcast(1, "Galvek has just spawned! He is located at " + spawn.location + "!", true);

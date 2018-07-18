@@ -1,27 +1,22 @@
 package plugin.command.impl.owner;
 
 import io.battlerune.content.command.Command;
-import io.battlerune.content.playerguide.PlayerGuideHandler;
+import io.battlerune.content.eventboss.EventBossHandler;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.net.packet.out.SendString;
 
 /**
  * @author Adam_#6723
  */
 
-public class PlayerGuideCommand implements Command {
+public class EventBossSystem implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-
-		PlayerGuideHandler guide = new PlayerGuideHandler();
-		guide.open(player);
-		player.sendTeleportButton();
-		player.sendTeleportButtonNpc(8059);
-
-
+             EventBossHandler.showBoss(player);
+             player.message("Opening Event Boss Handler.");
 	}
+	
 
 	@Override
 	public boolean canUse(Player player) {

@@ -111,7 +111,7 @@ import java.util.function.Consumer;
 public class Player extends Mob {
 	
 	
-	   /**
+   /**
      * Changes the NPC that's being displayed on the floating teleport button
      * @param npcId - The identifier for the NPC to display
      */
@@ -459,7 +459,7 @@ public class Player extends Mob {
          * Only call upon this method, when an event has scheduled, it is currently turned on for testing purposes, for now.
          */
         
-        sendTeleportButton();
+       // sendTeleportButton();
 
 
 
