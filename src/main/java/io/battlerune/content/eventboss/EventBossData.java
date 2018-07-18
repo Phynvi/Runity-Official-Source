@@ -8,15 +8,15 @@ package io.battlerune.content.eventboss;
 public enum EventBossData {
 
 
-   GALVEK_INFO( "Galvek", new String[] {
-			"123", "test yo negur ass"
+   GALVEK_INFO(1, "Galvek", new String[] {
+			"Combat Lvl: @whi@609", "Health: @whi@1200", "Max Hit: @whi@54"
 		   }),
 	
-	ARENA_INFO( "Arena", new String[] {
+	ARENA_INFO(1, "Arena", new String[] {
            ""
 			}),
 	
-	SKOTIZO_INFO("Skotizo", new String[] {
+	SKOTIZO_INFO(1, "Skotizo", new String[] {
 		""	
 	
 	}),
@@ -25,10 +25,12 @@ public enum EventBossData {
 	
 	;
 
+	private int npcid;
 	private String npcName;
 	private String[] content;
 
-	EventBossData(String npcName, String[] content) {
+	EventBossData(int npcid, String npcName, String[] content) {
+		this.npcid = npcid;
 		this.npcName = npcName;
 		this.content = content;
 	}
@@ -41,6 +43,10 @@ public enum EventBossData {
 
 	public String[] getContent() {
 		return content;
+	}
+	
+	public int getnpci() {
+		return npcid;
 	}
 
 }
