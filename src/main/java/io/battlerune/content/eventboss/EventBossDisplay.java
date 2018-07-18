@@ -3,6 +3,12 @@ package io.battlerune.content.eventboss;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendString;
 
+/**
+ * Idea is to display
+ * @author Adam_#6723
+ *
+ */
+
 public class EventBossDisplay {
 	
 	
