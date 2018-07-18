@@ -1,5 +1,4 @@
 package io.battlerune.game.world.entity.mob.player;
-
 import io.battlerune.content.Toolkit;
 import io.battlerune.content.activity.impl.battlerealm.BattleRealmNode;
 import io.battlerune.content.masterminer.AdventureGUI;
@@ -10,7 +9,6 @@ import io.battlerune.content.skill.impl.farming.Farming;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.tritonus.share.ArraySet;
-
 import io.battlerune.Config;
 import io.battlerune.content.ActivityLog;
 import io.battlerune.content.ActivityLogger;
