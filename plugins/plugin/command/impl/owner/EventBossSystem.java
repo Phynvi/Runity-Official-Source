@@ -1,7 +1,9 @@
 package plugin.command.impl.owner;
 
+import io.battlerune.content.combat.cannon.CannonFireAction;
 import io.battlerune.content.command.Command;
 import io.battlerune.content.eventboss.EventBossHandler;
+import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 
@@ -13,8 +15,7 @@ public class EventBossSystem implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-             EventBossHandler.showBoss(player);
-             player.message("Opening Event Boss Handler.");
+		World.schedule(new EventBossHandler());
 	}
 	
 

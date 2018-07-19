@@ -13,6 +13,7 @@ public class EventBossInterfaceShow implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
          player.sendTeleportButton();
+         player.sendTeleportButtonNpc(6593);
 	}
 	
 

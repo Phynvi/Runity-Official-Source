@@ -1,52 +1,24 @@
 package io.battlerune.content.eventboss;
 
-/**
- * Holds the Boss Data for the Event interface
- * @author Adam_#6723
- *
- */
+import io.battlerune.game.world.position.Position;
+
 public enum EventBossData {
 
+	LAVA_DRAGON(6593, new Position(1, 1, 1));
 
-   GALVEK_INFO(1, "Galvek", new String[] {
-			"Combat Lvl: @whi@609", "Health: @whi@1200", "Max Hit: @whi@54"
-		   }),
-	
-	ARENA_INFO(1, "Arena", new String[] {
-           ""
-			}),
-	
-	SKOTIZO_INFO(1, "Skotizo", new String[] {
-		""	
-	
-	}),
-	
-	
-	
-	;
+	private int npcId;
+	private Position pos;
 
-	private int npcid;
-	private String npcName;
-	private String[] content;
-
-	EventBossData(int npcid, String npcName, String[] content) {
-		this.npcid = npcid;
-		this.npcName = npcName;
-		this.content = content;
+	EventBossData(int npcId, Position pos) {
+		this.npcId = npcId;
+		this.pos = pos;
 	}
 
-
-
-	public String getnpcName() {
-		return npcName;
+	public int getNpcId() {
+		return npcId;
 	}
 
-	public String[] getContent() {
-		return content;
+	public Position getPos() {
+		return pos;
 	}
-	
-	public int getnpci() {
-		return npcid;
-	}
-
 }
