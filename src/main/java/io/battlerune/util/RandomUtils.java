@@ -1,11 +1,11 @@
 package io.battlerune.util;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-
-import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * A static-util class that provides additional functionality for generating pseudo-random numbers. All functions in this

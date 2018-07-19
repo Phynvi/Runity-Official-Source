@@ -13,7 +13,6 @@ import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.packet.PacketListener;
 import io.battlerune.net.packet.PacketListenerMeta;
 import io.battlerune.net.packet.out.SendMessage;
-import io.battlerune.util.MessageColor;
 
 /**
  * The {@link GamePacket} responsible for picking up an item on the ground.

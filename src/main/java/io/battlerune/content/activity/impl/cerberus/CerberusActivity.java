@@ -7,8 +7,6 @@ import java.util.Set;
 
 import io.battlerune.Config;
 import io.battlerune.content.ActivityLog;
-import io.battlerune.content.achievement.AchievementHandler;
-import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityType;
 import io.battlerune.content.dialogue.DialogueFactory;
@@ -16,7 +14,6 @@ import io.battlerune.content.dialogue.Expression;
 import io.battlerune.content.event.impl.ObjectInteractionEvent;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.npc.NpcDeath;

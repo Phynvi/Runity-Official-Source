@@ -1,12 +1,19 @@
 package io.battlerune.game.world.items.containers.equipment;
 
+import static io.battlerune.game.world.entity.mob.MobAnimation.PLAYER_RUN;
+import static io.battlerune.game.world.entity.mob.MobAnimation.PLAYER_STAND;
+import static io.battlerune.game.world.entity.mob.MobAnimation.PLAYER_WALK;
+
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.stream.IntStream;
+
 import com.google.common.collect.ImmutableSet;
 
 import io.battlerune.content.emote.Skillcape;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.entity.combat.CombatType;
-import io.battlerune.game.world.entity.combat.attack.listener.CombatListener;
 import io.battlerune.game.world.entity.combat.attack.listener.CombatListenerManager;
 import io.battlerune.game.world.entity.combat.ranged.RangedAmmunition;
 import io.battlerune.game.world.entity.combat.ranged.RangedWeaponDefinition;
@@ -23,12 +30,6 @@ import io.battlerune.net.packet.out.SendItemOnInterface;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
-
-import static io.battlerune.game.world.entity.mob.MobAnimation.*;
-
-import java.util.Arrays;
-import java.util.Optional;
-import java.util.stream.IntStream;
 
 /**
  * The container that manages the equipment for a player.

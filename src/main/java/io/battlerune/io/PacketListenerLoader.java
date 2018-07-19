@@ -1,13 +1,14 @@
 package io.battlerune.io;
 
+import java.util.Arrays;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import io.battlerune.net.packet.PacketListener;
 import io.battlerune.net.packet.PacketListenerMeta;
 import io.battlerune.net.packet.PacketRepository;
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.util.Arrays;
 
 /**
  * The class that loads all packet listeners.

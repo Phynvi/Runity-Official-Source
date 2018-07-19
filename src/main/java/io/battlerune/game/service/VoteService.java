@@ -1,5 +1,12 @@
 package io.battlerune.game.service;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -8,9 +15,6 @@ import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
-
-import java.sql.*;
-import java.util.concurrent.TimeUnit;
 
 public final class VoteService {
 

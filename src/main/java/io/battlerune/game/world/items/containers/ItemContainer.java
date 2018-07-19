@@ -1,21 +1,28 @@
 package io.battlerune.game.world.items.containers;
 
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkState;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Spliterator;
+import java.util.Spliterators;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
+
 import com.google.common.base.Preconditions;
 
-import io.battlerune.game.world.entity.combat.attack.listener.CombatListener;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
 import io.battlerune.net.packet.out.SendItemOnInterface;
-
-import java.util.*;
-import java.util.function.Consumer;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
-
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkState;
 
 
 /**

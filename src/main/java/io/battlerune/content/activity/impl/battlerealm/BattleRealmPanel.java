@@ -1,12 +1,11 @@
 package io.battlerune.content.activity.impl.battlerealm;
 
+import static io.battlerune.content.activity.impl.battlerealm.BattleRealm.LOBBY_COOLDOWN;
+
 import io.battlerune.content.activity.panel.Activity_Panel;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
-
-import static io.battlerune.content.activity.impl.battlerealm.BattleRealm.LOBBY_COOLDOWN;
 
 class BattleRealmPanel extends Activity_Panel {
 

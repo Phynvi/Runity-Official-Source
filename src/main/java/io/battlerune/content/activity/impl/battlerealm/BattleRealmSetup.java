@@ -1,14 +1,14 @@
 package io.battlerune.content.activity.impl.battlerealm;
 
+import static io.battlerune.content.activity.impl.battlerealm.BattleRealmObjects.battleRealmObjects;
+
+import java.util.ArrayList;
+
 import io.battlerune.game.task.Task;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.object.CustomGameObject;
 import io.battlerune.game.world.position.Position;
-
-import java.util.ArrayList;
-
-import static io.battlerune.content.activity.impl.battlerealm.BattleRealmObjects.battleRealmObjects;
 
 public class BattleRealmSetup {
 

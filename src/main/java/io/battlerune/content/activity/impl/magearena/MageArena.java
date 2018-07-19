@@ -19,7 +19,6 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.npc.NpcDeath;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.pathfinding.TraversalMap;
 import io.battlerune.game.world.position.Area;

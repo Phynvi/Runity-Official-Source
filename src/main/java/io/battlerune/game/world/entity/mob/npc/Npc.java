@@ -1,5 +1,8 @@
 package io.battlerune.game.world.entity.mob.npc;
 
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,9 +19,6 @@ import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
-
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Represents a non-player character in the in-game world.

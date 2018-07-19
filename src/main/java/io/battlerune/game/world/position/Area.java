@@ -1,15 +1,13 @@
 package io.battlerune.game.world.position;
 
+import static io.battlerune.content.activity.impl.battlerealm.BattleRealmCallers.getAreas;
+
 import com.google.common.collect.ImmutableList;
 
-import io.battlerune.content.activity.impl.battlerealm.BattleRealm;
 import io.battlerune.game.world.Interactable;
 import io.battlerune.game.world.entity.Entity;
 import io.battlerune.game.world.entity.mob.Mob;
-import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.position.impl.SquareArea;
-
-import static io.battlerune.content.activity.impl.battlerealm.BattleRealmCallers.getAreas;
 
 /**
  * Handles checking if mobs are in a certain area.

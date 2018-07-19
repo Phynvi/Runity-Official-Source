@@ -1,10 +1,10 @@
 package io.battlerune.fs.cache;
 
+import java.nio.ByteBuffer;
+
 import com.google.common.base.Preconditions;
 
 import io.battlerune.fs.util.ByteBufferUtil;
-
-import java.nio.ByteBuffer;
 
 /**
  * Represents an index within some {@link Cache}.

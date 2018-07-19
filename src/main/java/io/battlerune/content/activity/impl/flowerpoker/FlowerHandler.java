@@ -13,7 +13,6 @@ import io.battlerune.game.world.object.CustomGameObject;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.object.ObjectDirection;
 import io.battlerune.game.world.object.ObjectType;
-import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
 import io.battlerune.game.world.region.RegionManager;
 

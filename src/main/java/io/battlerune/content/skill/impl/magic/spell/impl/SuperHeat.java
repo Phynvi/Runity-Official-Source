@@ -5,7 +5,6 @@ import java.util.Optional;
 import io.battlerune.Config;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.spell.Spell;
-import io.battlerune.content.skill.impl.smithing.Smelting;
 import io.battlerune.content.skill.impl.smithing.SmeltingData;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.world.entity.mob.player.Player;

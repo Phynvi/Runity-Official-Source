@@ -14,7 +14,6 @@ import io.battlerune.net.packet.PacketListener;
 import io.battlerune.net.packet.PacketListenerMeta;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.ChatCodec;
-import io.netty.buffer.Unpooled;
 
 /**
  * The {@code GamePacket} responsible for chat messages.

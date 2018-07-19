@@ -1,6 +1,5 @@
 package io.battlerune.content.masterminer;
 
-import io.battlerune.content.dialogue.Expression;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendMessage;
 

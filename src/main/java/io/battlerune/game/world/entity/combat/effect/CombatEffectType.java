@@ -2,7 +2,11 @@ package io.battlerune.game.world.entity.combat.effect;
 
 import com.google.common.collect.ImmutableSet;
 
-import io.battlerune.game.world.entity.combat.effect.impl.*;
+import io.battlerune.game.world.entity.combat.effect.impl.CombatAntifireEffect;
+import io.battlerune.game.world.entity.combat.effect.impl.CombatPoisonEffect;
+import io.battlerune.game.world.entity.combat.effect.impl.CombatSkullEffect;
+import io.battlerune.game.world.entity.combat.effect.impl.CombatTeleblockEffect;
+import io.battlerune.game.world.entity.combat.effect.impl.CombatVenomEffect;
 
 /**
  * The enumerated type whose values represent the collection of different combat

@@ -1,24 +1,29 @@
 package io.battlerune.fs.cache.decoder;
 
 
+import java.nio.ByteBuffer;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+
 import io.battlerune.content.activity.impl.battlerealm.BattleRealmObjects;
 import io.battlerune.fs.cache.FileSystem;
 import io.battlerune.fs.util.ByteBufferUtil;
 import io.battlerune.fs.util.CompressionUtil;
 import io.battlerune.game.world.World;
-import io.battlerune.game.world.object.*;
+import io.battlerune.game.world.object.GameObject;
+import io.battlerune.game.world.object.ObjectDefinition;
+import io.battlerune.game.world.object.ObjectDirection;
+import io.battlerune.game.world.object.ObjectGroup;
+import io.battlerune.game.world.object.ObjectType;
+import io.battlerune.game.world.object.StaticGameObject;
 import io.battlerune.game.world.pathfinding.TraversalMap;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
 import io.battlerune.game.world.region.RegionDefinition;
 import io.battlerune.util.Logger;
-
-import java.nio.ByteBuffer;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
 
 /**
  * A class which parses static object definitions, which include tool.mapviewer

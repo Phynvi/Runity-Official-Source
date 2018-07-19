@@ -11,17 +11,11 @@ import io.battlerune.game.world.entity.EntityType;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.pathfinding.TraversalMap;
-import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
 import io.battlerune.net.packet.out.SendAddObject;
 import io.battlerune.net.packet.out.SendRemoveObject;
 import io.battlerune.util.generic.GenericAttributes;
-
-import java.util.Objects;
-
-import static io.battlerune.game.world.object.ObjectDirection.NORTH;
-import static io.battlerune.game.world.object.ObjectDirection.SOUTH;
 
 /**
  * Represents a static game object loaded from the map fs.

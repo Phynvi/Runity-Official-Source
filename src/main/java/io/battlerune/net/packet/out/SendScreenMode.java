@@ -4,7 +4,6 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.codec.ByteModification;
 import io.battlerune.net.codec.ByteOrder;
 import io.battlerune.net.packet.OutgoingPacket;
-import io.battlerune.util.ScreenMode;
 
 /** Sends the screen mode state for the player. */
 public class SendScreenMode extends OutgoingPacket {

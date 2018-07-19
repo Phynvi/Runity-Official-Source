@@ -1,5 +1,16 @@
 package io.battlerune.game.world.items;
 
+import static io.battlerune.game.world.entity.combat.CombatConstants.BONUS_CONFIG_FIELD_NAMES;
+import static io.battlerune.game.world.entity.combat.CombatConstants.EMPTY_BONUSES;
+import static io.battlerune.game.world.entity.combat.CombatConstants.EMPTY_REQUIREMENTS;
+import static io.battlerune.game.world.entity.combat.CombatConstants.SKILL_REQUIREMENT_CONFIG_FIELD_NAMES;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.OptionalInt;
+
 import com.google.common.collect.LinkedListMultimap;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -14,10 +25,6 @@ import io.battlerune.game.world.entity.mob.MobAnimation;
 import io.battlerune.game.world.items.containers.equipment.EquipmentType;
 import io.battlerune.util.parser.GsonParser;
 import io.battlerune.util.parser.JsonSaver;
-
-import static io.battlerune.game.world.entity.combat.CombatConstants.*;
-
-import java.util.*;
 
 /**
  * Represents all of an in-game Item's attributes.

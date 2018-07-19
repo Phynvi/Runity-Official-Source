@@ -1,7 +1,8 @@
 package io.battlerune.util.tools.wiki.parser;
 
-import com.google.gson.JsonArray;
 import org.jsoup.nodes.Document;
+
+import com.google.gson.JsonArray;
 
 public abstract class WikiTable {
     private final String link;

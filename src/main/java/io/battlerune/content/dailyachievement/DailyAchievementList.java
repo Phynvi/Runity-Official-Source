@@ -1,12 +1,10 @@
 package io.battlerune.content.dailyachievement;
 
-import com.google.common.collect.ImmutableSet;
-
-import io.battlerune.game.world.entity.skill.Skill;
-
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.google.common.collect.ImmutableSet;
 
 /**
  * Holds all the Daily achievements

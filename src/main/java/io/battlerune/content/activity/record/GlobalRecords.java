@@ -1,7 +1,17 @@
 package io.battlerune.content.activity.record;
 
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.lang.reflect.Type;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import com.google.common.reflect.TypeToken;
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
 
@@ -11,13 +21,6 @@ import io.battlerune.net.packet.out.SendScrollbar;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.GsonUtils;
 import io.battlerune.util.Utility;
-
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.lang.reflect.Type;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.*;
 
 /**
  * Created by Daniel on 2017-11-22.

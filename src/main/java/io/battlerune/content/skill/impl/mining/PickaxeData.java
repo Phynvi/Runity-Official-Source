@@ -1,10 +1,10 @@
 package io.battlerune.content.skill.impl.mining;
 
+import java.util.Optional;
+
 import com.google.common.collect.ImmutableSet;
 
 import io.battlerune.game.world.entity.mob.player.Player;
-
-import java.util.Optional;
 
 /**
  * Represents types of axes.

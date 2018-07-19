@@ -14,7 +14,6 @@ import io.battlerune.game.Graphic;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.game.world.items.containers.pricechecker.PriceType;
 import io.battlerune.net.packet.out.SendForceTab;
 import io.battlerune.net.packet.out.SendMessage;
 

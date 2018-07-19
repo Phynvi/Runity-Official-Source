@@ -32,12 +32,11 @@ import io.battlerune.game.task.impl.RoyaltyEvent;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.attack.listener.CombatListenerManager;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.arena.ArenaEvent;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.gano.GanoEvent;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekEvent;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.magearena.DerwenEvent;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.magearena.JusticarEvent;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.magearena.PorazdirEvent;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoEvent;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekEvent;
 import io.battlerune.game.world.entity.mob.npc.definition.NpcDefinition;
 import io.battlerune.game.world.entity.mob.player.profile.ProfileRepository;
 import io.battlerune.game.world.items.ItemDefinition;
@@ -53,9 +52,7 @@ import io.battlerune.util.parser.impl.NpcSpawnParser;
 import io.battlerune.util.parser.impl.ObjectRemovalParser;
 import io.battlerune.util.parser.impl.PacketSizeParser;
 import io.battlerune.util.parser.impl.StoreParser;
-import io.battlerune.util.sql.MySqlCommands;
 import io.battlerune.util.sql.MySqlConnector;
-import io.battlerune.util.sql.MySqlLogHandler;
 import plugin.click.item.ClueScrollPlugin;
 
 public final class BattleRune {

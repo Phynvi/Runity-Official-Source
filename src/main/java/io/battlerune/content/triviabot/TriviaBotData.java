@@ -3,8 +3,6 @@ package io.battlerune.content.triviabot;
 
 import io.battlerune.util.RandomUtils;
 
-import java.util.Arrays;
-
 /**
  * Holds all the trivia bot data.
  *

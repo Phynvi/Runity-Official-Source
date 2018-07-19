@@ -2,7 +2,6 @@ package io.battlerune.game.event.impl;
 
 import io.battlerune.game.event.Event;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.game.world.items.ground.GroundItem;
 import io.battlerune.game.world.position.Position;
 
 public class DropItemEvent implements Event {

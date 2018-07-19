@@ -2,8 +2,17 @@ package io.battlerune.content.itemaction;
 
 import java.util.HashMap;
 
-import io.battlerune.content.itemaction.impl.*;
-import io.battlerune.game.world.entity.combat.strategy.player.custom.LimeWhipStrategy;
+import io.battlerune.content.itemaction.impl.ClanResourceBox;
+import io.battlerune.content.itemaction.impl.ClanShowcaseBox;
+import io.battlerune.content.itemaction.impl.DragonfireShield;
+import io.battlerune.content.itemaction.impl.DrillDemonBox;
+import io.battlerune.content.itemaction.impl.MagmaHelm;
+import io.battlerune.content.itemaction.impl.MimeBox;
+import io.battlerune.content.itemaction.impl.SerpentineHelm;
+import io.battlerune.content.itemaction.impl.TanzaniteHelm;
+import io.battlerune.content.itemaction.impl.ToxicBlowpipe;
+import io.battlerune.content.itemaction.impl.TridentOfTheSeas;
+import io.battlerune.content.itemaction.impl.TridentOfTheSwamp;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 

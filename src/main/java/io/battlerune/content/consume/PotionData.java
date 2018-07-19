@@ -1,5 +1,8 @@
 package io.battlerune.content.consume;
 
+import java.util.EnumSet;
+import java.util.Optional;
+
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 
@@ -20,10 +23,6 @@ import io.battlerune.net.packet.out.SendConfig;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendPoison;
 import io.battlerune.net.packet.out.SendRunEnergy;
-import io.battlerune.util.Utility;
-
-import java.util.EnumSet;
-import java.util.Optional;
 
 /**
  * The enumerated type managing consumable potion types.

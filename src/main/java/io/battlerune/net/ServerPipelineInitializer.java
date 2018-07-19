@@ -1,10 +1,10 @@
 package io.battlerune.net;
 
-import io.netty.channel.ChannelHandler.Sharable;
 import io.battlerune.Config;
 import io.battlerune.net.codec.login.LoginDecoder;
 import io.battlerune.net.codec.login.LoginResponseEncoder;
 import io.battlerune.net.session.Session;
+import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;

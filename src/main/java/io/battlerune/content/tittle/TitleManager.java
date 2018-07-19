@@ -2,7 +2,11 @@ package io.battlerune.content.tittle;
 
 import io.battlerune.game.world.entity.mob.UpdateFlag;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendScrollbar;
+import io.battlerune.net.packet.out.SendString;
+import io.battlerune.net.packet.out.SendTooltip;
 import io.battlerune.util.Utility;
 
 /**

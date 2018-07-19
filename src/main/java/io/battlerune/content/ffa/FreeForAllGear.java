@@ -1,7 +1,7 @@
 package io.battlerune.content.ffa;
 
-import io.battlerune.game.world.items.containers.equipment.EquipmentType;
 import io.battlerune.game.world.items.Item;
+import io.battlerune.game.world.items.containers.equipment.EquipmentType;
 
 /**
  * Handles the storing of the free for all setups

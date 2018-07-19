@@ -1,5 +1,9 @@
 package io.battlerune.util;
 
+import java.io.FileWriter;
+import java.util.HashMap;
+import java.util.Optional;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -10,10 +14,6 @@ import io.battlerune.content.WellOfGoodwill.Contributor;
 import io.battlerune.content.bot.BotUtility;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.util.parser.GsonParser;
-
-import java.io.FileWriter;
-import java.util.HashMap;
-import java.util.Optional;
 
 /**
  * Created by Daniel on 2017-11-05.

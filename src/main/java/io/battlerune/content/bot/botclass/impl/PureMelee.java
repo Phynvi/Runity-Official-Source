@@ -1,8 +1,6 @@
 package io.battlerune.content.bot.botclass.impl;
 
-import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.getMaxHit;
 import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.getModifiedMaxHit;
-
 
 import io.battlerune.content.bot.PlayerBot;
 import io.battlerune.content.bot.botclass.BotClass;

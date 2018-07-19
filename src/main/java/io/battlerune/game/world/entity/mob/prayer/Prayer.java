@@ -1,10 +1,19 @@
 package io.battlerune.game.world.entity.mob.prayer;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 import io.battlerune.game.world.entity.combat.attack.listener.CombatListener;
-import io.battlerune.game.world.entity.combat.attack.listener.other.prayer.*;
+import io.battlerune.game.world.entity.combat.attack.listener.other.prayer.AuguryListener;
+import io.battlerune.game.world.entity.combat.attack.listener.other.prayer.ChivalryListener;
+import io.battlerune.game.world.entity.combat.attack.listener.other.prayer.PietyListener;
+import io.battlerune.game.world.entity.combat.attack.listener.other.prayer.RigourListener;
 import io.battlerune.game.world.entity.combat.attack.listener.other.prayer.attack.ClarityOfThoughtListener;
 import io.battlerune.game.world.entity.combat.attack.listener.other.prayer.attack.ImprovedReflexesListener;
 import io.battlerune.game.world.entity.combat.attack.listener.other.prayer.attack.IncredibleReflexesListener;
@@ -27,8 +36,6 @@ import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.net.packet.out.SendConfig;
 import io.battlerune.net.packet.out.SendMessage;
-
-import java.util.*;
 
 /**
  * Handles the prayer book.

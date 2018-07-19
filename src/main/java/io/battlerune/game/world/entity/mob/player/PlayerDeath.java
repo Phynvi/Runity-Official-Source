@@ -1,13 +1,15 @@
 package io.battlerune.game.world.entity.mob.player;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 import io.battlerune.Config;
 import io.battlerune.content.achievement.AchievementHandler;
 import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.bot.BotUtility;
 import io.battlerune.content.bot.PlayerBot;
-import io.battlerune.content.dailyachievement.DailyAchievementHandler;
-import io.battlerune.content.dailyachievement.DailyAchievementKey;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.OnKillEvent;
 import io.battlerune.content.ffa.FreeForAll;
@@ -32,10 +34,6 @@ import io.battlerune.game.world.position.Area;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendRunEnergy;
 import io.battlerune.util.Utility;
-
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Handles the player death listener.

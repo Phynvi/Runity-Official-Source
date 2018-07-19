@@ -3,12 +3,9 @@ package io.battlerune.game.event.impl.log;
 import com.jcabi.jdbc.JdbcSession;
 import com.jcabi.jdbc.SingleOutcome;
 
-import io.battlerune.game.event.impl.log.LogEvent;
 import io.battlerune.game.service.PostgreService;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
-
-import java.util.Arrays;
 
 public class TradeLogEvent extends LogEvent {
 

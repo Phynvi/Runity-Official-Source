@@ -1,8 +1,12 @@
 package io.battlerune.game.world.entity.mob.player;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+
 import io.battlerune.Config;
 import io.battlerune.content.StarterKit;
-import io.battlerune.content.Toolkit;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityType;
 import io.battlerune.content.activity.GroupActivity;
@@ -31,7 +35,16 @@ import io.battlerune.game.world.entity.combat.strategy.CombatStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerMagicStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerMeleeStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerRangedStrategy;
-import io.battlerune.game.world.entity.combat.strategy.player.custom.*;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.DragonHunterCrossbowStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.FireyBowStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.LimeWhipStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.LongbowStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.ToxicBlowpipeStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.ToxicGlaiveStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.TridentOfTheSeasStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.TridentOfTheSwampStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.TwistedBowStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.ValyrianSwordStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.combat.strategy.player.special.melee.ToragHammers;
 import io.battlerune.game.world.entity.combat.weapon.WeaponInterface;
@@ -46,14 +59,22 @@ import io.battlerune.game.world.items.containers.ItemContainer;
 import io.battlerune.game.world.items.containers.equipment.Equipment;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
 import io.battlerune.game.world.position.Area;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendChatBoxInterface;
+import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendEntityFeed;
+import io.battlerune.net.packet.out.SendInterfaceAnimation;
+import io.battlerune.net.packet.out.SendItemOnInterfaceSlot;
+import io.battlerune.net.packet.out.SendMarquee;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendPlayerOption;
+import io.battlerune.net.packet.out.SendRunEnergy;
+import io.battlerune.net.packet.out.SendScreenMode;
+import io.battlerune.net.packet.out.SendSpecialAmount;
+import io.battlerune.net.packet.out.SendString;
+import io.battlerune.net.packet.out.SendTooltip;
+import io.battlerune.net.packet.out.SendWidget;
 import io.battlerune.net.packet.out.SendWidget.WidgetType;
 import io.battlerune.util.TinterfaceText;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Consumer;
 
 /**
  * Method handles small methods for players that do not have any parent class.

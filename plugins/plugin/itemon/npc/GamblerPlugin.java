@@ -1,11 +1,10 @@
 package plugin.itemon.npc;
 
+import java.util.Random;
+
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.dialogue.Expression;
-import io.battlerune.content.pet.Pets;
 import io.battlerune.game.event.impl.ItemOnNpcEvent;
-import io.battlerune.game.event.impl.NpcClickEvent;
-import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.npc.Npc;
@@ -13,8 +12,6 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendInputAmount;
 import io.battlerune.net.packet.out.SendMessage;
-
-import java.util.Random;
 
 public class GamblerPlugin extends PluginContext {
     private Npc npc;

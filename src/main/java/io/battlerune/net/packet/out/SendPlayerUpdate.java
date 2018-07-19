@@ -1,5 +1,8 @@
 package io.battlerune.net.packet.out;
 
+import java.util.Collection;
+import java.util.Iterator;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,9 +30,6 @@ import io.battlerune.net.packet.OutgoingPacket;
 import io.battlerune.net.packet.PacketBuilder;
 import io.battlerune.net.packet.PacketType;
 import io.battlerune.util.Utility;
-
-import java.util.Collection;
-import java.util.Iterator;
 
 public final class SendPlayerUpdate extends OutgoingPacket {
 

@@ -1,13 +1,13 @@
 package io.battlerune.util.tools.wiki.impl;
 
+import java.util.LinkedList;
+
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import io.battlerune.util.tools.wiki.parser.WikiTable;
 import io.battlerune.util.tools.wiki.parser.WikiTableParser;
-
-import java.util.LinkedList;
 
 public class NpcDefParser extends WikiTableParser  {
 

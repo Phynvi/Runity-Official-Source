@@ -1,7 +1,5 @@
 package io.battlerune.game.world.position;
 
-import java.util.Objects;
-
 import io.battlerune.game.world.Interactable;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.region.Region;

@@ -1,14 +1,15 @@
 package io.battlerune.game.task;
 
-import com.google.common.base.Preconditions;
-
-import io.battlerune.game.task.impl.TeleblockTask;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.*;
-import java.util.concurrent.ConcurrentLinkedQueue;
+import com.google.common.base.Preconditions;
 
 /**
  * The class that handles scheduling tasks, and processing them.

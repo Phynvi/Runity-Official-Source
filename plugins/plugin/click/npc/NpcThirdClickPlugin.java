@@ -1,6 +1,5 @@
 package plugin.click.npc;
 
-import io.battlerune.content.dialogue.impl.RealmLordDialogue;
 import io.battlerune.content.dialogue.impl.RoyalKingDialogue;
 import io.battlerune.content.skill.impl.slayer.SlayerOfferings;
 import io.battlerune.game.event.impl.NpcClickEvent;

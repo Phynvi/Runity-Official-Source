@@ -1,20 +1,19 @@
 package io.battlerune.game.world.items.containers.impl;
 
 
-import java.util.Arrays;
-
 import io.battlerune.Config;
 import io.battlerune.game.world.InterfaceConstants;
-import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.ItemContainer;
 import io.battlerune.game.world.items.containers.ItemContainerAdapter;
 import io.battlerune.game.world.items.containers.inventory.Inventory;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
-import io.battlerune.game.world.items.ground.GroundItem;
-import io.battlerune.game.world.position.Area;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendForceTab;
+import io.battlerune.net.packet.out.SendInputMessage;
+import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
 
 /**

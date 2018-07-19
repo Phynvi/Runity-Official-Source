@@ -10,11 +10,8 @@ import io.battlerune.game.world.entity.combat.strategy.player.PlayerMeleeStrateg
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.data.LockType;
-import io.battlerune.game.world.entity.mob.player.ForceMovement;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.pathfinding.TraversalMap;
 import io.battlerune.game.world.position.Position;
-import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.RandomUtils;
 
 /**

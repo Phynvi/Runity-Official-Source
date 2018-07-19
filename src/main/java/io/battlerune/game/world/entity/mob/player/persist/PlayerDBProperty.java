@@ -1,10 +1,10 @@
 package io.battlerune.game.world.entity.mob.player.persist;
 
+import java.sql.SQLException;
+
 import com.jcabi.jdbc.JdbcSession;
 
 import io.battlerune.game.world.entity.mob.player.Player;
-
-import java.sql.SQLException;
 
 public abstract class PlayerDBProperty {
 

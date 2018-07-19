@@ -1,10 +1,10 @@
 package io.battlerune.util.parser;
 
 
-import io.battlerune.util.Logger;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import io.battlerune.util.Logger;
 
 /**
  * Represents an abstract parser.

@@ -1,15 +1,26 @@
 package io.battlerune.content.dialogue;
 
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Queue;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import io.battlerune.game.world.entity.mob.npc.definition.NpcDefinition;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendChatBoxInterface;
+import io.battlerune.net.packet.out.SendInterfaceAnimation;
+import io.battlerune.net.packet.out.SendItemModelOnInterface;
+import io.battlerune.net.packet.out.SendNpcHead;
+import io.battlerune.net.packet.out.SendPlayerDialogueHead;
+import io.battlerune.net.packet.out.SendRemoveInterface;
+import io.battlerune.net.packet.out.SendString;
+import io.battlerune.net.packet.out.SendTooltip;
 import io.battlerune.util.Utility;
-
-import java.util.*;
 
 /**
  * Represents a factory class that contains important functions for building

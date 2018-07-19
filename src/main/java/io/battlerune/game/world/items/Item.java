@@ -1,5 +1,10 @@
 package io.battlerune.game.world.items;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.OptionalInt;
+
 import com.google.common.collect.Iterables;
 
 import io.battlerune.game.world.entity.combat.attack.FightType;
@@ -7,11 +12,6 @@ import io.battlerune.game.world.entity.combat.ranged.RangedWeaponDefinition;
 import io.battlerune.game.world.entity.combat.weapon.WeaponInterface;
 import io.battlerune.game.world.items.containers.equipment.EquipmentType;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.OptionalInt;
 
 /**
  * The container class that represents an item that can be interacted with.

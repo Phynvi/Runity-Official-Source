@@ -1,5 +1,10 @@
 package io.battlerune.game.engine;
 
+import java.util.concurrent.TimeUnit;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.google.common.util.concurrent.AbstractScheduledService;
 
 import io.battlerune.Config;
@@ -12,11 +17,6 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.session.GameSession;
 import io.battlerune.util.Stopwatch;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.util.concurrent.TimeUnit;
 
 public final class GameEngine extends AbstractScheduledService {
 

@@ -1,13 +1,11 @@
 package io.battlerune.content.eventboss;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import io.battlerune.Config;
 import io.battlerune.game.task.Task;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.npc.Npc;
-import io.battlerune.util.Stopwatch;
 
 /**
  * Handles the boss event

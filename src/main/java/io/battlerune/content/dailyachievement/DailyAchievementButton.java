@@ -2,8 +2,6 @@ package io.battlerune.content.dailyachievement;
 
 import java.util.HashMap;
 
-import io.battlerune.content.dailyachievement.DailyAchievementList;
-
 /**
  * Handles the clicking on the achievement tab itemcontainer.
  *

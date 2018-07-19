@@ -5,7 +5,6 @@ import com.jcabi.jdbc.SingleOutcome;
 
 import io.battlerune.game.service.PostgreService;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.ground.GroundItem;
 
 public class DropItemLogEvent extends LogEvent {

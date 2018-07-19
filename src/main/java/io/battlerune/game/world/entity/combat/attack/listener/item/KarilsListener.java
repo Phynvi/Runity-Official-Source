@@ -1,7 +1,5 @@
 package io.battlerune.game.world.entity.combat.attack.listener.item;
 
-import io.battlerune.game.Graphic;
-import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.entity.combat.attack.listener.ItemCombatListenerSignature;
 import io.battlerune.game.world.entity.combat.attack.listener.NpcCombatListenerSignature;
 import io.battlerune.game.world.entity.combat.attack.listener.SimplifiedListener;

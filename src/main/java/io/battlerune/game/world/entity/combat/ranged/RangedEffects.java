@@ -1,5 +1,10 @@
 package io.battlerune.game.world.entity.combat.ranged;
 
+import static io.battlerune.game.world.entity.combat.CombatUtil.getHitDelay;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import com.google.common.collect.ImmutableSet;
 
 import io.battlerune.game.Graphic;
@@ -17,11 +22,6 @@ import io.battlerune.game.world.entity.mob.data.LockType;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.util.RandomUtils;
-
-import static io.battlerune.game.world.entity.combat.CombatUtil.getHitDelay;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public enum RangedEffects {
     OPAL_BOLTS(new CombatImpact() {

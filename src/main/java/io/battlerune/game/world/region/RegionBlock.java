@@ -1,5 +1,17 @@
 package io.battlerune.game.world.region;
 
+import static io.battlerune.game.world.region.Region.SIZE;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedDeque;
+
 import org.eclipse.jetty.util.ConcurrentHashSet;
 
 import io.battlerune.game.world.entity.mob.npc.Npc;
@@ -11,12 +23,6 @@ import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendAddObject;
 import io.battlerune.net.packet.out.SendGroundItem;
 import io.battlerune.net.packet.out.SendRemoveObject;
-
-import static io.battlerune.game.world.region.Region.SIZE;
-
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  * Represents a single region.

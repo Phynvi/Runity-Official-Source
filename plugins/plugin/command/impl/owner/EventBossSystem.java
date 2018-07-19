@@ -1,6 +1,5 @@
 package plugin.command.impl.owner;
 
-import io.battlerune.content.combat.cannon.CannonFireAction;
 import io.battlerune.content.command.Command;
 import io.battlerune.content.eventboss.EventBossHandler;
 import io.battlerune.game.world.World;

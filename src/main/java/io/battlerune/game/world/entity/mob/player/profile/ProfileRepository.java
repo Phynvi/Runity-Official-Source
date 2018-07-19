@@ -1,13 +1,5 @@
 package io.battlerune.game.world.entity.mob.player.profile;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
-
-import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.util.GsonUtils;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -15,7 +7,18 @@ import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+
+import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.util.GsonUtils;
 
 /**
  * Handles the profile repository, used for gathering important information for

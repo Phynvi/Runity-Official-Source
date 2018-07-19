@@ -1,8 +1,7 @@
 package io.battlerune.fs.cache;
 
-import com.google.common.base.Preconditions;
-
-import io.battlerune.fs.cache.archive.Archive;
+import static java.nio.file.StandardOpenOption.READ;
+import static java.nio.file.StandardOpenOption.WRITE;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -13,8 +12,9 @@ import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.zip.CRC32;
 
-import static java.nio.file.StandardOpenOption.READ;
-import static java.nio.file.StandardOpenOption.WRITE;
+import com.google.common.base.Preconditions;
+
+import io.battlerune.fs.cache.archive.Archive;
 
 /**
  * Represents a file system of {@link Cache}s and {@link Archive}s.

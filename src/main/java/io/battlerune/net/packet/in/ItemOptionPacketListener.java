@@ -1,7 +1,9 @@
 package io.battlerune.net.packet.in;
 
 import static com.google.common.base.Preconditions.checkState;
-import static io.battlerune.net.packet.ClientPackets.*;
+import static io.battlerune.net.packet.ClientPackets.FIRST_ITEM_OPTION;
+import static io.battlerune.net.packet.ClientPackets.SECOND_ITEM_OPTION;
+import static io.battlerune.net.packet.ClientPackets.THIRD_ITEM_OPTION;
 
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.FirstItemClickInteractionEvent;

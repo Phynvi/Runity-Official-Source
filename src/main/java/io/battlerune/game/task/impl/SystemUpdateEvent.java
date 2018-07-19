@@ -1,13 +1,13 @@
 package io.battlerune.game.task.impl;
 
+import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import io.battlerune.game.task.Task;
 import io.battlerune.game.world.World;
 import io.battlerune.util.Stopwatch;
-
-import java.util.concurrent.TimeUnit;
 
 public final class SystemUpdateEvent extends Task {
 

@@ -1,5 +1,8 @@
 package io.battlerune;
 
+import java.io.File;
+import java.math.BigInteger;
+
 import com.google.common.collect.ImmutableList;
 import com.moandjiezana.toml.Toml;
 
@@ -10,9 +13,6 @@ import io.battlerune.game.world.position.Position;
 import io.battlerune.net.session.Session;
 import io.netty.util.AttributeKey;
 import io.netty.util.ResourceLeakDetector;
-
-import java.io.File;
-import java.math.BigInteger;
 
 /**
  * The class that contains setting-related constants for the server.

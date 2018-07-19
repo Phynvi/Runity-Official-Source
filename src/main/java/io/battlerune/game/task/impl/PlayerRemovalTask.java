@@ -4,7 +4,6 @@ import java.util.concurrent.TimeUnit;
 
 import io.battlerune.content.activity.Activity;
 import io.battlerune.game.task.TickableTask;
-import io.battlerune.game.world.entity.combat.CombatConstants;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.util.Stopwatch;

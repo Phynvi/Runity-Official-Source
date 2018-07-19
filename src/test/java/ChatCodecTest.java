@@ -1,11 +1,10 @@
-import io.battlerune.util.ChatCodec;
-import io.battlerune.util.RandomUtils;
-import io.battlerune.util.Utility;
-import io.netty.buffer.Unpooled;
+import java.util.Arrays;
+
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
+import io.battlerune.util.ChatCodec;
+import io.battlerune.util.Utility;
 
 public class ChatCodecTest {
 

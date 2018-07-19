@@ -1,9 +1,18 @@
 package io.battlerune.net.session;
 
+import java.time.Instant;
+import java.util.Date;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.jcabi.jdbc.JdbcSession;
 
-import io.battlerune.Config;
 import io.battlerune.BattleRune;
+import io.battlerune.Config;
 import io.battlerune.game.service.ForumService;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -19,14 +28,6 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.socket.SocketChannel;
-import org.mindrot.jbcrypt.BCrypt;
-
-import java.time.Instant;
-import java.util.Date;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Represents a {@link Session} for authenticating users logging in.

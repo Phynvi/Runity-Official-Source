@@ -1,5 +1,9 @@
 package io.battlerune.content.clanchannel.channel;
 
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.Optional;
+
 import com.google.gson.JsonObject;
 
 import io.battlerune.content.clanchannel.ClanMember;
@@ -9,10 +13,6 @@ import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendScrollbar;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.net.packet.out.SendTooltip;
-
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Optional;
 
 public class ClanManagement {
 

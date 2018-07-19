@@ -1,11 +1,7 @@
 package io.battlerune.content.activity.impl.battlerealm;
 
-import io.battlerune.game.world.entity.mob.npc.Npc;
-import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.position.impl.SquareArea;
-
-import java.util.ArrayList;
 
 public class Constants {
     public static final SquareArea LOBBY_AREA = new SquareArea("Battle Realm Lobby", 2559, 3832, 2525, 3815);

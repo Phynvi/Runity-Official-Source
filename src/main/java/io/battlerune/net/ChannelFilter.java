@@ -1,5 +1,9 @@
 package io.battlerune.net;
 
+import java.net.InetSocketAddress;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.google.common.collect.ConcurrentHashMultiset;
 import com.google.common.collect.Multiset;
 
@@ -11,10 +15,6 @@ import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-
-import java.net.InetSocketAddress;
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * The {@code ChannelInboundHandlerAdapter} implementation that will filter out

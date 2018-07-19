@@ -1,13 +1,12 @@
 package io.battlerune.game.event.impl.log;
 
+import java.time.LocalDateTime;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import io.battlerune.Config;
 import io.battlerune.game.event.Event;
-
-import java.io.IOException;
-import java.time.LocalDateTime;
 
 public abstract class LogEvent implements Event {
 

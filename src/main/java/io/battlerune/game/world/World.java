@@ -1,5 +1,18 @@
 package io.battlerune.game.world;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Predicate;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import io.battlerune.Config;
 import io.battlerune.content.activity.impl.battlerealm.BattleRealm;
 import io.battlerune.content.activity.impl.pestcontrol.PestControl;
@@ -27,18 +40,16 @@ import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
 import io.battlerune.game.world.region.RegionManager;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendGameMessage;
+import io.battlerune.net.packet.out.SendGraphic;
+import io.battlerune.net.packet.out.SendKillFeed;
+import io.battlerune.net.packet.out.SendLogout;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendObjectAnimation;
+import io.battlerune.net.packet.out.SendProjectile;
 import io.battlerune.util.GameSaver;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.io.IOException;
-import java.util.*;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Predicate;
 
 /**
  * Represents the game world.

@@ -1,10 +1,10 @@
 package io.battlerune.content.activity.impl.battlerealm;
 
+import java.util.ArrayList;
+
 import io.battlerune.game.world.object.ObjectDirection;
 import io.battlerune.game.world.object.ObjectType;
 import io.battlerune.game.world.position.Position;
-
-import java.util.ArrayList;
 
 public class BattleRealmObjects {
     public static ArrayList<ObjectArgs> battleRealmObjects = new ArrayList<>();

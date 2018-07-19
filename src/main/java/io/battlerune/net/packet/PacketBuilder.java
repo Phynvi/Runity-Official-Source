@@ -1,11 +1,12 @@
 package io.battlerune.net.packet;
 
+import static com.google.common.base.Preconditions.checkState;
+
 import io.battlerune.net.codec.AccessType;
 import io.battlerune.net.codec.ByteModification;
 import io.battlerune.net.codec.ByteOrder;
-import io.netty.buffer.*;
-
-import static com.google.common.base.Preconditions.checkState;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 
 /**
  * The implementation that functions as a dynamic buffer wrapper

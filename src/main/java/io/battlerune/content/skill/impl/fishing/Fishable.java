@@ -1,6 +1,13 @@
 package io.battlerune.content.skill.impl.fishing;
 
-import static io.battlerune.util.ItemIdentifiers.*;
+import static io.battlerune.util.ItemIdentifiers.BIG_FISHING_NET;
+import static io.battlerune.util.ItemIdentifiers.DARK_FISHING_BAIT;
+import static io.battlerune.util.ItemIdentifiers.FISHING_BAIT;
+import static io.battlerune.util.ItemIdentifiers.FISHING_ROD;
+import static io.battlerune.util.ItemIdentifiers.FLY_FISHING_ROD;
+import static io.battlerune.util.ItemIdentifiers.HARPOON;
+import static io.battlerune.util.ItemIdentifiers.LOBSTER_POT;
+import static io.battlerune.util.ItemIdentifiers.SMALL_FISHING_NET;
 
 import java.util.HashMap;
 import java.util.Map;

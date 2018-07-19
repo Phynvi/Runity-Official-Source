@@ -1,10 +1,10 @@
 package io.battlerune.util.tools;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 /**
  * @author Ethan Kyle Millard <skype:pumpklins>

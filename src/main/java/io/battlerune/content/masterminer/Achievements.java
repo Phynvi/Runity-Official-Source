@@ -3,7 +3,6 @@ package io.battlerune.content.masterminer;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendItemOnInterface;
-import io.battlerune.net.packet.out.SendTooltip;
 
 public class Achievements {
     private Player player;

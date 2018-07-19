@@ -11,7 +11,6 @@ import io.battlerune.content.prestige.PrestigePerk;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.object.GameObject;

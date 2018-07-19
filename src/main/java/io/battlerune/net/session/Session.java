@@ -1,8 +1,9 @@
 package io.battlerune.net.session;
 
+import java.net.InetSocketAddress;
+
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
-import java.net.InetSocketAddress;
 
 /**
  * Represents a session between a user and the server.

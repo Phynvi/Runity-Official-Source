@@ -7,7 +7,6 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendConfig;
 import io.battlerune.net.packet.out.SendMessage;
-import io.battlerune.net.packet.out.SendSideBarInterface;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.MessageColor;
 import io.battlerune.util.StringUtils;

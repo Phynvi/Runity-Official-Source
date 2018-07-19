@@ -1,11 +1,6 @@
 package io.battlerune.content.bot.botclass.impl;
 
-import plugin.click.item.EatFoodPlugin;
-
-import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.getMaxHit;
 import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.getModifiedMaxHit;
-
-
 
 import java.util.concurrent.TimeUnit;
 
@@ -25,6 +20,7 @@ import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.util.RandomUtils;
+import plugin.click.item.EatFoodPlugin;
 
 public class AGSRuneMelee extends SimplifiedListener<Player> implements BotClass {
 

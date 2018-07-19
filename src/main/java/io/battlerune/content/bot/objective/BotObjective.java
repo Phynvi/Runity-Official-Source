@@ -1,7 +1,11 @@
 package io.battlerune.content.bot.objective;
 
 import io.battlerune.content.bot.PlayerBot;
-import io.battlerune.content.bot.objective.impl.*;
+import io.battlerune.content.bot.objective.impl.BankObjective;
+import io.battlerune.content.bot.objective.impl.CombatObjective;
+import io.battlerune.content.bot.objective.impl.RestockObjective;
+import io.battlerune.content.bot.objective.impl.WildernessDitchObjective;
+import io.battlerune.content.bot.objective.impl.WildernessWalkObjective;
 
 public enum BotObjective implements BotObjectiveListener {
     WALK_IN_WILDERNESS(new WildernessWalkObjective()),

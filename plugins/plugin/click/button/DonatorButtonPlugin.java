@@ -1,22 +1,11 @@
 package plugin.click.button;
 
-import java.util.Timer;
-import java.util.concurrent.TimeUnit;
-
 import io.battlerune.Config;
-import io.battlerune.content.dialogue.DialogueFactory;
-import io.battlerune.content.pet.PetData;
-import io.battlerune.content.pet.Pets;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.store.Store;
 import io.battlerune.content.tittle.TitleManager;
 import io.battlerune.game.plugin.PluginContext;
-import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.game.world.items.Item;
-import io.battlerune.net.packet.out.SendRunEnergy;
-import io.battlerune.util.Utility;
 
 public class DonatorButtonPlugin extends PluginContext {
     

@@ -1,11 +1,9 @@
 package io.battlerune.game.world.entity.combat.attack.listener.npc;
 
 import static io.battlerune.game.world.entity.combat.CombatUtil.createStrategyArray;
-import static io.battlerune.game.world.entity.combat.CombatUtil.getHitDelay;
 import static io.battlerune.game.world.entity.combat.CombatUtil.randomStrategy;
 import static io.battlerune.game.world.entity.combat.projectile.CombatProjectile.getDefinition;
 
-import io.battlerune.game.world.entity.combat.CombatType;
 import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.attack.listener.NpcCombatListenerSignature;

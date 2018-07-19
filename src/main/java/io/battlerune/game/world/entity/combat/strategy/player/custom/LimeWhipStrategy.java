@@ -1,15 +1,12 @@
 package io.battlerune.game.world.entity.combat.strategy.player.custom;
 
 import io.battlerune.game.Animation;
-import io.battlerune.game.Graphic;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.entity.combat.CombatType;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;
 import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerMeleeStrategy;
-import io.battlerune.game.world.entity.combat.strategy.player.special.melee.AbyssalWhip;
-import io.battlerune.game.world.entity.combat.strategy.player.special.melee.DragonMace;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
 

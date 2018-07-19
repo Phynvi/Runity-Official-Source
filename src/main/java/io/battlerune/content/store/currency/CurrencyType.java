@@ -1,13 +1,24 @@
 package io.battlerune.content.store.currency;
 
-import com.google.common.collect.ImmutableSet;
-
-import io.battlerune.content.store.currency.impl.*;
-import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.util.Utility;
-
 import java.util.Arrays;
 import java.util.Optional;
+
+import com.google.common.collect.ImmutableSet;
+
+import io.battlerune.content.store.currency.impl.BossPointCurrency;
+import io.battlerune.content.store.currency.impl.ClanPointCurrency;
+import io.battlerune.content.store.currency.impl.DonatorPointCurrency;
+import io.battlerune.content.store.currency.impl.ItemCurrency;
+import io.battlerune.content.store.currency.impl.KolodionsPointCurrency;
+import io.battlerune.content.store.currency.impl.PestPointCurrency;
+import io.battlerune.content.store.currency.impl.PlayerKillingPointCurrency;
+import io.battlerune.content.store.currency.impl.PrestigePointCurrency;
+import io.battlerune.content.store.currency.impl.SkillingPointCurrency;
+import io.battlerune.content.store.currency.impl.SlayerPointCurrency;
+import io.battlerune.content.store.currency.impl.TriviaPointCurrency;
+import io.battlerune.content.store.currency.impl.VotePointCurrency;
+import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.util.Utility;
 
 /**
  * The enumerated type whom holds all the currencies usable for a server.

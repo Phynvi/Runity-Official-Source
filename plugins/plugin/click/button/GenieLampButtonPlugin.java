@@ -2,7 +2,6 @@ package plugin.click.button;
 
 import java.util.concurrent.TimeUnit;
 
-import io.battlerune.Config;
 import io.battlerune.content.GenieLamp;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;

@@ -1,9 +1,9 @@
 package io.battlerune.util;
 
-import com.google.common.collect.PeekingIterator;
-
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import com.google.common.collect.PeekingIterator;
 
 /**
  * An {@link Iterator} implementation that will iterate over the elements in

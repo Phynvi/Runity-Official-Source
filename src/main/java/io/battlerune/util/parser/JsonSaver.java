@@ -1,12 +1,12 @@
 package io.battlerune.util.parser;
 
+import java.io.FileWriter;
+
 import com.google.common.base.Preconditions;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-
-import java.io.FileWriter;
 
 /**
  * A util class used for constructing and writing {@code JSON} files.

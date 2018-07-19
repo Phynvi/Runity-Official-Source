@@ -6,7 +6,6 @@ import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.position.Position;
-import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.Utility;
 
 

@@ -15,7 +15,6 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerOption;
 import io.battlerune.game.world.entity.mob.player.exchange.duel.StakeSession;
-import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.ItemContainer;
 import io.battlerune.game.world.items.containers.equipment.Equipment;
@@ -23,7 +22,11 @@ import io.battlerune.game.world.items.containers.equipment.EquipmentType;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
 import io.battlerune.game.world.pathfinding.TraversalMap;
 import io.battlerune.game.world.position.Position;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendEntityHintArrow;
+import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendPlayerOption;
+import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
 
 /**

@@ -1,5 +1,10 @@
 package io.battlerune.game.world.entity.skill;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.IntStream;
+
 import com.google.common.primitives.Doubles;
 
 import io.battlerune.Config;
@@ -29,14 +34,12 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.UpdateFlag;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
-import io.battlerune.game.world.position.Area;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendChatBoxInterface;
+import io.battlerune.net.packet.out.SendExpCounter;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendSkill;
+import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.function.Function;
-import java.util.stream.IntStream;
 
 /**
  * Manages all skills related to an mob.

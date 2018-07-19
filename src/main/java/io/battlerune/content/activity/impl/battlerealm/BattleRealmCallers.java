@@ -1,14 +1,15 @@
 package io.battlerune.content.activity.impl.battlerealm;
 
+import static io.battlerune.content.activity.impl.battlerealm.Constants.GAME_AREA;
+import static io.battlerune.content.activity.impl.battlerealm.Constants.LOBBY_AREA;
+import static io.battlerune.content.activity.impl.battlerealm.Constants.PRE_LOBBY;
+
 import com.google.common.collect.ImmutableList;
+
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.impl.SquareArea;
-
-import static io.battlerune.content.activity.impl.battlerealm.Constants.GAME_AREA;
-import static io.battlerune.content.activity.impl.battlerealm.Constants.LOBBY_AREA;
-import static io.battlerune.content.activity.impl.battlerealm.Constants.PRE_LOBBY;
 
 public class BattleRealmCallers {
     public static ImmutableList<SquareArea> getAreas() {

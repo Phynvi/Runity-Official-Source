@@ -4,10 +4,13 @@ import java.util.Optional;
 
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.position.Area;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendColor;
+import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendScrollbar;
+import io.battlerune.net.packet.out.SendString;
 
 public class MysteryBoxManager {
     private final Player player;

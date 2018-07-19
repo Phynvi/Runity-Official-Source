@@ -1,6 +1,5 @@
 package plugin.itemon.npc;
 
-import io.battlerune.content.skill.SkillRepository;
 import io.battlerune.game.event.impl.ItemOnNpcEvent;
 import io.battlerune.game.event.impl.NpcClickEvent;
 import io.battlerune.game.plugin.PluginContext;

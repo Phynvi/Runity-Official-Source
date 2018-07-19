@@ -16,8 +16,8 @@ import io.battlerune.game.world.object.ObjectType;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendMinimapState;
-import io.battlerune.net.packet.out.SendString;
 import io.battlerune.net.packet.out.SendMinimapState.MinimapState;
+import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.MessageColor;
 import io.battlerune.util.Utility;
 

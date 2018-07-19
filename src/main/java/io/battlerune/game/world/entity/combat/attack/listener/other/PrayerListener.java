@@ -10,7 +10,6 @@ import io.battlerune.game.world.entity.combat.hit.HitIcon;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.game.world.entity.skill.Skill;
-import io.battlerune.game.world.position.Area;
 import io.battlerune.util.RandomUtils;
 
 public class PrayerListener extends SimplifiedListener<Mob> {

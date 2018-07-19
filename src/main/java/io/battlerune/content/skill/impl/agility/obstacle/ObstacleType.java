@@ -1,6 +1,20 @@
 package io.battlerune.content.skill.impl.agility.obstacle;
 
-import io.battlerune.content.skill.impl.agility.obstacle.impl.*;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.ArdougneJumpGapInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.ArdougneRoofJumpInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.ArdougneRoofJumpInteraction2;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.ArdougneWallClimbInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.ClimbInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.ClimbOverInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.RopeSwingInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.RunningStartInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.SeersClimbInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.SeersJumpGapInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.SeersJumpGapInteraction2;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.SteppingStonesInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.SwingAcrossCableInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.WalkInteraction;
+import io.battlerune.content.skill.impl.agility.obstacle.impl.WildernessDoorInteraction;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.position.Position;
 

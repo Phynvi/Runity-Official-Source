@@ -4,9 +4,23 @@ import java.util.function.Function;
 
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.InteractionEvent;
-import io.battlerune.content.event.InteractionEventListener;
 import io.battlerune.content.event.InteractionEvent.InteractionType;
-import io.battlerune.content.event.impl.*;
+import io.battlerune.content.event.InteractionEventListener;
+import io.battlerune.content.event.impl.ClickButtonInteractionEvent;
+import io.battlerune.content.event.impl.FirstItemClickInteractionEvent;
+import io.battlerune.content.event.impl.FirstNpcClick;
+import io.battlerune.content.event.impl.FirstObjectClick;
+import io.battlerune.content.event.impl.ItemContainerInteractionEvent;
+import io.battlerune.content.event.impl.ItemInteractionEvent;
+import io.battlerune.content.event.impl.ItemOnItemInteractionEvent;
+import io.battlerune.content.event.impl.ItemOnObjectInteractionEvent;
+import io.battlerune.content.event.impl.NpcInteractionEvent;
+import io.battlerune.content.event.impl.ObjectInteractionEvent;
+import io.battlerune.content.event.impl.SecondItemClickInteractionEvent;
+import io.battlerune.content.event.impl.SecondNpcClick;
+import io.battlerune.content.event.impl.SecondObjectClick;
+import io.battlerune.content.event.impl.ThirdItemClickInteractionEvent;
+import io.battlerune.content.event.impl.ThirdObjectClick;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.util.Stopwatch;
 

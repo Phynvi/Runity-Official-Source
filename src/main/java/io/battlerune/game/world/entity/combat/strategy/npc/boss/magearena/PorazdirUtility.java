@@ -5,7 +5,6 @@ import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.position.Position;
-
 import io.battlerune.util.Utility;
 
 /**

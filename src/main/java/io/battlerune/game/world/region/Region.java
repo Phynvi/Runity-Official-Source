@@ -2,7 +2,13 @@ package io.battlerune.game.world.region;
 
 import static io.battlerune.game.world.position.Position.HEIGHT_LEVELS;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 
 import io.battlerune.game.world.Interactable;
 import io.battlerune.game.world.entity.mob.npc.Npc;

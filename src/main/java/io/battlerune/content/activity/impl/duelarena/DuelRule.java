@@ -1,5 +1,8 @@
 package io.battlerune.content.activity.impl.duelarena;
 
+import java.util.EnumSet;
+import java.util.Optional;
+
 import com.google.common.collect.ImmutableSet;
 
 import io.battlerune.content.activity.Activity;
@@ -11,10 +14,6 @@ import io.battlerune.net.packet.out.SendConfig;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.net.packet.out.SendToggle;
-import io.battlerune.util.parser.old.defs.WeaponDefinition;
-
-import java.util.EnumSet;
-import java.util.Optional;
 
 public enum DuelRule {
     NO_RANGED(31034, 631, new RuleCondition()  {

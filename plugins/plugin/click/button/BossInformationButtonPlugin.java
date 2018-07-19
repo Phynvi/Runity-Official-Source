@@ -7,7 +7,6 @@ import io.battlerune.content.activity.impl.vorkath.VorkathActivity;
 import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
-import io.battlerune.content.store.Store;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;

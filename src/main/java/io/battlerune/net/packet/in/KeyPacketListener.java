@@ -2,7 +2,6 @@ package io.battlerune.net.packet.in;
 
 import java.awt.event.KeyEvent;
 
-import io.battlerune.content.activity.ActivityType;
 import io.battlerune.game.world.entity.mob.data.PacketType;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.GamePacket;

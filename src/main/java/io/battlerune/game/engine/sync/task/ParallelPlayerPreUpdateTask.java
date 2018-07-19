@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.net.session.GameSession;
 
 public class ParallelPlayerPreUpdateTask extends SynchronizationTask {
 

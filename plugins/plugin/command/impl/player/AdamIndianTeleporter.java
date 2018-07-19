@@ -1,6 +1,5 @@
 package plugin.command.impl.player;
 
-import io.battlerune.Config;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.position.Position;

@@ -1,28 +1,14 @@
 package io.battlerune.content.dialogue.impl;
 
-import io.battlerune.content.WellOfGoodwill;
-import io.battlerune.content.clanchannel.ClanMember;
-import io.battlerune.content.clanchannel.channel.ClanChannel;
-import io.battlerune.content.clanchannel.content.ClanLevel;
-import io.battlerune.content.clanchannel.content.ClanTask;
-import io.battlerune.content.clanchannel.content.ClanViewer;
+import java.util.Random;
+
 import io.battlerune.content.dialogue.Dialogue;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.dialogue.Expression;
-import io.battlerune.content.store.Store;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.items.Item;
-import io.battlerune.net.packet.out.*;
-import io.battlerune.util.Difficulty;
-import io.battlerune.util.Utility;
-import io.battlerune.util.parser.impl.NpcForceChatParser;
-
-import java.util.Optional;
-import java.util.Random;
-
-import static io.battlerune.game.world.entity.EntityType.NPC;
+import io.battlerune.net.packet.out.SendInputAmount;
 
 /**
  * Handles the clan master dialogue.

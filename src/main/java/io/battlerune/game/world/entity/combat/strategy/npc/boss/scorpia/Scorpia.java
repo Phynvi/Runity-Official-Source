@@ -1,5 +1,7 @@
 package io.battlerune.game.world.entity.combat.strategy.npc.boss.scorpia;
 
+import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.lang3.time.StopWatch;
 
 import io.battlerune.game.Animation;
@@ -16,8 +18,6 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
-
-import java.util.concurrent.TimeUnit;
 
 /** @author Daniel */
 public class Scorpia extends MultiStrategy {

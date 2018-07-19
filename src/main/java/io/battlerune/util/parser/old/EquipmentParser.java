@@ -1,12 +1,12 @@
 package io.battlerune.util.parser.old;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.gson.JsonObject;
 
 import io.battlerune.game.world.items.SkillRequirement;
 import io.battlerune.util.parser.GsonParser;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class EquipmentParser extends GsonParser {
 	

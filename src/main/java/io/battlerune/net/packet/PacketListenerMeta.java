@@ -1,6 +1,10 @@
 package io.battlerune.net.packet;
 
-import java.lang.annotation.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Inherited;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * An annotation that describes what client -> server packets a {@link PacketListener} can listen to.

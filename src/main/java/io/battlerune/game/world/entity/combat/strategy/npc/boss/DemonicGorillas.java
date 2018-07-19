@@ -4,9 +4,6 @@ import static io.battlerune.game.world.entity.combat.CombatUtil.createStrategyAr
 import static io.battlerune.game.world.entity.combat.CombatUtil.randomStrategy;
 import static io.battlerune.game.world.entity.combat.projectile.CombatProjectile.getDefinition;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import io.battlerune.game.Animation;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.entity.combat.CombatType;
@@ -22,7 +19,6 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.util.RandomUtils;
-import io.battlerune.util.Utility;
 
 /**
  * Created by Daniel on 2017-11-29.

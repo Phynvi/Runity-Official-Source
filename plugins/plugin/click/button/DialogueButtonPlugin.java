@@ -1,7 +1,5 @@
 package plugin.click.button;
 
-import java.util.concurrent.TimeUnit;
-
 import io.battlerune.content.dialogue.Dialogue;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;

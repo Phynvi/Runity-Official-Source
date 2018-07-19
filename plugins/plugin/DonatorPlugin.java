@@ -3,7 +3,6 @@ package plugin;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.donators.DonatorBond;
 import io.battlerune.game.event.impl.ItemClickEvent;
-import io.battlerune.game.event.impl.NpcClickEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;

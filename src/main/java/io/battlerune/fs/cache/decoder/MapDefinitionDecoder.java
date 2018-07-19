@@ -1,12 +1,12 @@
 package io.battlerune.fs.cache.decoder;
 
 
+import java.nio.ByteBuffer;
+
 import io.battlerune.fs.cache.FileSystem;
 import io.battlerune.fs.cache.archive.Archive;
 import io.battlerune.game.world.region.RegionDefinition;
 import io.battlerune.util.Logger;
-
-import java.nio.ByteBuffer;
 
 /**
  * A class which parses {@link RegionDefinition}s

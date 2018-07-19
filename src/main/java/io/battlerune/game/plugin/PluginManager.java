@@ -1,12 +1,12 @@
 package io.battlerune.game.plugin;
 
-import io.battlerune.game.event.bus.PlayerDataBus;
-import io.battlerune.util.Logger;
-import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
-
 import java.lang.reflect.Modifier;
 import java.util.HashSet;
 import java.util.Set;
+
+import io.battlerune.game.event.bus.PlayerDataBus;
+import io.battlerune.util.Logger;
+import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 
 /**
  * This class handles how plugins are loaded/unloaded and accessed.

@@ -1,17 +1,5 @@
 package io.battlerune.content.famehall;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
-
-import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.game.world.items.Item;
-import io.battlerune.net.packet.out.*;
-import io.battlerune.util.Utility;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.lang.reflect.Type;
@@ -21,6 +9,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+
+import io.battlerune.game.world.World;
+import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.game.world.items.Item;
+import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendScrollbar;
+import io.battlerune.net.packet.out.SendString;
+import io.battlerune.util.Utility;
 
 /**
  * This class handles the fame system.

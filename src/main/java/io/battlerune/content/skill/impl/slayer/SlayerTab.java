@@ -5,7 +5,13 @@ import java.util.List;
 
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendItemOnInterfaceSlot;
+import io.battlerune.net.packet.out.SendNpcDisplay;
+import io.battlerune.net.packet.out.SendScrollbar;
+import io.battlerune.net.packet.out.SendString;
+import io.battlerune.net.packet.out.SendTooltip;
 import io.battlerune.util.Utility;
 
 /**

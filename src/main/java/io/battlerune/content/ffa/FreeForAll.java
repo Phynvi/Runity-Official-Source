@@ -4,13 +4,10 @@ import java.util.HashMap;
 import java.util.Random;
 
 import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.mob.player.InterfaceManager;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerOption;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
-import io.battlerune.net.packet.out.SendGameMessage;
 import io.battlerune.net.packet.out.SendPlayerOption;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.net.packet.out.SendWalkableInterface;

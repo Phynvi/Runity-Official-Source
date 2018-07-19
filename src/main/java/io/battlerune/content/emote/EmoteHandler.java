@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import io.battlerune.game.action.impl.EmoteAction;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.equipment.Equipment;

@@ -5,8 +5,6 @@ import com.jcabi.jdbc.SingleOutcome;
 
 import io.battlerune.game.service.PostgreService;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.util.ChatCodec;
-import io.netty.buffer.Unpooled;
 
 public class PrivateMessageChatLogEvent extends LogEvent {
 

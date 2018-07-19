@@ -1,9 +1,10 @@
 package io.battlerune.fs.cache.decoder;
 
-import io.battlerune.fs.cache.FileSystem;
-import io.battlerune.game.world.object.ObjectDefinition;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import io.battlerune.fs.cache.FileSystem;
+import io.battlerune.game.world.object.ObjectDefinition;
 
 public final class ObjectDefinitionDecoder implements Runnable {
 

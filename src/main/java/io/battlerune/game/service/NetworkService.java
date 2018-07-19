@@ -1,5 +1,7 @@
 package io.battlerune.game.service;
 
+import java.util.concurrent.TimeUnit;
+
 import io.battlerune.BattleRune;
 import io.battlerune.net.ServerPipelineInitializer;
 import io.battlerune.util.Logger;
@@ -9,8 +11,6 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.util.ResourceLeakDetector;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * The bootstrap that will prepare the game and net.

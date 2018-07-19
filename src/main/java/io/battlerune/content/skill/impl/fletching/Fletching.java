@@ -1,5 +1,7 @@
 package io.battlerune.content.skill.impl.fletching;
 
+import java.util.HashMap;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,10 +17,12 @@ import io.battlerune.game.action.policy.WalkablePolicy;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendChatBoxInterface;
+import io.battlerune.net.packet.out.SendInputAmount;
+import io.battlerune.net.packet.out.SendItemOnInterfaceZoom;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
-
-import java.util.HashMap;
 
 /**
  * Handles the fletching skill.

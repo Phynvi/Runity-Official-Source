@@ -1,14 +1,15 @@
 package io.battlerune.game.service;
 
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
-
-import io.battlerune.Config;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.sql.*;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+import io.battlerune.Config;
 
 
 public final class ForumService {

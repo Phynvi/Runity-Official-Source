@@ -2,7 +2,6 @@ package io.battlerune.content.activity.impl.duelarena;
 
 import com.google.common.collect.ImmutableList;
 
-import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.position.impl.SquareArea;
 

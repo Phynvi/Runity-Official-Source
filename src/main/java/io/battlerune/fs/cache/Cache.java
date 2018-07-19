@@ -1,10 +1,10 @@
 package io.battlerune.fs.cache;
 
-import com.google.common.base.Preconditions;
-
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SeekableByteChannel;
+
+import com.google.common.base.Preconditions;
 
 /**
  * Represents a {@link Sector} and {@link Index} cache.

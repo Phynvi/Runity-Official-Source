@@ -1,12 +1,31 @@
 package io.battlerune.content.activity;
 
+import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+
 import io.battlerune.Config;
 import io.battlerune.content.activity.panel.Activity_Panel;
 import io.battlerune.content.consume.FoodData;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.InteractionEvent;
 import io.battlerune.content.event.InteractionEventListener;
-import io.battlerune.content.event.impl.*;
+import io.battlerune.content.event.impl.ClickButtonInteractionEvent;
+import io.battlerune.content.event.impl.FirstItemClickInteractionEvent;
+import io.battlerune.content.event.impl.FirstNpcClick;
+import io.battlerune.content.event.impl.FirstObjectClick;
+import io.battlerune.content.event.impl.ItemContainerInteractionEvent;
+import io.battlerune.content.event.impl.ItemInteractionEvent;
+import io.battlerune.content.event.impl.ItemOnItemInteractionEvent;
+import io.battlerune.content.event.impl.ItemOnObjectInteractionEvent;
+import io.battlerune.content.event.impl.NpcInteractionEvent;
+import io.battlerune.content.event.impl.ObjectInteractionEvent;
+import io.battlerune.content.event.impl.PickupItemInteractionEvent;
+import io.battlerune.content.event.impl.SecondItemClickInteractionEvent;
+import io.battlerune.content.event.impl.SecondNpcClick;
+import io.battlerune.content.event.impl.SecondObjectClick;
+import io.battlerune.content.event.impl.ThirdItemClickInteractionEvent;
+import io.battlerune.content.event.impl.ThirdObjectClick;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.Entity;
 import io.battlerune.game.world.entity.combat.attack.listener.CombatListener;
@@ -15,12 +34,6 @@ import io.battlerune.game.world.entity.mob.npc.NpcDeath;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.equipment.EquipmentType;
-import io.battlerune.game.world.object.CustomGameObject;
-import io.battlerune.game.world.object.GameObject;
-
-import java.util.Optional;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
 
 /**
  * A {@code Activity} object constructs an in-game activity and sequences it

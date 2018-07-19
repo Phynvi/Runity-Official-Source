@@ -1,10 +1,12 @@
 package io.battlerune.game.world.entity.combat;
 
+import static io.battlerune.content.activity.impl.battlerealm.BattleRealmCallers.canFight;
+import static io.battlerune.content.activity.impl.battlerealm.BattleRealmCallers.cantFight;
+
 import java.util.List;
 import java.util.function.Consumer;
 
 import io.battlerune.content.activity.ActivityType;
-import io.battlerune.content.activity.impl.battlerealm.BattleRealm;
 import io.battlerune.content.ffa.FreeForAll;
 import io.battlerune.content.skill.impl.slayer.SlayerTask;
 import io.battlerune.game.Animation;
@@ -30,9 +32,6 @@ import io.battlerune.game.world.position.Area;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
-
-import static io.battlerune.content.activity.impl.battlerealm.BattleRealmCallers.canFight;
-import static io.battlerune.content.activity.impl.battlerealm.BattleRealmCallers.cantFight;
 
 /**
  * A collection of util methods and constants related to combat.

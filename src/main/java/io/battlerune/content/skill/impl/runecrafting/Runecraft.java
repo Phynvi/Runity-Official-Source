@@ -8,7 +8,6 @@ import io.battlerune.content.event.impl.ObjectInteractionEvent;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
-import io.battlerune.content.skill.impl.magic.teleport.Teleportation.TeleportationData;
 import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.world.World;

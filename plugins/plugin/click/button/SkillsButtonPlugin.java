@@ -14,7 +14,6 @@ import io.battlerune.content.skill.impl.magic.teleport.TeleportType;
 import io.battlerune.content.teleport.TeleportHandler;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.util.Utility;
 
 public class SkillsButtonPlugin extends PluginContext {
 

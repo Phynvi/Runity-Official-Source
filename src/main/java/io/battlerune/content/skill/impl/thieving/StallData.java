@@ -1,9 +1,9 @@
 package io.battlerune.content.skill.impl.thieving;
 
-import io.battlerune.game.world.items.Item;
-
 import java.util.Arrays;
 import java.util.Optional;
+
+import io.battlerune.game.world.items.Item;
 
 /**
  * Holds all the data for thieving stalls.

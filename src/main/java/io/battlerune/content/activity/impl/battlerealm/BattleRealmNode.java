@@ -1,19 +1,13 @@
 package io.battlerune.content.activity.impl.battlerealm;
 
-import io.battlerune.content.ActivityLog;
+import static io.battlerune.content.activity.impl.battlerealm.Constants.END_ZONE;
+
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityType;
 import io.battlerune.content.activity.panel.Activity_Panel;
-import io.battlerune.content.event.impl.ObjectInteractionEvent;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.position.Position;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
-
-import java.util.Random;
-
-import static io.battlerune.content.activity.impl.battlerealm.Constants.END_ZONE;
-import static io.battlerune.content.activity.impl.battlerealm.Constants.LOBBY;
 
 /** A {@code BattleRealmNode} handles pest control activity events for a specific to player. */
 public class BattleRealmNode extends Activity {

@@ -9,7 +9,11 @@ import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.game.world.items.containers.ItemContainer;
 import io.battlerune.game.world.items.containers.ItemContainerAdapter;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendItemOnInterfaceSlot;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
 
 /**

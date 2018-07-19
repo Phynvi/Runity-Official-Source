@@ -1,7 +1,5 @@
 package io.battlerune.content.preset;
 
-import java.util.Arrays;
-
 import io.battlerune.content.achievement.AchievementHandler;
 import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.dialogue.DialogueFactory;

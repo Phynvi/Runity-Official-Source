@@ -1,9 +1,7 @@
 package plugin.itemon.player;
 
-import io.battlerune.content.store.Store;
 import io.battlerune.game.event.impl.ItemOnPlayerEvent;
 import io.battlerune.game.plugin.PluginContext;
-import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 
 public class ItemOnPlayerPlugin extends PluginContext {

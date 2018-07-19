@@ -1,5 +1,8 @@
 package io.battlerune.content.skill.impl.smithing;
 
+import java.util.EnumSet;
+import java.util.Optional;
+
 /**
  * Created by Daniel on 2017-12-31.
  */
@@ -8,9 +11,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 
 import io.battlerune.game.world.items.Item;
-
-import java.util.EnumSet;
-import java.util.Optional;
 
 /** The enumerated type whose elements represent definitions for each smeltable bar. */
 public enum SmeltingData {

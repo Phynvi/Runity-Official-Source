@@ -1,5 +1,11 @@
 package io.battlerune.net.session;
 
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import io.battlerune.Config;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -7,11 +13,6 @@ import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.packet.PacketRepository;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Represents a {@link Session} when a {@link Player}

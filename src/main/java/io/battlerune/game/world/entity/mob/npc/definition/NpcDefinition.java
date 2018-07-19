@@ -1,16 +1,19 @@
 package io.battlerune.game.world.entity.mob.npc.definition;
 
+import static io.battlerune.game.world.entity.combat.CombatConstants.BONUS_CONFIG_FIELD_NAMES;
+import static io.battlerune.game.world.entity.combat.CombatConstants.EMPTY_BONUSES;
+import static io.battlerune.game.world.entity.combat.CombatConstants.EMPTY_SKILLS;
+import static io.battlerune.game.world.entity.combat.CombatConstants.SKILL_FIELD_NAMES;
+
+import java.util.Objects;
+import java.util.Optional;
+
 import com.google.gson.JsonObject;
 
 import io.battlerune.Config;
 import io.battlerune.game.world.entity.combat.CombatType;
 import io.battlerune.game.world.entity.combat.projectile.CombatProjectile;
 import io.battlerune.util.parser.GsonParser;
-
-import static io.battlerune.game.world.entity.combat.CombatConstants.*;
-
-import java.util.Objects;
-import java.util.Optional;
 
 /**
  * Contains the npc definitions.

@@ -5,19 +5,20 @@ import java.util.List;
 
 import io.battlerune.Config;
 import io.battlerune.content.activity.impl.barrows.Barrows;
-import io.battlerune.content.activity.impl.kraken.KrakenActivity;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
-import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.skill.impl.magic.teleport.TeleportType;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
-import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.position.Position;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendScrollbar;
+import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
 
 /**

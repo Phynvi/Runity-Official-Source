@@ -1,11 +1,16 @@
 package io.battlerune.game.world.entity.combat.attack.listener;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.util.Logger;
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
-
-import java.util.*;
 
 /**
  * @author StanTheWoman

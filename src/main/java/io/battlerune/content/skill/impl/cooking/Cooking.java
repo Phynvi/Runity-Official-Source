@@ -1,5 +1,7 @@
 package io.battlerune.content.skill.impl.cooking;
 
+import java.util.Arrays;
+
 import io.battlerune.Config;
 import io.battlerune.content.activity.randomevent.RandomEventHandler;
 import io.battlerune.content.dialogue.ChatBoxItemDialogue;
@@ -15,8 +17,6 @@ import io.battlerune.game.world.object.GameObject;
 import io.battlerune.net.packet.out.SendInputAmount;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.Utility;
-
-import java.util.Arrays;
 
 /**
  * Handles the cooking skill.

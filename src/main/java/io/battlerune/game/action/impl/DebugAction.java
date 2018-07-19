@@ -1,5 +1,9 @@
 package io.battlerune.game.action.impl;
 
+import java.io.FileWriter;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -8,10 +12,6 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendInputMessage;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.MessageColor;
-
-import java.io.FileWriter;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * This is a debug action. Feel free to modify this how you want to test

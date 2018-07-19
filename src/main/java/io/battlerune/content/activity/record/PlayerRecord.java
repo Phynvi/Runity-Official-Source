@@ -1,11 +1,19 @@
 package io.battlerune.content.activity.record;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeSet;
 
 import io.battlerune.content.activity.ActivityType;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendMarquee;
+import io.battlerune.net.packet.out.SendScrollbar;
+import io.battlerune.net.packet.out.SendString;
+import io.battlerune.net.packet.out.SendTooltip;
 import io.battlerune.util.Utility;
 
 public class PlayerRecord {

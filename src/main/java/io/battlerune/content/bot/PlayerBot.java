@@ -5,7 +5,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import io.battlerune.Config;
 import io.battlerune.content.bot.botclass.BotClass;
 import io.battlerune.content.bot.objective.BotObjective;
-import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.content.consume.PotionData;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;

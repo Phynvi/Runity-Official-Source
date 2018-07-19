@@ -1,5 +1,7 @@
 package io.battlerune.game.task.impl;
 
+import java.util.Optional;
+
 import io.battlerune.content.skill.impl.woodcutting.AxeData;
 import io.battlerune.game.Animation;
 import io.battlerune.game.UpdatePriority;
@@ -9,8 +11,6 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.net.packet.out.SendMessage;
-
-import java.util.Optional;
 
 public class ChopVineTask extends Task {
 

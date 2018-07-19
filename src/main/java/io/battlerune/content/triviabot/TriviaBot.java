@@ -1,6 +1,10 @@
 package io.battlerune.content.triviabot;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 import io.battlerune.Config;
 import io.battlerune.content.achievement.AchievementHandler;

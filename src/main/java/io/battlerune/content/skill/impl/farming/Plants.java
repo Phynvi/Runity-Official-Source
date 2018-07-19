@@ -1,7 +1,5 @@
 package io.battlerune.content.skill.impl.farming;
 
-import io.battlerune.content.skill.impl.farming.SeedType;
-
 import java.util.HashMap;
 import java.util.Map;
 

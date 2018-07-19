@@ -4,7 +4,6 @@ import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerRangedStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.skill.Skill;
 
 /** @author Red */
 public class LongbowStrategy extends PlayerRangedStrategy {

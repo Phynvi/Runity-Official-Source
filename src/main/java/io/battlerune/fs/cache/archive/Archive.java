@@ -1,12 +1,5 @@
 package io.battlerune.fs.cache.archive;
 
-import com.google.common.base.Preconditions;
-
-import io.battlerune.fs.cache.Cache;
-import io.battlerune.fs.util.ByteBufferUtil;
-import io.battlerune.fs.util.CompressionUtil;
-import io.battlerune.util.StringUtils;
-
 import static io.battlerune.fs.cache.Cache.INDEX_SIZE;
 
 import java.io.IOException;
@@ -14,6 +7,13 @@ import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+
+import com.google.common.base.Preconditions;
+
+import io.battlerune.fs.cache.Cache;
+import io.battlerune.fs.util.ByteBufferUtil;
+import io.battlerune.fs.util.CompressionUtil;
+import io.battlerune.util.StringUtils;
 
 /**
  * Represents an archive within the {@link Cache}. <p> An archive contains

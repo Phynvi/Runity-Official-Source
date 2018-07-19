@@ -1,7 +1,6 @@
 package io.battlerune.content.activity;
 
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 

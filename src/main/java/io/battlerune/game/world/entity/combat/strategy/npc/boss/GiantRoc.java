@@ -1,5 +1,8 @@
 package io.battlerune.game.world.entity.combat.strategy.npc.boss;
 
+import static io.battlerune.game.world.entity.combat.CombatUtil.createStrategyArray;
+import static io.battlerune.game.world.entity.combat.CombatUtil.randomStrategy;
+
 import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.Projectile;
@@ -23,9 +26,6 @@ import io.battlerune.game.world.region.RegionManager;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
-
-import static io.battlerune.game.world.entity.combat.CombatUtil.createStrategyArray;
-import static io.battlerune.game.world.entity.combat.CombatUtil.randomStrategy;
 
 /**
  * Handles Giant Roc's strategy

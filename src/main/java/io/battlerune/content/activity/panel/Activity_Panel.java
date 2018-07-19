@@ -3,7 +3,10 @@ package io.battlerune.content.activity.panel;
 import io.battlerune.Config;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendForceTab;
+import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendProgressBar;
+import io.battlerune.net.packet.out.SendString;
 
 public abstract class Activity_Panel {
     private final Player player;

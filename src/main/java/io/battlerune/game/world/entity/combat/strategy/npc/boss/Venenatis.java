@@ -1,6 +1,8 @@
 package io.battlerune.game.world.entity.combat.strategy.npc.boss;
 
-import static io.battlerune.game.world.entity.combat.CombatUtil.*;
+import static io.battlerune.game.world.entity.combat.CombatUtil.createStrategyArray;
+import static io.battlerune.game.world.entity.combat.CombatUtil.getHitDelay;
+import static io.battlerune.game.world.entity.combat.CombatUtil.randomStrategy;
 
 import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
@@ -21,7 +23,6 @@ import io.battlerune.game.world.entity.mob.data.LockType;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.game.world.entity.skill.Skill;
-import io.battlerune.game.world.position.Area;
 import io.battlerune.util.RandomUtils;
 
 /** @author Daniel */

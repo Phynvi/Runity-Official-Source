@@ -1,7 +1,6 @@
 package io.battlerune.game.world.items.containers.equipment;
 
 import java.util.Arrays;
-import java.util.Optional;
 
 /**
  * The enumerated types of a players equipped item slots.

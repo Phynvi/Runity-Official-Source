@@ -1,17 +1,17 @@
 package io.battlerune.game.service;
 
-import com.google.common.util.concurrent.AbstractScheduledService;
-
-import io.battlerune.Config;
-import io.battlerune.game.world.World;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.google.common.util.concurrent.AbstractScheduledService;
+
+import io.battlerune.Config;
+import io.battlerune.game.world.World;
 
 public final class WebsitePlayerCountService extends AbstractScheduledService {
 

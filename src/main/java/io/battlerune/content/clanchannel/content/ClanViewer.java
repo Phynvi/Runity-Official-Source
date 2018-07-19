@@ -1,6 +1,10 @@
 package io.battlerune.content.clanchannel.content;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 import io.battlerune.Config;
 import io.battlerune.content.clanchannel.ClanMember;
@@ -9,7 +13,11 @@ import io.battlerune.content.clanchannel.channel.ClanChannel;
 import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendScrollbar;
+import io.battlerune.net.packet.out.SendString;
+import io.battlerune.net.packet.out.SendTooltip;
 import io.battlerune.util.Difficulty;
 import io.battlerune.util.Utility;
 

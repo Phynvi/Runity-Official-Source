@@ -1,9 +1,9 @@
 package io.battlerune.content.writer;
 
+import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendColor;
 import io.battlerune.net.packet.out.SendFont;
 import io.battlerune.net.packet.out.SendString;
-import io.battlerune.game.world.entity.mob.player.Player;
 
 /**
  * Handles writing on an itemcontainer.

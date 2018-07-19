@@ -1,14 +1,14 @@
 package io.battlerune.util.parser.impl;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.gson.JsonObject;
 
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.util.Utility;
 import io.battlerune.util.parser.GsonParser;
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 /**

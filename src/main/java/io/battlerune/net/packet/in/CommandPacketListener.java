@@ -4,7 +4,6 @@ import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.content.command.Command;
 import io.battlerune.content.command.CommandManager;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.relations.ChatMessage;
 import io.battlerune.net.packet.ClientPackets;
 import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.packet.PacketListener;

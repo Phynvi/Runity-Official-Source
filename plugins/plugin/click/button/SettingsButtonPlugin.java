@@ -6,8 +6,10 @@ import io.battlerune.content.writer.impl.SettingWriter;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.net.packet.out.*;
-import io.battlerune.util.ScreenMode;
+import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendScreenMode;
+import io.battlerune.net.packet.out.SendString;
 
 public class SettingsButtonPlugin extends PluginContext {
 

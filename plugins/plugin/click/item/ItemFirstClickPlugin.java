@@ -2,11 +2,11 @@ package plugin.click.item;
 
 import io.battlerune.content.DiceBag;
 import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
+import io.battlerune.content.consume.Anglerfish;
 import io.battlerune.content.skill.impl.slayer.Slayer;
 import io.battlerune.content.skill.impl.slayer.SlayerTask;
 import io.battlerune.content.skill.impl.woodcutting.BirdsNest;
 import io.battlerune.game.action.impl.SpadeAction;
-import io.battlerune.content.consume.Anglerfish;
 import io.battlerune.game.event.impl.ItemClickEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;

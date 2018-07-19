@@ -1,9 +1,9 @@
 package io.battlerune.game.engine.sync.task;
 
+import java.util.concurrent.Phaser;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.concurrent.Phaser;
 
 public final class PhasedUpdateTask extends SynchronizationTask {
 

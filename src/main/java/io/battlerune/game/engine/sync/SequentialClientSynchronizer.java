@@ -1,15 +1,14 @@
 package io.battlerune.game.engine.sync;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import io.battlerune.game.engine.sync.task.*;
+import io.battlerune.game.engine.sync.task.NpcPostUpdateTask;
+import io.battlerune.game.engine.sync.task.NpcPreUpdateTask;
+import io.battlerune.game.engine.sync.task.NpcUpdateTask;
+import io.battlerune.game.engine.sync.task.PlayerPostUpdateTask;
+import io.battlerune.game.engine.sync.task.PlayerPreUpdateTask;
+import io.battlerune.game.engine.sync.task.PlayerUpdateTask;
 import io.battlerune.game.world.entity.MobList;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public final class SequentialClientSynchronizer implements ClientSynchronizer {
 

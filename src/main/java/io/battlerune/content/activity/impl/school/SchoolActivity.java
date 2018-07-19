@@ -3,20 +3,13 @@ package io.battlerune.content.activity.impl.school;
 import io.battlerune.Config;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityType;
-import io.battlerune.content.activity.impl.warriorguild.WarriorGuildUtility;
 import io.battlerune.content.event.impl.ObjectInteractionEvent;
-import io.battlerune.game.Animation;
-import io.battlerune.game.UpdatePriority;
-import io.battlerune.game.task.Task;
-import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.data.LockType;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.position.Position;
-import io.battlerune.net.packet.out.SendEntityHintArrow;
-import io.battlerune.net.packet.out.SendMessage;
 
 public class SchoolActivity extends Activity {
     private final Player player;

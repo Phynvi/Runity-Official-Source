@@ -6,7 +6,6 @@ import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.ground.GroundItem;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.MessageColor;
-import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 /**

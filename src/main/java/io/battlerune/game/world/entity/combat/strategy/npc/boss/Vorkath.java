@@ -1,5 +1,12 @@
 package io.battlerune.game.world.entity.combat.strategy.npc.boss;
 
+import static io.battlerune.game.world.entity.combat.CombatUtil.createStrategyArray;
+
+import java.util.Collections;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+
 import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.Projectile;
@@ -11,7 +18,6 @@ import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;
 import io.battlerune.game.world.entity.combat.hit.Hit;
-import io.battlerune.game.world.entity.combat.hit.Hitsplat;
 import io.battlerune.game.world.entity.combat.projectile.CombatProjectile;
 import io.battlerune.game.world.entity.combat.strategy.CombatStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.MultiStrategy;
@@ -20,22 +26,13 @@ import io.battlerune.game.world.entity.combat.strategy.npc.NpcMeleeStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.NpcRangedStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.impl.DragonfireStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
-import io.battlerune.game.world.entity.mob.data.LockType;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.object.CustomGameObject;
 import io.battlerune.game.world.pathfinding.TraversalMap;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
-import io.battlerune.net.packet.out.SendWidget;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
-
-import java.util.Collections;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
-
-import static io.battlerune.game.world.entity.combat.CombatUtil.createStrategyArray;
 
 /**
  * The combat definition for Vorkath.

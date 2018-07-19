@@ -1,20 +1,17 @@
 package io.battlerune.util.parser.impl;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 import com.google.gson.JsonObject;
 
 import io.battlerune.game.world.entity.mob.npc.drop.NpcDrop;
 import io.battlerune.game.world.entity.mob.npc.drop.NpcDropChance;
 import io.battlerune.game.world.entity.mob.npc.drop.NpcDropManager;
 import io.battlerune.game.world.entity.mob.npc.drop.NpcDropTable;
-import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.util.parser.GsonParser;
-import io.battlerune.util.parser.old.defs.NpcDefinition;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Loads npc drops on startup.

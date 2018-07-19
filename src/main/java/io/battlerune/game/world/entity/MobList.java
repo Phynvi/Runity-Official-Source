@@ -1,6 +1,18 @@
 package io.battlerune.game.world.entity;
 
-import java.util.*;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkPositionIndex;
+import static com.google.common.base.Preconditions.checkState;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Spliterator;
+import java.util.Spliterators;
+import java.util.TreeSet;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -10,8 +22,6 @@ import java.util.stream.StreamSupport;
 
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.util.RandomUtils;
-
-import static com.google.common.base.Preconditions.*;
 
 /**
  * An {@link Iterable} implementation acting as a repository that holds

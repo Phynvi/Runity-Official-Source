@@ -1,7 +1,5 @@
 package io.battlerune.content.activity.impl.warriorguild;
 
-import java.util.Arrays;
-
 import io.battlerune.content.activity.ActivityListener;
 import io.battlerune.game.world.entity.mob.Mob;
 

@@ -1,6 +1,13 @@
 package io.battlerune.game.world.pathfinding.path.impl;
 
-import static io.battlerune.game.world.entity.mob.Direction.*;
+import static io.battlerune.game.world.entity.mob.Direction.EAST;
+import static io.battlerune.game.world.entity.mob.Direction.NORTH;
+import static io.battlerune.game.world.entity.mob.Direction.NORTH_EAST;
+import static io.battlerune.game.world.entity.mob.Direction.NORTH_WEST;
+import static io.battlerune.game.world.entity.mob.Direction.SOUTH;
+import static io.battlerune.game.world.entity.mob.Direction.SOUTH_EAST;
+import static io.battlerune.game.world.entity.mob.Direction.SOUTH_WEST;
+import static io.battlerune.game.world.entity.mob.Direction.WEST;
 
 import java.util.ArrayList;
 import java.util.Deque;

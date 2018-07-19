@@ -1,6 +1,10 @@
 package io.battlerune.content.bot;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import io.battlerune.content.tittle.PlayerTitle;
 import io.battlerune.game.world.World;

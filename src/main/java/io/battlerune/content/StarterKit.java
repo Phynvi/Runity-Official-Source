@@ -2,7 +2,6 @@ package io.battlerune.content;
 
 import java.util.Arrays;
 
-import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;

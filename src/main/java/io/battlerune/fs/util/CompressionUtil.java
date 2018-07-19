@@ -1,14 +1,14 @@
 package io.battlerune.fs.util;
 
-import org.apache.tools.bzip2.CBZip2InputStream;
-
-import io.battlerune.fs.cache.FileSystem;
+import static com.google.common.io.ByteStreams.toByteArray;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.zip.GZIPInputStream;
 
-import static com.google.common.io.ByteStreams.toByteArray;
+import org.apache.tools.bzip2.CBZip2InputStream;
+
+import io.battlerune.fs.cache.FileSystem;
 
 /**
  * A static-utility class containing containing extension or helper methods for

@@ -1,11 +1,11 @@
 package io.battlerune.net.packet;
 
+import java.util.Optional;
+
 import com.google.common.base.Preconditions;
 
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.netty.util.ReferenceCountUtil;
-
-import java.util.Optional;
 
 /**
  * The repository that stores packets sizes and listeners for how to handle the packets.

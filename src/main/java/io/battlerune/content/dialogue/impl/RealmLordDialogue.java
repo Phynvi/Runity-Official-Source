@@ -4,9 +4,6 @@ import io.battlerune.content.activity.impl.battlerealm.BattleRealm;
 import io.battlerune.content.dialogue.Dialogue;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.dialogue.Expression;
-import io.battlerune.content.skill.impl.slayer.SlayerOfferings;
-import io.battlerune.content.skill.impl.slayer.SlayerTab;
-import io.battlerune.game.world.entity.mob.player.Player;
 
 public class RealmLordDialogue extends Dialogue {
 

@@ -1,5 +1,20 @@
 package io.battlerune.util.tools.wiki.impl;
 
+import static io.battlerune.game.world.entity.combat.CombatConstants.BONUS_CONFIG_FIELD_NAMES;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -9,16 +24,6 @@ import io.battlerune.util.Utility;
 import io.battlerune.util.parser.GsonParser;
 import io.battlerune.util.tools.wiki.parser.WikiTable;
 import io.battlerune.util.tools.wiki.parser.WikiTableParser;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import static io.battlerune.game.world.entity.combat.CombatConstants.BONUS_CONFIG_FIELD_NAMES;
-
-import java.util.*;
 
 public class ItemDefParser extends WikiTableParser {
 

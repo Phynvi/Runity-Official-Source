@@ -1,20 +1,17 @@
 package io.battlerune.net;
 
-import io.netty.channel.ChannelHandler.Sharable;
+import java.util.Optional;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import io.battlerune.Config;
-import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.net.codec.login.LoginDetailsPacket;
-import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.session.Session;
+import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.util.Optional;
 
 /**
  * A {@link SimpleChannelInboundHandler} implementation for re-routing

@@ -1,21 +1,16 @@
 package io.battlerune.content.quest.impl;
 
-import io.battlerune.content.activity.impl.recipefordisaster.RecipeForDisaster;
-import io.battlerune.content.activity.panel.ActivityPanel;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.dialogue.Expression;
 import io.battlerune.content.event.impl.NpcInteractionEvent;
 import io.battlerune.content.quest.Quest;
 import io.battlerune.content.quest.QuestManager;
-import io.battlerune.content.quest.QuestState;
-import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoUtility.SpawnData;
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendString;
 
 /**

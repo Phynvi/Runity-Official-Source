@@ -1,5 +1,14 @@
 package io.battlerune.game.world.pathfinding;
 
+import static io.battlerune.game.world.object.ObjectType.DIAGONAL_INTERACTABLE;
+import static io.battlerune.game.world.object.ObjectType.DIAGONAL_WALL;
+import static io.battlerune.game.world.object.ObjectType.FLOOR_DECORATION;
+import static io.battlerune.game.world.object.ObjectType.INTERACTABLE;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Optional;
+
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.object.GameObject;
@@ -10,12 +19,6 @@ import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
 import io.battlerune.game.world.region.RegionTile;
 import io.battlerune.util.RandomUtils;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
-
-import static io.battlerune.game.world.object.ObjectType.*;
 
 /**
  * Contains traversal data for a set of regions.

@@ -1,5 +1,7 @@
 package io.battlerune.content.skill.impl;
 
+import java.util.Optional;
+
 import com.google.common.base.Preconditions;
 
 import io.battlerune.content.skill.SkillAction;
@@ -12,8 +14,6 @@ import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.RandomGen;
 import io.battlerune.util.StringUtils;
-
-import java.util.Optional;
 
 /**
  * Holds functionality for skills such as woodcutting and mining.

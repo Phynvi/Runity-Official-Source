@@ -1,5 +1,7 @@
 package plugin.click.button;
 
+import java.util.Optional;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,8 +12,6 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.MessageColor;
-
-import java.util.Optional;
 
 public class DeveloperActionButtonPlugin extends PluginContext {
 

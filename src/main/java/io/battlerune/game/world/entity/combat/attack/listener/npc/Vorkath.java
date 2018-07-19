@@ -1,10 +1,5 @@
 package io.battlerune.game.world.entity.combat.attack.listener.npc;
 
-import io.battlerune.game.Animation;
-import io.battlerune.game.task.TaskManager;
-import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.combat.attack.listener.SimplifiedListener;
-
 public class Vorkath {//extends SimplifiedListener<Npc> { 
 	/*
 

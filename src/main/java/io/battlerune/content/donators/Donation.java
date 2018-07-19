@@ -1,23 +1,17 @@
 package io.battlerune.content.donators;
 
-import com.jcabi.jdbc.JdbcSession;
-import com.jcabi.jdbc.Outcome;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import io.battlerune.Config;
 import io.battlerune.content.writer.InterfaceWriter;
 import io.battlerune.content.writer.impl.InformationWriter;
-import io.battlerune.game.service.ForumService;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.UpdateFlag;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.net.packet.out.SendBanner;
 import io.battlerune.util.Utility;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.sql.SQLException;
 
 /**
  * This class handles everything related to donators.

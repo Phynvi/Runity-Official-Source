@@ -1,5 +1,7 @@
 package io.battlerune.util.parser.impl;
 
+import static io.battlerune.content.activity.impl.battlerealm.BattleRealmObjects.battleRealmObjects;
+
 import com.google.gson.JsonObject;
 
 import io.battlerune.content.activity.impl.battlerealm.BattleRealmObjects;
@@ -9,8 +11,6 @@ import io.battlerune.game.world.object.ObjectType;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.util.parser.GsonParser;
-
-import static io.battlerune.content.activity.impl.battlerealm.BattleRealmObjects.battleRealmObjects;
 
 /**
  * The class that loads all global object on startup.

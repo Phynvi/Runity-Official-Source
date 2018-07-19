@@ -1,11 +1,30 @@
 package io.battlerune.game.world.entity.mob.player.persist;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Deque;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.tritonus.share.ArraySet;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
-import io.battlerune.content.dailyachievement.DailyAchievementKey;
+
 import io.battlerune.content.ActivityLog;
 import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.impl.barrows.BrotherData;
@@ -13,6 +32,7 @@ import io.battlerune.content.activity.impl.duelarena.DuelRule;
 import io.battlerune.content.clanchannel.ClanRepository;
 import io.battlerune.content.clanchannel.channel.ClanChannel;
 import io.battlerune.content.clanchannel.content.ClanMemberComporator;
+import io.battlerune.content.dailyachievement.DailyAchievementKey;
 import io.battlerune.content.emote.EmoteUnlockable;
 import io.battlerune.content.masterminer.MasterMinerTaskHandler;
 import io.battlerune.content.masterminer.MobData;
@@ -39,20 +59,6 @@ import io.battlerune.game.world.position.Position;
 import io.battlerune.net.codec.login.LoginResponse;
 import io.battlerune.util.GsonUtils;
 import io.battlerune.util.Utility;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.tritonus.share.ArraySet;
-
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-import java.lang.reflect.Type;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.*;
 
 public final class PlayerPersistFile implements PlayerPersistable {
 

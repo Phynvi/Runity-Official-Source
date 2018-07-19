@@ -1,8 +1,5 @@
 package io.battlerune.content.activity.impl.barrows;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityType;
 import io.battlerune.content.activity.panel.ActivityPanel;
@@ -16,9 +13,7 @@ import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendEntityHintArrow;
-import io.battlerune.net.packet.out.SendItemOnInterface;
 import io.battlerune.net.packet.out.SendMessage;
-import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
 
 public class Barrows extends Activity {

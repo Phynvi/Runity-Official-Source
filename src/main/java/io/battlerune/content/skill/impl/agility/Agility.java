@@ -1,21 +1,24 @@
 package io.battlerune.content.skill.impl.agility;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.HashMap;
+import java.util.function.Consumer;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 
 import io.battlerune.Config;
-import io.battlerune.content.event.impl.ClickButtonInteractionEvent;
 import io.battlerune.content.skill.impl.agility.obstacle.Obstacle;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.position.Position;
-
-import java.io.*;
-import java.util.HashMap;
-import java.util.function.Consumer;
 
 /**
  * Created by Daniel on 2017-11-02.

@@ -1,6 +1,5 @@
 package io.battlerune.game.world.entity.mob.player.profile;
 
-import java.util.List;
 import java.util.Set;
 
 import io.battlerune.game.world.entity.mob.player.PlayerRight;

@@ -1,9 +1,10 @@
 package io.battlerune.game.world.object;
 
-import io.battlerune.fs.cache.archive.Archive;
-import io.battlerune.util.Buffer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import io.battlerune.fs.cache.archive.Archive;
+import io.battlerune.util.Buffer;
 
 public final class ObjectDefinition {
 

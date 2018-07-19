@@ -1,9 +1,9 @@
 package io.battlerune.net.packet.in;
 
 import io.battlerune.content.DropDisplay;
+import io.battlerune.content.DropDisplay.DropType;
 import io.battlerune.content.DropSimulator;
 import io.battlerune.content.ProfileViewer;
-import io.battlerune.content.DropDisplay.DropType;
 import io.battlerune.content.famehall.FameHandler;
 import io.battlerune.content.staff.StaffPanel;
 import io.battlerune.content.store.impl.PersonalStore;

@@ -1,12 +1,12 @@
 package io.battlerune.content.skill.impl.construction;
 
+import java.util.List;
+
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.object.ObjectDefinition;
 import io.battlerune.net.packet.out.SendItemOnInterface;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
-
-import java.util.List;
 
 public class BuildableInterface {
 	

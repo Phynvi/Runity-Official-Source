@@ -1,5 +1,14 @@
 package io.battlerune.net.codec.login;
 
+import java.math.BigInteger;
+import java.net.InetSocketAddress;
+import java.security.SecureRandom;
+import java.util.List;
+import java.util.Random;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import io.battlerune.Config;
 import io.battlerune.net.codec.IsaacCipher;
 import io.battlerune.net.session.LoginSession;
@@ -9,14 +18,6 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.math.BigInteger;
-import java.net.InetSocketAddress;
-import java.security.SecureRandom;
-import java.util.List;
-import java.util.Random;
 
 /**
  * The class that handles a connection through the login protocol.

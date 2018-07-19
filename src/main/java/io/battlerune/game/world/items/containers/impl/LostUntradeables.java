@@ -4,9 +4,7 @@ import io.battlerune.game.world.InterfaceConstants;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.ItemContainer;
-import io.battlerune.game.world.items.containers.pricechecker.PriceChecker;
 import io.battlerune.net.packet.out.SendItemOnInterface;
-import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendString;
 
 /**

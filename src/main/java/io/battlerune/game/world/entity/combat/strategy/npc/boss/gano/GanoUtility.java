@@ -1,7 +1,6 @@
 package io.battlerune.game.world.entity.combat.strategy.npc.boss.gano;
 
 import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoUtility.SpawnData;
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;

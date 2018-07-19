@@ -1,5 +1,11 @@
 package io.battlerune.net.codec.game;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import io.battlerune.net.codec.IsaacCipher;
 import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.packet.PacketListener;
@@ -9,11 +15,6 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.util.List;
-import java.util.Optional;
 
 /**
  * The class that reads packets from the client into {@link GamePacket}'s.

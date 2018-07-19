@@ -1,6 +1,10 @@
 package io.battlerune.content;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeSet;
 
 import io.battlerune.game.world.entity.mob.npc.definition.NpcDefinition;
 import io.battlerune.game.world.entity.mob.npc.drop.NpcDrop;
@@ -9,7 +13,10 @@ import io.battlerune.game.world.entity.mob.npc.drop.NpcDropTable;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendScrollbar;
+import io.battlerune.net.packet.out.SendString;
+import io.battlerune.net.packet.out.SendTooltip;
 import io.battlerune.util.RandomGen;
 import io.battlerune.util.Utility;
 

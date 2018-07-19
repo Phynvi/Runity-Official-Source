@@ -1,13 +1,9 @@
 package io.battlerune.game.world.entity.combat.strategy.player.special.melee;
 
 import io.battlerune.game.Animation;
-import io.battlerune.game.Graphic;
 import io.battlerune.game.UpdatePriority;
-import io.battlerune.game.world.entity.combat.CombatUtil;
-import io.battlerune.game.world.entity.combat.attack.FormulaFactory;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;
 import io.battlerune.game.world.entity.combat.hit.Hit;
-import io.battlerune.game.world.entity.combat.hit.HitIcon;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerMeleeStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;

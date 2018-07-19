@@ -3,8 +3,6 @@ package io.battlerune.content.mysterybox;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import io.battlerune.content.mysterybox.impl.BronzeMysteryBox;
 import io.battlerune.content.mysterybox.impl.GoldMysteryBox;
@@ -12,8 +10,6 @@ import io.battlerune.content.mysterybox.impl.PetMysteryBox;
 import io.battlerune.content.mysterybox.impl.RedCrystal;
 import io.battlerune.content.mysterybox.impl.SilverMysteryBox;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.util.Utility;
-import io.battlerune.util.chance.Chance;
 
 /**
  * The mystery box class.

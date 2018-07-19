@@ -1,18 +1,34 @@
 package io.battlerune.content.clanchannel.channel;
 
-import static io.battlerune.content.clanchannel.channel.ClanManagement.*;
+import static io.battlerune.content.clanchannel.channel.ClanManagement.ENTER_RANK_INDEX;
+import static io.battlerune.content.clanchannel.channel.ClanManagement.MANAGE_RANK_INDEX;
+import static io.battlerune.content.clanchannel.channel.ClanManagement.TALK_RANK_INDEX;
 
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Optional;
 
 import io.battlerune.Config;
-import io.battlerune.content.clanchannel.*;
+import io.battlerune.content.clanchannel.ClanMember;
+import io.battlerune.content.clanchannel.ClanRank;
+import io.battlerune.content.clanchannel.ClanRepository;
+import io.battlerune.content.clanchannel.ClanType;
+import io.battlerune.content.clanchannel.ClanUtility;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.mob.player.profile.ProfileRepository;
-import io.battlerune.net.packet.out.*;
+import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendInputMessage;
+import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendScrollbar;
+import io.battlerune.net.packet.out.SendString;
+import io.battlerune.net.packet.out.SendTooltip;
 import io.battlerune.util.Utility;
 
 /**

@@ -1,6 +1,10 @@
 package io.battlerune.content;
 
 
+import java.util.Iterator;
+import java.util.Objects;
+import java.util.TreeSet;
+
 import io.battlerune.Config;
 import io.battlerune.game.task.impl.DoubleExperienceEvent;
 import io.battlerune.game.world.World;
@@ -11,10 +15,6 @@ import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendProgressBar;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
-
-import java.util.Iterator;
-import java.util.Objects;
-import java.util.TreeSet;
 
 /**
  * Handles contribution towards the well of goodwill.

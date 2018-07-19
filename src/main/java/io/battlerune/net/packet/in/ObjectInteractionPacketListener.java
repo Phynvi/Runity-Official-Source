@@ -1,5 +1,7 @@
 package io.battlerune.net.packet.in;
 
+import static com.google.common.base.Preconditions.checkState;
+
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.FirstObjectClick;
 import io.battlerune.content.event.impl.ObjectInteractionEvent;
@@ -20,8 +22,6 @@ import io.battlerune.net.packet.ClientPackets;
 import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.packet.PacketListener;
 import io.battlerune.net.packet.PacketListenerMeta;
-
-import static com.google.common.base.Preconditions.checkState;
 
 /**
  * The {@code GamePacket} responsible for clicking various options of an in-game

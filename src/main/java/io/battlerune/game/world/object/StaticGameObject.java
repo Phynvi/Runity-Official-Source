@@ -1,5 +1,10 @@
 package io.battlerune.game.world.object;
 
+import static io.battlerune.game.world.object.ObjectDirection.NORTH;
+import static io.battlerune.game.world.object.ObjectDirection.SOUTH;
+
+import java.util.Objects;
+
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.pathfinding.TraversalMap;
@@ -9,11 +14,6 @@ import io.battlerune.net.packet.out.SendAddObject;
 import io.battlerune.net.packet.out.SendRemoveObject;
 import io.battlerune.util.Utility;
 import io.battlerune.util.generic.GenericAttributes;
-
-import java.util.Objects;
-
-import static io.battlerune.game.world.object.ObjectDirection.NORTH;
-import static io.battlerune.game.world.object.ObjectDirection.SOUTH;
 
 /**
  * Represents a static game object loaded from the map fs.

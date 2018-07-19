@@ -2,7 +2,6 @@ package io.battlerune.game.world.entity.mob.player;
 
 import io.battlerune.content.clanchannel.content.ClanMemberComporator;
 import io.battlerune.net.packet.out.SendConfig;
-import io.battlerune.net.packet.out.SendScreenMode;
 import io.battlerune.net.packet.out.SendZoom;
 
 /**

@@ -1,10 +1,16 @@
 package io.battlerune.util.parser;
 
-import com.google.gson.*;
+import java.io.FileReader;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.FileReader;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 /**
  * This class provides an easy to use google gson parser specifically designed for parsing JSON files.
