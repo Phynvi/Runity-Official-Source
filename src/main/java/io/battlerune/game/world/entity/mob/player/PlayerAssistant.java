@@ -16,7 +16,6 @@ import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
 import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.content.dialogue.Expression;
 import io.battlerune.content.emote.EmoteHandler;
-import io.battlerune.content.ffa.FreeForAll;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.skill.impl.magic.teleport.TeleportType;
 import io.battlerune.content.writer.InterfaceWriter;
@@ -319,9 +318,6 @@ public class PlayerAssistant {
 			disableAttack();
 			player.send(new SendPlayerOption(PlayerOption.DUEL_REQUEST, false, true));
 		} else if (Area.inDuelArena(player) || Area.inDuelObsticleArena(player)) {
-			disableAttack();
-			player.send(new SendPlayerOption(PlayerOption.DUEL_REQUEST, false, true));
-		} else if (FreeForAll.game.containsKey(player)) {
 			disableAttack();
 			player.send(new SendPlayerOption(PlayerOption.DUEL_REQUEST, false, true));
 		} else {

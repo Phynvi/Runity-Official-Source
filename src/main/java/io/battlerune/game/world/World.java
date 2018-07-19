@@ -19,7 +19,6 @@ import io.battlerune.content.activity.impl.pestcontrol.PestControl;
 import io.battlerune.content.activity.record.GlobalRecords;
 import io.battlerune.content.bot.PlayerBot;
 import io.battlerune.content.clanchannel.ClanRepository;
-import io.battlerune.content.ffa.FreeForAll;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.Projectile;
 import io.battlerune.game.event.bus.DataBus;
@@ -232,7 +231,6 @@ public final class World {
 				taskManager.processTasks();
 				PestControl.sequenceMinigame();
 				BattleRealm.sequenceMinigame();
-				FreeForAll.sequence();
 			} catch (Exception ex) {
 				logger.error("Error sequencing pest control or BattleRealm", ex);
 			}

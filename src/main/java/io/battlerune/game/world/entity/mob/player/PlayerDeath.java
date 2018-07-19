@@ -12,7 +12,6 @@ import io.battlerune.content.bot.BotUtility;
 import io.battlerune.content.bot.PlayerBot;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.OnKillEvent;
-import io.battlerune.content.ffa.FreeForAll;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.writer.InterfaceWriter;
 import io.battlerune.content.writer.impl.InformationWriter;
@@ -155,11 +154,6 @@ public final class PlayerDeath extends MobDeath<Player> {
 	/** The last part of the death process where the character is reset. */
 	@Override
 	public void postDeath(Mob killer) {
-
-		if (FreeForAll.game.containsKey(mob)) {
-			FreeForAll.leaveGame(mob, "dead");
-			return;
-		}
 
 		if (mob.isBot) {
 			((PlayerBot) mob).postDeath();

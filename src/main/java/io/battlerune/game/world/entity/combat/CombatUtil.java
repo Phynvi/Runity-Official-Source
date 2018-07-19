@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import io.battlerune.content.activity.ActivityType;
-import io.battlerune.content.ffa.FreeForAll;
 import io.battlerune.content.skill.impl.slayer.SlayerTask;
 import io.battlerune.game.Animation;
 import io.battlerune.game.Projectile;
@@ -272,17 +271,6 @@ public final class CombatUtil {
 			} else if (cantFight(attacker, defender)) {
 				attacker.message("You cannot kill your own team!");
 				return false;
-			}
-
-			if (FreeForAll.game.containsKey(attacker) && FreeForAll.game.containsKey(defender)) {
-				if (!FreeForAll.gameStarted) {
-					attacker.message("@or2@[Tournament] Please wait till the game starts!");
-					return false;
-				}
-				if (attacker.id == 85 || defender.id == 85) {
-					return false;
-				}
-				return true;
 			}
 
 			if (Area.inEventArena(attacker) && Area.inEventArena(defender)) {

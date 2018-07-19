@@ -1,6 +1,5 @@
 package io.battlerune.game.world.entity.combat.effect.impl;
 
-import io.battlerune.content.ffa.FreeForAll;
 import io.battlerune.game.world.entity.combat.effect.CombatEffect;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -24,10 +23,6 @@ public final class CombatSkullEffect extends CombatEffect {
 	public boolean apply(Mob mob) {
 		if (mob.isPlayer()) {
 			Player player = (Player) mob;
-
-			if (FreeForAll.game.containsKey(mob)) {
-				return false;
-			}
 
 			if (Area.inEventArena(mob)) {
 				return false;
