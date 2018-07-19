@@ -1,5 +1,6 @@
 package io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek;
 
+import io.battlerune.content.eventboss.EventBoss;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.npc.Npc;
@@ -133,4 +134,5 @@ public class GalvekUtility {
 		}
 
 	}
+
 }

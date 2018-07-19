@@ -2,12 +2,15 @@ package io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek;
 
 import java.util.concurrent.TimeUnit;
 
+import io.battlerune.content.eventboss.EventBoss;
+import io.battlerune.content.eventboss.EventBossManager;
 import io.battlerune.game.task.Task;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.util.Stopwatch;
 
 public class GalvekEvent extends Task {
+
 	private Npc galvek;
 	private boolean initial;
 	private final Stopwatch stopwatch = Stopwatch.start();
@@ -26,8 +29,10 @@ public class GalvekEvent extends Task {
 		}
 
 		if (initial) {
-			if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 45) {
+			if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 2) {
 				galvek = GalvekUtility.generateSpawn();
+				EventBossManager.put("Galvek", new EventBoss(galvek.getNpc().getIndex()));
+				EventBossManager.start("Galvek", 50);
 				initial = false;
 				stopwatch.reset();
 			}
