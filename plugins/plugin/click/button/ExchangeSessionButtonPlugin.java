@@ -6,9 +6,9 @@ import io.battlerune.game.world.entity.mob.player.exchange.ExchangeSession;
 
 public class ExchangeSessionButtonPlugin extends PluginContext {
 
-    @Override
-    protected boolean onClick(Player player, int button) {
-        ExchangeSession session = ExchangeSession.getSession(player).orElse(null);
-        return session != null && session.onButtonClick(player, button);
-    }
+	@Override
+	protected boolean onClick(Player player, int button) {
+		ExchangeSession session = ExchangeSession.getSession(player).orElse(null);
+		return session != null && session.onButtonClick(player, button);
+	}
 }

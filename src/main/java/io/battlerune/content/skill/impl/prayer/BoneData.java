@@ -7,17 +7,9 @@ import java.util.Optional;
  * Holds the Bone data.
  */
 public enum BoneData {
-	NORMAL_BONES(526, 4.5D),
-	WOLF_BONES(2859, 4.5D),
-	BAT_BONES(530, 4.5D),
-	BIG_BONES(532, 18.0D),
-	BABYDRAGON_BONES(534, 30.0D),
-	DRAGON_BONES(536, 72.0D),
-	DAGG_BONES(6729, 75.0D),
-	OURG_BONES(4834, 100.0D),
-	LONG_BONE(10976, 100.0D),
-	SKELETAL_WYVERN_BONES(6812, 95.0D),
-	LAVA_DRAGON_BONES(11943, 85.0D);
+	NORMAL_BONES(526, 4.5D), WOLF_BONES(2859, 4.5D), BAT_BONES(530, 4.5D), BIG_BONES(532, 18.0D),
+	BABYDRAGON_BONES(534, 30.0D), DRAGON_BONES(536, 72.0D), DAGG_BONES(6729, 75.0D), OURG_BONES(4834, 100.0D),
+	LONG_BONE(10976, 100.0D), SKELETAL_WYVERN_BONES(6812, 95.0D), LAVA_DRAGON_BONES(11943, 85.0D);
 
 	/* The id of the bone */
 	private final int id;
@@ -35,12 +27,12 @@ public enum BoneData {
 	public int getId() {
 		return id;
 	}
-	
+
 	/* Gets the experience of the bone */
 	public double getExperience() {
 		return experience;
 	}
-	
+
 	/** Gets the bone data based on the item */
 	public static Optional<BoneData> forId(int id) {
 		return Arrays.stream(values()).filter(a -> a.id == id).findAny();

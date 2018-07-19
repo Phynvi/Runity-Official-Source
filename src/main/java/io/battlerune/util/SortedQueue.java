@@ -5,9 +5,9 @@ import java.util.Iterator;
 import java.util.Queue;
 
 public class SortedQueue<E> implements Queue<E> {
-	
+
 	private Object[] elements;
-	
+
 	public SortedQueue(int initial) {
 		elements = new Object[initial];
 	}

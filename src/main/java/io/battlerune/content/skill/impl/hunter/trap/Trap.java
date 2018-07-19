@@ -63,8 +63,7 @@ public class Trap {
 	}
 
 	/**
-	 * @param ticks
-	 *            the ticks to set
+	 * @param ticks the ticks to set
 	 */
 	public void setTicks(int ticks) {
 		this.ticks = ticks;
@@ -78,13 +77,13 @@ public class Trap {
 	public void setTrapState(TrapState state) {
 		trapState = state;
 	}
-	
+
 	private Player owner;
-	
+
 	public Player getOwner() {
 		return owner;
 	}
-	
+
 	public void setOwner(Player player) {
 		this.owner = player;
 	}

@@ -13,9 +13,9 @@ import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.MessageColor;
 
-
 /**
  * Handles the in examine packet
+ * 
  * @author Nerik / Harryl
  */
 @PacketListenerMeta({ 150 })
@@ -84,5 +84,5 @@ public class ExaminePacketListener implements PacketListener {
 		}
 		return String.valueOf(amount);
 	}
-	
+
 }

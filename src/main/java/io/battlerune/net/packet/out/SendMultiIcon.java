@@ -5,17 +5,17 @@ import io.battlerune.net.packet.OutgoingPacket;
 
 public class SendMultiIcon extends OutgoingPacket {
 
-    private final int icon;
+	private final int icon;
 
-    public SendMultiIcon(int icon) {
-        super(61, 1);
-        this.icon = icon;
-    }
+	public SendMultiIcon(int icon) {
+		super(61, 1);
+		this.icon = icon;
+	}
 
-    @Override
-    public boolean encode(Player player) {
-        builder.writeByte(icon);
-        return true;
-    }
+	@Override
+	public boolean encode(Player player) {
+		builder.writeByte(icon);
+		return true;
+	}
 
 }

@@ -6,10 +6,8 @@ package io.battlerune.content.skill.impl.magic;
  * @author Daniel | Obey
  */
 public enum Spellbook {
-	MODERN("Modern", 0, 1151),
-	ANCIENT("Ancient", 1, 12855),
-	LUNAR("Lunar", 2, 29999);
-	
+	MODERN("Modern", 0, 1151), ANCIENT("Ancient", 1, 12855), LUNAR("Lunar", 2, 29999);
+
 	/** The name of the spellbook. */
 	private final String name;
 
@@ -24,7 +22,7 @@ public enum Spellbook {
 		this.id = id;
 		this.sidebar = sidebar;
 	}
-	
+
 	/** Gets the spellbook name. */
 	public String getName() {
 		return name;

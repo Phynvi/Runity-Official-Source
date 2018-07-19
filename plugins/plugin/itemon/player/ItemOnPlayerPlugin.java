@@ -6,21 +6,19 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 public class ItemOnPlayerPlugin extends PluginContext {
 
-    @Override
-    protected boolean itemOnPlayer(Player player, ItemOnPlayerEvent event) {
+	@Override
+	protected boolean itemOnPlayer(Player player, ItemOnPlayerEvent event) {
 
-        Player other = event.getOther();
+		Player other = event.getOther();
 
-        switch (event.getUsed().getId())
-        {
-            /* Slayer Gem (Enchanted Gem) */
-            case 4155:
-                player.slayer.startDuoDialogue(player, other);
-                return true;
-        }
+		switch (event.getUsed().getId()) {
+		/* Slayer Gem (Enchanted Gem) */
+		case 4155:
+			player.slayer.startDuoDialogue(player, other);
+			return true;
+		}
 
-
-        return false;
-    }
+		return false;
+	}
 
 }

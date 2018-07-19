@@ -27,22 +27,18 @@ public final class Graphic implements Comparable<Graphic> {
 	 * Constructs a new {@code Graphic} object with no delay, a low height, and
 	 * normal priotiry.
 	 * 
-	 * @param id
-	 *            The graphic id.
+	 * @param id The graphic id.
 	 */
 	public Graphic(int id) {
 		this(id, 0, false);
 	}
 
 	/**
-	 * Constructs a new {@code Graphic} object with no delay and normal
-	 * priotiry.
+	 * Constructs a new {@code Graphic} object with no delay and normal priotiry.
 	 * 
-	 * @param id
-	 *            The graphic id.
+	 * @param id   The graphic id.
 	 * 
-	 * @param high
-	 *            The graphic height state.
+	 * @param high The graphic height state.
 	 */
 	public Graphic(int id, boolean high) {
 		this(id, 0, high);
@@ -52,11 +48,9 @@ public final class Graphic implements Comparable<Graphic> {
 	 * Constructs a new {@code Graphic} object with a low height and normal
 	 * priotiry.
 	 * 
-	 * @param id
-	 *            The graphic id.
+	 * @param id    The graphic id.
 	 * 
-	 * @param delay
-	 *            The graphic delay.
+	 * @param delay The graphic delay.
 	 */
 	public Graphic(int id, int delay) {
 		this(id, delay, false);
@@ -65,14 +59,11 @@ public final class Graphic implements Comparable<Graphic> {
 	/**
 	 * Constructs a new {@code Graphic} object with a normal priotiry.
 	 * 
-	 * @param id
-	 *            The graphic id.
+	 * @param id    The graphic id.
 	 * 
-	 * @param delay
-	 *            The graphic delay.
+	 * @param delay The graphic delay.
 	 * 
-	 * @param high
-	 *            The graphic height state.
+	 * @param high  The graphic height state.
 	 */
 	public Graphic(int id, int delay, boolean high) {
 		this(id, delay, high, UpdatePriority.NORMAL);
@@ -81,10 +72,8 @@ public final class Graphic implements Comparable<Graphic> {
 	/**
 	 * Constructs a new {@code Graphic} object with no delay and a low height.
 	 * 
-	 * @param id
-	 *            The graphic id.
-	 * @param priority
-	 *            The graphic priority.
+	 * @param id       The graphic id.
+	 * @param priority The graphic priority.
 	 */
 	public Graphic(int id, UpdatePriority priority) {
 		this(id, 0, false, priority);
@@ -93,13 +82,10 @@ public final class Graphic implements Comparable<Graphic> {
 	/**
 	 * Constructs a new {@code Graphic} object with no delay.
 	 * 
-	 * @param id
-	 *            The graphic id.
+	 * @param id       The graphic id.
 	 * 
-	 * @param high
-	 *            The graphic height state.
-	 * @param priority
-	 *            The graphic priority.
+	 * @param high     The graphic height state.
+	 * @param priority The graphic priority.
 	 */
 	public Graphic(int id, boolean high, UpdatePriority priority) {
 		this(id, 0, high, priority);
@@ -108,13 +94,10 @@ public final class Graphic implements Comparable<Graphic> {
 	/**
 	 * Constructs a new {@code Graphic} object with a low height.
 	 * 
-	 * @param id
-	 *            The graphic id.
+	 * @param id       The graphic id.
 	 * 
-	 * @param delay
-	 *            The graphic delay.
-	 * @param priority
-	 *            The graphic priority.
+	 * @param delay    The graphic delay.
+	 * @param priority The graphic priority.
 	 */
 	public Graphic(int id, int delay, UpdatePriority priority) {
 		this(id, delay, false, priority);
@@ -123,16 +106,12 @@ public final class Graphic implements Comparable<Graphic> {
 	/**
 	 * Constructs a new {@code Graphic} object.
 	 * 
-	 * @param id
-	 *            The graphic id.
+	 * @param id       The graphic id.
 	 * 
-	 * @param delay
-	 *            The graphic delay.
+	 * @param delay    The graphic delay.
 	 * 
-	 * @param high
-	 *            The graphic height state.
-	 * @param priority
-	 *            The graphic priority.
+	 * @param high     The graphic height state.
+	 * @param priority The graphic priority.
 	 */
 	public Graphic(int id, int delay, boolean high, UpdatePriority priority) {
 		this(id, delay, high ? 6553600 : 0, priority);
@@ -178,12 +157,12 @@ public final class Graphic implements Comparable<Graphic> {
 	public int getId() {
 		return id;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id, delay, height, priority);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Graphic) {

@@ -5,7 +5,7 @@ import io.battlerune.net.codec.ByteModification;
 import io.battlerune.net.packet.OutgoingPacket;
 
 public class SendSpecialEnabled extends OutgoingPacket {
-	
+
 	private final int id;
 
 	public SendSpecialEnabled(int id) {
@@ -19,4 +19,3 @@ public class SendSpecialEnabled extends OutgoingPacket {
 		return true;
 	}
 }
-

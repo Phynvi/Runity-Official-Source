@@ -67,27 +67,35 @@ public class ItemsKeptOnDeath {
 		switch (kept) {
 		case 0:
 		default:
-			player.send(new SendString("You're marked with a \\n<col=ff0000>skull. </col>This reduces the \\nitems you keep from \\nthree to zero!", 17110));
+			player.send(new SendString(
+					"You're marked with a \\n<col=ff0000>skull. </col>This reduces the \\nitems you keep from \\nthree to zero!",
+					17110));
 			break;
 		case 1:
-			player.send(new SendString("You're marked with a \\n<col=ff0000>skull. </col>This reduces the \\nitems you keep from \\nthree to zero! \\nHowever, you also have the \\n<col=ff0000>Protect </col>Items prayer \\nactive, which saves you \\none extra item!", 17110));
+			player.send(new SendString(
+					"You're marked with a \\n<col=ff0000>skull. </col>This reduces the \\nitems you keep from \\nthree to zero! \\nHowever, you also have the \\n<col=ff0000>Protect </col>Items prayer \\nactive, which saves you \\none extra item!",
+					17110));
 			break;
 		case 3:
 			player.send(new SendString("You have no factors affecting \\nthe items you keep.", 17110));
 			break;
 		case 4:
-			player.send(new SendString("You have the <col=ff0000>Protect Item</col> \\nprayer active, which saves \\nyou none extra item!", 17110));
+			player.send(new SendString(
+					"You have the <col=ff0000>Protect Item</col> \\nprayer active, which saves \\nyou none extra item!",
+					17110));
 			break;
 		}
 
-		long carried = (player.inventory.containerValue(PriceType.VALUE) + player.equipment.containerValue(PriceType.VALUE));
-		
+		long carried = (player.inventory.containerValue(PriceType.VALUE)
+				+ player.equipment.containerValue(PriceType.VALUE));
+
 		if (carried <= 0) {
 			player.send(new SendString("Carried wealth: \\n<col=ff0000>Nothing!", 17115));
 		} else if (carried >= Long.MAX_VALUE) {
 			player.send(new SendString("Carried wealth: \\n<col=ff0000>Too much!", 17115));
 		} else {
-			player.send(new SendString("Carried wealth: \\n<col=ff0000>" + Utility.formatDigits(carried) + "</col> coins.", 17115));
+			player.send(new SendString(
+					"Carried wealth: \\n<col=ff0000>" + Utility.formatDigits(carried) + "</col> coins.", 17115));
 		}
 
 		Item[] dropped = items.toArray(new Item[0]);
@@ -100,7 +108,8 @@ public class ItemsKeptOnDeath {
 				continue;
 			}
 
-			risked = risked.add(new BigInteger(String.valueOf(dropping.getValue(PriceType.VALUE))).multiply(new BigInteger(String.valueOf(dropping.getAmount()))));
+			risked = risked.add(new BigInteger(String.valueOf(dropping.getValue(PriceType.VALUE)))
+					.multiply(new BigInteger(String.valueOf(dropping.getAmount()))));
 		}
 
 		player.send(new SendString("Risked wealth:", 17124));
@@ -108,7 +117,8 @@ public class ItemsKeptOnDeath {
 		if (risked.equals(BigInteger.ZERO)) {
 			player.send(new SendString("Risked wealth: \\n<col=ff0000>Nothing!", 17116));
 		} else {
-			player.send(new SendString("Risked wealth: \\n<col=ff0000>" + NumberFormat.getNumberInstance(Locale.US).format(risked) + "</col> coins.", 17116));
+			player.send(new SendString("Risked wealth: \\n<col=ff0000>"
+					+ NumberFormat.getNumberInstance(Locale.US).format(risked) + "</col> coins.", 17116));
 		}
 
 		player.send(new SendItemOnInterface(17113, keep));

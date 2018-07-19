@@ -16,22 +16,15 @@ public class SendWidget extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeByte(type.icon)
-		.writeShort(seconds * 50);
+		builder.writeByte(type.icon).writeShort(seconds * 50);
 		return true;
 	}
-	
+
 	public enum WidgetType {
-		ANTI_FIRE(1),
-		VENGEANCE(2),
-		FROZEN(3),
-		TELEBLOCK(4),
-		SKULL(5),
-		CLAN(6),
-		STUN(7),
-		POISON(1);
+		ANTI_FIRE(1), VENGEANCE(2), FROZEN(3), TELEBLOCK(4), SKULL(5), CLAN(6), STUN(7), POISON(1);
 
 		private final int icon;
+
 		WidgetType(int icon) {
 			this.icon = icon;
 		}

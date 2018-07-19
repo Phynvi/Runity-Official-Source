@@ -4,7 +4,5 @@ package io.battlerune.util;
  * Created by Daniel on 2017-11-27.
  */
 public enum Difficulty {
-    EASY,
-    MEDIUM,
-    HARD
+	EASY, MEDIUM, HARD
 }

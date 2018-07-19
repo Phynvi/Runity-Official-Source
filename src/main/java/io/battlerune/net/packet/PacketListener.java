@@ -14,11 +14,9 @@ public interface PacketListener {
 	/**
 	 * Handles the packet that has just been received.
 	 * 
-	 * @param player
-	 *            The player receiving this packet.
+	 * @param player The player receiving this packet.
 	 * 
-	 * @param packet
-	 *            The packet that has been received.
+	 * @param packet The packet that has been received.
 	 */
 	void handlePacket(Player player, GamePacket packet);
 }

@@ -7,8 +7,8 @@ package io.battlerune.content.staff;
  */
 public enum PanelType {
 	/**
-	 * The information panel - displays strings such as username, password,
-	 * host, etc.
+	 * The information panel - displays strings such as username, password, host,
+	 * etc.
 	 */
 	INFORMATION_PANEL(36700),
 
@@ -29,8 +29,7 @@ public enum PanelType {
 	/**
 	 * Constructs a new <code>PanelType<code>.
 	 * 
-	 * @param identification
-	 *            The identification of the itemcontainer.
+	 * @param identification The identification of the itemcontainer.
 	 */
 	PanelType(int identification) {
 		this.identification = identification;

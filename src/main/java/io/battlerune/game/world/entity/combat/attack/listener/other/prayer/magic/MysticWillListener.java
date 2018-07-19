@@ -5,9 +5,9 @@ import io.battlerune.game.world.entity.mob.Mob;
 
 public class MysticWillListener extends SimplifiedListener<Mob> {
 
-    @Override
-    public int modifyMagicLevel(Mob attacker, Mob defender, int level) {
-        return level * 21 / 20;
-    }
+	@Override
+	public int modifyMagicLevel(Mob attacker, Mob defender, int level) {
+		return level * 21 / 20;
+	}
 
 }

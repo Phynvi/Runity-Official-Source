@@ -8,7 +8,7 @@ import io.battlerune.content.event.InteractionEvent;
  */
 public final class LogInEvent extends InteractionEvent {
 
-    public LogInEvent() {
-        super(InteractionType.LOG_IN);
-    }
+	public LogInEvent() {
+		super(InteractionType.LOG_IN);
+	}
 }

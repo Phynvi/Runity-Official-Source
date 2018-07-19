@@ -5,6 +5,5 @@ package io.battlerune.game.world.items.ground;
  * @since 27-12-2016.
  */
 public enum GroundItemPolicy {
-    GLOBAL,
-    ONLY_OWNER
+	GLOBAL, ONLY_OWNER
 }

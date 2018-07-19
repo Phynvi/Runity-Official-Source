@@ -12,12 +12,12 @@ import io.battlerune.util.parser.GsonParser;
  */
 public final class PacketSizeParser extends GsonParser {
 
-    /**
-     * Creates a new {@code PacketSizeParser}.
-     */
-    public PacketSizeParser() {
+	/**
+	 * Creates a new {@code PacketSizeParser}.
+	 */
+	public PacketSizeParser() {
 		super("io/message_sizes", false);
-    }
+	}
 
 	@Override
 	protected void parse(JsonObject data) {

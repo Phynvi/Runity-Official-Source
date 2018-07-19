@@ -5,19 +5,19 @@ import io.battlerune.game.world.entity.mob.Mob;
 
 public class ChivalryListener extends SimplifiedListener<Mob> {
 
-    @Override
-    public int modifyAttackLevel(Mob attacker, Mob defender, int level) {
-        return level * 23 / 20;
-    }
+	@Override
+	public int modifyAttackLevel(Mob attacker, Mob defender, int level) {
+		return level * 23 / 20;
+	}
 
-    @Override
-    public int modifyStrengthLevel(Mob attacker, Mob defender, int level) {
-        return level * 59 / 50;
-    }
+	@Override
+	public int modifyStrengthLevel(Mob attacker, Mob defender, int level) {
+		return level * 59 / 50;
+	}
 
-    @Override
-    public int modifyDefenceLevel(Mob attacker, Mob defender, int level) {
-        return level * 6 / 5;
-    }
+	@Override
+	public int modifyDefenceLevel(Mob attacker, Mob defender, int level) {
+		return level * 6 / 5;
+	}
 
 }

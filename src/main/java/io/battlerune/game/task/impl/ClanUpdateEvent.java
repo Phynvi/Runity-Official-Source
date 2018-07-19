@@ -16,38 +16,38 @@ import io.battlerune.util.GsonUtils;
  */
 public class ClanUpdateEvent extends TickableTask {
 
-    public ClanUpdateEvent() {
-        super(false, 60);
-    }
+	public ClanUpdateEvent() {
+		super(false, 60);
+	}
 
-    @Override
-    protected void tick() {
-        if (ClanRepository.ACTIVE_CHANNELS.isEmpty()) {
-            return;
-        }
+	@Override
+	protected void tick() {
+		if (ClanRepository.ACTIVE_CHANNELS.isEmpty()) {
+			return;
+		}
 
-        for (ClanChannel channel : ClanRepository.ACTIVE_CHANNELS) {
-            if (channel.activeSize() <= 0) {
-                continue;
-            }
+		for (ClanChannel channel : ClanRepository.ACTIVE_CHANNELS) {
+			if (channel.activeSize() <= 0) {
+				continue;
+			}
 
-            channel.forEach(clanMember -> channel.getHandler().updateMemberList(clanMember));
+			channel.forEach(clanMember -> channel.getHandler().updateMemberList(clanMember));
 
-            new Thread(() -> {
-                final File dir = Paths.get("data", "content", "clan").toFile();
+			new Thread(() -> {
+				final File dir = Paths.get("data", "content", "clan").toFile();
 
-                if (!dir.exists()) {
-                    dir.mkdirs();
-                }
+				if (!dir.exists()) {
+					dir.mkdirs();
+				}
 
-                try (FileWriter fw = new FileWriter(dir.toPath().resolve(channel.getOwner() + ".json").toFile())) {
-                    fw.write(GsonUtils.JSON_PRETTY_NO_NULLS.toJson(channel.toJson()));
-                } catch (final Exception e) {
-                    e.printStackTrace();
-                }
-            }).start();
+				try (FileWriter fw = new FileWriter(dir.toPath().resolve(channel.getOwner() + ".json").toFile())) {
+					fw.write(GsonUtils.JSON_PRETTY_NO_NULLS.toJson(channel.toJson()));
+				} catch (final Exception e) {
+					e.printStackTrace();
+				}
+			}).start();
 
-        }
-    }
+		}
+	}
 
 }

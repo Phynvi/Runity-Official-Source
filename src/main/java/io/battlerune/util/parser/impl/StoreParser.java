@@ -20,8 +20,8 @@ import io.battlerune.util.parser.GsonParser;
 //import io.battlerune.content.shop.StoreRepository;
 
 /**
- * Parses throug the shops files and creates in-game shop object for the game
- * on startup.
+ * Parses throug the shops files and creates in-game shop object for the game on
+ * startup.
  *
  * @author Daniel | Obey
  */
@@ -41,9 +41,10 @@ public class StoreParser extends GsonParser {
 
 		final List<StoreItem> storeItems = new ArrayList<>(loadedItems.length);
 
-		for(LoadedItem loadedItem : loadedItems) {
+		for (LoadedItem loadedItem : loadedItems) {
 			OptionalInt value = loadedItem.value == 0 ? OptionalInt.empty() : OptionalInt.of(loadedItem.value);
-			storeItems.add(new StoreItem(loadedItem.id, loadedItem.amount, value, Optional.ofNullable(loadedItem.type)));
+			storeItems
+					.add(new StoreItem(loadedItem.id, loadedItem.amount, value, Optional.ofNullable(loadedItem.type)));
 		}
 
 		StoreItem[] items = storeItems.toArray(new StoreItem[storeItems.size()]);

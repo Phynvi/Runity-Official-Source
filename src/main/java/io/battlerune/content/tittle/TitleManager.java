@@ -46,7 +46,8 @@ public class TitleManager {
 			if (title.ordinal() == ordinal) {
 				view = title;
 			}
-			player.send(new SendString((title.ordinal() == ordinal ? "<col=DEB07A>" : "<col=A8865E>") + title.getName(), string));
+			player.send(new SendString((title.ordinal() == ordinal ? "<col=DEB07A>" : "<col=A8865E>") + title.getName(),
+					string));
 			player.send(new SendTooltip("View title: <col=db9423>" + title.getName() + "</col>", string - 1));
 			player.send(new SendConfig(config, title.activated(player) ? 1 : 0));
 			string += 2;
@@ -56,8 +57,10 @@ public class TitleManager {
 		for (int index = 0; index < view.getRequirement().length; index++) {
 			player.send(new SendString(view.getRequirement()[index], 39006 + index));
 		}
-		player.send(new SendString("<col=" + (view.activated(player) ? "A1D490>- UNLOCKED -" : "E34F52>- LOCKED -"), 39019));
-		player.send(new SendString("<col=DEB07A>" + view.getName() +  "<col=BF7D0A> " + Utility.formatName(player.getName()), 39_003));
+		player.send(new SendString("<col=" + (view.activated(player) ? "A1D490>- UNLOCKED -" : "E34F52>- LOCKED -"),
+				39019));
+		player.send(new SendString(
+				"<col=DEB07A>" + view.getName() + "<col=BF7D0A> " + Utility.formatName(player.getName()), 39_003));
 		player.send(new SendScrollbar(39_050, 470));
 	}
 

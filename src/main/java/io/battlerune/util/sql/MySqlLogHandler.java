@@ -4,7 +4,7 @@ public class MySqlLogHandler {
 
 	public static void run(MySqlCommands command, String log) {
 		MySqlCommandListener plugin = MySqlCommandManager.commands.get(command);
-		if(plugin != null) {
+		if (plugin != null) {
 			plugin.execute(log);
 		}
 	}

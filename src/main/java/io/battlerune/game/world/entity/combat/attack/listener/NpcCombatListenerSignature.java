@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * Listens for npcs.
+ * 
  * @author Michael | Chex
  */
 @Target(ElementType.TYPE)
@@ -15,6 +16,7 @@ public @interface NpcCombatListenerSignature {
 
 	/**
 	 * The NPC ids to attach this listener to.
+	 * 
 	 * @return the npc ids
 	 */
 	int[] npcs();

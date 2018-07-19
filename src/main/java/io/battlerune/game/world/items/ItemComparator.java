@@ -5,11 +5,7 @@ import java.util.Comparator;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
 
 public enum ItemComparator implements Comparator<Item> {
-	HIGH_ALCH_COMPARATOR,
-	LOW_ALCH_COMPARATOR,
-	ITEM_WEIGHT_COMPARATOR,
-	SHOP_VALUE_COMPARATOR,
-	ITEM_ID_COMPARATOR,
+	HIGH_ALCH_COMPARATOR, LOW_ALCH_COMPARATOR, ITEM_WEIGHT_COMPARATOR, SHOP_VALUE_COMPARATOR, ITEM_ID_COMPARATOR,
 	ITEM_AMOUNT_COMPARATOR;
 
 	@Override

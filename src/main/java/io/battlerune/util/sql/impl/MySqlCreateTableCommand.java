@@ -9,6 +9,7 @@ import io.battlerune.util.sql.MySqlConnector;
 
 /**
  * Inserts the log of the player into the database
+ * 
  * @author Nerik#8690
  *
  */

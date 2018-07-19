@@ -8,22 +8,22 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.position.Position;
 
 public interface SwingAcrossCableInteraction extends ObstacleInteraction {
-    @Override
-    default void start(Player player) {
-    }
+	@Override
+	default void start(Player player) {
+	}
 
-    @Override
-    default void onExecution(Player player, Position start, Position end) {
-        World.schedule(new Task(1) {
+	@Override
+	default void onExecution(Player player, Position start, Position end) {
+		World.schedule(new Task(1) {
 
-            @Override
-            public void execute() {
-                player.animate(new Animation(getAnimation()));
-            }
-        });
-    }
+			@Override
+			public void execute() {
+				player.animate(new Animation(getAnimation()));
+			}
+		});
+	}
 
-    @Override
-    default void onCancellation(Player player) {
-    }
+	@Override
+	default void onCancellation(Player player) {
+	}
 }

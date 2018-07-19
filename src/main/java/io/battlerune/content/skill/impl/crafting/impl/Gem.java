@@ -17,7 +17,6 @@ public enum Gem implements Craftable {
 	ONYX(new Item(1755), new Item(6571), new CraftableItem(new Item(6573), new Item(6571), 67, 167.5)),
 	ZENYTE(new Item(1755), new Item(19496), new CraftableItem(new Item(19493), new Item(19496), 89, 200));
 
-
 	private final Item use;
 	private final Item with;
 	private final CraftableItem[] items;

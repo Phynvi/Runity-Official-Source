@@ -16,15 +16,13 @@ public class SendTooltip extends OutgoingPacket {
 		this.id = id;
 	}
 
-
 	public SendTooltip(String string, int id) {
 		this(id, string);
 	}
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeString(string)
-		.writeShort(id, ByteModification.ADD);
+		builder.writeString(string).writeShort(id, ByteModification.ADD);
 		return true;
 	}
 

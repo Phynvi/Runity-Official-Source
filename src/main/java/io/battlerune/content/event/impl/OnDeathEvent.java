@@ -8,7 +8,7 @@ import io.battlerune.content.event.InteractionEvent;
  */
 public final class OnDeathEvent extends InteractionEvent {
 
-    public OnDeathEvent() {
-        super(InteractionType.ON_DEATH);
-    }
+	public OnDeathEvent() {
+		super(InteractionType.ON_DEATH);
+	}
 }

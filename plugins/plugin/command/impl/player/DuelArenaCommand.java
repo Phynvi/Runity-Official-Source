@@ -15,9 +15,9 @@ public class DuelArenaCommand implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 		Teleportation.teleport(player, Config.DUEL, 20, () -> {
-            player.send(new SendMessage("@or2@Welcome to the Duel Arena, " + player.getName() + "!"));
-            player.send(new SendMessage("@or2@Here comes the money!"));
-       });
+			player.send(new SendMessage("@or2@Welcome to the Duel Arena, " + player.getName() + "!"));
+			player.send(new SendMessage("@or2@Here comes the money!"));
+		});
 	}
 
 	@Override

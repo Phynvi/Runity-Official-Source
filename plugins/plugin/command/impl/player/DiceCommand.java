@@ -11,14 +11,14 @@ public class DiceCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		 Teleportation.teleport(player, Config.DICE_ZONE, 20, () -> {
-             player.send(new SendMessage("@or2@Welcome to Gamble, " + player.getName() + "!"));
-             player.send(new SendMessage("@red@Make sure you record at ALL times"));
-             player.send(new SendMessage("@red@No refunds will be given out without any kind of video proof"));
-             ClanChannelHandler.connect(player, "Dice");
-             player.message("You've attempted to join Dice clan chat.");
-             
-		 });
+		Teleportation.teleport(player, Config.DICE_ZONE, 20, () -> {
+			player.send(new SendMessage("@or2@Welcome to Gamble, " + player.getName() + "!"));
+			player.send(new SendMessage("@red@Make sure you record at ALL times"));
+			player.send(new SendMessage("@red@No refunds will be given out without any kind of video proof"));
+			ClanChannelHandler.connect(player, "Dice");
+			player.message("You've attempted to join Dice clan chat.");
+
+		});
 	}
 
 	@Override

@@ -10,14 +10,13 @@ import io.battlerune.util.RandomUtils;
 /**
  * @author red
  */
-@NpcCombatListenerSignature(npcs = {1674})
-@ItemCombatListenerSignature(requireAll = true, items = {4732, 4734, 4736, 4738})
+@NpcCombatListenerSignature(npcs = { 1674 })
+@ItemCombatListenerSignature(requireAll = true, items = { 4732, 4734, 4736, 4738 })
 public class KarilsListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public void hit(Mob attacker, Mob defender, Hit hit) {
-		if (hit.getDamage() == 0)
-		{
+		if (hit.getDamage() == 0) {
 			hit.setDamage(RandomUtils.inclusive(0, 20));
 		}
 	}

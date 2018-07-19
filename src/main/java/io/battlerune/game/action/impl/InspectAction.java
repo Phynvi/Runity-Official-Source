@@ -46,7 +46,7 @@ public abstract class InspectAction extends Action<Player> {
 			cancel();
 		}
 	}
-	
+
 	/**
 	 * Initialization method.
 	 */
@@ -54,12 +54,14 @@ public abstract class InspectAction extends Action<Player> {
 
 	/**
 	 * Inspection time consumption.
+	 * 
 	 * @return
 	 */
 	public abstract int getInspectDelay();
 
 	/**
 	 * Rewards to give the player.
+	 * 
 	 * @param player
 	 */
 	public abstract void giveRewards(Player player);

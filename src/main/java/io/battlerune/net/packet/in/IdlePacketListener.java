@@ -5,12 +5,12 @@ import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.packet.PacketListener;
 import io.battlerune.net.packet.PacketListenerMeta;
 
-@PacketListenerMeta({0})
+@PacketListenerMeta({ 0 })
 public class IdlePacketListener implements PacketListener {
 
-    @Override
-    public void handlePacket(Player player, GamePacket packet) {
+	@Override
+	public void handlePacket(Player player, GamePacket packet) {
 
-    }
+	}
 
 }

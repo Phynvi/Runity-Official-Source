@@ -6,20 +6,20 @@ import io.battlerune.game.world.items.Item;
 
 public interface BotClass {
 
-    Item[] inventory();
+	Item[] inventory();
 
-    Item[] equipment();
+	Item[] equipment();
 
-    int[] skills();
+	int[] skills();
 
-    void initCombat(Player target, PlayerBot bot);
+	void initCombat(Player target, PlayerBot bot);
 
-    void handleCombat(Player target, PlayerBot bot);
+	void handleCombat(Player target, PlayerBot bot);
 
-    void endFight(PlayerBot bot);
+	void endFight(PlayerBot bot);
 
-    void pot(Player target, PlayerBot bot);
+	void pot(Player target, PlayerBot bot);
 
-    void eat(Player target, PlayerBot bot);
+	void eat(Player target, PlayerBot bot);
 
 }

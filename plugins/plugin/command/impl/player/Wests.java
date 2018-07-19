@@ -14,9 +14,9 @@ public class Wests implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-        Teleportation.teleport(player, Config.WESTS);
-        player.send(new SendMessage("@or2@Goodluck, " + player.getName() + "!"));
-        player.send(new SendMessage("@or2@You might need it.."));
+		Teleportation.teleport(player, Config.WESTS);
+		player.send(new SendMessage("@or2@Goodluck, " + player.getName() + "!"));
+		player.send(new SendMessage("@or2@You might need it.."));
 	}
 
 	@Override

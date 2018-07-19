@@ -5,20 +5,20 @@ import io.battlerune.game.world.entity.mob.Mob;
 
 class ZulrahListener extends ActivityListener<ZulrahActivity> {
 
-    ZulrahListener(ZulrahActivity activity) {
-        super(activity);
-    }
+	ZulrahListener(ZulrahActivity activity) {
+		super(activity);
+	}
 
-    @Override
-    public boolean canOtherAttack(Mob attacker, Mob defender) {
-        return true;
-    }
+	@Override
+	public boolean canOtherAttack(Mob attacker, Mob defender) {
+		return true;
+	}
 
-    @Override
-    public boolean canAttack(Mob attacker, Mob defender) {
-        if (attacker.isNpc() && attacker.getNpc().id != 2045) {
-            return activity.attackable;
-        }
-        return true;
-    }
+	@Override
+	public boolean canAttack(Mob attacker, Mob defender) {
+		if (attacker.isNpc() && attacker.getNpc().id != 2045) {
+			return activity.attackable;
+		}
+		return true;
+	}
 }

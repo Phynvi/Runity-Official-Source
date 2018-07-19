@@ -20,10 +20,8 @@ public class SendPrivateMessage extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeLong(name)
-		.writeInt(player.relations.getPrivateMessageId())
-		.writeByte(rights.getCrown())
-		.writeBytes(compressed, compressed.length);
+		builder.writeLong(name).writeInt(player.relations.getPrivateMessageId()).writeByte(rights.getCrown())
+				.writeBytes(compressed, compressed.length);
 		return true;
 	}
 

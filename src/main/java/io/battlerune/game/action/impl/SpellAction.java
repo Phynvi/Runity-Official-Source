@@ -8,13 +8,14 @@ import io.battlerune.game.world.items.Item;
 
 /**
  * Handles the spell casting action.
+ * 
  * @author Daniel
  */
 public final class SpellAction extends Action<Player> {
 	private final Spell spell;
 	private final Item item;
 
-	/**  Creates the <code>SpellAction</code>.  */
+	/** Creates the <code>SpellAction</code>. */
 	public SpellAction(Player player, Spell spell, Item item) {
 		super(player, 3);
 		this.spell = spell;

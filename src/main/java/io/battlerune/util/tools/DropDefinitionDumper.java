@@ -18,7 +18,7 @@ public class DropDefinitionDumper {
 
 		List<ItemDrop> drops = new ArrayList<>();
 
-		drops.add(new ItemDrop(536, 1, 1, Rarity. ALWAYS));
+		drops.add(new ItemDrop(536, 1, 1, Rarity.ALWAYS));
 		drops.add(new ItemDrop(1753, 1, 1, Rarity.ALWAYS));
 		drops.add(new ItemDrop(209, 1, 1, Rarity.COMMON));
 		drops.add(new ItemDrop(205, 1, 1, Rarity.COMMON));
@@ -45,8 +45,6 @@ public class DropDefinitionDumper {
 		drops.add(new ItemDrop(11941, 2, 2, Rarity.UNCOMMON));
 		drops.add(new ItemDrop(449, 2, 2, Rarity.UNCOMMON));
 		drops.add(new ItemDrop(2722, 1, 1, Rarity.RARE));
-
-
 
 		if (rare_table) {
 			drops.add(new ItemDrop(20527, 3000, 3000, Rarity.COMMON));
@@ -77,11 +75,15 @@ public class DropDefinitionDumper {
 			drops.add(new ItemDrop(2366, 1, 1, Rarity.VERY_RARE));
 		}
 
-		List<ItemDrop> always = drops.stream().filter(item -> item.rarity == Rarity.ALWAYS).collect(Collectors.toList());
-		List<ItemDrop> common = drops.stream().filter(item -> item.rarity == Rarity.COMMON).collect(Collectors.toList());
-		List<ItemDrop> uncommon = drops.stream().filter(item -> item.rarity == Rarity.UNCOMMON).collect(Collectors.toList());
+		List<ItemDrop> always = drops.stream().filter(item -> item.rarity == Rarity.ALWAYS)
+				.collect(Collectors.toList());
+		List<ItemDrop> common = drops.stream().filter(item -> item.rarity == Rarity.COMMON)
+				.collect(Collectors.toList());
+		List<ItemDrop> uncommon = drops.stream().filter(item -> item.rarity == Rarity.UNCOMMON)
+				.collect(Collectors.toList());
 		List<ItemDrop> rare = drops.stream().filter(item -> item.rarity == Rarity.RARE).collect(Collectors.toList());
-		List<ItemDrop> very_rare = drops.stream().filter(item -> item.rarity == Rarity.VERY_RARE).collect(Collectors.toList());
+		List<ItemDrop> very_rare = drops.stream().filter(item -> item.rarity == Rarity.VERY_RARE)
+				.collect(Collectors.toList());
 
 		System.out.println("   {");
 		System.out.println("    \"name\": \"" + name + "\",");
@@ -187,11 +189,7 @@ public class DropDefinitionDumper {
 
 	static class ItemDrop {
 		enum Rarity {
-			ALWAYS,
-			COMMON,
-			UNCOMMON,
-			RARE,
-			VERY_RARE;
+			ALWAYS, COMMON, UNCOMMON, RARE, VERY_RARE;
 
 			public static Rarity get(String rarity) {
 				for (Rarity r : values()) {

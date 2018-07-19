@@ -14,62 +14,63 @@ import io.battlerune.net.packet.out.SendMessage;
 
 public class ChopVineTask extends Task {
 
-    private int tick = 0;
-    private final Player player;
-    private final GameObject object;
-    private final int respawn;
+	private int tick = 0;
+	private final Player player;
+	private final GameObject object;
+	private final int respawn;
 
-    public ChopVineTask(Player player, GameObject object, int respawn) {
-        super(true, 0);
-        this.player = player;
-        this.object = object;
-        this.respawn = respawn;
-    }
+	public ChopVineTask(Player player, GameObject object, int respawn) {
+		super(true, 0);
+		this.player = player;
+		this.object = object;
+		this.respawn = respawn;
+	}
 
-    @Override
-    protected void onSchedule() {
-        if (!player.getPosition().isWithinDistance(object.getPosition(), 1)) {
-            cancel();
-            return;
-        }
+	@Override
+	protected void onSchedule() {
+		if (!player.getPosition().isWithinDistance(object.getPosition(), 1)) {
+			cancel();
+			return;
+		}
 
-        if (player.skills.getLevel(Skill.WOODCUTTING) < 34) {
-            player.send(new SendMessage("You need a woodcutting level of 34 or more to cut this."));
-            cancel();
-            return;
-        }
+		if (player.skills.getLevel(Skill.WOODCUTTING) < 34) {
+			player.send(new SendMessage("You need a woodcutting level of 34 or more to cut this."));
+			cancel();
+			return;
+		}
 
-        Optional<AxeData> result = AxeData.getDefinition(player);
+		Optional<AxeData> result = AxeData.getDefinition(player);
 
-        if (!result.isPresent() || !player.toolkit.contains(result.get().id)) {
-            player.send(new SendMessage("You need an axe to cut this."));
-            cancel();
-            return;
-        }
+		if (!result.isPresent() || !player.toolkit.contains(result.get().id)) {
+			player.send(new SendMessage("You need an axe to cut this."));
+			cancel();
+			return;
+		}
 
-        AxeData data = result.get();
+		AxeData data = result.get();
 
-        player.animate(new Animation(data.animation, UpdatePriority.HIGH));
-    }
+		player.animate(new Animation(data.animation, UpdatePriority.HIGH));
+	}
 
-    @Override
-    public void execute() {
-        if (tick == 1) {
-            object.unregister();
-        } else if (tick == respawn / 2) {
-            Direction direction = Direction.getDirection(player.getPosition(), object.getPosition());
-            player.walk(player.getPosition().transform(direction.getDirectionX() * 2, direction.getDirectionY() * 2), true);
-        } else if (tick >= respawn) {
-            object.register();
-            cancel();
-        }
+	@Override
+	public void execute() {
+		if (tick == 1) {
+			object.unregister();
+		} else if (tick == respawn / 2) {
+			Direction direction = Direction.getDirection(player.getPosition(), object.getPosition());
+			player.walk(player.getPosition().transform(direction.getDirectionX() * 2, direction.getDirectionY() * 2),
+					true);
+		} else if (tick >= respawn) {
+			object.register();
+			cancel();
+		}
 
-        tick++;
-    }
+		tick++;
+	}
 
-    @Override
-    protected void onCancel(boolean logout) {
+	@Override
+	protected void onCancel(boolean logout) {
 
-    }
+	}
 
 }

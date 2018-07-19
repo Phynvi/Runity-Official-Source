@@ -6,10 +6,9 @@ import io.battlerune.net.codec.ByteOrder;
 import io.battlerune.net.packet.OutgoingPacket;
 
 /**
- * The {@code OutgoingPacket} that sends a font to a string
- * in the client.
+ * The {@code OutgoingPacket} that sends a font to a string in the client.
  * 
- * @author Daniel | Obey 
+ * @author Daniel | Obey
  */
 public class SendFont extends OutgoingPacket {
 
@@ -24,8 +23,7 @@ public class SendFont extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeShort(id, ByteModification.ADD, ByteOrder.LE)
-		.writeInt(font);
+		builder.writeShort(id, ByteModification.ADD, ByteOrder.LE).writeInt(font);
 		return true;
 	}
 

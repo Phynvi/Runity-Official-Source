@@ -11,44 +11,44 @@ import io.battlerune.util.Stopwatch;
 
 public final class SystemUpdateEvent extends Task {
 
-    private static final Logger logger = LogManager.getLogger();
+	private static final Logger logger = LogManager.getLogger();
 
-    private final boolean restart;
+	private final boolean restart;
 
-    private final int seconds;
+	private final int seconds;
 
-    private final Stopwatch stopwatch = Stopwatch.start();
+	private final Stopwatch stopwatch = Stopwatch.start();
 
-    private long temp;
+	private long temp;
 
-    public SystemUpdateEvent(int seconds, boolean restart) {
-        super(true, 0);
-        this.seconds = seconds;
-        this.restart = restart;
-    }
+	public SystemUpdateEvent(int seconds, boolean restart) {
+		super(true, 0);
+		this.seconds = seconds;
+		this.restart = restart;
+	}
 
-    @Override
-    public void execute() {
-        final long ds = seconds - stopwatch.elapsedTime(TimeUnit.SECONDS) - 1;
+	@Override
+	public void execute() {
+		final long ds = seconds - stopwatch.elapsedTime(TimeUnit.SECONDS) - 1;
 
-        if (temp != ds && ds >= 0) {
-            logger.info(String.format("Restarting in: %d seconds.", ds));
-        }
+		if (temp != ds && ds >= 0) {
+			logger.info(String.format("Restarting in: %d seconds.", ds));
+		}
 
-        if (stopwatch.elapsed(seconds, TimeUnit.SECONDS)) {
-            cancel();
-        }
+		if (stopwatch.elapsed(seconds, TimeUnit.SECONDS)) {
+			cancel();
+		}
 
-        temp = ds;
-    }
+		temp = ds;
+	}
 
-    @Override
-    protected void onCancel(boolean logout) {
-        if (restart) {
-            World.restart();
-        } else {
-            World.shutdown();
-        }
-    }
+	@Override
+	protected void onCancel(boolean logout) {
+		if (restart) {
+			World.restart();
+		} else {
+			World.shutdown();
+		}
+	}
 
 }

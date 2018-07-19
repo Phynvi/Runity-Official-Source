@@ -29,7 +29,8 @@ public class ChatMessagePacketListener implements PacketListener {
 		final int color = packet.readByte(false, ByteModification.SUB);
 		final int size = packet.getSize() - 2;
 
-		if (effect < 0 || effect >= ChatEffect.values().length || color < 0 || color >= ChatColor.values().length || size <= 0) {
+		if (effect < 0 || effect >= ChatEffect.values().length || color < 0 || color >= ChatColor.values().length
+				|| size <= 0) {
 			return;
 		}
 

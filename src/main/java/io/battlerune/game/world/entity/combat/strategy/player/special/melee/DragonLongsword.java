@@ -15,7 +15,8 @@ public class DragonLongsword extends PlayerMeleeStrategy {
 	private static final Graphic GRAPHIC = new Graphic(248);
 	private static final DragonLongsword INSTANCE = new DragonLongsword();
 
-	private DragonLongsword() { }
+	private DragonLongsword() {
+	}
 
 	@Override
 	public void start(Player attacker, Mob defender, Hit[] hits) {
@@ -27,7 +28,7 @@ public class DragonLongsword extends PlayerMeleeStrategy {
 	public int getAttackDelay(Player attacker, Mob defender, FightType fightType) {
 		return 4;
 	}
-	
+
 	@Override
 	public Animation getAttackAnimation(Player attacker, Mob defender) {
 		return ANIMATION;

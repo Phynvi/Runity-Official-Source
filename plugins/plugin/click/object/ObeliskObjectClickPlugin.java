@@ -7,9 +7,9 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 public class ObeliskObjectClickPlugin extends PluginContext {
 
-    @Override
-    protected boolean firstClickObject(Player player, ObjectClickEvent event) {
-        return Obelisks.get().activate(player, event.getObject().getId());
-    }
+	@Override
+	protected boolean firstClickObject(Player player, ObjectClickEvent event) {
+		return Obelisks.get().activate(player, event.getObject().getId());
+	}
 
 }

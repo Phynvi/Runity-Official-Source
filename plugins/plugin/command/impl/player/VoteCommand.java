@@ -12,7 +12,7 @@ public class VoteCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		 player.send(new SendURL("https://www.runity.io/vote"));
+		player.send(new SendURL("https://www.runity.io/vote"));
 	}
 
 	@Override

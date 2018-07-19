@@ -8,17 +8,17 @@ import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 
 public class PlayerSaveEvent extends Task {
 
-    public PlayerSaveEvent() {
-        super(150);
-    }
+	public PlayerSaveEvent() {
+		super(150);
+	}
 
-    @Override
-    public void execute() {
-        for (Player player : World.getPlayers()) {
-            if (player != null) {
-                PlayerSerializer.save(player);
-            }
-        }
-        ClanRepository.saveAllActiveClans();
-    }
+	@Override
+	public void execute() {
+		for (Player player : World.getPlayers()) {
+			if (player != null) {
+				PlayerSerializer.save(player);
+			}
+		}
+		ClanRepository.saveAllActiveClans();
+	}
 }

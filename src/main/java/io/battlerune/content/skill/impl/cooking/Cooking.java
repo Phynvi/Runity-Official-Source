@@ -79,7 +79,8 @@ public class Cooking extends Skill {
 		CookData cook = CookData.forId(item.getId()).get();
 
 		if (getLevel() < cook.getLevel()) {
-			player.dialogueFactory.sendStatement("You need a cooking level of " + cook.getLevel() + " to cook this!").execute();
+			player.dialogueFactory.sendStatement("You need a cooking level of " + cook.getLevel() + " to cook this!")
+					.execute();
 			return true;
 		}
 
@@ -100,7 +101,8 @@ public class Cooking extends Skill {
 
 				@Override
 				public void thirdOption(Player player) {
-					player.send(new SendInputAmount("Enter amount of fish you would like to cook", 10, input -> player.action.execute(cook(player, cook, Integer.parseInt(input)), true)));
+					player.send(new SendInputAmount("Enter amount of fish you would like to cook", 10,
+							input -> player.action.execute(cook(player, cook, Integer.parseInt(input)), true)));
 				}
 
 				@Override

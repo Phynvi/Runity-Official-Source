@@ -22,17 +22,19 @@ public class PnpcCommand implements Command {
 			if (player != null) {
 				player.playerAssistant.transform(Integer.parseInt(input));
 			}
-			player.send(new SendMessage(player == null ? message : "You have turned " + player.getName() + " into " + NpcDefinition.get(Integer.parseInt(input)).getName() + ".", MessageColor.DARK_BLUE));
+			player.send(new SendMessage(
+					player == null ? message
+							: "You have turned " + player.getName() + " into "
+									+ NpcDefinition.get(Integer.parseInt(input)).getName() + ".",
+					MessageColor.DARK_BLUE));
 		}));
-    	
-    	            }
 
-
+	}
 
 	@Override
 	public boolean canUse(Player player) {
-		if(PlayerRight.isDeveloper(player)) {
-		return true;
+		if (PlayerRight.isDeveloper(player)) {
+			return true;
 		}
 		player.speak("Hey everyone, i just tried doing something silly.");
 		return false;

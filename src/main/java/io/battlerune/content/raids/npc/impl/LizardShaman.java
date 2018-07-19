@@ -9,9 +9,7 @@ public class LizardShaman implements RaidsNpc {
 
 	@Override
 	public Npc[] getNpcs(Player player) {
-		return new Npc[] {
-				new Npc(6766, new Position(1,1,player.playerAssistant.instance()), 2)
-		};
+		return new Npc[] { new Npc(6766, new Position(1, 1, player.playerAssistant.instance()), 2) };
 	}
 
 }

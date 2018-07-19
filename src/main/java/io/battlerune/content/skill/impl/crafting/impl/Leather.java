@@ -50,7 +50,8 @@ public enum Leather implements Craftable {
 
 	@Override
 	public Item[] getIngediants(int index) {
-		return new Item[] { new Item(1734, items[index].getRequiredItem().getAmount()), items[index].getRequiredItem() };
+		return new Item[] { new Item(1734, items[index].getRequiredItem().getAmount()),
+				items[index].getRequiredItem() };
 	}
 
 	@Override

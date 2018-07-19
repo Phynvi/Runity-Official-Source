@@ -9,22 +9,23 @@ import io.battlerune.game.world.entity.combat.strategy.player.PlayerMeleeStrateg
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
 
-/** @author Michael | Chex
- * @editor adam 
- * Fixed several alarming issue's with the AGS.
- * Adjusted the damage ratio too. 
- *  
- *  */
+/**
+ * @author Michael | Chex
+ * @editor adam Fixed several alarming issue's with the AGS. Adjusted the damage
+ *         ratio too.
+ * 
+ */
 
 public class ArmadylGodsword extends PlayerMeleeStrategy {
 
-	//AGS(normal): 7644, AGS(OR): 7645
+	// AGS(normal): 7644, AGS(OR): 7645
 	private static final Animation ANIMATION = new Animation(7644, UpdatePriority.HIGH);
 	private static final Graphic GRAPHIC = new Graphic(1211);
 
 	private static final ArmadylGodsword INSTANCE = new ArmadylGodsword();
 
-	private ArmadylGodsword() { }
+	private ArmadylGodsword() {
+	}
 
 	@Override
 	public void start(Player attacker, Mob defender, Hit[] hits) {
@@ -37,7 +38,7 @@ public class ArmadylGodsword extends PlayerMeleeStrategy {
 	public int getAttackDelay(Player attacker, Mob defender, FightType fightType) {
 		return 4;
 	}
-	
+
 	@Override
 	public Animation getAttackAnimation(Player attacker, Mob defender) {
 		return ANIMATION;

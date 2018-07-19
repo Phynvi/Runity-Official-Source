@@ -18,7 +18,7 @@ public class AbyssalWhip extends PlayerMeleeStrategy {
 	private static final Animation ANIMATION = new Animation(1658, UpdatePriority.HIGH);
 	private static final Graphic GRAPHIC = new Graphic(341);
 	private static final AbyssalWhip INSTANCE = new AbyssalWhip();
-	
+
 	@Override
 	public void attack(Player attacker, Mob defender, Hit hit) {
 		super.attack(attacker, defender, hit);
@@ -28,14 +28,14 @@ public class AbyssalWhip extends PlayerMeleeStrategy {
 	@Override
 	public void start(Player attacker, Mob defender, Hit[] hits) {
 		super.start(attacker, defender, hits);
-		//TODO EFFECT
+		// TODO EFFECT
 	}
 
 	@Override
 	public CombatHit[] getHits(Player attacker, Mob defender) {
-		return new CombatHit[]{nextMeleeHit(attacker, defender)};
+		return new CombatHit[] { nextMeleeHit(attacker, defender) };
 	}
-	
+
 	@Override
 	public Animation getAttackAnimation(Player attacker, Mob defender) {
 		return ANIMATION;

@@ -4,7 +4,6 @@ import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.position.Position;
 
-
 public class Projectile {
 
 	/** Magic combat projectile delays. */
@@ -36,6 +35,7 @@ public class Projectile {
 	public void send(Mob source, Mob target) {
 		World.sendProjectile(source, target, this);
 	}
+
 	public void send(Mob source, Position target) {
 		World.sendProjectile(source, target, this);
 	}

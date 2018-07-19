@@ -8,14 +8,15 @@ import io.battlerune.net.packet.out.SendMessage;
 
 public class EmptyPotionPlugin extends PluginContext {
 
-    @Override
-    protected boolean thirdClickItem(Player player, ItemClickEvent event) {
-        if (PotionData.forId(event.getItem().getId()).isPresent()) {
-            player.inventory.replace(event.getItem().getId(), 229, true);
-            player.send(new SendMessage("You have poured out the remaining dose(s) of " + event.getItem().getName() + "."));
-            return true;
-        }
-        return false;
-    }
+	@Override
+	protected boolean thirdClickItem(Player player, ItemClickEvent event) {
+		if (PotionData.forId(event.getItem().getId()).isPresent()) {
+			player.inventory.replace(event.getItem().getId(), 229, true);
+			player.send(
+					new SendMessage("You have poured out the remaining dose(s) of " + event.getItem().getName() + "."));
+			return true;
+		}
+		return false;
+	}
 
 }

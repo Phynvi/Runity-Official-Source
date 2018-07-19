@@ -6,18 +6,18 @@ package io.battlerune.game.world.items.containers.pricechecker;
  * @author Daniel
  */
 public enum PriceType {
-    /**
-     * The value price type.
-     */
-    VALUE,
+	/**
+	 * The value price type.
+	 */
+	VALUE,
 
-    /**
-     * The high alchemy price type.
-     */
-    HIGH_ALCH_VALUE,
+	/**
+	 * The high alchemy price type.
+	 */
+	HIGH_ALCH_VALUE,
 
-    /**
-     * The high alchemy price type.
-     */
-    LOW_ALCH_VALUE
+	/**
+	 * The high alchemy price type.
+	 */
+	LOW_ALCH_VALUE
 }

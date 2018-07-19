@@ -6,26 +6,26 @@ import io.battlerune.game.world.position.Position;
 
 public class DropItemEvent implements Event {
 
-    private final Item item;
-    private final int slot;
-    private final Position position;
+	private final Item item;
+	private final int slot;
+	private final Position position;
 
-    public DropItemEvent(Item item, int slot, Position position) {
-        this.item = item;
-        this.slot = slot;
-        this.position = position;
-    }
+	public DropItemEvent(Item item, int slot, Position position) {
+		this.item = item;
+		this.slot = slot;
+		this.position = position;
+	}
 
-    public Item getItem() {
-        return item;
-    }
+	public Item getItem() {
+		return item;
+	}
 
-    public int getSlot() {
-        return slot;
-    }
+	public int getSlot() {
+		return slot;
+	}
 
-    public Position getPosition() {
-        return position;
-    }
+	public Position getPosition() {
+		return position;
+	}
 
 }

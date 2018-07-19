@@ -11,9 +11,9 @@ public class BarrowsCommand implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 		Teleportation.teleport(player, Config.BARROWS, 20, () -> {
-            player.send(new SendMessage("@or2@Welcome to Barrows, " + player.getName() + "!"));
-            player.send(new SendMessage("@red@Goodluck with grinding!"));
-       });
+			player.send(new SendMessage("@or2@Welcome to Barrows, " + player.getName() + "!"));
+			player.send(new SendMessage("@red@Goodluck with grinding!"));
+		});
 	}
 
 	@Override

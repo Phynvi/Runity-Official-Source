@@ -7,21 +7,22 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 public class ParallelPlayerPreUpdateTask extends SynchronizationTask {
 
-    private static final Logger logger = LogManager.getLogger();
+	private static final Logger logger = LogManager.getLogger();
 
-    private final Player player;
+	private final Player player;
 
-    public ParallelPlayerPreUpdateTask(Player player) {
-        this.player = player;
-    }
+	public ParallelPlayerPreUpdateTask(Player player) {
+		this.player = player;
+	}
 
-    @Override
-    public void run() {
-        try {
+	@Override
+	public void run() {
+		try {
 
-        } catch (Exception ex) {
-            logger.error(String.format("Error in %s. player=%s", PlayerPreUpdateTask.class.getSimpleName(), player), ex);
-        }
-    }
+		} catch (Exception ex) {
+			logger.error(String.format("Error in %s. player=%s", PlayerPreUpdateTask.class.getSimpleName(), player),
+					ex);
+		}
+	}
 
 }

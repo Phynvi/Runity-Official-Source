@@ -11,200 +11,200 @@ import io.battlerune.game.world.region.Region;
  * @author Michael | Chex
  */
 public abstract class Entity implements Interactable {
-    public static final int DEFAULT_INSTANCE_HEIGHT = 0;
+	public static final int DEFAULT_INSTANCE_HEIGHT = 0;
 
-    private int index;
-    private int width;
-    private int length;
-    private boolean registered;
-    private boolean visible;
-    private Position position;
-    private Region currentRegion;
-    public int instance = DEFAULT_INSTANCE_HEIGHT;
+	private int index;
+	private int width;
+	private int length;
+	private boolean registered;
+	private boolean visible;
+	private Position position;
+	private Region currentRegion;
+	public int instance = DEFAULT_INSTANCE_HEIGHT;
 
-    public Entity(Position position) {
-       this(position, true);
-    }
+	public Entity(Position position) {
+		this(position, true);
+	}
 
-    public Entity(Position position, boolean visible) {
-        setPosition(position);
-        setVisible(visible);
-        this.width = 1;
-        this.length = 1;
-    }
+	public Entity(Position position, boolean visible) {
+		setPosition(position);
+		setVisible(visible);
+		this.width = 1;
+		this.length = 1;
+	}
 
-    public int getIndex() {
-        return index;
-    }
+	public int getIndex() {
+		return index;
+	}
 
-    public Position getPosition() {
-        return position;
-    }
+	public Position getPosition() {
+		return position;
+	}
 
-    @Override
-    public int width() {
-        return width;
-    }
+	@Override
+	public int width() {
+		return width;
+	}
 
-    @Override
-    public int length() {
-        return length;
-    }
+	@Override
+	public int length() {
+		return length;
+	}
 
-    public final boolean isRegistered() {
-        return registered;
-    }
+	public final boolean isRegistered() {
+		return registered;
+	}
 
-    public boolean isVisible() {
-        return visible;
-    }
+	public boolean isVisible() {
+		return visible;
+	}
 
-    public Region getRegion() {
-        return currentRegion;
-    }
+	public Region getRegion() {
+		return currentRegion;
+	}
 
-    public int getX() {
-        return position.getX();
-    }
+	public int getX() {
+		return position.getX();
+	}
 
-    public int getY() {
-        return position.getY();
-    }
+	public int getY() {
+		return position.getY();
+	}
 
-    public int getHeight() {
-        return position.getHeight();
-    }
+	public int getHeight() {
+		return position.getHeight();
+	}
 
-    public void setIndex(int index) {
-        this.index = index;
-    }
+	public void setIndex(int index) {
+		this.index = index;
+	}
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
+	public void setWidth(int width) {
+		this.width = width;
+	}
 
-    public void setLength(int length) {
-        this.length = length;
-    }
+	public void setLength(int length) {
+		this.length = length;
+	}
 
-    protected void setRegistered(boolean registered) {
-        this.registered = registered;
-    }
+	protected void setRegistered(boolean registered) {
+		this.registered = registered;
+	}
 
-    public void setVisible(boolean visible) {
-        this.visible = visible;
-    }
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
 
-    public void setPosition(Position position) {
-        Region region = position.getRegion();
+	public void setPosition(Position position) {
+		Region region = position.getRegion();
 
-        if (!registered || (region == currentRegion && position.getHeight() == getHeight())) {
-            this.position = position;
-            return;
-        }
+		if (!registered || (region == currentRegion && position.getHeight() == getHeight())) {
+			this.position = position;
+			return;
+		}
 
-        if (currentRegion != null) {
-            removeFromRegion(currentRegion);
-        }
+		if (currentRegion != null) {
+			removeFromRegion(currentRegion);
+		}
 
-        this.position = position;
-        addToRegion(currentRegion = region);
-    }
+		this.position = position;
+		addToRegion(currentRegion = region);
+	}
 
-    public void setX(int x) {
-        position = new Position(x, getY(), getHeight());
-    }
+	public void setX(int x) {
+		position = new Position(x, getY(), getHeight());
+	}
 
-    public void setY(int y) {
-        position = new Position(getX(), y, getHeight());
-    }
+	public void setY(int y) {
+		position = new Position(getX(), y, getHeight());
+	}
 
-    public void setZ(int z) {
-        position = new Position(getX(), getY(), z);
-    }
+	public void setZ(int z) {
+		position = new Position(getX(), getY(), z);
+	}
 
-    public boolean is(EntityType type) {
-        return getType() == type;
-    }
+	public boolean is(EntityType type) {
+		return getType() == type;
+	}
 
-    /**
-     * Destroys this entity.
-     *
-     * @return This entity.
-     */
-    protected Entity destroy() {
-        removeFromRegion(currentRegion);
-        setRegistered(false);
-        return this;
-    }
+	/**
+	 * Destroys this entity.
+	 *
+	 * @return This entity.
+	 */
+	protected Entity destroy() {
+		removeFromRegion(currentRegion);
+		setRegistered(false);
+		return this;
+	}
 
-    /**
-     * Validates this npc based on its current region and registered state.
-     *
-     * @return {@code True} if this npc is a valid log in the game world.
-     */
-    public boolean isValid() {
-        return isRegistered() && currentRegion != null;
+	/**
+	 * Validates this npc based on its current region and registered state.
+	 *
+	 * @return {@code True} if this npc is a valid log in the game world.
+	 */
+	public boolean isValid() {
+		return isRegistered() && currentRegion != null;
 
-    }
+	}
 
-    /** Registers an entity to the {@code World}. */
-    public abstract void register();
+	/** Registers an entity to the {@code World}. */
+	public abstract void register();
 
-    /** Unregisters an entity from the {@code World}. */
-    public abstract void unregister();
+	/** Unregisters an entity from the {@code World}. */
+	public abstract void unregister();
 
-    /**
-     * Adds this entity to the specified region.
-     *
-     * @param region The region.
-     */
-    public abstract void addToRegion(Region region);
+	/**
+	 * Adds this entity to the specified region.
+	 *
+	 * @param region The region.
+	 */
+	public abstract void addToRegion(Region region);
 
-    /**
-     * Removes this entity from the specified region.
-     *
-     * @param region The region.
-     */
-    public abstract void removeFromRegion(Region region);
+	/**
+	 * Removes this entity from the specified region.
+	 *
+	 * @param region The region.
+	 */
+	public abstract void removeFromRegion(Region region);
 
-    public void onStep() {
-    }
+	public void onStep() {
+	}
 
-    /**
-     * Gets the name of this entity.
-     *
-     * @return The entity's name.
-     */
-    public abstract String getName();
+	/**
+	 * Gets the name of this entity.
+	 *
+	 * @return The entity's name.
+	 */
+	public abstract String getName();
 
-    /**
-     * Gets the {@code EntityType}.
-     *
-     * @return The {@code EntityType}.
-     */
-    public abstract EntityType getType();
+	/**
+	 * Gets the {@code EntityType}.
+	 *
+	 * @return The {@code EntityType}.
+	 */
+	public abstract EntityType getType();
 
+	@Override
+	public abstract boolean equals(Object obj);
 
-    @Override
-    public abstract boolean equals(Object obj);
+	@Override
+	public abstract int hashCode();
 
-    @Override
-    public abstract int hashCode();
+	@Override
+	public String toString() {
+		return String.format("Entity[registered=%s, visible=%s, position=%s, type=%s", isRegistered(), isVisible(),
+				getPosition(), getType());
+	}
 
-    @Override
-    public String toString() {
-        return String.format("Entity[registered=%s, visible=%s, position=%s, type=%s", isRegistered(), isVisible(), getPosition(), getType());
-    }
+	/** Check if an entity is an object */
+	public final boolean isStaticObject() {
+		return getType() == EntityType.STATIC_OBJECT;
+	}
 
-    /** Check if an entity is an object */
-    public final boolean isStaticObject() {
-        return getType() == EntityType.STATIC_OBJECT;
-    }
-
-    /** Check if an entity is an object */
-    public final boolean isCustomObject() {
-        return getType() == EntityType.CUSTOM_OBJECT;
-    }
+	/** Check if an entity is an object */
+	public final boolean isCustomObject() {
+		return getType() == EntityType.CUSTOM_OBJECT;
+	}
 
 }

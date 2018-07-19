@@ -9,19 +9,19 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 
 public class Zakln extends MultiStrategy {
 
-    public Zakln() {
-        currentStrategy = new Ranged();
-    }
+	public Zakln() {
+		currentStrategy = new Ranged();
+	}
 
-    private class Ranged extends NpcRangedStrategy {
-        public Ranged() {
-            super(CombatProjectile.getDefinition("EMPTY"));
-        }
+	private class Ranged extends NpcRangedStrategy {
+		public Ranged() {
+			super(CombatProjectile.getDefinition("EMPTY"));
+		}
 
-        @Override
-        public CombatHit[] getHits(Npc attacker, Mob defender) {
-            return new CombatHit[] { nextRangedHit(attacker, defender, 21) };
-        }
-    }
+		@Override
+		public CombatHit[] getHits(Npc attacker, Mob defender) {
+			return new CombatHit[] { nextRangedHit(attacker, defender, 21) };
+		}
+	}
 
 }

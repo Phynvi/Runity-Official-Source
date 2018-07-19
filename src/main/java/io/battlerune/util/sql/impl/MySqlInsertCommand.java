@@ -10,6 +10,7 @@ import io.battlerune.util.sql.MySqlConnector;
 
 /**
  * Inserts the log of the player into the database
+ * 
  * @author Nerik#8690
  *
  */
@@ -19,10 +20,10 @@ public class MySqlInsertCommand implements MySqlCommandListener {
 	public void execute(String log) {
 		Date date = new Date();
 		try {
-			Connection connection = DriverManager.getConnection(MySqlConnector.URL, 
-					MySqlConnector.USERNAME, MySqlConnector.PASSWORD);
-			PreparedStatement insert = connection.prepareStatement(
-					"INSERT INTO logs (LOG, DATE) VALUES ('"+log+"','"+date+"')");
+			Connection connection = DriverManager.getConnection(MySqlConnector.URL, MySqlConnector.USERNAME,
+					MySqlConnector.PASSWORD);
+			PreparedStatement insert = connection
+					.prepareStatement("INSERT INTO logs (LOG, DATE) VALUES ('" + log + "','" + date + "')");
 			insert.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

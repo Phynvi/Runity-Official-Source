@@ -15,7 +15,7 @@ public class MySqlConnector {
 
 		Class.forName(DRIVER);
 		MySqlCommandManager.load();
-		
+
 		Connection connection = null;
 		try {
 			connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);

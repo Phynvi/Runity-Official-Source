@@ -296,7 +296,7 @@ public enum Emote implements BooleanInterface<Player> {
 	/** The emote configuration. */
 	private final int config;
 
-	/** Constructs a new <code>Emote<code>.  */
+	/** Constructs a new <code>Emote<code>. */
 	Emote(int button, int animation, int graphic, int config) {
 		this.button = button;
 		this.animation = animation;
@@ -326,12 +326,12 @@ public enum Emote implements BooleanInterface<Player> {
 		player.action.execute(new EmoteAction(player, animation, graphic), false);
 	}
 
-	/** Gets the button identification of the emote.  */
+	/** Gets the button identification of the emote. */
 	public int getButton() {
 		return button;
 	}
 
-	/** Gets the animation of the the emote.  */
+	/** Gets the animation of the the emote. */
 	public int getAnimation() {
 		return animation;
 	}

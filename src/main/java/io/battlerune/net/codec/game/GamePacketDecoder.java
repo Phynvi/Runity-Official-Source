@@ -71,11 +71,9 @@ public final class GamePacketDecoder extends ByteToMessageDecoder {
 	/**
 	 * Decodes the packet identifier.
 	 *
-	 * @param in
-	 * 		The payload from the client.
+	 * @param in  The payload from the client.
 	 *
-	 * 	@param out
-	 * 		The collection of upstream messages.
+	 * @param out The collection of upstream messages.
 	 */
 	private void decodeOpcode(ByteBuf in, List<Object> out) {
 		if (in.isReadable()) {
@@ -98,8 +96,7 @@ public final class GamePacketDecoder extends ByteToMessageDecoder {
 	/**
 	 * Decodes the packets size.
 	 *
-	 * @param in
-	 *  The payload from the client.
+	 * @param in The payload from the client.
 	 */
 	private void decodeSize(ByteBuf in) {
 		if (in.isReadable()) {
@@ -113,11 +110,9 @@ public final class GamePacketDecoder extends ByteToMessageDecoder {
 	/**
 	 * Decodes the packets payload.
 	 *
-	 * @param in
-	 * 		The payload from the client.
+	 * @param in  The payload from the client.
 	 *
-	 * 	@param out
-	 * 		The collection of upstream messages.
+	 * @param out The collection of upstream messages.
 	 */
 	private void decodePayload(ByteBuf in, List<Object> out) {
 		if (in.isReadable(size)) {
@@ -140,9 +135,7 @@ public final class GamePacketDecoder extends ByteToMessageDecoder {
 	 * Represents the current state of this class.
 	 */
 	private enum State {
-		OPCODE,
-		SIZE,
-		PAYLOAD
+		OPCODE, SIZE, PAYLOAD
 	}
 
 }

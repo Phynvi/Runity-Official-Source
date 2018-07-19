@@ -3,13 +3,13 @@ package io.battlerune.content.skill.impl.construction;
 import io.battlerune.game.world.position.Position;
 
 public class ConstructionObject {
-	
+
 	private final int object;
-	
+
 	private final int rotation;
-	
+
 	private final Position position;
-	
+
 	public ConstructionObject(int object, int rotation, Position position) {
 		this.object = object;
 		this.rotation = rotation;
@@ -19,11 +19,11 @@ public class ConstructionObject {
 	public int getObject() {
 		return object;
 	}
-	
+
 	public int getRotation() {
 		return rotation;
 	}
-	
+
 	public Position getPosition() {
 		return position;
 	}

@@ -13,14 +13,14 @@ import io.battlerune.util.parser.GsonParser;
  */
 public class ObjectRemovalParser extends GsonParser {
 
-    public ObjectRemovalParser() {
-        super("def/object/removed_objects", false);
-    }
+	public ObjectRemovalParser() {
+		super("def/object/removed_objects", false);
+	}
 
-    @Override
-    protected void parse(JsonObject data) {
-        Position position = builder.fromJson(data.get("position"), Position.class);
-        Region.SKIPPED_OBJECTS.add(position);
+	@Override
+	protected void parse(JsonObject data) {
+		Position position = builder.fromJson(data.get("position"), Position.class);
+		Region.SKIPPED_OBJECTS.add(position);
 
-    }
+	}
 }

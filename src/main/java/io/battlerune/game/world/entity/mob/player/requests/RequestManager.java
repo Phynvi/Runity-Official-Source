@@ -27,8 +27,7 @@ public class RequestManager {
 	/**
 	 * Creates the request manager.
 	 * 
-	 * @param player
-	 *            The player whose requests the manager is managing.
+	 * @param player The player whose requests the manager is managing.
 	 */
 	public RequestManager(Player player) {
 		this.player = player;
@@ -37,10 +36,8 @@ public class RequestManager {
 	/**
 	 * Sends another player a request.
 	 * 
-	 * @param other
-	 *            The other player to request.
-	 * @param type
-	 *            The request type.
+	 * @param other The other player to request.
+	 * @param type  The request type.
 	 * @return {@code True} if the request was mutual
 	 */
 	public boolean request(Player other, RequestType type) {
@@ -75,8 +72,7 @@ public class RequestManager {
 	/**
 	 * Performs a check to validate a player for a request.
 	 * 
-	 * @param entity
-	 *            The player to validate.
+	 * @param entity The player to validate.
 	 * @return {@code True} if the player is valid
 	 */
 	private boolean validate(Player entity) {
@@ -86,8 +82,7 @@ public class RequestManager {
 	/**
 	 * Checks if a request is mutual between two players.
 	 * 
-	 * @param otherManager
-	 *            The other player's {@codeplain RequestManager}.
+	 * @param otherManager The other player's {@codeplain RequestManager}.
 	 * @return {@code True} if the request was mutual
 	 */
 	private boolean mutualRequest(RequestManager otherManager) {

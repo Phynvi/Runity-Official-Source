@@ -13,70 +13,70 @@ import io.battlerune.game.world.position.Area;
  */
 public final class CombatSkullEffect extends CombatEffect {
 
-    /**
-     * Creates a new {@link CombatSkullEffect}.
-     */
-    public CombatSkullEffect() {
-        super(50);
-    }
+	/**
+	 * Creates a new {@link CombatSkullEffect}.
+	 */
+	public CombatSkullEffect() {
+		super(50);
+	}
 
-    @Override
-    public boolean apply(Mob mob) {
-        if (mob.isPlayer()) {
-            Player player = (Player) mob;
+	@Override
+	public boolean apply(Mob mob) {
+		if (mob.isPlayer()) {
+			Player player = (Player) mob;
 
-            if (FreeForAll.game.containsKey(mob)) {
-            	return false;
-            }
-            
-            if (Area.inEventArena(mob)) {
-                return false;
-            }
+			if (FreeForAll.game.containsKey(mob)) {
+				return false;
+			}
 
-            if (!Area.inWilderness(mob)) {
-                return false;
-            }
+			if (Area.inEventArena(mob)) {
+				return false;
+			}
 
-            if (player.skulling.isSkulled()) {
-                return false;
-            }
+			if (!Area.inWilderness(mob)) {
+				return false;
+			}
 
-            player.skulling.skull();
-            return true;
-        }
-        return false;
-    }
+			if (player.skulling.isSkulled()) {
+				return false;
+			}
 
-    @Override
-    public boolean removeOn(Mob mob) {
-        if (mob.isPlayer()) {
-            Player player = (Player) mob;
+			player.skulling.skull();
+			return true;
+		}
+		return false;
+	}
 
-            if (!player.skulling.isSkulled()) {
-                player.skulling.unskull();
-                return true;
-            }
+	@Override
+	public boolean removeOn(Mob mob) {
+		if (mob.isPlayer()) {
+			Player player = (Player) mob;
 
-            return false;
-        }
+			if (!player.skulling.isSkulled()) {
+				player.skulling.unskull();
+				return true;
+			}
 
-        return true;
-    }
+			return false;
+		}
 
-    @Override
-    public void process(Mob mob) {
-        // nothing to process
-    }
+		return true;
+	}
 
-    @Override
-    public boolean onLogin(Mob mob) {
-        if (mob.isPlayer()) {
-            Player player = (Player) mob;
+	@Override
+	public void process(Mob mob) {
+		// nothing to process
+	}
 
-            if (player.skulling.isSkulled()) {
-                return true;
-            }
-        }
-        return false;
-    }
+	@Override
+	public boolean onLogin(Mob mob) {
+		if (mob.isPlayer()) {
+			Player player = (Player) mob;
+
+			if (player.skulling.isSkulled()) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

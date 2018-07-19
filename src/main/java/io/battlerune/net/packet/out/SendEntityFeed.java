@@ -24,9 +24,7 @@ public class SendEntityFeed extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeString(opponent)
-		.writeShort(HP)
-		.writeShort(maxHP);
+		builder.writeString(opponent).writeShort(HP).writeShort(maxHP);
 		return true;
 	}
 

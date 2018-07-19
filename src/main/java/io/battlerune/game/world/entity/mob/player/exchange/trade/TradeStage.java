@@ -1,10 +1,9 @@
 package io.battlerune.game.world.entity.mob.player.exchange.trade;
 
 /**
- * The enumerated types who's elements represent the stages of a trade
- * session.
+ * The enumerated types who's elements represent the stages of a trade session.
  * 
- * @author Daniel 
+ * @author Daniel
  */
 public enum TradeStage {
 

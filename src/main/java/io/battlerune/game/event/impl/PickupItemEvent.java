@@ -7,22 +7,22 @@ import io.battlerune.game.world.position.Position;
 
 public class PickupItemEvent implements Event {
 
-    private final GroundItem groundItem;
+	private final GroundItem groundItem;
 
-    public PickupItemEvent(GroundItem groundItem) {
-        this.groundItem = groundItem;
-    }
+	public PickupItemEvent(GroundItem groundItem) {
+		this.groundItem = groundItem;
+	}
 
-    public GroundItem getGroundItem() {
-        return groundItem;
-    }
+	public GroundItem getGroundItem() {
+		return groundItem;
+	}
 
-    public Item getItem() {
-        return groundItem.item;
-    }
+	public Item getItem() {
+		return groundItem.item;
+	}
 
-    public Position getPosition() {
-        return groundItem.getPosition();
-    }
+	public Position getPosition() {
+		return groundItem.getPosition();
+	}
 
 }

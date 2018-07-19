@@ -8,7 +8,7 @@ import io.battlerune.net.packet.PacketType;
 
 /**
  * Shows a player options such as right clicking a player.
-
+ * 
  * @author Daniel
  */
 public final class SendPlayerOption extends OutgoingPacket {
@@ -34,9 +34,8 @@ public final class SendPlayerOption extends OutgoingPacket {
 			return false;
 		}
 
-		builder.writeByte(option.getIndex(), ByteModification.NEG)
-		.writeByte(top ? 1 : 0, ByteModification.ADD)
-		.writeString(disable ? "null" : option.getName());
+		builder.writeByte(option.getIndex(), ByteModification.NEG).writeByte(top ? 1 : 0, ByteModification.ADD)
+				.writeString(disable ? "null" : option.getName());
 
 		if (disable) {
 			player.contextMenus.remove(option);

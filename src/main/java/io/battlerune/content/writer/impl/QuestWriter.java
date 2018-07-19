@@ -28,7 +28,8 @@ public class QuestWriter extends InterfaceWriter {
 			if (player.quest.get(index).isPresent()) {
 				Quest quest = player.quest.get(index).get();
 				QuestState state = player.quest.getState(index);
-				int color = state == QuestState.NOT_STARTED ? 0xFF0000 : (state == QuestState.COMPLETED ? 0x00FF00 : 0xFFFF00);
+				int color = state == QuestState.NOT_STARTED ? 0xFF0000
+						: (state == QuestState.COMPLETED ? 0x00FF00 : 0xFFFF00);
 
 				text[index] = quest.name();
 				player.send(new SendTooltip("View quest " + quest.name(), index + startingIndex()));

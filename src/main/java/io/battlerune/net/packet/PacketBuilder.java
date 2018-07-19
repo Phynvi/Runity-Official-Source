@@ -9,8 +9,8 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 
 /**
- * The implementation that functions as a dynamic buffer wrapper
- * backed by a {@code ByteBuf} that is used for reading and writing data.
+ * The implementation that functions as a dynamic buffer wrapper backed by a
+ * {@code ByteBuf} that is used for reading and writing data.
  *
  * @author lare96 <http://github.com/lare96>
  * @author blakeman8192
@@ -44,6 +44,7 @@ public final class PacketBuilder {
 	public static PacketBuilder alloc() {
 		return new PacketBuilder(Unpooled.buffer(DEFAULT_CAPACITY));
 	}
+
 	public static PacketBuilder wrap(ByteBuf buf) {
 		return new PacketBuilder(buf);
 	}
@@ -293,7 +294,7 @@ public final class PacketBuilder {
 		}
 		return builder.toString();
 	}
-	
+
 	public ByteBuf buffer() {
 		return buffer;
 	}

@@ -17,7 +17,8 @@ public class DragonScimitar extends PlayerMeleeStrategy {
 	private static final Graphic GRAPHIC = new Graphic(347);
 	private static final DragonScimitar INSTANCE = new DragonScimitar();
 
-	private DragonScimitar() { }
+	private DragonScimitar() {
+	}
 
 	@Override
 	public void start(Player attacker, Mob defender, Hit[] hits) {
@@ -39,7 +40,7 @@ public class DragonScimitar extends PlayerMeleeStrategy {
 	public int getAttackDelay(Player attacker, Mob defender, FightType fightType) {
 		return 4;
 	}
-	
+
 	@Override
 	public Animation getAttackAnimation(Player attacker, Mob defender) {
 		return ANIMATION;

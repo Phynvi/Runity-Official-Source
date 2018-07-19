@@ -20,16 +20,16 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.util.RandomUtils;
 
 public class NpcMagicStrategy extends MagicStrategy<Npc> {
-	
+
 	protected final CombatProjectile combatProjectile;
-	
-	/** The spell splash graphic.  */
+
+	/** The spell splash graphic. */
 	private static final Graphic SPLASH = new Graphic(85);
-	
+
 	public NpcMagicStrategy(CombatProjectile combatProjectile) {
 		this.combatProjectile = combatProjectile;
 	}
-	
+
 	@Override
 	public void start(Npc attacker, Mob defender, Hit[] hits) {
 		Animation animation = getAttackAnimation(attacker, defender);
@@ -58,37 +58,37 @@ public class NpcMagicStrategy extends MagicStrategy<Npc> {
 			}
 		}
 	}
-	
+
 	@Override
 	public void hit(Npc attacker, Mob defender, Hit hit) {
-		if(!hit.isAccurate()) {
+		if (!hit.isAccurate()) {
 			defender.graphic(SPLASH);
 		} else {
 			combatProjectile.getEnd().ifPresent(defender::graphic);
 		}
 	}
-	
+
 	@Override
 	public CombatHit[] getHits(Npc attacker, Mob defender) {
 		return new CombatHit[] { nextMagicHit(attacker, defender, combatProjectile) };
 	}
-	
+
 	@Override
 	public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {
 		int delay = attacker.definition.getAttackDelay();
-		
-		if(attacker.getPosition().getDistance(defender.getPosition()) > 4) {
+
+		if (attacker.getPosition().getDistance(defender.getPosition()) > 4) {
 			return 1 + delay;
 		}
-		
+
 		return delay;
 	}
-	
+
 	@Override
 	public int getAttackDistance(Npc attacker, FightType fightType) {
 		return 10;
 	}
-	
+
 	@Override
 	public Animation getAttackAnimation(Npc attacker, Mob defender) {
 		return new Animation(attacker.definition.getAttackAnimation(), UpdatePriority.HIGH);

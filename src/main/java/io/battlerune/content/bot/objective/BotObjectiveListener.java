@@ -4,8 +4,8 @@ import io.battlerune.content.bot.PlayerBot;
 
 public interface BotObjectiveListener {
 
-    void init(PlayerBot bot);
+	void init(PlayerBot bot);
 
-    void finish(PlayerBot bot);
+	void finish(PlayerBot bot);
 
 }

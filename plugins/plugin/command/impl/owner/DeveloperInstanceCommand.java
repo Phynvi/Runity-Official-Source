@@ -8,12 +8,12 @@ public class DeveloperInstanceCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-        player.message("instance is " + player.instance);
+		player.message("instance is " + player.instance);
 	}
 
 	@Override
 	public boolean canUse(Player player) {
-		if(PlayerRight.isDeveloper(player)) {
+		if (PlayerRight.isDeveloper(player)) {
 			return true;
 		}
 		player.speak("Hey everyone, I just tried to do something silly!");

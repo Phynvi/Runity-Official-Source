@@ -20,14 +20,10 @@ public class GenericAttributes {
 	/**
 	 * Sets a generic attribute.
 	 * 
-	 * @param <K>
-	 *            The key type.
-	 * @param <E>
-	 *            The return value class type.
-	 * @param key
-	 *            The key.
-	 * @param attribute
-	 *            The value associated with this key.
+	 * @param           <K> The key type.
+	 * @param           <E> The return value class type.
+	 * @param key       The key.
+	 * @param attribute The value associated with this key.
 	 */
 	public <K, E> void set(K key, E attribute) {
 		genericAttributes.put(key, attribute);
@@ -35,10 +31,11 @@ public class GenericAttributes {
 
 	/**
 	 * Modifies a generic attribute.
-	 * @param <K>	The key type.
-	 * @param <E>	The return value class type.
-	 * @param key	The key.
-	 * @param value	The value to set.
+	 * 
+	 * @param       <K> The key type.
+	 * @param       <E> The return value class type.
+	 * @param key   The key.
+	 * @param value The value to set.
 	 */
 	public <K, E> void modify(K key, E value) {
 		genericAttributes.replace(key, value);
@@ -47,10 +44,8 @@ public class GenericAttributes {
 	/**
 	 * Removes a generic attribute.
 	 * 
-	 * @param <K>
-	 *            The key type.
-	 * @param key
-	 *            The key.
+	 * @param     <K> The key type.
+	 * @param key The key.
 	 */
 	public <K> void remove(K key) {
 		genericAttributes.remove(key);
@@ -59,10 +54,8 @@ public class GenericAttributes {
 	/**
 	 * Checks if a key is in the list of generic attribute.
 	 * 
-	 * @param <K>
-	 *            The key type.
-	 * @param key
-	 *            The key.
+	 * @param     <K> The key type.
+	 * @param key The key.
 	 * @return {@code True} if the generic attributes contains a value with this
 	 *         key.
 	 */
@@ -73,12 +66,9 @@ public class GenericAttributes {
 	/**
 	 * Gets a generic attribute.
 	 * 
-	 * @param <K>
-	 *            The key type.
-	 * @param <E>
-	 *            The return value class type.
-	 * @param key
-	 *            The key.
+	 * @param     <K> The key type.
+	 * @param     <E> The return value class type.
+	 * @param key The key.
 	 * @return The value associated with the key, or null.
 	 */
 	@SuppressWarnings("unchecked")
@@ -94,10 +84,8 @@ public class GenericAttributes {
 	/**
 	 * Gets a generic attribute.
 	 *
-	 * @param <K>
-	 *            The key type.
-	 * @param key
-	 *            The key.
+	 * @param     <K> The key type.
+	 * @param key The key.
 	 * @return The value associated with the key, or null.
 	 */
 	@SuppressWarnings("unchecked")
@@ -113,14 +101,10 @@ public class GenericAttributes {
 	/**
 	 * Gets a generic attribute casted to a specific class type.
 	 * 
-	 * @param <K>
-	 *            The key type.
-	 * @param <E>
-	 *            The return value class type.
-	 * @param key
-	 *            The key.
-	 * @param type
-	 *            The class for the return type.
+	 * @param      <K> The key type.
+	 * @param      <E> The return value class type.
+	 * @param key  The key.
+	 * @param type The class for the return type.
 	 * @return The value associated with the key, or null.
 	 */
 	public <K, E> E get(K key, Class<? extends E> type) {
@@ -136,10 +120,8 @@ public class GenericAttributes {
 	/**
 	 * Gets the state of a key.
 	 * 
-	 * @param <K>
-	 *            The key type.
-	 * @param key
-	 *            The key to check.
+	 * @param     <K> The key type.
+	 * @param key The key to check.
 	 * @return {@code True} if the value of the key is equal to
 	 *         {@code Boolean.TRUE}.
 	 */

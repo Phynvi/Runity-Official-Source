@@ -1,4 +1,5 @@
 package io.battlerune.net.packet.out;
+
 import java.util.Optional;
 import java.util.function.Consumer;
 
@@ -29,8 +30,7 @@ public class SendInputMessage extends OutgoingPacket {
 	@Override
 	public boolean encode(Player player) {
 		player.enterInputListener = Optional.of(action);
-		builder.writeString(inputMessage)
-		.writeShort(inputLength, ByteModification.ADD);
+		builder.writeString(inputMessage).writeShort(inputLength, ByteModification.ADD);
 		return true;
 	}
 

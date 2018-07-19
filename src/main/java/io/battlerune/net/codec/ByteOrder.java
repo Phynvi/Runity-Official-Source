@@ -7,24 +7,24 @@ package io.battlerune.net.codec;
  */
 public enum ByteOrder {
 
-    /**
-     * Represents Little-endian
-     */
-    LE,
+	/**
+	 * Represents Little-endian
+	 */
+	LE,
 
-    /**
-     * Represents Big-endian
-     */
-    BE,
+	/**
+	 * Represents Big-endian
+	 */
+	BE,
 
-    /**
-     * Represents Middle-endian
-     */
-    ME,
+	/**
+	 * Represents Middle-endian
+	 */
+	ME,
 
-    /**
-     * Represents Inverse-middle-endian
-     */
-    IME,
+	/**
+	 * Represents Inverse-middle-endian
+	 */
+	IME,
 
 }

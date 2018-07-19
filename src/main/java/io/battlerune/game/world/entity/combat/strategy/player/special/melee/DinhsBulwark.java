@@ -19,7 +19,8 @@ public class DinhsBulwark extends PlayerMeleeStrategy {
 	private static final Graphic GRAPHIC = new Graphic(1292, UpdatePriority.HIGH);
 	private static final DinhsBulwark INSTANCE = new DinhsBulwark();
 
-	private DinhsBulwark() { }
+	private DinhsBulwark() {
+	}
 
 	@Override
 	public void start(Player attacker, Mob defender, Hit[] hits) {
@@ -53,7 +54,8 @@ public class DinhsBulwark extends PlayerMeleeStrategy {
 
 		CombatHit hit = nextMeleeHit(attacker, defender);
 		attacker.getCombat().submitHits(other, hit);
-		if (extra != null) extra.add(hit);
+		if (extra != null)
+			extra.add(hit);
 	}
 
 	public static DinhsBulwark get() {

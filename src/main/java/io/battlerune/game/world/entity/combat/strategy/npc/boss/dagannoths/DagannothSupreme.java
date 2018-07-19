@@ -12,24 +12,24 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 /** @author Michael | Chex */
 public class DagannothSupreme extends MultiStrategy {
 
-    public DagannothSupreme() {
-        currentStrategy = new Ranged();
-    }
+	public DagannothSupreme() {
+		currentStrategy = new Ranged();
+	}
 
-    @Override
-    public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {
-        return attacker.definition.getAttackDelay();
-    }
+	@Override
+	public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {
+		return attacker.definition.getAttackDelay();
+	}
 
-    private static class Ranged extends NpcRangedStrategy {
-        private Ranged() {
-            super(getDefinition("Dagannoth SUPREME"));
-        }
+	private static class Ranged extends NpcRangedStrategy {
+		private Ranged() {
+			super(getDefinition("Dagannoth SUPREME"));
+		}
 
-        @Override
-        public CombatHit[] getHits(Npc attacker, Mob defender) {
-            return new CombatHit[] { nextRangedHit(attacker, defender, 30) };
-        }
-    }
+		@Override
+		public CombatHit[] getHits(Npc attacker, Mob defender) {
+			return new CombatHit[] { nextRangedHit(attacker, defender, 30) };
+		}
+	}
 
 }

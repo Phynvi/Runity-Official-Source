@@ -20,18 +20,19 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.util.RandomUtils;
 
 public class NpcRangedStrategy extends RangedStrategy<Npc> {
-	
+
 	private final CombatProjectile projectileDefinition;
-	
+
 	public NpcRangedStrategy(CombatProjectile projectileDefinition) {
 		this.projectileDefinition = projectileDefinition;
 	}
-	
+
 	@Override
 	public void start(Npc attacker, Mob defender, Hit[] hits) {
 		Animation animation = getAttackAnimation(attacker, defender);
 
-		if (projectileDefinition.getAnimation().isPresent() && (animation.getId() == -1 || animation.getId() == 65535)) {
+		if (projectileDefinition.getAnimation().isPresent()
+				&& (animation.getId() == -1 || animation.getId() == 65535)) {
 			animation = projectileDefinition.getAnimation().get();
 		}
 
@@ -39,7 +40,7 @@ public class NpcRangedStrategy extends RangedStrategy<Npc> {
 		projectileDefinition.getStart().ifPresent(attacker::graphic);
 		projectileDefinition.sendProjectile(attacker, defender);
 	}
-	
+
 	@Override
 	public void attack(Npc attacker, Mob defender, Hit hit) {
 		Predicate<CombatImpact> filter = effect -> effect.canAffect(attacker, defender, hit);
@@ -56,30 +57,30 @@ public class NpcRangedStrategy extends RangedStrategy<Npc> {
 			CombatPoisonEffect.getPoisonType(attacker.id).ifPresent(defender::poison);
 		}
 	}
-	
+
 	@Override
 	public void hit(Npc attacker, Mob defender, Hit hit) {
 		projectileDefinition.getEnd().ifPresent(defender::graphic);
 	}
-	
+
 	@Override
 	public CombatHit[] getHits(Npc attacker, Mob defender) {
 		int max = projectileDefinition.getMaxHit();
 		if (max == -1)
 			max = FormulaFactory.getMaxHit(attacker, defender, getCombatType());
-		return new CombatHit[]{nextRangedHit(attacker, defender, max, projectileDefinition)};
+		return new CombatHit[] { nextRangedHit(attacker, defender, max, projectileDefinition) };
 	}
-	
+
 	@Override
 	public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {
 		return attacker.definition.getAttackDelay();
 	}
-	
+
 	@Override
 	public int getAttackDistance(Npc attacker, FightType fightType) {
 		return 10;
 	}
-	
+
 	@Override
 	public Animation getAttackAnimation(Npc attacker, Mob defender) {
 		return new Animation(attacker.definition.getAttackAnimation(), UpdatePriority.HIGH);

@@ -4,6 +4,7 @@ import io.battlerune.content.skill.impl.fletching.Fletchable;
 import io.battlerune.content.skill.impl.fletching.FletchableItem;
 import io.battlerune.content.skill.impl.fletching.Fletching;
 import io.battlerune.game.world.items.Item;
+
 public enum Crossbow implements Fletchable {
 	BRONZE_CROSSBOW(new Item(9440), new Item(9420), new FletchableItem(new Item(9454), 9, 12.0)),
 	IRON_CROSSBOW(new Item(9444), new Item(9423), new FletchableItem(new Item(9457), 39, 44.0)),

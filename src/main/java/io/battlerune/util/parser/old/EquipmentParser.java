@@ -9,7 +9,7 @@ import io.battlerune.game.world.items.SkillRequirement;
 import io.battlerune.util.parser.GsonParser;
 
 public class EquipmentParser extends GsonParser {
-	
+
 	public static Map<Integer, Loader> LOADED = new HashMap<>();
 
 	public EquipmentParser() {
@@ -31,16 +31,16 @@ public class EquipmentParser extends GsonParser {
 	static class Loader {
 		private final int id;
 		private final SkillRequirement[] reqs;
-		
+
 		public Loader(int id, SkillRequirement[] req) {
 			this.id = id;
 			this.reqs = req;
 		}
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public SkillRequirement[] getReqs() {
 			return reqs;
 		}

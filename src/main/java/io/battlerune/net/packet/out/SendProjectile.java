@@ -25,18 +25,11 @@ public class SendProjectile extends OutgoingPacket {
 	@Override
 	public boolean encode(Player player) {
 		player.send(new SendCoordinate(position));
-		builder.writeByte(0)
-		.writeByte(offsetX)
-		.writeByte(offsetY)
-		.writeShort(lock)
-		.writeShort(projectile.getId())
-		.writeByte(projectile.getStartHeight())
-		.writeByte(projectile.getEndHeight())
-		.writeShort(projectile.getDelay())
-		.writeShort(projectile.getDuration())
-		.writeByte(projectile.getCurve())
-		.writeByte(64);
+		builder.writeByte(0).writeByte(offsetX).writeByte(offsetY).writeShort(lock).writeShort(projectile.getId())
+				.writeByte(projectile.getStartHeight()).writeByte(projectile.getEndHeight())
+				.writeShort(projectile.getDelay()).writeShort(projectile.getDuration()).writeByte(projectile.getCurve())
+				.writeByte(64);
 		return true;
 	}
-	
+
 }

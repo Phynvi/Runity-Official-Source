@@ -3,12 +3,12 @@ package io.battlerune.content.skill.impl.fletching;
 import io.battlerune.game.world.items.Item;
 
 public final class FletchableItem {
-	
+
 	private final Item product;
-	
+
 	private final int level;
-	
-	private final  double experience;
+
+	private final double experience;
 
 	public FletchableItem(Item product, int level, double experience) {
 		this.product = product;

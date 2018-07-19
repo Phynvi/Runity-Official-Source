@@ -18,8 +18,8 @@ public class SendNpcHead extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeShort(npcId, ByteModification.ADD, ByteOrder.LE)
-		.writeShort(interfaceId, ByteModification.ADD, ByteOrder.LE);
+		builder.writeShort(npcId, ByteModification.ADD, ByteOrder.LE).writeShort(interfaceId, ByteModification.ADD,
+				ByteOrder.LE);
 		return true;
 	}
 

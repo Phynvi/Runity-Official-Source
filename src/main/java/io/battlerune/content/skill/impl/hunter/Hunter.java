@@ -29,7 +29,7 @@ public class Hunter extends Skill {
 	/* Holds all the hunter spawns. */
 	public static Map<Integer, Position> SPAWNS = new HashMap<>();
 
-	/** Creates a new <code>Hunter<code>  */
+	/** Creates a new <code>Hunter<code> */
 	public Hunter(int level, double experience) {
 		super(Skill.HUNTER, level, experience);
 	}

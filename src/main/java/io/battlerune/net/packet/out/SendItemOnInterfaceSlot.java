@@ -9,11 +9,11 @@ public class SendItemOnInterfaceSlot extends OutgoingPacket {
 	private final int interfaceId;
 	private final Item item;
 	private final int slot;
-	
+
 	public SendItemOnInterfaceSlot(int interfaceId, int item, int slot) {
 		this(interfaceId, new Item(item, 1), slot);
 	}
-	
+
 	public SendItemOnInterfaceSlot(int interfaceId, int item, int amount, int slot) {
 		this(interfaceId, new Item(item, amount), slot);
 	}

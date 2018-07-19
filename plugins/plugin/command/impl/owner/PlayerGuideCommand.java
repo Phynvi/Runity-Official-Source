@@ -19,7 +19,6 @@ public class PlayerGuideCommand implements Command {
 		player.sendTeleportButton();
 		player.sendTeleportButtonNpc(8059);
 
-
 	}
 
 	@Override

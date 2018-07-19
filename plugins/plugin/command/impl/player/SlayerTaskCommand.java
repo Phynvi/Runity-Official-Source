@@ -7,7 +7,7 @@ public class SlayerTaskCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-    	player.message("You have " + player.slayer.getAmount() + " of " + player.slayer.getTask() +  "!");
+		player.message("You have " + player.slayer.getAmount() + " of " + player.slayer.getTask() + "!");
 	}
 
 	@Override

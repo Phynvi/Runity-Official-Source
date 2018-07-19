@@ -8,17 +8,17 @@ import io.battlerune.util.Utility;
 
 public class CombatObjective implements BotObjectiveListener {
 
-    @Override
-    public void init(PlayerBot bot) {
-        Player opponent = (Player) bot.getCombat().getLastAggressor();
-        bot.botClass.initCombat(opponent, bot);
-        bot.getCombat().attack(opponent);
-        bot.speak(Utility.randomElement(BotUtility.FIGHT_START_MESSAGES));
-        bot.opponent = opponent;
-    }
+	@Override
+	public void init(PlayerBot bot) {
+		Player opponent = (Player) bot.getCombat().getLastAggressor();
+		bot.botClass.initCombat(opponent, bot);
+		bot.getCombat().attack(opponent);
+		bot.speak(Utility.randomElement(BotUtility.FIGHT_START_MESSAGES));
+		bot.opponent = opponent;
+	}
 
-    @Override
-    public void finish(PlayerBot bot) {
-    }
+	@Override
+	public void finish(PlayerBot bot) {
+	}
 
 }

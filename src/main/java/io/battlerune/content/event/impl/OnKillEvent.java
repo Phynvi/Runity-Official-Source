@@ -9,14 +9,14 @@ import io.battlerune.game.world.entity.mob.Mob;
  */
 public final class OnKillEvent extends InteractionEvent {
 
-    private final Mob victim;
+	private final Mob victim;
 
-    public OnKillEvent(Mob victim) {
-        super(InteractionType.ON_KILL);
-        this.victim = victim;
-    }
+	public OnKillEvent(Mob victim) {
+		super(InteractionType.ON_KILL);
+		this.victim = victim;
+	}
 
-    public Mob getVictim() {
-        return victim;
-    }
+	public Mob getVictim() {
+		return victim;
+	}
 }

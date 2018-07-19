@@ -7,7 +7,7 @@ public class SendConstruction extends OutgoingPacket {
 
 	public SendConstruction() {
 		super(241, -1);
-		//super(241);
+		// super(241);
 	}
 
 	@Override

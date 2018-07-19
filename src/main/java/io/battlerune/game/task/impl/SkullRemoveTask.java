@@ -5,37 +5,37 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 public class SkullRemoveTask extends TickableTask {
 
-    private final Player player;
+	private final Player player;
 
-    private int skullTime;
+	private int skullTime;
 
-    public SkullRemoveTask(Player player) {
-        super(false, 0);
-        this.player = player;
-    }
+	public SkullRemoveTask(Player player) {
+		super(false, 0);
+		this.player = player;
+	}
 
-    @Override
-    protected void tick() {
-        if (!player.isValid()) {
-            cancel();
-            return;
-        }
+	@Override
+	protected void tick() {
+		if (!player.isValid()) {
+			cancel();
+			return;
+		}
 
-        if (skullTime <= 0) {
-            player.skulling.unskull();
-            cancel();
-            return;
-        }
+		if (skullTime <= 0) {
+			player.skulling.unskull();
+			cancel();
+			return;
+		}
 
-        skullTime--;
-    }
+		skullTime--;
+	}
 
-    public void setSkullTime(int skullTime) {
-        this.skullTime = skullTime;
-    }
+	public void setSkullTime(int skullTime) {
+		this.skullTime = skullTime;
+	}
 
-    public int getSkullTime() {
-        return skullTime;
-    }
+	public int getSkullTime() {
+		return skullTime;
+	}
 
 }

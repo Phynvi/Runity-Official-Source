@@ -26,179 +26,176 @@ import io.netty.handler.codec.ByteToMessageDecoder;
  */
 public final class LoginDecoder extends ByteToMessageDecoder {
 
-    private static final Logger logger = LogManager.getLogger();
+	private static final Logger logger = LogManager.getLogger();
 
-    private static final int LOGIN_HANDSHAKE = 14;
-    private static final int NEW_CONNECTION_OPCODE = 16;
-    private static final int RECONNECTION_OPCODE = 18;
-    private static final int MAGIC_NUMBER = 255;
-    private static final int LOGIN_BLOCK_HEADER_SIZE = 41;
+	private static final int LOGIN_HANDSHAKE = 14;
+	private static final int NEW_CONNECTION_OPCODE = 16;
+	private static final int RECONNECTION_OPCODE = 18;
+	private static final int MAGIC_NUMBER = 255;
+	private static final int LOGIN_BLOCK_HEADER_SIZE = 41;
 
-    private static final Random RANDOM = new SecureRandom();
+	private static final Random RANDOM = new SecureRandom();
 
-    private State state = State.HANDSHAKE;
+	private State state = State.HANDSHAKE;
 
-    @Override
-    protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
-        switch (state) {
+	@Override
+	protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
+		switch (state) {
 
-            case HANDSHAKE:
-                decodeHandshake(ctx, in);
-                state = State.CONNECTION_TYPE;
-                break;
+		case HANDSHAKE:
+			decodeHandshake(ctx, in);
+			state = State.CONNECTION_TYPE;
+			break;
 
-            case CONNECTION_TYPE:
-                decodeConnectionType(ctx, in);
-                state = State.PAYLOAD;
-                break;
+		case CONNECTION_TYPE:
+			decodeConnectionType(ctx, in);
+			state = State.PAYLOAD;
+			break;
 
-            case PAYLOAD:
-                decodePayload(ctx, in, out);
-                break;
+		case PAYLOAD:
+			decodePayload(ctx, in, out);
+			break;
 
-        }
-    }
+		}
+	}
 
-    private void decodeHandshake(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
-        ctx.channel().attr(Config.SESSION_KEY).set(new LoginSession(ctx.channel()));
+	private void decodeHandshake(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
+		ctx.channel().attr(Config.SESSION_KEY).set(new LoginSession(ctx.channel()));
 
-        if (in.readableBytes() >= 2) {
-            final int handshake = in.readUnsignedByte();
+		if (in.readableBytes() >= 2) {
+			final int handshake = in.readUnsignedByte();
 
-            if (handshake != LOGIN_HANDSHAKE) {
-                sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-                return;
-            }
+			if (handshake != LOGIN_HANDSHAKE) {
+				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
+				return;
+			}
 
-            @SuppressWarnings("unused")
-            int nameHash = in.readUnsignedByte();
+			@SuppressWarnings("unused")
+			int nameHash = in.readUnsignedByte();
 
-            ByteBuf buf = ctx.alloc().buffer(17);
-            buf.writeLong(0);
-            buf.writeByte(0);
-            buf.writeLong(RANDOM.nextLong());
-            ctx.writeAndFlush(buf);
-        } else {
-            sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-        }
-    }
+			ByteBuf buf = ctx.alloc().buffer(17);
+			buf.writeLong(0);
+			buf.writeByte(0);
+			buf.writeLong(RANDOM.nextLong());
+			ctx.writeAndFlush(buf);
+		} else {
+			sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
+		}
+	}
 
-    private void decodeConnectionType(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
-        if (in.readableBytes() >= 2) {
-            final int connectionType = in.readUnsignedByte();
+	private void decodeConnectionType(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
+		if (in.readableBytes() >= 2) {
+			final int connectionType = in.readUnsignedByte();
 
-            if (connectionType != NEW_CONNECTION_OPCODE && connectionType != RECONNECTION_OPCODE) {
-                sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-            }
-        } else {
-            sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-        }
-    }
+			if (connectionType != NEW_CONNECTION_OPCODE && connectionType != RECONNECTION_OPCODE) {
+				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
+			}
+		} else {
+			sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
+		}
+	}
 
-    private void decodePayload(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
-        final String host = ((InetSocketAddress)ctx.channel().remoteAddress()).getAddress().getHostAddress();
+	private void decodePayload(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
+		final String host = ((InetSocketAddress) ctx.channel().remoteAddress()).getAddress().getHostAddress();
 
-        final int loginBlockSize = in.readUnsignedByte();
+		final int loginBlockSize = in.readUnsignedByte();
 
-        if (in.isReadable(loginBlockSize)) {
-            final int magicId = in.readUnsignedByte();
+		if (in.isReadable(loginBlockSize)) {
+			final int magicId = in.readUnsignedByte();
 
-            if (magicId != MAGIC_NUMBER) {
-                logger.warn(String.format("[%s] wrong magic id: %d", host, magicId));
-                sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-                return;
-            }
+			if (magicId != MAGIC_NUMBER) {
+				logger.warn(String.format("[%s] wrong magic id: %d", host, magicId));
+				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
+				return;
+			}
 
-            final int gameVersion = in.readUnsignedShort();
+			final int gameVersion = in.readUnsignedShort();
 
-            if (gameVersion != Config.GAME_VERSION) {
-                logger.warn(String.format("[%s] outdated client: %d should be: %d", host, gameVersion, Config.GAME_VERSION));
-                sendResponseCode(ctx, LoginResponse.GAME_UPDATED);
-                return;
-            }
+			if (gameVersion != Config.GAME_VERSION) {
+				logger.warn(String.format("[%s] outdated client: %d should be: %d", host, gameVersion,
+						Config.GAME_VERSION));
+				sendResponseCode(ctx, LoginResponse.GAME_UPDATED);
+				return;
+			}
 
-            final int memoryVersion = in.readUnsignedByte();
+			final int memoryVersion = in.readUnsignedByte();
 
-            if (memoryVersion != 0 && memoryVersion != 1) {
-                logger.warn(String.format("[%s] wrong memory version: %d", host, memoryVersion));
-                sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-                return;
-            }
+			if (memoryVersion != 0 && memoryVersion != 1) {
+				logger.warn(String.format("[%s] wrong memory version: %d", host, memoryVersion));
+				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
+				return;
+			}
 
-            final int[] crcs = new int[9];
+			final int[] crcs = new int[9];
 
-            for (int index = 0; index < crcs.length; index++) {
-                crcs[index] = in.readInt();
-            }
+			for (int index = 0; index < crcs.length; index++) {
+				crcs[index] = in.readInt();
+			}
 
-            final int expectedSize = in.readUnsignedByte(); // rsa header
+			final int expectedSize = in.readUnsignedByte(); // rsa header
 
-            if (expectedSize != loginBlockSize - LOGIN_BLOCK_HEADER_SIZE) {
-                logger.warn(String.format("[%s] wrong rsa block size: %d expecting: %d", host, (loginBlockSize - LOGIN_BLOCK_HEADER_SIZE), expectedSize));
-                sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-                return;
-            }
+			if (expectedSize != loginBlockSize - LOGIN_BLOCK_HEADER_SIZE) {
+				logger.warn(String.format("[%s] wrong rsa block size: %d expecting: %d", host,
+						(loginBlockSize - LOGIN_BLOCK_HEADER_SIZE), expectedSize));
+				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
+				return;
+			}
 
-            final byte[] rsaBytes = new byte[loginBlockSize - LOGIN_BLOCK_HEADER_SIZE];
-            in.readBytes(rsaBytes);
+			final byte[] rsaBytes = new byte[loginBlockSize - LOGIN_BLOCK_HEADER_SIZE];
+			in.readBytes(rsaBytes);
 
-            ByteBuf rsaBuffer = Unpooled.wrappedBuffer(new BigInteger(rsaBytes).modPow(Config.RSA_EXPONENT, Config.RSA_MODULUS).toByteArray());
+			ByteBuf rsaBuffer = Unpooled.wrappedBuffer(
+					new BigInteger(rsaBytes).modPow(Config.RSA_EXPONENT, Config.RSA_MODULUS).toByteArray());
 
-            final int rsa = rsaBuffer.readUnsignedByte();
+			final int rsa = rsaBuffer.readUnsignedByte();
 
-            if (rsa != 10) {
-                logger.warn(String.format("[%s] failed decrypt rsa %d", host, rsa));
-                sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-                return;
-            }
+			if (rsa != 10) {
+				logger.warn(String.format("[%s] failed decrypt rsa %d", host, rsa));
+				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
+				return;
+			}
 
-            final long clientHalf = rsaBuffer.readLong();
-            final long serverHalf = rsaBuffer.readLong();
+			final long clientHalf = rsaBuffer.readLong();
+			final long serverHalf = rsaBuffer.readLong();
 
-            int[] isaacSeed = {
-                    (int) (clientHalf >> 32),
-                    (int) clientHalf,
-                    (int) (serverHalf >> 32),
-                    (int) serverHalf
-            };
+			int[] isaacSeed = { (int) (clientHalf >> 32), (int) clientHalf, (int) (serverHalf >> 32),
+					(int) serverHalf };
 
-            final IsaacCipher decryptor = new IsaacCipher(isaacSeed);
+			final IsaacCipher decryptor = new IsaacCipher(isaacSeed);
 
-            for (int index = 0; index < isaacSeed.length; index++) {
-                isaacSeed[index] += 50;
-            }
+			for (int index = 0; index < isaacSeed.length; index++) {
+				isaacSeed[index] += 50;
+			}
 
-            final IsaacCipher encryptor = new IsaacCipher(isaacSeed);
+			final IsaacCipher encryptor = new IsaacCipher(isaacSeed);
 
-            @SuppressWarnings("unused") final int uid = rsaBuffer.readInt();
+			@SuppressWarnings("unused")
+			final int uid = rsaBuffer.readInt();
 
-            final String UUID = ByteBufUtils.readString(rsaBuffer);
-            final String macAddress = ByteBufUtils.readString(rsaBuffer);
-            final String username = ByteBufUtils.readString(rsaBuffer);
-            final String password = ByteBufUtils.readString(rsaBuffer);
+			final String UUID = ByteBufUtils.readString(rsaBuffer);
+			final String macAddress = ByteBufUtils.readString(rsaBuffer);
+			final String username = ByteBufUtils.readString(rsaBuffer);
+			final String password = ByteBufUtils.readString(rsaBuffer);
 
-            out.add(new LoginDetailsPacket(ctx, UUID, macAddress, username, password, encryptor, decryptor));
-        } else {
-            sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-        }
-    }
+			out.add(new LoginDetailsPacket(ctx, UUID, macAddress, username, password, encryptor, decryptor));
+		} else {
+			sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
+		}
+	}
 
-    private void sendResponseCode(ChannelHandlerContext ctx, LoginResponse response) {
-        if (response == LoginResponse.LOGIN_SERVER_REJECTED_SESSION) {
-            final String host = ((InetSocketAddress) ctx.channel().remoteAddress()).getHostString();
-            logger.warn(String.format("[%s] session was rejected", host));
-        }
-        ByteBuf buffer = ctx.alloc().buffer(Byte.BYTES);
-        buffer.writeByte(response.getOpcode());
-        ctx.writeAndFlush(buffer).addListener(ChannelFutureListener.CLOSE);
-        state = State.IGNORE;
-    }
+	private void sendResponseCode(ChannelHandlerContext ctx, LoginResponse response) {
+		if (response == LoginResponse.LOGIN_SERVER_REJECTED_SESSION) {
+			final String host = ((InetSocketAddress) ctx.channel().remoteAddress()).getHostString();
+			logger.warn(String.format("[%s] session was rejected", host));
+		}
+		ByteBuf buffer = ctx.alloc().buffer(Byte.BYTES);
+		buffer.writeByte(response.getOpcode());
+		ctx.writeAndFlush(buffer).addListener(ChannelFutureListener.CLOSE);
+		state = State.IGNORE;
+	}
 
-    private enum State {
-        HANDSHAKE,
-        CONNECTION_TYPE,
-        PAYLOAD,
-        IGNORE
-    }
+	private enum State {
+		HANDSHAKE, CONNECTION_TYPE, PAYLOAD, IGNORE
+	}
 
 }

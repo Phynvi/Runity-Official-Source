@@ -20,11 +20,9 @@ public class SkillRequirement implements Requirable {
 	/**
 	 * Creates a new {@link SkillRequirement}.
 	 * 
-	 * @param level
-	 *            The level required.
+	 * @param level The level required.
 	 * 
-	 * @param skill
-	 *            The skill required.
+	 * @param skill The skill required.
 	 */
 	public SkillRequirement(int level, int skill) {
 		this.level = level;

@@ -3,29 +3,24 @@ package io.battlerune.game.world.entity.mob.player.data;
 import java.util.Optional;
 
 public enum ValueIcon {
-    NONE(-1),
-    BRONZE(0),
-    SILVER(1),
-    GREEN(2),
-    BLUE(3),
-    RED(4);
+	NONE(-1), BRONZE(0), SILVER(1), GREEN(2), BLUE(3), RED(4);
 
-    private final int code;
+	private final int code;
 
-    ValueIcon(int code) {
-        this.code = code;
-    }
+	ValueIcon(int code) {
+		this.code = code;
+	}
 
-    public static Optional<ValueIcon> lookup(int code) {
-        if (code < -1 || code > 4) {
-            return Optional.empty();
-        }
+	public static Optional<ValueIcon> lookup(int code) {
+		if (code < -1 || code > 4) {
+			return Optional.empty();
+		}
 
-        return Optional.of(ValueIcon.values()[code + 1]);
-    }
+		return Optional.of(ValueIcon.values()[code + 1]);
+	}
 
-    public int getCode() {
-        return code;
-    }
+	public int getCode() {
+		return code;
+	}
 
 }

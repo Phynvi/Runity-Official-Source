@@ -5,9 +5,9 @@ import io.battlerune.game.world.entity.mob.Mob;
 
 public class HawkEyeListener extends SimplifiedListener<Mob> {
 
-    @Override
-    public int modifyRangedLevel(Mob attacker, Mob defender, int damage) {
-        return damage * 11 / 10;
-    }
+	@Override
+	public int modifyRangedLevel(Mob attacker, Mob defender, int damage) {
+		return damage * 11 / 10;
+	}
 
 }

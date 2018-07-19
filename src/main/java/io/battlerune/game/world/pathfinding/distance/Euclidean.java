@@ -3,8 +3,9 @@ package io.battlerune.game.world.pathfinding.distance;
 import io.battlerune.game.world.position.Position;
 
 /**
- * Since Euclidean distance is shorter than Manhattan or diagonal distance, you will still get shortest paths,
- * but the pathfinder will take longer to run.
+ * Since Euclidean distance is shorter than Manhattan or diagonal distance, you
+ * will still get shortest paths, but the pathfinder will take longer to run.
+ * 
  * @author Artem Batutin <artembatutin@gmail.com>
  */
 public class Euclidean implements Distance {

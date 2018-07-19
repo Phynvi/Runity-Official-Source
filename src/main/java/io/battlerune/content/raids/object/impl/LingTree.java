@@ -11,8 +11,7 @@ public class LingTree implements RaidsObject {
 	@Override
 	public CustomGameObject[] getObjects(Player player) {
 		return new CustomGameObject[] {
-				new CustomGameObject(1, player.getPosition().copy(), ObjectDirection.EAST, ObjectType.INTERACTABLE)
-		};
+				new CustomGameObject(1, player.getPosition().copy(), ObjectDirection.EAST, ObjectType.INTERACTABLE) };
 	}
 
 }

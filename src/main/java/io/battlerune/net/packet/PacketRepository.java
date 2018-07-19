@@ -8,7 +8,8 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.netty.util.ReferenceCountUtil;
 
 /**
- * The repository that stores packets sizes and listeners for how to handle the packets.
+ * The repository that stores packets sizes and listeners for how to handle the
+ * packets.
  *
  * @author nshusa
  */
@@ -20,7 +21,7 @@ public final class PacketRepository {
 	private static final int MAX_CLIENT_PACKETS = 257;
 
 	/**
-	 *  The client -> server packet listeners.
+	 * The client -> server packet listeners.
 	 */
 	private static final PacketListener[] packetListeners = new PacketListener[MAX_CLIENT_PACKETS];
 
@@ -43,11 +44,9 @@ public final class PacketRepository {
 	/**
 	 * Registers a listener to listen for client -> server packet events.
 	 *
-	 * @param opcode
-	 * 		The packet to intercept.
+	 * @param opcode   The packet to intercept.
 	 *
-	 * @param listener
-	 * 		The listener that will handle this packet.
+	 * @param listener The listener that will handle this packet.
 	 */
 	public static void registerListener(int opcode, PacketListener listener) {
 		Preconditions.checkArgument(opcode >= 0 && opcode < packetListeners.length);
@@ -57,10 +56,9 @@ public final class PacketRepository {
 	/**
 	 * Looks up the listener for this packet.
 	 *
-	 * @param opcode
-	 * 		The opcode of the packet
+	 * @param opcode The opcode of the packet
 	 *
-	 * 	@return The result.
+	 * @return The result.
 	 */
 	public static Optional<PacketListener> lookupListener(int opcode) {
 		if (opcode < 0 || opcode >= packetListeners.length) {
@@ -72,10 +70,9 @@ public final class PacketRepository {
 	/**
 	 * The method that looks up the packets type.
 	 *
-	 * @param opcode
-	 * 		The opcode to lookup
+	 * @param opcode The opcode to lookup
 	 *
-	 * 	@return The packet type.
+	 * @return The packet type.
 	 */
 	public static PacketType lookupType(int opcode) {
 		if (opcode < 0 || opcode >= packetTypes.length) {
@@ -98,10 +95,9 @@ public final class PacketRepository {
 	/**
 	 * Looks up the reference size of a packet.
 	 *
-	 * @param opcode
-	 * 		The packet to lookup
+	 * @param opcode The packet to lookup
 	 *
-	 * 	@return The reference size.
+	 * @return The reference size.
 	 */
 	public static int lookupSize(int opcode) {
 		if (opcode < 0 || opcode >= packetTypes.length) {
@@ -115,16 +111,11 @@ public final class PacketRepository {
 	 *
 	 * The following types are...
 	 *
-	 * {@code -2} var_short
-	 * {@code -1} var_byte
-	 * {@code 0} empty
-	 * > 0 fixed
+	 * {@code -2} var_short {@code -1} var_byte {@code 0} empty > 0 fixed
 	 *
-	 * @param opcode
-	 * 		The packet to register this type for
+	 * @param opcode The packet to register this type for
 	 *
-	 * 	@param type
-	 * 		The type for this packet.
+	 * @param type   The type for this packet.
 	 */
 	public static void registerType(int opcode, int type) {
 		Preconditions.checkArgument(opcode >= 0 && opcode < packetListeners.length);

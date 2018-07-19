@@ -22,26 +22,27 @@ import io.battlerune.net.packet.out.SendMessage;
 @PacketListenerMeta(ClientPackets.PICKUP_GROUND_ITEM)
 public class PickupItemPacketListener implements PacketListener {
 
-    @Override
-    public void handlePacket(final Player player, GamePacket packet) {
-        if (player.locking.locked(PacketType.PICKUP_ITEM)) {
-            return;
-        }
+	@Override
+	public void handlePacket(final Player player, GamePacket packet) {
+		if (player.locking.locked(PacketType.PICKUP_ITEM)) {
+			return;
+		}
 
-        final int y = packet.readShort(ByteOrder.LE);
-        final int id = packet.readShort(false);
-        final int x = packet.readShort(ByteOrder.LE);
+		final int y = packet.readShort(ByteOrder.LE);
+		final int id = packet.readShort(false);
+		final int x = packet.readShort(ByteOrder.LE);
 
-        final Item item = new Item(id);
-        final Position position = Position.create(x, y, player.getHeight());
+		final Item item = new Item(id);
+		final Position position = Position.create(x, y, player.getHeight());
 
-        if (EventDispatcher.execute(player, new PickupItemInteractionEvent(item, position))) {
-            if (PlayerRight.isDeveloper(player) && player.debug) {
-                player.send(new SendMessage(String.format("[%s]: item=%d position=%s", PickupItemInteractionEvent.class.getSimpleName(), item.getId(), position.toString())));
-            }
-            return;
-        }
+		if (EventDispatcher.execute(player, new PickupItemInteractionEvent(item, position))) {
+			if (PlayerRight.isDeveloper(player) && player.debug) {
+				player.send(new SendMessage(String.format("[%s]: item=%d position=%s",
+						PickupItemInteractionEvent.class.getSimpleName(), item.getId(), position.toString())));
+			}
+			return;
+		}
 
-        player.pickup(item, position);
-    }
+		player.pickup(item, position);
+	}
 }

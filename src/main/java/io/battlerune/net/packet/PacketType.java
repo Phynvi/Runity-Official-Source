@@ -7,21 +7,21 @@ package io.battlerune.net.packet;
  */
 public enum PacketType {
 
-    EMPTY,
+	EMPTY,
 
-    /**
-     * A fixed size packet where the size never changes.
-     */
-    FIXED,
+	/**
+	 * A fixed size packet where the size never changes.
+	 */
+	FIXED,
 
-    /**
-     * A variable packet where the size is indicated by a byte.
-     */
-    VAR_BYTE,
+	/**
+	 * A variable packet where the size is indicated by a byte.
+	 */
+	VAR_BYTE,
 
-    /**
-     * A variable packet where the size is indicated by a short.
-     */
-    VAR_SHORT
+	/**
+	 * A variable packet where the size is indicated by a short.
+	 */
+	VAR_SHORT
 
 }

@@ -15,7 +15,7 @@ public class SendItemOnInterface extends OutgoingPacket {
 	private final int[] tabAmounts;
 
 	public SendItemOnInterface(int id) {
-		this(id, null, new Item[]{});
+		this(id, null, new Item[] {});
 	}
 
 	public SendItemOnInterface(int id, Item... items) {

@@ -7,23 +7,24 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 /** @author Red */
 public class LongbowStrategy extends PlayerRangedStrategy {
-    private static final LongbowStrategy INSTANCE = new LongbowStrategy();
+	private static final LongbowStrategy INSTANCE = new LongbowStrategy();
 
-    private LongbowStrategy() {}
+	private LongbowStrategy() {
+	}
 
-    @Override
-    public int modifyDamage(Player attacker, Mob defender, int roll) {
+	@Override
+	public int modifyDamage(Player attacker, Mob defender, int roll) {
 
-        return (int) (roll * 1.6);
-    }
+		return (int) (roll * 1.6);
+	}
 
-    @Override
-    public int getAttackDelay(Player attacker, Mob defender, FightType fightType) {
-        return 5;
-    }
+	@Override
+	public int getAttackDelay(Player attacker, Mob defender, FightType fightType) {
+		return 5;
+	}
 
-    public static LongbowStrategy get() {
-        return INSTANCE;
-    }
+	public static LongbowStrategy get() {
+		return INSTANCE;
+	}
 
 }

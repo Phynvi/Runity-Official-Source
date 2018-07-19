@@ -6,7 +6,6 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.util.parser.GsonParser;
 import io.battlerune.util.parser.old.defs.NpcDefinition;
 
-
 /**
  * Parses through the npc spawn file and creates {@link Npc}s on startup.
  * 

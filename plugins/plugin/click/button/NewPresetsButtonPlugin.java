@@ -8,8 +8,7 @@ import io.battlerune.game.world.items.Item;
 
 /**
  * 
- * @author Adam_#6723
- * Handles the preset button interface!
+ * @author Adam_#6723 Handles the preset button interface!
  * 
  */
 
@@ -18,8 +17,8 @@ public class NewPresetsButtonPlugin extends PluginContext {
 	/** RuneZerker Inventory! Array **/
 	public Item[] Melee126Inventory() {
 		return new Item[] { new Item(12695), new Item(3024, 2), new Item(9075, 80), new Item(1215), new Item(3024),
-				new Item(6685), new Item(560, 40), new Item(391, 3), new Item(557, 200),
-				new Item(391, 12), new Item(3144, 3),
+				new Item(6685), new Item(560, 40), new Item(391, 3), new Item(557, 200), new Item(391, 12),
+				new Item(3144, 3),
 
 		};
 	}
@@ -124,7 +123,6 @@ public class NewPresetsButtonPlugin extends PluginContext {
 		if (player.bank.contains(995, 100000)) {
 			player.bank.remove(995, 100000);
 
-
 			if (!player.equipment.isEmpty() || !player.inventory.isEmpty()) {
 				player.bank.depositeInventory();
 				player.bank.depositeEquipment();
@@ -148,7 +146,6 @@ public class NewPresetsButtonPlugin extends PluginContext {
 	public void tribrid126(Player player) {
 		if (player.bank.contains(995, 100000)) {
 			player.bank.remove(995, 100000);
-
 
 			if (!player.equipment.isEmpty() || !player.inventory.isEmpty()) {
 				player.bank.depositeInventory();
@@ -185,10 +182,9 @@ public class NewPresetsButtonPlugin extends PluginContext {
 			send126tribridDialouge(player);
 
 		}
-		
-		
+
 		/** Closes the interface! **/
-		if(button == -23034) {
+		if (button == -23034) {
 			player.interfaceManager.close();
 		}
 

@@ -9,12 +9,14 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 public class NieveDialogue extends Dialogue {
 
-
 	@Override
 	public void sendDialogues(DialogueFactory factory) {
 		Player player = factory.getPlayer();
 
-		factory.sendNpcChat(6797, Expression.HAPPY, "Hello adventurer, how may I help you?").sendOption("Offer slayer items", () -> sell(factory), "Open slayer manager", () -> factory.onAction(() -> player.slayer.open(SlayerTab.MAIN)), "Nevermind", () -> factory.onAction(player.interfaceManager::close));
+		factory.sendNpcChat(6797, Expression.HAPPY, "Hello adventurer, how may I help you?").sendOption(
+				"Offer slayer items", () -> sell(factory), "Open slayer manager",
+				() -> factory.onAction(() -> player.slayer.open(SlayerTab.MAIN)), "Nevermind",
+				() -> factory.onAction(player.interfaceManager::close));
 		factory.execute();
 	}
 

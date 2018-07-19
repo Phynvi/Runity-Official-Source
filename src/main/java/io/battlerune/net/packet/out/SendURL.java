@@ -7,7 +7,7 @@ import io.battlerune.net.packet.PacketType;
 /**
  * The {@code OutgoingPacket} that opens a URL from client.
  * 
- * @author Daniel | Obey 
+ * @author Daniel | Obey
  */
 public class SendURL extends OutgoingPacket {
 

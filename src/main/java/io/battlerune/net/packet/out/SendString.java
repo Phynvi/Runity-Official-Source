@@ -6,8 +6,8 @@ import io.battlerune.net.packet.OutgoingPacket;
 import io.battlerune.net.packet.PacketType;
 
 /**
- * The {@code OutgoingPacket} that sends a string to a {@code Player}s itemcontainer
- * in the client.
+ * The {@code OutgoingPacket} that sends a string to a {@code Player}s
+ * itemcontainer in the client.
  * 
  * @author Daniel | Obey
  */

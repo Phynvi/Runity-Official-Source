@@ -29,18 +29,18 @@ public class DragonHaldberd extends PlayerMeleeStrategy {
 		super.attack(attacker, defender, hit);
 		attacker.graphic(GRAPHIC);
 	}
-	
+
 	@Override
 	public CombatHit[] getHits(Player attacker, Mob defender) {
 		if (defender.width() > 1 && defender.length() > 1) {
 			CombatHit primary = nextMeleeHit(attacker, defender);
 			CombatHit secondary = nextMeleeHit(attacker, defender);
-			return new CombatHit[]{primary, secondary};
+			return new CombatHit[] { primary, secondary };
 		}
 
-		return new CombatHit[]{nextMeleeHit(attacker, defender)};
+		return new CombatHit[] { nextMeleeHit(attacker, defender) };
 	}
-	
+
 	@Override
 	public Animation getAttackAnimation(Player attacker, Mob defender) {
 		return ANIMATION;

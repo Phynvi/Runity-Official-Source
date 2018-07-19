@@ -10,9 +10,9 @@ public class SkillAreaCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		 Teleportation.teleport(player, Config.SKILL_ZONE, 20, () -> {
-             player.send(new SendMessage("@or2@Welcome to the Skilling Zone, " + player.getName() + "!"));
-         });
+		Teleportation.teleport(player, Config.SKILL_ZONE, 20, () -> {
+			player.send(new SendMessage("@or2@Welcome to the Skilling Zone, " + player.getName() + "!"));
+		});
 	}
 
 	@Override

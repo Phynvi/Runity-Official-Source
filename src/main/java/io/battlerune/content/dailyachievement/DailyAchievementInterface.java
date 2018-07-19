@@ -35,16 +35,17 @@ public class DailyAchievementInterface extends InterfaceWriter {
 				if (shift != 0) {
 					text[shift++] = "";
 				}
-				
+
 				int completion = DailyAchievementHandler.getDifficultyCompletion(player, achievement.getDifficulty());
-				int progress = (int) (completion * 100 / (double) DailyAchievementHandler.getDifficultyAchievement(achievement.getDifficulty()));
-				
+				int progress = (int) (completion * 100
+						/ (double) DailyAchievementHandler.getDifficultyAchievement(achievement.getDifficulty()));
+
 				player.send(new SendFont(startingIndex() + shift, 2));
 				player.send(new SendTooltip("", startingIndex() + shift));
 				text[shift++] = "<col=CF851B>" + Utility.formatEnum(last.name() + ": " + progress + "%");
-				
+
 				int button = (shift - 1) + BASE_BUTTON;
-				
+
 				if (!DailyAchievementButton.getAchievementTitles().containsKey(button)) {
 					DailyAchievementButton.getAchievementTitles().put(button, achievement.getDifficulty());
 				}
@@ -58,20 +59,22 @@ public class DailyAchievementInterface extends InterfaceWriter {
 			int color = completed == achievement.getAmount() ? 0x00FF00 : completed > 0 ? 0xFFFF00 : 0xFF0000;
 			player.send(new SendColor(startingIndex() + shift, color));
 			player.send(new SendTooltip("View achievement " + achievement.getTask() + "", startingIndex() + shift));
-			if (shift < text.length) 
+			if (shift < text.length)
 				text[shift++] = "" + achievement.getTask();
-			//if the shift size is < text.lengt
+			// if the shift size is < text.lengt
 			int button = (shift - 1) + BASE_BUTTON;
-			
+
 			if (!DailyAchievementButton.getAchievementButtons().containsKey(button)) {
 				DailyAchievementButton.getAchievementButtons().put(button, achievement);
 			}
 		}
-		
-		int progress = (int) (DailyAchievementHandler.getTotalCompleted(player) * 100 / (double) DailyAchievementList.getTotal());
+
+		int progress = (int) (DailyAchievementHandler.getTotalCompleted(player) * 100
+				/ (double) DailyAchievementList.getTotal());
 
 		player.send(new SendScrollbar(36023, 1500));
-		player.send(new SendString("Completed: " + DailyAchievementHandler.getTotalCompleted(player) + "/" + total + " (" + progress + "%)", 36037));
+		player.send(new SendString("Completed: " + DailyAchievementHandler.getTotalCompleted(player) + "/" + total
+				+ " (" + progress + "%)", 36037));
 	}
 
 	@Override

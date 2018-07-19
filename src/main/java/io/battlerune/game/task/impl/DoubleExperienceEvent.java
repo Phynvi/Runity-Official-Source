@@ -11,33 +11,33 @@ import io.battlerune.game.world.World;
  */
 public class DoubleExperienceEvent extends Task {
 
-    public DoubleExperienceEvent() {
-        super(100);
-    }
+	public DoubleExperienceEvent() {
+		super(100);
+	}
 
-    @Override
-    public void execute() {
-        if (!WellOfGoodwill.isActive()) {
-            cancel();
-            return;
-        }
+	@Override
+	public void execute() {
+		if (!WellOfGoodwill.isActive()) {
+			cancel();
+			return;
+		}
 
-        WellOfGoodwill.activeTime++;
+		WellOfGoodwill.activeTime++;
 
-        if (WellOfGoodwill.activeTime == 15) {
-            World.sendMessage("<col=2b58a0>WOG</col>: 15 Minutes left until the well is expired.");
-        } else if (WellOfGoodwill.activeTime == 25) {
-            World.sendMessage("<col=2b58a0>WOG</col>: 5 Minutes left until the well is expired.");
-        } else if (WellOfGoodwill.activeTime == 30) {
-            cancel();
-        }
-    }
+		if (WellOfGoodwill.activeTime == 15) {
+			World.sendMessage("<col=2b58a0>WOG</col>: 15 Minutes left until the well is expired.");
+		} else if (WellOfGoodwill.activeTime == 25) {
+			World.sendMessage("<col=2b58a0>WOG</col>: 5 Minutes left until the well is expired.");
+		} else if (WellOfGoodwill.activeTime == 30) {
+			cancel();
+		}
+	}
 
-    @Override
-    protected void onCancel(boolean logout) {
-        World.sendMessage("<col=2b58a0>WOG</col>: The well has expired and needs replenishing!");
-        WellOfGoodwill.activeTime = -1;
-        WellOfGoodwill.CONTRIBUTION = 0;
-    }
+	@Override
+	protected void onCancel(boolean logout) {
+		World.sendMessage("<col=2b58a0>WOG</col>: The well has expired and needs replenishing!");
+		WellOfGoodwill.activeTime = -1;
+		WellOfGoodwill.CONTRIBUTION = 0;
+	}
 
 }

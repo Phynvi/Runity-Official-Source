@@ -8,19 +8,19 @@ import io.battlerune.content.event.InteractionEvent;
  */
 public class ItemContainerInteractionEvent extends InteractionEvent {
 
-    public final int id;
+	public final int id;
 
-    public final int interfaceId;
+	public final int interfaceId;
 
-    public final int removeSlot;
+	public final int removeSlot;
 
-    public final int removeId;
+	public final int removeId;
 
-    public ItemContainerInteractionEvent(int id, int interfaceId, int removeSlot, int removeId) {
-        super(InteractionType.ITEM_CONTAINER_INTERACTION_EVENT);
-        this.id = id;
-        this.interfaceId = interfaceId;
-        this.removeSlot = removeSlot;
-        this.removeId = removeId;
-    }
+	public ItemContainerInteractionEvent(int id, int interfaceId, int removeSlot, int removeId) {
+		super(InteractionType.ITEM_CONTAINER_INTERACTION_EVENT);
+		this.id = id;
+		this.interfaceId = interfaceId;
+		this.removeSlot = removeSlot;
+		this.removeId = removeId;
+	}
 }

@@ -11,107 +11,106 @@ import io.battlerune.content.quest.impl.RFD;
 import io.battlerune.content.quest.impl.ToySoldier;
 import io.battlerune.game.world.entity.mob.player.Player;
 
-
 /**
  * Handles the quest manager.
  *
  * @author Daniel
  */
 public class QuestManager {
-    public static final int COOKS_ASSISTANT = 4;
-    public static final int EVIL_SISTERS = 0;
+	public static final int COOKS_ASSISTANT = 4;
+	public static final int EVIL_SISTERS = 0;
 
-    public static final int TOY_SOLDIER = 1;
-    public static final int RFD = 2;
+	public static final int TOY_SOLDIER = 1;
+	public static final int RFD = 2;
 
-    public static final int KOLODIONS_ARENA = 3;
-    
-    public static final int MageArena2 = 5;
+	public static final int KOLODIONS_ARENA = 3;
 
-    /** The total amount of quests. */
-    public static final int QUEST_COUNT = 6;
+	public static final int MageArena2 = 5;
 
-    /** The player instance. */
-    private Player player;
+	/** The total amount of quests. */
+	public static final int QUEST_COUNT = 6;
 
-    /** The quest points. */
-    private int points;
+	/** The player instance. */
+	private Player player;
 
-    /** The amount of quests completed. */
-    private int completed;
+	/** The quest points. */
+	private int points;
 
-    /** The quest stages. */
-    public int[] stage = new int[QUEST_COUNT];
+	/** The amount of quests completed. */
+	private int completed;
 
-    /** The quests. */
-    public static Quest[] QUESTS = new Quest[QUEST_COUNT];
+	/** The quest stages. */
+	public int[] stage = new int[QUEST_COUNT];
 
-    static {
-    	QUESTS[EVIL_SISTERS] = new EvilSisters();
-        QUESTS[COOKS_ASSISTANT] = new CooksAssistant();
-        QUESTS[TOY_SOLDIER] = new ToySoldier();
-        QUESTS[RFD] = new RFD();
-        QUESTS[MageArena2] = new MageArena2();
+	/** The quests. */
+	public static Quest[] QUESTS = new Quest[QUEST_COUNT];
 
-     //   QUESTS[Dropcatcher] = new Dropcatcher();
+	static {
+		QUESTS[EVIL_SISTERS] = new EvilSisters();
+		QUESTS[COOKS_ASSISTANT] = new CooksAssistant();
+		QUESTS[TOY_SOLDIER] = new ToySoldier();
+		QUESTS[RFD] = new RFD();
+		QUESTS[MageArena2] = new MageArena2();
 
-        QUESTS[KOLODIONS_ARENA] = new KolodionsArena();
-    }
+		// QUESTS[Dropcatcher] = new Dropcatcher();
 
-    /** Constructs a new <code>QuestManager<code>. */
-    public QuestManager(Player player) {
-        this.player = player;
+		QUESTS[KOLODIONS_ARENA] = new KolodionsArena();
+	}
 
-        for (int index = 0; index < QUESTS.length; index++) {
-            this.stage[index] = 0;
-        }
-    }
+	/** Constructs a new <code>QuestManager<code>. */
+	public QuestManager(Player player) {
+		this.player = player;
 
-    /** Handles the quest events. */
-    public boolean onEvent(InteractionEvent interactionEvent) {
-        boolean success = false;
-        for (final Quest quest : QUESTS) {
-            success |= quest.onEvent(player, interactionEvent);
-        }
-        return success;
-    }
+		for (int index = 0; index < QUESTS.length; index++) {
+			this.stage[index] = 0;
+		}
+	}
 
-    public int[] getStage() {
-        return stage;
-    }
+	/** Handles the quest events. */
+	public boolean onEvent(InteractionEvent interactionEvent) {
+		boolean success = false;
+		for (final Quest quest : QUESTS) {
+			success |= quest.onEvent(player, interactionEvent);
+		}
+		return success;
+	}
 
-    public QuestState getState(int index) {
-        int stage = getStage()[index];
-        return stage == 0 ? QuestState.NOT_STARTED : (stage == -1 ? QuestState.COMPLETED : QuestState.STARTED);
-    }
+	public int[] getStage() {
+		return stage;
+	}
 
-    public boolean completed(int index) {
-        return getState(index) == QuestState.COMPLETED;
-    }
+	public QuestState getState(int index) {
+		int stage = getStage()[index];
+		return stage == 0 ? QuestState.NOT_STARTED : (stage == -1 ? QuestState.COMPLETED : QuestState.STARTED);
+	}
 
-    public int getPoints() {
-        return points;
-    }
+	public boolean completed(int index) {
+		return getState(index) == QuestState.COMPLETED;
+	}
 
-    public void setPoints(int points) {
-        this.points = points;
-    }
+	public int getPoints() {
+		return points;
+	}
 
-    public int getCompleted() {
-        return completed;
-    }
+	public void setPoints(int points) {
+		this.points = points;
+	}
 
-    public void setCompleted(int completed) {
-        this.completed = completed;
-    }
+	public int getCompleted() {
+		return completed;
+	}
 
-    public int getTotal() {
-        return QUESTS.length;
-    }
+	public void setCompleted(int completed) {
+		this.completed = completed;
+	}
 
-    public Optional<Quest> get(int index) {
-        if (index < 0 || index > QUEST_COUNT)
-            return Optional.empty();
-        return Optional.of(QUESTS[index]);
-    }
+	public int getTotal() {
+		return QUESTS.length;
+	}
+
+	public Optional<Quest> get(int index) {
+		if (index < 0 || index > QUEST_COUNT)
+			return Optional.empty();
+		return Optional.of(QUESTS[index]);
+	}
 }

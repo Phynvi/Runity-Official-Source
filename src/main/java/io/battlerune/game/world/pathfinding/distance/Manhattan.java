@@ -12,11 +12,11 @@ import io.battlerune.game.world.position.Position;
  */
 public class Manhattan implements Distance {
 
-    @Override
-    public int calculate(Position to, Position from) {
-        int deltaX = Math.abs(from.getX() - to.getX());
-        int deltaY = Math.abs(from.getY() - to.getY());
-        return deltaX + deltaY;
-    }
+	@Override
+	public int calculate(Position to, Position from) {
+		int deltaX = Math.abs(from.getX() - to.getX());
+		int deltaY = Math.abs(from.getY() - to.getY());
+		return deltaX + deltaY;
+	}
 
 }

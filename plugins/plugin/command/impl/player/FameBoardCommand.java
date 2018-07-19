@@ -11,7 +11,7 @@ public class FameBoardCommand implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 		PlayerKillingBoard.load();
-		//FameBoardInterface.open(FameBoard.PVP, player);
+		// FameBoardInterface.open(FameBoard.PVP, player);
 		FameBoardInterface.open(FameBoard.MISC, player);
 	}
 

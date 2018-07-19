@@ -18,23 +18,11 @@ public class CannonManager {
 	static Map<String, Cannon> ACTIVE_CANNONS = new HashMap<>();
 
 	public enum Setup {
-		NO_CANNON,
-		BASE,
-		STAND,
-		BARRELS,
-		FURNACE,
-		COMPLETE_CANNON
+		NO_CANNON, BASE, STAND, BARRELS, FURNACE, COMPLETE_CANNON
 	}
 
 	public enum Rotation {
-		NORTH,
-		NORTH_EAST,
-		EAST,
-		SOUTH_EAST,
-		SOUTH,
-		SOUTH_WEST,
-		WEST,
-		NORTH_WEST
+		NORTH, NORTH_EAST, EAST, SOUTH_EAST, SOUTH, SOUTH_WEST, WEST, NORTH_WEST
 	}
 
 	public static void test(Player player) {
@@ -99,14 +87,14 @@ public class CannonManager {
 		}
 
 		int needed = 30 - cannon.getAmmunition();
-		
+
 		if (needed == 0) {
 			player.send(new SendMessage("Your cannon is full."));
 			return;
 		}
-		
+
 		int cannon_balls = player.inventory.computeAmountForId(2);
-		
+
 		if (cannon_balls <= needed) {
 			player.inventory.remove(2, cannon_balls);
 			player.send(new SendMessage("You load the last of your cannon balls"));
@@ -125,14 +113,14 @@ public class CannonManager {
 		cannon.setFiring(true);
 		World.schedule(new CannonFireAction(player, cannon));
 	}
-	
+
 	public static Projectile getCannonFire() {
 		Projectile p = new Projectile(53);
 		p.setStartHeight(50);
 		p.setEndHeight(50);
 		return p;
 	}
-	
+
 	public static Npc[] getNpc(Cannon cannon) {
 		ArrayList<Npc> attack = new ArrayList<>();
 
@@ -140,24 +128,24 @@ public class CannonManager {
 			if (npc == null) {
 				continue;
 			}
-			
+
 			if (!Utility.withinDistance(npc, cannon, Region.VIEW_DISTANCE)) {
 				continue;
 			}
-			
+
 			if (!npc.definition.isAttackable()) {
 				continue;
 			}
-			
+
 			attack.add(npc);
 		}
 
 		Npc[] npc = new Npc[attack.size()];
-		
+
 		for (int i = 0; i < npc.length; i++) {
 			npc[i] = attack.get(i);
 		}
-		
+
 		return npc;
 	}
 

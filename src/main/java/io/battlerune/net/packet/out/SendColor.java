@@ -6,10 +6,9 @@ import io.battlerune.net.codec.ByteOrder;
 import io.battlerune.net.packet.OutgoingPacket;
 
 /**
- * The {@code OutgoingPacket} that sends a color to a string
- * in the client.
+ * The {@code OutgoingPacket} that sends a color to a string in the client.
  * 
- * @author Daniel | Obey 
+ * @author Daniel | Obey
  */
 public class SendColor extends OutgoingPacket {
 
@@ -24,8 +23,7 @@ public class SendColor extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeShort(id, ByteModification.ADD, ByteOrder.LE)
-		.writeInt(color);
+		builder.writeShort(id, ByteModification.ADD, ByteOrder.LE).writeInt(color);
 		return true;
 	}
 

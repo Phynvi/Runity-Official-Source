@@ -14,12 +14,12 @@ public class DownCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-        player.move(player.getPosition().transform(0, 0, -1));
+		player.move(player.getPosition().transform(0, 0, -1));
 	}
 
 	@Override
 	public boolean canUse(Player player) {
-		if(PlayerRight.isDeveloper(player)) {
+		if (PlayerRight.isDeveloper(player)) {
 			return true;
 		}
 		player.speak("Hey everyone, I just tried to do something silly!");

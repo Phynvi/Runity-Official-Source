@@ -40,30 +40,39 @@ public enum DeveloperAction implements GenericVoid<Player> {
 					other.right = PlayerRight.HELPER;
 					other.updateFlags.add(UpdateFlag.APPEARANCE);
 					other.dialogueFactory.sendStatement("You were promoted to helper by " + player.getName()).execute();
-					player.send(new SendMessage("You have promoted " + other.getName() + " to helper.", MessageColor.DARK_BLUE));
+					player.send(new SendMessage("You have promoted " + other.getName() + " to helper.",
+							MessageColor.DARK_BLUE));
 				}, "Moderator", () -> {
 					other.right = PlayerRight.MODERATOR;
 					other.updateFlags.add(UpdateFlag.APPEARANCE);
-					other.dialogueFactory.sendStatement("You were promoted to moderator by " + player.getName()).execute();
-					player.send(new SendMessage("You have promoted " + other.getName() + " to moderator.", MessageColor.DARK_BLUE));
+					other.dialogueFactory.sendStatement("You were promoted to moderator by " + player.getName())
+							.execute();
+					player.send(new SendMessage("You have promoted " + other.getName() + " to moderator.",
+							MessageColor.DARK_BLUE));
 				}, "Administrator", () -> {
 					other.right = PlayerRight.ADMINISTRATOR;
 					other.updateFlags.add(UpdateFlag.APPEARANCE);
-					other.dialogueFactory.sendStatement("You were promoted to administrator by " + player.getName()).execute();
-					player.send(new SendMessage("You have promoted " + other.getName() + " to administrator.", MessageColor.DARK_BLUE));
+					other.dialogueFactory.sendStatement("You were promoted to administrator by " + player.getName())
+							.execute();
+					player.send(new SendMessage("You have promoted " + other.getName() + " to administrator.",
+							MessageColor.DARK_BLUE));
 				}, "Developer", () -> {
 					other.right = PlayerRight.DEVELOPER;
 					other.updateFlags.add(UpdateFlag.APPEARANCE);
-					other.dialogueFactory.sendStatement("You were promoted to developer by " + player.getName()).execute();
-					player.send(new SendMessage("You have promoted " + other.getName() + " to developer.", MessageColor.DARK_BLUE));
+					other.dialogueFactory.sendStatement("You were promoted to developer by " + player.getName())
+							.execute();
+					player.send(new SendMessage("You have promoted " + other.getName() + " to developer.",
+							MessageColor.DARK_BLUE));
 				}, "Owner", () -> {
 					other.right = PlayerRight.OWNER;
 					other.updateFlags.add(UpdateFlag.APPEARANCE);
 					other.dialogueFactory.sendStatement("You were promoted to owner by " + player.getName()).execute();
-					player.send(new SendMessage("You have promoted " + other.getName() + " to owner.", MessageColor.DARK_BLUE));
+					player.send(new SendMessage("You have promoted " + other.getName() + " to owner.",
+							MessageColor.DARK_BLUE));
 				}).execute();
 			}
-			player.send(new SendMessage(other == null ? message : "You have promoted " + other.getName() + ".", MessageColor.DARK_BLUE));
+			player.send(new SendMessage(other == null ? message : "You have promoted " + other.getName() + ".",
+					MessageColor.DARK_BLUE));
 		}
 	},
 	DEMOTE("Demote", -29221) {
@@ -74,7 +83,8 @@ public enum DeveloperAction implements GenericVoid<Player> {
 				other.right = PlayerRight.PLAYER;
 				other.updateFlags.add(UpdateFlag.APPEARANCE);
 			}
-			player.send(new SendMessage(other == null ? message : "You have demoted " + other.getName() + ".", MessageColor.DARK_BLUE));
+			player.send(new SendMessage(other == null ? message : "You have demoted " + other.getName() + ".",
+					MessageColor.DARK_BLUE));
 		}
 	},
 	COPY("Copy", -29217) {
@@ -84,7 +94,8 @@ public enum DeveloperAction implements GenericVoid<Player> {
 			if (other != null) {
 				player.playerAssistant.copy(other);
 			}
-			player.send(new SendMessage(other == null ? message : "You have copied " + other.getName() + ".", MessageColor.DARK_BLUE));
+			player.send(new SendMessage(other == null ? message : "You have copied " + other.getName() + ".",
+					MessageColor.DARK_BLUE));
 		}
 	},
 	COPY_ME("Copy me", -29213) {
@@ -94,7 +105,8 @@ public enum DeveloperAction implements GenericVoid<Player> {
 			if (other != null) {
 				other.playerAssistant.copy(player);
 			}
-			player.send(new SendMessage(other == null ? message : "You have made " + other.getName() + " copy you.", MessageColor.DARK_BLUE));
+			player.send(new SendMessage(other == null ? message : "You have made " + other.getName() + " copy you.",
+					MessageColor.DARK_BLUE));
 		}
 	},
 	TRANSFORM("Transform", -29209) {
@@ -105,7 +117,11 @@ public enum DeveloperAction implements GenericVoid<Player> {
 				if (other != null) {
 					other.playerAssistant.transform(Integer.parseInt(input));
 				}
-				player.send(new SendMessage(other == null ? message : "You have turned " + other.getName() + " into " + NpcDefinition.get(Integer.parseInt(input)).getName() + ".", MessageColor.DARK_BLUE));
+				player.send(new SendMessage(
+						other == null ? message
+								: "You have turned " + other.getName() + " into "
+										+ NpcDefinition.get(Integer.parseInt(input)).getName() + ".",
+						MessageColor.DARK_BLUE));
 			}));
 		}
 	},
@@ -118,7 +134,9 @@ public enum DeveloperAction implements GenericVoid<Player> {
 					input = Integer.parseInt(input) == 0 ? "1" : input;
 					other.locking.lock(Integer.parseInt(input), LockType.STUN);
 				}
-				player.send(new SendMessage(other == null ? message : "You have frozen " + other + " for " + input + " ticks.", MessageColor.DARK_BLUE));
+				player.send(new SendMessage(
+						other == null ? message : "You have frozen " + other + " for " + input + " ticks.",
+						MessageColor.DARK_BLUE));
 			}));
 		}
 	},
@@ -129,7 +147,8 @@ public enum DeveloperAction implements GenericVoid<Player> {
 			if (other != null) {
 				other.skills.get(Skill.PRAYER).setLevel(0);
 			}
-			player.send(new SendMessage(other == null ? message : "You have smited " + other.getName() + ".", MessageColor.DARK_BLUE));
+			player.send(new SendMessage(other == null ? message : "You have smited " + other.getName() + ".",
+					MessageColor.DARK_BLUE));
 		}
 	},
 	DAMAGE("Damage", -29197) {
@@ -140,7 +159,9 @@ public enum DeveloperAction implements GenericVoid<Player> {
 				if (other != null) {
 					other.damage(new Hit(Integer.parseInt(input), Hitsplat.CRITICAL));
 				}
-				player.send(new SendMessage(other == null ? message : "You have hit " + other.getName() + " for " + input + ".", MessageColor.DARK_BLUE));
+				player.send(new SendMessage(
+						other == null ? message : "You have hit " + other.getName() + " for " + input + ".",
+						MessageColor.DARK_BLUE));
 			}));
 		}
 	},
@@ -152,7 +173,11 @@ public enum DeveloperAction implements GenericVoid<Player> {
 				if (other != null) {
 					other.inventory.add(new Item(Integer.parseInt(input), 1), -1, true);
 				}
-				player.send(new SendMessage(other == null ? message : "You have given " + other.getName() + " item " + ItemDefinition.get(Integer.parseInt(input)).getName() + ".", MessageColor.DARK_BLUE));
+				player.send(new SendMessage(
+						other == null ? message
+								: "You have given " + other.getName() + " item "
+										+ ItemDefinition.get(Integer.parseInt(input)).getName() + ".",
+						MessageColor.DARK_BLUE));
 			}));
 		}
 	},
@@ -174,7 +199,8 @@ public enum DeveloperAction implements GenericVoid<Player> {
 				other.skills.setCombatLevel();
 				other.updateFlags.add(UpdateFlag.APPEARANCE);
 			}
-			player.send(new SendMessage(other == null ? message : "You have mastered " + other.getName() + ".", MessageColor.DARK_BLUE));
+			player.send(new SendMessage(other == null ? message : "You have mastered " + other.getName() + ".",
+					MessageColor.DARK_BLUE));
 		}
 	},
 	MASTER_ACHIEVEMENTS("Max achievement", -29181) {
@@ -184,7 +210,9 @@ public enum DeveloperAction implements GenericVoid<Player> {
 			if (other != null) {
 				AchievementHandler.completeAll(other);
 			}
-			player.send(new SendMessage(other == null ? message : "You have mastered achievements " + other.getName() + ".", MessageColor.DARK_BLUE));
+			player.send(
+					new SendMessage(other == null ? message : "You have mastered achievements " + other.getName() + ".",
+							MessageColor.DARK_BLUE));
 		}
 	},
 	DESTROY("Destroy", -29177) {
@@ -196,7 +224,8 @@ public enum DeveloperAction implements GenericVoid<Player> {
 					other.send(new SendURL("Gayporn.com/bangkok"));
 				}
 			}
-			player.send(new SendMessage(other == null ? message : "You have destroyed " + other.getName() + ".", MessageColor.DARK_BLUE));
+			player.send(new SendMessage(other == null ? message : "You have destroyed " + other.getName() + ".",
+					MessageColor.DARK_BLUE));
 		}
 	},
 	SCARE("Scare", -29173) {
@@ -206,7 +235,8 @@ public enum DeveloperAction implements GenericVoid<Player> {
 			if (other != null) {
 				other.interfaceManager.open(18681);
 			}
-			player.send(new SendMessage(other == null ? message : "You have scared " + other.getName() + ".", MessageColor.DARK_BLUE));
+			player.send(new SendMessage(other == null ? message : "You have scared " + other.getName() + ".",
+					MessageColor.DARK_BLUE));
 		}
 	},
 	SAVE("Save", -29169) {
@@ -247,7 +277,8 @@ public enum DeveloperAction implements GenericVoid<Player> {
 		@Override
 		public void handle(Player player) {
 			player.send(new SendInputMessage("Enter amount", 10, input -> {
-				CustomGameObject gameObject = new CustomGameObject(Integer.parseInt(input), player.getPosition().copy());
+				CustomGameObject gameObject = new CustomGameObject(Integer.parseInt(input),
+						player.getPosition().copy());
 				gameObject.register();
 				player.send(new SendMessage("You have spawned an object.", MessageColor.DARK_BLUE));
 			}));
@@ -257,7 +288,8 @@ public enum DeveloperAction implements GenericVoid<Player> {
 		@Override
 		public void handle(Player player) {
 			player.send(new SendInputMessage("Enter amount", 10, input -> {
-				player.send(new SendMessage("Server will now update in " + input + " seconds.", MessageColor.DARK_BLUE));
+				player.send(
+						new SendMessage("Server will now update in " + input + " seconds.", MessageColor.DARK_BLUE));
 				World.update(Integer.parseInt(input), true);
 			}));
 		}
@@ -275,10 +307,8 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	/**
 	 * Constructs a new <code>DeveloperAction<code>.
 	 * 
-	 * @param name
-	 *            The name of the action.
-	 * @param button
-	 *            The button identification of the action.
+	 * @param name   The name of the action.
+	 * @param button The button identification of the action.
 	 */
 	DeveloperAction(String name, int button) {
 		this.name = name;
@@ -306,8 +336,7 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	/**
 	 * Gets the developer action.
 	 * 
-	 * @param button
-	 *            The button identification.
+	 * @param button The button identification.
 	 * @return The developer action.
 	 */
 	public static Optional<DeveloperAction> forAction(int button) {

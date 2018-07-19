@@ -16,35 +16,29 @@ public class NpcCommand implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 
-    		int id = Integer.parseInt(command[1]);
-            Npc npc = new Npc(id, player.getPosition(), Config.NPC_WALKING_RADIUS);
-            npc.walk = false;
-            npc.register();
+		int id = Integer.parseInt(command[1]);
+		Npc npc = new Npc(id, player.getPosition(), Config.NPC_WALKING_RADIUS);
+		npc.walk = false;
+		npc.register();
 
-            if (id == 3080) {
-                npc.skills.setNpcMaxLevel(3, 99_999);
-                npc.locking.lock();
-            }
-            if (id == 2267 || id == 2266 || id == 2265) {
-                npc.locking.lock();
-            }
-            if (id == 2075) {
-                npc.skills.setNpcMaxLevel(3, 800);
-            }
-            player.send(new SendMessage("Npc " + id + " has been spawned."));
-        
-    	
-    
-	
-	
+		if (id == 3080) {
+			npc.skills.setNpcMaxLevel(3, 99_999);
+			npc.locking.lock();
+		}
+		if (id == 2267 || id == 2266 || id == 2265) {
+			npc.locking.lock();
+		}
+		if (id == 2075) {
+			npc.skills.setNpcMaxLevel(3, 800);
+		}
+		player.send(new SendMessage("Npc " + id + " has been spawned."));
+
 	}
-
-
 
 	@Override
 	public boolean canUse(Player player) {
-		if(PlayerRight.isDeveloper(player)) {
-		return true;
+		if (PlayerRight.isDeveloper(player)) {
+			return true;
 		}
 		player.speak("Hey everyone, i just tried doing something silly.");
 		return false;

@@ -8,18 +8,18 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 public abstract class PlayerDBProperty {
 
-    private final String name;
+	private final String name;
 
-    public PlayerDBProperty(String name) {
-        this.name = name;
-    }
+	public PlayerDBProperty(String name) {
+		this.name = name;
+	}
 
-    abstract void read(Player player, JdbcSession session) throws SQLException;
+	abstract void read(Player player, JdbcSession session) throws SQLException;
 
-    abstract void write(Player player, JdbcSession session) throws SQLException;
+	abstract void write(Player player, JdbcSession session) throws SQLException;
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
 }

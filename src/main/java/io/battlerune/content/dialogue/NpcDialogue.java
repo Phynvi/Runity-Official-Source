@@ -1,7 +1,8 @@
 package io.battlerune.content.dialogue;
 
 /**
- * The {@link Chainable} implementation that represents dialogue in which an NPC is talking.
+ * The {@link Chainable} implementation that represents dialogue in which an NPC
+ * is talking.
  *
  * @author Seven
  */
@@ -25,11 +26,9 @@ public final class NpcDialogue implements Chainable {
 	/**
 	 * Creates a new {@link NpcDialogue}
 	 *
-	 * @param id
-	 * 		The id of this npc.
+	 * @param id    The id of this npc.
 	 *
-	 * @param lines
-	 * 		The text for this dialogue.
+	 * @param lines The text for this dialogue.
 	 */
 	public NpcDialogue(int id, String... lines) {
 		this(id, Expression.DEFAULT, lines);
@@ -38,14 +37,11 @@ public final class NpcDialogue implements Chainable {
 	/**
 	 * Creates a new {@link NpcDialogue}
 	 *
-	 * @param id
-	 * 		The id of this npc.
+	 * @param id         The id of this npc.
 	 *
-	 * @param expression
-	 * 		The expression of this npc.
+	 * @param expression The expression of this npc.
 	 *
-	 * 	@param lines
-	 * 		The text for this dialogue.
+	 * @param lines      The text for this dialogue.
 	 */
 	public NpcDialogue(int id, Expression expression, String... lines) {
 		this.id = id;

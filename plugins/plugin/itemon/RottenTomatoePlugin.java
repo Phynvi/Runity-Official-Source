@@ -14,20 +14,20 @@ import io.battlerune.game.world.items.Item;
  */
 public class RottenTomatoePlugin extends PluginContext {
 
-    @Override
-    protected boolean itemOnNpc(Player player, ItemOnNpcEvent event) {
-        if (!PlayerRight.isDonator(player) || !PlayerRight.isDeveloper(player) || !PlayerRight.isManagement(player))
-            return false;
+	@Override
+	protected boolean itemOnNpc(Player player, ItemOnNpcEvent event) {
+		if (!PlayerRight.isDonator(player) || !PlayerRight.isDeveloper(player) || !PlayerRight.isManagement(player))
+			return false;
 
-        Item item = event.getUsed();
+		Item item = event.getUsed();
 
-        if (item.getId() != 5733)
-            return false;
+		if (item.getId() != 5733)
+			return false;
 
-        Npc npc = event.getNpc();
+		Npc npc = event.getNpc();
 
-        player.dialogueFactory.sendStatement("<col=255>" + npc.getName(), "spawn=" + npc.spawnPosition + "");
-        player.dialogueFactory.execute();
-        return true;
-    }
+		player.dialogueFactory.sendStatement("<col=255>" + npc.getName(), "spawn=" + npc.spawnPosition + "");
+		player.dialogueFactory.execute();
+		return true;
+	}
 }

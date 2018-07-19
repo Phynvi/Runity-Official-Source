@@ -17,8 +17,8 @@ public class SendRemoveObject extends OutgoingPacket {
 	@Override
 	public boolean encode(Player player) {
 		player.send(new SendCoordinate(object.getPosition()));
-		builder.writeByte(object.getObjectType().getId() << 2 | (object.getDirection().getId() & 3), ByteModification.NEG)
-		.writeByte(0);
+		builder.writeByte(object.getObjectType().getId() << 2 | (object.getDirection().getId() & 3),
+				ByteModification.NEG).writeByte(0);
 		return true;
 	}
 }

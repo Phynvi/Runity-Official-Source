@@ -6,6 +6,6 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 public interface ClientSynchronizer {
 
-    void synchronize(MobList<Player> players, MobList<Npc> npcs);
+	void synchronize(MobList<Player> players, MobList<Npc> npcs);
 
 }

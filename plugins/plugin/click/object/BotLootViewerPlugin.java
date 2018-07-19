@@ -16,36 +16,35 @@ import io.battlerune.util.Utility;
 
 public class BotLootViewerPlugin extends PluginContext {
 
-    @Override
-    protected boolean firstClickObject(Player player, ObjectClickEvent event) {
-        if (event.getObject().getId() != 24099)
-            return false;
+	@Override
+	protected boolean firstClickObject(Player player, ObjectClickEvent event) {
+		if (event.getObject().getId() != 24099)
+			return false;
 
-        long value = 0;
+		long value = 0;
 
-        List<Item> items = new LinkedList<>();
+		List<Item> items = new LinkedList<>();
 
-        for (Map.Entry<Integer, MutableNumber> entry : BotUtility.BOOT_LOOT.entrySet()) {
-            int id = entry.getKey();
-            int amount = entry.getValue().get();
+		for (Map.Entry<Integer, MutableNumber> entry : BotUtility.BOOT_LOOT.entrySet()) {
+			int id = entry.getKey();
+			int amount = entry.getValue().get();
 
-            Item item = new Item(id, amount);
-            items.add(item);
-            value += item.getValue() * item.getAmount();
-        }
+			Item item = new Item(id, amount);
+			items.add(item);
+			value += item.getValue() * item.getAmount();
+		}
 
+		items.sort((first, second) -> second.getValue() - first.getValue());
 
-        items.sort((first, second) -> second.getValue() - first.getValue());
+		int index = 0;
+		for (Item item : items) {
+			player.send(new SendItemOnInterfaceSlot(37560, item, index++));
+		}
 
-        int index = 0;
-        for (Item item : items) {
-            player.send(new SendItemOnInterfaceSlot(37560, item, index++));
-        }
-
-        player.send(new SendString("Total value: " + Utility.formatPrice(value), 37553));
-        player.send(new SendString("Total items: " + Utility.formatDigits(index), 37554));
-        player.interfaceManager.open(37550);
-        return true;
-    }
+		player.send(new SendString("Total value: " + Utility.formatPrice(value), 37553));
+		player.send(new SendString("Total items: " + Utility.formatDigits(index), 37554));
+		player.interfaceManager.open(37550);
+		return true;
+	}
 
 }

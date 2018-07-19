@@ -17,21 +17,21 @@ import io.battlerune.net.packet.out.SendRemoveObject;
  * @author Daniel
  */
 public class Cannon extends Entity {
-	
+
 	private final String owner;
-	
+
 	private final Position position;
-	
+
 	private CustomGameObject object;
-	
+
 	private int ammunition;
-	
+
 	private boolean firing;
-	
-    private Setup stage;
-    
-    private Rotation rotation;
-	
+
+	private Setup stage;
+
+	private Rotation rotation;
+
 	Cannon(String owner, Position position) {
 		super(position);
 		this.owner = owner;
@@ -42,51 +42,51 @@ public class Cannon extends Entity {
 		this.rotation = Rotation.NORTH;
 		this.object = new CustomGameObject(8, position);
 	}
-	
+
 	public String getOwner() {
 		return owner;
 	}
-	
+
 	public Position getPosition() {
 		return position;
 	}
-	
+
 	public int getAmmunition() {
 		return ammunition;
 	}
-	
+
 	public void setAmmunition(int ammunition) {
 		this.ammunition = ammunition;
 	}
-	
+
 	public boolean isFiring() {
 		return firing;
 	}
-	
+
 	public void setFiring(boolean firing) {
 		this.firing = firing;
 	}
-	
+
 	public Setup getStage() {
 		return stage;
 	}
-	
+
 	public void setStage(Setup stage) {
 		this.stage = stage;
 	}
-	
+
 	public CustomGameObject getObject() {
 		return object;
 	}
-	
+
 	public void setObject(CustomGameObject object) {
 		this.object = object;
 	}
-	
+
 	public Rotation getRotation() {
 		return rotation;
 	}
-	
+
 	public void setRotation(Rotation rotation) {
 		this.rotation = rotation;
 	}
@@ -96,7 +96,7 @@ public class Cannon extends Entity {
 		if (!isRegistered()) {
 			Region region = getRegion();
 			setRegistered(true);
-			
+
 			if (region == null) {
 				setPosition(getPosition());
 			} else if (!region.containsObject(getHeight(), object)) {
@@ -114,14 +114,16 @@ public class Cannon extends Entity {
 
 	@Override
 	public void addToRegion(Region region) {
-		region.getPlayers(getHeight()).stream().filter(Player::isValid).forEach(player -> player.send(new SendAddObject(object)));
+		region.getPlayers(getHeight()).stream().filter(Player::isValid)
+				.forEach(player -> player.send(new SendAddObject(object)));
 	}
 
 	@Override
 	public void removeFromRegion(Region region) {
-		region.getPlayers(getHeight()).stream().filter(Player::isValid).forEach(player -> player.send(new SendRemoveObject(object)));
+		region.getPlayers(getHeight()).stream().filter(Player::isValid)
+				.forEach(player -> player.send(new SendRemoveObject(object)));
 	}
-	
+
 	@Override
 	public String getName() {
 		return "Dwarf cannon";

@@ -31,8 +31,6 @@ public final class PlayerPreUpdateTask extends SynchronizationTask {
 //				}
 //				stopwatch.reset();
 
-
-
 //				elapsed = stopwatch.elapsedTime(TimeUnit.MILLISECONDS);
 //				if (elapsed > 0) {
 //					System.out.println(String.format("sequence: %d", elapsed));

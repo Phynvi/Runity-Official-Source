@@ -12,24 +12,24 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 /** @author Michael | Chex */
 public class DagannothPrime extends MultiStrategy {
 
-    public DagannothPrime() {
-        currentStrategy = new WaterWave();
-    }
+	public DagannothPrime() {
+		currentStrategy = new WaterWave();
+	}
 
-    @Override
-    public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {
-        return attacker.definition.getAttackDelay();
-    }
+	@Override
+	public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {
+		return attacker.definition.getAttackDelay();
+	}
 
-    private static class WaterWave extends NpcMagicStrategy {
-        private WaterWave() {
-            super(getDefinition("Water Wave"));
-        }
+	private static class WaterWave extends NpcMagicStrategy {
+		private WaterWave() {
+			super(getDefinition("Water Wave"));
+		}
 
-        @Override
-        public CombatHit[] getHits(Npc attacker, Mob defender) {
-            return new CombatHit[] { nextMagicHit(attacker, defender, 50) };
-        }
-    }
+		@Override
+		public CombatHit[] getHits(Npc attacker, Mob defender) {
+			return new CombatHit[] { nextMagicHit(attacker, defender, 50) };
+		}
+	}
 
 }

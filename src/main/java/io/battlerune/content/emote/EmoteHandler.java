@@ -21,8 +21,7 @@ public class EmoteHandler {
 	/**
 	 * Handles refreshing the emote tab.
 	 * 
-	 * @param player
-	 *            The player refreshing the emote tab.
+	 * @param player The player refreshing the emote tab.
 	 */
 	public static void refresh(Player player) {
 		for (Emote emote : Emote.values()) {
@@ -37,8 +36,7 @@ public class EmoteHandler {
 	/**
 	 * Updates the skillcape emote.
 	 * 
-	 * @param player
-	 *            The player instance.
+	 * @param player The player instance.
 	 */
 	public static void updateSkillcape(Player player) {
 		int flag = 1;
@@ -50,7 +48,7 @@ public class EmoteHandler {
 				flag = 0;
 			}
 		}
-		
+
 		player.send(new SendConfig(1114, flag));
 	}
 
@@ -80,24 +78,22 @@ public class EmoteHandler {
 	/**
 	 * Handles unlocking an emote.
 	 * 
-	 * @param player
-	 *            the player unlocking the emote.
-	 * @param emote
-	 *            The emote being activated.
+	 * @param player the player unlocking the emote.
+	 * @param emote  The emote being activated.
 	 */
 	public static void unlock(Player player, EmoteUnlockable emote) {
 		if (!player.emoteUnlockable.contains(emote)) {
 			player.emoteUnlockable.add(emote);
 			refresh(player);
-			player.send(new SendMessage("Congratulations, you have unlocked the " + Utility.formatEnum(emote.name()) + " emote."));
+			player.send(new SendMessage(
+					"Congratulations, you have unlocked the " + Utility.formatEnum(emote.name()) + " emote."));
 		}
 	}
 
 	/**
 	 * Handles unlocking all the emotes.
 	 * 
-	 * @param player
-	 *            The player unlocking all the emotes.
+	 * @param player The player unlocking all the emotes.
 	 */
 	public static void unlockAll(Player player) {
 		Arrays.stream(EmoteUnlockable.values()).forEach(e -> {

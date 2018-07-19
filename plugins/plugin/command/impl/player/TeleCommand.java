@@ -24,12 +24,10 @@ public class TeleCommand implements Command {
 	@Override
 	public boolean canUse(Player player) {
 		// TODO Auto-generated method stub
-		if(PlayerRight.isDeveloper(player))
-		{
-		return true;
+		if (PlayerRight.isDeveloper(player)) {
+			return true;
 		}
 		player.speak("I just tried to do something silly!");
 		return false;
 	}
-	}
-
+}

@@ -6,6 +6,5 @@ package io.battlerune.content.activity.impl.warriorguild;
  * @author Daniel.
  */
 public enum WarriorGuildState {
-    ANIMATOR,
-    CYCLOPS
+	ANIMATOR, CYCLOPS
 }

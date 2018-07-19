@@ -16,6 +16,7 @@ import io.battlerune.net.packet.out.SendMessage;
 
 /**
  * Handles burying a bone.
+ * 
  * @author Michael | Chex
  */
 public final class BuryBoneAction extends SkillAction {
@@ -23,17 +24,17 @@ public final class BuryBoneAction extends SkillAction {
 	private final Item item;
 	private final BoneData bone;
 
-    public BuryBoneAction(Player player, BoneData bone, int slot) {
-        super(player, Optional.empty(), true);
+	public BuryBoneAction(Player player, BoneData bone, int slot) {
+		super(player, Optional.empty(), true);
 		this.slot = slot;
-        this.bone = bone;
-        this.item = player.inventory.get(slot);
+		this.bone = bone;
+		this.item = player.inventory.get(slot);
 	}
 
 	@Override
 	public boolean canInit() {
-        return getMob().skills.getSkills()[skill()].stopwatch.elapsed(1200);
-    }
+		return getMob().skills.getSkills()[skill()].stopwatch.elapsed(1200);
+	}
 
 	@Override
 	public void init() {

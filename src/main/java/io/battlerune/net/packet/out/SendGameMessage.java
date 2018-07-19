@@ -7,7 +7,7 @@ import io.battlerune.net.packet.PacketType;
 /**
  * The {@code OutgoingPacket} responsible for sending game messages.
  * 
- * @author Daniel 
+ * @author Daniel
  */
 public class SendGameMessage extends OutgoingPacket {
 
@@ -28,11 +28,10 @@ public class SendGameMessage extends OutgoingPacket {
 		this.time = -1;
 		this.context = context;
 	}
-	
+
 	@Override
 	public boolean encode(Player player) {
-		builder.writeShort(id).writeShort(time * 3000)
-		.writeString(String.valueOf(context));
+		builder.writeShort(id).writeShort(time * 3000).writeString(String.valueOf(context));
 		return true;
 	}
 

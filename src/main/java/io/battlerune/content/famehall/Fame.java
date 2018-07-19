@@ -19,12 +19,9 @@ public class Fame {
 	/**
 	 * Constructs a new <code>Fame<code>.
 	 * 
-	 * @param fame
-	 *            The fame type.
-	 * @param name
-	 *            The player name.
-	 * @param accomplished
-	 *            The accomplished date.
+	 * @param fame         The fame type.
+	 * @param name         The player name.
+	 * @param accomplished The accomplished date.
 	 */
 	public Fame(FameType fame, String name, String accomplished) {
 		this.fame = fame;

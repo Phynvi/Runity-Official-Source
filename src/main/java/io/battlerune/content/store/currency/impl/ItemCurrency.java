@@ -12,41 +12,41 @@ import io.battlerune.game.world.items.ItemDefinition;
  */
 public final class ItemCurrency implements Currency {
 
-    /** The item id for this currency. */
-    public final int itemId;
+	/** The item id for this currency. */
+	public final int itemId;
 
-    /** Constructs a new {@link ItemCurrency}. */
-    public ItemCurrency(int itemId) {
-        this.itemId = itemId;
-    }
+	/** Constructs a new {@link ItemCurrency}. */
+	public ItemCurrency(int itemId) {
+		this.itemId = itemId;
+	}
 
-    @Override
-    public boolean tangible() {
-        return true;
-    }
+	@Override
+	public boolean tangible() {
+		return true;
+	}
 
-    @Override
-    public boolean takeCurrency(Player player, int amount) {
-        return player.inventory.remove(new Item(itemId, amount));
-    }
+	@Override
+	public boolean takeCurrency(Player player, int amount) {
+		return player.inventory.remove(new Item(itemId, amount));
+	}
 
-    @Override
-    public void recieveCurrency(Player player, int amount) {
-        player.inventory.add(new Item(itemId, amount));
-    }
+	@Override
+	public void recieveCurrency(Player player, int amount) {
+		player.inventory.add(new Item(itemId, amount));
+	}
 
-    @Override
-    public int currencyAmount(Player player) {
-        return player.inventory.computeAmountForId(itemId);
-    }
+	@Override
+	public int currencyAmount(Player player) {
+		return player.inventory.computeAmountForId(itemId);
+	}
 
-    @Override
-    public boolean canRecieveCurrency(Player player) {
-        return player.inventory.contains(itemId);
-    }
+	@Override
+	public boolean canRecieveCurrency(Player player) {
+		return player.inventory.contains(itemId);
+	}
 
-    @Override
-    public String toString() {
-        return ItemDefinition.get(itemId).getName();
-    }
+	@Override
+	public String toString() {
+		return ItemDefinition.get(itemId).getName();
+	}
 }

@@ -10,7 +10,6 @@ import io.battlerune.game.world.position.Position;
 import io.battlerune.util.Utility;
 import io.battlerune.util.parser.GsonParser;
 
-
 /**
  * Parses through the npc spawn file and creates {@link Npc}s on startup.
  *
@@ -18,113 +17,114 @@ import io.battlerune.util.parser.GsonParser;
  */
 public class NpcForceChatParser extends GsonParser {
 
-    /**
-     * The map containing all the forced messages.
-     */
-    public static final Map<Position, ForcedMessage> FORCED_MESSAGES = new HashMap<>();
+	/**
+	 * The map containing all the forced messages.
+	 */
+	public static final Map<Position, ForcedMessage> FORCED_MESSAGES = new HashMap<>();
 
-    /**
-     * Constructs a new <code>NpcForceChatParser</code>.
-     */
-    public NpcForceChatParser() {
-        super("def/npc/npc_force_chat", false);
-    }
+	/**
+	 * Constructs a new <code>NpcForceChatParser</code>.
+	 */
+	public NpcForceChatParser() {
+		super("def/npc/npc_force_chat", false);
+	}
 
-    @Override
-    protected void parse(JsonObject data) {
-        final int id = data.get("id").getAsInt();
-        final Position position = builder.fromJson(data.get("position"), Position.class);
-        final int interval = data.get("interval").getAsInt();
+	@Override
+	protected void parse(JsonObject data) {
+		final int id = data.get("id").getAsInt();
+		final Position position = builder.fromJson(data.get("position"), Position.class);
+		final int interval = data.get("interval").getAsInt();
 
-        final MessageType type = MessageType.valueOf(data.get("type").getAsString());
+		final MessageType type = MessageType.valueOf(data.get("type").getAsString());
 
-        String[] messages = new String[]{};
+		String[] messages = new String[] {};
 
-        if (data.has("messages")) {
-            messages = builder.fromJson(data.get("messages"), String[].class);
-        }
+		if (data.has("messages")) {
+			messages = builder.fromJson(data.get("messages"), String[].class);
+		}
 
-        FORCED_MESSAGES.put(position, new ForcedMessage(id, interval, messages, type));
-    }
+		FORCED_MESSAGES.put(position, new ForcedMessage(id, interval, messages, type));
+	}
 
-    /**
-     * The forced message class.
-     */
-    public static class ForcedMessage {
-        /**
-         * The npc id.
-         */
-        private final int id;
+	/**
+	 * The forced message class.
+	 */
+	public static class ForcedMessage {
+		/**
+		 * The npc id.
+		 */
+		private final int id;
 
-        /**
-         * The interval at which the message will be performed.
-         */
-        private final int interval;
+		/**
+		 * The interval at which the message will be performed.
+		 */
+		private final int interval;
 
-        /**
-         * The array of messages the npc will perform.
-         */
-        private final String[] messages;
+		/**
+		 * The array of messages the npc will perform.
+		 */
+		private final String[] messages;
 
-        /**
-         * The message type.
-         */
-        private final MessageType type;
+		/**
+		 * The message type.
+		 */
+		private final MessageType type;
 
-        /**
-         * The next message.
-         */
-        private int next = 0;
+		/**
+		 * The next message.
+		 */
+		private int next = 0;
 
-        /**
-         * Constructs a new <code>ForcedMessage</code>.
-         *
-         * @param id The npc id.
-         * @param interval The interval at which the npc will perform the message.
-         * @param messages The messages the npc will be forced to perform.
-         * @param type     The type of message.
-         */
-        public ForcedMessage(int id, int interval, String[] messages, MessageType type) {
-            this.id = id;
-            this.interval = interval;
-            this.messages = messages;
-            this.type = type;
-        }
+		/**
+		 * Constructs a new <code>ForcedMessage</code>.
+		 *
+		 * @param id       The npc id.
+		 * @param interval The interval at which the npc will perform the message.
+		 * @param messages The messages the npc will be forced to perform.
+		 * @param type     The type of message.
+		 */
+		public ForcedMessage(int id, int interval, String[] messages, MessageType type) {
+			this.id = id;
+			this.interval = interval;
+			this.messages = messages;
+			this.type = type;
+		}
 
-        public int getId() { return id; }
+		public int getId() {
+			return id;
+		}
 
-        public int getInterval() {
-            return interval;
-        }
+		public int getInterval() {
+			return interval;
+		}
 
-        public String[] getMessages() {
-            return messages;
-        }
+		public String[] getMessages() {
+			return messages;
+		}
 
-        public MessageType getType() {
-            return type;
-        }
+		public MessageType getType() {
+			return type;
+		}
 
-        public String nextMessage() {
-            switch (type) {
-                case NORMAL:
-                    if (next >= messages.length) {
-                        next = 0;
-                    }
-                    return messages[next++];
-                case RANDOM:
-                    return messages[Utility.random(messages.length)];
-                default:
-                    throw new IllegalArgumentException("Unhandled type: " + type + ".");
-            }
-        }
-    }
+		public String nextMessage() {
+			switch (type) {
+			case NORMAL:
+				if (next >= messages.length) {
+					next = 0;
+				}
+				return messages[next++];
+			case RANDOM:
+				return messages[Utility.random(messages.length)];
+			default:
+				throw new IllegalArgumentException("Unhandled type: " + type + ".");
+			}
+		}
+	}
 
-    /**
-     * The enum of message types.
-     */
-    private enum MessageType {
-        RANDOM,
-        NORMAL
-    }
+	/**
+	 * The enum of message types.
+	 */
+	private enum MessageType {
+		RANDOM, NORMAL
+	}
 }

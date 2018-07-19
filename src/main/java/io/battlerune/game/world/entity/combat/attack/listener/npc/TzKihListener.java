@@ -9,7 +9,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
 
 /** @author Daniel */
-@NpcCombatListenerSignature(npcs = {2189})
+@NpcCombatListenerSignature(npcs = { 2189 })
 public class TzKihListener extends SimplifiedListener<Npc> {
 
 	@Override

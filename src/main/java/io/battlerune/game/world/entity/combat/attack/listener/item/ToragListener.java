@@ -16,36 +16,37 @@ import io.battlerune.util.Utility;
  *
  * @author Daniel
  */
-@NpcCombatListenerSignature(npcs = {1676})
-@ItemCombatListenerSignature(requireAll = true, items = {4745, 4747, 4749, 4751})
+@NpcCombatListenerSignature(npcs = { 1676 })
+@ItemCombatListenerSignature(requireAll = true, items = { 4745, 4747, 4749, 4751 })
 public class ToragListener extends SimplifiedListener<Mob> {
 
-    @Override
-    public void hit(Mob attacker, Mob defender, Hit hit) {
-        if (defender.isPlayer() && hit.getDamage() > 1) {
-            boolean success = Utility.random(100) <= 25;
+	@Override
+	public void hit(Mob attacker, Mob defender, Hit hit) {
+		if (defender.isPlayer() && hit.getDamage() > 1) {
+			boolean success = Utility.random(100) <= 25;
 
-            if (!success)
-                return;
+			if (!success)
+				return;
 
-            Player player = defender.getPlayer();
-            int energy = player.runEnergy;
-            int drain = energy < 50 ? 10 : 20;
+			Player player = defender.getPlayer();
+			int energy = player.runEnergy;
+			int drain = energy < 50 ? 10 : 20;
 
-            energy -= drain;
+			energy -= drain;
 
-            if (energy < 0)
-                energy = 0;
+			if (energy < 0)
+				energy = 0;
 
-            player.runEnergy = energy;
-            player.send(new SendMessage(drain + "% run energy has been drained by " + attacker.getName() + "."));
-            player.graphic(new Graphic(399, UpdatePriority.VERY_HIGH));
+			player.runEnergy = energy;
+			player.send(new SendMessage(drain + "% run energy has been drained by " + attacker.getName() + "."));
+			player.graphic(new Graphic(399, UpdatePriority.VERY_HIGH));
 
-            if (attacker.isPlayer()) {
-                attacker.getPlayer().send(new SendMessage("You have drained " + drain +"% of " + defender.getName() + "'s run energy."));
-            }
-        }
+			if (attacker.isPlayer()) {
+				attacker.getPlayer().send(
+						new SendMessage("You have drained " + drain + "% of " + defender.getName() + "'s run energy."));
+			}
+		}
 
-        super.hit(attacker, defender, hit);
-    }
+		super.hit(attacker, defender, hit);
+	}
 }

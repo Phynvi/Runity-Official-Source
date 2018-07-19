@@ -14,41 +14,40 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.util.RandomUtils;
 
-@NpcCombatListenerSignature(npcs = {4005})
+@NpcCombatListenerSignature(npcs = { 4005 })
 public class DarkBeast extends SimplifiedListener<Npc> {
-    private static MagicAttack MAGIC = new MagicAttack();
+	private static MagicAttack MAGIC = new MagicAttack();
 
-    @Override
-    public void start(Npc attacker, Mob defender, Hit[] hits) {
-        if (RandomUtils.success(.85)) {
-            attacker.setStrategy(NpcMeleeStrategy.get());
-        } else {
-            attacker.setStrategy(MAGIC);
-        }
-    }
+	@Override
+	public void start(Npc attacker, Mob defender, Hit[] hits) {
+		if (RandomUtils.success(.85)) {
+			attacker.setStrategy(NpcMeleeStrategy.get());
+		} else {
+			attacker.setStrategy(MAGIC);
+		}
+	}
 
+	private static class MagicAttack extends NpcMagicStrategy {
+		private MagicAttack() {
+			super(getDefinition("Fire Bolt"));
+		}
 
-    private static class MagicAttack extends NpcMagicStrategy {
-        private MagicAttack() {
-            super(getDefinition("Fire Bolt"));
-        }
+		@Override
+		public void start(Npc attacker, Mob defender, Hit[] hits) {
+			attacker.animate(new Animation(2730, UpdatePriority.VERY_HIGH));
+			combatProjectile.sendProjectile(attacker, defender);
 
-        @Override
-        public void start(Npc attacker, Mob defender, Hit[] hits) {
-            attacker.animate(new Animation(2730, UpdatePriority.VERY_HIGH));
-            combatProjectile.sendProjectile(attacker, defender);
+		}
 
-        }
+		@Override
+		public void hit(Npc attacker, Mob defender, Hit hit) {
+		}
 
-        @Override
-        public void hit(Npc attacker, Mob defender, Hit hit) {
-        }
-
-        @Override
-        public CombatHit[] getHits(Npc attacker, Mob defender) {
-            CombatHit hit = nextMagicHit(attacker, defender, 8, 2, 1);
-            hit.setAccurate(true);
-            return new CombatHit[]{hit};
-        }
-    }
+		@Override
+		public CombatHit[] getHits(Npc attacker, Mob defender) {
+			CombatHit hit = nextMagicHit(attacker, defender, 8, 2, 1);
+			hit.setAccurate(true);
+			return new CombatHit[] { hit };
+		}
+	}
 }

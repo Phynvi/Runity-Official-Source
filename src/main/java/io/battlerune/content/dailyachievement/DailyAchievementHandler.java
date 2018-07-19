@@ -113,10 +113,13 @@ public class DailyAchievementHandler {
 		return getTotalCompleted(player) == DailyAchievementList.getTotal();
 	}
 
-	private static List<DailyAchievementList> ach = new ArrayList<DailyAchievementList>();// redo this - harryl - to store button ids! leave this here will redo that part later
+	private static List<DailyAchievementList> ach = new ArrayList<DailyAchievementList>();// redo this - harryl - to
+																							// store button ids! leave
+																							// this here will redo that
+																							// part later
 	private static DailyAchievementList current;
-    private static int count = 37331;
-    
+	private static int count = 37331;
+
 	public static DailyAchievementList getCurrent() {
 		return current;
 	}
@@ -135,16 +138,16 @@ public class DailyAchievementHandler {
 				setCurrent(DailyAchievementList.values()[random.nextInt(DailyAchievementList.values().length)]);
 			}
 		}
-		setCurrent(null);//btw the achievements are in order like from numbers to a-z
+		setCurrent(null);// btw the achievements are in order like from numbers to a-z
 	}
 
 	public static void sendDailyAchievements(Player player, int amount) {
 		refreshDailyAchievementsInterface(player);
 		rotateDailyAchievements(player, amount);
 		ach.stream().sorted().forEachOrdered(achievement -> {
-				if (achievement != null) {
-					player.send(new SendString(achievement.getTask(), count++));
-				}
+			if (achievement != null) {
+				player.send(new SendString(achievement.getTask(), count++));
+			}
 		});
 	}
 

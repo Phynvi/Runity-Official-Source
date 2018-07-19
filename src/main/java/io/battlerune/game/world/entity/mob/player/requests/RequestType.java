@@ -6,10 +6,10 @@ package io.battlerune.game.world.entity.mob.player.requests;
  * @author Graham Edgecombe
  */
 public enum RequestType {
-	
-	/** A trade request. */	
+
+	/** A trade request. */
 	TRADE("tradereq"),
-	
+
 	/** A duel request. */
 	DUEL("duelreq");
 
@@ -19,10 +19,9 @@ public enum RequestType {
 	/**
 	 * Creates a type of request.
 	 * 
-	 * @param clientName
-	 *            The name of the request client-side.
+	 * @param clientName The name of the request client-side.
 	 */
-    RequestType(String clientName) {
+	RequestType(String clientName) {
 		this.clientName = clientName;
 	}
 

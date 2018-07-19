@@ -11,28 +11,28 @@ import io.battlerune.game.world.entity.skill.Skill;
 
 public class ScorpiaOffspring extends MultiStrategy {
 
-    public ScorpiaOffspring() {
-        currentStrategy = new Ranged();
-    }
+	public ScorpiaOffspring() {
+		currentStrategy = new Ranged();
+	}
 
-    private static final class Ranged extends NpcRangedStrategy {
-        public Ranged() {
-            super(CombatProjectile.getDefinition("EMPTY"));
-        }
+	private static final class Ranged extends NpcRangedStrategy {
+		public Ranged() {
+			super(CombatProjectile.getDefinition("EMPTY"));
+		}
 
-        @Override
-        public void hit(Npc attacker, Mob defender, Hit hit) {
-            super.hit(attacker, defender, hit);
-            if (hit.getDamage() > 0) {
-                defender.skills.get(Skill.PRAYER).removeLevel(1);
-                defender.skills.refresh(Skill.PRAYER);
-            }
-        }
+		@Override
+		public void hit(Npc attacker, Mob defender, Hit hit) {
+			super.hit(attacker, defender, hit);
+			if (hit.getDamage() > 0) {
+				defender.skills.get(Skill.PRAYER).removeLevel(1);
+				defender.skills.refresh(Skill.PRAYER);
+			}
+		}
 
-        @Override
-        public int getAttackDistance(Npc attacker, FightType fightType) {
-            return 5;
-        }
-    }
+		@Override
+		public int getAttackDistance(Npc attacker, FightType fightType) {
+			return 5;
+		}
+	}
 
 }

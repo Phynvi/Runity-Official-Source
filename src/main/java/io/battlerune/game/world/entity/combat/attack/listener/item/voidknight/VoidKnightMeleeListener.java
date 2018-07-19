@@ -14,18 +14,18 @@ import io.battlerune.game.world.entity.mob.player.Player;
 @ItemCombatListenerSignature(requireAll = true, items = { 11665, 8839, 8840, 8842 })
 public class VoidKnightMeleeListener extends SimplifiedListener<Player> {
 
-    @Override
-    public int modifyAttackLevel(Player attacker, Mob defender, int level) {
-        if (attacker.getStrategy().getCombatType() != CombatType.MELEE)
-            return level;
-        return level * 11 / 10;
-    }
+	@Override
+	public int modifyAttackLevel(Player attacker, Mob defender, int level) {
+		if (attacker.getStrategy().getCombatType() != CombatType.MELEE)
+			return level;
+		return level * 11 / 10;
+	}
 
-    @Override
-    public int modifyStrengthLevel(Player attacker, Mob defender, int level) {
-        if (attacker.getStrategy().getCombatType() != CombatType.MELEE)
-            return level;
-        return level * 11 / 10;
-    }
+	@Override
+	public int modifyStrengthLevel(Player attacker, Mob defender, int level) {
+		if (attacker.getStrategy().getCombatType() != CombatType.MELEE)
+			return level;
+		return level * 11 / 10;
+	}
 
 }

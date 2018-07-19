@@ -16,8 +16,7 @@ public class SendExpCounterSetting extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeInt(type)
-		.writeInt(modification);
+		builder.writeInt(type).writeInt(modification);
 		return true;
 	}
 

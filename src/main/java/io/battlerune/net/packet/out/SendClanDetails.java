@@ -19,21 +19,18 @@ public class SendClanDetails extends OutgoingPacket {
 		this.clan = clanName;
 		this.rank = rank;
 	}
-	
+
 	public SendClanDetails(String message, String clan, ClanRank rank) {
 		this("", message, clan, rank);
 	}
-	
+
 	public SendClanDetails(String message, String clan) {
 		this("", message, clan, ClanRank.MEMBER);
 	}
-	
+
 	@Override
 	public boolean encode(Player player) {
-		builder.writeString(name)
-		.writeString(message)
-		.writeString(clan)
-		.writeShort(rank.rank);
+		builder.writeString(name).writeString(message).writeString(clan).writeShort(rank.rank);
 		return true;
 	}
 

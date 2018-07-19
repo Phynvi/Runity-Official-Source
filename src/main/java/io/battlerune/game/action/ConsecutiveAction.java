@@ -13,8 +13,7 @@ public abstract class ConsecutiveAction<T extends Mob> extends Action<T> {
 	/**
 	 * Generates a new {@code ConsecutiveAction} object.
 	 * 
-	 * @param mob
-	 *            The mob to apply this action to.
+	 * @param mob The mob to apply this action to.
 	 */
 	public ConsecutiveAction(T mob) {
 		super(mob, 1, true);
@@ -30,7 +29,8 @@ public abstract class ConsecutiveAction<T extends Mob> extends Action<T> {
 
 	/**
 	 * Adds an action to the {@code actions} list.
-	 * @param action	The action.
+	 * 
+	 * @param action The action.
 	 */
 	protected void add(Consumer<Action<T>> action) {
 		actions.add(action);
@@ -38,7 +38,8 @@ public abstract class ConsecutiveAction<T extends Mob> extends Action<T> {
 
 	/**
 	 * Adds an action to the {@code actions} list.
-	 * @param action	The action.
+	 * 
+	 * @param action The action.
 	 */
 	protected void addFirst(Consumer<Action<T>> action) {
 		actions.addFirst(action);

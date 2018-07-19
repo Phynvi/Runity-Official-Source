@@ -15,8 +15,7 @@ public abstract class TextFileParser extends GenericParser {
 	/**
 	 * Creates a new {@code TextFileParser}.
 	 *
-	 * @param path
-	 *      The path of the file to parse.
+	 * @param path The path of the file to parse.
 	 */
 	public TextFileParser(String path) {
 		this(path, true);
@@ -25,11 +24,9 @@ public abstract class TextFileParser extends GenericParser {
 	/**
 	 * Creates a new {@code TextFileParser}.
 	 *
-	 * @param path
-	 *      The path of the file to parse.
+	 * @param path The path of the file to parse.
 	 *
-	 * @param log
-	 * 		The flag that denotes to log messages.
+	 * @param log  The flag that denotes to log messages.
 	 */
 	public TextFileParser(String path, boolean log) {
 		super(path, ".txt", log);
@@ -38,15 +35,14 @@ public abstract class TextFileParser extends GenericParser {
 	/**
 	 * The method called when the file is being parsed.
 	 *
-	 * @param reader
-	 *      The underlying parser.
+	 * @param reader The underlying parser.
 	 */
 	public abstract void parse(BufferedReader reader) throws IOException;
 
 	@Override
 	public void deserialize() {
-		try(BufferedReader reader = new BufferedReader(new FileReader(path.toFile()))) {
-			while(reader.readLine() != null) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(path.toFile()))) {
+			while (reader.readLine() != null) {
 				parse(reader);
 				index++;
 			}
@@ -59,4 +55,3 @@ public abstract class TextFileParser extends GenericParser {
 	}
 
 }
-

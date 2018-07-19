@@ -2,6 +2,7 @@ package io.battlerune.content.playerguide;
 
 /**
  * Handles the difficulty of the player guide
+ * 
  * @author Nerik#8690
  *
  */

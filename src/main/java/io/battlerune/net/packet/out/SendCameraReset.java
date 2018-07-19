@@ -18,5 +18,5 @@ public class SendCameraReset extends OutgoingPacket {
 	public boolean encode(Player player) {
 		return true;
 	}
-	
+
 }

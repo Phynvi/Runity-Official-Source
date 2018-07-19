@@ -17,8 +17,7 @@ public class SendSideBarInterface extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeShort(interfaceId)
-		.writeByte(tabId, ByteModification.ADD);
+		builder.writeShort(interfaceId).writeByte(tabId, ByteModification.ADD);
 		return true;
 	}
 

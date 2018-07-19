@@ -11,24 +11,22 @@ import io.battlerune.net.packet.PacketType;
  */
 public class SendFadeScreen extends OutgoingPacket {
 
-    private final String message;
-    private final int state;
-    private final int seconds;
+	private final String message;
+	private final int state;
+	private final int seconds;
 
-    public SendFadeScreen(String message, int state, int seconds) {
-        super(189, PacketType.VAR_SHORT);
-        this.message = message;
-        this.state = state;
-        this.seconds = seconds;
-    }
+	public SendFadeScreen(String message, int state, int seconds) {
+		super(189, PacketType.VAR_SHORT);
+		this.message = message;
+		this.state = state;
+		this.seconds = seconds;
+	}
 
-    @Override
-    public boolean encode(Player player) {
-        player.interfaceManager.close();
-        builder.writeString(message)
-        .writeByte(state)
-        .writeByte(seconds);
-        return true;
-    }
+	@Override
+	public boolean encode(Player player) {
+		player.interfaceManager.close();
+		builder.writeString(message).writeByte(state).writeByte(seconds);
+		return true;
+	}
 
 }

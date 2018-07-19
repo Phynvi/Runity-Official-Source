@@ -39,14 +39,13 @@ public class FameHandler {
 	/**
 	 * Checks if player should be entered in the hall of fame.
 	 * 
-	 * @param player
-	 *            The player instance.
-	 * @param fameEntry
-	 *            The fame entry.
+	 * @param player    The player instance.
+	 * @param fameEntry The fame entry.
 	 */
 	public static void activate(Player player, FameEntry fameEntry) {
 		if (!HALL_OF_FAME.containsKey(fameEntry)) {
-			HALL_OF_FAME.put(fameEntry, new Fame(fameEntry.getType(), PlayerRight.getCrown(player) + " " + player.getName(), Utility.getDate()));
+			HALL_OF_FAME.put(fameEntry, new Fame(fameEntry.getType(),
+					PlayerRight.getCrown(player) + " " + player.getName(), Utility.getDate()));
 			player.send(new SendMessage("Congratulations, you have left your mark on the hall of fame!"));
 			World.sendBroadcast(1, player.getName() + " is now on the hall of fame for " + fameEntry.getEntry(), false);
 			save();
@@ -56,8 +55,7 @@ public class FameHandler {
 	/**
 	 * Removes a fame entry from the hall of fame.
 	 * 
-	 * @param fameEntry
-	 *            The fame entry to withdraw.
+	 * @param fameEntry The fame entry to withdraw.
 	 */
 	public static void remove(FameEntry fameEntry) {
 		if (HALL_OF_FAME.containsKey(fameEntry))
@@ -67,8 +65,7 @@ public class FameHandler {
 	/**
 	 * Filters the hall of fame entries for a certain fame type.
 	 * 
-	 * @param type
-	 *            The fame type to filer.
+	 * @param type The fame type to filer.
 	 * @return Map of all the entries.
 	 */
 	public static Map<FameEntry, Fame> getEntries(FameType type) {
@@ -83,8 +80,7 @@ public class FameHandler {
 	/**
 	 * Gets the fame by the fame entry.
 	 * 
-	 * @param entry
-	 *            The entry to get.
+	 * @param entry The entry to get.
 	 * @return The fame.
 	 */
 	private static Fame getEntry(FameEntry entry) {
@@ -101,10 +97,8 @@ public class FameHandler {
 	/**
 	 * Opens the hall of fame itemcontainer.
 	 * 
-	 * @param player
-	 *            The player instance.
-	 * @param type
-	 *            The fame type tab.
+	 * @param player The player instance.
+	 * @param type   The fame type tab.
 	 */
 	public static void open(Player player, FameType type) {
 		int string = 58533;
@@ -112,7 +106,7 @@ public class FameHandler {
 		Item[] items = new Item[entry_list.size()];
 
 		for (int index = 0; index < entry_list.size(); index++) {
-			FameEntry display = entry_list.get(index);			
+			FameEntry display = entry_list.get(index);
 			Fame fame = getEntry(display);
 
 			items[index] = new Item(display.getDisplay());
@@ -124,7 +118,7 @@ public class FameHandler {
 			string++;
 			string++;
 		}
-		
+
 		player.send(new SendConfig(1150, type.ordinal()));
 		player.send(new SendString(HALL_OF_FAME.size() + "/" + FameEntry.values().length + " Remaining", 58523));
 		player.send(new SendString("<col=" + (type.ordinal() == 0 ? "ffffff" : "ff9933") + ">Player Killing", 58515));
@@ -139,10 +133,8 @@ public class FameHandler {
 	/**
 	 * Searches through all the fame entries for a specific player.
 	 * 
-	 * @param player
-	 *            The player instance.
-	 * @param context
-	 *            The context being searched.
+	 * @param player  The player instance.
+	 * @param context The context being searched.
 	 */
 	public static void search(Player player, String context) {
 		int index = 0;
@@ -151,8 +143,9 @@ public class FameHandler {
 				index++;
 			}
 		}
-		
-		String message = index == 0 ? Utility.formatName(context) + " was not found in the hall of fame." : index + " entries were found in the hall of fame for " + Utility.formatName(context) + ".";
+
+		String message = index == 0 ? Utility.formatName(context) + " was not found in the hall of fame."
+				: index + " entries were found in the hall of fame for " + Utility.formatName(context) + ".";
 		player.send(new SendMessage(message));
 	}
 

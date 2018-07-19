@@ -8,8 +8,8 @@ public class StuckCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-        World.sendStaffMessage("[STUCK]" + player.getName() + " Is Stuck!");
-        player.message("Staff team have been alerted!");
+		World.sendStaffMessage("[STUCK]" + player.getName() + " Is Stuck!");
+		player.message("Staff team have been alerted!");
 	}
 
 	@Override

@@ -5,6 +5,7 @@ import io.battlerune.net.packet.out.SendString;
 
 /**
  * Handles the interface opening
+ * 
  * @author Nerik#8690
  *
  */

@@ -10,22 +10,26 @@ public enum PlayerOption {
 
 	/** The option for challenging another player to a duel. */
 	DUEL_REQUEST(1, "Challenge"),
-	
+
 	/** The option for attacking another player. */
 	ATTACK(2, "Attack"),
-	
+
 	/** The option for following another player. */
 	FOLLOW(3, "Follow"),
-	
+
 	/** The option for trading another player. */
 	TRADE_REQUEST(4, "Trade with"),
-	
-	/** The option for moderators and staff which brings up the report abuse option. */
+
+	/**
+	 * The option for moderators and staff which brings up the report abuse option.
+	 */
 	REPORT(5, "Report"),
-	
-	/** The option for moderators and staff which brings up the report abuse option. */
+
+	/**
+	 * The option for moderators and staff which brings up the report abuse option.
+	 */
 	VIEW_PROFILE(5, "Look-up");
-	
+
 	/** The index of this option in the player menu. */
 	private final int index;
 
@@ -35,13 +39,11 @@ public enum PlayerOption {
 	/**
 	 * Creates a new {@code PlayerOption}.
 	 * 
-	 * @param index
-	 *            The index of this option in the player menu.
+	 * @param index The index of this option in the player menu.
 	 * 
-	 * @param name
-	 *            The name of this option in the player menu.
+	 * @param name  The name of this option in the player menu.
 	 */
-    PlayerOption(int index, String name) {
+	PlayerOption(int index, String name) {
 		this.index = index;
 		this.name = name;
 	}

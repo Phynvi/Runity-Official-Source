@@ -16,8 +16,7 @@ public class SendInterfaceAnimation extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeShort(interfaceId)
-		.writeShort(animationId);
+		builder.writeShort(interfaceId).writeShort(animationId);
 		return true;
 	}
 

@@ -5,11 +5,12 @@ import io.battlerune.net.packet.OutgoingPacket;
 
 /**
  * Send other player index on itemcontainer
+ * 
  * @author Daniel
  *
  */
 public class SendPlayerDisplay extends OutgoingPacket {
-	
+
 	private final int id;
 
 	public SendPlayerDisplay(int id) {

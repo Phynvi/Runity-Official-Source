@@ -14,18 +14,18 @@ import io.battlerune.game.world.entity.mob.player.Player;
 @ItemCombatListenerSignature(requireAll = true, items = { 11664, 13072, 13073, 8842 })
 public class EliteKnightRangedListener extends SimplifiedListener<Player> {
 
-    @Override
-    public int modifyRangedLevel(Player attacker, Mob defender, int level) {
-        if (attacker.getStrategy().getCombatType() != CombatType.RANGED)
-            return level;
-        return level * 11 / 10;
-    }
+	@Override
+	public int modifyRangedLevel(Player attacker, Mob defender, int level) {
+		if (attacker.getStrategy().getCombatType() != CombatType.RANGED)
+			return level;
+		return level * 11 / 10;
+	}
 
-    @Override
-    public int modifyDamage(Player attacker, Mob defender, int damage) {
-        if (attacker.getStrategy().getCombatType() != CombatType.RANGED)
-            return damage;
-        return damage * 41 / 40;
-    }
+	@Override
+	public int modifyDamage(Player attacker, Mob defender, int damage) {
+		if (attacker.getStrategy().getCombatType() != CombatType.RANGED)
+			return damage;
+		return damage * 41 / 40;
+	}
 
 }

@@ -5,12 +5,11 @@ package io.battlerune.game.world.entity.mob.player.exchange;
  * @since 23-1-2017.
  */
 public enum ExchangeSessionType {
-    TRADE("trade"),
-    DUEL("duel");
+	TRADE("trade"), DUEL("duel");
 
-    public final String name;
+	public final String name;
 
-    ExchangeSessionType(String name) {
-        this.name = name;
-    }
+	ExchangeSessionType(String name) {
+		this.name = name;
+	}
 }

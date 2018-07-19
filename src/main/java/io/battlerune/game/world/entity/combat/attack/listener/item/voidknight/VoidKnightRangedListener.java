@@ -13,9 +13,9 @@ import io.battlerune.game.world.entity.mob.player.Player;
 @ItemCombatListenerSignature(requireAll = true, items = { 11664, 8839, 8840, 8842 })
 public class VoidKnightRangedListener extends SimplifiedListener<Player> {
 
-    @Override
-    public int modifyRangedLevel(Player attacker, Mob defender, int level) {
-        return level * 11 / 10;
-    }
+	@Override
+	public int modifyRangedLevel(Player attacker, Mob defender, int level) {
+		return level * 11 / 10;
+	}
 
 }

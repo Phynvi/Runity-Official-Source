@@ -61,7 +61,7 @@ public class AccountDefinition {
 	public String getCharacterName() {
 		return this.characterName;
 	}
-	
+
 	public void setCharacterName(String name) {
 		this.characterName = name;
 	}

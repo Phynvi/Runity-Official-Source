@@ -32,20 +32,15 @@ public class Preset {
 	/**
 	 * Constructs a new preset.
 	 * 
-	 * @param name
-	 *            The name of the preset.
-	 * @param inventory
-	 *            The inventory of the preset.
-	 * @param equipment
-	 *            The equipment of the preset.
-	 * @param skill
-	 *            The skills of the preset.
-	 * @param prayer
-	 *            The quick-prayers of the preset.
-	 * @param spellbook
-	 *            The spellbook of the preset.
+	 * @param name      The name of the preset.
+	 * @param inventory The inventory of the preset.
+	 * @param equipment The equipment of the preset.
+	 * @param skill     The skills of the preset.
+	 * @param prayer    The quick-prayers of the preset.
+	 * @param spellbook The spellbook of the preset.
 	 */
-	public Preset(String name, Item[] inventory, Item[] equipment, int[] skill, PrayerBook prayer, Spellbook spellbook) {
+	public Preset(String name, Item[] inventory, Item[] equipment, int[] skill, PrayerBook prayer,
+			Spellbook spellbook) {
 		this.name = name;
 		this.inventory = inventory;
 		this.equipment = equipment;
@@ -57,8 +52,7 @@ public class Preset {
 	/**
 	 * Constructs a new preset.
 	 * 
-	 * @param name
-	 *            The name of the preset.
+	 * @param name The name of the preset.
 	 */
 	public Preset(String name) {
 		this(name, new Item[28], new Item[14], new int[7], new PrayerBook(), Spellbook.MODERN);
@@ -70,7 +64,6 @@ public class Preset {
 	public Preset() {
 		this(null, new Item[28], new Item[14], new int[7], new PrayerBook(), Spellbook.MODERN);
 	}
-	
 
 	/**
 	 * Gets the name of the preset.

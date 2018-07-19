@@ -9,8 +9,8 @@ import io.battlerune.game.event.Event;
  */
 public interface EventListener {
 
-    default void accept(Event event) {
+	default void accept(Event event) {
 
-    }
+	}
 
 }

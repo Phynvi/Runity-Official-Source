@@ -14,18 +14,18 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ItemCombatListenerSignature {
 
-    /**
-     * The item ids to attach this listener to.
-     *
-     * @return the item ids
-     */
-    int[] items();
+	/**
+	 * The item ids to attach this listener to.
+	 *
+	 * @return the item ids
+	 */
+	int[] items();
 
-    /**
-     * Checks if all items are required.
-     *
-     * @return {@code true} if all items listed are required
-     */
-    boolean requireAll();
+	/**
+	 * Checks if all items are required.
+	 *
+	 * @return {@code true} if all items listed are required
+	 */
+	boolean requireAll();
 
 }

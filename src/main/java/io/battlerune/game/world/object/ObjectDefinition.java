@@ -69,7 +69,7 @@ public final class ObjectDefinition {
 	}
 
 	public void decode(Buffer buffer) {
-		while(true) {
+		while (true) {
 			int opcode = buffer.readUByte();
 
 			if (opcode == 0) {

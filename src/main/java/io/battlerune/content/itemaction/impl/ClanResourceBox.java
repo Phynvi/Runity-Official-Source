@@ -6,15 +6,15 @@ import io.battlerune.game.world.items.Item;
 
 public class ClanResourceBox extends ItemAction {
 
-    @Override
-    public String name() {
-        return "Clan Resource Box";
-    }
+	@Override
+	public String name() {
+		return "Clan Resource Box";
+	}
 
-    @Override
-    public boolean inventory(Player player, Item item, int opcode) {
+	@Override
+	public boolean inventory(Player player, Item item, int opcode) {
 //        if (opcode != 1)
-            return false;
+		return false;
 //        Clan channel = ClanRepository.get(player.clan);
 //        if (channel == null) {
 //            player.send(new SendMessage("You need to be in a clan to do this!"));
@@ -25,5 +25,5 @@ public class ClanResourceBox extends ItemAction {
 //        channel.showcaseItems.add(showcaseReward.getId());
 //        player.send(new SendMessage("Inside the box you found " + showcaseReward.getName() + "! Showcase size: " + channel.showcaseItems.size() + "/28", SendMessage.MessageColor.DARK_PURPLE));
 //        return true;
-    }
+	}
 }

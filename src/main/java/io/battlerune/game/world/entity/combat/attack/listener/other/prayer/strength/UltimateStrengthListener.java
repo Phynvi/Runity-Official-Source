@@ -5,9 +5,9 @@ import io.battlerune.game.world.entity.mob.Mob;
 
 public class UltimateStrengthListener extends SimplifiedListener<Mob> {
 
-    @Override
-    public int modifyStrengthLevel(Mob attacker, Mob defender, int damage) {
-        return damage * 23 / 20;
-    }
+	@Override
+	public int modifyStrengthLevel(Mob attacker, Mob defender, int damage) {
+		return damage * 23 / 20;
+	}
 
 }

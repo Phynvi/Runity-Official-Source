@@ -12,24 +12,24 @@ import io.battlerune.util.parser.impl.NpcForceChatParser.ForcedMessage;
  */
 public class ForceChatEvent extends Task {
 
-    private final Npc npc;
+	private final Npc npc;
 
-    private final ForcedMessage forcedMessage;
+	private final ForcedMessage forcedMessage;
 
-    public ForceChatEvent(Npc npc, ForcedMessage forcedMessage) {
-        super(forcedMessage.getInterval());
-        this.npc = npc;
-        this.forcedMessage = forcedMessage;
-    }
+	public ForceChatEvent(Npc npc, ForcedMessage forcedMessage) {
+		super(forcedMessage.getInterval());
+		this.npc = npc;
+		this.forcedMessage = forcedMessage;
+	}
 
-    @Override
-    public void execute() {
-        if (npc == null || !World.getNpcs().contains(npc)) {
-            cancel();
-            return;
-        }
+	@Override
+	public void execute() {
+		if (npc == null || !World.getNpcs().contains(npc)) {
+			cancel();
+			return;
+		}
 
-        npc.speak(forcedMessage.nextMessage());
-    }
+		npc.speak(forcedMessage.nextMessage());
+	}
 
 }

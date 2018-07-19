@@ -14,8 +14,7 @@ public class GalvekSpawnCommand implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 		GalvekUtility.generateSpawn();
-    }
-	
+	}
 
 	@Override
 	public boolean canUse(Player player) {

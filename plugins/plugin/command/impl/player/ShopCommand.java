@@ -13,8 +13,8 @@ public class ShopCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		 Teleportation.teleport(player, Config.STORES_POSITION);
-         player.message("Here you will find all the stores that are irrelavant to take space up at home");	
+		Teleportation.teleport(player, Config.STORES_POSITION);
+		player.message("Here you will find all the stores that are irrelavant to take space up at home");
 	}
 
 	@Override

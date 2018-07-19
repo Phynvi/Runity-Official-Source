@@ -9,13 +9,13 @@ import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.mob.Mob;
 
 /**
- * Handles the guthan item set listener
- * OSRS Wiki: http://oldschoolrunescape.wikia.com/wiki/Guthan_the_Infested%27s_equipment
+ * Handles the guthan item set listener OSRS Wiki:
+ * http://oldschoolrunescape.wikia.com/wiki/Guthan_the_Infested%27s_equipment
  *
  * @author Daniel
  */
-@NpcCombatListenerSignature(npcs = {1674})
-@ItemCombatListenerSignature(requireAll = true, items = {4726, 4724, 4728, 4730})
+@NpcCombatListenerSignature(npcs = { 1674 })
+@ItemCombatListenerSignature(requireAll = true, items = { 4726, 4724, 4728, 4730 })
 public class GuthansListner extends SimplifiedListener<Mob> {
 
 	@Override

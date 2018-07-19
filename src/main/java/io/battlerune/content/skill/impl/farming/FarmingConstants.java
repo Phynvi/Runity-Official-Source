@@ -1,7 +1,7 @@
 package io.battlerune.content.skill.impl.farming;
 
 public class FarmingConstants {
-	
+
 	/**
 	 * @author Adam_#6723
 	 */

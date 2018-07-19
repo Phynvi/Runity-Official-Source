@@ -11,7 +11,8 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.timeout.IdleStateHandler;
 
 /**
- * The {@link ChannelInitializer} implementation that will setup the games networking pipeline.
+ * The {@link ChannelInitializer} implementation that will setup the games
+ * networking pipeline.
  *
  * @author nshusa
  */
@@ -19,14 +20,14 @@ import io.netty.handler.timeout.IdleStateHandler;
 public final class ServerPipelineInitializer extends ChannelInitializer<SocketChannel> {
 
 	/**
-	 * The first part of the pipeline where connections can be filtered
-	 * before propagating down the pipeline.
+	 * The first part of the pipeline where connections can be filtered before
+	 * propagating down the pipeline.
 	 */
 	private static final ChannelFilter FILTER = new ChannelFilter();
 
 	/**
-	 * The part of the pipeline that handles exceptions caught, channel being
-	 * read, in-active channels, triggered events.
+	 * The part of the pipeline that handles exceptions caught, channel being read,
+	 * in-active channels, triggered events.
 	 */
 	private static final ChannelHandler HANDLER = new ChannelHandler();
 

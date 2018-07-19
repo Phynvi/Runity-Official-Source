@@ -21,8 +21,7 @@ public class BoxTrap extends Trap {
 	}
 
 	/**
-	 * @param state
-	 *            the state to set
+	 * @param state the state to set
 	 */
 	public void setState(TrapState state) {
 		this.state = state;

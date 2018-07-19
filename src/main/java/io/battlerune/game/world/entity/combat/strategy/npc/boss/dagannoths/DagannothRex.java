@@ -15,66 +15,66 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 
 /** @author Michael | Chex */
 public class DagannothRex extends MultiStrategy {
-    private static final CrushMelee CRUSH = new CrushMelee();
-    private static final SlashMelee SLASH = new SlashMelee();
+	private static final CrushMelee CRUSH = new CrushMelee();
+	private static final SlashMelee SLASH = new SlashMelee();
 
-    private static final CombatStrategy<Npc>[] STRATEGIES = createStrategyArray(CRUSH, SLASH);
+	private static final CombatStrategy<Npc>[] STRATEGIES = createStrategyArray(CRUSH, SLASH);
 
-    public DagannothRex() {
-        currentStrategy = randomStrategy(STRATEGIES);
-    }
+	public DagannothRex() {
+		currentStrategy = randomStrategy(STRATEGIES);
+	}
 
-    @Override
-    public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {
-        return attacker.definition.getAttackDelay();
-    }
+	@Override
+	public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {
+		return attacker.definition.getAttackDelay();
+	}
 
-    private static final class CrushMelee extends NpcMeleeStrategy {
-        private static final Animation ANIMATION = new Animation(2853, UpdatePriority.HIGH);
+	private static final class CrushMelee extends NpcMeleeStrategy {
+		private static final Animation ANIMATION = new Animation(2853, UpdatePriority.HIGH);
 
-        @Override
-        public void finishOutgoing(Npc attacker, Mob defender) {
-            attacker.getCombat().setFightType(FightType.SCYTHE_JAB);
-        }
+		@Override
+		public void finishOutgoing(Npc attacker, Mob defender) {
+			attacker.getCombat().setFightType(FightType.SCYTHE_JAB);
+		}
 
-        @Override
-        public int getAttackDistance(Npc attacker, FightType fightType) {
-            return 1;
-        }
+		@Override
+		public int getAttackDistance(Npc attacker, FightType fightType) {
+			return 1;
+		}
 
-        @Override
-        public Animation getAttackAnimation(Npc attacker, Mob defender) {
-            return ANIMATION;
-        }
+		@Override
+		public Animation getAttackAnimation(Npc attacker, Mob defender) {
+			return ANIMATION;
+		}
 
-        @Override
-        public CombatHit[] getHits(Npc attacker, Mob defender) {
-            return new CombatHit[]{nextMeleeHit(attacker, defender)};
-        }
-    }
+		@Override
+		public CombatHit[] getHits(Npc attacker, Mob defender) {
+			return new CombatHit[] { nextMeleeHit(attacker, defender) };
+		}
+	}
 
-    private static final class SlashMelee extends NpcMeleeStrategy {
-        private static final Animation ANIMATION = new Animation(2851, UpdatePriority.HIGH);
+	private static final class SlashMelee extends NpcMeleeStrategy {
+		private static final Animation ANIMATION = new Animation(2851, UpdatePriority.HIGH);
 
-        @Override
-        public void finishOutgoing(Npc attacker, Mob defender) {
-            attacker.getCombat().setFightType(FightType.SCYTHE_REAP);
-        }
+		@Override
+		public void finishOutgoing(Npc attacker, Mob defender) {
+			attacker.getCombat().setFightType(FightType.SCYTHE_REAP);
+		}
 
-        @Override
-        public int getAttackDistance(Npc attacker, FightType fightType) {
-            return 1;
-        }
+		@Override
+		public int getAttackDistance(Npc attacker, FightType fightType) {
+			return 1;
+		}
 
-        @Override
-        public Animation getAttackAnimation(Npc attacker, Mob defender) {
-            return ANIMATION;
-        }
+		@Override
+		public Animation getAttackAnimation(Npc attacker, Mob defender) {
+			return ANIMATION;
+		}
 
-        @Override
-        public CombatHit[] getHits(Npc attacker, Mob defender) {
-            return new CombatHit[]{nextMeleeHit(attacker, defender)};
-        }
-    }
+		@Override
+		public CombatHit[] getHits(Npc attacker, Mob defender) {
+			return new CombatHit[] { nextMeleeHit(attacker, defender) };
+		}
+	}
 
 }

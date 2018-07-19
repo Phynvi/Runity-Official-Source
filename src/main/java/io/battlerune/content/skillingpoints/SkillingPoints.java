@@ -7,24 +7,21 @@ public class SkillingPoints {
 	 * author adam trinity
 	 */
 
-	/** getters and setters, to access skilling points and set them. **/ 
-	
-    int skillingPoints;
-    private Player player;
+	/** getters and setters, to access skilling points and set them. **/
 
-    
-    public void skillingPoints(Player player) {
-        this.player = player;
-    }
+	int skillingPoints;
+	private Player player;
 
-	 public int getskillingPoints() {
-			return skillingPoints;
-	 }
-	    public void setskillingPoints(int skillingPoints) {
-	        this.skillingPoints = skillingPoints;
-	    }
+	public void skillingPoints(Player player) {
+		this.player = player;
+	}
 
-	  
-	
-	
+	public int getskillingPoints() {
+		return skillingPoints;
+	}
+
+	public void setskillingPoints(int skillingPoints) {
+		this.skillingPoints = skillingPoints;
+	}
+
 }

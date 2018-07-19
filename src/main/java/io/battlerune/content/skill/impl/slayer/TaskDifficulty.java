@@ -6,8 +6,5 @@ package io.battlerune.content.skill.impl.slayer;
  * @author Daniel
  */
 public enum TaskDifficulty {
-	EASY,
-	MEDIUM,
-	HARD,
-	BOSS
+	EASY, MEDIUM, HARD, BOSS
 }

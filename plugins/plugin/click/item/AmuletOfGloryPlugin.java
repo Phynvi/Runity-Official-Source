@@ -13,110 +13,113 @@ import io.battlerune.util.Utility;
 
 public class AmuletOfGloryPlugin extends PluginContext {
 
-    private static final int[] AMULETS = {
-            1704, 1706, 1708, 1710, 1712, 11976, 11978
-    };
+	private static final int[] AMULETS = { 1704, 1706, 1708, 1710, 1712, 11976, 11978 };
 
-    public void teleport(Player player, Item item, Position position, int index, boolean equipment) {
-        index = index -1;
+	public void teleport(Player player, Item item, Position position, int index, boolean equipment) {
+		index = index - 1;
 
-        if (Teleportation.teleport(player, position)) {
-            if (equipment) {
-                player.equipment.set(Equipment.AMULET_SLOT, new Item(AMULETS[index]), true);
-            } else {
-                player.inventory.remove(item);
-                player.inventory.add(AMULETS[index], 1);
-            }
-            player.message("<col=7F007F>" + (index == 0 ? "You have used your last charge." : "Your amulet of glory has " + Utility.convertWord(index).toLowerCase() + "charge" + (index == 1 ? "" : "s") + " remaining."));
-        }
-    }
+		if (Teleportation.teleport(player, position)) {
+			if (equipment) {
+				player.equipment.set(Equipment.AMULET_SLOT, new Item(AMULETS[index]), true);
+			} else {
+				player.inventory.remove(item);
+				player.inventory.add(AMULETS[index], 1);
+			}
+			player.message("<col=7F007F>" + (index == 0 ? "You have used your last charge."
+					: "Your amulet of glory has " + Utility.convertWord(index).toLowerCase() + "charge"
+							+ (index == 1 ? "" : "s") + " remaining."));
+		}
+	}
 
-    private int getIndex(int item) {
-        int index = -1;
-        for (int amulet = 0; amulet < AMULETS.length; amulet++) {
-            if (item == AMULETS[amulet]) {
-                return amulet;
-            }
-        }
-        return index;
-    }
+	private int getIndex(int item) {
+		int index = -1;
+		for (int amulet = 0; amulet < AMULETS.length; amulet++) {
+			if (item == AMULETS[amulet]) {
+				return amulet;
+			}
+		}
+		return index;
+	}
 
-    @Override
-    protected boolean thirdClickItem(Player player, ItemClickEvent event) {
-        Item item = event.getItem();
-        int index = getIndex(item.getId());
+	@Override
+	protected boolean thirdClickItem(Player player, ItemClickEvent event) {
+		Item item = event.getItem();
+		int index = getIndex(item.getId());
 
-        if (index == -1) {
-            return false;
-        }
+		if (index == -1) {
+			return false;
+		}
 
-        if (index == 0) {
-            player.message("Your amulet of glory has no charges left!");
-            return true;
-        }
+		if (index == 0) {
+			player.message("Your amulet of glory has no charges left!");
+			return true;
+		}
 
-        player.dialogueFactory.sendOption("Edgeville", () -> {
-        	
-        	if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
-        		player.message("@or2@you can't teleport above 30 wilderness");
-        	} else {
-        	teleport(player, item, new Position(3087, 3496), index, false);
-        }
-        }, "Karamja", () -> {
-        	if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
-        		player.message("@or2@you can't teleport above 30 wilderness");
-        	} else {
-            teleport(player, item, new Position(2918, 3176), index, false);
-        }}, "Dranyor Village", () -> {
-        	
-        	if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
-        		player.message("@or2@you can't teleport above 30 wilderness");
-        	} else {
-            teleport(player, item, new Position(3105, 3251), index, false);
-        }}, "Al-Kahrid", () -> {
-        	if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
-        		player.message("@or2@you can't teleport above 30 wilderness");
-        	} else {
-            teleport(player, item, new Position(3293, 3163), index, false);
-        }}, "Nowhere", player.interfaceManager::close).execute();
-        return true;
-    }
+		player.dialogueFactory.sendOption("Edgeville", () -> {
 
-    @Override
-    protected boolean secondClickItemContainer(Player player, ItemContainerContextMenuEvent event) {
-        final int interfaceId = event.getInterfaceId();
+			if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+				player.message("@or2@you can't teleport above 30 wilderness");
+			} else {
+				teleport(player, item, new Position(3087, 3496), index, false);
+			}
+		}, "Karamja", () -> {
+			if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+				player.message("@or2@you can't teleport above 30 wilderness");
+			} else {
+				teleport(player, item, new Position(2918, 3176), index, false);
+			}
+		}, "Dranyor Village", () -> {
 
-        if (interfaceId != 1688) {
-            return false;
-        }
+			if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+				player.message("@or2@you can't teleport above 30 wilderness");
+			} else {
+				teleport(player, item, new Position(3105, 3251), index, false);
+			}
+		}, "Al-Kahrid", () -> {
+			if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+				player.message("@or2@you can't teleport above 30 wilderness");
+			} else {
+				teleport(player, item, new Position(3293, 3163), index, false);
+			}
+		}, "Nowhere", player.interfaceManager::close).execute();
+		return true;
+	}
 
-        final int removeId = event.getRemoveId();
-        int index = getIndex(removeId);
+	@Override
+	protected boolean secondClickItemContainer(Player player, ItemContainerContextMenuEvent event) {
+		final int interfaceId = event.getInterfaceId();
 
-        if (index == -1) {
-            return false;
-        }
+		if (interfaceId != 1688) {
+			return false;
+		}
 
-        if (index == 0) {
-            player.message("Your amulet of glory has no charges left!");
-            return true;
-        }
+		final int removeId = event.getRemoveId();
+		int index = getIndex(removeId);
 
-        Item item = player.equipment.getAmuletSlot();
+		if (index == -1) {
+			return false;
+		}
 
-        if (item == null) {
-            return true;
-        }
+		if (index == 0) {
+			player.message("Your amulet of glory has no charges left!");
+			return true;
+		}
 
-        player.dialogueFactory.sendOption("Edgeville", () -> {
-            teleport(player, item, new Position(3087, 3496), index, true);
-        }, "Karamja", () -> {
-            teleport(player, item, new Position(2918, 3176), index, true);
-        }, "Dranyor Village", () -> {
-            teleport(player, item, new Position(3105, 3251), index, true);
-        }, "Al-Kahrid", () -> {
-            teleport(player, item, new Position(3293, 3163), index, true);
-        }, "Nowhere", player.interfaceManager::close).execute();
-        return true;
-    }
+		Item item = player.equipment.getAmuletSlot();
+
+		if (item == null) {
+			return true;
+		}
+
+		player.dialogueFactory.sendOption("Edgeville", () -> {
+			teleport(player, item, new Position(3087, 3496), index, true);
+		}, "Karamja", () -> {
+			teleport(player, item, new Position(2918, 3176), index, true);
+		}, "Dranyor Village", () -> {
+			teleport(player, item, new Position(3105, 3251), index, true);
+		}, "Al-Kahrid", () -> {
+			teleport(player, item, new Position(3293, 3163), index, true);
+		}, "Nowhere", player.interfaceManager::close).execute();
+		return true;
+	}
 }

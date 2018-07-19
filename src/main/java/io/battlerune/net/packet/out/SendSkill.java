@@ -32,9 +32,7 @@ public class SendSkill extends OutgoingPacket {
 		final int color = player.settings.prestigeColors ? player.prestige.getPrestigeColor(id) : 0xFFFF00;
 		player.send(new SendColor(Skill.INTERFACE_DATA[id][0], color));
 		player.send(new SendColor(Skill.INTERFACE_DATA[id][1], color));
-		builder.writeByte(id)
-		.writeInt(experience, ByteOrder.ME)
-		.writeByte(level);
+		builder.writeByte(id).writeInt(experience, ByteOrder.ME).writeByte(level);
 		return true;
 	}
 }

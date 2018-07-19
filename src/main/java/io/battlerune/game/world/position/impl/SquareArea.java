@@ -6,10 +6,10 @@ import io.battlerune.util.Utility;
 
 public final class SquareArea extends Area {
 
-	/** The name of this area.  */
+	/** The name of this area. */
 	private final String name;
 
-	/**  The south-west {@code X} corner of the square.  */
+	/** The south-west {@code X} corner of the square. */
 	private final int swX;
 
 	/**
@@ -35,14 +35,10 @@ public final class SquareArea extends Area {
 	/**
 	 * Creates a new {@code SquareArea} with a default height of {@code 0}.
 	 *
-	 * @param swX
-	 *            the south-west {@code X} corner of the square.
-	 * @param swY
-	 *            the south-west {@code Y} corner of the square.
-	 * @param neX
-	 *            the north-east {@code X} corner of the square.
-	 * @param neY
-	 *            the north-east {@code Y} corner of the square.
+	 * @param swX the south-west {@code X} corner of the square.
+	 * @param swY the south-west {@code Y} corner of the square.
+	 * @param neX the north-east {@code X} corner of the square.
+	 * @param neY the north-east {@code Y} corner of the square.
 	 */
 	public SquareArea(int swX, int swY, int neX, int neY) {
 		this("Unknown", swX, swY, neX, neY, 0);
@@ -51,17 +47,12 @@ public final class SquareArea extends Area {
 	/**
 	 * Creates a new {@code SquareArea} with a default height of {@code 0}.
 	 * 
-	 * @param name
-	 *            The name of this area.
+	 * @param name The name of this area.
 	 *
-	 * @param swX
-	 *            the south-west {@code X} corner of the square.
-	 * @param swY
-	 *            the south-west {@code Y} corner of the square.
-	 * @param neX
-	 *            the north-east {@code X} corner of the square.
-	 * @param neY
-	 *            the north-east {@code Y} corner of the square.
+	 * @param swX  the south-west {@code X} corner of the square.
+	 * @param swY  the south-west {@code Y} corner of the square.
+	 * @param neX  the north-east {@code X} corner of the square.
+	 * @param neY  the north-east {@code Y} corner of the square.
 	 */
 	public SquareArea(String name, int swX, int swY, int neX, int neY) {
 		this(name, swX, swY, neX, neY, 0);
@@ -70,40 +61,28 @@ public final class SquareArea extends Area {
 	/**
 	 * Creates a new {@code SquareArea}.
 	 * 
-	 * @param name
-	 *            The name of this area.
+	 * @param name   The name of this area.
 	 *
-	 * @param swX
-	 *            the south-west {@code X} corner of the square.
-	 * @param swY
-	 *            the south-west {@code Y} corner of the square.
-	 * @param neX
-	 *            the north-east {@code X} corner of the square.
-	 * @param neY
-	 *            the north-east {@code Y} corner of the square.
-	 * @param height
-	 *            the {@code Height} level of the square.
+	 * @param swX    the south-west {@code X} corner of the square.
+	 * @param swY    the south-west {@code Y} corner of the square.
+	 * @param neX    the north-east {@code X} corner of the square.
+	 * @param neY    the north-east {@code Y} corner of the square.
+	 * @param height the {@code Height} level of the square.
 	 */
 	public SquareArea(String name, int swX, int swY, int neX, int neY, int height) {
 		this.name = name;
-		if (swX > neX)
-		{
+		if (swX > neX) {
 			this.neX = swX;
 			this.swX = neX;
-		}
-		else
-		{
+		} else {
 			this.swX = swX;
 			this.neX = neX;
 		}
 
-		if (swY > neY)
-		{
+		if (swY > neY) {
 			this.swY = neY;
 			this.neY = swY;
-		}
-		else
-		{
+		} else {
 			this.swY = swY;
 			this.neY = neY;
 		}
@@ -153,8 +132,7 @@ public final class SquareArea extends Area {
 	}
 
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return this.name + ":[" + swX + "," + neX + "," + swY + "," + neY + "]";
 	}
 

@@ -14,8 +14,7 @@ public class ArenaSpawnCommand implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 		ArenaUtility.generateSpawn();
-    }
-	
+	}
 
 	@Override
 	public boolean canUse(Player player) {

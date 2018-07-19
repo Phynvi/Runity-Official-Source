@@ -82,10 +82,8 @@ public class TeleportHandler {
 	/**
 	 * Displays all the teleport text on the itemcontainer.
 	 *
-	 * @param player
-	 *            The player viewing the teleport text.
-	 * @param teleport
-	 *            The teleport type.
+	 * @param player   The player viewing the teleport text.
+	 * @param teleport The teleport type.
 	 */
 	public static void display(Player player, Teleport teleport) {
 		player.attributes.set("TELEPORT", teleport);
@@ -127,10 +125,8 @@ public class TeleportHandler {
 	/**
 	 * Handles clicking teleport buttons on the itemcontainer.
 	 *
-	 * @param player
-	 *            The player clicking the buttons.
-	 * @param button
-	 *            The button identification.
+	 * @param player The player clicking the buttons.
+	 * @param button The button identification.
 	 */
 	public static void click(Player player, int button) {
 		TeleportType type = player.attributes.get("TELEPORT_TYPE_KEY", TeleportType.class);
@@ -144,8 +140,7 @@ public class TeleportHandler {
 	/**
 	 * Handles teleporting to the destination.
 	 *
-	 * @param player
-	 *            The player teleporting.
+	 * @param player The player teleporting.
 	 */
 	public static void teleport(Player player) {
 		if (player.wilderness > 20 && !PlayerRight.isPriviledged(player)) {

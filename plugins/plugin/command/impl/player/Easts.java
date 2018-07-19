@@ -14,9 +14,9 @@ public class Easts implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-        Teleportation.teleport(player, Config.EASTS);
-        player.send(new SendMessage("@or2@Goodluck, " + player.getName() + "!"));
-        player.send(new SendMessage("@or2@You might need it.."));
+		Teleportation.teleport(player, Config.EASTS);
+		player.send(new SendMessage("@or2@Goodluck, " + player.getName() + "!"));
+		player.send(new SendMessage("@or2@You might need it.."));
 	}
 
 	@Override

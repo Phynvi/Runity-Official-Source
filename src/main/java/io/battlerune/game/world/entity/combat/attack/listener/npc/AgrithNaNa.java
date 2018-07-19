@@ -24,14 +24,14 @@ public class AgrithNaNa extends SimplifiedListener<Npc> {
 	static {
 		try {
 			MAGIC = new MagicAttack();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	@Override
 	public boolean canAttack(Npc attacker, Mob defender) {
-		if(!NpcMeleeStrategy.get().withinDistance(attacker, defender)) {
+		if (!NpcMeleeStrategy.get().withinDistance(attacker, defender)) {
 			attacker.setStrategy(MAGIC);
 		}
 		return attacker.getStrategy().canAttack(attacker, defender);
@@ -39,7 +39,7 @@ public class AgrithNaNa extends SimplifiedListener<Npc> {
 
 	@Override
 	public void start(Npc attacker, Mob defender, Hit[] hits) {
-		if(!NpcMeleeStrategy.get().withinDistance(attacker, defender)) {
+		if (!NpcMeleeStrategy.get().withinDistance(attacker, defender)) {
 			attacker.setStrategy(MAGIC);
 		} else {
 			attacker.setStrategy(NpcMeleeStrategy.get());

@@ -13,22 +13,22 @@ import io.battlerune.util.Utility;
  */
 public class DiscordEvent extends Task {
 
-    /** Constructs a new <code>DiscordEvent</code>. */
-    public DiscordEvent() {
-        super(10000);
-    }
+	/** Constructs a new <code>DiscordEvent</code>. */
+	public DiscordEvent() {
+		super(10000);
+	}
 
-    @Override
-    protected boolean canSchedule() {
-        return !Config.LIVE_SERVER;
-    }
+	@Override
+	protected boolean canSchedule() {
+		return !Config.LIVE_SERVER;
+	}
 
-    @Override
-    public void execute() {
-        int size = World.getPlayerCount();
-        if (size >= 5) {
-            String message = "There are currently " + size + " players online. [Uptime=" + Utility.getUptime() + " ]";
-            Discord.communityMessage(message);
-        }
-    }
+	@Override
+	public void execute() {
+		int size = World.getPlayerCount();
+		if (size >= 5) {
+			String message = "There are currently " + size + " players online. [Uptime=" + Utility.getUptime() + " ]";
+			Discord.communityMessage(message);
+		}
+	}
 }

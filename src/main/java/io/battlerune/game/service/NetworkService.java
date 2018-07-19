@@ -14,6 +14,7 @@ import io.netty.util.ResourceLeakDetector;
 
 /**
  * The bootstrap that will prepare the game and net.
+ * 
  * @author Seven
  */
 public final class NetworkService {
@@ -27,15 +28,15 @@ public final class NetworkService {
 
 		try {
 			ServerBootstrap b = new ServerBootstrap();
-			b.group(bossGroup, workerGroup)
-					.channel(NioServerSocketChannel.class)
+			b.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
 					.childHandler(new ServerPipelineInitializer());
 
 			ChannelFuture f = b.bind(port).syncUninterruptibly();
 
 			BattleRune.serverStarted.set(true);
 
-			Logger.log(String.format("Server built successfully (took %d seconds).", BattleRune.UPTIME.elapsedTime(TimeUnit.SECONDS)));
+			Logger.log(String.format("Server built successfully (took %d seconds).",
+					BattleRune.UPTIME.elapsedTime(TimeUnit.SECONDS)));
 			BattleRune.UPTIME.reset();
 			f.channel().closeFuture().sync();
 		} catch (Exception ex) {

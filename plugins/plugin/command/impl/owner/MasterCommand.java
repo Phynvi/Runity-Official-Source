@@ -16,18 +16,17 @@ public class MasterCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-        player.skills.master();
-        AchievementHandler.completeAll(player);
-        EmoteHandler.unlockAll(player);
-        player.send(new SendMessage("Your account is now maxed out.", MessageColor.BLUE));
+		player.skills.master();
+		AchievementHandler.completeAll(player);
+		EmoteHandler.unlockAll(player);
+		player.send(new SendMessage("Your account is now maxed out.", MessageColor.BLUE));
 
 	}
 
-
 	@Override
 	public boolean canUse(Player player) {
-		if(PlayerRight.isDeveloper(player)) {
-		return true;
+		if (PlayerRight.isDeveloper(player)) {
+			return true;
 		}
 		player.speak("Hey everyone, i just tried doing something silly.");
 		return false;

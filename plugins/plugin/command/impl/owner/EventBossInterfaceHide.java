@@ -12,9 +12,8 @@ public class EventBossInterfaceHide implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-         player.hideTeleportButton();
+		player.hideTeleportButton();
 	}
-	
 
 	@Override
 	public boolean canUse(Player player) {

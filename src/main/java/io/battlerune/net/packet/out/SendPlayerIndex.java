@@ -10,17 +10,17 @@ import io.battlerune.net.packet.OutgoingPacket;
  */
 public class SendPlayerIndex extends OutgoingPacket {
 
-    private final int index;
+	private final int index;
 
-    public SendPlayerIndex(int index) {
-        super(201, 2);
-        this.index = index;
-    }
+	public SendPlayerIndex(int index) {
+		super(201, 2);
+		this.index = index;
+	}
 
-    @Override
-    public boolean encode(Player player) {
-        builder.writeShort(index);
-        return true;
-    }
+	@Override
+	public boolean encode(Player player) {
+		builder.writeShort(index);
+		return true;
+	}
 
 }

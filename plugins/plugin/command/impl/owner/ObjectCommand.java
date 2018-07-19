@@ -19,21 +19,18 @@ public class ObjectCommand implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 		int id = Integer.parseInt(command[1]);
-          int rotation = 0;
-          CustomGameObject gameObject = new CustomGameObject(id, player.getPosition().copy(), ObjectDirection.valueOf(rotation).orElse(ObjectDirection.WEST), ObjectType.INTERACTABLE);
-          World.schedule(new ObjectPlacementEvent(gameObject, 50));
-          player.send(new SendMessage("Spawned temporary object " + id + "."));
-    	
-    
-	
+		int rotation = 0;
+		CustomGameObject gameObject = new CustomGameObject(id, player.getPosition().copy(),
+				ObjectDirection.valueOf(rotation).orElse(ObjectDirection.WEST), ObjectType.INTERACTABLE);
+		World.schedule(new ObjectPlacementEvent(gameObject, 50));
+		player.send(new SendMessage("Spawned temporary object " + id + "."));
+
 	}
-
-
 
 	@Override
 	public boolean canUse(Player player) {
-		if(PlayerRight.isDeveloper(player)) {
-		return true;
+		if (PlayerRight.isDeveloper(player)) {
+			return true;
 		}
 		player.speak("Hey everyone, i just tried doing something silly.");
 		return false;

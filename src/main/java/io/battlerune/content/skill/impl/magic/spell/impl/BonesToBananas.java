@@ -42,7 +42,7 @@ public class BonesToBananas implements Spell {
 				break;
 			}
 		}
-		
+
 		if (bone == 0) {
 			player.send(new SendMessage("You have no bones to do this!"));
 			return;

@@ -17,19 +17,19 @@ import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
  */
 public final class PacketListenerLoader implements Runnable {
 
-    private static final Logger logger = LogManager.getLogger();
+	private static final Logger logger = LogManager.getLogger();
 
-    @Override
-    public void run() {
-        new FastClasspathScanner().matchClassesImplementing(PacketListener.class, subclass -> {
-            PacketListenerMeta annotation = subclass.getAnnotation(PacketListenerMeta.class);
-            try {
-                PacketListener listener = subclass.newInstance();
-                Arrays.stream(annotation.value()).forEach(it -> PacketRepository.registerListener(it, listener));
-            } catch (InstantiationException | IllegalAccessException ex) {
-                logger.error("error loading packet listeners.", ex);
-            }
-        }).scan();
-    }
+	@Override
+	public void run() {
+		new FastClasspathScanner().matchClassesImplementing(PacketListener.class, subclass -> {
+			PacketListenerMeta annotation = subclass.getAnnotation(PacketListenerMeta.class);
+			try {
+				PacketListener listener = subclass.newInstance();
+				Arrays.stream(annotation.value()).forEach(it -> PacketRepository.registerListener(it, listener));
+			} catch (InstantiationException | IllegalAccessException ex) {
+				logger.error("error loading packet listeners.", ex);
+			}
+		}).scan();
+	}
 
 }

@@ -14,41 +14,41 @@ import io.battlerune.net.packet.out.SendMessage;
  */
 public final class SpadeAction extends Action<Player> {
 
-    public SpadeAction(Player player) {
-        super(player, 2, false);
-    }
+	public SpadeAction(Player player) {
+		super(player, 2, false);
+	}
 
-    @Override
-    protected void onSchedule() {
-        getMob().movement.reset();
-        getMob().animate(new Animation(830));
-        getMob().send(new SendMessage("You start digging..."));
-    }
+	@Override
+	protected void onSchedule() {
+		getMob().movement.reset();
+		getMob().animate(new Animation(830));
+		getMob().send(new SendMessage("You start digging..."));
+	}
 
-    @Override
-    public void execute() {
-        boolean found = false;
+	@Override
+	public void execute() {
+		boolean found = false;
 
-        if (BarrowsUtility.teleportPlayer(getMob()))
-            found = true;
+		if (BarrowsUtility.teleportPlayer(getMob()))
+			found = true;
 
-        if (!found)
-            getMob().send(new SendMessage("You found nothing of interest."));
-        cancel();
-    }
+		if (!found)
+			getMob().send(new SendMessage("You found nothing of interest."));
+		cancel();
+	}
 
-    @Override
-    public WalkablePolicy getWalkablePolicy() {
-        return WalkablePolicy.NON_WALKABLE;    }
+	@Override
+	public WalkablePolicy getWalkablePolicy() {
+		return WalkablePolicy.NON_WALKABLE;
+	}
 
+	@Override
+	public boolean prioritized() {
+		return false;
+	}
 
-    @Override
-    public boolean prioritized() {
-        return false;
-    }
-
-    @Override
-    public String getName() {
-        return "Spade Action";
-    }
+	@Override
+	public String getName() {
+		return "Spade Action";
+	}
 }

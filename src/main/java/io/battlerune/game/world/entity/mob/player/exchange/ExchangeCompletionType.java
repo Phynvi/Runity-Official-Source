@@ -5,19 +5,19 @@ package io.battlerune.game.world.entity.mob.player.exchange;
  * @since 23-1-2017.
  */
 public enum ExchangeCompletionType {
-    /**
-     * Determines the items should be restored to the belonging owners.
-     */
-    RESTORE,
+	/**
+	 * Determines the items should be restored to the belonging owners.
+	 */
+	RESTORE,
 
-    /**
-     * Determines the items should be disposed.
-     */
-    DISPOSE,
+	/**
+	 * Determines the items should be disposed.
+	 */
+	DISPOSE,
 
-    /**
-     * Determines the items should be halted.
-     */
-    HALT
+	/**
+	 * Determines the items should be halted.
+	 */
+	HALT
 
 }

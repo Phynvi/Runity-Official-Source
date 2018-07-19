@@ -14,23 +14,23 @@ import sx.blah.discord.util.MissingPermissionsException;
  */
 public class DiscordDispatcher {
 
-    @EventSubscriber
-    public void OnMesageEvent(MessageReceivedEvent event) throws DiscordException, MissingPermissionsException {
-        IMessage message = event.getMessage();
-        long channel = event.getChannel().getLongID();
-        String name = event.getAuthor().getName();
-        String command = message.getContent();
+	@EventSubscriber
+	public void OnMesageEvent(MessageReceivedEvent event) throws DiscordException, MissingPermissionsException {
+		IMessage message = event.getMessage();
+		long channel = event.getChannel().getLongID();
+		String name = event.getAuthor().getName();
+		String command = message.getContent();
 
-        if (Discord.community == null && channel == Discord.COMMUNITY_CHANNEL) {
-            Discord.community = event.getChannel();
-        }
+		if (Discord.community == null && channel == Discord.COMMUNITY_CHANNEL) {
+			Discord.community = event.getChannel();
+		}
 
-        if (command.equals("::players")) {
-            Discord.communityMessage("There are currently " + World.getPlayerCount() + " players online!");
-        } else if (command.equals("::staffonline")) {
-            Discord.communityMessage("There are currently " + World.getStaffCount() + " staff online!");
+		if (command.equals("::players")) {
+			Discord.communityMessage("There are currently " + World.getPlayerCount() + " players online!");
+		} else if (command.equals("::staffonline")) {
+			Discord.communityMessage("There are currently " + World.getStaffCount() + " staff online!");
 
-        }
-    }
+		}
+	}
 
 }

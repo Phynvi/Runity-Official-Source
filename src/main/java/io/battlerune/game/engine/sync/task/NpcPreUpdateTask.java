@@ -7,29 +7,29 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 
 public final class NpcPreUpdateTask extends SynchronizationTask {
 
-    private static final Logger logger = LogManager.getLogger();
+	private static final Logger logger = LogManager.getLogger();
 
-    private final Npc npc;
+	private final Npc npc;
 
-    public NpcPreUpdateTask(Npc npc) {
-        this.npc = npc;
-    }
+	public NpcPreUpdateTask(Npc npc) {
+		this.npc = npc;
+	}
 
-    @Override
-    public void run() {
-        try {
-            if (npc.atomicPlayerCount.get() == 0) {
-                return;
-            }
+	@Override
+	public void run() {
+		try {
+			if (npc.atomicPlayerCount.get() == 0) {
+				return;
+			}
 
-            if (npc.regionChange) {
-                npc.lastPosition = npc.getPosition();
-            }
+			if (npc.regionChange) {
+				npc.lastPosition = npc.getPosition();
+			}
 
-            npc.movement.processNextMovement();
-        } catch (Exception ex) {
-            logger.fatal(String.format("Error in %s. %s", NpcPreUpdateTask.class.getSimpleName(), npc),  ex);
-        }
-    }
+			npc.movement.processNextMovement();
+		} catch (Exception ex) {
+			logger.fatal(String.format("Error in %s. %s", NpcPreUpdateTask.class.getSimpleName(), npc), ex);
+		}
+	}
 
 }

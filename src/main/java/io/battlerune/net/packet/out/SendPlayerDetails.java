@@ -13,8 +13,7 @@ public class SendPlayerDetails extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeByte(1, ByteModification.ADD)
-		.writeShort(player.getIndex(), ByteModification.ADD, ByteOrder.LE);
+		builder.writeByte(1, ByteModification.ADD).writeShort(player.getIndex(), ByteModification.ADD, ByteOrder.LE);
 		return true;
 	}
 

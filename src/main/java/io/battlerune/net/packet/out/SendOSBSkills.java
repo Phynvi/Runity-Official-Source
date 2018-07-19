@@ -9,12 +9,12 @@ import io.battlerune.net.packet.OutgoingPacket;
  */
 public class SendOSBSkills extends OutgoingPacket {
 
-    public SendOSBSkills(int opcode, int capacity) {
-        super(100, capacity);
-    }
+	public SendOSBSkills(int opcode, int capacity) {
+		super(100, capacity);
+	}
 
-    @Override
-    protected boolean encode(Player player) {
-        return false;
-    }
+	@Override
+	protected boolean encode(Player player) {
+		return false;
+	}
 }

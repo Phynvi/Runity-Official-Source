@@ -13,19 +13,19 @@ public class RegionIdsCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] parts) {
-		
+
 		Region[] regions = RegionManager.getSurroundingRegions(player.getPosition().copy());
-		
-		for(int i = 0; i < regions.length; i++) {
+
+		for (int i = 0; i < regions.length; i++) {
 			player.send(new SendMessage("ID: " + regions[i].getId()));
 		}
-		
-		try(PrintWriter print = new PrintWriter("region.txt")) {
-			
-			for(int i = 0; i < regions.length; i++) {
+
+		try (PrintWriter print = new PrintWriter("region.txt")) {
+
+			for (int i = 0; i < regions.length; i++) {
 				print.write("ID: " + regions[i].getId() + "\n");
 			}
-			
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

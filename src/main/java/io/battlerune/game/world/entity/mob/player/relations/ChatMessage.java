@@ -10,7 +10,8 @@ import io.battlerune.util.ChatCodec;
 public final class ChatMessage {
 
 	/**
-	 *  When a chat message decoded there's a character buffer that can only hold 100 characters
+	 * When a chat message decoded there's a character buffer that can only hold 100
+	 * characters
 	 **/
 	public static final int CHARACTER_LIMIT = 100;
 
@@ -37,7 +38,9 @@ public final class ChatMessage {
 	}
 
 	public static ChatMessage create(String message, ChatColor color, ChatEffect effect) {
-		return new ChatMessage(ChatCodec.encode(message.isEmpty() || message.length() > CHARACTER_LIMIT ? "Cabbage" : message), color, effect);
+		return new ChatMessage(
+				ChatCodec.encode(message.isEmpty() || message.length() > CHARACTER_LIMIT ? "Cabbage" : message), color,
+				effect);
 	}
 
 	public boolean isValid() {
@@ -47,8 +50,8 @@ public final class ChatMessage {
 		if (effect.getCode() < 0 || effect.getCode() >= ChatColor.values().length) {
 			return false;
 		}
-        return encoded.length != 0 && encoded.length <= CHARACTER_LIMIT;
-    }
+		return encoded.length != 0 && encoded.length <= CHARACTER_LIMIT;
+	}
 
 	public ChatColor getColor() {
 		return color;

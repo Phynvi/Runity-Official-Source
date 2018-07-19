@@ -11,16 +11,15 @@ public class AnimationCommand implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 		int id = Integer.parseInt(command[1]);
-        player.animate(new Animation(id));
-        player.send(new SendMessage("Performing animation = " + id));
+		player.animate(new Animation(id));
+		player.send(new SendMessage("Performing animation = " + id));
 
 	}
 
-
 	@Override
 	public boolean canUse(Player player) {
-		if(PlayerRight.isDeveloper(player)) {
-		return true;
+		if (PlayerRight.isDeveloper(player)) {
+			return true;
 		}
 		player.speak("Hey everyone, i just tried doing something silly.");
 		return false;

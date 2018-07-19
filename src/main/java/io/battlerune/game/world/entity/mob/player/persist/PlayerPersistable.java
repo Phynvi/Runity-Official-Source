@@ -5,8 +5,8 @@ import io.battlerune.net.codec.login.LoginResponse;
 
 public interface PlayerPersistable {
 
-    void save(Player player);
+	void save(Player player);
 
-    LoginResponse load(Player player, String expectedPassword);
+	LoginResponse load(Player player, String expectedPassword);
 
 }

@@ -9,7 +9,7 @@ public class SendGraphic extends OutgoingPacket {
 
 	private final Graphic graphic;
 	private final Position position;
-	
+
 	public SendGraphic(Graphic graphic, Position position) {
 		super(4, 6);
 		this.graphic = graphic;
@@ -19,10 +19,7 @@ public class SendGraphic extends OutgoingPacket {
 	@Override
 	public boolean encode(Player player) {
 		player.send(new SendCoordinate(position));
-		builder.writeByte(0)
-		.writeShort(graphic.getId())
-		.writeByte(position.getHeight())
-		.writeShort(graphic.getDelay());
+		builder.writeByte(0).writeShort(graphic.getId()).writeByte(position.getHeight()).writeShort(graphic.getDelay());
 		return true;
 	}
 }

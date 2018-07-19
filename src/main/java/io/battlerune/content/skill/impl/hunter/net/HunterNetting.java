@@ -18,7 +18,7 @@ import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.Utility;
 
 public class HunterNetting {
-	
+
 	public static void catchImpling(Player player, Npc npc, Impling impling, Position original) {
 		if (!player.equipment.contains(10010) && !player.inventory.contains(10010)) {
 			player.send(new SendMessage("You need a butterfly net to capture this impling."));
@@ -31,10 +31,11 @@ public class HunterNetting {
 		}
 
 		if (player.skills.getLevel(Skill.HUNTER) < impling.getLevel()) {
-			player.send(new SendMessage("You need a hunter level of " + impling.getLevel() + " to catch this impling."));
+			player.send(
+					new SendMessage("You need a hunter level of " + impling.getLevel() + " to catch this impling."));
 			return;
 		}
-		
+
 		Item item = new Item(impling.getReward(), 1);
 
 		if (!player.inventory.hasCapacityFor(item)) {
@@ -42,12 +43,13 @@ public class HunterNetting {
 			return;
 		}
 
-	if(player.skills.getLevel(Skill.STRENGTH) >= 95) {
-		player.animate(new Animation(6606));
-		player.action.execute(catchImpling(player, npc, original, new Item(11260), item, impling.getExperience()), true);
-}
+		if (player.skills.getLevel(Skill.STRENGTH) >= 95) {
+			player.animate(new Animation(6606));
+			player.action.execute(catchImpling(player, npc, original, new Item(11260), item, impling.getExperience()),
+					true);
+		}
 	}
-	
+
 	public static void catchButterfly(Player player, Npc npc, Butterfly butterfly, Position original) {
 		if (!player.equipment.contains(10010) && !player.inventory.contains(10010)) {
 			player.send(new SendMessage("You need a butterfly net to capture this butterfly."));
@@ -60,10 +62,11 @@ public class HunterNetting {
 		}
 
 		if (player.skills.getLevel(Skill.HUNTER) < butterfly.getLevel()) {
-			player.send(new SendMessage("You need a hunter level of " + butterfly.getLevel() + " to catch this butterfly."));
+			player.send(new SendMessage(
+					"You need a hunter level of " + butterfly.getLevel() + " to catch this butterfly."));
 			return;
 		}
-		
+
 		Item item = new Item(butterfly.getItem(), 1);
 
 		if (!player.inventory.hasCapacityFor(item)) {
@@ -71,12 +74,15 @@ public class HunterNetting {
 			return;
 		}
 
-		if(player.skills.getLevel(Skill.STRENGTH) >= 95) {
-		player.animate(new Animation(6606));
-		player.action.execute(catchImpling(player, npc, original, new Item(11260), item, butterfly.getExperience()), true);
+		if (player.skills.getLevel(Skill.STRENGTH) >= 95) {
+			player.animate(new Animation(6606));
+			player.action.execute(catchImpling(player, npc, original, new Item(11260), item, butterfly.getExperience()),
+					true);
 		}
 	}
-	private static Action<Player> catchImpling(Player player, Npc npc, Position original, Item first, Item second, int experience) {
+
+	private static Action<Player> catchImpling(Player player, Npc npc, Position original, Item first, Item second,
+			int experience) {
 		return new Action<Player>(player, 1) {
 
 			@Override
@@ -105,7 +111,7 @@ public class HunterNetting {
 				}
 				cancel();
 			}
-			
+
 			@Override
 			public String getName() {
 				return "Catch impling";

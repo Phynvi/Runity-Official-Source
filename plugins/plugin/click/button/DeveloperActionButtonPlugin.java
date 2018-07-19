@@ -15,37 +15,38 @@ import io.battlerune.util.MessageColor;
 
 public class DeveloperActionButtonPlugin extends PluginContext {
 
-    private static final Logger logger = LogManager.getLogger();
+	private static final Logger logger = LogManager.getLogger();
 
-    @Override
-    protected boolean onClick(Player player, int button) {
-        final Optional<DeveloperAction> result = DeveloperAction.forAction(button);
+	@Override
+	protected boolean onClick(Player player, int button) {
+		final Optional<DeveloperAction> result = DeveloperAction.forAction(button);
 
-        if (!result.isPresent()) {
-            return false;
-        }
+		if (!result.isPresent()) {
+			return false;
+		}
 
-        final DeveloperAction action = result.get();
+		final DeveloperAction action = result.get();
 
-        if (!player.interfaceManager.isInterfaceOpen(PanelType.DEVELOPER_PANEL.getIdentification())) {
-            logger.warn(String.format("Server defended against an interface hack on developer panel by %s action=%s", player, action.getName()));
-            return true;
-        }
+		if (!player.interfaceManager.isInterfaceOpen(PanelType.DEVELOPER_PANEL.getIdentification())) {
+			logger.warn(String.format("Server defended against an interface hack on developer panel by %s action=%s",
+					player, action.getName()));
+			return true;
+		}
 
-        final Player other = player.attributes.get("PLAYER_PANEL_KEY", Player.class);
+		final Player other = player.attributes.get("PLAYER_PANEL_KEY", Player.class);
 
-        if (other == null) {
-            player.send(new SendMessage("The player you have selected is currently invalid.", MessageColor.DARK_BLUE));
-            return true;
-        }
+		if (other == null) {
+			player.send(new SendMessage("The player you have selected is currently invalid.", MessageColor.DARK_BLUE));
+			return true;
+		}
 
-        if (!PlayerRight.isDeveloper(player) && player == other) {
-            player.send(new SendMessage("You can't manage yourself!", MessageColor.DARK_BLUE));
-            return true;
-        }
+		if (!PlayerRight.isDeveloper(player) && player == other) {
+			player.send(new SendMessage("You can't manage yourself!", MessageColor.DARK_BLUE));
+			return true;
+		}
 
-        action.handle(player);
-        return true;
-    }
+		action.handle(player);
+		return true;
+	}
 
 }

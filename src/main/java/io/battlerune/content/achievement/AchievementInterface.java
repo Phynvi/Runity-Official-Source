@@ -35,16 +35,17 @@ public class AchievementInterface extends InterfaceWriter {
 				if (shift != 0) {
 					text[shift++] = "";
 				}
-				
+
 				int completion = AchievementHandler.getDifficultyCompletion(player, achievement.getDifficulty());
-				int progress = (int) (completion * 100 / (double) AchievementHandler.getDifficultyAchievement(achievement.getDifficulty()));
-				
+				int progress = (int) (completion * 100
+						/ (double) AchievementHandler.getDifficultyAchievement(achievement.getDifficulty()));
+
 				player.send(new SendFont(startingIndex() + shift, 2));
 				player.send(new SendTooltip("", startingIndex() + shift));
 				text[shift++] = "<col=CF851B>" + Utility.formatEnum(last.name() + ": " + progress + "%");
-				
+
 				int button = (shift - 1) + BASE_BUTTON;
-				
+
 				if (!AchievementButton.getAchievementTitles().containsKey(button)) {
 					AchievementButton.getAchievementTitles().put(button, achievement.getDifficulty());
 				}
@@ -58,20 +59,22 @@ public class AchievementInterface extends InterfaceWriter {
 			int color = completed == achievement.getAmount() ? 0x00FF00 : completed > 0 ? 0xFFFF00 : 0xFF0000;
 			player.send(new SendColor(startingIndex() + shift, color));
 			player.send(new SendTooltip("View achievement " + achievement.getTask() + "", startingIndex() + shift));
-			if (shift < text.length) 
+			if (shift < text.length)
 				text[shift++] = "" + achievement.getTask();
-			//if the shift size is < text.lengt
+			// if the shift size is < text.lengt
 			int button = (shift - 1) + BASE_BUTTON;
-			
+
 			if (!AchievementButton.getAchievementButtons().containsKey(button)) {
 				AchievementButton.getAchievementButtons().put(button, achievement);
 			}
 		}
-		
+
 		int progress = (int) (AchievementHandler.getTotalCompleted(player) * 100 / (double) AchievementList.getTotal());
 
 		player.send(new SendScrollbar(35050, 1500));
-		player.send(new SendString("Completed: " + AchievementHandler.getTotalCompleted(player) + "/" + total + " (" + progress + "%)", 35004));
+		player.send(new SendString(
+				"Completed: " + AchievementHandler.getTotalCompleted(player) + "/" + total + " (" + progress + "%)",
+				35004));
 	}
 
 	@Override

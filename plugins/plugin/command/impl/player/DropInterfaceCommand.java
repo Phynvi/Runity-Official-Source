@@ -12,7 +12,7 @@ public class DropInterfaceCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-        DropDisplay.open(player);
+		DropDisplay.open(player);
 
 	}
 

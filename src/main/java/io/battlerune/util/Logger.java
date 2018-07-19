@@ -47,14 +47,14 @@ public final class Logger {
 	}
 
 	public static void error(Exception message) {
-		System.err.println("[" + date() + "] -> (" + message.getStackTrace()[0].getClassName() + ") Reason: " + message.getMessage() + " at line: "
-				+ message.getStackTrace()[0].getLineNumber());
+		System.err.println("[" + date() + "] -> (" + message.getStackTrace()[0].getClassName() + ") Reason: "
+				+ message.getMessage() + " at line: " + message.getStackTrace()[0].getLineNumber());
 		message.printStackTrace();
 	}
 
 	public static void error(Throwable message) {
-		System.err.println("[" + date() + "] -> (" + message.getStackTrace()[0].getClassName() + ") Reason: " + message.getMessage() + " at line: "
-				+ message.getStackTrace()[0].getLineNumber());
+		System.err.println("[" + date() + "] -> (" + message.getStackTrace()[0].getClassName() + ") Reason: "
+				+ message.getMessage() + " at line: " + message.getStackTrace()[0].getLineNumber());
 		message.printStackTrace();
 	}
 
@@ -91,7 +91,6 @@ public final class Logger {
 		}
 		return "";
 	}
-
 
 	private Logger() {
 

@@ -28,7 +28,8 @@ public class WeaponDefinitionParser extends GsonParser {
 		int walkAnimation = data.get("walk").getAsInt();
 		int runAnimation = data.get("run").getAsInt();
 
-		WeaponDefinition.DEFINITIONS[id] = new WeaponDefinition(id, name, twoHanded, weaponType, rangedDefinition, standAnimation, walkAnimation, runAnimation);
+		WeaponDefinition.DEFINITIONS[id] = new WeaponDefinition(id, name, twoHanded, weaponType, rangedDefinition,
+				standAnimation, walkAnimation, runAnimation);
 	}
 
 }

@@ -5,9 +5,9 @@ import io.battlerune.game.world.entity.mob.Mob;
 
 public class ThickSkinListener extends SimplifiedListener<Mob> {
 
-    @Override
-    public int modifyDefenceLevel(Mob attacker, Mob defender, int damage) {
-        return damage * 21 / 20;
-    }
+	@Override
+	public int modifyDefenceLevel(Mob attacker, Mob defender, int damage) {
+		return damage * 21 / 20;
+	}
 
 }

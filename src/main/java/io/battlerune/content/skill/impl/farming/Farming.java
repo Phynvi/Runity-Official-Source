@@ -1,6 +1,5 @@
 package io.battlerune.content.skill.impl.farming;
 
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -18,7 +17,6 @@ import io.battlerune.game.world.object.GameObject;
 import io.battlerune.net.packet.out.SendConfig;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.Utility;
-
 
 public class Farming {
 	private final Player player;
@@ -110,12 +108,10 @@ public class Farming {
 //		Al Kharid
 //		529(<<0) = Cactus
 
-
-
-		player.send(new SendConfig(529, (config(FarmingPatches.SOUTH_FALADOR_HERB) << 24)
-				+ (config(FarmingPatches.SOUTH_FALADOR_FLOWER) << 16)
-				+ (config(FarmingPatches.SOUTH_FALADOR_ALLOTMENT_SOUTH) << 8)
-				+ (config(FarmingPatches.SOUTH_FALADOR_ALLOTMENT_WEST))));
+		player.send(new SendConfig(529,
+				(config(FarmingPatches.SOUTH_FALADOR_HERB) << 24) + (config(FarmingPatches.SOUTH_FALADOR_FLOWER) << 16)
+						+ (config(FarmingPatches.SOUTH_FALADOR_ALLOTMENT_SOUTH) << 8)
+						+ (config(FarmingPatches.SOUTH_FALADOR_ALLOTMENT_WEST))));
 		// old stuff
 //		int faladorConfig1 = config(FarmingPatches.SOUTH_FALADOR_ALLOTMENT_SOUTH);
 //		int faladorConfig2 = config(FarmingPatches.SOUTH_FALADOR_ALLOTMENT_WEST);
@@ -148,16 +144,19 @@ public class Farming {
 		return config;
 	}
 
-	/*public void doConfig() {
-		player.send(new SendConfig(529, (config(FarmingPatches.SOUTH_FALADOR_HERB) << 24)
-				+ (config(FarmingPatches.SOUTH_FALADOR_FLOWER) << 16) + (config(FarmingPatches.SOUTH_FALADOR_ALLOTMENT_SOUTH) << 8)
-				+ (config(FarmingPatches.SOUTH_FALADOR_ALLOTMENT_WEST))));
-
-	}*/
+	/*
+	 * public void doConfig() { player.send(new SendConfig(529,
+	 * (config(FarmingPatches.SOUTH_FALADOR_HERB) << 24) +
+	 * (config(FarmingPatches.SOUTH_FALADOR_FLOWER) << 16) +
+	 * (config(FarmingPatches.SOUTH_FALADOR_ALLOTMENT_SOUTH) << 8) +
+	 * (config(FarmingPatches.SOUTH_FALADOR_ALLOTMENT_WEST))));
+	 * 
+	 * }
+	 */
 
 	public boolean fillWateringCans(int item, GameObject object) {
 		if (object.getId() == 6827) {
-			int[] cans = {5331, 5333, 5334, 5335, 5336, 5337, 5338, 5339};
+			int[] cans = { 5331, 5333, 5334, 5335, 5336, 5337, 5338, 5339 };
 			int full = 5340;
 			for (int can : cans) {
 				if (can == item) {
@@ -185,7 +184,7 @@ public class Farming {
 		}
 		return false;
 	}
-	
+
 	public void clear() {
 		for (int i = 0; i < plants.length; i++) {
 			plants[i] = null;
@@ -215,7 +214,7 @@ public class Farming {
 			if (plants[i] != null) {
 				FarmingPatches patch = plants[i].getPatch();
 				if ((x >= patch.x) && (y >= patch.y) && (x <= patch.x2) && (y <= patch.y2)) {
-					if(x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
+					if (x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
 						continue;
 					return true;
 				}
@@ -226,16 +225,16 @@ public class Farming {
 	}
 
 	public boolean click(Player player, int x, int y, int option) {
-		if(option == 1)
+		if (option == 1)
 			for (int i = 0; i < FarmingPatches.values().length; i++) {
 				FarmingPatches patch = FarmingPatches.values()[i];
 				if ((x >= patch.x) && (y >= patch.y) && (x <= patch.x2) && (y <= patch.y2)) {
-					if(x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
+					if (x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
 						continue;
-					/*if(patch == FarmingPatches.SOUTH_FALADOR_ALLOTMENT_SOUTH) {
-						player.send(new SendMessage("This patch is currently disabled."));
-						return true;
-					}*/
+					/*
+					 * if(patch == FarmingPatches.SOUTH_FALADOR_ALLOTMENT_SOUTH) { player.send(new
+					 * SendMessage("This patch is currently disabled.")); return true; }
+					 */
 					if ((inhabited(x, y)) || (patches[i] == null))
 						break;
 					patches[i].click(player, option, i);
@@ -247,7 +246,7 @@ public class Farming {
 			if (plants[i] != null) {
 				FarmingPatches patch = plants[i].getPatch();
 				if ((x >= patch.x) && (y >= patch.y) && (x <= patch.x2) && (y <= patch.y2)) {
-					if(x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
+					if (x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
 						continue;
 					plants[i].click(player, option);
 					return true;
@@ -272,10 +271,10 @@ public class Farming {
 		if (item == 5341) {
 			for (int i = 0; i < FarmingPatches.values().length; i++) {
 				FarmingPatches patch = FarmingPatches.values()[i];
-				if(x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
+				if (x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
 					continue;
 				if ((x >= patch.x) && (y >= patch.y) && (x <= patch.x2) && (y <= patch.y2)) {
-					if(x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
+					if (x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
 						continue;
 					player.action.execute(patches[i].raking(player, i));
 					break;
@@ -287,7 +286,7 @@ public class Farming {
 			if (plants[i] != null) {
 				FarmingPatches patch = plants[i].getPatch();
 				if ((x >= patch.x) && (y >= patch.y) && (x <= patch.x2) && (y <= patch.y2)) {
-					if(x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
+					if (x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
 						continue;
 					plants[i].useItemOnPlant(player, item);
 					return true;
@@ -305,7 +304,7 @@ public class Farming {
 
 		for (FarmingPatches patch : FarmingPatches.values()) {
 			if ((x >= patch.x) && (y >= patch.y) && (x <= patch.x2) && (y <= patch.y2)) {
-				if(x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
+				if (x == 3054 && y == 3307 && patch != FarmingPatches.SOUTH_FALADOR_FLOWER)
 					continue;
 				if (!patches[patch.ordinal()].isRaked()) {
 					player.send(new SendMessage("This patch needs to be raked before anything can grow in it."));
@@ -333,14 +332,16 @@ public class Farming {
 								planted.setTime();
 								insert(planted);
 								doConfig();
-								player.skills.addExperience(Skill.FARMING, (int)plant.plantExperience);
+								player.skills.addExperience(Skill.FARMING, (int) plant.plantExperience);
 							} else {
 								String name = ItemDefinition.get(patch.planter).getName();
-								player.send(new SendMessage("You need " + Utility.getAOrAn(name) + " " +name+ " to plant seeds."));
+								player.send(new SendMessage(
+										"You need " + Utility.getAOrAn(name) + " " + name + " to plant seeds."));
 							}
 
 						} else {
-							player.send(new SendMessage("You need a Farming level of " + plant.level + " to plant this."));
+							player.send(
+									new SendMessage("You need a Farming level of " + plant.level + " to plant this."));
 						}
 
 						return true;
@@ -372,18 +373,19 @@ public class Farming {
 
 	public void save() {
 		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter("./data/content/farming/" + player.getUsername()+".txt"));
+			BufferedWriter writer = new BufferedWriter(
+					new FileWriter("./data/content/farming/" + player.getUsername() + ".txt"));
 			for (int i = 0; i < patches.length; i++) {
 				if (i >= FarmingPatches.values().length)
 					break;
 				if (patches[i] != null) {
 					writer.write("[PATCH]");
 					writer.newLine();
-					writer.write("patch: "+i);
+					writer.write("patch: " + i);
 					writer.newLine();
-					writer.write("stage: "+patches[i].stage);
+					writer.write("stage: " + patches[i].stage);
 					writer.newLine();
-					writer.write("time: "+patches[i].time);
+					writer.write("time: " + patches[i].time);
 					writer.newLine();
 					writer.write("END PATCH");
 					writer.newLine();
@@ -394,17 +396,17 @@ public class Farming {
 				if (plants[i] != null) {
 					writer.write("[PLANT]");
 					writer.newLine();
-					writer.write("patch: "+plants[i].patch);
+					writer.write("patch: " + plants[i].patch);
 					writer.newLine();
-					writer.write("plant: "+plants[i].plant);
+					writer.write("plant: " + plants[i].plant);
 					writer.newLine();
-					writer.write("stage: "+plants[i].stage);
+					writer.write("stage: " + plants[i].stage);
 					writer.newLine();
-					writer.write("watered: "+plants[i].watered);
+					writer.write("watered: " + plants[i].watered);
 					writer.newLine();
-					writer.write("harvested: "+plants[i].harvested);
+					writer.write("harvested: " + plants[i].harvested);
 					writer.newLine();
-					writer.write("time: "+plants[i].time);
+					writer.write("time: " + plants[i].time);
 					writer.newLine();
 					writer.write("END PLANT");
 					writer.newLine();
@@ -419,36 +421,36 @@ public class Farming {
 
 	public void load() {
 		try {
-			if (!new File("./data/content/farming/" + player.getUsername()+".txt").exists())
+			if (!new File("./data/content/farming/" + player.getUsername() + ".txt").exists())
 				return;
-			BufferedReader r = new BufferedReader(new FileReader("./data/content/farming/"+player.getUsername()+".txt"));
+			BufferedReader r = new BufferedReader(
+					new FileReader("./data/content/farming/" + player.getUsername() + ".txt"));
 			int stage = -1, patch = -1, plant = -1, watered = -1, harvested = -1;
 			long time = -1;
-			while(true) {
+			while (true) {
 				String line = r.readLine();
-				if(line == null) {
+				if (line == null) {
 					break;
 				} else {
 					line = line.trim();
 				}
-				if(line.startsWith("patch"))
-					patch = Integer.valueOf(line.substring(line.indexOf(":")+2));
-				else if(line.startsWith("stage"))
-					stage = Integer.valueOf(line.substring(line.indexOf(":")+2));
-				else if(line.startsWith("plant"))
-					plant = Integer.valueOf(line.substring(line.indexOf(":")+2));
-				else if(line.startsWith("watered"))
-					watered = Integer.valueOf(line.substring(line.indexOf(":")+2));
-				else if(line.startsWith("harvested"))
-					harvested = Integer.valueOf(line.substring(line.indexOf(":")+2));
-				else if(line.startsWith("time"))
-					time = Long.valueOf(line.substring(line.indexOf(":")+2));
-				else if(line.equals("END PATCH") && patch >= 0) {
-					patches[patch].stage = (byte)stage;
+				if (line.startsWith("patch"))
+					patch = Integer.valueOf(line.substring(line.indexOf(":") + 2));
+				else if (line.startsWith("stage"))
+					stage = Integer.valueOf(line.substring(line.indexOf(":") + 2));
+				else if (line.startsWith("plant"))
+					plant = Integer.valueOf(line.substring(line.indexOf(":") + 2));
+				else if (line.startsWith("watered"))
+					watered = Integer.valueOf(line.substring(line.indexOf(":") + 2));
+				else if (line.startsWith("harvested"))
+					harvested = Integer.valueOf(line.substring(line.indexOf(":") + 2));
+				else if (line.startsWith("time"))
+					time = Long.valueOf(line.substring(line.indexOf(":") + 2));
+				else if (line.equals("END PATCH") && patch >= 0) {
+					patches[patch].stage = (byte) stage;
 					patches[patch].time = time;
 					patch = -1;
-				}
-				else if(line.equals("END PLANT") && patch >= 0) {
+				} else if (line.equals("END PLANT") && patch >= 0) {
 					plants[patch] = new Plant(patch, plant);
 					plants[patch].watered = (byte) watered;
 					plants[patch].stage = (byte) stage;

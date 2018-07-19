@@ -7,17 +7,18 @@ import io.battlerune.game.world.entity.mob.Mob;
 
 /**
  * Represents a combat impact hit effect.
+ * 
  * @author Artem Batutin
  */
 public interface CombatImpact {
-	
+
 	/**
 	 * Condition if the impact is affecting.
 	 */
 	default boolean canAffect(Mob attacker, Mob defender, Hit hit) {
 		return true;
 	}
-	
+
 	/**
 	 * The impact execution.
 	 */

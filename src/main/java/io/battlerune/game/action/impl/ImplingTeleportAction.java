@@ -9,6 +9,7 @@ import io.battlerune.util.Utility;
 
 /**
  * Teleports an entity to another part of the world.
+ * 
  * @author Daniel
  */
 public final class ImplingTeleportAction extends Action<Npc> {
@@ -29,7 +30,7 @@ public final class ImplingTeleportAction extends Action<Npc> {
 		Hunter.SPAWNS.put(getMob().id, getMob().spawnPosition);
 		cancel();
 	}
-	
+
 	@Override
 	public String getName() {
 		return "Impling teleport";

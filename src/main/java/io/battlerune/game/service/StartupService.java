@@ -29,8 +29,7 @@ public class StartupService implements ExecutorService {
 	/**
 	 * Waits for pending tasks to complete.
 	 * 
-	 * @throws ExecutionException
-	 *             if an error in a task occurred.
+	 * @throws ExecutionException if an error in a task occurred.
 	 */
 	public void waitForPendingTasks() throws ExecutionException {
 		while (pendingTasks.size() > 0) {

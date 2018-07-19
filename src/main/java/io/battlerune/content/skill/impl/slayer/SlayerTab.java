@@ -41,12 +41,12 @@ public enum SlayerTab {
 	/** The itemcontainer identification. */
 	private final int identification;
 
-	/** Constructs a new <code>SlayerTab<code>.  */
+	/** Constructs a new <code>SlayerTab<code>. */
 	SlayerTab(int identification) {
 		this.identification = identification;
 	}
 
-	/** Gets the itemcontainer identification.  */
+	/** Gets the itemcontainer identification. */
 	public int getIdentification() {
 		return identification;
 	}
@@ -58,12 +58,16 @@ public enum SlayerTab {
 
 		case MAIN:
 			setFrame(player, 0);
-			player.send(new SendNpcDisplay(task == null ? 2044 : task.getNpc()[0], task == null ? 300 : task.getSize()));
+			player.send(
+					new SendNpcDisplay(task == null ? 2044 : task.getNpc()[0], task == null ? 300 : task.getSize()));
 			player.send(new SendString(task == null ? "" : "</col>Name: <col=ffffff>" + task.getName(), 46716));
 			player.send(new SendString(task == null ? "" : "</col>Level: <col=ffffff>" + task.getCombatLevel(), 46717));
-			player.send(new SendString(task == null ? "You do not have a task assigned!" : "</col>Assigned: <col=ffffff>" + player.slayer.getAssigned(), 46718));
-			player.send(new SendString(task == null ? "" : "</col>Remaining: <col=ffffff>" + player.slayer.getAmount(), 46735));
-			player.send(new SendString(task == null ? "" : "</col>Position: <col=ffffff>" + task.getLocationString(), 46736));
+			player.send(new SendString(task == null ? "You do not have a task assigned!"
+					: "</col>Assigned: <col=ffffff>" + player.slayer.getAssigned(), 46718));
+			player.send(new SendString(task == null ? "" : "</col>Remaining: <col=ffffff>" + player.slayer.getAmount(),
+					46735));
+			player.send(new SendString(task == null ? "" : "</col>Position: <col=ffffff>" + task.getLocationString(),
+					46736));
 			player.send(new SendString("Tasks assigned:\\n<col=ffffff>" + player.slayer.getTotalAssigned(), 46737));
 			player.send(new SendString("Tasks completed:\\n<col=ffffff>" + player.slayer.getTotalCompleted(), 46738));
 			player.send(new SendString("Tasks Cancelled:\\n<col=ffffff>" + player.slayer.getTotalCancelled(), 46739));
@@ -101,7 +105,8 @@ public enum SlayerTab {
 				string++;
 				player.send(new SendString(unlockable.getCost() + " points", string));
 				string++;
-				player.send(new SendConfig(560 + unlockable.ordinal(), player.slayer.getUnlocked().contains(unlockable) ? 0 : 1));
+				player.send(new SendConfig(560 + unlockable.ordinal(),
+						player.slayer.getUnlocked().contains(unlockable) ? 0 : 1));
 				string++;
 				player.send(new SendItemOnInterfaceSlot(string, new Item(unlockable.getItem(), 1), 0));
 				string++;
@@ -153,7 +158,7 @@ public enum SlayerTab {
 		}
 	}
 
-	/** Sets the tab frame.  */
+	/** Sets the tab frame. */
 	private static void setFrame(Player player, int index) {
 		player.send(new SendConfig(710, index));
 		player.send(new SendString("<col=" + (index == 0 ? "FF981F" : "ff9933") + ">Main", 46710));

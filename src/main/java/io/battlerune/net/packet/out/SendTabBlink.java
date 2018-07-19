@@ -10,17 +10,17 @@ import io.battlerune.net.packet.OutgoingPacket;
  */
 public class SendTabBlink extends OutgoingPacket {
 
-    private int tab;
+	private int tab;
 
-    public SendTabBlink(int tab) {
-        super(24, 1);
-        this.tab = tab;
-    }
+	public SendTabBlink(int tab) {
+		super(24, 1);
+		this.tab = tab;
+	}
 
-    @Override
-    public boolean encode(Player player) {
-        builder.writeByte(tab);
-        return true;
-    }
+	@Override
+	public boolean encode(Player player) {
+		builder.writeByte(tab);
+		return true;
+	}
 
 }

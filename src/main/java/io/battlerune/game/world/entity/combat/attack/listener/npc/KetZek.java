@@ -19,53 +19,53 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 /**
  * @author Daniel
  */
-@NpcCombatListenerSignature(npcs = {3125})
+@NpcCombatListenerSignature(npcs = { 3125 })
 public class KetZek extends SimplifiedListener<Npc> {
 
-    private static MagicAttack MAGIC;
-    private static CombatStrategy<Npc>[] STRATEGIES;
+	private static MagicAttack MAGIC;
+	private static CombatStrategy<Npc>[] STRATEGIES;
 
-    static {
-        try {
-            MAGIC = new MagicAttack();
-            STRATEGIES = createStrategyArray(NpcMeleeStrategy.get(), MAGIC);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+	static {
+		try {
+			MAGIC = new MagicAttack();
+			STRATEGIES = createStrategyArray(NpcMeleeStrategy.get(), MAGIC);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-    @Override
-    public boolean canAttack(Npc attacker, Mob defender) {
-        if (!NpcMeleeStrategy.get().withinDistance(attacker, defender)) {
-            attacker.setStrategy(MAGIC);
-        }
-        return attacker.getStrategy().canAttack(attacker, defender);
-    }
+	@Override
+	public boolean canAttack(Npc attacker, Mob defender) {
+		if (!NpcMeleeStrategy.get().withinDistance(attacker, defender)) {
+			attacker.setStrategy(MAGIC);
+		}
+		return attacker.getStrategy().canAttack(attacker, defender);
+	}
 
-    @Override
-    public void start(Npc attacker, Mob defender, Hit[] hits) {
-        if (!NpcMeleeStrategy.get().withinDistance(attacker, defender)) {
-            attacker.setStrategy(MAGIC);
-        } else {
-            attacker.setStrategy(randomStrategy(STRATEGIES));
-        }
-    }
+	@Override
+	public void start(Npc attacker, Mob defender, Hit[] hits) {
+		if (!NpcMeleeStrategy.get().withinDistance(attacker, defender)) {
+			attacker.setStrategy(MAGIC);
+		} else {
+			attacker.setStrategy(randomStrategy(STRATEGIES));
+		}
+	}
 
-    private static class MagicAttack extends NpcMagicStrategy {
-        private MagicAttack() {
-            super(getDefinition("Fire Blast"));
-        }
+	private static class MagicAttack extends NpcMagicStrategy {
+		private MagicAttack() {
+			super(getDefinition("Fire Blast"));
+		}
 
-        @Override
-        public Animation getAttackAnimation(Npc attacker, Mob defender) {
-            return new Animation(2647, UpdatePriority.HIGH);
-        }
+		@Override
+		public Animation getAttackAnimation(Npc attacker, Mob defender) {
+			return new Animation(2647, UpdatePriority.HIGH);
+		}
 
-        @Override
-        public CombatHit[] getHits(Npc attacker, Mob defender) {
-            CombatHit combatHit = nextMagicHit(attacker, defender, combatProjectile.getMaxHit());
-            combatHit.setAccurate(true);
-            return new CombatHit[]{combatHit};
-        }
-    }
+		@Override
+		public CombatHit[] getHits(Npc attacker, Mob defender) {
+			CombatHit combatHit = nextMagicHit(attacker, defender, combatProjectile.getMaxHit());
+			combatHit.setAccurate(true);
+			return new CombatHit[] { combatHit };
+		}
+	}
 }

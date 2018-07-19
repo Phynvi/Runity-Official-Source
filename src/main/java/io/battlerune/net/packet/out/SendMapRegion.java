@@ -14,7 +14,7 @@ public class SendMapRegion extends OutgoingPacket {
 	public boolean encode(Player player) {
 		player.lastPosition = player.getPosition().copy();
 		builder.writeShort(player.getPosition().getChunkX() + 6, ByteModification.ADD)
-		.writeShort(player.getPosition().getChunkY() + 6);
+				.writeShort(player.getPosition().getChunkY() + 6);
 		return true;
 	}
 

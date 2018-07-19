@@ -15,7 +15,8 @@ public class DragonMace extends PlayerMeleeStrategy {
 	private static final Graphic GRAPHIC = new Graphic(251);
 	private static final DragonMace INSTANCE = new DragonMace();
 
-	private DragonMace() { }
+	private DragonMace() {
+	}
 
 	@Override
 	public void start(Player attacker, Mob defender, Hit[] hits) {
@@ -27,7 +28,7 @@ public class DragonMace extends PlayerMeleeStrategy {
 	public int getAttackDelay(Player attacker, Mob defender, FightType fightType) {
 		return 4;
 	}
-	
+
 	@Override
 	public Animation getAttackAnimation(Player attacker, Mob defender) {
 		return ANIMATION;
@@ -41,7 +42,7 @@ public class DragonMace extends PlayerMeleeStrategy {
 
 	@Override
 	public int modifyDamage(Player attacker, Mob defender, int damage) {
-		return damage*2;
+		return damage * 2;
 	}
 
 	public static DragonMace get() {

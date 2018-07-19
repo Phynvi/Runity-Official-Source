@@ -7,7 +7,8 @@ public interface RaidsNpc {
 
 	/**
 	 * Fetches the npc data for the given npc data name
+	 * 
 	 * @return
 	 */
-	 Npc[] getNpcs(Player player);
+	Npc[] getNpcs(Player player);
 }

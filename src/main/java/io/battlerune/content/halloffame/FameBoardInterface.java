@@ -19,16 +19,16 @@ public class FameBoardInterface {
 			for (int index = 0; index < 80; index += 4) {
 				for (int i = 0; i < PlayerKillingBoard.player.size(); i++) {
 					player.send(new SendString(PlayerKillingBoard.player.get(i).getRights(), 58532 + (index + 1)));
-					player.send(
-							new SendString(PlayerKillingBoard.player.get(i).getUsername(), 58532 + (index + 2)));
+					player.send(new SendString(PlayerKillingBoard.player.get(i).getUsername(), 58532 + (index + 2)));
 					player.send(new SendString(PlayerKillingBoard.player.get(i).getKills(), 58532 + (index + 3)));
 				}
 			}
 			break;
 		case MISC:
-			for(int i = 0; i < PlayerKillingBoard.player.size(); i++) {
- 					player.message("["+i+"]Data - " + PlayerKillingBoard.player.get(i).getRights() + 
- 							" : " + PlayerKillingBoard.player.get(i).getUsername() + " : " + PlayerKillingBoard.player.get(i).getKills());
+			for (int i = 0; i < PlayerKillingBoard.player.size(); i++) {
+				player.message("[" + i + "]Data - " + PlayerKillingBoard.player.get(i).getRights() + " : "
+						+ PlayerKillingBoard.player.get(i).getUsername() + " : "
+						+ PlayerKillingBoard.player.get(i).getKills());
 			}
 			break;
 		default:

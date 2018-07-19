@@ -12,19 +12,19 @@ import io.battlerune.game.task.TickableTask;
  */
 public class BotStartupEvent extends TickableTask {
 
-    public BotStartupEvent() {
-        super(false, 1);
-    }
+	public BotStartupEvent() {
+		super(false, 1);
+	}
 
-    @Override
-    protected void tick() {
-        if (tick >= Config.MAX_BOTS) {
-            cancel();
-            return;
-        }
+	@Override
+	protected void tick() {
+		if (tick >= Config.MAX_BOTS) {
+			cancel();
+			return;
+		}
 
-        PlayerBot bot = new PlayerBot();
-        bot.register();
-        BotObjective.WALK_TO_BANK.init(bot);
-    }
+		PlayerBot bot = new PlayerBot();
+		bot.register();
+		BotObjective.WALK_TO_BANK.init(bot);
+	}
 }

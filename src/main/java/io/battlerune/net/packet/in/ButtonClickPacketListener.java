@@ -21,30 +21,30 @@ import io.battlerune.net.packet.out.SendMessage;
 @PacketListenerMeta(ClientPackets.BUTTON_CLICK)
 public class ButtonClickPacketListener implements PacketListener {
 
-    @SuppressWarnings("static-access")
+	@SuppressWarnings("static-access")
 	@Override
-    public void handlePacket(final Player player, GamePacket packet) {
-        final int button = packet.readShort();
-        
-        if(player.right.isDeveloper(player)) {
-        }
-        if (player.isDead()) {
-            return;
-        }
+	public void handlePacket(final Player player, GamePacket packet) {
+		final int button = packet.readShort();
 
-        if (player.locking.locked(PacketType.CLICK_BUTTON, button)) {
-            return;
-        }
+		if (player.right.isDeveloper(player)) {
+		}
+		if (player.isDead()) {
+			return;
+		}
 
-        if (PlayerRight.isDeveloper(player)) {
-            player.send(new SendMessage(String.format("[%s]: button=%d", ButtonClickPacketListener.class.getSimpleName(), button)));
-        }
+		if (player.locking.locked(PacketType.CLICK_BUTTON, button)) {
+			return;
+		}
 
+		if (PlayerRight.isDeveloper(player)) {
+			player.send(new SendMessage(
+					String.format("[%s]: button=%d", ButtonClickPacketListener.class.getSimpleName(), button)));
+		}
 
-        if (EventDispatcher.execute(player, new ClickButtonInteractionEvent(button))) {
-            return;
-        }
+		if (EventDispatcher.execute(player, new ClickButtonInteractionEvent(button))) {
+			return;
+		}
 
-        PluginManager.getDataBus().publish(player, new ButtonClickEvent(button));
-    }
+		PluginManager.getDataBus().publish(player, new ButtonClickEvent(button));
+	}
 }

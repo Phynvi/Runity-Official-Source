@@ -6,18 +6,19 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.position.Position;
 
 public interface RunningStartInteraction extends ObstacleInteraction {
-    @Override
-    default void start(Player player) {
-        player.mobAnimation.setWalk(getAnimation());
-    }
+	@Override
+	default void start(Player player) {
+		player.mobAnimation.setWalk(getAnimation());
+	}
 
-    @Override
-    default void onExecution(Player player, Position start, Position end) {
-        player.getCombat().reset();
-        player.movement.walk(end);
-        player.updateFlags.add(UpdateFlag.APPEARANCE);
-    }
+	@Override
+	default void onExecution(Player player, Position start, Position end) {
+		player.getCombat().reset();
+		player.movement.walk(end);
+		player.updateFlags.add(UpdateFlag.APPEARANCE);
+	}
 
-    @Override
-    default void onCancellation(Player player) { }
+	@Override
+	default void onCancellation(Player player) {
+	}
 }

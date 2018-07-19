@@ -18,63 +18,64 @@ import io.battlerune.content.clanchannel.content.ClanTask;
  */
 public class ClanDetails {
 
-    /** The clan channel instance. */
-    private final ClanChannel channel;
+	/** The clan channel instance. */
+	private final ClanChannel channel;
 
-    /** The clan channel owner. */
-    public String owner;
+	/** The clan channel owner. */
+	public String owner;
 
-    public String created;
+	public String created;
 
-    public ClanType type;
+	public ClanType type;
 
-    public ClanLevel level;
+	public ClanLevel level;
 
-    public ClanTask clanTask;
+	public ClanTask clanTask;
 
-    public int taskAmount;
+	public int taskAmount;
 
-    /** The clan channel points. */
-    public int points;
+	/** The clan channel points. */
+	public int points;
 
-    /** The clan channel total experience. */
-    public double experience;
+	/** The clan channel total experience. */
+	public double experience;
 
-    /** The date the clan channel was created. */
-    public String established;
+	/** The date the clan channel was created. */
+	public String established;
 
-    /** The clan achievements. */
-    public HashMap<ClanAchievement, Integer> achievements = new HashMap<ClanAchievement, Integer>(ClanAchievement.values().length) {
-        private static final long serialVersionUID = 1842952445111093360L;
+	/** The clan achievements. */
+	public HashMap<ClanAchievement, Integer> achievements = new HashMap<ClanAchievement, Integer>(
+			ClanAchievement.values().length) {
+		private static final long serialVersionUID = 1842952445111093360L;
 
-        {
-            for (final ClanAchievement achievement : ClanAchievement.values())
-                put(achievement, 0);
-        }
-    };
+		{
+			for (final ClanAchievement achievement : ClanAchievement.values())
+				put(achievement, 0);
+		}
+	};
 
-    /** Constructs a new <code>ClanDetails</code>. */
-    ClanDetails(ClanChannel channel) {
-        this.channel = channel;
-    }
+	/** Constructs a new <code>ClanDetails</code>. */
+	ClanDetails(ClanChannel channel) {
+		this.channel = channel;
+	}
 
-    public int getAchievementCompletion(ClanAchievement achievement) {
-        int count = 0;
-        if (achievements.containsKey(achievement)) {
-            count = achievements.get(achievement);
-        }
-        return count;
-    }
+	public int getAchievementCompletion(ClanAchievement achievement) {
+		int count = 0;
+		if (achievements.containsKey(achievement)) {
+			count = achievements.get(achievement);
+		}
+		return count;
+	}
 
-    public boolean completedAchievement(ClanAchievement achievement) {
-        int progress = getAchievementCompletion(achievement);
-        int goal = achievement.amount;
-        return progress == goal;
-    }
+	public boolean completedAchievement(ClanAchievement achievement) {
+		int progress = getAchievementCompletion(achievement);
+		int goal = achievement.amount;
+		return progress == goal;
+	}
 
-    /** Gets the average total level of the clan. */
-    public int getAverageTotal() {
-        return 0;
+	/** Gets the average total level of the clan. */
+	public int getAverageTotal() {
+		return 0;
 //        int total = 0;
 //        Iterator<ClanMember> iterator = channel.iterator();
 //        while (iterator.hasNext()) {
@@ -82,21 +83,21 @@ public class ClanDetails {
 //            total += member.totalLevel;
 //        }
 //        return total / channel.size();
-    }
+	}
 
-    public int getClanRank(ClanMember member) {
-        List<ClanMember> members = new LinkedList<>();
-        members.addAll(channel.getMembers());
-        members.sort(ClanMemberComporator.RANK);
+	public int getClanRank(ClanMember member) {
+		List<ClanMember> members = new LinkedList<>();
+		members.addAll(channel.getMembers());
+		members.sort(ClanMemberComporator.RANK);
 
-        int index = 0;
-        for (ClanMember next : members) {
-            index++;
-            if (next.equals(member)) {
-                return index;
-            }
-        }
-        return index;
-    }
+		int index = 0;
+		for (ClanMember next : members) {
+			index++;
+			if (next.equals(member)) {
+				return index;
+			}
+		}
+		return index;
+	}
 
 }

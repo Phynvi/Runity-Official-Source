@@ -7,13 +7,13 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 
 public class ScorpiaGuardian extends MultiStrategy {
 
-    public ScorpiaGuardian() {
-        currentStrategy = NpcMeleeStrategy.get();
-    }
+	public ScorpiaGuardian() {
+		currentStrategy = NpcMeleeStrategy.get();
+	}
 
-    @Override
-    public boolean canAttack(Npc attacker, Mob defender) {
-        return false;
-    }
+	@Override
+	public boolean canAttack(Npc attacker, Mob defender) {
+		return false;
+	}
 
 }

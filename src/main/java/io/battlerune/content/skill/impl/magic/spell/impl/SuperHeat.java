@@ -38,8 +38,8 @@ public class SuperHeat implements Spell {
 	public void execute(Player player, Item item) {
 		if (player.spellbook != Spellbook.MODERN)
 			return;
-        if (!player.spellCasting.castingDelay.elapsed(599))
-            return;
+		if (!player.spellCasting.castingDelay.elapsed(599))
+			return;
 
 		Optional<SmeltingData> data = SmeltingData.getDefinitionByItem(item.getId());
 
@@ -63,7 +63,7 @@ public class SuperHeat implements Spell {
 		player.send(new SendForceTab(6));
 		player.inventory.removeAll(data.get().required);
 		player.inventory.addAll(data.get().produced);
-		player.skills.addExperience(Skill.MAGIC, 53* Config.MAGIC_MODIFICATION);
+		player.skills.addExperience(Skill.MAGIC, 53 * Config.MAGIC_MODIFICATION);
 		player.skills.addExperience(Skill.SMITHING, data.get().experience * Config.SMITHING_MODIFICATION);
 		player.spellCasting.castingDelay.reset();
 	}

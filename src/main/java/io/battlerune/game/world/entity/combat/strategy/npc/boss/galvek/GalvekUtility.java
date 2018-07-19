@@ -12,13 +12,14 @@ import io.battlerune.util.MessageColor;
 import io.battlerune.util.Utility;
 
 /**
- * Created by Adam_#6723 Galvek Utility Class, handles the spawning & generates// i dont even wanna type my name under such shit 
- * the location of the spawning
+ * Created by Adam_#6723 Galvek Utility Class, handles the spawning &
+ * generates// i dont even wanna type my name under such shit the location of
+ * the spawning
  */
 public class GalvekUtility {
 
 	public static SpawnData1 spawn;
-	
+
 	public static boolean activated;
 
 	public static Npc generateSpawn() {
@@ -44,7 +45,6 @@ public class GalvekUtility {
 
 	public static void defeated(Npc Galvek, Player player) {
 
-
 		boolean hasClan = player.clanChannel != null;
 
 		if (hasClan) {
@@ -64,38 +64,46 @@ public class GalvekUtility {
 		 **/
 
 		int random = Utility.random(100);
-		
+
 		if (random <= 50) {
 			for (int i = 0; i < COMMONLOOT.length; i++) {
-				GroundItem.createGlobal(player, new Item(COMMONLOOT[i], 1), new Position(spawn.getPosition().getX() + Utility.random(10), spawn.getPosition().getY() + Utility.random(10), 0));
+				GroundItem.createGlobal(player, new Item(COMMONLOOT[i], 1),
+						new Position(spawn.getPosition().getX() + Utility.random(10),
+								spawn.getPosition().getY() + Utility.random(10), 0));
 			}
 		}
 		if (random <= 25) {
 			for (int i = 0; i < RARELOOT.length; i++) {
-				GroundItem.createGlobal(player, new Item(RARELOOT[i], 1), new Position(spawn.getPosition().getX() + Utility.random(10), spawn.getPosition().getY() + Utility.random(10), 0));
+				GroundItem.createGlobal(player, new Item(RARELOOT[i], 1),
+						new Position(spawn.getPosition().getX() + Utility.random(10),
+								spawn.getPosition().getY() + Utility.random(10), 0));
 			}
 		}
 		if (random <= 5) {
 			for (int i = 0; i < SUPERRARELOOT.length; i++) {
-				GroundItem.createGlobal(player, new Item(SUPERRARELOOT[i], 1), new Position(spawn.getPosition().getX() + Utility.random(10), spawn.getPosition().getY() + Utility.random(10), 0));
-      			World.sendMessage("<img=10><col=FF0000>Galvek has dropped Bank Loot!");
+				GroundItem.createGlobal(player, new Item(SUPERRARELOOT[i], 1),
+						new Position(spawn.getPosition().getX() + Utility.random(10),
+								spawn.getPosition().getY() + Utility.random(10), 0));
+				World.sendMessage("<img=10><col=FF0000>Galvek has dropped Bank Loot!");
 			}
-		} 
-		
-	for (int i = 0; i < ALWAYSLOOT.length; i++) { 
-		GroundItem.createGlobal(player, new Item(ALWAYSLOOT[i], 1), new Position(spawn.getPosition().getX() + Utility.random(10),spawn.getPosition().getY() + Utility.random(10), 0));
-	       	   }
-		
+		}
+
+		for (int i = 0; i < ALWAYSLOOT.length; i++) {
+			GroundItem.createGlobal(player, new Item(ALWAYSLOOT[i], 1),
+					new Position(spawn.getPosition().getX() + Utility.random(10),
+							spawn.getPosition().getY() + Utility.random(10), 0));
+		}
+
 		player.send(new SendMessage("Galvek drop's lootation all over the map.", MessageColor.RED));
 		Galvek.unregister();
 	}
 
-	public enum SpawnData1 { 
-		LEVEL_46("lvl 46 wild near Spider Hill", new Position(3135, 3888, 0), new Position(3132, 3881, 0)), 
-		LEVEL_16("lvl 16 wild near Bone Yard", new Position(3273, 3648, 0), new Position(3267, 3654, 0)), 
-		LEVEL_51("lvl 51 wild near Rogues Castle", new Position(3266, 3924, 0), new Position(3266, 3927, 0)), 
-		LEVEL_41("lvl 41 wild near 19 Portal",	new Position(3197, 3670, 0), new Position(3194, 3666, 0)), 
-		LEVEL_47("lvl 47 wild near obelisk", new Position(3308, 3892, 0), new Position(3305, 3888, 0)), 
+	public enum SpawnData1 {
+		LEVEL_46("lvl 46 wild near Spider Hill", new Position(3135, 3888, 0), new Position(3132, 3881, 0)),
+		LEVEL_16("lvl 16 wild near Bone Yard", new Position(3273, 3648, 0), new Position(3267, 3654, 0)),
+		LEVEL_51("lvl 51 wild near Rogues Castle", new Position(3266, 3924, 0), new Position(3266, 3927, 0)),
+		LEVEL_41("lvl 41 wild near 19 Portal", new Position(3197, 3670, 0), new Position(3194, 3666, 0)),
+		LEVEL_47("lvl 47 wild near obelisk", new Position(3308, 3892, 0), new Position(3305, 3888, 0)),
 		LEVEL_53("lvl 53 wild near scorpia's cave entrance", new Position(3211, 3944, 0), new Position(3208, 3940, 0));
 
 		public final String location;

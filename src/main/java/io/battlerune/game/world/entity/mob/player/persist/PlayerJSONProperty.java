@@ -6,14 +6,14 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 abstract class PlayerJSONProperty {
 
-    final String label;
+	final String label;
 
-    PlayerJSONProperty(String label) {
-        this.label = label;
-    }
+	PlayerJSONProperty(String label) {
+		this.label = label;
+	}
 
-    abstract void read(Player player, JsonElement property);
+	abstract void read(Player player, JsonElement property);
 
-    abstract Object write(Player player);
+	abstract Object write(Player player);
 
 }

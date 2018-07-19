@@ -19,12 +19,9 @@ public class Point {
 	/**
 	 * Creates a point.
 	 * 
-	 * @param x
-	 *            X coord.
-	 * @param y
-	 *            Y coord.
-	 * @param dir
-	 *            Direction to walk to this point.
+	 * @param x   X coord.
+	 * @param y   Y coord.
+	 * @param dir Direction to walk to this point.
 	 */
 	public Point(int x, int y, int dir) {
 		this.x = x;

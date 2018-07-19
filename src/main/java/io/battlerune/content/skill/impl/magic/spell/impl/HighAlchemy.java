@@ -44,8 +44,8 @@ public class HighAlchemy implements Spell {
 		if (player.spellbook != Spellbook.MODERN)
 			return;
 
-        if (!player.spellCasting.castingDelay.elapsed(500)) {
-            return;
+		if (!player.spellCasting.castingDelay.elapsed(500)) {
+			return;
 		}
 
 		if (Arrays.stream(Magic.UNALCHEABLES).anyMatch($it -> item.getId() == $it.getId())) {
@@ -55,9 +55,9 @@ public class HighAlchemy implements Spell {
 
 		int value = item.getHighAlch();
 
-        if (value > 100_000_000) {
-        	player.send(new SendMessage("The value of this item is too high and can not be high-alched."));
-        	return;
+		if (value > 100_000_000) {
+			player.send(new SendMessage("The value of this item is too high and can not be high-alched."));
+			return;
 		}
 
 		player.animate(new Animation(713));
@@ -69,8 +69,8 @@ public class HighAlchemy implements Spell {
 		player.send(new SendForceTab(6));
 		player.skills.addExperience(Skill.MAGIC, 65 * (Config.MAGIC_MODIFICATION + 5));
 		AchievementHandler.activate(player, AchievementKey.HIGH_ALCHEMY, 1);
-        player.spellCasting.castingDelay.reset();
-        player.action.clearNonWalkableActions();
+		player.spellCasting.castingDelay.reset();
+		player.action.clearNonWalkableActions();
 		RandomEventHandler.trigger(player);
 	}
 }

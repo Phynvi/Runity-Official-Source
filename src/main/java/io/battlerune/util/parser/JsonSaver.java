@@ -32,8 +32,8 @@ import com.google.gson.JsonObject;
 public final class JsonSaver {
 
 	/**
-	 * A gson builder, allows us to turn {@code Object}s into {@code JSON}
-	 * format and vice-versa.
+	 * A gson builder, allows us to turn {@code Object}s into {@code JSON} format
+	 * and vice-versa.
 	 */
 	private final Gson serializer = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
@@ -48,14 +48,12 @@ public final class JsonSaver {
 	private final boolean singletonTable;
 
 	/**
-	 * A writer that acts as a sub-table, instantiated after each
-	 * {@code split()}.
+	 * A writer that acts as a sub-table, instantiated after each {@code split()}.
 	 */
 	private JsonObject currentWriter = new JsonObject();
 
 	/**
-	 * Creates a new {@code JsonSaver} that can have an infinite amount of
-	 * tables.
+	 * Creates a new {@code JsonSaver} that can have an infinite amount of tables.
 	 */
 	public JsonSaver() {
 		this(false);
@@ -64,8 +62,7 @@ public final class JsonSaver {
 	/**
 	 * Creates a new {@code JsonSaver}.
 	 *
-	 * @param singletonTable
-	 *            determines if only one table can exist.
+	 * @param singletonTable determines if only one table can exist.
 	 */
 	public JsonSaver(boolean singletonTable) {
 		this.singletonTable = singletonTable;
@@ -81,11 +78,9 @@ public final class JsonSaver {
 	}
 
 	/**
-	 * Publishes the contents of this {@code JsonSaver} to the file at
-	 * {@code path}.
+	 * Publishes the contents of this {@code JsonSaver} to the file at {@code path}.
 	 * 
-	 * @param path
-	 *            the path to publish the contents.
+	 * @param path the path to publish the contents.
 	 */
 	public void publish(String path) {
 		try (FileWriter fw = new FileWriter(path)) {
@@ -105,13 +100,13 @@ public final class JsonSaver {
 	}
 
 	/**
-	 * Adds the data within {@code currentWriter} to the internal
-	 * {@code JsonArray} then instantiates a new writer, effectively splitting
-	 * the data up into tables. If this instance is a {@code singletonTable},
-	 * throws an {@code IllegalStateException}.
+	 * Adds the data within {@code currentWriter} to the internal {@code JsonArray}
+	 * then instantiates a new writer, effectively splitting the data up into
+	 * tables. If this instance is a {@code singletonTable}, throws an
+	 * {@code IllegalStateException}.
 	 * 
-	 * @throws IllegalStateException
-	 *             if this instance is only allowed one internal table.
+	 * @throws IllegalStateException if this instance is only allowed one internal
+	 *                               table.
 	 */
 	public void split() {
 		Preconditions.checkState(!singletonTable, "JsonSaver instance is a singleton table!");
@@ -121,9 +116,8 @@ public final class JsonSaver {
 
 	/**
 	 * <strong>Invocation of this function is expensive and should be cached or
-	 * avoided whenever possible.</strong> This function will call
-	 * {@code split()} if the {@code currentWriter} has unsplit elements added
-	 * to it.
+	 * avoided whenever possible.</strong> This function will call {@code split()}
+	 * if the {@code currentWriter} has unsplit elements added to it.
 	 * <p>
 	 * <p>
 	 * This function returns the contents of this class in pretty printed

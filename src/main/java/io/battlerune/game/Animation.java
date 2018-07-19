@@ -23,8 +23,7 @@ public class Animation implements Comparable<Animation> {
 	/**
 	 * Creates a new instance of the animation with a hidden delay of 0.
 	 * 
-	 * @param id
-	 *            The id of the animation being used.
+	 * @param id The id of the animation being used.
 	 */
 	public Animation(int id) {
 		this(id, 0, UpdatePriority.NORMAL);
@@ -33,10 +32,8 @@ public class Animation implements Comparable<Animation> {
 	/**
 	 * Creates a new instance of the animation with a specified delay.
 	 * 
-	 * @param id
-	 *            The id of the animation being used.
-	 * @param delay
-	 *            The delay of the animation in seconds.
+	 * @param id    The id of the animation being used.
+	 * @param delay The delay of the animation in seconds.
 	 */
 	public Animation(int id, int delay) {
 		this(id, delay, UpdatePriority.NORMAL);
@@ -45,10 +42,8 @@ public class Animation implements Comparable<Animation> {
 	/**
 	 * Creates a new instance of the animation with a hidden delay of 0.
 	 * 
-	 * @param id
-	 *            The id of the animation being used.
-	 * @param priority
-	 *            The priority level of the animation.
+	 * @param id       The id of the animation being used.
+	 * @param priority The priority level of the animation.
 	 */
 	public Animation(int id, UpdatePriority priority) {
 		this(id, 0, priority);
@@ -57,12 +52,9 @@ public class Animation implements Comparable<Animation> {
 	/**
 	 * Creates a new instance of the animation with a specified delay.
 	 * 
-	 * @param id
-	 *            The id of the animation being used.
-	 * @param delay
-	 *            The delay of the animation in seconds.
-	 * @param priority
-	 *            The priority level of the animation.
+	 * @param id       The id of the animation being used.
+	 * @param delay    The delay of the animation in seconds.
+	 * @param priority The priority level of the animation.
 	 */
 	public Animation(int id, int delay, UpdatePriority priority) {
 		this.priority = priority;

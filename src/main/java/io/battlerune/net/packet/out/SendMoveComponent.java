@@ -18,9 +18,7 @@ public class SendMoveComponent extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeShort(x)
-		.writeShort(y, ByteOrder.LE)
-		.writeShort(id, ByteOrder.LE);
+		builder.writeShort(x).writeShort(y, ByteOrder.LE).writeShort(id, ByteOrder.LE);
 		return true;
 	}
 

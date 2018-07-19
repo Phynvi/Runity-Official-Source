@@ -20,16 +20,14 @@ public class SendExpCounter extends OutgoingPacket {
 		this.experience = experience;
 		this.counter = counter;
 	}
-	
+
 	public SendExpCounter(int experience) {
 		this(99, experience, true);
 	}
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeByte(skill)
-		.writeInt(experience)
-		.writeByte(counter ? 1 : 0);
+		builder.writeByte(skill).writeInt(experience).writeByte(counter ? 1 : 0);
 		return true;
 	}
 

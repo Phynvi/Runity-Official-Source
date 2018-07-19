@@ -8,7 +8,7 @@ import io.battlerune.content.event.InteractionEvent;
  */
 public final class LogOutEvent extends InteractionEvent {
 
-    public LogOutEvent() {
-        super(InteractionType.LOG_OUT);
-    }
+	public LogOutEvent() {
+		super(InteractionType.LOG_OUT);
+	}
 }

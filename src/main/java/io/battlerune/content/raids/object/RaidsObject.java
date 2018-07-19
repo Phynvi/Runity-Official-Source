@@ -7,6 +7,7 @@ public interface RaidsObject {
 
 	/**
 	 * Returns the object data of the given type object
+	 * 
 	 * @param player
 	 * @return
 	 */

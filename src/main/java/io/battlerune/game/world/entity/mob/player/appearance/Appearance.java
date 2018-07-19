@@ -49,7 +49,9 @@ public class Appearance {
 
 	private int skinColor;
 
-	public Appearance(final Gender gender, final int head, final int beard, final int torso, final int arms, final int hands, final int legs, final int feet, int hairColor, int torsoColor, int legsColor, int feetColor, int skinColor) {
+	public Appearance(final Gender gender, final int head, final int beard, final int torso, final int arms,
+			final int hands, final int legs, final int feet, int hairColor, int torsoColor, int legsColor,
+			int feetColor, int skinColor) {
 		this.gender = gender;
 		this.head = head;
 		this.beard = beard;
@@ -126,64 +128,56 @@ public class Appearance {
 	}
 
 	/**
-	 * @param arms
-	 *            the arms to set
+	 * @param arms the arms to set
 	 */
 	public void setArms(final int arms) {
 		this.arms = arms;
 	}
 
 	/**
-	 * @param feet
-	 *            the feet to set
+	 * @param feet the feet to set
 	 */
 	public void setFeet(final int feet) {
 		this.feet = feet;
 	}
 
 	/**
-	 * @param gender
-	 *            the gender to set
+	 * @param gender the gender to set
 	 */
 	public void setGender(final Gender gender) {
 		this.gender = gender;
 	}
 
 	/**
-	 * @param hands
-	 *            the hands to set
+	 * @param hands the hands to set
 	 */
 	public void setHands(final int hands) {
 		this.hands = hands;
 	}
 
 	/**
-	 * @param head
-	 *            the head to set
+	 * @param head the head to set
 	 */
 	public void setHead(final int head) {
 		this.head = head;
 	}
 
 	/**
-	 * @param beard
-	 *            the jaw to set
+	 * @param beard the jaw to set
 	 */
 	public void setJaw(final int beard) {
 		this.beard = beard;
 	}
 
 	/**
-	 * @param legs
-	 *            the legs to set
+	 * @param legs the legs to set
 	 */
 	public void setLegs(final int legs) {
 		this.legs = legs;
 	}
 
 	/**
-	 * @param torso
-	 *            the torso to set
+	 * @param torso the torso to set
 	 */
 	public void setTorso(final int torso) {
 		this.torso = torso;
@@ -197,8 +191,7 @@ public class Appearance {
 	}
 
 	/**
-	 * @param hairColor
-	 *            the hairColor to set
+	 * @param hairColor the hairColor to set
 	 */
 	public void setHairColor(int hairColor) {
 		this.hairColor = hairColor;
@@ -212,8 +205,7 @@ public class Appearance {
 	}
 
 	/**
-	 * @param torsoColor
-	 *            the torsoColor to set
+	 * @param torsoColor the torsoColor to set
 	 */
 	public void setTorsoColor(int torsoColor) {
 		this.torsoColor = torsoColor;
@@ -227,8 +219,7 @@ public class Appearance {
 	}
 
 	/**
-	 * @param legsColor
-	 *            the legsColor to set
+	 * @param legsColor the legsColor to set
 	 */
 	public void setLegsColor(int legsColor) {
 		this.legsColor = legsColor;
@@ -242,8 +233,7 @@ public class Appearance {
 	}
 
 	/**
-	 * @param feetColor
-	 *            the feetColor to set
+	 * @param feetColor the feetColor to set
 	 */
 	public void setFeetColor(int feetColor) {
 		this.feetColor = feetColor;
@@ -257,8 +247,7 @@ public class Appearance {
 	}
 
 	/**
-	 * @param skinColor
-	 *            the skinColor to set
+	 * @param skinColor the skinColor to set
 	 */
 	public void setSkinColor(int skinColor) {
 		this.skinColor = skinColor;
@@ -266,7 +255,9 @@ public class Appearance {
 
 	@Override
 	public String toString() {
-		return String.format("[gen= %s] [head= %d] [jaw= %d] [tor= %d] [arm= %d] [han= %d] [leg= %d] [feet= %d]", getGender().name().toLowerCase(), getHead(), getBeard(), getTorso(), getArms(), getHands(), getLegs(), getFeet());
+		return String.format("[gen= %s] [head= %d] [jaw= %d] [tor= %d] [arm= %d] [han= %d] [leg= %d] [feet= %d]",
+				getGender().name().toLowerCase(), getHead(), getBeard(), getTorso(), getArms(), getHands(), getLegs(),
+				getFeet());
 	}
 
 }

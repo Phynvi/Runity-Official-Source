@@ -25,10 +25,10 @@ public class PlayerKillingBoard {
 
 	static List<FameBoardPlayer> player = new ArrayList<FameBoardPlayer>();
 	static List<FameBoardPlayer> ordered_players = new ArrayList<FameBoardPlayer>();
-	
+
 	public static void main(String[] args) {
 		load();
-	
+
 	}
 
 	public static void load() {
@@ -48,7 +48,7 @@ public class PlayerKillingBoard {
 		System.out.println("Added " + player.size() + " Players to the database!");
 
 	}
-	
+
 	private static FameBoardPlayer getOrderedList() {
 		return Collections.max(player, new FameBoardComparer());
 	}

@@ -21,7 +21,8 @@ public class Dragon2h extends PlayerMeleeStrategy {
 	private static final Graphic GRAPHIC = new Graphic(559, UpdatePriority.HIGH);
 	private static final Dragon2h INSTANCE = new Dragon2h();
 
-	private Dragon2h() { }
+	private Dragon2h() {
+	}
 
 	@Override
 	public void start(Player attacker, Mob defender, Hit[] hits) {
@@ -59,7 +60,8 @@ public class Dragon2h extends PlayerMeleeStrategy {
 
 		CombatHit hit = nextMeleeHit(attacker, defender);
 		attacker.getCombat().submitHits(other, hit);
-		if (extra != null) extra.add(hit);
+		if (extra != null)
+			extra.add(hit);
 	}
 
 }

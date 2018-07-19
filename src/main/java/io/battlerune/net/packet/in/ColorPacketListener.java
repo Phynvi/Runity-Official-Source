@@ -18,20 +18,21 @@ public class ColorPacketListener implements PacketListener {
 	public void handlePacket(Player player, GamePacket packet) {
 		int identification = packet.readShort(ByteOrder.LE);
 		int value = packet.readInt();
-		
+
 		if (player.right.equals(PlayerRight.OWNER) && player.debug) {
-			player.send(new SendMessage("[ColorPacket] - Identification: " + identification + " Value: " + value, MessageColor.DEVELOPER));
+			player.send(new SendMessage("[ColorPacket] - Identification: " + identification + " Value: " + value,
+					MessageColor.DEVELOPER));
 		}
 
 		switch (identification) {
-		
+
 		case 0:
 			player.playerTitle = PlayerTitle.create(player.playerTitle.getTitle(), value);
 			player.updateFlags.add(UpdateFlag.APPEARANCE);
 			break;
-			
+
 		case 1:
-			//yell
+			// yell
 			break;
 		}
 	}

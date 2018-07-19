@@ -23,13 +23,14 @@ import io.battlerune.net.packet.PacketListenerMeta;
  * 
  * @author Daniel | Obey
  */
-@PacketListenerMeta({ ClientPackets.TRADE_REQUEST, ClientPackets.TRADE_ANSWER, ClientPackets.CHALLENGE_PLAYER, ClientPackets.FOLLOW_PLAYER, ClientPackets.MAGIC_ON_PLAYER, ClientPackets.ATTACK_PLAYER })
+@PacketListenerMeta({ ClientPackets.TRADE_REQUEST, ClientPackets.TRADE_ANSWER, ClientPackets.CHALLENGE_PLAYER,
+		ClientPackets.FOLLOW_PLAYER, ClientPackets.MAGIC_ON_PLAYER, ClientPackets.ATTACK_PLAYER })
 public final class PlayerOptionPacketListener implements PacketListener {
 
 	@Override
 	public void handlePacket(Player player, GamePacket packet) {
 		checkState(player != null, "Player is null");
-		
+
 		/* Death block. */
 		if (player.isDead()) {
 			return;
@@ -45,7 +46,7 @@ public final class PlayerOptionPacketListener implements PacketListener {
 		case 128:
 			handleDuelRequest(player, packet);
 			break;
-			
+
 		case 153:
 			handleAttackPlayer(player, packet);
 			break;
@@ -53,21 +54,21 @@ public final class PlayerOptionPacketListener implements PacketListener {
 		case 73:
 			handleFollowPlayer(player, packet);
 			break;
-			
+
 		case 139:
 			handleTradeRequest(player, packet);
 			break;
-			
+
 		case 39:
 			handleReportAbuse(player, packet);
 			break;
-			
+
 		case ClientPackets.MAGIC_ON_PLAYER:
 			handleMagicOnPlayer(player, packet);
 			break;
 		}
 	}
-	
+
 	private static boolean isValid(Player other) {
 		Position position = other.getPosition();
 		Region region = World.getRegions().getRegion(position);
@@ -76,7 +77,7 @@ public final class PlayerOptionPacketListener implements PacketListener {
 
 	private void handleDuelRequest(Player player, GamePacket packet) {
 		final int index = packet.readShort();
-		
+
 		World.getPlayerBySlot(index).ifPresent(other -> {
 
 			if (!isValid(other)) {
@@ -98,12 +99,13 @@ public final class PlayerOptionPacketListener implements PacketListener {
 			player.getCombat().attack(other);
 		});
 	}
-	
+
 	private void handleFollowPlayer(Player player, GamePacket packet) {
 		final int index = packet.readShort(ByteOrder.LE);
-		
+
 		World.getPlayerBySlot(index).ifPresent(other -> {
-			if (!isValid(other)) return;
+			if (!isValid(other))
+				return;
 			player.follow(other);
 		});
 	}
@@ -111,29 +113,33 @@ public final class PlayerOptionPacketListener implements PacketListener {
 	private void handleTradeRequest(Player player, GamePacket packet) {
 		final int index = packet.readShort(ByteOrder.LE);
 		World.getPlayerBySlot(index).ifPresent(other -> {
-			if (!isValid(other)) return;
+			if (!isValid(other))
+				return;
 			player.walkTo(other, () -> player.exchangeSession.request(new TradeSession(player, other)));
 		});
 	}
-	
+
 	private void handleReportAbuse(Player player, GamePacket packet) {
 		final int index = packet.readShort(ByteOrder.LE);
 
 		World.getPlayerBySlot(index).ifPresent(other -> {
-			if (!isValid(other)) return;
+			if (!isValid(other))
+				return;
 			ProfileViewer.open(player, other);
 //			player.send(new SendMessage("Report abuse request sent to: " + other.getName() + " (" + index + ")"));
 		});
 	}
-	
+
 	private void handleMagicOnPlayer(Player player, GamePacket packet) {
 		int index = packet.readShort(ByteModification.ADD);
 		int spell = packet.readShort(ByteOrder.LE);
 		CombatSpell combatSpell = CombatSpell.get(spell);
 
 		World.getPlayerBySlot(index).ifPresent(other -> {
-			if (!other.isValid()) return;
-			if (combatSpell == null) return;
+			if (!other.isValid())
+				return;
+			if (combatSpell == null)
+				return;
 
 			if (player.spellbook != combatSpell.getSpellbook())
 				return;

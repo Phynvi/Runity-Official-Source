@@ -9,18 +9,18 @@ public enum FameType {
 	/**
 	 * Player killing related fame.
 	 */
-	PVP, 
-	
+	PVP,
+
 	/**
 	 * Monster killing related fame.
 	 */
-	PVM, 
-	
+	PVM,
+
 	/**
 	 * Skilling related fame.
 	 */
-	SKILL, 
-	
+	SKILL,
+
 	/**
 	 * Miscellaneous fame.
 	 */

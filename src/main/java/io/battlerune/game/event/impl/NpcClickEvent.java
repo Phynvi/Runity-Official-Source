@@ -5,21 +5,21 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 
 public class NpcClickEvent implements Event {
 
-    private final int type;
+	private final int type;
 
-    private final Npc npc;
+	private final Npc npc;
 
-    public NpcClickEvent(int type, Npc npc) {
-        this.type = type;
-        this.npc = npc;
-    }
+	public NpcClickEvent(int type, Npc npc) {
+		this.type = type;
+		this.npc = npc;
+	}
 
-    public int getType() {
-        return type;
-    }
+	public int getType() {
+		return type;
+	}
 
-    public Npc getNpc() {
-        return npc;
-    }
+	public Npc getNpc() {
+		return npc;
+	}
 
 }

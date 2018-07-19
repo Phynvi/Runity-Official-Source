@@ -7,7 +7,7 @@ import io.battlerune.net.packet.OutgoingPacket;
 /**
  * The {@code OutgoingPacket} responsible for changing settings on a client.
  *
- * @author Daniel | Obey 
+ * @author Daniel | Obey
  */
 public class SendConfig extends OutgoingPacket {
 
@@ -31,7 +31,7 @@ public class SendConfig extends OutgoingPacket {
 		if (value == -1) {
 			return false;
 		}
-		if(intValue) {
+		if (intValue) {
 			builder.writeShort(id, ByteOrder.LE).writeInt(value, ByteOrder.ME);
 		} else {
 			builder.writeShort(id, ByteOrder.LE).writeByte(value);

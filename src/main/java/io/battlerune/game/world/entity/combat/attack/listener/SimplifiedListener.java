@@ -27,40 +27,49 @@ public class SimplifiedListener<T extends Mob> implements CombatListener<T> {
 	public boolean canAttack(T attacker, Mob defender) {
 		return true;
 	}
-	
-	@Override
-	public void start(T attacker, Mob defender, Hit[] hits) { }
 
 	@Override
-	public void attack(T attacker, Mob defender, Hit hit) { }
+	public void start(T attacker, Mob defender, Hit[] hits) {
+	}
 
 	@Override
-	public void hit(T attacker, Mob defender, Hit hit) { }
+	public void attack(T attacker, Mob defender, Hit hit) {
+	}
 
 	@Override
-	public void block(Mob attacker, T defender, Hit hit, CombatType combatType) { }
+	public void hit(T attacker, Mob defender, Hit hit) {
+	}
 
 	@Override
-	public void preDeath(Mob attacker, T defender, Hit hit) { }
+	public void block(Mob attacker, T defender, Hit hit, CombatType combatType) {
+	}
 
 	@Override
-	public void onDeath(Mob attacker, T defender, Hit hit) { }
+	public void preDeath(Mob attacker, T defender, Hit hit) {
+	}
+
+	@Override
+	public void onDeath(Mob attacker, T defender, Hit hit) {
+	}
 
 	@Override
 	public void preKill(T attacker, Mob defender, Hit hit) {
 	}
 
 	@Override
-	public void onKill(T attacker, Mob defender, Hit hit) { }
+	public void onKill(T attacker, Mob defender, Hit hit) {
+	}
 
 	@Override
 	public void hitsplat(T attacker, Mob defender, Hit hit) {
 	}
 
 	@Override
-	public void finishIncoming(Mob attacker, T defender) { }
+	public void finishIncoming(Mob attacker, T defender) {
+	}
 
 	@Override
-	public void finishOutgoing(T attacker, Mob defender) { }
+	public void finishOutgoing(T attacker, Mob defender) {
+	}
 
 }

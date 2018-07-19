@@ -13,9 +13,9 @@ import io.battlerune.game.world.entity.mob.player.Player;
 @ItemCombatListenerSignature(requireAll = true, items = { 11663, 8839, 8840, 8842 })
 public class VoidKnightMagicListener extends SimplifiedListener<Player> {
 
-    @Override
-    public int modifyMagicLevel(Player attacker, Mob defender, int level) {
-        return level * 29 / 20;
-    }
+	@Override
+	public int modifyMagicLevel(Player attacker, Mob defender, int level) {
+		return level * 29 / 20;
+	}
 
 }

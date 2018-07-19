@@ -28,12 +28,9 @@ public final class LoginResponsePacket {
 	/**
 	 * Creates a new {@code LoginResponsePacket}.
 	 *
-	 * @param response
-	 *            The actual login response.
-	 * @param rights
-	 *            The {@code Player}s authority level.
-	 * @param flagged
-	 *            If the {@code Player} is flagged.
+	 * @param response The actual login response.
+	 * @param rights   The {@code Player}s authority level.
+	 * @param flagged  If the {@code Player} is flagged.
 	 */
 	public LoginResponsePacket(LoginResponse response, PlayerRight rights, boolean flagged) {
 		this.response = response;
@@ -45,8 +42,7 @@ public final class LoginResponsePacket {
 	 * Creates a new {@code LoginResponsePacket} with an authority level of
 	 * {@code PLAYER} and a {@code flagged} value of {@code false}.
 	 *
-	 * @param response
-	 *            The actual login response.
+	 * @param response The actual login response.
 	 */
 	public LoginResponsePacket(LoginResponse response) {
 		this(response, PlayerRight.PLAYER, false);

@@ -13,10 +13,10 @@ public interface Spell {
 	/** Gets the name of the spell. */
 	String getName();
 
-	/**  Gets the runes required to cast the spell. */
+	/** Gets the runes required to cast the spell. */
 	Item[] getRunes();
 
-	/** Gets the level required to cast spell.  */
+	/** Gets the level required to cast spell. */
 	int getLevel();
 
 	/** Executes the magic spell. */

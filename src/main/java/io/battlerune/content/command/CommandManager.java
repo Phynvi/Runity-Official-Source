@@ -66,7 +66,9 @@ import plugin.command.impl.player.Wests;
 
 /**
  * Stores Commands
- * @author hamza <-- retard for re-doing the command system now adam has to reimplement the commands.... ty you 4ner
+ * 
+ * @author hamza <-- retard for re-doing the command system now adam has to
+ *         reimplement the commands.... ty you 4ner
  *
  */
 public class CommandManager {
@@ -90,13 +92,13 @@ public class CommandManager {
 		plugin.put(new String[] { "commands", "command", "commandlist" }, new CommandList());
 		plugin.put(new String[] { "fameboard", "fame" }, new FameBoardCommand());
 		plugin.put(new String[] { "shops", "store", "shop", "stores" }, new ShopCommand());
-		
+
 		plugin.put(new String[] { "drops", "drop", "droplist", "droptable" }, new DropsCommand());
 		plugin.put(new String[] { "simulate", "simulator", "dropsim" }, new DropSimulatorCommand());
 		plugin.put(new String[] { "vote" }, new VoteCommand());
-	    plugin.put(new String[] { "dice", "gamble", "dp" }, new DiceCommand());
+		plugin.put(new String[] { "dice", "gamble", "dp" }, new DiceCommand());
 		plugin.put(new String[] { "skull" }, new SkullCommand());
-		
+
 		plugin.put(new String[] { "duel", "duelarena" }, new DuelArenaCommand());
 		plugin.put(new String[] { "barrows" }, new BarrowsCommand());
 		plugin.put(new String[] { "skillarea", "skillingarea" }, new SkillAreaCommand());
@@ -117,16 +119,12 @@ public class CommandManager {
 		plugin.put(new String[] { "players", "online" }, new PlayerCountCommand());
 		plugin.put(new String[] { "empty", "emptyinventory" }, new EmptyInventoryCommand());
 
-		
-
 		/*
 		 * @Donator Command
 		 */
-		
+
 		plugin.put(new String[] { "bank", "banks" }, new DonatorBankCommand());
 		plugin.put(new String[] { "donatorzone", "dzone" }, new DZone());
-
-
 
 		/*
 		 * @Owner, @Developer Commands
@@ -154,7 +152,6 @@ public class CommandManager {
 		plugin.put(new String[] { "show", "showboss" }, new EventBossInterfaceShow());
 		plugin.put(new String[] { "hide", "hideboss" }, new EventBossInterfaceHide());
 
-		
 		for (Entry<String[], Command> map : plugin.entrySet()) {
 			for (int i = 0; i < map.getKey().length; i++) {
 				plugin_input.put(map.getKey()[i], map.getValue());

@@ -1,6 +1,5 @@
 package io.battlerune.content.skill.impl.farming;
 
-
 import io.battlerune.game.Animation;
 import io.battlerune.game.task.Task;
 import io.battlerune.game.world.World;
@@ -79,11 +78,11 @@ public class Plant {
 				harvest(player);
 			else {
 				String s = "Your plants are healthy";
-				if(!isWatered() && getPatch().seedType != SeedType.HERB)
+				if (!isWatered() && getPatch().seedType != SeedType.HERB)
 					s += " but need some water to survive";
 				else
 					s += " and are currently growing";
-				s+= ".";
+				s += ".";
 				player.send(new SendMessage(s));
 			}
 		} else if ((option == 2) && (stage == Plants.values()[plant].stages))
@@ -91,7 +90,7 @@ public class Plant {
 	}
 
 	public void harvest(final Player player) {
-		if(harvesting)
+		if (harvesting)
 			return;
 		if (player.inventory.contains(FarmingPatches.values()[patch].harvestItem)) {
 			player.locking.lock(1);
@@ -100,21 +99,21 @@ public class Plant {
 			World.schedule(new Task(3) {
 				@Override
 				public void execute() {
-					if(player.movement.isMoving()) {
+					if (player.movement.isMoving()) {
 						cancel();
 						return;
 					}
-					if(player.inventory.getFreeSlots() == 0) {
+					if (player.inventory.getFreeSlots() == 0) {
 						cancel();
 						return;
 					}
 					player.animate(new Animation(2282));
 					Item add = null;
 					int id = Plants.values()[plant].harvest;
-					add = ItemDefinition.get(id).isNoted() ? new Item(id-1, 1) : new Item(id, 1);
+					add = ItemDefinition.get(id).isNoted() ? new Item(id - 1, 1) : new Item(id, 1);
 					player.inventory.add(add.getId(), add.getAmount());
 					String name = ItemDefinition.get(Plants.values()[plant].harvest).getName();
-					if(name.endsWith("s"))
+					if (name.endsWith("s"))
 						name = name.substring(0, name.length() - 1);
 					player.send(new SendMessage("You harvest " + Utility.getAOrAn(name) + " " + name + "."));
 					player.skills.addExperience(Skill.FARMING, (int) Plants.values()[plant].harvestExperience);
@@ -128,7 +127,8 @@ public class Plant {
 						cancel();
 						return;
 					}
-					if (getPatch().seedType == SeedType.FLOWER || harvested >= (magicWateringCan ? 10 : 5) && Utility.random(4) <= 1) {
+					if (getPatch().seedType == SeedType.FLOWER
+							|| harvested >= (magicWateringCan ? 10 : 5) && Utility.random(4) <= 1) {
 						player.getFarming().remove(instance);
 						cancel();
 						return;
@@ -137,7 +137,8 @@ public class Plant {
 			});
 		} else {
 			String name = ItemDefinition.get(FarmingPatches.values()[patch].harvestItem).getName();
-			player.send(new SendMessage("You need " + Utility.getAOrAn(name) + " " + name + " to harvest these plants."));
+			player.send(
+					new SendMessage("You need " + Utility.getAOrAn(name) + " " + name + " to harvest these plants."));
 		}
 	}
 
@@ -186,11 +187,11 @@ public class Plant {
 		int grow = Plants.values()[plant].minutes;
 		if (elapsed >= grow) {
 			for (int i = 0; i < elapsed / grow; i++) {
-                /*if (isDiseased()) {
-                /*} else
-                if (!isWatered()) {
-                    player.getPacketSender().sendMessage("You need to water your plant.");*/
-				if(isWatered() || getPatch().seedType == SeedType.HERB) {
+				/*
+				 * if (isDiseased()) { /*} else if (!isWatered()) {
+				 * player.getPacketSender().sendMessage("You need to water your plant.");
+				 */
+				if (isWatered() || getPatch().seedType == SeedType.HERB) {
 					stage++;
 					player.getFarming().doConfig();
 					if (stage >= Plants.values()[plant].stages) {

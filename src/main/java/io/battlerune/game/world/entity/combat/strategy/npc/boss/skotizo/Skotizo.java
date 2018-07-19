@@ -30,183 +30,183 @@ import io.battlerune.util.Utility;
  * @author Daniel
  */
 public class Skotizo extends MultiStrategy {
-    private static Magic MAGIC = new Magic();
-    private static LightingRain LIGHTNING_RAIN = new LightingRain();
-    private static TeleGrab TELE_GRAB = new TeleGrab();
+	private static Magic MAGIC = new Magic();
+	private static LightingRain LIGHTNING_RAIN = new LightingRain();
+	private static TeleGrab TELE_GRAB = new TeleGrab();
 
-    private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(NpcMeleeStrategy.get(), MAGIC, TELE_GRAB, LIGHTNING_RAIN);
-    private static final CombatStrategy<Npc>[] MAGIC_STRATEGIES = createStrategyArray(MAGIC, MAGIC, MAGIC,TELE_GRAB, LIGHTNING_RAIN);
+	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(NpcMeleeStrategy.get(), MAGIC,
+			TELE_GRAB, LIGHTNING_RAIN);
+	private static final CombatStrategy<Npc>[] MAGIC_STRATEGIES = createStrategyArray(MAGIC, MAGIC, MAGIC, TELE_GRAB,
+			LIGHTNING_RAIN);
 
-    private static final String[] SHOUTS = {
-            "Feel the wrath of Skotizo!",
-            "The dark times have come for you all!"
-    };
+	private static final String[] SHOUTS = { "Feel the wrath of Skotizo!", "The dark times have come for you all!" };
 
-    /** Constructs a new <code>Skotizo</code>. */
-    public Skotizo() {
-        currentStrategy = MAGIC;
-    }
+	/** Constructs a new <code>Skotizo</code>. */
+	public Skotizo() {
+		currentStrategy = MAGIC;
+	}
 
-    @Override
-    public boolean canAttack(Npc attacker, Mob defender) {
-        if (!currentStrategy.withinDistance(attacker, defender)) {
-            currentStrategy = randomStrategy(MAGIC_STRATEGIES);
-        }
-        return currentStrategy.canAttack(attacker, defender);
-    }
+	@Override
+	public boolean canAttack(Npc attacker, Mob defender) {
+		if (!currentStrategy.withinDistance(attacker, defender)) {
+			currentStrategy = randomStrategy(MAGIC_STRATEGIES);
+		}
+		return currentStrategy.canAttack(attacker, defender);
+	}
 
-    @Override
-    public void block(Mob attacker, Npc defender, Hit hit, CombatType combatType) {
-        currentStrategy.block(attacker, defender, hit, combatType);
-        defender.getCombat().attack(attacker);
+	@Override
+	public void block(Mob attacker, Npc defender, Hit hit, CombatType combatType) {
+		currentStrategy.block(attacker, defender, hit, combatType);
+		defender.getCombat().attack(attacker);
 
-        if (!defender.getCombat().isAttacking()) {
-            defender.animate(new Animation(69, UpdatePriority.VERY_HIGH));
-            defender.graphic(481);
-            defender.speak("ARHHHH! TIME TO SWITCH IT UP!!");
+		if (!defender.getCombat().isAttacking()) {
+			defender.animate(new Animation(69, UpdatePriority.VERY_HIGH));
+			defender.graphic(481);
+			defender.speak("ARHHHH! TIME TO SWITCH IT UP!!");
 
-            RegionManager.forNearbyPlayer(attacker, 20, other -> {
-                if (RandomUtils.success(.65))
-                    return;
+			RegionManager.forNearbyPlayer(attacker, 20, other -> {
+				if (RandomUtils.success(.65))
+					return;
 
-                World.schedule(2, () -> {
-                    Position destination = Utility.randomElement(defender.boundaries);
-                    World.sendGraphic(new Graphic(481), destination);
-                    other.move(destination);
-                    other.message("Skotizo has moved you around!");
-                });
-            });
-        }
-    }
+				World.schedule(2, () -> {
+					Position destination = Utility.randomElement(defender.boundaries);
+					World.sendGraphic(new Graphic(481), destination);
+					other.move(destination);
+					other.message("Skotizo has moved you around!");
+				});
+			});
+		}
+	}
 
-    @Override
-    public void finishOutgoing(Npc attacker, Mob defender) {
-        currentStrategy.finishOutgoing(attacker, defender);
-        if (NpcMeleeStrategy.get().withinDistance(attacker, defender)) {
-            currentStrategy = randomStrategy(FULL_STRATEGIES);
-        } else {
-            currentStrategy = randomStrategy(MAGIC_STRATEGIES);
-        }
-    }
+	@Override
+	public void finishOutgoing(Npc attacker, Mob defender) {
+		currentStrategy.finishOutgoing(attacker, defender);
+		if (NpcMeleeStrategy.get().withinDistance(attacker, defender)) {
+			currentStrategy = randomStrategy(FULL_STRATEGIES);
+		} else {
+			currentStrategy = randomStrategy(MAGIC_STRATEGIES);
+		}
+	}
 
-    @Override
-    public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {
-        return attacker.definition.getAttackDelay();
-    }
+	@Override
+	public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {
+		return attacker.definition.getAttackDelay();
+	}
 
-    /** Skotizo's magic strategy. */
-    private static class Magic extends NpcMagicStrategy {
-        public Magic() {
-            super(CombatProjectile.getDefinition("EMPTY"));
-        }
+	/** Skotizo's magic strategy. */
+	private static class Magic extends NpcMagicStrategy {
+		public Magic() {
+			super(CombatProjectile.getDefinition("EMPTY"));
+		}
 
-        @Override
-        public void hit(Npc attacker, Mob defender, Hit hit) {
-        }
+		@Override
+		public void hit(Npc attacker, Mob defender, Hit hit) {
+		}
 
-        @Override
-        public void attack(Npc attacker, Mob defender, Hit hit) {
-        }
+		@Override
+		public void attack(Npc attacker, Mob defender, Hit hit) {
+		}
 
-        @Override
-        public void start(Npc attacker, Mob defender, Hit[] hits) {
-            Projectile projectile = new Projectile(1242, 50, 80, 85, 25);
-            attacker.animate(new Animation(69, UpdatePriority.VERY_HIGH));
-            RegionManager.forNearbyPlayer(attacker, 16, other -> {
-                projectile.send(attacker, other);
-                World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
-            });
+		@Override
+		public void start(Npc attacker, Mob defender, Hit[] hits) {
+			Projectile projectile = new Projectile(1242, 50, 80, 85, 25);
+			attacker.animate(new Animation(69, UpdatePriority.VERY_HIGH));
+			RegionManager.forNearbyPlayer(attacker, 16, other -> {
+				projectile.send(attacker, other);
+				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
+			});
 
-            if (Utility.random(0, 2) == 1)
-                attacker.speak(Utility.randomElement(SHOUTS));
-        }
+			if (Utility.random(0, 2) == 1)
+				attacker.speak(Utility.randomElement(SHOUTS));
+		}
 
-        @Override
-        public CombatHit[] getHits(Npc attacker, Mob defender) {
-            CombatHit hit = nextMagicHit(attacker, defender, 38);
-            hit.setAccurate(false);
-            return new CombatHit[]{hit};
-        }
+		@Override
+		public CombatHit[] getHits(Npc attacker, Mob defender) {
+			CombatHit hit = nextMagicHit(attacker, defender, 38);
+			hit.setAccurate(false);
+			return new CombatHit[] { hit };
+		}
 
-        @Override
-        public int modifyAccuracy(Npc attacker, Mob defender, int roll) {
-            return roll + 50_000;
-        }
-    }
+		@Override
+		public int modifyAccuracy(Npc attacker, Mob defender, int roll) {
+			return roll + 50_000;
+		}
+	}
 
-    private static class TeleGrab extends NpcMagicStrategy {
-        TeleGrab() {
-            super(CombatProjectile.getDefinition("EMPTY"));
-        }
+	private static class TeleGrab extends NpcMagicStrategy {
+		TeleGrab() {
+			super(CombatProjectile.getDefinition("EMPTY"));
+		}
 
-        @Override
-        public void hit(Npc attacker, Mob defender, Hit hit) {
-        }
+		@Override
+		public void hit(Npc attacker, Mob defender, Hit hit) {
+		}
 
-        @Override
-        public void attack(Npc attacker, Mob defender, Hit hit) {
-        }
+		@Override
+		public void attack(Npc attacker, Mob defender, Hit hit) {
+		}
 
-        @Override
-        public void start(Npc attacker, Mob defender, Hit[] hits) {
-            attacker.animate(new Animation(69, UpdatePriority.VERY_HIGH));
-            attacker.graphic(481);
-            attacker.speak("ARHHHH! TIME TO SWITCH IT UP!!");
+		@Override
+		public void start(Npc attacker, Mob defender, Hit[] hits) {
+			attacker.animate(new Animation(69, UpdatePriority.VERY_HIGH));
+			attacker.graphic(481);
+			attacker.speak("ARHHHH! TIME TO SWITCH IT UP!!");
 
-            RegionManager.forNearbyPlayer(attacker, 16, other -> World.schedule(1, () -> {
-                Position destination = Utility.randomElement(attacker.boundaries);
-                World.sendGraphic(new Graphic(481), destination);
-                other.move(destination);
-                other.message("Skotizo has moved you around!");
-            }));
-        }
+			RegionManager.forNearbyPlayer(attacker, 16, other -> World.schedule(1, () -> {
+				Position destination = Utility.randomElement(attacker.boundaries);
+				World.sendGraphic(new Graphic(481), destination);
+				other.move(destination);
+				other.message("Skotizo has moved you around!");
+			}));
+		}
 
-        @Override
-        public CombatHit[] getHits(Npc attacker, Mob defender) {
-            CombatHit hit = nextMagicHit(attacker, defender, 38);
-            hit.setAccurate(false);
-            return new CombatHit[]{hit};
-        }
-    }
+		@Override
+		public CombatHit[] getHits(Npc attacker, Mob defender) {
+			CombatHit hit = nextMagicHit(attacker, defender, 38);
+			hit.setAccurate(false);
+			return new CombatHit[] { hit };
+		}
+	}
 
-    private static class LightingRain extends NpcMagicStrategy {
-        LightingRain() {
-            super(CombatProjectile.getDefinition("Vet'ion"));
-        }
+	private static class LightingRain extends NpcMagicStrategy {
+		LightingRain() {
+			super(CombatProjectile.getDefinition("Vet'ion"));
+		}
 
-        @Override
-        public void hit(Npc attacker, Mob defender, Hit hit) {
-        }
+		@Override
+		public void hit(Npc attacker, Mob defender, Hit hit) {
+		}
 
-        @Override
-        public void attack(Npc attacker, Mob defender, Hit hit) {
-        }
+		@Override
+		public void attack(Npc attacker, Mob defender, Hit hit) {
+		}
 
-        @Override
-        public void start(Npc attacker, Mob defender, Hit[] hits) {
-            attacker.animate(new Animation(69, UpdatePriority.VERY_HIGH));
-            attacker.speak("YOU WILL NOW FEEL THE TRUE WRATH OF SKOTIZO!");
+		@Override
+		public void start(Npc attacker, Mob defender, Hit[] hits) {
+			attacker.animate(new Animation(69, UpdatePriority.VERY_HIGH));
+			attacker.speak("YOU WILL NOW FEEL THE TRUE WRATH OF SKOTIZO!");
 
-            RegionManager.forNearbyPlayer(attacker, 16, other -> {
-                Position position = other.getPosition();
-                combatProjectile.getProjectile().ifPresent(projectile -> World.sendProjectile(attacker, position, projectile));
+			RegionManager.forNearbyPlayer(attacker, 16, other -> {
+				Position position = other.getPosition();
+				combatProjectile.getProjectile()
+						.ifPresent(projectile -> World.sendProjectile(attacker, position, projectile));
 
-                World.schedule(2, () -> {
-                    World.sendGraphic(new Graphic(775), position);
-                    if (other.getPosition().equals(position)) {
-                        other.damage(new Hit(Utility.random(20, 50)));
-                        other.speak("OUCH!");
-                        other.message("Skotizo has just electrocuted your entire body! Don't stay in one spot!");
-                    }
-                });
-            });
-        }
+				World.schedule(2, () -> {
+					World.sendGraphic(new Graphic(775), position);
+					if (other.getPosition().equals(position)) {
+						other.damage(new Hit(Utility.random(20, 50)));
+						other.speak("OUCH!");
+						other.message("Skotizo has just electrocuted your entire body! Don't stay in one spot!");
+					}
+				});
+			});
+		}
 
-        @Override
-        public CombatHit[] getHits(Npc attacker, Mob defender) {
-            CombatHit hit = nextMagicHit(attacker, defender, 38);
-            hit.setAccurate(false);
-            return new CombatHit[]{hit};
-        }
-    }
+		@Override
+		public CombatHit[] getHits(Npc attacker, Mob defender) {
+			CombatHit hit = nextMagicHit(attacker, defender, 38);
+			hit.setAccurate(false);
+			return new CombatHit[] { hit };
+		}
+	}
 }

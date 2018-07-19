@@ -34,16 +34,13 @@ public class GamePacket {
 	/**
 	 * Creates a {@code GamePacket}.
 	 * 
-	 * @param opcode
-	 *            The opcode.
-	 * @param header
-	 *            The header.
-	 * @param payload
-	 *            The payload.
+	 * @param opcode  The opcode.
+	 * @param header  The header.
+	 * @param payload The payload.
 	 */
 	public GamePacket(final int opcode, final PacketType header, final ByteBuf payload) {
 		this.opcode = opcode;
-		this.header = header;		
+		this.header = header;
 		this.payload = payload;
 		this.size = payload.readableBytes();
 	}
@@ -65,16 +62,16 @@ public class GamePacket {
 	public int getOpcode() {
 		return opcode;
 	}
-	
+
 	/**
 	 * Gets the type.
 	 * 
 	 * @return The type.
 	 */
 	public PacketType getHeader() {
-		return header;		
+		return header;
 	}
-	
+
 	/**
 	 * Gets the payload.
 	 * 
@@ -83,7 +80,7 @@ public class GamePacket {
 	public ByteBuf getPayload() {
 		return payload;
 	}
-	
+
 	/**
 	 * Reads a {@code STANDARD} {@code signed} byte from the payload.
 	 *
@@ -96,8 +93,7 @@ public class GamePacket {
 	/**
 	 * Reads a {@code STANDARD} byte from the payload.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
 	 * @return The byte.
 	 */
@@ -108,8 +104,7 @@ public class GamePacket {
 	/**
 	 * Reads a {@code signed} byte from the payload.
 	 * 
-	 * @param mod
-	 *            The modification performed on this value.
+	 * @param mod The modification performed on this value.
 	 * 
 	 * @return The signed byte.
 	 */
@@ -120,11 +115,9 @@ public class GamePacket {
 	/**
 	 * Reads a single byte from the payload.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
-	 * @param mod
-	 *            The modification performed on this value.
+	 * @param mod    The modification performed on this value.
 	 * 
 	 * @return The byte.
 	 */
@@ -161,11 +154,9 @@ public class GamePacket {
 	}
 
 	/**
-	 * Reads a {@code STANDARD} short value from the payload in {@code BIG}
-	 * order.
+	 * Reads a {@code STANDARD} short value from the payload in {@code BIG} order.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
 	 * @return The standard short value.
 	 */
@@ -176,8 +167,7 @@ public class GamePacket {
 	/**
 	 * Reads a {@code STANDARD} {@code signed} short value from the payload.
 	 * 
-	 * @param order
-	 *            The order in which this value is written.
+	 * @param order The order in which this value is written.
 	 * 
 	 * @return The signed standard short value.
 	 */
@@ -188,11 +178,9 @@ public class GamePacket {
 	/**
 	 * Reads a {@code STANDARD} short value from the payload.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
-	 * @param order
-	 *            The order in which this value is written.
+	 * @param order  The order in which this value is written.
 	 * 
 	 * @return The standard short value.
 	 */
@@ -203,11 +191,9 @@ public class GamePacket {
 	/**
 	 * Reads a {@code signed} short value from the payload.
 	 * 
-	 * @param order
-	 *            The order in which this value is written.
+	 * @param order The order in which this value is written.
 	 * 
-	 * @param mod
-	 *            The modifications performed on this value.
+	 * @param mod   The modifications performed on this value.
 	 * 
 	 * @return The short value.
 	 */
@@ -218,8 +204,7 @@ public class GamePacket {
 	/**
 	 * Reads a {@code signed} short value from the payload {@code BIG} order.
 	 * 
-	 * @param mod
-	 *            The modifications performed on this value.
+	 * @param mod The modifications performed on this value.
 	 * 
 	 * @return The short value.
 	 */
@@ -230,11 +215,9 @@ public class GamePacket {
 	/**
 	 * Reads a short value from the payload in {@code BIG} order.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
-	 * @param mod
-	 *            The modifications performed on this value.
+	 * @param mod    The modifications performed on this value.
 	 * 
 	 * @return The short value.
 	 */
@@ -245,14 +228,11 @@ public class GamePacket {
 	/**
 	 * Reads a short value from the payload.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
-	 * @param order
-	 *            The order in which the value is written.
+	 * @param order  The order in which the value is written.
 	 * 
-	 * @param mod
-	 *            The modifications performed on this value.
+	 * @param mod    The modifications performed on this value.
 	 * 
 	 * @return The short value.
 	 */
@@ -289,11 +269,9 @@ public class GamePacket {
 	}
 
 	/**
-	 * Reads a {@code STANDARD} integer value from the payload in {@code BIG}
-	 * order.
+	 * Reads a {@code STANDARD} integer value from the payload in {@code BIG} order.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
 	 * @return The integer value.
 	 */
@@ -302,11 +280,10 @@ public class GamePacket {
 	}
 
 	/**
-	 * Reads a {@code signed} integer value from the payload in
-	 * {@code ByteOrder} {@code BIG} order.
+	 * Reads a {@code signed} integer value from the payload in {@code ByteOrder}
+	 * {@code BIG} order.
 	 * 
-	 * @param mod
-	 *            The modifications performed on this value.
+	 * @param mod The modifications performed on this value.
 	 * 
 	 * @return The integer value.
 	 */
@@ -317,11 +294,9 @@ public class GamePacket {
 	/**
 	 * Reads an integer value from the payload in {@code BIG} order.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
-	 * @param mod
-	 *            The modifications performed on this value.
+	 * @param mod    The modifications performed on this value.
 	 * 
 	 * @return The integer value.
 	 */
@@ -332,11 +307,9 @@ public class GamePacket {
 	/**
 	 * Reads a {@code STANDARD} integer value from the payload.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
-	 * @param order
-	 *            The order in which the value is written.
+	 * @param order  The order in which the value is written.
 	 * 
 	 * @return The integer value.
 	 */
@@ -347,14 +320,11 @@ public class GamePacket {
 	/**
 	 * Reads an integer value from the payload.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
-	 * @param order
-	 *            The order in which the value is written.
+	 * @param order  The order in which the value is written.
 	 * 
-	 * @param mod
-	 *            The modifications performed on this value.
+	 * @param mod    The modifications performed on this value.
 	 * 
 	 * @return The integer value.
 	 */
@@ -403,11 +373,9 @@ public class GamePacket {
 	}
 
 	/**
-	 * Reads a {@code STANDARD} long value from the payload in {@code BIG}
-	 * order.
+	 * Reads a {@code STANDARD} long value from the payload in {@code BIG} order.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
 	 * @return The long value.
 	 */
@@ -418,8 +386,7 @@ public class GamePacket {
 	/**
 	 * Reads a {@code signed} long value from the payload in {@code BIG} order.
 	 * 
-	 * @param mod
-	 *            The modifications performed on this value.
+	 * @param mod The modifications performed on this value.
 	 * 
 	 * @return The long value.
 	 */
@@ -430,11 +397,9 @@ public class GamePacket {
 	/**
 	 * Reads a long value from the payload in {@code BIG} order.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
-	 * @param mod
-	 *            The modifications performed on this value.
+	 * @param mod    The modifications performed on this value.
 	 * 
 	 * @return The long value.
 	 */
@@ -445,11 +410,9 @@ public class GamePacket {
 	/**
 	 * Reads a {@code STANDARD} long value from the payload.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
-	 * @param order
-	 *            The order in which the value is written.
+	 * @param order  The order in which the value is written.
 	 * 
 	 * @return The long value.
 	 */
@@ -460,14 +423,11 @@ public class GamePacket {
 	/**
 	 * Reads a long value from the payload.
 	 * 
-	 * @param signed
-	 *            The flag that denotes this value is signed.
+	 * @param signed The flag that denotes this value is signed.
 	 * 
-	 * @param order
-	 *            The order in which the value is written.
+	 * @param order  The order in which the value is written.
 	 * 
-	 * @param mod
-	 *            The modifications performed on this value.
+	 * @param mod    The modifications performed on this value.
 	 * 
 	 * @return The long value.
 	 */
@@ -505,11 +465,9 @@ public class GamePacket {
 	}
 
 	/**
-	 * Reads the amount of bytes into the array, starting at the current
-	 * position.
+	 * Reads the amount of bytes into the array, starting at the current position.
 	 *
-	 * @param amount
-	 *            the amount to read.
+	 * @param amount the amount to read.
 	 * @return a buffer filled with the data.
 	 */
 	public byte[] readBytes(int amount) {
@@ -519,11 +477,9 @@ public class GamePacket {
 	/**
 	 * Reads a series of bytes from a buffer.
 	 * 
-	 * @param amount
-	 *            The amount of bytes to read.
+	 * @param amount The amount of bytes to read.
 	 * 
-	 * @param mod
-	 *            The modifications performed on the bytes values.
+	 * @param mod    The modifications performed on the bytes values.
 	 * 
 	 * @return The bytes that where read.
 	 */
@@ -538,8 +494,7 @@ public class GamePacket {
 	/**
 	 * Reads a series of bytes in reverse.
 	 * 
-	 * @param amount
-	 *            The amount of bytes to read.
+	 * @param amount The amount of bytes to read.
 	 * 
 	 * @return The bytes in reverse.
 	 */
@@ -550,11 +505,9 @@ public class GamePacket {
 	/**
 	 * Reads a series of bytes in reverse.
 	 * 
-	 * @param amount
-	 *            The amount of bytes to read.
+	 * @param amount The amount of bytes to read.
 	 * 
-	 * @param mod
-	 *            The modification performed on these bytes.
+	 * @param mod    The modification performed on these bytes.
 	 * 
 	 * @return The bytes in reverse.
 	 */

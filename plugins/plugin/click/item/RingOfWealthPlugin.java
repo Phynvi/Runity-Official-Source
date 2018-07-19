@@ -7,5 +7,4 @@ import io.battlerune.game.plugin.PluginContext;
  */
 public class RingOfWealthPlugin extends PluginContext {
 
-
 }

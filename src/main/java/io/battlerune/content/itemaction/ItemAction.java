@@ -12,7 +12,7 @@ public abstract class ItemAction {
 
 	/** The name of the action. */
 	public abstract String name();
-	
+
 	/** The message of the action. */
 	public String message(Item item) {
 		return "";

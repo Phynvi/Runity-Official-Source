@@ -7,19 +7,19 @@ package io.battlerune.content.store;
  */
 public enum SellType {
 
-    /**
-     * No items can be sold in the shop.
-     */
-    NONE,
+	/**
+	 * No items can be sold in the shop.
+	 */
+	NONE,
 
-    /**
-     * Can only sell items that are contained in the shop.
-     */
-    CONTAINS,
+	/**
+	 * Can only sell items that are contained in the shop.
+	 */
+	CONTAINS,
 
-    /**
-     * Can sell any items to the shop.
-     */
-    ANY,
+	/**
+	 * Can sell any items to the shop.
+	 */
+	ANY,
 
 }

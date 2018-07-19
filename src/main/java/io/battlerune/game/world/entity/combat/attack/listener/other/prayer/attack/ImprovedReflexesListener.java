@@ -5,9 +5,9 @@ import io.battlerune.game.world.entity.mob.Mob;
 
 public class ImprovedReflexesListener extends SimplifiedListener<Mob> {
 
-    @Override
-    public int modifyAttackLevel(Mob attacker, Mob defender, int damage) {
-        return damage * 11 / 10;
-    }
+	@Override
+	public int modifyAttackLevel(Mob attacker, Mob defender, int damage) {
+		return damage * 11 / 10;
+	}
 
 }

@@ -12,65 +12,65 @@ import io.battlerune.net.packet.out.SendGroundItem;
  */
 public final class GroundItemEvent extends Task {
 
-    /** A variable which indicates how many ticks a minute is. */
-    private static final int MINUTE = 100;
+	/** A variable which indicates how many ticks a minute is. */
+	private static final int MINUTE = 100;
 
-    /** The ground item this randomevent is running for. */
-    private final GroundItem groundItem;
+	/** The ground item this randomevent is running for. */
+	private final GroundItem groundItem;
 
-    /** The counter of this task. */
-    private int minutes;
+	/** The counter of this task. */
+	private int minutes;
 
-    /** Creates a new {@link Task} that doesn't execute instantly. */
-    GroundItemEvent(GroundItem groundItem) {
-        super(MINUTE);
-        this.groundItem = groundItem;
-    }
+	/** Creates a new {@link Task} that doesn't execute instantly. */
+	GroundItemEvent(GroundItem groundItem) {
+		super(MINUTE);
+		this.groundItem = groundItem;
+	}
 
-    @Override
-    public void execute() {
-        switch (groundItem.policy) {
-            case GLOBAL:
-                if (++minutes < 5) {
-                    return;
-                }
+	@Override
+	public void execute() {
+		switch (groundItem.policy) {
+		case GLOBAL:
+			if (++minutes < 5) {
+				return;
+			}
 
-                if (groundItem.item.getId() == 12791) {
-                    groundItem.player.runePouch.runes.clear();
-                }
+			if (groundItem.item.getId() == 12791) {
+				groundItem.player.runePouch.runes.clear();
+			}
 
-                cancel();
-                break;
-            case ONLY_OWNER:
-                if (++minutes < 2) {
-                    return;
-                }
+			cancel();
+			break;
+		case ONLY_OWNER:
+			if (++minutes < 2) {
+				return;
+			}
 
-                groundItem.policy = GroundItemPolicy.GLOBAL;
-                if (!groundItem.item.isTradeable()) {
-                    return;
-                }
+			groundItem.policy = GroundItemPolicy.GLOBAL;
+			if (!groundItem.item.isTradeable()) {
+				return;
+			}
 
-                Region[] regions = World.getRegions().getSurroundingRegions(groundItem.getPosition());
-                for (Region region : regions) {
-                    for (Player player : region.getPlayers(groundItem.getHeight())) {
-                        if (!groundItem.isRegistered())
-                            continue;
+			Region[] regions = World.getRegions().getSurroundingRegions(groundItem.getPosition());
+			for (Region region : regions) {
+				for (Player player : region.getPlayers(groundItem.getHeight())) {
+					if (!groundItem.isRegistered())
+						continue;
 
-                        if (!groundItem.canSee(player))
-                            continue;
+					if (!groundItem.canSee(player))
+						continue;
 
-                        if (groundItem.player.usernameLong != player.usernameLong)
-                            player.send(new SendGroundItem(groundItem));
-                    }
-                }
-                break;
-        }
-    }
+					if (groundItem.player.usernameLong != player.usernameLong)
+						player.send(new SendGroundItem(groundItem));
+				}
+			}
+			break;
+		}
+	}
 
-    @Override
-    protected void onCancel(boolean logout) {
-        groundItem.unregister();
-    }
+	@Override
+	protected void onCancel(boolean logout) {
+		groundItem.unregister();
+	}
 
 }

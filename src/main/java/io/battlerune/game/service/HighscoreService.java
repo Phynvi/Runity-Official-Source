@@ -26,10 +26,11 @@ public final class HighscoreService {
 	private final static String HIGHSCORES_INSERT = "INSERT INTO highscores (account_name, mode, prestige, skill, level, experience, entry_time) VALUES(?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE prestige = VALUES(prestige), level = VALUES(level), experience = VALUES(experience), entry_time = VALUES(entry_time)";
 
 	public static void saveHighscores(Player player) {
-		if (player == null || !System.getProperty("user.name").equalsIgnoreCase("runity")/*
-							 * || !Config.LIVE_SERVER || !Config.FORUM_INTEGRATION ||
-							 * PlayerRight.isPriviledged(player) || !Config.highscoresEnabled
-							 */) {
+		if (player == null || !System.getProperty("user.name")
+				.equalsIgnoreCase("runity")/*
+											 * || !Config.LIVE_SERVER || !Config.FORUM_INTEGRATION ||
+											 * PlayerRight.isPriviledged(player) || !Config.highscoresEnabled
+											 */) {
 			return;
 		}
 

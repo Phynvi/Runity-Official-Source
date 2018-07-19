@@ -8,39 +8,39 @@ import io.battlerune.net.packet.out.SendConfig;
 
 public class DuelNotificationTask extends Task {
 
-    private final Player player;
-    private int time = 20;
+	private final Player player;
+	private int time = 20;
 
-    public DuelNotificationTask(Player player) {
-        super(true, 0);
-        this.player = player;
-    }
+	public DuelNotificationTask(Player player) {
+		super(true, 0);
+		this.player = player;
+	}
 
-    @Override
-    public void execute() {
-        if (!ExchangeSession.inSession(player, ExchangeSessionType.DUEL)) {
-            cancel();
-            return;
-        }
+	@Override
+	public void execute() {
+		if (!ExchangeSession.inSession(player, ExchangeSessionType.DUEL)) {
+			cancel();
+			return;
+		}
 
-        if (time <= 0) {
-            cancel();
-            return;
-        }
+		if (time <= 0) {
+			cancel();
+			return;
+		}
 
-        time--;
+		time--;
 
-        if (time % 2 == 0) {
-            player.send(new SendConfig(655, 1));
-        } else {
-            player.send(new SendConfig(655, 0));
-        }
+		if (time % 2 == 0) {
+			player.send(new SendConfig(655, 1));
+		} else {
+			player.send(new SendConfig(655, 0));
+		}
 
-    }
+	}
 
-    @Override
-    protected void onCancel(boolean logout) {
-        player.send(new SendConfig(655, 0));
-    }
+	@Override
+	protected void onCancel(boolean logout) {
+		player.send(new SendConfig(655, 0));
+	}
 
 }

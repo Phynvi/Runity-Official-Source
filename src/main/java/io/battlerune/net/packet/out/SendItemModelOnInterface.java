@@ -19,9 +19,7 @@ public class SendItemModelOnInterface extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeShort(id, ByteOrder.LE)
-		.writeShort(zoom)
-		.writeShort(model);
+		builder.writeShort(id, ByteOrder.LE).writeShort(zoom).writeShort(model);
 		return true;
 	}
 

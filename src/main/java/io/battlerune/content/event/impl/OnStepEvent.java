@@ -8,7 +8,7 @@ import io.battlerune.content.event.InteractionEvent;
  */
 public final class OnStepEvent extends InteractionEvent {
 
-    public OnStepEvent() {
-        super(InteractionType.ON_STEP);
-    }
+	public OnStepEvent() {
+		super(InteractionType.ON_STEP);
+	}
 }

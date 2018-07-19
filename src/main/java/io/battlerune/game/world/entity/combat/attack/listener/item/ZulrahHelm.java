@@ -14,121 +14,120 @@ import io.battlerune.util.RandomUtils;
 @ItemCombatListenerSignature(requireAll = false, items = { 12_931, 13_197, 13_199 })
 public class ZulrahHelm extends SimplifiedListener<Player> {
 
-    @Override
-    public void hit(Player attacker, Mob defender, Hit hit) {
-        if (!defender.isNpc()) {
-            return;
-        }
+	@Override
+	public void hit(Player attacker, Mob defender, Hit hit) {
+		if (!defender.isNpc()) {
+			return;
+		}
 
-        Item helm = attacker.equipment.get(Equipment.HELM_SLOT);
+		Item helm = attacker.equipment.get(Equipment.HELM_SLOT);
 
-        if (helm == null) {
-            return;
-        }
+		if (helm == null) {
+			return;
+		}
 
-        if (helm.matchesId(12_931)) {
-            serp(attacker, defender, this);
-        } else if (helm.matchesId(13_197)) {
-            tanz(attacker, defender, this);
-        } else if (helm.matchesId(13_199)) {
-            magma(attacker, defender, this);
-        }
-    }
-    
-    private static void serp(Player attacker, Mob defender, ZulrahHelm listener) {
-        if (attacker.serpentineHelmCharges > 0) {
-            attacker.serpentineHelmCharges -= 2;
-            boolean poisonous = false;
+		if (helm.matchesId(12_931)) {
+			serp(attacker, defender, this);
+		} else if (helm.matchesId(13_197)) {
+			tanz(attacker, defender, this);
+		} else if (helm.matchesId(13_199)) {
+			magma(attacker, defender, this);
+		}
+	}
 
-            if (attacker.equipment.hasWeapon()) {
-                poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.getWeapon()).isPresent();
-            }
+	private static void serp(Player attacker, Mob defender, ZulrahHelm listener) {
+		if (attacker.serpentineHelmCharges > 0) {
+			attacker.serpentineHelmCharges -= 2;
+			boolean poisonous = false;
 
-            if (!poisonous && attacker.equipment.hasAmmo()) {
-                poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.get(Equipment.ARROWS_SLOT)).isPresent();
-            }
+			if (attacker.equipment.hasWeapon()) {
+				poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.getWeapon()).isPresent();
+			}
 
-            if (CombatVenomEffect.isVenomous(attacker.equipment.getWeapon())) {
-                defender.venom();
-            } else if (RandomUtils.success(poisonous ? 0.50 : 1 / 6.0)) {
-                defender.venom();
-            }
-        }
+			if (!poisonous && attacker.equipment.hasAmmo()) {
+				poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.get(Equipment.ARROWS_SLOT)).isPresent();
+			}
 
-        if (attacker.serpentineHelmCharges == 0) {
-            attacker.message("Your Serpentine helm is out of charges.");
-            if(attacker.equipment.contains(13199)) {
-            	 attacker.equipment.replace(13_199, Equipment.HELM_SLOT, true);
-                 attacker.inventory.add(13918, 1);
-                 attacker.getCombat().removeListener(listener);
-            }
-            if(attacker.equipment.contains(13197)) {
-                attacker.equipment.replace(13_197, Equipment.HELM_SLOT, true);
-                attacker.inventory.add(13196, 1);
-                attacker.getCombat().removeListener(listener);
-            }
-            if(attacker.equipment.contains(12931)) {
-            attacker.equipment.replace(12_931, Equipment.HELM_SLOT, true);
-            attacker.inventory.add(12929, 1);
-            attacker.getCombat().removeListener(listener);
-        }
-      }
-            
-    }
+			if (CombatVenomEffect.isVenomous(attacker.equipment.getWeapon())) {
+				defender.venom();
+			} else if (RandomUtils.success(poisonous ? 0.50 : 1 / 6.0)) {
+				defender.venom();
+			}
+		}
 
-    private static void tanz(Player attacker, Mob defender, ZulrahHelm listener) {
-        if (attacker.tanzaniteHelmCharges > 0) {
-            attacker.tanzaniteHelmCharges -= 2;
-            boolean poisonous = false;
+		if (attacker.serpentineHelmCharges == 0) {
+			attacker.message("Your Serpentine helm is out of charges.");
+			if (attacker.equipment.contains(13199)) {
+				attacker.equipment.replace(13_199, Equipment.HELM_SLOT, true);
+				attacker.inventory.add(13918, 1);
+				attacker.getCombat().removeListener(listener);
+			}
+			if (attacker.equipment.contains(13197)) {
+				attacker.equipment.replace(13_197, Equipment.HELM_SLOT, true);
+				attacker.inventory.add(13196, 1);
+				attacker.getCombat().removeListener(listener);
+			}
+			if (attacker.equipment.contains(12931)) {
+				attacker.equipment.replace(12_931, Equipment.HELM_SLOT, true);
+				attacker.inventory.add(12929, 1);
+				attacker.getCombat().removeListener(listener);
+			}
+		}
 
-            if (attacker.equipment.hasWeapon()) {
-                poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.getWeapon()).isPresent();
-            }
+	}
 
-            if (!poisonous && attacker.equipment.hasAmmo()) {
-                poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.get(Equipment.ARROWS_SLOT)).isPresent();
-            }
+	private static void tanz(Player attacker, Mob defender, ZulrahHelm listener) {
+		if (attacker.tanzaniteHelmCharges > 0) {
+			attacker.tanzaniteHelmCharges -= 2;
+			boolean poisonous = false;
 
-            if (CombatVenomEffect.isVenomous(attacker.equipment.getWeapon())) {
-                defender.venom();
-            } else if (RandomUtils.success(poisonous ? 0.50 : 1 / 6.0)) {
-                defender.venom();
-            }
-        }
+			if (attacker.equipment.hasWeapon()) {
+				poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.getWeapon()).isPresent();
+			}
 
-        if (attacker.tanzaniteHelmCharges == 0) {
-            attacker.message("Your Tanzanite helm is out of charges.");
-            attacker.equipment.replace(13_197, 13_196, Equipment.HELM_SLOT, true);
-            attacker.getCombat().removeListener(listener);
-        }
-    }
+			if (!poisonous && attacker.equipment.hasAmmo()) {
+				poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.get(Equipment.ARROWS_SLOT)).isPresent();
+			}
 
-    private static void magma(Player attacker, Mob defender, ZulrahHelm listener) {
-        if (attacker.magmaHelmCharges > 0) {
-            attacker.magmaHelmCharges -= 2;
-            boolean poisonous = false;
+			if (CombatVenomEffect.isVenomous(attacker.equipment.getWeapon())) {
+				defender.venom();
+			} else if (RandomUtils.success(poisonous ? 0.50 : 1 / 6.0)) {
+				defender.venom();
+			}
+		}
 
-            if (attacker.equipment.hasWeapon()) {
-                poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.getWeapon()).isPresent();
-            }
+		if (attacker.tanzaniteHelmCharges == 0) {
+			attacker.message("Your Tanzanite helm is out of charges.");
+			attacker.equipment.replace(13_197, 13_196, Equipment.HELM_SLOT, true);
+			attacker.getCombat().removeListener(listener);
+		}
+	}
 
-            if (!poisonous && attacker.equipment.hasAmmo()) {
-                poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.get(Equipment.ARROWS_SLOT)).isPresent();
-            }
+	private static void magma(Player attacker, Mob defender, ZulrahHelm listener) {
+		if (attacker.magmaHelmCharges > 0) {
+			attacker.magmaHelmCharges -= 2;
+			boolean poisonous = false;
 
-            if (CombatVenomEffect.isVenomous(attacker.equipment.getWeapon())) {
-                defender.venom();
-            } else if (RandomUtils.success(poisonous ? 0.50 : 1 / 6.0)) {
-                defender.venom();
-            }
-        }
+			if (attacker.equipment.hasWeapon()) {
+				poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.getWeapon()).isPresent();
+			}
 
-        if (attacker.magmaHelmCharges == 0) {
-            attacker.message("Your Magma helm is out of charges.");
-            attacker.equipment.replace(13_199, 13_198, Equipment.HELM_SLOT, true);
-            attacker.getCombat().removeListener(listener);
-        }
-    }
-    
+			if (!poisonous && attacker.equipment.hasAmmo()) {
+				poisonous = CombatPoisonEffect.getPoisonType(attacker.equipment.get(Equipment.ARROWS_SLOT)).isPresent();
+			}
+
+			if (CombatVenomEffect.isVenomous(attacker.equipment.getWeapon())) {
+				defender.venom();
+			} else if (RandomUtils.success(poisonous ? 0.50 : 1 / 6.0)) {
+				defender.venom();
+			}
+		}
+
+		if (attacker.magmaHelmCharges == 0) {
+			attacker.message("Your Magma helm is out of charges.");
+			attacker.equipment.replace(13_199, 13_198, Equipment.HELM_SLOT, true);
+			attacker.getCombat().removeListener(listener);
+		}
+	}
 
 }

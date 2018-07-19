@@ -13,23 +13,22 @@ public class DonatorBankCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		if(Area.inWilderness(player) && (!PlayerRight.isDeveloper(player))) {
-    		player.message("You cannot open the bank in the wilderness.");
-    	} else {
-        player.bank.open();
-    	}
-    }
-	
+		if (Area.inWilderness(player) && (!PlayerRight.isDeveloper(player))) {
+			player.message("You cannot open the bank in the wilderness.");
+		} else {
+			player.bank.open();
+		}
+	}
 
 	@Override
 	public boolean canUse(Player player) {
-		if(!PlayerRight.isDonator(player)) {
+		if (!PlayerRight.isDonator(player)) {
 			player.speak("Hey everyone, I just tried to do something silly!");
 			return false;
 		} else {
-		return true;
+			return true;
+		}
+
 	}
 
-}
-	
 }

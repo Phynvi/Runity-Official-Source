@@ -14,10 +14,10 @@ public final class Stopwatch {
 		return new Stopwatch();
 	}
 
-    @Override
-    public String toString() {
-        return String.format("STOPWATCH[elapsed=%d]", elapsedTime());
-    }
+	@Override
+	public String toString() {
+		return String.format("STOPWATCH[elapsed=%d]", elapsedTime());
+	}
 
 	public Stopwatch reset() {
 		cachedTime = System.nanoTime();

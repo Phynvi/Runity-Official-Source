@@ -15,7 +15,8 @@ public class GraniteMaul extends PlayerMeleeStrategy {
 	private static final Graphic GRAPHIC = new Graphic(340);
 	private static final GraniteMaul INSTANCE = new GraniteMaul();
 
-	private GraniteMaul() { }
+	private GraniteMaul() {
+	}
 
 	@Override
 	public void start(Player attacker, Mob defender, Hit[] hits) {

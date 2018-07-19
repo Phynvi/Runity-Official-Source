@@ -7,7 +7,7 @@ import io.battlerune.net.packet.OutgoingPacket;
 /**
  * The {@code OutgoingPacket} that opens the inventory with itemcontainer.
  * 
- * @author Daniel | Obey 
+ * @author Daniel | Obey
  */
 public class SendInventoryInterface extends OutgoingPacket {
 
@@ -22,8 +22,7 @@ public class SendInventoryInterface extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeShort(open, ByteModification.ADD)
-		.writeShort(overlay);
+		builder.writeShort(open, ByteModification.ADD).writeShort(overlay);
 		return true;
 	}
 

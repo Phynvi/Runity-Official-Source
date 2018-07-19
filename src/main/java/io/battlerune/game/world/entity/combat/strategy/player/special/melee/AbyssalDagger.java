@@ -34,12 +34,12 @@ public class AbyssalDagger extends PlayerMeleeStrategy {
 		super.attack(attacker, defender, hit);
 		attacker.graphic(GRAPHIC);
 	}
-	
+
 	@Override
 	public CombatHit[] getHits(Player attacker, Mob defender) {
-		return new CombatHit[]{nextMeleeHit(attacker, defender), nextMeleeHit(attacker, defender)};
+		return new CombatHit[] { nextMeleeHit(attacker, defender), nextMeleeHit(attacker, defender) };
 	}
-	
+
 	@Override
 	public Animation getAttackAnimation(Player attacker, Mob defender) {
 		return ANIMATION;

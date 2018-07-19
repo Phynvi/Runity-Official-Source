@@ -25,7 +25,6 @@ public class FreeForAll {
 	 */
 	public static HashMap<Player, String> game = new HashMap<Player, String>();
 
-	
 	public static int getPlayers(String type) {
 		switch (type) {
 		case "game":
@@ -53,9 +52,8 @@ public class FreeForAll {
 	 */
 	public static int WAIT_TIMER = 80; // 3MINUTES
 	public static int GAME_TIMER = 900; // 5MINUTES
-	public static int OVERALL_TIMER = 10800; //3 HOURS
+	public static int OVERALL_TIMER = 10800; // 3 HOURS
 
-	
 	private static String secondsToTimer(int secs) {
 		int minutes = secs / 60;
 		int seconds = secs % 60;
@@ -92,42 +90,42 @@ public class FreeForAll {
 	 */
 	public static void sequence() {
 		if (!gameStarted && !lobbyOpen) {
-			
+
 			if (OVERALL_TIMER > 0) {
 				OVERALL_TIMER--;
-				
+
 				if (OVERALL_TIMER == 3600) {
 					World.sendMessage("[Tournament] The tournament will open it doors in 1 hour!");
 				}
 			}
-			
+
 			if (OVERALL_TIMER <= 0) {
 				lobbyOpen = true;
 				OVERALL_TIMER += 350;
 				World.sendMessage("[Tournament] The tournament doors have been opened! ::tournament to join!");
-			}	
+			}
 			return;
 		}
-		
+
 		if (gameStarted && !lobbyOpen) {
 
 			if (GAME_TIMER > 0) {
 				GAME_TIMER--;
-				
+
 				if (GAME_TIMER == 120) {
 					gameMessage("game", "@or2@[Tournament Game] The round will end shortly!");
 				}
-				
+
 				updateInterface("game");
 			}
 
 			if (gameStarted && GAME_TIMER <= 0) {
 				endGame();
-			}	
+			}
 			return;
 		}
 
-		if (WAIT_TIMER > 0 && getPlayers("lobby") >= PLAYERS_NEEDED && lobbyOpen) { 
+		if (WAIT_TIMER > 0 && getPlayers("lobby") >= PLAYERS_NEEDED && lobbyOpen) {
 			WAIT_TIMER--;
 
 			if (WAIT_TIMER == 60) {
@@ -194,12 +192,11 @@ public class FreeForAll {
 			return false;
 		}
 
-		/* for (int i = 0; i < 11; i++) {
-			if (player.equipment.get(i).getId() > 0) {
-				player.message("@or2@[Tournament] Please bank your equipment!");
-				return false;
-			}
-		} */
+		/*
+		 * for (int i = 0; i < 11; i++) { if (player.equipment.get(i).getId() > 0) {
+		 * player.message("@or2@[Tournament] Please bank your equipment!"); return
+		 * false; } }
+		 */
 
 		if (player.inventory.getFreeSlots() != 28) {
 			player.message("@or2@[Tournament] Please bank your items!");

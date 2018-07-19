@@ -45,8 +45,7 @@ public class ChannelFilter extends ChannelInboundHandlerAdapter {
 		}
 
 		/*
-		 * If this local then, do nothing and proceed to next handler in the
-		 * pipeline.
+		 * If this local then, do nothing and proceed to next handler in the pipeline.
 		 */
 		if (connection.getHost().equalsIgnoreCase("127.0.0.1")) {
 			return;
@@ -81,8 +80,7 @@ public class ChannelFilter extends ChannelInboundHandlerAdapter {
 		Connection connection = getConenction(ctx);
 
 		/*
-		 * If this is local, do nothing and proceed to next handler in the
-		 * pipeline.
+		 * If this is local, do nothing and proceed to next handler in the pipeline.
 		 */
 		if (connection.getHost().equalsIgnoreCase("127.0.0.1")) {
 			return;
@@ -96,8 +94,8 @@ public class ChannelFilter extends ChannelInboundHandlerAdapter {
 		}
 
 		/*
-		 * The connection is unregistered so forward the randomevent to the next
-		 * handler in the pipeline.
+		 * The connection is unregistered so forward the randomevent to the next handler
+		 * in the pipeline.
 		 */
 		ctx.fireChannelUnregistered();
 	}
@@ -105,10 +103,8 @@ public class ChannelFilter extends ChannelInboundHandlerAdapter {
 	/**
 	 * Disconnects {@code ctx} with {@code response} as the response code.
 	 *
-	 * @param ctx
-	 *            The channel handler context.
-	 * @param response
-	 *            The response to disconnect with.
+	 * @param ctx      The channel handler context.
+	 * @param response The response to disconnect with.
 	 */
 	private void disconnect(ChannelHandlerContext ctx, LoginResponse response) {
 		LoginResponsePacket message = new LoginResponsePacket(response);
@@ -121,14 +117,14 @@ public class ChannelFilter extends ChannelInboundHandlerAdapter {
 	/**
 	 * Gets the host address of the user logging in.
 	 *
-	 * @param ctx
-	 *            The context of this channel.
+	 * @param ctx The context of this channel.
 	 *
 	 * @return The host address of this connection.
 	 */
 	private Connection getConenction(ChannelHandlerContext ctx) {
 		String host = ((InetSocketAddress) ctx.channel().remoteAddress()).getAddress().getHostAddress();
-		return connections.stream().filter(conn -> conn.getHost().equalsIgnoreCase(host)).findFirst().orElse(new Connection(host));
+		return connections.stream().filter(conn -> conn.getHost().equalsIgnoreCase(host)).findFirst()
+				.orElse(new Connection(host));
 	}
 
 	/**
@@ -150,8 +146,7 @@ public class ChannelFilter extends ChannelInboundHandlerAdapter {
 		/**
 		 * Constructs a new {@code Connection} object.
 		 *
-		 * @param host
-		 *            The host address.
+		 * @param host The host address.
 		 */
 		public Connection(String host) {
 			this.host = host;

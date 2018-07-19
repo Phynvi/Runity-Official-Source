@@ -22,7 +22,7 @@ public class MoveItemPacketListener implements PacketListener {
 		final int inserting = packet.readByte(ByteModification.NEG);
 		final int fromSlot = packet.readShort(ByteOrder.LE, ByteModification.ADD);
 		final int toSlot = packet.readShort(ByteOrder.LE);
-		
+
 		if (player.idle) {
 			player.idle = false;
 		}

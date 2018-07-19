@@ -8,19 +8,19 @@ package io.battlerune.net.codec.game;
  */
 public enum GamePacketDecoderState {
 
-    /**
-     * The state that determines the id of this packet.
-     */
-    OPCODE,
+	/**
+	 * The state that determines the id of this packet.
+	 */
+	OPCODE,
 
-    /**
-     * The state that determines which type of packet this is.
-     */
-    SIZE,
+	/**
+	 * The state that determines which type of packet this is.
+	 */
+	SIZE,
 
-    /**
-     * The state that contains the data of the packet.
-     */
-    PAYLOAD
+	/**
+	 * The state that contains the data of the packet.
+	 */
+	PAYLOAD
 
 }

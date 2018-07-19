@@ -14,25 +14,25 @@ import io.battlerune.util.parser.GsonParser;
  */
 public class NpcSpawnParser extends GsonParser {
 
-    public NpcSpawnParser() {
-        super("def/npc/npc_spawns");
-    }
+	public NpcSpawnParser() {
+		super("def/npc/npc_spawns");
+	}
 
-    @Override
-    protected void parse(JsonObject data) {
-        final int id = data.get("id").getAsInt();
-        final Position position = builder.fromJson(data.get("position"), Position.class);
-        Direction facing;
-        try {
-            facing = Direction.valueOf(data.get("facing").getAsString());
-        } catch (NullPointerException e) {
-            facing = Direction.valueOf("NORTH");
-        }
-        int radius = 2;
-        if (data.has("radius")) {
-            radius = data.get("radius").getAsInt();
-        }
-        new Npc(id, position, radius, facing).register();
-    }
+	@Override
+	protected void parse(JsonObject data) {
+		final int id = data.get("id").getAsInt();
+		final Position position = builder.fromJson(data.get("position"), Position.class);
+		Direction facing;
+		try {
+			facing = Direction.valueOf(data.get("facing").getAsString());
+		} catch (NullPointerException e) {
+			facing = Direction.valueOf("NORTH");
+		}
+		int radius = 2;
+		if (data.has("radius")) {
+			radius = data.get("radius").getAsInt();
+		}
+		new Npc(id, position, radius, facing).register();
+	}
 
 }

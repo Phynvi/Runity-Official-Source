@@ -10,14 +10,14 @@ import io.battlerune.net.packet.OutgoingPacket;
  */
 public final class SendSpecialAmount extends OutgoingPacket {
 
-    public SendSpecialAmount() {
-        super(137, 1);
-    }
+	public SendSpecialAmount() {
+		super(137, 1);
+	}
 
-    @Override
-    public boolean encode(Player player) {
-        builder.writeByte(player.getSpecialPercentage().get());
-        return true;
-    }
+	@Override
+	public boolean encode(Player player) {
+		builder.writeByte(player.getSpecialPercentage().get());
+		return true;
+	}
 
 }

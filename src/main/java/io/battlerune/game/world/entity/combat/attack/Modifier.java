@@ -118,7 +118,8 @@ public class Modifier {
 		return damageModifier.apply(damage);
 	}
 
-	private static Function<Integer, Integer> link(Function<Integer, Integer> modifier, Function<Integer, Integer> next) {
+	private static Function<Integer, Integer> link(Function<Integer, Integer> modifier,
+			Function<Integer, Integer> next) {
 		return modifier.andThen(next);
 	}
 
@@ -131,7 +132,11 @@ public class Modifier {
 	}
 
 	private static Modifier attack(double percent) {
-		return new Modifier() {{ attackPercent(percent); }};
+		return new Modifier() {
+			{
+				attackPercent(percent);
+			}
+		};
 	}
 
 	public static void main(String[] args) {
@@ -149,6 +154,5 @@ public class Modifier {
 		total = link(chain, linked).modifyAttack(10000) / 10000.0;
 		System.out.println(total);
 	}
-
 
 }

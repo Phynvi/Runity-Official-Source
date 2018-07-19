@@ -16,7 +16,6 @@ public class EventBossSystem implements Command {
 	public void execute(Player player, String[] command) {
 		World.schedule(new EventBossHandler());
 	}
-	
 
 	@Override
 	public boolean canUse(Player player) {

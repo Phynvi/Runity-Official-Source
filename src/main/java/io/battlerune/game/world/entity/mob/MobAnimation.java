@@ -22,11 +22,11 @@ public class MobAnimation {
 	private int turn90CCW;
 	private int run;
 	private final EnumSet<UpdateFlag> updateFlags;
-	
+
 	MobAnimation(EnumSet<UpdateFlag> updateFlags) {
 		this.updateFlags = updateFlags;
 	}
-	
+
 	public void set(int stand, int turn, int walk, int turn180, int turn90cw, int turn90ccw, int run) {
 		this.stand = stand;
 		this.turn = turn;
@@ -48,7 +48,7 @@ public class MobAnimation {
 		this.run = PLAYER_RUN;
 		updateFlags.add(UpdateFlag.APPEARANCE);
 	}
-	
+
 	public void setNpcAnimations(NpcDefinition definition) {
 		this.stand = definition.getStand();
 		this.walk = definition.getWalk();

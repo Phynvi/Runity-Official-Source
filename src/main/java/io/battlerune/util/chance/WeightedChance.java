@@ -12,7 +12,7 @@ public class WeightedChance<T> implements WeightedObject<T> {
 	/** The representation. */
 	private final T representation;
 
-	/** The weight type.  */
+	/** The weight type. */
 	private double weight;
 
 	public WeightedChance(double weight, T representation) {
@@ -37,7 +37,7 @@ public class WeightedChance<T> implements WeightedObject<T> {
 	public int compareTo(WeightedObject<T> o) {
 		return (int) (getWeight() - o.getWeight());
 	}
-	
+
 	@Override
 	public String toString() {
 		return "[Object: " + get() + ", " + "Weight: " + getWeight() + "]";

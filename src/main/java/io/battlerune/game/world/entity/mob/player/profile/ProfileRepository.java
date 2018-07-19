@@ -28,80 +28,80 @@ import io.battlerune.util.GsonUtils;
  */
 public class ProfileRepository {
 
-    /** The hash map of all the profiles. */
-    private static Map<String, Profile> PROFILES = new HashMap<>();
+	/** The hash map of all the profiles. */
+	private static Map<String, Profile> PROFILES = new HashMap<>();
 
-    public static Deque<String> getHosts(String name) {
-        if (!exist(name))
-            return null;
-        return (Deque<String>) PROFILES.get(name).getHost();
-    }
+	public static Deque<String> getHosts(String name) {
+		if (!exist(name))
+			return null;
+		return (Deque<String>) PROFILES.get(name).getHost();
+	}
 
-    /** Checks if a profile is registered to the parameter. */
-    public static boolean exist(String name) {
-        return PROFILES.containsKey(name);
-    }
+	/** Checks if a profile is registered to the parameter. */
+	public static boolean exist(String name) {
+		return PROFILES.containsKey(name);
+	}
 
-    /** Checks if the other player is a friend. */
-    public static boolean isFriend(Player player, String other) {
-        return player.relations.isFriendWith(other);
-    }
+	/** Checks if the other player is a friend. */
+	public static boolean isFriend(Player player, String other) {
+		return player.relations.isFriendWith(other);
+	}
 
-    /** Gets all the registered accounts to a specific host. */
-    public static List<String> getRegistry(String host) {
-        List<String> list = new ArrayList<>();
-        for (Profile profile : PROFILES.values()) {
-            for (String host_list : profile.getHost()) {
-                if (host_list != null && host_list.equalsIgnoreCase(host)) {
-                    list.add(profile.getName());
-                }
-            }
-        }
-        return list;
-    }
+	/** Gets all the registered accounts to a specific host. */
+	public static List<String> getRegistry(String host) {
+		List<String> list = new ArrayList<>();
+		for (Profile profile : PROFILES.values()) {
+			for (String host_list : profile.getHost()) {
+				if (host_list != null && host_list.equalsIgnoreCase(host)) {
+					list.add(profile.getName());
+				}
+			}
+		}
+		return list;
+	}
 
-    /** Puts a profile into the hash map. */
-    public static void put(Profile profile) {
-        if (PROFILES.containsKey(profile.getName())) {
-            PROFILES.replace(profile.getName(), profile);
-        } else {
-            PROFILES.put(profile.getName(), profile);
-        }
-        save();
-    }
+	/** Puts a profile into the hash map. */
+	public static void put(Profile profile) {
+		if (PROFILES.containsKey(profile.getName())) {
+			PROFILES.replace(profile.getName(), profile);
+		} else {
+			PROFILES.put(profile.getName(), profile);
+		}
+		save();
+	}
 
-    /** Loads all the profiles. */
-    public static void load() {
-        Type type = new TypeToken<Map<String, Profile>>() {
-        }.getType();
-        Path path = Paths.get("data", "/profile/world_profile_list.json");
-        if (!Files.exists(path)) {
-            return;
-        }
-        try (FileReader reader = new FileReader(path.toFile())) {
-            JsonParser parser = new JsonParser();
-            PROFILES = new GsonBuilder().create().fromJson(parser.parse(reader), type);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+	/** Loads all the profiles. */
+	public static void load() {
+		Type type = new TypeToken<Map<String, Profile>>() {
+		}.getType();
+		Path path = Paths.get("data", "/profile/world_profile_list.json");
+		if (!Files.exists(path)) {
+			return;
+		}
+		try (FileReader reader = new FileReader(path.toFile())) {
+			JsonParser parser = new JsonParser();
+			PROFILES = new GsonBuilder().create().fromJson(parser.parse(reader), type);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-    /**  Saves all the profiles. */
-    public static void save() {
-        new Thread(() -> {
-            File dir = Paths.get("data", "profile").toFile();
+	/** Saves all the profiles. */
+	public static void save() {
+		new Thread(() -> {
+			File dir = Paths.get("data", "profile").toFile();
 
-            if (!dir.exists()) {
-                dir.mkdirs();
-            }
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
 
-            Path path = dir.toPath().resolve("world_profile_list.json");
+			Path path = dir.toPath().resolve("world_profile_list.json");
 
-            try (FileWriter fw = new FileWriter(path.toFile())) {
-                fw.write(GsonUtils.JSON_PRETTY_NO_NULLS.toJson(PROFILES));
-            } catch (final Exception e) {
-                e.printStackTrace();
-            }
-        }).start();
-    }
+			try (FileWriter fw = new FileWriter(path.toFile())) {
+				fw.write(GsonUtils.JSON_PRETTY_NO_NULLS.toJson(PROFILES));
+			} catch (final Exception e) {
+				e.printStackTrace();
+			}
+		}).start();
+	}
 }
