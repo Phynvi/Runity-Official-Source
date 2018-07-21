@@ -8608,6 +8608,17 @@
     "street-value": 500000000
   },
   {
+	    "id": 13740,
+	    "name": "Lava Santa hat",
+	    "noted-id": 1051,
+	    "low-alch": 64,
+	    "high-alch": 96,
+	    "base-value": 160,
+	    "street-value": 500000000,
+	    "weight": 0.1,
+	    "equipment-slot": "HAT"
+	  },
+  {
     "id": 1050,
     "name": "Santa hat",
     "noted-id": 1051,
@@ -102459,6 +102470,12 @@
     "equipment-slot": "HELM"
   },
   {
+	    "id": 16657,
+	    "name": "Starter helm",
+	    "destroy-message": "You should be able to get another from Diango in Draynor.",
+	    "equipment-slot": "HELM"
+	  },
+  {
     "id": 12846,
     "name": "Bounty teleport scroll",
     "noted-id": 12847,
@@ -125125,6 +125142,26 @@
     
 },
   {
+    "id": 13746,
+    "name": "Lava Platelegs",
+    "low-alch": 26000,
+    "high-alch": 39000,
+    "stackable": false,
+    "base-value": 65000,
+    "street-value": 43487,
+    "weight": 9.9,
+    "equipment-slot": "LEGS",
+    "req-defence": 40,
+    "attack-magic": -30,
+    "attack-ranged": -10,
+    "defence-stab": 82,
+    "defence-slash": 80,
+    "defence-crush": 72,
+    "defence-magic": -6,
+    "defence-ranged": 80
+    
+},
+  {
 	    "id": 21954,
 	    "name": "Dragon Slayer Platelegs",
 	    "low-alch": 26000,
@@ -125270,6 +125307,27 @@
 	    "bonus-strength": 7
 	  },
   {
+		    "id": 13742,
+		    "name": "Lava platebody",
+		    "low-alch": 26000,
+		    "high-alch": 39000,
+		    "base-value": 65000,
+		    "stackable": false,
+
+		    "street-value": 43487,
+		    "weight": 9.9,
+		    "equipment-slot": "BODY",
+		    "req-defence": 40,
+		    "attack-magic": -30,
+		    "attack-ranged": -10,
+		    "defence-stab": 82,
+		    "defence-slash": 80,
+		    "defence-crush": 72,
+		    "defence-magic": -6,
+		    "defence-ranged": 80
+		    
+	},
+  {
 	    "id": 3275,
 	    "name": "Dragon Slayer Platebody",
 	    "low-alch": 26000,
@@ -125319,6 +125377,27 @@
     ]
   },
   
+  
+  {
+	    "id": 13741,
+	    "name": "Lava helm",
+	    "low-alch": 36000,
+	    "high-alch": 54000,
+	    "base-value": 90000,
+	    "weight": 2.2,
+	    "equipment-slot": "HELM",
+	    "req-defence": 10,
+	    "attack-magic": 3,
+	    "attack-ranged": 3,
+	    "stackable": false,
+
+	    "defence-stab": 30,
+	    "defence-slash": 32,
+	    "defence-crush": 27,
+	    "defence-magic": 10,
+	    "defence-ranged": 30,
+	    "req-defence": 70
+	  },
   {
 	    "id": 13189,
 	    "name": "Elite Dragon Slayer Helmet",

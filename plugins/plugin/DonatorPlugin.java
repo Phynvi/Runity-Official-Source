@@ -12,6 +12,7 @@ import io.battlerune.game.world.position.Area;
  * Handles the donator plugin.
  *
  * @author Daniel.
+ * @author Adam_#6723
  */
 public class DonatorPlugin extends PluginContext {
 
