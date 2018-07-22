@@ -16,8 +16,8 @@ public class PlayerGuideCommand implements Command {
 
 		PlayerGuideHandler guide = new PlayerGuideHandler();
 		guide.open(player);
-		player.sendTeleportButton();
 		player.sendTeleportButtonNpc(8059);
+		player.sendTeleportButton();
 
 	}
 

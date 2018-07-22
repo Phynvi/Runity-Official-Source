@@ -175,7 +175,7 @@ public class IceDemon extends MultiStrategy {
 					}
 
 					if (defender.getPosition().equals(position)) {
-						defender.writeDamage(new Hit(Utility.random(1, 10)));
+						defender.writeDamage(new Hit(Utility.random(1, 5)));
 						if (defender.locking.locked())
 							return;
 						defender.locking.lock(20, LockType.FREEZE);
@@ -244,7 +244,7 @@ public class IceDemon extends MultiStrategy {
 		@Override
 		public void hit(Npc attacker, Mob defender, Hit hit) {
 			World.schedule(4, () -> {
-				int randomHit = Utility.random(45, 75);
+				int randomHit = Utility.random(1, 30);
 				Npc shadow = new Npc(7586, new Position(2524, 4655, 0)) {
 
 					@Override
@@ -397,7 +397,7 @@ public class IceDemon extends MultiStrategy {
 			} else if (Utility.withinOctal(defender.getPosition(), defender.width(), defender.length(), position, 1, 1,
 					1)) {
 				hit.setAs(CombatUtil.generateDragonfire(attacker, defender, 150, true));
-				hit.modifyDamage(damage -> damage / 2);
+				hit.modifyDamage(damage -> damage / 4);
 				hit.setAccurate(true);
 			}
 		}

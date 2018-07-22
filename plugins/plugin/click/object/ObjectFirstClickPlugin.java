@@ -6,6 +6,7 @@ import io.battlerune.Config;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.impl.fightcaves.FightCaves;
 import io.battlerune.content.activity.impl.pestcontrol.PestControl;
+import io.battlerune.content.activity.impl.recipefordisaster.RecipeForDisaster;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
 import io.battlerune.content.combat.cannon.CannonManager;
 import io.battlerune.content.dialogue.impl.WellOfGoodwillDialogue;
@@ -88,6 +89,11 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		case 31990:
 			player.animate(839);
 			player.move(new Position(2272, 4054));
+			break;
+			
+		case 12356: //ROD Portal
+			Teleportation.teleport(player, Config.DEFAULT_POSITION);
+			player.message("You've teleported Home, and all your data in RFD Has been lost.e");
 			break;
 
 		// Raids Entrance Door!
