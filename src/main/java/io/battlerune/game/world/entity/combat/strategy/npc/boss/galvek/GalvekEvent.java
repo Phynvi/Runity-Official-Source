@@ -26,7 +26,7 @@ public class GalvekEvent extends Task {
 		}
 
 		if (initial) {
-			if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 45) {
+			if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 60) {
 				galvek = GalvekUtility.generateSpawn();
 				initial = false;
 				stopwatch.reset();

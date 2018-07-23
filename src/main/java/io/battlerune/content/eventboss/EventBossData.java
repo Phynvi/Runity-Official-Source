@@ -1,4 +1,4 @@
-package io.battlerune.content.eventboss;
+/*package io.battlerune.content.eventboss;
 
 import io.battlerune.game.world.position.Position;
 
@@ -22,3 +22,4 @@ public enum EventBossData {
 		return pos;
 	}
 }
+*/

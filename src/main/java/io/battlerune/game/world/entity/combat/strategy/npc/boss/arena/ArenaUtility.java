@@ -15,14 +15,18 @@ import io.battlerune.util.Utility;
  * Created by Daniel on 2017-12-20.
  */
 public class ArenaUtility {
+	
+	public static boolean activated = false;
 
 	public static Npc generateSpawn() {
+		activated = true;
 		SpawnData spawn = SpawnData.generate();
 		Npc arena = new Npc(5129, spawn.position, 10, Direction.NORTH);
 		World.sendMessage("<col=8714E6> arena has just spawned! He is located at " + spawn.location + "!",
 				"<col=8714E6> First clan to kill him will be rewarded handsomely!");
 		World.sendMessage("to enter the arena do ::arena and rid this beast from the world of NR!");
 		World.sendBroadcast(1, "The Arena boss has spawned enter by doing ::arena", true);
+		World.sendArenaInformation();
 		arena.register();
 		arena.definition.setRespawnTime(-1);
 		arena.definition.setAggressive(true);

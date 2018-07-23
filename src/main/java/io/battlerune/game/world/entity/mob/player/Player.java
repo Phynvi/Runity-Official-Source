@@ -137,7 +137,7 @@ public class Player extends Mob {
 	 */
 	public void sendTeleportButtonNpc(int npcId) {
         send(new SendString(""+npcId, 45615));
-    }
+	}
 
 	/**
 	 * Will make the floating teleport button appear on the player's screen

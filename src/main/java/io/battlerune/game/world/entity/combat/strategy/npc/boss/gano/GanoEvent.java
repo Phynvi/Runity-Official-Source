@@ -26,7 +26,7 @@ public class GanoEvent extends Task {
 		}
 
 		if (initial) {
-			if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 30) {
+			if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 120) {
 				gano = GanoUtility.generateSpawn();
 				initial = false;
 				stopwatch.reset();
