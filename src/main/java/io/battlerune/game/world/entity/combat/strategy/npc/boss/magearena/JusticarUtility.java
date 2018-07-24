@@ -1,6 +1,7 @@
 package io.battlerune.game.world.entity.combat.strategy.npc.boss.magearena;
 
 import io.battlerune.game.world.World;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility.SpawnData1;
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -12,11 +13,16 @@ import io.battlerune.util.Utility;
  */
 public class JusticarUtility {
 
+	public static boolean activated = false;
+	public static SpawnData spawn;
+
 	public static Npc generatejusiticarSpawn() {
+		activated = true;
 		SpawnData spawn = SpawnData.generate();
 		Npc jusiticar = new Npc(7858, spawn.position, 10, Direction.NORTH);
 		World.sendMessage("<col=8714E6> Justicar has just spawned! He is located at " + spawn.location + "!");
 		World.sendBroadcast(1, "The Justicar boss has spawned!" + spawn.location + "!", true);
+		World.sendJusticarInformation();
 		jusiticar.register();
 		jusiticar.definition.setRespawnTime(-1);
 		jusiticar.definition.setAggressive(true);
@@ -55,6 +61,10 @@ public class JusticarUtility {
 		SpawnData(String location, Position position) {
 			this.location = location;
 			this.position = position;
+		}
+		
+		public Position getPosition() {
+			return position;
 		}
 
 		public static SpawnData generate() {

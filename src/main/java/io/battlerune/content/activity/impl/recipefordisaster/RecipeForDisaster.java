@@ -93,6 +93,8 @@ public class RecipeForDisaster extends Activity {
 		monster.getCombat().attack(player);
 		pause();
 	}
+	
+	
 
 	@Override
 	public void finish() {
@@ -135,10 +137,10 @@ public class RecipeForDisaster extends Activity {
 
 	@Override
 	public boolean canTeleport(Player player) {
-		if (player.getCombat().inCombat()) {
+		/*if (player.getCombat().inCombat()) {
 			player.send(new SendMessage("You can not do that right now!"));
 			return false;
-		}
+		} */
 		player.locking.lock();
 		cleanup();
 		remove(player);

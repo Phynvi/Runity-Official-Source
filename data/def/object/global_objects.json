@@ -163,6 +163,52 @@
 	    }
 	  },
   {
+		    "id": 9030,
+		    "name": "Gem Rocks",
+		    "type": 10,
+		    "rotation": "NORTH",
+		    "position": {
+		      "x": 3081,
+		      "y": 3474,
+		      "z": 0
+		    }
+		  }, 
+  {
+			    "id": 9030,
+			    "name": "Gem Rocks",
+			    "type": 10,
+			    "rotation": "NORTH",
+			    "position": {
+			      "x": 3082,
+			      "y": 3475,
+			      "z": 0
+			    }
+			  }, 
+  {
+				    "id": 9030,
+				    "name": "Gem Rocks",
+				    "type": 10,
+				    "rotation": "NORTH",
+				    "position": {
+				      "x": 3083,
+				      "y": 3474,
+				      "z": 0
+				    }
+				  }, 
+  {
+					    "id": 9030,
+					    "name": "Gem Rocks",
+					    "type": 10,
+					    "rotation": "NORTH",
+					    "position": {
+					      "x": 3074,
+					      "y": 3493,
+					      "z": 0
+					    }
+					  }, 
+  
+  
+  {
     "id": 6943,
     "name": "Bank (mining falador)",
     "type": 10,

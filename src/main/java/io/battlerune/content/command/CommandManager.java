@@ -18,6 +18,7 @@ import plugin.command.impl.owner.GraphicCommand;
 import plugin.command.impl.owner.InterfaceCommand;
 import plugin.command.impl.owner.ItemCommand;
 import plugin.command.impl.owner.MasterCommand;
+import plugin.command.impl.owner.MiniMeCommand;
 import plugin.command.impl.owner.NpcCommand;
 import plugin.command.impl.owner.ObjectCommand;
 import plugin.command.impl.owner.PlantFlowerCommand;
@@ -67,8 +68,7 @@ import plugin.command.impl.player.Wests;
 /**
  * Stores Commands
  * 
- * @author hamza <-- retard for re-doing the command system now adam has to
- *         reimplement the commands.... ty you 4ner
+ * @author Nerik#8690
  *
  */
 public class CommandManager {
@@ -151,7 +151,8 @@ public class CommandManager {
 		plugin.put(new String[] { "event", "system" }, new EventBossSystem());
 		plugin.put(new String[] { "show", "showboss" }, new EventBossInterfaceShow());
 		plugin.put(new String[] { "hide", "hideboss" }, new EventBossInterfaceHide());
-
+		plugin.put(new String[] { "minime" }, new MiniMeCommand());
+		
 		for (Entry<String[], Command> map : plugin.entrySet()) {
 			for (int i = 0; i < map.getKey().length; i++) {
 				plugin_input.put(map.getKey()[i], map.getValue());

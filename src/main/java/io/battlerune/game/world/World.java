@@ -19,6 +19,7 @@ import io.battlerune.content.activity.impl.pestcontrol.PestControl;
 import io.battlerune.content.activity.record.GlobalRecords;
 import io.battlerune.content.bot.PlayerBot;
 import io.battlerune.content.clanchannel.ClanRepository;
+import io.battlerune.content.eventboss.EventBossHandler;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.Projectile;
 import io.battlerune.game.event.bus.DataBus;
@@ -46,6 +47,7 @@ import io.battlerune.net.packet.out.SendLogout;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendObjectAnimation;
 import io.battlerune.net.packet.out.SendProjectile;
+import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.GameSaver;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
@@ -322,6 +324,43 @@ public final class World {
 			if (player != null && filter.test(player))
 				player.message(message);
 		}
+	}
+	
+	public static void sendTeleportButtonNpc(int npcId) {
+		for(Player player : getPlayers()) {
+	        player.send(new SendString(""+npcId, 45615));
+		   }
+		}
+	
+	public static void sendTeleportButton() {
+		for(Player player : getPlayers()) {
+			player.send(new SendString("1", 45600));
+		   }
+		}
+	
+	public static void hideTeleportButton() {
+		for(Player player : getPlayers()) {
+		player.send(new SendString("0", 45600));
+
+		   }
+		}
+	
+	public static void sendGalvekInformation() {
+		for(Player player : getPlayers()) {
+          EventBossHandler.openGalvek(player);
+	   }
+	}
+	
+	public static void sendArenaInformation() {
+		for(Player player : getPlayers()) {
+          EventBossHandler.openArena(player);
+	   }
+	}
+	
+	public static void sendJusticarInformation() {
+		for(Player player : getPlayers()) {
+          EventBossHandler.openJusticar(player);
+	   }
 	}
 
 	public static void sendStaffMessage(String... messages) {

@@ -136,7 +136,7 @@ public class Player extends Mob {
 	 * @param npcId - The identifier for the NPC to display
 	 */
 	public void sendTeleportButtonNpc(int npcId) {
-		send(new SendString("" + npcId, 45621));
+        send(new SendString(""+npcId, 45615));
 	}
 
 	/**

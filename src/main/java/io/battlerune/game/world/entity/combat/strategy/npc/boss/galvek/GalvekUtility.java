@@ -18,20 +18,25 @@ import io.battlerune.util.Utility;
  * the spawning
  */
 public class GalvekUtility {
+	
 
 	public static SpawnData1 spawn;
 
-	public static boolean activated;
+	public static boolean activated = false;
+	
+	public static boolean galvekbutton;
 
 	public static Npc generateSpawn() {
 		activated = true;
 		spawn = SpawnData1.generate();
 		Npc Galvek = new Npc(8095, spawn.position, 10, Direction.NORTH);
 		World.sendBroadcast(1, "Galvek has just spawned! He is located at " + spawn.location + "!", true);
+		World.sendGalvekInformation();
 		Galvek.register();
 		Galvek.definition.setRespawnTime(-1);
 		Galvek.definition.setAggressive(true);
 		Galvek.speak("Darkness is here to penetrate your souls!");
+		activated = true;
 		return Galvek;
 	}
 
