@@ -3,6 +3,8 @@ package io.battlerune.content.activity.impl.flowerpoker;
 import java.util.Random;
 
 import io.battlerune.game.Animation;
+import io.battlerune.game.task.Task;
+import io.battlerune.game.task.TaskManager;
 import io.battlerune.game.task.impl.ObjectPlacementEvent;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.Mob;
@@ -13,6 +15,7 @@ import io.battlerune.game.world.object.CustomGameObject;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.object.ObjectDirection;
 import io.battlerune.game.world.object.ObjectType;
+import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
 import io.battlerune.game.world.region.RegionManager;
 
@@ -28,7 +31,6 @@ public class FlowerHandler {
 	private Random random = new Random();
 	private FlowerData[] flower = FlowerData.values();
 	private FlowerData tempFlower;
-	private Movement movement = new Movement(player);
 
 	public FlowerHandler(Player player) {
 		this.player = player;
@@ -50,13 +52,28 @@ public class FlowerHandler {
 			return;
 		}
 
-		player.animate(new Animation(827));
+		TaskManager.schedule(new Task(true, 1) {
+			int tick = 0;
 
-		CustomGameObject gameObject = new CustomGameObject(getTempFlower().getObjectId(), player.getPosition().copy(),
-				ObjectDirection.valueOf(0).orElse(ObjectDirection.WEST), ObjectType.INTERACTABLE);
-		World.schedule(new ObjectPlacementEvent(gameObject, 50));
-
-		player.message("You have planted " + ItemDefinition.get(getTempFlower().getItemId()).getName());
+			@Override
+			protected void execute() {
+				switch (tick) {
+				case 0:
+					player.animate(new Animation(827));
+					CustomGameObject gameObject = new CustomGameObject(getTempFlower().getObjectId(),
+							player.getPosition().copy(), ObjectDirection.valueOf(0).orElse(ObjectDirection.WEST),
+							ObjectType.INTERACTABLE);
+					World.schedule(new ObjectPlacementEvent(gameObject, 50));
+					player.message("You have planted " + ItemDefinition.get(getTempFlower().getItemId()).getName());
+					break;
+				case 1:
+					player.walkExactlyTo(new Position(player.getPosition().getX() + 1, player.getPosition().getY(),
+							player.getPosition().getHeight()));
+					break;
+				}
+				tick++;
+			}
+		});
 	}
 
 	private boolean onFlower(Mob mob) {

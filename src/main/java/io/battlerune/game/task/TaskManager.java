@@ -28,7 +28,7 @@ public final class TaskManager {
 	 * {@link ConcurrentLinkedQueue} is used here so tasks can be added safely from
 	 * multiple threads.
 	 */
-	private final Queue<Task> pending = new ConcurrentLinkedQueue<>();
+	private final static Queue<Task> pending = new ConcurrentLinkedQueue<>();
 
 	/**
 	 * The list of tasks that are currently running. A {@link ArrayList} is used
@@ -41,7 +41,7 @@ public final class TaskManager {
 	 *
 	 * @param task The task to schedule.
 	 */
-	public void schedule(Task task) {
+	public static void schedule(Task task) {
 		Preconditions.checkNotNull(task);
 
 		try {
