@@ -157,7 +157,7 @@ public class TeleportHandler {
 			special(player, teleport);
 			return;
 		}
-		for (Teleport tele : Teleport.values()) {
+		/*for (Teleport tele : Teleport.values()) {
 			if (tele.getcustomsAllowed() == false) {
 				for (int i = 0; i < Config.NOT_ALLOWED.length; i++) {
 					if (player.inventory.contains(Config.NOT_ALLOWED[i].getId())) {
@@ -166,7 +166,7 @@ public class TeleportHandler {
 					}
 				}
 			}
-		}
+		}*/
 		Teleportation.teleport(player, teleport.getPosition());
 		player.send(new SendMessage("You have teleported to " + teleport.getName() + "."));
 	}

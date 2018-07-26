@@ -30,27 +30,29 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			player.inventory.remove(12746, 1);
 			break;
 		case 10028:
-			int random = Utility.random(1, 5);
-			int random1 = Utility.random(1, 15);
-			int random2 = Utility.random(1, 25);
 			if (player.inventory.getFreeSlots() <= 3) {
 				player.message("You do not have enough inventory space to open this box!");
 				return false;
 			}
-			if (random == 4) {
+			if (Utility.random(1, 5) == 4) {
 				player.inventory.add(995, 10000000);
+				player.inventory.add(21314, 1);
 				player.message("@gre@You were lucky and received 10 Million GP!");
 			}
-			if (random1 == 14) {
+			if (Utility.random(1, 25) == 24) {
 				player.inventory.add(995, 15000000);
+				player.inventory.add(13719, 1);
+				player.inventory.add(13686, 1);
 				player.message("@blu@You were lucky and received 15 Million GP!");
 			}
-			if (random2 == 24) {
+			if (Utility.random(1, 75) == 74) {
 				player.inventory.add(995, 20000000);
+				player.inventory.add(17160, 1);
+				player.inventory.add(15300, 1);
 				player.message("@red@You were lucky and received 20 Million GP!");
 			}
 			player.inventory.remove(10028, 1);
-			player.inventory.add(995, 5000000);
+            player.message("you were unfortunate and did not recieve anything.");
 			break;
 
 		case 5020:
@@ -62,7 +64,7 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				player.message("You have just claimed 1 1Bil Ticket!");
 				player.inventory.remove(5020, 1);
 			}
-			player.inventory.remove(10028, 1);
+			player.inventory.remove(5020, 1);
 			player.message("@red@You were unfortunate on this day, " + player.getName() + "!");
 			player.inventory.add(995, 5000000);
 			player.inventory.add(1, 1);
@@ -81,6 +83,9 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			player.pkPoints += 5;
 			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.remove(12748, 1);
+			break;
+		case 4079:
+			player.animate(1460);
 			break;
 		case 12749:
 			player.pkPoints += 7;

@@ -6,6 +6,7 @@ import io.battlerune.content.DropSimulator;
 import io.battlerune.content.Skillguides.AttackApp;
 import io.battlerune.content.achievement.AchievementInterface;
 import io.battlerune.content.activity.ActivityType;
+import io.battlerune.content.playerguide.PlayerGuideHandler;
 import io.battlerune.content.presetInterface.PresetInterfaceHandler;
 import io.battlerune.content.skill.impl.magic.teleport.TeleportType;
 import io.battlerune.content.staff.PanelType;
@@ -42,10 +43,13 @@ public class InformationTabButtonPlugin extends PluginContext {
 		case 29440:
 			InterfaceWriter.write(new InformationWriter(player));
 			return true;
-
-		case 29421:
 		case 29420:
+           PlayerGuideHandler guide = new PlayerGuideHandler();
+           guide.open(player);
+			break;
+		case 29421:
 		case 29419:
+		case 29410:
 			player.dialogueFactory.sendOption("Hall of Fame", () -> {
 				player.dialogueFactory.onAction(() -> player.interfaceManager.open(58500));
 			}, "Royalty program", () -> {
@@ -95,9 +99,9 @@ public class InformationTabButtonPlugin extends PluginContext {
 			InterfaceWriter.write(new AchievementInterface(player));
 			player.interfaceManager.setSidebar(Config.QUEST_TAB, 35_000);
 			return true;
-		case 29410:
+		/*case 29410:
 			player.interfaceManager.setSidebar(Config.QUEST_TAB, 37_300);
-			break;
+			break;*/
 		case 29414:
 		case -30525:
 		case -30125:

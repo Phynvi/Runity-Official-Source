@@ -34972,9 +34972,11 @@
   {
     "id": 4079,
     "name": "Yo-yo",
-    "destroy-message": "You can get another from Diango in Draynor Village.",
+    "destroy-message": "A custom donation!",
     "low-alch": 4,
     "high-alch": 6,
+    "stand-animation": 1457,
+    "run-animation": 1459,
     "base-value": 10
   },
   {

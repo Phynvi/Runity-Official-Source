@@ -20,6 +20,12 @@
         "type": "COMMON"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
+      },
+      {
         "item": 203,
         "minimum": 1,
         "maximum": 1,
@@ -178,6 +184,12 @@
         "maximum": 1,
 
         "type": "COMMON"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "UNCOMMON"
       },
       {
         "item": 5280,
@@ -616,6 +628,12 @@
         "type": "ALWAYS"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "UNCOMMON"
+      },
+      {
         "item": 1319,
         "minimum": 1,
         "maximum": 1,
@@ -860,6 +878,12 @@
         "maximum": 1,
 
         "type": "UNCOMMON"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
       },
       {
         "item": 201,
@@ -1326,6 +1350,12 @@
         "type": "COMMON"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "VERY_RARE"
+      },
+      {
         "item": 1267,
         "minimum": 1,
         "maximum": 1,
@@ -1528,6 +1558,12 @@
         "maximum": 1,
 
         "type": "COMMON"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "VERY_RARE"
       },
       {
         "item": 1267,
@@ -1735,6 +1771,12 @@
         "type": "ALWAYS"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
+      },
+      {
         "item": 2722,
         "minimum": 1,
         "maximum": 1,
@@ -1790,6 +1832,12 @@
         "maximum": 1,
 
         "type": "ALWAYS"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "VERY_RARE"
       },
       {
         "item": 526,
@@ -2912,6 +2960,12 @@
         "maximum": 1,
 
         "type": "ALWAYS"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "VERY_RARE"
       }
     ]
   },
@@ -3201,6 +3255,12 @@
         "maximum": 1,
 
         "type": "ALWAYS"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
       },
       {
         "item": 2353,
@@ -30657,6 +30717,12 @@
         "type": "ALWAYS"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
+      },
+      {
         "item": 1353,
         "minimum": 1,
         "maximum": 1,
@@ -50567,6 +50633,12 @@
         "type": "ALWAYS"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
+      },
+      {
         "item": 1753,
         "minimum": 2,
         "maximum": 2,
@@ -50832,6 +50904,12 @@
         "maximum": 1,
 
         "type": "ALWAYS"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
       },
       {
         "item": 2359,
@@ -53647,6 +53725,12 @@
         "maximum": 1,
 
         "type": "ALWAYS"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "VERY_RARE"
       },
       {
         "item": 557,
@@ -70156,6 +70240,12 @@
         "type": "ALWAYS"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
+      },
+      {
         "item": 1365,
         "minimum": 1,
         "maximum": 1,
@@ -76425,6 +76515,12 @@
         "type": "COMMON"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "UNCOMMON"
+      },
+      {
         "item": 1191,
         "minimum": 1,
         "maximum": 1,
@@ -82080,6 +82176,12 @@
         "type": "ALWAYS"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
+      },
+      {
         "item": 1365,
         "minimum": 1,
         "maximum": 1,
@@ -82280,6 +82382,12 @@
         "maximum": 1,
 
         "type": "ALWAYS"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "VERY_RARE"
       },
       {
         "item": 1128,
@@ -90497,6 +90605,12 @@
         "type": "ALWAYS"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
+      },
+      {
         "item": 1747,
         "minimum": 2,
         "maximum": 2,
@@ -91200,6 +91314,12 @@
         "type": "UNCOMMON"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "UNCOMMON"
+      },
+      {
         "item": 7158,
         "minimum": 1,
         "maximum": 1,
@@ -91394,6 +91514,12 @@
         "maximum": 1,
 
         "type": "UNCOMMON"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
       },
       {
         "item": 534,
@@ -102215,6 +102341,12 @@
         "type": "ALWAYS"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
+      },
+      {
         "item": 2349,
         "minimum": 5,
         "maximum": 5,
@@ -102403,6 +102535,12 @@
         "maximum": 1,
 
         "type": "ALWAYS"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
       },
       {
         "item": 2351,
@@ -102607,6 +102745,12 @@
         "maximum": 1,
 
         "type": "ALWAYS"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
       },
       {
         "item": 2353,
@@ -105911,6 +106055,12 @@
         "type": "ALWAYS"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
+      },
+      {
         "item": 1751,
         "minimum": 2,
         "maximum": 2,
@@ -106185,6 +106335,12 @@
         "type": "ALWAYS"
       },
       {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
+      },
+      {
         "item": 1749,
         "minimum": 2,
         "maximum": 2,
@@ -106457,6 +106613,12 @@
         "maximum": 1,
 
         "type": "ALWAYS"
+      },
+      {
+          "item": 10028,
+          "minimum": 1,
+          "maximum": 1,
+          "type": "RARE"
       },
       {
         "item": 1747,

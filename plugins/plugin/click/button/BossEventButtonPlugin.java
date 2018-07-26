@@ -43,7 +43,6 @@ public class BossEventButtonPlugin extends PluginContext {
 			player.message("Adam fucked up, spam tf outta him so he fixes this.");
 			return false;
 		}
-		player.message("No events are happening right now!");
         player.hideTeleportButton();
 
 	}

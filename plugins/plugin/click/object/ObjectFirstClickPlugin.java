@@ -1113,6 +1113,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 		/* Wilderness ditch. */
 		case 23271: {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("You cannot bring custom item's into the wilderness!");
+				return false;
+			}
 			/*
 			 * if (player.playTime < 3000) { player.
 			 * message("You cannot enter the wilderness until you have 30 minutes of playtime. "

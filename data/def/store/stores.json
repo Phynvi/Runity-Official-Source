@@ -3838,158 +3838,158 @@
       {
         "id": 12875,
         "amount": 1000,
-        "value": 150
+        "value": 250
       },
       
       {
         "id": 12873,
         "amount": 1000,
-        "value": 150
+        "value": 250
       },
       
       {
         "id": 12877,
         "amount": 1000,
-        "value": 150     
+        "value": 250     
       }, 
        
       { 
         "id": 12881,
         "amount": 1000,
-        "value": 150
+        "value": 250
       },
       
       {
         "id": 12883,
         "amount": 1000,
-        "value": 150
+        "value": 250
       },      
       {
         "id": 12879,
         "amount": 1000,
-        "value": 150
+        "value": 250
       },        
       {
         "id": 2572,
         "amount": 1000,
-        "value": 50
+        "value": 100
       },      
       {
         "id": 12785,
         "amount": 1000,
-        "value": 150
+        "value": 250
       },     
       {
         "id": 4178,
         "amount": 1000,
-        "value": 50
+        "value": 100
       },       
       {
         "id": 21223,
         "amount": 1000,
-        "value": 175
+        "value": 275
       }, 
         
       {
         "id": 10551,
         "amount": 1000,
-        "value": 200
+        "value": 300
       }, 
       
       {
         "id": 11834,
         "amount": 1000,
-        "value": 200
+        "value": 300
       },  
         
       {  
         "id": 11832,
         "amount": 1000,
-        "value": 200
+        "value": 300
       },  
       
       {  
         "id": 11836,
         "amount": 1000,
-        "value": 100
+        "value": 300
       }, 
       
       {  
          "id": 11773,
         "amount": 1000,
-        "value": 100
+        "value": 300
       },  
         
       {
         "id": 11770,
         "amount": 1000,
-        "value": 100
+        "value": 300
       },  
         
       {
         "id": 11771,
         "amount": 1000,
-        "value": 200
+        "value": 300
       }, 
         
       {
         "id": 7460,
         "amount": 1000,
-        "value": 35
+        "value": 65
       }, 
         
       {
         "id": 12954,
         "amount": 1000,
-        "value": 75
+        "value": 150
       }, 
        
       {  
         "id": 11808,
         "amount": 1000,
-        "value": 125
+        "value": 275
       },  
       
       {        
         "id": 11806,
         "amount": 1000,
-        "value": 125
+        "value": 275
       }, 
         
       {
         "id": 11804,
         "amount": 1000,
-        "value": 125
+        "value": 275
       },  
       
       { 
         "id": 11840,
         "amount": 1000,
-        "value": 20
+        "value": 60
       },  
         
       {  
         "id": 6585,
         "amount": 1000,
-        "value": 75
+        "value": 125
       }, 
       
       {
         "id": 12004,
         "amount": 1000,
-        "value": 150
+        "value": 250
       }, 
       
       {
         "id": 12006,
         "amount": 1000,
-        "value": 200
+        "value": 300
       },
       
       {
         "id": 12932,
         "amount": 1000,
-        "value": 300
+        "value": 400
       },
       
       {
@@ -4029,9 +4029,40 @@
       },
       
       {
-        "id": 11739,
+          "id": 11739,
+          "amount": 1000,
+          "value": 300
+       },
+      
+      {
+        "id": 13739,
         "amount": 1000,
-        "value": 200
+        "value": 1500
+      },
+      {
+          "id": 17163,
+          "amount": 1000,
+          "value": 750
+      },
+      {
+          "id": 17164,
+          "amount": 1000,
+          "value": 750
+      },
+      {
+          "id": 17165,
+          "amount": 1000,
+          "value": 750
+      },
+      {
+          "id": 13724,
+          "amount": 1000,
+          "value": 1500
+      },
+      {
+          "id": 17161,
+          "amount": 1000,
+          "value": 1750
       }
       ]
     },

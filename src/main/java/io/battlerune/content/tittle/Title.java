@@ -89,13 +89,19 @@ public enum Title implements BooleanInterface<Player> {
 			return PlayerRight.isElite(player);
 		}
 	},
+	BEAST("Beast", "Have more than 5000 Boss Points!", "") {
+		@Override
+		public boolean activated(Player player) {
+			return player.bossPoints >= 5000;
+		}
+	},
 	DOPE("Dope", "Be a regular dope donator", "") {
 		@Override
 		public boolean activated(Player player) {
 			return PlayerRight.isKing(player);
 		}
 	},
-	SUPREME("Dope", "Be a Supreme donator", "") {
+	SUPREME("Supreme Leader!", "Be a Supreme donator", "") {
 		@Override
 		public boolean activated(Player player) {
 			return PlayerRight.isSupreme(player);

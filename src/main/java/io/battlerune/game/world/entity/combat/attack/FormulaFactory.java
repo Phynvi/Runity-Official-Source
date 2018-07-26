@@ -61,35 +61,48 @@ public final class FormulaFactory {
 	}
 
 	private static boolean isAccurate(Mob attacker, Mob defender, CombatType type) {
-		double attackRoll = rollOffensive(attacker, defender, type.getFormula());
-		double defenceRoll = rollDefensive(attacker, defender, type.getFormula());
-		return RandomUtils.success(attackRoll / (attackRoll + defenceRoll));
+		double fetchattackRoll = rollOffensive(attacker, defender, type.getFormula());
+		double fetchdefenceRoll = rollDefensive(attacker, defender, type.getFormula());
+		return RandomUtils.success(fetchattackRoll / (fetchattackRoll + fetchdefenceRoll));
 	}
 
 	public static int rollOffensive(Mob attacker, Mob defender, FormulaModifier<Mob> formula) {
-		int roll = formula.modifyAccuracy(attacker, defender, 0);
-		int bonus = formula.modifyOffensiveBonus(attacker, defender, 0);
-		return attacker.getCombat().modifyAccuracy(defender, roll * (bonus + 64));
+		int fetchroll = formula.modifyAccuracy(attacker, defender, 0);
+		int fetchbonus = formula.modifyOffensiveBonus(attacker, defender, 0);
+		return attacker.getCombat().modifyAccuracy(defender, fetchroll * (fetchbonus + 64));
 	}
 
 	public static int rollDefensive(Mob attacker, Mob defender, FormulaModifier<Mob> formula) {
-		int roll = formula.modifyDefensive(attacker, defender, 0);
-		int bonus = formula.modifyDefensiveBonus(attacker, defender, 0);
-		return attacker.getCombat().modifyDefensive(defender, roll * (bonus + 64));
+		int fetchroll = formula.modifyDefensive(attacker, defender, 0);
+		int fetchbonus = formula.modifyDefensiveBonus(attacker, defender, 0);
+		return attacker.getCombat().modifyDefensive(defender, fetchroll * (fetchbonus + 64));
 	}
 
 	public static int getMaxHit(Mob attacker, Mob defender, CombatType type) {
 		FormulaModifier<Mob> formula = type.getFormula();
-		int level = formula.modifyAggressive(attacker, defender, 0);
-		int bonus = formula.modifyAggressiveBonus(attacker, defender, 0);
-		return maxHit(level, bonus);
+		int fetchlevel = formula.modifyAggressive(attacker, defender, 0);
+		int fetchbonus = formula.modifyAggressiveBonus(attacker, defender, 0);
+		return maxHit(fetchlevel, fetchbonus);
+	}
+	/** Handles accuracy bonuses, takes into account players weapon accuracy - adam. MAKE SUREE TO REMEMBER TO USET HIS AND CALL UPON THIS!
+	 * Tested and accuracy seems more real. **/
+	public static int getStatsBonuses(Mob attacker, Mob defender, CombatType type) {
+		FormulaModifier<Mob> formula = type.getFormula();
+		int fetchlevel = formula.modifyAggressive(attacker, defender, 0);
+		int fetchbonus = formula.modifyAggressiveBonus(attacker, defender, 0);
+		int determine = formula.modifyDamage(attacker, defender, 0);
+		int fetchroll = formula.modifyDefensive(attacker, defender, 0);
+		determine = fetchroll;
+		FormulaModifier<Mob> strategy = type.getFormula();
+		
+		return strategy.modifyDamage(attacker, defender, maxHit(fetchlevel, fetchbonus));
 	}
 
 	public static int getModifiedMaxHit(Mob attacker, Mob defender, CombatType type) {
-		FormulaModifier<Mob> formula = type.getFormula();
-		int level = formula.modifyAggressive(attacker, defender, 0);
-		int bonus = formula.modifyAggressiveBonus(attacker, defender, 0);
-		return formula.modifyDamage(attacker, defender, maxHit(level, bonus));
+		FormulaModifier<Mob> strategy = type.getFormula();
+		int fetchlevel = strategy.modifyAggressive(attacker, defender, 0);
+		int fetchbonus = strategy.modifyAggressiveBonus(attacker, defender, 0);
+		return strategy.modifyDamage(attacker, defender, maxHit(fetchlevel, fetchbonus));
 	}
 
 	private static int maxHit(int level, int bonus) {

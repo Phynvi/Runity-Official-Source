@@ -14,6 +14,10 @@ public class ItemThirdClickPlugin extends PluginContext {
 		case 12418:
 			player.message("@red@To Dismantle this item, use a chisel on the item!");
 			break;
+			
+		case 4079:
+			player.animate(1459);
+			break;
 
 		case 12436:
 			player.send(new SendMessage("You have failed to slash the web apart."));
