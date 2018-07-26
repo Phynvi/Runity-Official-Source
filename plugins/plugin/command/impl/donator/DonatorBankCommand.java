@@ -1,4 +1,4 @@
-package plugin.command.impl.player;
+package plugin.command.impl.donator;
 
 import io.battlerune.content.command.Command;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -22,7 +22,7 @@ public class DonatorBankCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		if (!PlayerRight.isDonator(player)) {
+		if (!PlayerRight.isDonator(player) || !PlayerRight.isDeveloper(player)) {
 			player.speak("Hey everyone, I just tried to do something silly!");
 			return false;
 		} else {

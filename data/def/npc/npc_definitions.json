@@ -3830,31 +3830,12 @@
   {
 	    "id": 7836,
 	    "name": "Mini Corporeal Beast",
-	    "size": 5,
 	    "combat-level": 785,
 	    "stand": 1678,
 	    "walk": 1684,
 	    "attack-animation": 1682,
 	    "block-animation": 1677,
-	    "death-animation": 1676,
-	    "attackable": true,
-	    "aggressive": true,
-	    "poison-immunity": true,
-	    "venom-immunity": true,
-	    "attack-style": "Melee (crush), Magic",
-	    "weakness": "Stab",
-	    "attack-cooldown": 6,
-	    "attack-level": 320,
-	    "defence-level": 310,
-	    "strength-level": 320,
-	    "hitpoints-level": 2000,
-	    "ranged-level": 150,
-	    "magic-level": 350,
-	    "defence-stab": 25,
-	    "defence-slash": 200,
-	    "defence-crush": 100,
-	    "defence-magic": 150,
-	    "defence-ranged": 230
+	    "death-animation": 1676
 	  },
   {
     "id": 318,
@@ -45152,16 +45133,11 @@
   {
     "id": 4052,
     "name": "Pirate",
-    "combat-level": 57,
+    "combat-level": 1,
     "stand": 808,
     "walk": 819,
-    "attackable": true,
-    "aggressive": true,
-    "venom-immunity": true,
-    "attack-style": "Melee",
-    "weakness": "Wind spells",
-    "attack-cooldown": 4,
-    "hitpoints-level": 2
+    "attackable": false,
+    "aggressive": false
   },
   {
     "id": 4053,
@@ -80515,6 +80491,18 @@
     "stand": 7946,
     "walk": 7946
   },
+  {
+	    "id": 8029,
+	    "name": "Vorki",
+	    "combat-level": 392,
+	    "attackable": false,
+	    "aggressive": false,
+	    "stand": 7948,
+	    "walk": 7947,
+	    "attack-animation": 7951,
+	    "block-animation": -1,
+	    "death-animation": 7949
+	  },
   {
     "id": 8060,
     "name": "Vorkath",

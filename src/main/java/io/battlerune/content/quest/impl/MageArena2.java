@@ -133,12 +133,13 @@ public class MageArena2 extends Quest {
 		player.send(new SendString("500,000 Combat experience", 12150));
 		player.send(new SendString("4,000,000 Coins", 12151));
 		player.send(new SendString("2 Quest Points", 12152));
-		player.send(new SendString("The Three God Max Capes!", 12153));
+		player.send(new SendString("The Three Imbued God Capes!", 12153));
 		player.send(new SendString("The Three God Halos", 12154));
 		player.send(new SendString("The Three God Mjolnir", 12155));
+		player.inventory.refresh();
 	}
 
-	public final static Item[] REWARD_ITEMS = { new Item(13333, 1), new Item(13335, 1), new Item(13331, 1),
+	public final static Item[] REWARD_ITEMS = { new Item(21795, 1), new Item(21793, 1), new Item(21791, 1),
 			new Item(12638, 1), new Item(12637, 1), new Item(12639, 1), new Item(6760, 1), new Item(6762, 1),
 			new Item(6764, 1) };
 

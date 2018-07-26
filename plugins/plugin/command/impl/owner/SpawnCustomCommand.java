@@ -14,6 +14,7 @@ public class SpawnCustomCommand implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 		player.bank.addAll(CustomList());
+		player.message("Spawned!");
 	}
 
 	public Item[] CustomList() {

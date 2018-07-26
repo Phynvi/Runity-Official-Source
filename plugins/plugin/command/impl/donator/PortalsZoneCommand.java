@@ -1,4 +1,4 @@
-package plugin.command.impl.player;
+package plugin.command.impl.donator;
 
 import io.battlerune.Config;
 import io.battlerune.content.command.Command;
@@ -9,21 +9,20 @@ import io.battlerune.net.packet.out.SendMessage;
 
 /**
  * 
- * @author Jordan
+ * @author Adam_#6723
  *
  */
-public class DZone implements Command {
+public class PortalsZoneCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] parts) {
 		// TODO Auto-generated method stub
-		Teleportation.teleport(player, Config.DONATOR_ZONE);
-		player.send(new SendMessage("You have teleported to the Donator Zone!"));
+		Teleportation.teleport(player, Config.PORTAL_ZONE);
+		player.send(new SendMessage("You have teleported to the Portal Zone!"));
 	}
 
 	@Override
 	public boolean canUse(Player player) {
-		// TODO Auto-generated method stub
 		if (PlayerRight.isDonator(player)) {
 			return true;
 		}

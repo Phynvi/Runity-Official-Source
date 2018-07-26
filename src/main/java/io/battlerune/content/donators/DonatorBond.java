@@ -6,8 +6,8 @@ package io.battlerune.content.donators;
  * @author Daniel.
  */
 public enum DonatorBond {
-	BOND_10(13190, 10, 100), BOND_50(13191, 50, 500), BOND_100(13192, 100, 1000), BOND_200(13193, 200, 2000),
-	BOND_500(13194, 500, 5000);
+	BOND_10(13190, 10, 200), BOND_50(13191, 50, 1000), BOND_100(13192, 100, 2000), BOND_200(13193, 200, 4000),
+	BOND_500(13194, 500, 10000);
 
 	/** The item identification of the donator bond. */
 	public final int item;

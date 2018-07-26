@@ -12,7 +12,7 @@ public class EmailInputListener {
 		player.locking.lock();
 		player.dialogueFactory.sendStatement("For security purposes we would like u to put in your email!.")
 				.onAction(() -> {
-					player.send(new SendInputMessage("Enter the email:", 20, input -> {
+					player.send(new SendInputMessage("Enter your email:", 20, input -> {
 						try {
 							SqlEmailListener listener = new SqlEmailListener(player.getUsername(), input);
 							listener.connect();

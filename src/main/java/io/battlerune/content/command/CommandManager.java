@@ -4,6 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import plugin.command.impl.donator.DZoneCommand;
+import plugin.command.impl.donator.DonatorBankCommand;
+import plugin.command.impl.donator.PortalsZoneCommand;
+import plugin.command.impl.moderator.JailCommand;
+import plugin.command.impl.moderator.MuteCommand;
+import plugin.command.impl.moderator.PrivateZoneCommand;
+import plugin.command.impl.moderator.TeletoCommand;
+import plugin.command.impl.moderator.TeletomeCommand;
+import plugin.command.impl.moderator.UnjailCommand;
+import plugin.command.impl.moderator.UnmuteCommand;
 import plugin.command.impl.owner.AnimationCommand;
 import plugin.command.impl.owner.ArenaSpawnCommand;
 import plugin.command.impl.owner.DeveloperInstanceCommand;
@@ -32,11 +42,9 @@ import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
 import plugin.command.impl.player.CommandList;
-import plugin.command.impl.player.DZone;
 import plugin.command.impl.player.DiceCommand;
 import plugin.command.impl.player.DiscordCommand;
 import plugin.command.impl.player.DonateCommand;
-import plugin.command.impl.player.DonatorBankCommand;
 import plugin.command.impl.player.DropInterfaceCommand;
 import plugin.command.impl.player.DropSimulatorCommand;
 import plugin.command.impl.player.DropsCommand;
@@ -124,7 +132,21 @@ public class CommandManager {
 		 */
 
 		plugin.put(new String[] { "bank", "banks" }, new DonatorBankCommand());
-		plugin.put(new String[] { "donatorzone", "dzone" }, new DZone());
+		plugin.put(new String[] { "donatorzone", "dzone" }, new DZoneCommand());
+		plugin.put(new String[] { "portals", "portalzone" }, new PortalsZoneCommand());
+		
+		
+		/**
+		 * @Moderator/Helper Commands
+		 */
+		
+		plugin.put(new String[] { "mute", "mutee" }, new MuteCommand());
+		plugin.put(new String[] { "unmute", "unmutee" }, new UnmuteCommand());
+		plugin.put(new String[] { "jail", "jaill" }, new JailCommand());
+		plugin.put(new String[] { "unjail", "unjaill" }, new UnjailCommand());
+		plugin.put(new String[] { "privatezone", "staffzone" }, new PrivateZoneCommand());
+		plugin.put(new String[] { "teleto", "t2", "tele2" }, new TeletoCommand());
+		plugin.put(new String[] { "teletome", "t2m", "tele2me" }, new TeletomeCommand());
 
 		/*
 		 * @Owner, @Developer Commands
