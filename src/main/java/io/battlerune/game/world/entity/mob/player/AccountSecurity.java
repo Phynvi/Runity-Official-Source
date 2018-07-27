@@ -93,12 +93,11 @@ public class AccountSecurity {
 	public enum AccountData {
 		/* Owner */
 
-		ADAM(PlayerRight.DEVELOPER, "Adam", "", "127.0.0.1"), HARRYL(PlayerRight.DEVELOPER, "Harryl", "", "127.0.0.1"),
+		ADAM(PlayerRight.DEVELOPER, "Adam", "", "127.0.0.1"), 
+		HARRYL(PlayerRight.DEVELOPER, "Harryl", "", "127.0.0.1"),
 		MERADJ(PlayerRight.DEVELOPER, "Meradj", "", "213.127.118.249", "195.169.28.13"),
-		RED(PlayerRight.DEVELOPER, "Red", "127.0.0.1", ""),
 
 		/* Developer */
-		ASHPIRE(PlayerRight.DEVELOPER, "Ashpire", "", "", ""), ETHAN(PlayerRight.DEVELOPER, "Ethan", "", "", ""),
 		JORDAN(PlayerRight.DEVELOPER, "JordanRSPS", "", "", ""),
 		// NSHUSA(PlayerRight.DEVELOPER, "Nshusa", "320 406 7557", "97.88.20.251"),
 
@@ -117,11 +116,10 @@ public class AccountSecurity {
 		// "75.184.113.154"),
 
 		/* Helper */
-		ADAM1(PlayerRight.HELPER, "Adam1", "", "104.197.52.162"),
+		ADAM1(PlayerRight.HELPER, "Adam1", "", "104.197.52.162");
 		// TRANQUILLO(PlayerRight.HELPER, "Tranquillo", "", "87.214.74.143"),
 		// PVM_BEN(PlayerRight.HELPER, "Pvm Ben", "", "31.205.22.206"),
 		// SYZYGY(PlayerRight.HELPER, "Syzygy", "", "70.66.42.221"),
-		MULTAK(PlayerRight.PLAYER, "Multak", "", "24.98.63.27");
 
 		private final String name;
 		private final String key;

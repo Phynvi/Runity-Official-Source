@@ -9,7 +9,7 @@ import io.battlerune.util.RandomUtils;
  */
 public enum TriviaBotData {
 	_1("Who is the owner of Runity?", "Adam"),
-	_2("Name one game developer.", "Adam", "Red", "Red_Bracket", "Torv", "Ethan", "Chex"),
+	_2("Name one game developer.", "Adam", "adam_", "Red_Bracket", "harryl", "nerik", "Chex"),
 	_3("What is the maximum combat level?", "126"), _4("What is the highest tier of donator?", "king donator", "king"),
 	_5("What is the lowest tier of donator?", "regular donator", "regular"),
 	_6("What is the maximum amount of friends allowed?", "200", "two hundred", "two-hundred"),
