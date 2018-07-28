@@ -160,9 +160,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 			return;
 		}
 
-		mob.unpoison();
-		CombatUtil.cancelEffect(mob, CombatEffectType.POISON);
-		CombatUtil.cancelEffect(mob, CombatEffectType.VENOM);
+
 
 		mob.runEnergy = 100;
 		mob.skulling.unskull();
@@ -176,6 +174,9 @@ public final class PlayerDeath extends MobDeath<Player> {
 		mob.getCombat().getDamageCache().clear();
 		mob.send(new SendRunEnergy());
 		CombatSpecial.restore(mob, 100);
+		mob.unpoison();
+		CombatUtil.cancelEffect(mob, CombatEffectType.POISON);
+		CombatUtil.cancelEffect(mob, CombatEffectType.VENOM);
 		mob.movement.reset();
 		mob.teleblockTimer.set(0);
 		mob.equipment.updateAnimation();

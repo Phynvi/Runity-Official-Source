@@ -342,11 +342,10 @@ public class NpcFirstClickPlugin extends PluginContext {
 			break;
 
 		case 5919:
-			if (PlayerRight.isDonator(player)) {
+			if (PlayerRight.isDonator(player) || PlayerRight.isPriviledged(player)) {
 				Store.STORES.get("Grace's Graceful Store").open(player);
 			} else {
-				player.dialogueFactory.sendStatement("You need to be a Donator or higher to access this store!")
-						.execute();
+			  player.message("You need to be a donator or higher to access this store!");
 			}
 			break;
 

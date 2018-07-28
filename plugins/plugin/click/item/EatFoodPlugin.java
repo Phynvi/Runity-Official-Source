@@ -46,9 +46,9 @@ public class EatFoodPlugin extends PluginContext {
 			int heal = food.getHeal();
 			int maxHealth = player.getCurrentHealth() > player.getMaximumHealth() ? player.getCurrentHealth()
 					: player.getMaximumHealth();
-			if (food == FoodData.ANGLERFISH && maxHealth < FoodData.anglerfishHeal(player)) {
+		/*	if (food == FoodData.ANGLERFISH && maxHealth < FoodData.anglerfishHeal(player)) {
 				maxHealth = FoodData.anglerfishHeal(player);
-			}
+			}*/
 			player.animate(new Animation(829, UpdatePriority.LOW));
 			player.getCombat().reset();
 			player.getCombat().cooldown(2);

@@ -40,9 +40,9 @@ public enum FoodData {
 	EASTER_EGG2(7929, 1, "Easter Egg"), EASTER_EGG3(7930, 1, "Easter Egg"), EASTER_EGG4(7931, 1, "Easter Egg"),
 	EASTER_EGG5(7932, 1, "Easter Egg"), EASTER_EGG6(7933, 1, "Easter Egg"), PURPLE_SWEETS(10476, 9, "Purple Sweets"),
 	POT_OF_CREAM(2130, 1, "Pot of cream"), BANDAGES(4049, 3, "Bandages"),
-	COOKED_KARAMBWAN(3144, 18, "Cooked Karambwan"), DARK_CRAB(11936, 22, "Dark Crab"), MACKEREL(355, 6, "Mackerel"),
+	COOKED_KARAMBWAN(3144, 18, "Cooked Karambwan"), DARK_CRAB(11936, 22, "Dark Crab"), MACKEREL(355, 6, "Mackerel");
 
-	ANGLERFISH(13441, 22, "Anglerfish");
+	//ANGLERFISH(13441, 22, "Anglerfish");
 
 	/** The id of the consumable item. */
 	private final int id;

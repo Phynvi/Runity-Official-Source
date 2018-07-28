@@ -85,6 +85,10 @@ public enum PotionData {
 	OVERLOAD(11730, 11731, 11732, 11733) {
 		@Override
 		public void onEffect(Player player) {
+			if (Area.inWilderness(player)) {
+				player.message("You cannot drink overloads in wilderness!");
+				return;
+			}
 			PotionData.onOverloadEffect(player, Skill.ATTACK, BoostType.OVERLOAD, true);
 			PotionData.onOverloadEffect(player, Skill.STRENGTH, BoostType.OVERLOAD, true);
 			PotionData.onOverloadEffect(player, Skill.DEFENCE, BoostType.OVERLOAD, true);

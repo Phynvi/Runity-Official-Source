@@ -2549,7 +2549,7 @@
   },
   {
     "id": 290,
-    "name": "Research package",
+    "name": "Legendary Mystery Box",
     "base-value": 2,
     "weight": 1.0
   },
@@ -98489,7 +98489,6 @@
   {
     "id": 12436,
     "name": "Amulet of fury (or)",
-    "destroy-message": "Dismantle",
     "low-alch": 82400,
     "high-alch": 123600,
     "base-value": 206000,
@@ -119087,8 +119086,8 @@
     "equipment-slot": "WEAPON",
     "weapon-interface": "LONGBOW",
     "req-ranged": 75,
-    "attack-ranged": 70,
-    "ranged-strength": 20,
+    "attack-ranged": 75,
+    "ranged-strength": 25,
     "bonus-prayer": 4,
     "ranged-type": "SHOT",
     "allowed": [

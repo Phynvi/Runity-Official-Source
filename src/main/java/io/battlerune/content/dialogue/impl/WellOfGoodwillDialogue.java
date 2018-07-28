@@ -32,7 +32,7 @@ public class WellOfGoodwillDialogue extends Dialogue {
 					factory.sendStatement("")
 							.sendStatement("Time left: " + (30 - WellOfGoodwill.activeTime) + " minutes").execute();
 
-				}, "Check current status", () -> {
+				}, "Open well of goodwill", () -> {
 					WellOfGoodwill.open(factory.getPlayer());
 				}, "Nevermind", factory::clear).execute();
 	}

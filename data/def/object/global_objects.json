@@ -63,6 +63,17 @@
       "z": 0
     }
   },
+    {
+    "id": 29150,
+    "name": "Altar",
+    "type": 10,
+    "rotation": "EAST",
+    "position": {
+      "x": 3091,
+      "y": 3507,
+      "z": 0
+    }
+  },
   {
     "id": 6084,
     "name": "Blurite bank booth",

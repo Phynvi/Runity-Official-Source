@@ -19,7 +19,8 @@ public class InformationWriter extends InterfaceWriter {
 	}
 
 	private String[] text = { "<icon=13> <col=FF7000>Game Information:",
-			"     - Date: <col=FFB83F>" + Utility.getDate(), "     - Uptime: <col=FFB83F>" + Utility.getUptime(),
+			"     - Date: <col=FFB83F>" + Utility.getDate(), 
+			"     - Uptime: <col=FFB83F>" + Utility.getUptime(),
 			"     - PK Bots online: <col=FFB83F>" + World.getBotCount(),
 			"     - Staff online: <col=FFB83F>" + World.getStaffCount(),
 			"     - Players online: <col=FFB83F>" + World.getPlayerCount(),
