@@ -14,7 +14,7 @@ import io.battlerune.net.packet.out.SendString;
  * @author Adam_#6723
  */
 
-public class Helpcommand implements Command {
+public class StaffCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
@@ -38,8 +38,7 @@ public class Helpcommand implements Command {
 
 		player.send(new SendItemOnInterface(37199));
 		player.interfaceManager.open(37100);
-		World.sendStaffMessage("[HELP]" + player.getName() + " Has Requested Help! Find out why!");
-		player.message("Staff team have been alerted, help will be on the way shortly!");
+		player.message("If you are in need of assistance do ::help");
 	}
 
 	@Override

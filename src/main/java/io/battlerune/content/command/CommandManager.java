@@ -41,7 +41,7 @@ import plugin.command.impl.owner.UpCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
-import plugin.command.impl.player.CommandList;
+import plugin.command.impl.player.Commands;
 import plugin.command.impl.player.DiceCommand;
 import plugin.command.impl.player.DiscordCommand;
 import plugin.command.impl.player.DonateCommand;
@@ -49,6 +49,7 @@ import plugin.command.impl.player.DropInterfaceCommand;
 import plugin.command.impl.player.DropSimulatorCommand;
 import plugin.command.impl.player.DropsCommand;
 import plugin.command.impl.player.DuelArenaCommand;
+import plugin.command.impl.player.Easts;
 import plugin.command.impl.player.EmptyInventoryCommand;
 import plugin.command.impl.player.FameBoardCommand;
 import plugin.command.impl.player.ForumCommand;
@@ -63,6 +64,7 @@ import plugin.command.impl.player.ShopCommand;
 import plugin.command.impl.player.SkillAreaCommand;
 import plugin.command.impl.player.SkullCommand;
 import plugin.command.impl.player.SlayerTaskCommand;
+import plugin.command.impl.player.StaffCommand;
 import plugin.command.impl.player.StuckCommand;
 import plugin.command.impl.player.Tier1Teleport;
 import plugin.command.impl.player.Tier2Teleport;
@@ -88,6 +90,8 @@ public class CommandManager {
 		/*
 		 * @Player Commands
 		 */
+		plugin.put(new String[] { "easts" }, new Easts());
+		plugin.put(new String[] { "commands" }, new Commands());
 		plugin.put(new String[] { "plant" }, new PlantFlowerCommand());
 		plugin.put(new String[] { "home", "hom" }, new HomeCommand());
 		plugin.put(new String[] { "train", "training" }, new TrainZone());
@@ -97,26 +101,24 @@ public class CommandManager {
 		plugin.put(new String[] { "tier3", "tierthree" }, new Tier3Teleport());
 		plugin.put(new String[] { "tier4", "tierfour" }, new Tier4Teleport());
 		plugin.put(new String[] { "pouch" }, new PouchCommand());
-		plugin.put(new String[] { "commands", "command", "commandlist" }, new CommandList());
 		plugin.put(new String[] { "fameboard", "fame" }, new FameBoardCommand());
 		plugin.put(new String[] { "shops", "store", "shop", "stores" }, new ShopCommand());
-
 		plugin.put(new String[] { "drops", "drop", "droplist", "droptable" }, new DropsCommand());
 		plugin.put(new String[] { "simulate", "simulator", "dropsim" }, new DropSimulatorCommand());
 		plugin.put(new String[] { "vote" }, new VoteCommand());
 		plugin.put(new String[] { "dice", "gamble", "dp" }, new DiceCommand());
 		plugin.put(new String[] { "skull" }, new SkullCommand());
-
 		plugin.put(new String[] { "duel", "duelarena" }, new DuelArenaCommand());
 		plugin.put(new String[] { "barrows" }, new BarrowsCommand());
-		plugin.put(new String[] { "skillarea", "skillingarea" }, new SkillAreaCommand());
+		plugin.put(new String[] { "skill", "skillingarea" }, new SkillAreaCommand());
 		plugin.put(new String[] { "donate", "webstore" }, new DonateCommand());
 		plugin.put(new String[] { "vault", "vaultamount" }, new VaultCommand());
 		plugin.put(new String[] { "drops", "drop" }, new DropInterfaceCommand());
 		plugin.put(new String[] { "gamble", "gamblezone" }, new GambleCommand());
 		plugin.put(new String[] { "arena", "arenazone" }, new ArenaZoneCommand());
 		plugin.put(new String[] { "cashout", "pins" }, new CashOutCommand());
-		plugin.put(new String[] { "help", "staff" }, new Helpcommand());
+		plugin.put(new String[] { "help", "helpp" }, new Helpcommand());
+		plugin.put(new String[] { "staff", "staffonline" }, new StaffCommand());
 		plugin.put(new String[] { "forums", "website" }, new ForumCommand());
 		plugin.put(new String[] { "discord", "discords" }, new DiscordCommand());
 		plugin.put(new String[] { "stuck", "stucks" }, new StuckCommand());
@@ -126,7 +128,6 @@ public class CommandManager {
 		plugin.put(new String[] { "slayertask", "task" }, new SlayerTaskCommand());
 		plugin.put(new String[] { "players", "online" }, new PlayerCountCommand());
 		plugin.put(new String[] { "empty", "emptyinventory" }, new EmptyInventoryCommand());
-
 		/*
 		 * @Donator Command
 		 */

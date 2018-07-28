@@ -1,6 +1,7 @@
 package plugin.click.item;
 
 import io.battlerune.content.DiceBag;
+import io.battlerune.content.activity.impl.flowerpoker.FlowerHandler;
 import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
 import io.battlerune.content.consume.Anglerfish;
 import io.battlerune.content.skill.impl.slayer.Slayer;
@@ -53,6 +54,15 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			}
 			player.inventory.remove(10028, 1);
             player.message("you were unfortunate and did not recieve anything.");
+			break;
+			
+		case 299:
+		    player.inventory.remove(299, 1);    
+			FlowerHandler flower = new FlowerHandler(player);
+			flower.plantFlower();
+			break;
+		case 6199:
+			player.message("123");
 			break;
 
 		case 5020:
