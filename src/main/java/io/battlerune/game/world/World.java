@@ -35,6 +35,7 @@ import io.battlerune.game.world.entity.mob.npc.NpcAssistant;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
+import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
@@ -350,6 +351,16 @@ public final class World {
           EventBossHandler.openGalvek(player);
 	   }
 	}
+	
+	/*public static void sendItem(int item, int amounts) {
+		for(Player player : getPlayers()) {
+			player.inventory.add(item, amounts);
+			Item starterbox = new Item(item);
+			player.send(new SendMessage("You have all recieved a @red@" + starterbox.getName() + " from " + player.getName() + " for your continued support!"));
+			//World.sendBroadcast(1, "You have all recieved a " + starterbox.getName() + " from " + "Adam" + " for your continued support!", true);
+
+		}
+	}*/
 	
 	public static void sendArenaInformation() {
 		for(Player player : getPlayers()) {

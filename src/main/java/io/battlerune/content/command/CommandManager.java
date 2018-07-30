@@ -14,6 +14,7 @@ import plugin.command.impl.moderator.TeletoCommand;
 import plugin.command.impl.moderator.TeletomeCommand;
 import plugin.command.impl.moderator.UnjailCommand;
 import plugin.command.impl.moderator.UnmuteCommand;
+import plugin.command.impl.owner.AllToMeCommand;
 import plugin.command.impl.owner.AnimationCommand;
 import plugin.command.impl.owner.ArenaSpawnCommand;
 import plugin.command.impl.owner.DeveloperInstanceCommand;
@@ -23,6 +24,7 @@ import plugin.command.impl.owner.EventBossInterfaceShow;
 import plugin.command.impl.owner.EventBossSystem;
 import plugin.command.impl.owner.FindCommand;
 import plugin.command.impl.owner.GalvekSpawnCommand;
+import plugin.command.impl.owner.GiveAllCommand;
 import plugin.command.impl.owner.GodCommand;
 import plugin.command.impl.owner.GraphicCommand;
 import plugin.command.impl.owner.InterfaceCommand;
@@ -34,10 +36,14 @@ import plugin.command.impl.owner.ObjectCommand;
 import plugin.command.impl.owner.PlantFlowerCommand;
 import plugin.command.impl.owner.PlayerGuideCommand;
 import plugin.command.impl.owner.PnpcCommand;
+import plugin.command.impl.owner.RandomEvent;
+import plugin.command.impl.owner.ReloadCommand;
+import plugin.command.impl.owner.RemovePlayerTask;
 import plugin.command.impl.owner.SpawnCustomCommand;
 import plugin.command.impl.owner.SpecCommand;
 import plugin.command.impl.owner.TeleCommand;
 import plugin.command.impl.owner.UpCommand;
+import plugin.command.impl.owner.UpdateCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
@@ -158,7 +164,7 @@ public class CommandManager {
 		plugin.put(new String[] { "spawncustoms" }, new SpawnCustomCommand());
 		plugin.put(new String[] { "master", "max" }, new MasterCommand());
 		plugin.put(new String[] { "find", "finditem" }, new FindCommand());
-		plugin.put(new String[] { "anim", "performanim" }, new AnimationCommand());
+		plugin.put(new String[] { "anim", "animation" }, new AnimationCommand());
 		plugin.put(new String[] { "gfx", "graphic" }, new GraphicCommand());
 		plugin.put(new String[] { "spec", "special" }, new SpecCommand());
 		plugin.put(new String[] { "pnpc", "transform" }, new PnpcCommand());
@@ -175,6 +181,13 @@ public class CommandManager {
 		plugin.put(new String[] { "show", "showboss" }, new EventBossInterfaceShow());
 		plugin.put(new String[] { "hide", "hideboss" }, new EventBossInterfaceHide());
 		plugin.put(new String[] { "minime" }, new MiniMeCommand());
+		plugin.put(new String[] { "giveall", "give" }, new GiveAllCommand());
+		plugin.put(new String[] { "update", "udpateserver" }, new UpdateCommand());
+		//plugin.put(new String[] { "reload", "reloadserver" }, new ReloadCommand());
+		plugin.put(new String[] { "removetask", "slayer" }, new RemovePlayerTask());
+		plugin.put(new String[] { "randomevent", "randomeven" }, new RandomEvent());
+		plugin.put(new String[] { "teleall", "all2me" }, new AllToMeCommand());
+
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {
 			for (int i = 0; i < map.getKey().length; i++) {

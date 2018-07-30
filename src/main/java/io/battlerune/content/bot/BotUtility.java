@@ -540,13 +540,13 @@ public class BotUtility {
 	public static final String[] FIGHT_START_MESSAGES = { "leggo", "gl", "gl nub" };
 
 	/** Array of all the possible fight end message. */
-	public static final String[] FIGHT_END_MESSAGES = { "gf", "out", "fuck" };
+	public static final String[] FIGHT_END_MESSAGES = { "gf", "out", "ye...shet" };
 
 	/** Array of all the possible fight start message. */
 	public static final String[] KILLED_MESSAGES = { "cya", "gf", "sit", "shitted on", "Cya", "gg", "bye" };
 
 	/** Array of all the possible death message. */
-	static final String[] DEATH_MESSAGES = { "fgs", "Gf", "Gg", "fuck", "bruh" };
+	static final String[] DEATH_MESSAGES = { "fgs", "Gf", "Gg", "damn son", "bruh" };
 
 	/** Generates a random bot named based on the available names. */
 	static String nameGenerator() {

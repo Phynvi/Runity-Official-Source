@@ -168,7 +168,7 @@ public class NpcFirstClickPlugin extends PluginContext {
 		case 2153:
 			player.dialogueFactory
 					.sendNpcChat(id, "Haha welcome to my obstacle course. Have fun, but",
-							"remember this isn't a child's playground you fat fuck.", "People have fucking died here.")
+							"remember this isn't a child's playground you hobo.", "People have died here.")
 					.sendNpcChat(id, "The best way to train, is to go round the course in a", "clockwise direction.")
 					.execute();
 			break;

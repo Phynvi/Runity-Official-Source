@@ -19,6 +19,16 @@ public class FindCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
+		try {
+			method(player, command);
+		} catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Catched ArrayIndexOutOfBounds, ::find command, inproper use of it.");
+			player.message("Inproper use of the command do... ::find ITEMNAME (e.g ::find dragon)");
+		}
+	}
+	
+	
+	public static void method(Player player, String[] command) {
 		final String name = String.format(command[1]);
 
 		ItemContainer container = new ItemContainer(400, ItemContainer.StackPolicy.ALWAYS);

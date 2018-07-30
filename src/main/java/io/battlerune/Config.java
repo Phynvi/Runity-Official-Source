@@ -300,7 +300,7 @@ public final class Config {
 	/** Strings that are classified as bad. */
 	public static final String[] BAD_STRINGS = { "fag", "f4g", "faggot", "nigger", "fuck", "bitch", "whore", "slut",
 			"gay", "lesbian", "scape", ".net", ".org", "vagina", "dick", "cock", "penis", "hoe", "soulsplit", "ikov",
-			"retard", "cunt", "g ay", "ga y", "g a y", "h o e", "o r g", "osroyale", "OS royale", "osr", "niger" };
+			"retard", "cunt", "g ay", "ga y", "g a y", "h o e", "o r g", "osroyale", "OS royale", "osr", "niger", "nardarh", "dreamscape", "imagineps", "vision317" };
 
 	/** Messages that are sent periodically to all players. */
 	public static final String[] MESSAGES = { "The owner & founder of Runity is Jordan & Adam.",

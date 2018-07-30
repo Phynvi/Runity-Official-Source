@@ -73,6 +73,20 @@ public final class NpcDropManager {
 			GroundItem.create(killer, casket, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + casket.getName()));
 		}
+		
+		// starter box drop
+		if (npc.getMaximumHealth() > 10 && Utility.random(250) <= 10) {
+			Item starterbox = new Item(10028);
+			GroundItem.create(killer, starterbox, dropPosition);
+			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + starterbox.getName()));
+		}
+		
+		// Mystery box
+		if (npc.getMaximumHealth() > 10 && Utility.random(500) <= 10) {
+			Item mbox = new Item(6199);
+			GroundItem.create(killer, mbox, dropPosition);
+			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + mbox.getName()));
+		}
 
 		// drop table
 		for (NpcDrop drop : npc_drops) {

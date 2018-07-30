@@ -10,7 +10,7 @@ import io.battlerune.util.Utility;
  * @since 29-1-2017.
  */
 public enum NpcDropChance {
-	ALWAYS(1, 0), COMMON(2, 10), UNCOMMON(3, 25), RARE(4, 260), VERY_RARE(5, 320);
+	ALWAYS(1, 0), COMMON(2, 10), UNCOMMON(3, 25), RARE(4, 260), VERY_RARE(5, 320), ULTRA_RARE(6, 500);
 
 	/** The tier of this drop chance. */
 	public final int tier;

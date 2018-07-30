@@ -88563,6 +88563,13 @@
 
         "type": "RARE"
       },
+       {
+          "item": 2677,
+          "minimum": 1,
+          "maximum": 1,
+
+          "type": "RARE"
+        },
       {
         "item": 11739,
         "minimum": 1,
@@ -88577,13 +88584,48 @@
 
         "type": "VERY_RARE"
       },
-      {
-        "item": 2677,
-        "minimum": 1,
-        "maximum": 1,
-
-        "type": "RARE"
-      }
+        {
+          "item": 11814,
+          "minimum": 1,
+          "maximum": 1,
+          "chance": 508.0,
+          "type": "RARE"
+        },
+        {
+          "item": 20693,
+          "minimum": 1,
+          "maximum": 1,
+          "chance": 5000.0,
+          "type": "VERY_RARE"
+        },
+        {
+            "item": 16654,
+            "minimum": 1,
+            "maximum": 1,
+            "chance": 3000.0,
+            "type": "ULTRA_RARE"
+        },
+        {
+            "item": 16655,
+            "minimum": 1,
+            "maximum": 1,
+            "chance": 3000.0,
+            "type": "ULTRA_RARE"
+          },
+        {
+              "item": 16656,
+              "minimum": 1,
+              "maximum": 1,
+              "chance": 3000.0,
+              "type": "ULTRA_RARE"
+            },
+            {
+                "item": 3274,
+                "minimum": 1,
+                "maximum": 1,
+                "chance": 5000.0,
+                "type": "ULTRA_RARE"
+            }
     ]
   },
   
@@ -88774,7 +88816,36 @@
         "maximum": 1,
         "chance": 5000.0,
         "type": "VERY_RARE"
-      }
+      },
+      {
+          "item": 16650,
+          "minimum": 1,
+          "maximum": 1,
+          "chance": 3000.0,
+          "type": "ULTRA_RARE"
+      },
+      {
+          "item": 16651,
+          "minimum": 1,
+          "maximum": 1,
+          "chance": 3000.0,
+          "type": "ULTRA_RARE"
+        },
+      {
+            "item": 16653,
+            "minimum": 1,
+            "maximum": 1,
+            "chance": 3000.0,
+            "type": "ULTRA_RARE"
+          },
+      {
+              "item": 17160,
+              "minimum": 1,
+              "maximum": 1,
+              "chance": 5000.0,
+              "type": "ULTRA_RARE"
+         }
+      
     ]
   },
   {
