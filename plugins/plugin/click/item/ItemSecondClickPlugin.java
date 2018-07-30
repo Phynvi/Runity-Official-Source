@@ -46,15 +46,13 @@ public class ItemSecondClickPlugin extends PluginContext {
 		case 20760:
 		case 13280:
 
-			// TODO ADAM TELEPORTS FOR THE CAPES!
 			if (player.inventory.contains(13280)) {
 
-				player.dialogueFactory.sendOption("Grotesque Guardians", () -> {
-
+				player.dialogueFactory.sendOption("Donator Portal", () -> {
 					if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
 						player.message("@or2@you can't teleport above 30 wilderness");
 					} else {
-						Teleportation.teleport(player, Config.DEFAULT_POSITION, 20, () -> {
+						Teleportation.teleport(player, Config.PORTAL_ZONE, 20, () -> {
 							player.send(new SendMessage(
 									"@or2@Welcome to the Grotesque Guardians!, " + player.getName() + "!"));
 						});
@@ -68,7 +66,7 @@ public class ItemSecondClickPlugin extends PluginContext {
 						});
 
 					}
-				}, "Dranyor Village", () -> {
+				}, "Draynor Village", () -> {
 					if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
 						player.message("@or2@you can't teleport above 30 wilderness");
 					} else {

@@ -39,7 +39,7 @@ public class BossEventButtonPlugin extends PluginContext {
 			player.message("Teleporting you to Justicar");
             player.hideTeleportButton();
 		}
-		if(ArenaUtility.activated == true && GalvekUtility.activated == true || JusticarUtility.activated == true) {
+		if(ArenaUtility.activated == true && GalvekUtility.activated == true && JusticarUtility.activated == true) {
 			player.message("Adam fucked up, spam tf outta him so he fixes this.");
 			return false;
 		}

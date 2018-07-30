@@ -10,7 +10,9 @@ import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.skill.Skill;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendFadeScreen;
 import io.battlerune.net.packet.out.SendMessage;
@@ -22,6 +24,10 @@ public class BossInformationButtonPlugin extends PluginContext {
 	 */
 
 	protected boolean onClick(Player player, int button) {
+		if (player.wilderness > 20 && !PlayerRight.isPriviledged(player)) {
+			player.send(new SendMessage("You can't teleport above 20 wilderness!"));
+			return false;
+		}
 		if (button == -14335 && !player.inventory.containsAny(Config.NOT_ALLOWED) && !player.equipment.containsAny(Config.NOT_ALLOWED)) {
 			Teleportation.teleport(player, new Position(2997, 3849, 0));
 			player.send(new SendMessage("You have teleported to King Black Dragon!"));
@@ -65,6 +71,10 @@ public class BossInformationButtonPlugin extends PluginContext {
 		if (button == -14185) {
 			if (player.isTeleblocked()) {
 				player.message("You are currently under the affects of a teleblock spell and can not teleport!");
+				return false;
+			}
+			if(Area.inWilderness(player)) {
+				player.message("You can't teleport out of the wilderness!");
 				return false;
 			}
 

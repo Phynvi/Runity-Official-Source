@@ -3689,14 +3689,14 @@
           "amount": 1000,
           "value": 100
       },
-      
       {
-          "id": 16650,
+          "id": 12357,
           "amount": 1000,
           "value": 150
       },
+      
       {
-          "id": 12357,
+          "id": 16650,
           "amount": 1000,
           "value": 150
       },
@@ -5078,7 +5078,7 @@
 
 {
 	    "name": "Varrock Swordshop",
-	    "currency": "PET_TOKENS",
+	    "currency": "COINS",
 	    "restock": true,
 	    "sellType": "NONE",
 	    "scroll": 1,

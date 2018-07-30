@@ -261,10 +261,7 @@ public class Galvek extends MultiStrategy {
 			attacker.face(new Position(2277, 4057));
 			attacker.animate(new Animation(7904, UpdatePriority.HIGH));
 			PROJECTILE.send(attacker, new Position(2277, 4057));
-			// TODO Iterate it over the spawnData, and if the spawndata is equal to the
-			// correct value from that enum, than edit the Position of the Tsunami NPC.
 
-			// done
 
 			SpawnData1 data = GalvekUtility.spawn;
 			World.schedule(4, () -> {

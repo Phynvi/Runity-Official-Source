@@ -44,7 +44,7 @@ public class JusticarUtility {
 			World.sendMessage("<col=8714E6> jusiticar has been defeated by " + player.getName()
 					+ ", a solo individual with balls of steel!");
 		}
-
+        activated = false;
 		jusiticar.unregister();
 	}
 

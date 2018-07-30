@@ -41,7 +41,7 @@ public class TwistedBowStrategy extends PlayerRangedStrategy {
 
 	@Override
 	public int getAttackDelay(Player attacker, Mob defender, FightType fightType) {
-		return 6;
+		return 5;
 	}
 
 	public static TwistedBowStrategy get() {

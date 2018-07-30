@@ -102,6 +102,7 @@ public class GalvekUtility {
 
 		player.send(new SendMessage("Galvek drop's lootation all over the map.", MessageColor.RED));
 		Galvek.unregister();
+        activated = false;
 	}
 
 	public enum SpawnData1 {

@@ -35,6 +35,7 @@ import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.hit.HitIcon;
 import io.battlerune.game.world.entity.combat.hit.Hitsplat;
 import io.battlerune.game.world.entity.combat.magic.Autocast;
+import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.data.LockType;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -47,6 +48,7 @@ import io.battlerune.net.packet.out.SendFadeScreen;
 import io.battlerune.net.packet.out.SendInputAmount;
 import io.battlerune.net.packet.out.SendInputMessage;
 import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendRunEnergy;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
@@ -538,15 +540,33 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		}
 
 		case 26760: {
-			boolean isSuperDonator = PlayerRight.isSuper(player);
 
-			if (!isSuperDonator && !player.inventory.contains(995, 5000)) {
+			if (!player.inventory.contains(995, 5000)) {
 				player.dialogueFactory.sendStatement("You need 5,000 coins to do this!").execute();
 				return true;
 			}
+			
+			
+		
+
 
 			Position destination = null;
 			Direction direction = null;
+			
+			
+			if (player.getY() < 3480) {
+				player.movement.walkTo(new Position(player.getX(), 3480));
+			} else if (player.getY() > 3481) {
+				player.movement.walkTo(new Position(player.getX(), 3481));
+			}
+			
+			if (player.getY() == 3481) {
+				direction = Direction.SOUTH;
+				destination = new Position(player.getX(), 3480);
+			} else if (player.getY() == 3480) {
+				direction = Direction.NORTH;
+				destination = new Position(player.getX(), 3481);
+			}
 
 			if (player.getY() < 3944) {
 				player.movement.walkTo(new Position(player.getX(), 3944));
@@ -566,7 +586,6 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.getCombat().reset();
 				player.face(direction);
 				player.locking.lock(1, LockType.MASTER_WITH_MOVEMENT);
-				if (!isSuperDonator)
 					player.inventory.remove(995, 5000);
 				player.movement.walkTo(destination);
 			}
@@ -1011,9 +1030,28 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				StaffPanel.open(player, PanelType.INFORMATION_PANEL);
 			}
 			break;
+			
+		case 29241:
+				for (int skill = 0; skill < Skill.SKILL_COUNT; skill++) {
+					player.skills.setLevel(skill, player.skills.getMaxLevel(skill));
+				}
+				player.runEnergy = 100;
+				player.send(new SendRunEnergy());
+				player.skills.restoreAll();
+				CombatSpecial.restore(player, 100);
+				player.send(new SendMessage(
+						"You take a sip from the juice fountain and feel your body pulsing with ecstasy."));
+				player.dialogueFactory.sendNpcChat(id, "Your health & special attack have been restored!").execute();
+			break;
 
 		/* Altar of the occult */
-		case 29150:
+		case 409:
+			if (player.skills.getLevel(Skill.PRAYER) < player.skills.getMaxLevel(Skill.PRAYER)) {
+				player.skills.setLevel(Skill.PRAYER, player.skills.getMaxLevel(Skill.PRAYER));
+				player.send(new SendMessage("You recharge your prayer points."));
+			} else {
+				player.send(new SendMessage("Your prayer is already full."));
+			}
 			player.dialogueFactory.sendOption("Modern", () -> {
 				Autocast.reset(player);
 				player.animate(new Animation(645));
@@ -1039,7 +1077,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 
 		/* Ornate Restoration Pool */
-		case 29241:
+		/*case 29241:
 			if (PlayerRight.isManagement(player)) {
 				for (int skill = 0; skill < Skill.SKILL_COUNT; skill++) {
 					player.skills.setLevel(skill, player.skills.getMaxLevel(skill));
@@ -1047,7 +1085,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.send(new SendMessage(
 						"You take a sip from the juice fountain and feel your body pulsing with ecstasy."));
 			}
-			break;
+			break;*/
 
 		/* Donator deposit. */
 		case 26254:
@@ -1192,7 +1230,6 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 
 		/* Prayer altar. */
-		case 409:
 		case 7812:
 			if (player.skills.getLevel(Skill.PRAYER) < player.skills.getMaxLevel(Skill.PRAYER)) {
 				player.animate(new Animation(645));

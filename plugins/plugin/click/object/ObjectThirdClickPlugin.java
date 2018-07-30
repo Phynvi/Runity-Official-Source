@@ -16,7 +16,7 @@ public class ObjectThirdClickPlugin extends PluginContext {
 		final int id = event.getObject().getId();
 
 		switch (id) {
-		case 29150:
+		case 409:
 			Autocast.reset(player);
 			player.animate(new Animation(645));
 			player.spellbook = Spellbook.LUNAR;

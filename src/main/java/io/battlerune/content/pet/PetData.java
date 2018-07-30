@@ -11,6 +11,55 @@ import io.battlerune.content.dialogue.DialogueFactory;
  * @author adam
  */
 public enum PetData {
+	ABYSSAL_ORPHAN("Abyssal Orphan", 13262, 5883) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Hello");
+			factory.sendNpcChat(5883, "Are you my dad?!");
+			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
+			factory.execute();
+
+		}
+	},
+	ABYSSAL_DEMON("Abyssal Orphan", 4149, 5883) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Hello");
+			factory.sendNpcChat(5883, "Are you my dad?!");
+			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
+			factory.execute();
+
+		}
+	},
+	PIRATE_PETE("Pirate Pete", 7505, 4052) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Why does it take pirates so long to learn the alphabet?");
+			factory.sendNpcChat(4052, "Uhm I don't know.");
+			factory.sendPlayerChat("Because they can spend years at C.");
+			factory.sendNpcChat(4052, "LOOL I Get it! Aha! That was brilliant matey!");
+
+			factory.execute();
+
+		}
+	},
+	VORKATH_PET("Vorki", 21992, 8029) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Aren't you a little cute thing!");
+			factory.sendNpcChat(8029, "I ain't cute when im burning my victims to ash! AHAHAH");
+			factory.sendPlayerChat("Welp sheeeeeet then.");
+			factory.execute();
+
+		}
+	},
+	PHOENIX("Phoenix", 20693, 7370) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Adam has yet to add Phoenix's dialogue :(");
+			factory.execute();
+		}
+	},
 	HELLPUPPY("Hellpuppy", 13247, 3099) {
 		@Override
 		public void dialogue(DialogueFactory factory) {
@@ -98,6 +147,13 @@ public enum PetData {
 			factory.execute();
 		}
 	},
+	
+	
+	
+	
+	
+	
+	
 	PRINCE_BLACK_DRAGON("Prince Black Dragon", 12653, 6636) {
 		@Override
 		public void dialogue(DialogueFactory factory) {
@@ -447,48 +503,6 @@ public enum PetData {
 			factory.sendPlayerChat("Can you see your own rift?");
 			factory.sendNpcChat(7337, "No. From time to time I feel it shift and",
 					"change inside me though. It is an odd feeling.");
-			factory.execute();
-
-		}
-	},
-	ABYSSAL_ORPHAN("Abyssal Orphan", 13262, 5883) {
-		@Override
-		public void dialogue(DialogueFactory factory) {
-			factory.sendPlayerChat("Hello");
-			factory.sendNpcChat(5883, "Are you my dad?!");
-			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
-			factory.execute();
-
-		}
-	},
-	ABYSSAL_DEMON("Abyssal Orphan", 4149, 5883) {
-		@Override
-		public void dialogue(DialogueFactory factory) {
-			factory.sendPlayerChat("Hello");
-			factory.sendNpcChat(5883, "Are you my dad?!");
-			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
-			factory.execute();
-
-		}
-	},
-	PIRATE_PETE("Pirate Pete", 7505, 4052) {
-		@Override
-		public void dialogue(DialogueFactory factory) {
-			factory.sendPlayerChat("Why does it take pirates so long to learn the alphabet?");
-			factory.sendNpcChat(4052, "Uhm I don't know.");
-			factory.sendPlayerChat("Because they can spend years at C.");
-			factory.sendNpcChat(4052, "LOOL I Get it! Aha! That was brilliant matey!");
-
-			factory.execute();
-
-		}
-	},
-	VORKATH_PET("Vorki", 21992, 8029) {
-		@Override
-		public void dialogue(DialogueFactory factory) {
-			factory.sendPlayerChat("Aren't you a little cute thing!");
-			factory.sendNpcChat(8029, "I ain't cute when im burning my victims to ash! AHAHAH");
-			factory.sendPlayerChat("Welp sheeeeeet then.");
 			factory.execute();
 
 		}

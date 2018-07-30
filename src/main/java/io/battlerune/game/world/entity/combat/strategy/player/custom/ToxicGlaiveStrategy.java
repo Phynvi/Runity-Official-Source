@@ -54,7 +54,6 @@ public class ToxicGlaiveStrategy extends PlayerMeleeStrategy {
 	@Override
 	public void start(Player attacker, Mob defender, Hit[] hits) {
 		super.start(attacker, defender, hits);
-		// TODO EFFECT
 	}
 
 	@Override

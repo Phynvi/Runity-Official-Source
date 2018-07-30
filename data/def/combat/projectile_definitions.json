@@ -96,6 +96,22 @@
 	    }
 	  },
   {
+		    "name": "Icedmon tarn randomAttack",
+		    "end": {
+		      "id": 1325,
+		      "delay": 0,
+		      "height": 6553600,
+		      "priority": "HIGH"
+		    },
+		    "projectile": {
+		      "id": 1324,
+		      "delay": 5,
+		      "duration": 85,
+		      "startHeight": 90,
+		      "endHeight": 25
+		    }
+		  },
+  {
 	    "name": "Galvek Venom Dragonfire",
 	    "end": {
 	      "id": 1472,
@@ -159,6 +175,23 @@
 		      "endHeight": 25
 		    }
 		  },
+	  
+	  {
+			    "name": "Icedemon Tarn Ranged",
+			    "end": {
+			      "id": 552,
+			      "delay": 0,
+			      "height": 0,
+			      "priority": "HIGH"
+			    },
+			    "projectile": {
+			      "id": 551,
+			      "delay": 5,
+			      "duration": 85,
+			      "startHeight": 90,
+			      "endHeight": 25
+			    }
+			  },
 	  {
 	    "name": "Galvek Magic",
 	    "end": {

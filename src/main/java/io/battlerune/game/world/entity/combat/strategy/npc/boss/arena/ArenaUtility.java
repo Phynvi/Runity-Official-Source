@@ -42,13 +42,6 @@ public class ArenaUtility {
 			13867, 13870, 13873, 13876 };
 
 	public static void defeated(Npc arena, Player player) {
-
-		/*
-		 * int superrare = SUPERRARELOOT[Utility.random(SUPERRARELOOT.length - 1)]; int
-		 * rare = RARELOOT[Utility.random(SUPERRARELOOT.length - 1)]; int common =
-		 * COMMONLOOT[Utility.random(SUPERRARELOOT.length - 1)];
-		 */
-
 		boolean hasClan = player.clanChannel != null;
 
 		if (hasClan) {
@@ -107,6 +100,8 @@ public class ArenaUtility {
 		player.send(new SendMessage("Glod drop's lootation all over the map.", MessageColor.RED));
 
 		arena.unregister();
+        activated = false;
+
 	}
 
 	public enum SpawnData {

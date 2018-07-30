@@ -74,8 +74,8 @@ public class CooksAssistant extends Quest {
 			factory.sendPlayerChat("Hey there...")
 					.sendNpcChat(225, Expression.ALMOST_CRYING, "Oh #name, I need your help!",
 							"My husband is coming home soon and I promised him",
-							"I would bake him a cake. Unfortunately, as I am a woman",
-							"I can't leave the kitchen. Can you please help me?")
+							"I would bake him a cake.",
+							"I can't leave the kitchen. I have kids to feed! Can you please help me?")
 					.sendOption("Sure", () -> {
 						setStage(player, 1);
 						player.interfaceManager.close();

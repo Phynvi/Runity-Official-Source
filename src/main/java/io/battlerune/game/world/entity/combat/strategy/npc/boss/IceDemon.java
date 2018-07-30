@@ -149,7 +149,7 @@ public class IceDemon extends MultiStrategy {
 					projectile.send(attacker, position);
 
 					World.schedule(3, () -> {
-						World.sendGraphic(new Graphic(369, UpdatePriority.HIGH), position, attacker.instance);
+						World.sendGraphic(new Graphic(1312, UpdatePriority.HIGH), position, attacker.instance);
 
 						if (defender.getPosition().equals(position)) {
 							defender.writeDamage(new Hit(Utility.random(1, 10)));
@@ -176,9 +176,6 @@ public class IceDemon extends MultiStrategy {
 
 					if (defender.getPosition().equals(position)) {
 						defender.writeDamage(new Hit(Utility.random(1, 5)));
-						if (defender.locking.locked())
-							return;
-						defender.locking.lock(20, LockType.FREEZE);
 
 					}
 				}
@@ -197,12 +194,12 @@ public class IceDemon extends MultiStrategy {
 	private static class RangedAttack extends NpcRangedStrategy {
 
 		RangedAttack() {
-			super(CombatProjectile.getDefinition("Mutant Tarn Ranged"));
+			super(CombatProjectile.getDefinition("Icedmon tarn randomAttack"));
 		}
 
 		@Override
 		public Animation getAttackAnimation(Npc attacker, Mob defender) {
-			return new Animation(64, UpdatePriority.HIGH);
+			return new Animation(69, UpdatePriority.HIGH);
 		}
 
 		@Override
@@ -214,12 +211,12 @@ public class IceDemon extends MultiStrategy {
 	private static class MagicAttack extends NpcMagicStrategy {
 
 		MagicAttack() {
-			super(CombatProjectile.getDefinition("Shadow Rush"));
+			super(CombatProjectile.getDefinition("Icedmon tarn randomAttack"));
 		}
 
 		@Override
 		public Animation getAttackAnimation(Npc attacker, Mob defender) {
-			return new Animation(64, UpdatePriority.HIGH);
+			return new Animation(69, UpdatePriority.HIGH);
 		}
 
 		@Override
@@ -230,7 +227,7 @@ public class IceDemon extends MultiStrategy {
 	}
 
 	private static class FrozenSpecial extends NpcMagicStrategy {
-		private final Projectile PROJECTILE = new Projectile(1470, 5, 85, 85, 25);
+		private final Projectile PROJECTILE = new Projectile(1324, 5, 85, 85, 25);
 
 		FrozenSpecial() {
 			super(CombatProjectile.getDefinition("Galvek Frozen Special"));
@@ -300,12 +297,12 @@ public class IceDemon extends MultiStrategy {
 
 	private static class VenomDragonfireAttack extends DragonfireStrategy {
 		VenomDragonfireAttack() {
-			super(CombatProjectile.getDefinition("Mutant tarn randomAttack"));
+			super(CombatProjectile.getDefinition("Icedmon tarn randomAttack"));
 		}
 
 		@Override
 		public Animation getAttackAnimation(Npc attacker, Mob defender) {
-			return new Animation(64, UpdatePriority.HIGH);
+			return new Animation(69, UpdatePriority.HIGH);
 		}
 
 		@Override

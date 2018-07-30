@@ -455,7 +455,7 @@ public final class World {
 		 * 25+ fake 50 85 80 137 100 173 //Big fakes 150 263 200 361
 		 */
 		int p = getPlayers().size() - getBotCount();
-		return (int) (1.5 * Math.sqrt(p) + Math.pow(p, 1.1)) - RandomUtils.inclusive(0, 1);
+		return (int) (1.5 * Math.sqrt(p) + Math.pow(p, 1.1));
 	}
 
 	public static int getBotCount() {

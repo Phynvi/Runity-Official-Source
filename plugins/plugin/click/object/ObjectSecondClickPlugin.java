@@ -45,7 +45,7 @@ public class ObjectSecondClickPlugin extends PluginContext {
 			}
 			break;
 
-		case 29150:
+		case 409:
 			Autocast.reset(player);
 			player.animate(new Animation(645));
 			player.spellbook = Spellbook.ANCIENT;

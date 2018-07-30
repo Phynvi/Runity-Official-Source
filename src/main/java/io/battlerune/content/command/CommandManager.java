@@ -91,7 +91,7 @@ public class CommandManager {
 		 * @Player Commands
 		 */
 		plugin.put(new String[] { "easts" }, new Easts());
-		plugin.put(new String[] { "commands" }, new Commands());
+		plugin.put(new String[] { "testcom", "command" }, new Commands());
 		plugin.put(new String[] { "plant" }, new PlantFlowerCommand());
 		plugin.put(new String[] { "home", "hom" }, new HomeCommand());
 		plugin.put(new String[] { "train", "training" }, new TrainZone());

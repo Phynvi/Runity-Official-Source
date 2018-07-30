@@ -64,16 +64,38 @@
     }
   },
     {
-    "id": 29150,
+    "id": 2191,
+    "name": "Closed Chest",
+    "type": 10,
+    "rotation": "NORTH",
+    "position": {
+      "x": 3090,
+      "y": 3494,
+      "z": 0
+    }
+  },
+    {
+    "id": 409,
     "name": "Altar",
     "type": 10,
     "rotation": "EAST",
     "position": {
       "x": 3091,
-      "y": 3507,
+      "y": 3513,
       "z": 0
     }
-  },
+  },    
+    {
+    "id": 29241,
+    "name": "Ornate rejuvenation pool",
+    "type": 10,
+    "rotation": "EAST",
+    "position": {
+      "x": 3095,
+      "y": 3510,
+      "z": 0
+    }
+  },  
   {
     "id": 6084,
     "name": "Blurite bank booth",

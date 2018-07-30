@@ -75051,7 +75051,19 @@
 			    "high-alch": 59400,
 			    "base-value": 99000,
 			    "weight": 0.4,
-			    "equipment-slot": "CAPE"
+			    "equipment-slot": "CAPE",
+			    "attack-stab": 5000,
+			    "attack-slash": 5000,
+			    "attack-crush": 5000,
+			    "attack-magic": 5000,
+			    "attack-ranged": 5000,
+			    "defence-stab": 5000,
+			    "defence-slash": 5000,
+			    "defence-crush": 5000,
+			    "defence-magic": 5000,
+			    "defence-ranged": 5000,
+			    "bonus-strength":5000,
+			    "bonus-prayer": 5000
 			  },
   {
 				    "id": 3929,
@@ -75061,7 +75073,19 @@
 				    "high-alch": 59400,
 				    "base-value": 99000,
 				    "weight": 0.4,
-				    "equipment-slot": "CAPE"
+				    "equipment-slot": "CAPE",
+				    "attack-stab": 5000,
+				    "attack-slash": 5000,
+				    "attack-crush": 5000,
+				    "attack-magic": 5000,
+				    "attack-ranged": 5000,
+				    "defence-stab": 5000,
+				    "defence-slash": 5000,
+				    "defence-crush": 5000,
+				    "defence-magic": 5000,
+				    "defence-ranged": 5000,
+				    "bonus-strength":5000,
+				    "bonus-prayer": 5000
 				  },
   {
     "id": 9747,
@@ -106953,8 +106977,12 @@
     "weight": 0.4,
     "equipment-slot": "CAPE",
     "attack-ranged": 4,
-    "defence-slash": 1,
-    "defence-magic": 4
+    "defence-stab": 9,
+    "defence-slash": 9,
+    "defence-crush": 9,
+    "defence-magic": 9,
+    "defence-ranged": 9,
+    "bonus-prayer": 4
   },
   {
     "id": 13338,

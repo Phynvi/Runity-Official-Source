@@ -76,35 +76,7 @@ public enum FoodData {
 		return Arrays.stream(values()).filter(a -> a.id == id).findFirst();
 	}
 
-	// TODO Cleaner
-	public static int anglerfishHeal(Player player) {
-		int hitpoints = player.skills.getMaxLevel(Skill.HITPOINTS);
-		if (hitpoints >= 10 && hitpoints <= 19)
-			return 3;
-		if (hitpoints >= 20 && hitpoints <= 24)
-			return 4;
-		if (hitpoints >= 25 && hitpoints <= 29)
-			return 6;
-		if (hitpoints >= 30 && hitpoints <= 39)
-			return 7;
-		if (hitpoints >= 40 && hitpoints <= 49)
-			return 8;
-		if (hitpoints >= 50 && hitpoints <= 59)
-			return 11;
-		if (hitpoints >= 60 && hitpoints <= 69)
-			return 12;
-		if (hitpoints >= 70 && hitpoints <= 74)
-			return 13;
-		if (hitpoints >= 75 && hitpoints <= 79)
-			return 15;
-		if (hitpoints >= 80 && hitpoints <= 89)
-			return 16;
-		if (hitpoints >= 90 && hitpoints <= 92)
-			return 17;
-		if (hitpoints >= 93)
-			return 22;
-		return 0;
-	}
+
 
 	/**
 	 * Gets the healing amount of the consumable.
