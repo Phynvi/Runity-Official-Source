@@ -96,7 +96,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.followers.remove(mob);
 			}
 
-			if (playerKiller.getBossPoints() == 5000) {
+			if (playerKiller.getBossPoints() >= 5000) {
 				AchievementHandler.activate(playerKiller, AchievementKey.BOSSPOINT, 1);
 			}
 			/* Activity. */
@@ -293,7 +293,6 @@ public final class NpcDeath extends MobDeath<Npc> {
 				} else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
-
 				}
 				return;
 

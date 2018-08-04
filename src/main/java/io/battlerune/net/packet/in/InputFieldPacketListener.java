@@ -27,7 +27,7 @@ public class InputFieldPacketListener implements PacketListener {
 		if (component < 0) {
 			return;
 		}
-		if (PlayerRight.isDeveloper(player) && player.debug) {
+		if (PlayerRight.isDeveloper(player)) {
 			player.send(new SendMessage("[InputField] - Text: " + context + " Component: " + component,
 					MessageColor.DEVELOPER));
 		}

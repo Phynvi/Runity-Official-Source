@@ -75140,6 +75140,11 @@
     "high-alch": 59400,
     "base-value": 99000,
     "weight": 0.4,
+    "attack-stab": 10,
+    "attack-slash": 10,
+    "attack-crush": 10,
+    "attack-magic": 10,
+    "attack-ranged": 10,
     "equipment-slot": "CAPE"
   },
   {
@@ -75149,6 +75154,11 @@
     "low-alch": 39600,
     "high-alch": 59400,
     "base-value": 99000,
+    "attack-stab": 10,
+    "attack-slash": 10,
+    "attack-crush": 10,
+    "attack-magic": 10,
+    "attack-ranged": 10,
     "equipment-slot": "CAPE"
   },
   {
@@ -75165,6 +75175,7 @@
     "high-alch": 59400,
     "base-value": 99000,
     "weight": 0.4,
+    "bonus-strength": 5,
     "equipment-slot": "CAPE"
   },
   {
@@ -82521,7 +82532,7 @@
     "name": "Defender icon",
     "destroy-message": "N/A",
     "block-animation": 1156,
-    "equipment-slot": "SHIELD"
+    "equipment-slot": "CAPE"
   },
   {
     "id": 10559,
@@ -83267,6 +83278,7 @@
     "high-alch": 59400,
     "base-value": 99000,
     "weight": 0.4,
+    "attack-stab": 8,
     "equipment-slot": "CAPE"
   },
   {
@@ -93408,7 +93420,6 @@
     "id": 11941,
     "tradeable": false,
     "name": "Looting bag",
-    "destroy-message": "Destroy",
     "low-alch": 4,
     "high-alch": 6,
     "base-value": 10

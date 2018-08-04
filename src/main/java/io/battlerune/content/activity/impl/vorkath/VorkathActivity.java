@@ -18,6 +18,7 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.npc.NpcDeath;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
@@ -120,7 +121,27 @@ public class VorkathActivity extends Activity {
 					create(player);
 				} else {
 					remove(player);
-				}
+					if (PlayerRight.isDonator(player) || PlayerRight.isSuper(player)) {
+						player.setBossPoints(player.getBossPoints() + 2);
+						player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
+
+					}
+
+					if (PlayerRight.isExtreme(player) || PlayerRight.isElite(player)) {
+						player.setBossPoints(player.getBossPoints() + 3);
+						player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
+
+					}
+					if (PlayerRight.isKing(player)) {
+						player.setBossPoints(player.getBossPoints() + 4);
+						player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
+
+					} else {
+						player.setBossPoints(player.getBossPoints() + 1);
+						player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
+
+					}
+			     }
 			});
 		}
 	}

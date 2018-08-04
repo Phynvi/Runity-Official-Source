@@ -15,6 +15,8 @@ public class PlayerKilling {
 		if (killer.isBot) {
 			return;
 		}
+		
+		//TODO ADAM NEEDS TO ADD PK POINTS PROPERLY, THIS IS BROKEN.
 
 		if (killer.lastHost.equalsIgnoreCase(victim.lastHost)) {
 			killer.message("<col=FF0019>You were not rewarded since you killed someone with your same IP.");

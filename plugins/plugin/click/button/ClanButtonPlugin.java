@@ -17,6 +17,24 @@ import io.battlerune.net.packet.out.SendInputMessage;
 import io.battlerune.net.packet.out.SendMessage;
 
 public class ClanButtonPlugin extends PluginContext {
+	
+	public static void Method(Player player) {
+		if (player.clanChannel != null) {
+			player.dialogueFactory.sendOption("View Clan Information",
+					() -> player.clanViewer.open(player.clanChannel, ClanViewer.ClanTab.OVERVIEW), "View Clan Task",
+					() -> {
+						if (player.clanChannel.getDetails().clanTask == null) {
+							player.dialogueFactory.sendStatement("We have no current task assigned!");
+						} else {
+							player.dialogueFactory.sendStatement("Our current task is to: ",
+									player.clanChannel.getDetails().clanTask.getName(player.clanChannel));
+						}
+					}, "View Clan Achievements", player.clanViewer::viewAchievements);
+			player.dialogueFactory.execute();
+		} else {
+			player.clanViewer.open(player.clanChannel, ClanViewer.ClanTab.OVERVIEW);
+		}
+	}
 
 	@Override
 	protected boolean onClick(Player player, int button) {

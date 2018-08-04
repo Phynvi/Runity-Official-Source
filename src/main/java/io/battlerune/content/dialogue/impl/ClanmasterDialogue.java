@@ -21,6 +21,7 @@ import io.battlerune.util.Utility;
  * Handles the clan master dialogue.
  *
  * @author Daniel
+ * @edited by Adam_#6723
  */
 public class ClanmasterDialogue extends Dialogue {
 
@@ -82,8 +83,8 @@ public class ClanmasterDialogue extends Dialogue {
 				return;
 			}
 			if (channel.getDetails().points < 5) {
-				factory.sendStatement("You do not have 5 clan points.",
-						"Cancelling your task will set you back to zero.");
+				factory.sendStatement("You do not have 5 clan points.");
+				return;
 			}
 			channel.getDetails().points -= 5;
 			if (channel.getDetails().points < 0) {

@@ -6,6 +6,7 @@ import java.util.Map.Entry;
 
 import plugin.command.impl.donator.DZoneCommand;
 import plugin.command.impl.donator.DonatorBankCommand;
+import plugin.command.impl.donator.DonatorYellCommand;
 import plugin.command.impl.donator.PortalsZoneCommand;
 import plugin.command.impl.moderator.JailCommand;
 import plugin.command.impl.moderator.MuteCommand;
@@ -141,7 +142,8 @@ public class CommandManager {
 		plugin.put(new String[] { "bank", "banks" }, new DonatorBankCommand());
 		plugin.put(new String[] { "donatorzone", "dzone" }, new DZoneCommand());
 		plugin.put(new String[] { "portals", "portalzone" }, new PortalsZoneCommand());
-		
+		plugin.put(new String[] { "yell", "shout" }, new DonatorYellCommand());
+
 		
 		/**
 		 * @Moderator/Helper Commands

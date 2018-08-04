@@ -31,6 +31,8 @@ import io.battlerune.game.task.impl.SteppingStoneTask;
 import io.battlerune.game.world.InterfaceConstants;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
+import io.battlerune.game.world.entity.combat.CombatUtil;
+import io.battlerune.game.world.entity.combat.effect.CombatEffectType;
 import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.hit.HitIcon;
 import io.battlerune.game.world.entity.combat.hit.Hitsplat;
@@ -770,6 +772,41 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
 			}
 			break;
+			
+		case 1723:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
+		case 24309:
+		case 24306:
+			if(player.getPosition().getX() == 2855 && player.getPosition().getY() == 3546 && player.getPosition().getHeight() == 0) {
+				return true;
+			}
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
+		case 1733:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
+			
+			
+		case 11773:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
 
 		case 25813:
 			if (player.getPosition().getX() < object.getPosition().getX()) {
@@ -1089,12 +1126,23 @@ public class ObjectFirstClickPlugin extends PluginContext {
 					player.skills.setLevel(skill, player.skills.getMaxLevel(skill));
 				}
 				player.runEnergy = 100;
-				player.send(new SendRunEnergy());
+				player.skulling.unskull();
 				player.skills.restoreAll();
+				player.inventory.refresh();
+				player.action.reset();
+				player.playerAssistant.reset();
+				player.interfaceManager.close();
+				player.setSpecialActivated(false);
+				player.getCombat().getDamageCache().clear();
 				CombatSpecial.restore(player, 100);
+				player.unpoison();
+				CombatUtil.cancelEffect(player, CombatEffectType.POISON);
+				CombatUtil.cancelEffect(player, CombatEffectType.VENOM);
+				player.movement.reset();
+				player.teleblockTimer.set(0);
+				player.equipment.updateAnimation();
 				player.animate(1327);
 				player.send(new SendMessage("You take a sip from the juice fountain and feel your body pulsing with ecstasy."));
-				player.dialogueFactory.sendNpcChat(id, "Your health & special attack have been restored!").execute();
 			break;
 
 		/* Altar of the occult */

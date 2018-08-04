@@ -25287,7 +25287,7 @@
     "hitpoints-level": 128,
     "ranged-level": 50,
     "magic-level": 50,
-    "bonus-strength": 14
+    "bonus-strength": 20
   },
   {
     "id": 2217,
@@ -25306,10 +25306,10 @@
     "projectile-key": "Sergeant Steelwill",
     "attack-cooldown": 5,
     "attack-level": 80,
-    "defence-level": 150,
+    "defence-level": 160,
     "strength-level": 50,
     "hitpoints-level": 127,
-    "magic-level": 150,
+    "magic-level": 175,
     "bonus-strength": 6
   },
   {
@@ -25334,7 +25334,7 @@
     "hitpoints-level": 146,
     "ranged-level": 150,
     "magic-level": 50,
-    "attack-ranged": 20
+    "attack-ranged": 30
   },
   {
     "id": 2219,
@@ -71024,21 +71024,21 @@
     "attack-style": "Ranged, Melee",
     "weakness": "Stab/Slash, Magic",
     "attack-cooldown": 4,
-    "attack-level": 140,
-    "defence-level": 230,
-    "strength-level": 90,
-    "hitpoints-level": 225,
-    "ranged-level": 170,
-    "attack-stab": 240,
-    "attack-slash": 240,
-    "attack-crush": 240,
-    "attack-ranged": 65,
-    "defence-stab": 5,
-    "defence-slash": 5,
-    "defence-crush": 20,
-    "defence-magic": 30,
-    "defence-ranged": 230,
-    "bonus-strength": 25
+    "attack-level": 160,
+    "defence-level": 250,
+    "strength-level": 110,
+    "hitpoints-level": 255,
+    "ranged-level": 190,
+    "attack-stab": 250,
+    "attack-slash": 250,
+    "attack-crush": 250,
+    "attack-ranged": 75,
+    "defence-stab": 10,
+    "defence-slash": 10,
+    "defence-crush": 25,
+    "defence-magic": 35,
+    "defence-ranged": 240,
+    "bonus-strength": 30
   },
   {
     "id": 6619,

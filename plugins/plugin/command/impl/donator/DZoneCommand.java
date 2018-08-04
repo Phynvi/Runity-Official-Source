@@ -9,7 +9,7 @@ import io.battlerune.net.packet.out.SendMessage;
 
 /**
  * 
- * @author Jordan
+ * @author Adam_#6723
  *
  */
 public class DZoneCommand implements Command {

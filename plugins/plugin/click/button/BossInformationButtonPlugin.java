@@ -164,7 +164,7 @@ public class BossInformationButtonPlugin extends PluginContext {
 			player.send(new SendMessage("You have teleported to Callisto!"));
 		}
 		if (button == -14095) {
-			if (player.skills.getLevel(Skill.SLAYER) >= 75) {
+			if (player.skills.getLevel(Skill.SLAYER) >= 91) {
 				DialogueFactory factory = player.dialogueFactory;
 				factory.sendOption("Pay 75,000 coins for instanced Cerberus?",
 						() -> CerberusActivity.CreatePaidInstance(player),

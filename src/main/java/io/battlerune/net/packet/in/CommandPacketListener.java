@@ -32,7 +32,7 @@ public final class CommandPacketListener implements PacketListener {
 			}
 
 			player.forClan(channel -> {
-				final String line = input;
+				final String line = input.replaceAll("/", "");
 				channel.chat(player.getName(), Utility.capitalizeSentence(line));
 
 			});

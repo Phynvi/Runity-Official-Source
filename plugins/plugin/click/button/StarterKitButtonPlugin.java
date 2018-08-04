@@ -95,7 +95,7 @@ public class StarterKitButtonPlugin extends PluginContext {
 		player.locking.unlock();
 		player.playerAssistant.setSidebar(false);
 		player.runEnergy = 100;
-		EmailInputListener.input(player);
+		//EmailInputListener.input(player);
 		/*player.dialogueFactory
 				.sendNpcChat(306, Expression.HAPPY, "As a new player, you can sign up for Brutal Mode.",
 						"This mode enables open-world PvP and sets you at 3x less exp.", "Are you interested?")
