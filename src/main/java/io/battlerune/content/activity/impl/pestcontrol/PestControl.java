@@ -137,8 +137,8 @@ public class PestControl extends GroupActivity {
 			return;
 		}
 
-		if (getActiveSize() < 1) {
-			groupMessage("There needs to be at least 1 player to start a game.");
+		if (getActiveSize() < 2) {
+			groupMessage("There needs to be at least 2 player to start a game.");
 			cooldown(LOBBY_COOLDOWN);
 			return;
 		}

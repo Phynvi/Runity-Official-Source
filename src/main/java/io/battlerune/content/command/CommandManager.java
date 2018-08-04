@@ -112,7 +112,7 @@ public class CommandManager {
 		plugin.put(new String[] { "drops", "drop", "droplist", "droptable" }, new DropsCommand());
 		plugin.put(new String[] { "simulate", "simulator", "dropsim" }, new DropSimulatorCommand());
 		plugin.put(new String[] { "vote" }, new VoteCommand());
-		plugin.put(new String[] { "dice", "gamble", "dp" }, new DiceCommand());
+		plugin.put(new String[] { "dice", "dp" }, new DiceCommand());
 		plugin.put(new String[] { "skull" }, new SkullCommand());
 		plugin.put(new String[] { "duel", "duelarena" }, new DuelArenaCommand());
 		plugin.put(new String[] { "barrows" }, new BarrowsCommand());

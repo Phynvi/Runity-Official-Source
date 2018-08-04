@@ -42,7 +42,7 @@ public class CerberusActivity extends Activity {
 	public static CerberusActivity create(Player player) {
 		CerberusActivity minigame = new CerberusActivity(player, player.playerAssistant.instance());
 		minigame.add(player);
-		player.gameRecord.start();
+		//player.gameRecord.start();
 		return minigame;
 	}
 
@@ -152,8 +152,7 @@ public class CerberusActivity extends Activity {
 		remove(player);
 		if (successfull) {
 			player.activityLogger.add(ActivityLog.CERBERUS);
-			player.message("Congratulations, you have killed the Cerberus. Fight duration: @red@"
-					+ Utility.getTime(player.gameRecord.end(ActivityType.CERBERUS)) + "</col>.");
+			player.message("Congratulations, you have killed the Cerberus. ");
 			restart(10, () -> {
 				if (Area.inCerberus(player)) {
 					create(player);

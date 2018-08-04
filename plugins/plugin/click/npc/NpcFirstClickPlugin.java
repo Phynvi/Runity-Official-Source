@@ -250,7 +250,6 @@ public class NpcFirstClickPlugin extends PluginContext {
 			break;
 		/* Note Trader Shop */
 		case 3189:
-			Store.STORES.get("Money Bag Trader").open(player);
 			break;
 		/* Skilling shop */
 		case 505:

@@ -19,6 +19,7 @@ import io.battlerune.content.writer.impl.QuestWriter;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.net.packet.out.SendForceTab;
 import io.battlerune.net.packet.out.SendURL;
 
 public class InformationTabButtonPlugin extends PluginContext {
@@ -76,7 +77,7 @@ public class InformationTabButtonPlugin extends PluginContext {
 			DropDisplay.open(player);
 			break;
 		case 29432:
-			TeleportHandler.open(player, TeleportType.CITIES);
+			player.send(new SendForceTab(Config.MUSIC_TAB));
 			break;
 		case 29411:
 

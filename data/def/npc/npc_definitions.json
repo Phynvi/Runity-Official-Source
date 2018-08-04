@@ -14213,10 +14213,10 @@
     "combat-type": "RANGED",
     "projectile-key": "Rune arrow",
     "attack-cooldown": 3,
-    "defence-level": 100,
-    "hitpoints-level": 160,
-    "ranged-level": 105,
-    "magic-level": 100
+    "defence-level": 110,
+    "hitpoints-level": 165,
+    "ranged-level": 110,
+    "magic-level": 105
   },
   {
     "id": 1158,
@@ -14233,10 +14233,10 @@
     "weakness": "Slash",
     "combat-type": "MELEE",
     "attack-cooldown": 5,
-    "hitpoints-level": 160,
-    "defence-level": 250,
-    "strength-level": 137,
-    "attack-level": 118
+    "hitpoints-level": 250,
+    "defence-level": 275,
+    "strength-level": 155,
+    "attack-level": 123
   },
   {
     "id": 1159,
@@ -14269,10 +14269,10 @@
     "weakness": "Slash",
     "combat-type": "MAGIC",
     "projectile-key": "Ice Blitz",
-    "attack-cooldown": 4,
-    "defence-level": 85,
-    "hitpoints-level": 150,
-    "magic-level": 370
+    "attack-cooldown": 3,
+    "defence-level": 90,
+    "hitpoints-level": 175,
+    "magic-level": 385
   },
   {
     "id": 1161,

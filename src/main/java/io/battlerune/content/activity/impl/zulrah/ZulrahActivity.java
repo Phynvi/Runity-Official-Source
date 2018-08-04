@@ -48,7 +48,7 @@ public class ZulrahActivity extends Activity {
 		activity.add(player);
 		player.send(new SendMessage("Welcome to Zulrah's shrine."));
 		player.dialogueFactory.sendStatement("Welcome to Zulrah's shrine.").execute();
-		player.gameRecord.start();
+		//player.gameRecord.start();
 		activity.start();
 		return activity;
 	}
@@ -117,7 +117,7 @@ public class ZulrahActivity extends Activity {
 		remove(player);
 		if (completed) {
 			player.send(new SendMessage(
-					"Fight duration: @red@" + Utility.getTime(player.gameRecord.end(ActivityType.ZULRAH)) + "</col>."));
+					"You've killed Zulrah!"));
 		}
 	}
 

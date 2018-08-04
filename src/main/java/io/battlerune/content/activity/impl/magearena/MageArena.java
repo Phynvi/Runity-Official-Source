@@ -65,7 +65,7 @@ public class MageArena extends Activity {
 	public static MageArena create(Player player) {
 		MageArena activity = new MageArena(player, player.playerAssistant.instance());
 		player.move(new Position(3105, 3934, 0));
-		player.gameRecord.start();
+	//	player.gameRecord.start();
 		activity.add(player);
 		activity.resetCooldown();
 		return activity;
@@ -140,7 +140,7 @@ public class MageArena extends Activity {
 
 	@Override
 	public void finish() {
-		long time = player.gameRecord.end(ActivityType.KOLODION_ARENA);
+	//	long time = player.gameRecord.end(ActivityType.KOLODION_ARENA);
 
 		cleanup();
 		remove(player);
@@ -156,7 +156,7 @@ public class MageArena extends Activity {
 			dialogue = new String[] { "Well I'll be a goblin's ballsack!",
 					"You actually did it! You have proven me wrong.",
 					"Jump into that pool and earn claim your reward." };
-			player.send(new SendMessage("You have completed Kolodion's arena. Final time: @red@" + Utility.getTime(time)
+			player.send(new SendMessage("You have completed Kolodion's arena"
 					+ "</col>. Earned Points: @red@" + player.getkolodionPoints() + "</col>."));
 			player.activityLogger.add(ActivityLog.KOLODIONS_MINIGAME);
 			if (player.quest.getStage()[QuestManager.KOLODIONS_ARENA] == 1) {
@@ -195,12 +195,10 @@ public class MageArena extends Activity {
 	@Override
 	public void update() {
 		int progress = (int) Utility.getPercentageAmount(killed, 3);
-		String clock = "Time: <col=FF5500>" + Utility.getTime(System.currentTimeMillis() - player.gameRecord.time)
-				+ "</col>";
 		String remain = "Monsters Left: <col=FF5500>" + (3 - killed) + "</col>";
 		String gained = "Points Gained: <col=FF5500>" + points + "</col>";
 		Item[] items = { new Item(2412), new Item(2413), new Item(2414) };
-		ActivityPanel.update(player, progress, "Kolodion's Arena", "Progress:", Utility.randomElement(items), clock,
+		ActivityPanel.update(player, progress, "Kolodion's Arena", "Progress:", Utility.randomElement(items),
 				remain, gained);
 	}
 

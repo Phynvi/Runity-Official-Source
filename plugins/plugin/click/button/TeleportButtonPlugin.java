@@ -1,9 +1,11 @@
 package plugin.click.button;
 
+import io.battlerune.Config;
 import io.battlerune.content.skill.impl.magic.teleport.TeleportType;
 import io.battlerune.content.teleport.TeleportHandler;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.net.packet.out.SendForceTab;
 
 public class TeleportButtonPlugin extends PluginContext {
 
@@ -50,10 +52,13 @@ public class TeleportButtonPlugin extends PluginContext {
 			TeleportHandler.open(player, TeleportType.PLAYER_KILLING);
 			return true;
 		case 1174:
-		case 13061:
 		case -7510:
+		case 29432:
 			TeleportHandler.open(player, TeleportType.CITIES);
 			return true;
+		case 13061:
+			player.send(new SendForceTab(Config.MUSIC_TAB));
+			break;
 		case -7497:
 		case -7496:
 			TeleportHandler.favorite(player);

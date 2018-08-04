@@ -63,7 +63,7 @@ public class KrakenActivity extends Activity {
 	public static KrakenActivity create(Player player) {
 		KrakenActivity minigame = new KrakenActivity(player, player.playerAssistant.instance());
 		minigame.add(player);
-		player.gameRecord.start();
+	///	player.gameRecord.start();
 		minigame.count = 0;
 		return minigame;
 	}
@@ -162,10 +162,7 @@ public class KrakenActivity extends Activity {
 
 		if (completed) {
 			AchievementHandler.activate(player, AchievementKey.KILL_KRAKEN);
-			player.send(new SendMessage("Congratulations, you have killed the Kraken. Fight duration: @red@"
-					+ Utility.getTime(player.gameRecord.end(ActivityType.KRAKEN)) + "</col>."));
-		} else {
-			player.gameRecord.end(ActivityType.KRAKEN, false);
+			player.send(new SendMessage("Congratulations, you have killed the Kraken. "));
 		}
 
 		remove(player);

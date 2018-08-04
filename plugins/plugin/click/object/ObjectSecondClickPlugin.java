@@ -16,6 +16,7 @@ import io.battlerune.game.world.entity.combat.magic.Autocast;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.object.GameObject;
+import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
 
 public class ObjectSecondClickPlugin extends PluginContext {
@@ -42,6 +43,13 @@ public class ObjectSecondClickPlugin extends PluginContext {
 			} else {
 				Obelisks.get().open(player, id);
 				player.message("you have teleported using the obelisk.");
+			}
+			break;
+		case 25016:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 1, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 1, player.getY(), player.getHeight()));
 			}
 			break;
 

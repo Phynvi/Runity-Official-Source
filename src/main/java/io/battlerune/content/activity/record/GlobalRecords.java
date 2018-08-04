@@ -55,8 +55,9 @@ public class GlobalRecords {
 		System.out.println("Addiong record for " + player.getName() + tracker.activityType.name());
 		GameRecord record = getTracker(player.getName(), tracker.activityType);
 		if (record == null) {
-			System.out.println("Record is null, adding first one");
-			GLOBAL_RECORDS.add(tracker);
+			//System.out.println("Record is null, adding first one");
+			//GLOBAL_RECORDS.add(tracker);
+			System.out.println("GAMESHIT RECORRDS IS NULL WHOEVER WROTE THIS POS IS FUCKING GAY.");
 			return;
 		}
 		if (tracker.time > record.time) {

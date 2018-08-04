@@ -209,7 +209,8 @@ public class DuelArenaActivity extends Activity {
 			players.forEach(it -> it.speak(Integer.toString(4 - count)));
 		} else if (count == 4) {
 			players.forEach(it -> it.speak("FIGHT!"));
-			// start();
+			DuelArenaActivity duel = new DuelArenaActivity();
+			duel.hasDuelStarted();
 		}
 
 		count++;
@@ -225,7 +226,7 @@ public class DuelArenaActivity extends Activity {
 	public void finish() {
 
 		// move players
-		players.forEach(it -> it.move(Utility.randomElement(DuelConstants.RESPAWN_LOCATIONS).getRandomLocation()));
+		players.forEach(it -> it.move(DuelConstants.DUEL_RESPAWN));
 
 		final Optional<Player> winnerResult = getWinner();
 

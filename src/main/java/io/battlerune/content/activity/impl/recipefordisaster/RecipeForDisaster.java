@@ -48,7 +48,7 @@ public class RecipeForDisaster extends Activity {
 				"Wave starting in 6 seconds");
 		player.move(new Position(1899, 5356, 2));
 		// pos[x=1899, y=5356, z=2]
-		player.gameRecord.start();
+		//player.gameRecord.start();
 		minigame.add(player);
 		minigame.resetCooldown();
 		return minigame;
@@ -60,8 +60,7 @@ public class RecipeForDisaster extends Activity {
 			ActivityPanel.update(player, 100, "Recipe For Disaster", new Item(7462),
 					"</col>Wave: <col=FF5500>" + RecipeForDisasterData.values().length + "/"
 							+ RecipeForDisasterData.values().length,
-					"</col>Boss: <col=FF5500>None!",
-					"</col>Time: <col=FF5500>" + Utility.getTime(System.currentTimeMillis() - player.gameRecord.time));
+					"</col>Boss: <col=FF5500>None!");
 			return;
 		}
 		int progress = (int) Utility.getPercentageAmount(wave.ordinal(), RecipeForDisasterData.values().length);
@@ -69,8 +68,7 @@ public class RecipeForDisaster extends Activity {
 		String npc = monster == null ? "" : monster.getName();
 		ActivityPanel.update(player, progress, "Recipe For Disaster", new Item(display),
 				"</col>Wave: <col=FF5500>" + wave.ordinal() + "/" + RecipeForDisasterData.values().length,
-				"</col>Boss: <col=FF5500>" + npc,
-				"</col>Time: <col=FF5500>" + Utility.getTime(System.currentTimeMillis() - player.gameRecord.time));
+				"</col>Boss: <col=FF5500>" + npc);
 	}
 
 	@Override
@@ -101,11 +99,10 @@ public class RecipeForDisaster extends Activity {
 		cleanup();
 		int reward;
 		if (wave == null) {
-			long time = player.gameRecord.end(ActivityType.RECIPE_FOR_DISASTER);
+			//long time = player.gameRecord.end(ActivityType.RECIPE_FOR_DISASTER);
 			reward = RecipeForDisasterData.CULINAROMANCER.gloves;
 			AchievementHandler.activate(player, AchievementKey.COMPLETE_RFD);
-			player.send(new SendMessage("You have completed the Recipe For Disaster activity. Final time: @red@"
-					+ Utility.getTime(time) + "</col>."));
+			player.send(new SendMessage("You have completed the Recipe For Disaster activity. Final time: @red@"));
 		} else {
 			reward = wave.gloves;
 			player.send(new SendMessage("RIP"));

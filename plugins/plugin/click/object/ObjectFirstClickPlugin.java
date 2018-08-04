@@ -137,7 +137,23 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.message("You cannot complete this course");
 			}
 			break;
+			
+			/* Bandos godwars. */
+		case 27485:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
 
+		case 27486:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
 		case 16529:
 			player.move(new Position(3142, 3513));
 
@@ -149,8 +165,15 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 
 		case 25016:
-			player.message("Use the little Gaps to pass through the wheat!");
-			// anim = 1745.
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 1, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 1, player.getY(), player.getHeight()));
+			}
+			player.message("Go past the gaps to capture the implings!");
+			break;
+		case 6944:
+			player.bank.open();
 			break;
 
 		case 16510:
@@ -675,6 +698,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 
 		case 5960:// MAGE BANK LEVER
+			if(player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+			      return false;
+			}
 			player.action.execute(new LeverAction(player, object, new Position(3090, 3956, 0), Direction.SOUTH));
 			break;
 
@@ -718,20 +745,46 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		 * START OF DOOR SYSTEM, BECAUSE HARRYL THE FUCKER WILL NOT WRITE A NEW ONE SO I
 		 * HAVE TO USE THIS BULLSHIT !!!!?!?!?!?!
 		 **/
-
-		case 25813:// SEERS DOOR
-			if (player.getY() <= object.getY()) {
-				player.action.execute(new DoorAction(player, object, new Position(2704, 3463, 0), Direction.WEST));
-			} else {
-				player.action.execute(new DoorAction(player, object, new Position(2703, 3463, 0), Direction.EAST));
+			
+		case 30388:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
 			}
 			break;
 
-		case 25814:// SEERS DOOR
+		case 30387:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
+
+			
+		case 25814:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
+
+		case 25813:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
+
+
+		case 14917:// SEERS DOOR
 			if (player.getY() <= object.getY()) {
-				player.action.execute(new DoorAction(player, object, new Position(2704, 3462, 0), Direction.WEST));
+				player.action.execute(new DoorAction(player, object, new Position(3091, 3882, 0), Direction.SOUTH));
 			} else {
-				player.action.execute(new DoorAction(player, object, new Position(2703, 3462, 0), Direction.EAST));
+				player.action.execute(new DoorAction(player, object, new Position(3093, 3879, 0), Direction.NORTH));
 			}
 			break;
 
@@ -1039,8 +1092,8 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.send(new SendRunEnergy());
 				player.skills.restoreAll();
 				CombatSpecial.restore(player, 100);
-				player.send(new SendMessage(
-						"You take a sip from the juice fountain and feel your body pulsing with ecstasy."));
+				player.animate(1327);
+				player.send(new SendMessage("You take a sip from the juice fountain and feel your body pulsing with ecstasy."));
 				player.dialogueFactory.sendNpcChat(id, "Your health & special attack have been restored!").execute();
 			break;
 

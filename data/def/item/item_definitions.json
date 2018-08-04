@@ -8530,6 +8530,14 @@
     "equipment-slot": "HAT"
   },
   {
+	    "id": 796,
+	    "name": "Lava partyhat",
+	    "noted-id": 1039,
+	    "street-value": 500000000,
+	    "weight": 0.056,
+	    "equipment-slot": "HAT"
+	  },
+  {
     "id": 1039,
     "name": "Red partyhat",
     "stackable": true,
@@ -9721,6 +9729,25 @@
     "street-value": 3421,
     "weight": 9.9
   },
+  {
+	    "id": 2480,
+	    "name": "Lava Rune platebody",
+	    "noted-id": 1128,
+	    "low-alch": 26000,
+	    "high-alch": 39000,
+	    "base-value": 65000,
+	    "street-value": 43487,
+	    "weight": 9.9,
+	    "equipment-slot": "BODY",
+	    "req-defence": 40,
+	    "attack-magic": -30,
+	    "attack-ranged": -10,
+	    "defence-stab": 82,
+	    "defence-slash": 80,
+	    "defence-crush": 72,
+	    "defence-magic": -6,
+	    "defence-ranged": 80
+	  },
   {
     "id": 1127,
     "name": "Rune platebody",
@@ -39317,10 +39344,10 @@
     "walk-animation": 1836,
     "run-animation": 1836,
     "equipment-slot": "WEAPON",
-    "attack-stab": -100,
-    "attack-slash": -100,
-    "attack-crush": -50,
-    "bonus-strength": -10
+    "attack-stab": 10,
+    "attack-slash": 5,
+    "attack-crush": 5,
+    "bonus-strength": 1
   },
   {
     "id": 4566,
@@ -40464,6 +40491,24 @@
 	    "defence-crush": 2,
 	    "bonus-strength": 71
 	  },
+  {
+		    "id": 21357,
+		    "name": "Fire Glaive",
+		    "stackable": false,
+		    "low-alch": 83200,
+		    "high-alch": 124800,
+		    "base-value": 208000,
+		    "weight": 1.8,
+		    "equipment-slot": "WEAPON",
+		    "weapon-interface": "LONGSWORD",
+		    "req-attack": 60,
+		    "attack-stab": 58,
+		    "attack-slash": 69,
+		    "attack-crush": -2,
+		    "defence-slash": 3,
+		    "defence-crush": 2,
+		    "bonus-strength": 71
+		  },
   {
     "id": 4719,
     "name": "Dharok's greataxe",
@@ -123372,6 +123417,22 @@
     "defence-magic": 15,
     "magic-damage": 2
   },
+  {
+	    "id": 21801,
+	    "name": "Lava cape",
+		"tradeable": false,
+	    "low-alch": 32000,
+	    "high-alch": 48000,
+	    "base-value": 80000,
+	    "weight": 0.4,
+	    "equipment-slot": "CAPE",
+	    "attack-magic": 15,
+	    "defence-stab": 3,
+	    "defence-slash": 3,
+	    "defence-crush": 3,
+	    "defence-magic": 15,
+	    "magic-damage": 2
+	  },
   {
     "id": 21797,
     "name": "Demon's heart",

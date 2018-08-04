@@ -18,7 +18,7 @@ class PestControlPanel extends Activity_Panel {
 		if (pestControl.lobby) {
 			set(0, "Next Departure: <col=FF5500>" + Utility.getTime(pestControl.getTicks()) + "</col>");
 			set(1, "Players Ready: <col=FF5500>" + pestControl.getActiveSize() + "</col>");
-			set(2, "(Need <col=FF5500>3</col> to 25 players)");
+			set(2, "(Need <col=FF5500>2</col> to 25 players)");
 			set(3, "Points: <col=FF5500>0</col>");
 			setFooter("Players Ready:");
 			setProgress((int) Utility.getPercentageAmount(pestControl.getActiveSize(), PestControl.PLAYER_CAPACITY));

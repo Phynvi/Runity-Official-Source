@@ -41,6 +41,10 @@ public class NpcSecondClickPlugin extends PluginContext {
 		case 315:
 			Store.STORES.get("The PvP Store").open(player);
 			break;
+		case 2898:
+		case 2897:
+			player.bank.open();
+			break;
 
 		case 311:
 			if (PlayerRight.isIronman(player) || PlayerRight.isDeveloper(player)) {

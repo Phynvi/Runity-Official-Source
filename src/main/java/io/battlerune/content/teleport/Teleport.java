@@ -11,7 +11,7 @@ import io.battlerune.game.world.position.Position;
 public enum Teleport {
 	/* Minigames */
 	ARENA("Mage Arena", TeleportType.MINIGAMES, new Position(2540, 4717, 0), false, new int[] { 2412, 2413, 2414 },
-			false, "You will be teleported in a safe area", ""),
+			true, "You will be teleported in a safe area", ""),
 	DUEL_ARENA("Duel Arena", TeleportType.MINIGAMES, new Position(3365, 3265, 0), false, new int[] { -1, 995 }, true,
 			"The place to be if you want to lose bank", "Stake at your own risk!"),
 	GAMBLE("Gamble", TeleportType.MINIGAMES, new Position(2459, 3094, 0), false, new int[] { -1, 995 }, true,
@@ -39,7 +39,7 @@ public enum Teleport {
 			"Looking to hunt the biggest game?", "Go pking, cause this shits too easy"),
 	MINING("Mining", TeleportType.SKILLING, new Position(3039, 4836, 1), true, new int[] { 9794, 9792, 9793 }, true,
 			"Let your natural slave roots take over...", "Mine those damn rocks!"),
-	THIEVING("Thieving", TeleportType.SKILLING, new Position(3046, 4969, 1), false, new int[] { 9779, 9777, 9778 },
+	THIEVING("Thieving", TeleportType.SKILLING, new Position(2661, 3305, 0), false, new int[] { 9779, 9777, 9778 },
 			true, "Working hard? What's that?", "Let's just steal our gold!"),
 	RUNECRAFTING("Runecrafting", TeleportType.SKILLING, new Position(3039, 4836, 0), false,
 			new int[] { 9767, 9765, 9766 }, true, "There's no feeling that can compare with",
@@ -88,7 +88,7 @@ public enum Teleport {
 
 	/* Player Killing */
 	MAGE_BANK("Mage Bank", TeleportType.PLAYER_KILLING, new Position(2540, 4717, 0), false,
-			new int[] { 2412, 2413, 2414 }, false, "You will be teleported in a safe area", ""),
+			new int[] { 2412, 2413, 2414 }, true, "You will be teleported in a safe area", ""),
 	EDGEVILLE("Edgeville", TeleportType.PLAYER_KILLING, new Position(3087, 3517, 0), false, new int[] {}, true,
 			"You will be teleported in a safe area", "Time to destroy some people!"),
 	CASTLE("Castle", TeleportType.PLAYER_KILLING, new Position(3002, 3626, 0), false, new int[] {}, false,

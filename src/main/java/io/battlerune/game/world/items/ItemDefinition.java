@@ -216,6 +216,8 @@ public class ItemDefinition {
 				if (data.has("block-animation")) {
 					definition.block_animation = data.get("block-animation").getAsInt();
 				}
+				
+				//TODO CANEL THE ANIMATION ONCE THEY UN-EQUIP THE ITEM
 
 				DEFINITIONS[id] = definition;
 			}

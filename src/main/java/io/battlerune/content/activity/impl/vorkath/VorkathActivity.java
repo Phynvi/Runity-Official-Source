@@ -40,7 +40,7 @@ public class VorkathActivity extends Activity {
 	public static VorkathActivity create(Player player) {
 		VorkathActivity minigame = new VorkathActivity(player, player.playerAssistant.instance());
 		minigame.add(player);
-		player.gameRecord.start();
+		//player.gameRecord.start();
 		return minigame;
 	}
 
@@ -114,8 +114,7 @@ public class VorkathActivity extends Activity {
 		if (successfull) {
 			player.activityLogger.add(ActivityLog.VORKATH);
 			AchievementHandler.activate(player, AchievementKey.VORKATH);
-			player.message("Congratulations, you have killed the Vorkath. Fight duration: @red@"
-					+ Utility.getTime(player.gameRecord.end(ActivityType.VORKATH)) + "</col>.");
+			player.message("Congratulations, you have killed the Vorkath.");
 			restart(10, () -> {
 				if (Area.inVorkath(player)) {
 					create(player);
