@@ -142,7 +142,7 @@ public enum ZulrahState implements ZulrahInterface<ZulrahActivity> {
 			} else if (stage == 1) {
 				zulrah.animate(new Animation(5068, UpdatePriority.VERY_HIGH));
 				World.sendProjectile(zulrah, activity.target, new Projectile(1047, 1, 35, 85, 40));
-			} else if (stage == 2) {
+			} else if (stage == 2 && Utility.random(1, 3) == 2) {
 				Npc snake = new Npc(2045, activity.target);
 				activity.add(snake);
 				snake.getCombat().attack(activity.player);

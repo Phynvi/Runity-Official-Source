@@ -245,13 +245,13 @@ public enum PotionData {
 	ANTIPOISON_POTIONS(2446, 175, 177, 179) {
 		@Override
 		public void onEffect(Player player) {
-			PotionData.onAntiPoisonEffect(player, false, 0);
+			PotionData.onAntiPoisonEffect(player, false, 500);
 		}
 	},
 	SUPER_ANTIPOISON_POTIONS(2448, 181, 183, 185) {
 		@Override
 		public void onEffect(Player player) {
-			PotionData.onAntiPoisonEffect(player, true, 500);
+			PotionData.onAntiPoisonEffect(player, true, 1500);
 		}
 	},
 	ANTI_VENOM(12905, 12907, 12909, 12911) {

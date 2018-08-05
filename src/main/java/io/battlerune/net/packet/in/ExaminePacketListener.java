@@ -5,6 +5,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.game.world.items.containers.equipment.EquipmentType;
+import io.battlerune.game.world.items.containers.pricechecker.PriceType;
 import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.packet.PacketListener;
 import io.battlerune.net.packet.PacketListenerMeta;
@@ -12,6 +13,7 @@ import io.battlerune.net.packet.out.SendItemOnInterface;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.MessageColor;
+import io.battlerune.util.Utility;
 
 /**
  * Handles the in examine packet
@@ -33,6 +35,7 @@ public class ExaminePacketListener implements PacketListener {
 					MessageColor.DEVELOPER));
 		}
 
+
 		if (slot == -1) {
 			player.settings.clientWidth = interfaceId;
 			player.settings.clientHeight = itemId;
@@ -40,7 +43,17 @@ public class ExaminePacketListener implements PacketListener {
 		}
 
 		ItemDefinition itemDef = ItemDefinition.get(itemId);
-
+		
+		 Item item = player.inventory.get(slot); 
+         if (item == null || item.getId() != itemId) return;
+         if (item.isTradeable()) {
+             String message = "";
+             message += "Item: <col=A52929>" + item.getName() + "</col> ";
+             message += "Value: <col=A52929>" + Utility.formatDigits(item.getValue(PriceType.VALUE)) + " (" + Utility.formatDigits(item.getValue(PriceType.VALUE) * item.getAmount()) + ")</col> ";
+             message += "High alch: <col=A52929>" + Utility.formatDigits(item.getValue(PriceType.HIGH_ALCH_VALUE)) + "</col> ";
+             player.send(new SendMessage(message));
+         }
+         
 		if (itemDef != null) {
 			player.interfaceManager.close();
 			if (itemDef.getEquipmentType() == EquipmentType.NOT_WIELDABLE

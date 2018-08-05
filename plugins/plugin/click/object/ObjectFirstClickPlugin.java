@@ -244,6 +244,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.message("The other alternative " + player.getName() + "Is by DYING IN HERE! MUHAHAHA");
 			}
 			break;
+			
+		case 31556: //REV CAVE REVANANT CAVE. REV CAVE OSRS
+			//pos = 3124, 3830, 0 = REV CAVE POSITION
+		break;
 
 		case 24064:
 			player.move(new Position(3046, 3372, 0));

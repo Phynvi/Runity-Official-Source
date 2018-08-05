@@ -68,25 +68,33 @@ public final class NpcDropManager {
 		}
 
 		// casket drop
-		if (npc.getMaximumHealth() > 10 && Utility.random(200) <= 10) {
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 200) <= 2) {
 			Item casket = new Item(405);
 			GroundItem.create(killer, casket, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + casket.getName()));
 		}
 		
 		// starter box drop
-		if (npc.getMaximumHealth() > 10 && Utility.random(500) <= 10) {
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 500) <= 5) {
 			Item starterbox = new Item(10028);
 			GroundItem.create(killer, starterbox, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + starterbox.getName()));
 		}
 		
 		// Mystery box
-		if (npc.getMaximumHealth() > 10 && Utility.random(900) <= 10) {
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 900) <= 3) {
 			Item mbox = new Item(6199);
 			GroundItem.create(killer, mbox, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + mbox.getName()));
 			World.sendMessage("<col=BA383E>Rare Drop Notification: </col>" + mbox.getName() + " Given to : <col=BA383E>" + killer.getName());
+		}
+		
+		// Bond box
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 1200) == 2) {
+			Item bond = new Item(13190, 2);
+			GroundItem.create(killer, bond, dropPosition);
+			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + bond.getName()));
+			World.sendMessage("<col=BA383E>Rare Drop Notification: </col>" + bond.getName() + " Given to : <col=BA383E>" + killer.getName());
 		}
 
 		// drop table

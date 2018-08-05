@@ -11,7 +11,8 @@
   "clan-points": 0,
   "clan-experience": 0.0,
   "clan-level": "BRONZE",
-  "task-amount": 0,
+  "clan-task": "TRVIA_TASK",
+  "task-amount": 60,
   "locked": false,
   "lootshare": true,
   "enter-rank": "MEMBER",
@@ -29,6 +30,15 @@
   ],
   "banned-members": [],
   "members": [
+    {
+      "name": "Adam",
+      "joined": "2018/08/05",
+      "rank": "SYSTEM",
+      "exp-gained": 0.0,
+      "npc-kills": 0,
+      "player-kills": 0,
+      "total-level": 0
+    },
     {
       "name": "Dice",
       "joined": "2018/04/08",

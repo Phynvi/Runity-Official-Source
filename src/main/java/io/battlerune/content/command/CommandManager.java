@@ -45,6 +45,7 @@ import plugin.command.impl.owner.SpecCommand;
 import plugin.command.impl.owner.TeleCommand;
 import plugin.command.impl.owner.UpCommand;
 import plugin.command.impl.owner.UpdateCommand;
+import plugin.command.impl.player.AnswerTriviaCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
@@ -125,6 +126,7 @@ public class CommandManager {
 		plugin.put(new String[] { "arena", "arenazone" }, new ArenaZoneCommand());
 		plugin.put(new String[] { "cashout", "pins" }, new CashOutCommand());
 		plugin.put(new String[] { "help", "helpp" }, new Helpcommand());
+		plugin.put(new String[] { "answer", "trivia" }, new AnswerTriviaCommand());
 		plugin.put(new String[] { "staff", "staffonline" }, new StaffCommand());
 		plugin.put(new String[] { "forums", "website" }, new ForumCommand());
 		plugin.put(new String[] { "discord", "discords" }, new DiscordCommand());

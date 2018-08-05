@@ -29,6 +29,13 @@ import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.RandomUtils;
 
+
+/**
+ * @author daniel
+ * @edited by Adam_#66723
+ *
+ */
+
 public class PlayerRangedStrategy extends RangedStrategy<Player> {
 
 	private static final PlayerRangedStrategy INSTANCE = new PlayerRangedStrategy();
@@ -48,7 +55,7 @@ public class PlayerRangedStrategy extends RangedStrategy<Player> {
 
 		if (attacker.rangedDefinition == null && hasRecursed == 0) {
 			hasRecursed = 1;
-			System.out.println("RangedDef is null, updating");
+			System.out.println("Ranged Equipment is null, Executing Adam's hotfix for it.");
 			attacker.equipment.updateRangedEquipment();
 			return canAttack(attacker, defender);
 		}

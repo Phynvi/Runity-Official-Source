@@ -127,7 +127,7 @@ public final class Config {
 
 	public static boolean highscoresEnabled = false;
 
-	public static boolean DOUBLE_EXPERIENCE = true;
+	public static boolean DOUBLE_EXPERIENCE = false;
 
 	public static boolean X4_EXPERIENCE = false;
 

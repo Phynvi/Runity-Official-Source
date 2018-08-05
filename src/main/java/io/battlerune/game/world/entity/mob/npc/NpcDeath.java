@@ -174,27 +174,6 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.GLOD);
 
 				AchievementHandler.activate(playerKiller, AchievementKey.KILL_GLOD, 1);
-
-				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
-
-				}
-
-				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
-
-				}
-				if (PlayerRight.isKing(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
-				} else {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
-
-				}
-
 				return;
 
 			case "ZULRAH":
