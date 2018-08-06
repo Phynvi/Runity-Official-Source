@@ -1,9 +1,11 @@
 package plugin.click.item;
 
+import io.battlerune.Config;
 import io.battlerune.content.DiceBag;
 import io.battlerune.content.activity.impl.flowerpoker.FlowerHandler;
 import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
 import io.battlerune.content.consume.Anglerfish;
+import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.skill.impl.slayer.Slayer;
 import io.battlerune.content.skill.impl.slayer.SlayerTask;
 import io.battlerune.content.skill.impl.woodcutting.BirdsNest;
@@ -12,6 +14,7 @@ import io.battlerune.game.event.impl.ItemClickEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendFadeScreen;
@@ -57,9 +60,25 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 			
 		case 299:
+			if(PlayerRight.isDeveloper(player)) {
+				player.dialogueFactory.sendOption("Plant Red Flower", () -> {
+				player.message("Sike bitch ahahah this aint fucking dreamscape retard");
+				player.message("@red@no rigged seeds in here nigga");
+				}, "Plant Blue Flower", () -> {
+					player.message("Sike bitch ahahah this aint fucking dreamscape retard.");
+					player.message("@red@no rigged seeds in here nigga");
+				}, "Plant Rainbow Flower", () -> {
+					player.message("Sike bitch ahahah this aint fucking dreamscape retard");
+					player.message("@red@no rigged seeds in here nigga");
+				}, "Plant Orange Flower", () -> {
+					player.message("Sike bitch ahahah this aint fucking dreamscape retard");
+					player.message("@red@no rigged seeds in here nigga");
+				}, "Win the entire FP", player.interfaceManager::close).execute();
+			} else {
 		    player.inventory.remove(299, 1);    
 			FlowerHandler flower = new FlowerHandler(player);
 			flower.plantFlower();
+			}
 			break;
 		case 6199:
 			player.message("123");

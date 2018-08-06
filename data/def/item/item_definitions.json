@@ -14083,20 +14083,7 @@
     "stackable": true,
     "unnoted-id": 1417
   },
-  {
-	    "id": 15011,
-	    "name": "Zaros Scythe",
-	    "destroy-message": "You can get a replacement from Diango or Thessalia.",
-	    "weight": 3.0,
-	    "equipment-slot": "WEAPON",
-	    "weapon-interface": "SCYTHE",
-	    "attack-stab": 3,
-	    "attack-slash": 8,
-	    "attack-crush": 3,
-	    "defence-slash": 3,
-	    "defence-crush": 1,
-	    "bonus-strength": 10
-	  },
+
   {
 		    "id": 17160,
 		    "name": "Soulflare",
@@ -70084,6 +70071,7 @@
     "stand-animation": 4193,
     "walk-animation": 4194,
     "run-animation": 4194,
+    "weapon-interface": "GODSWORD_SWORD",
     "equipment-slot": "WEAPON"
   },
   {
@@ -125009,75 +124997,86 @@
   
   
   
+  {
+	    "id": 13738, //ITEM ID
+	    "name": "Lava virtus mask", 
+	    "low-alch": 2, 
+	    "high-alch": 3, 
+	    "base-value": 5,
+          "street-value": 18403, 
+	    "equipment-slot": "HELM",
+	    "weight": 4.0 
+	  },
+
 {
-		    "id": 13738, //ITEM ID
-		    "name": "Lava virtus mask", 
+		    "id": 13739, //ITEM ID
+		    "name": "@red@Lava scythe", 
 		    "low-alch": 2, 
 		    "high-alch": 3, 
 		    "base-value": 5,
 	            "street-value": 18403, 
-		    "equipment-slot": "HELM",
+		    "equipment-slot": "WEAPON",
 		    "weight": 4.0 
 		  },
 
 {
-			    "id": 13739, //ITEM ID
-			    "name": "@red@Lava scythe", 
+			    "id": 13740, //ITEM ID
+			    "name": "Lava Santa", 
 			    "low-alch": 2, 
 			    "high-alch": 3, 
 			    "base-value": 5,
 		            "street-value": 18403, 
-			    "equipment-slot": "WEAPON",
+			    "equipment-slot": "HAT",
 			    "weight": 4.0 
 			  },
 
 {
-				    "id": 13740, //ITEM ID
-				    "name": "Lava Santa", 
+				    "id": 13741, //ITEM ID
+				    "name": "Lava Helm", 
 				    "low-alch": 2, 
 				    "high-alch": 3, 
 				    "base-value": 5,
 			            "street-value": 18403, 
-				    "equipment-slot": "HAT",
+				    "equipment-slot": "HELM",
 				    "weight": 4.0 
 				  },
 
 {
-					    "id": 13741, //ITEM ID
-					    "name": "Lava Helm", 
+					    "id": 13742, //ITEM ID
+					    "name": "Molten Platebody", 
 					    "low-alch": 2, 
 					    "high-alch": 3, 
 					    "base-value": 5,
 				            "street-value": 18403, 
-					    "equipment-slot": "HELM",
+					    "equipment-slot": "BODY",
 					    "weight": 4.0 
 					  },
 
 {
-						    "id": 13742, //ITEM ID
-						    "name": "Molten Platebody", 
+						    "id": 13743, //ITEM ID
+						    "name": "@or1@Lava pernix cowl", 
 						    "low-alch": 2, 
 						    "high-alch": 3, 
 						    "base-value": 5,
 					            "street-value": 18403, 
-						    "equipment-slot": "BODY",
+						    "equipment-slot": "HELM",
 						    "weight": 4.0 
 						  },
 
 {
-							    "id": 13743, //ITEM ID
-							    "name": "@or1@Lava pernix cowl", 
+							    "id": 13746, //ITEM ID
+							    "name": "Lava Legs", 
 							    "low-alch": 2, 
 							    "high-alch": 3, 
 							    "base-value": 5,
 						            "street-value": 18403, 
-							    "equipment-slot": "HELM",
+							    "equipment-slot": "LEGS",
 							    "weight": 4.0 
 							  },
 
 {
-								    "id": 13746, //ITEM ID
-								    "name": "Lava Legs", 
+								    "id": 13747, //ITEM ID
+								    "name": "Lava Virtus Top", 
 								    "low-alch": 2, 
 								    "high-alch": 3, 
 								    "base-value": 5,
@@ -125087,8 +125086,8 @@
 								  },
 
 {
-									    "id": 13747, //ITEM ID
-									    "name": "Lava Legs", 
+									    "id": 13748, //ITEM ID
+									    "name": "Lava virtus bottom", 
 									    "low-alch": 2, 
 									    "high-alch": 3, 
 									    "base-value": 5,
@@ -125098,8 +125097,254 @@
 									  },
 
 {
-										    "id": 13748, //ITEM ID
-										    "name": "Lava virtus bottom", 
+										    "id": 13749, //ITEM ID
+										    "name": "Lava bow", 
+										    "low-alch": 2, 
+										    "high-alch": 3, 
+										    "base-value": 5,
+									            "street-value": 18403, 
+										    "equipment-slot": "WEAPON",
+									            "weapon-interface": "LONGBOW",
+										    "weight": 4.0 
+										  },
+
+{
+											    "id": 16647, //ITEM ID
+											    "name": "Elite torva body", 
+											    "low-alch": 2, 
+											    "high-alch": 3, 
+											    "base-value": 5,
+										            "street-value": 18403, 
+											    "equipment-slot": "BODY",
+											    "weight": 4.0 
+											  },
+
+{
+												    "id": 16648, //ITEM ID
+												    "name": "Elite torva helm", 
+												    "low-alch": 2, 
+												    "high-alch": 3, 
+												    "base-value": 5,
+											            "street-value": 18403, 
+												    "equipment-slot": "HELM",
+												    "weight": 4.0 
+												  },
+
+{
+													    "id": 16649, //ITEM ID
+													    "name": "Elite torva legs", 
+													    "low-alch": 2, 
+													    "high-alch": 3, 
+													    "base-value": 5,
+												            "street-value": 18403, 
+													    "equipment-slot": "LEGS",
+													    "weight": 4.0 
+													  },
+
+{
+														    "id": 16650, //ITEM ID
+														    "name": "Elite virtus mask", 
+														    "low-alch": 2, 
+														    "high-alch": 3, 
+														    "base-value": 5,
+													            "street-value": 18403, 
+														    "equipment-slot": "HELM",
+														    "weight": 4.0 
+														  },
+
+{
+															    "id": 16651, //ITEM ID
+															    "name": "Elite Virtus robe top", 
+															    "low-alch": 2, 
+															    "high-alch": 3, 
+															    "base-value": 5,
+														            "street-value": 18403, 
+															    "equipment-slot": "BODY",
+															    "weight": 4.0 
+															  },
+
+{
+																    "id": 16653, //ITEM ID
+																    "name": "Elite Virtus robe legs", 
+																    "low-alch": 2, 
+																    "high-alch": 3, 
+																    "base-value": 5,
+															            "street-value": 18403, 
+																    "equipment-slot": "LEGS",
+																    "weight": 4.0 
+																  },
+
+{
+																	    "id": 16654, //ITEM ID
+																	    "name": "Elite Pernix cowl", 
+																	    "low-alch": 2, 
+																	    "high-alch": 3, 
+																	    "base-value": 5,
+																            "street-value": 18403, 
+																	    "equipment-slot": "HELM",
+																	    "weight": 4.0 
+																	  },
+
+{
+																		    "id": 16655, //ITEM ID
+																		    "name": "Elite Pernix body", 
+																		    "low-alch": 2, 
+																		    "high-alch": 3, 
+																		    "base-value": 5,
+																	            "street-value": 18403, 
+																		    "equipment-slot": "BODY",
+																		    "weight": 4.0 
+																		  },
+
+{
+																			    "id": 16656, //ITEM ID
+																			    "name": "Elite Pernix chaps", 
+																			    "low-alch": 2, 
+																			    "high-alch": 3, 
+																			    "base-value": 5,
+																		            "street-value": 18403, 
+																			    "equipment-slot": "LEGS",
+																			    "weight": 4.0 
+																			  },
+
+{
+																				    "id": 16657, //ITEM ID
+																				    "name": "Aphrodite's helm", 
+																				    "low-alch": 2, 
+																				    "high-alch": 3, 
+																				    "base-value": 5,
+																			            "street-value": 18403, 
+																				    "equipment-slot": "HELM",
+																				    "weight": 4.0 
+																				  },
+
+{
+																					    "id": 16659, //ITEM ID
+																					    "name": "Aphrodite's platelegs", 
+																					    "low-alch": 2, 
+																					    "high-alch": 3, 
+																					    "base-value": 5,
+																				            "street-value": 18403, 
+																					    "equipment-slot": "LEGS",
+																					    "weight": 4.0 
+																					  },
+
+{
+																						    "id": 16660, //ITEM ID
+																						    "name": "Aphrodite's gauntlets", 
+																						    "low-alch": 2, 
+																						    "high-alch": 3, 
+																						    "base-value": 5,
+																					            "street-value": 18403, 
+																						    "equipment-slot": "GLOVES",
+																						    "weight": 4.0 
+																						  },
+
+{
+																							    "id": 16661, //ITEM ID
+																							    "name": "Aphrodite's greaves", 
+																							    "low-alch": 2, 
+																							    "high-alch": 3, 
+																							    "base-value": 5,
+																						            "street-value": 18403, 
+																							    "equipment-slot": "BOOTS",
+																							    "weight": 4.0 
+																							  },
+
+
+{
+		 "id": 16662, 
+		 "name": "Aphrodite Bow", 
+		 "low-alch": 2, 
+		 "high-alch": 3, 
+		 "base-value": 5,
+		 "street-value": 18403, 
+		 "equipment-slot": "WEAPON",
+		"weapon-interface": "LONGBOW",
+		"weight": 4.0 
+		},
+
+{
+		    "id": 16658,
+		    "name": "Aphrodite's chestplate", 
+		    "low-alch": 2, 
+		    "high-alch": 3, 
+		    "base-value": 5,
+	            "street-value": 18403, 
+		    "equipment-slot": "BODY",
+		    "weight": 4.0 
+		  },
+
+{
+			    "id": 16663,
+			    "name": "Aphrodite Cape", 
+			    "low-alch": 2, 
+			    "high-alch": 3, 
+			    "base-value": 5,
+		            "street-value": 18403, 
+			    "equipment-slot": "CAPE",
+			    "weight": 4.0 
+			  },
+
+{
+				    "id": 16664,
+				    "name": "Infernal boots", 
+				    "low-alch": 2, 
+				    "high-alch": 3, 
+				    "base-value": 5,
+			            "street-value": 18403, 
+				    "equipment-slot": "BOOTS",
+				    "weight": 4.0 
+				  },
+
+{
+					    "id": 16665,
+					    "name": "Infernal gloves", 
+					    "low-alch": 2, 
+					    "high-alch": 3, 
+					    "base-value": 5,
+				            "street-value": 18403, 
+					    "equipment-slot": "GLOVES",
+					    "weight": 4.0 
+					  },
+
+{
+						    "id": 16666,
+						    "name": "Infernal hat", 
+						    "low-alch": 2, 
+						    "high-alch": 3, 
+						    "base-value": 5,
+					            "street-value": 18403, 
+						    "equipment-slot": "HELM",
+						    "weight": 4.0 
+						  },
+
+{
+							    "id": 16667,
+							    "name": "Infernal kiteshield", 
+							    "low-alch": 2, 
+							    "high-alch": 3, 
+							    "base-value": 5,
+						            "street-value": 18403, 
+							    "equipment-slot": "SHIELD",
+							    "weight": 4.0 
+							  },
+
+
+{
+									    "id": 16668,
+									    "name": "Infernal top", 
+									    "low-alch": 2, 
+									    "high-alch": 3, 
+									    "base-value": 5,
+								            "street-value": 18403, 
+									    "equipment-slot": "BODY",
+									    "weight": 4.0 
+									  },
+
+{
+										    "id": 16669,
+										    "name": "Infernal bottoms", 
 										    "low-alch": 2, 
 										    "high-alch": 3, 
 										    "base-value": 5,
@@ -125109,308 +125354,52 @@
 										  },
 
 {
-											    "id": 13749, //ITEM ID
-											    "name": "Lava bow", 
+											    "id": 13717,
+											    "name": "Icy Spirit Shield", 
 											    "low-alch": 2, 
 											    "high-alch": 3, 
 											    "base-value": 5,
 										            "street-value": 18403, 
-											    "equipment-slot": "WEAPON",
-										            "weapon-interface": "LONGBOW",
+											    "equipment-slot": "SHIELD",
 											    "weight": 4.0 
 											  },
 
 {
-												    "id": 16647, //ITEM ID
-												    "name": "Elite torva body", 
-												    "low-alch": 2, 
-												    "high-alch": 3, 
-												    "base-value": 5,
-											            "street-value": 18403, 
-												    "equipment-slot": "BODY",
-												    "weight": 4.0 
+	 "id": 13718,
+	"name": "Lava spirit shield", 
+	 "low-alch": 2, 
+	"high-alch": 3, 
+	 "base-value": 5,
+	"street-value": 18403, 
+	"equipment-slot": "SHIELD",
+	"weight": 4.0 
 												  },
 
 {
-													    "id": 16648, //ITEM ID
-													    "name": "Elite torva helm", 
-													    "low-alch": 2, 
-													    "high-alch": 3, 
-													    "base-value": 5,
-												            "street-value": 18403, 
-													    "equipment-slot": "HELM",
-													    "weight": 4.0 
+	"id": 13719,
+	 "name": "Elite spirit shield", 
+	  "low-alch": 2, 
+	"high-alch": 3, 
+	 "base-value": 5,
+	"street-value": 18403, 
+	"equipment-slot": "SHIELD",
+	"weight": 4.0 
 													  },
 
 {
-														    "id": 16649, //ITEM ID
-														    "name": "Elite torva legs", 
+														    "id": 13720,
+														    "name": "Aqua spirit shield", 
 														    "low-alch": 2, 
 														    "high-alch": 3, 
 														    "base-value": 5,
 													            "street-value": 18403, 
-														    "equipment-slot": "LEGS",
+														    "equipment-slot": "SHIELD",
 														    "weight": 4.0 
 														  },
 
 {
-															    "id": 16650, //ITEM ID
-															    "name": "Elite virtus mask", 
-															    "low-alch": 2, 
-															    "high-alch": 3, 
-															    "base-value": 5,
-														            "street-value": 18403, 
-															    "equipment-slot": "HELM",
-															    "weight": 4.0 
-															  },
-
-{
-																    "id": 16651, //ITEM ID
-																    "name": "Elite Virtus robe top", 
-																    "low-alch": 2, 
-																    "high-alch": 3, 
-																    "base-value": 5,
-															            "street-value": 18403, 
-																    "equipment-slot": "BODY",
-																    "weight": 4.0 
-																  },
-
-{
-																	    "id": 16653, //ITEM ID
-																	    "name": "Elite Virtus robe legs", 
-																	    "low-alch": 2, 
-																	    "high-alch": 3, 
-																	    "base-value": 5,
-																            "street-value": 18403, 
-																	    "equipment-slot": "LEGS",
-																	    "weight": 4.0 
-																	  },
-
-{
-																		    "id": 16654, //ITEM ID
-																		    "name": "Elite Pernix cowl", 
-																		    "low-alch": 2, 
-																		    "high-alch": 3, 
-																		    "base-value": 5,
-																	            "street-value": 18403, 
-																		    "equipment-slot": "HELM",
-																		    "weight": 4.0 
-																		  },
-
-{
-																			    "id": 16655, //ITEM ID
-																			    "name": "Elite Pernix body", 
-																			    "low-alch": 2, 
-																			    "high-alch": 3, 
-																			    "base-value": 5,
-																		            "street-value": 18403, 
-																			    "equipment-slot": "BODY",
-																			    "weight": 4.0 
-																			  },
-
-{
-																				    "id": 16656, //ITEM ID
-																				    "name": "Elite Pernix chaps", 
-																				    "low-alch": 2, 
-																				    "high-alch": 3, 
-																				    "base-value": 5,
-																			            "street-value": 18403, 
-																				    "equipment-slot": "LEGS",
-																				    "weight": 4.0 
-																				  },
-
-{
-																					    "id": 16657, //ITEM ID
-																					    "name": "@zol@Aphrodite's helm", 
-																					    "low-alch": 2, 
-																					    "high-alch": 3, 
-																					    "base-value": 5,
-																				            "street-value": 18403, 
-																					    "equipment-slot": "HELM",
-																					    "weight": 4.0 
-																					  },
-
-{
-																						    "id": 16659, //ITEM ID
-																						    "name": "@zol@Aphrodite's platelegs", 
-																						    "low-alch": 2, 
-																						    "high-alch": 3, 
-																						    "base-value": 5,
-																					            "street-value": 18403, 
-																						    "equipment-slot": "LEGS",
-																						    "weight": 4.0 
-																						  },
-
-{
-																							    "id": 16660, //ITEM ID
-																							    "name": "@zol@Aphrodite's gauntlets", 
-																							    "low-alch": 2, 
-																							    "high-alch": 3, 
-																							    "base-value": 5,
-																						            "street-value": 18403, 
-																							    "equipment-slot": "GLOVES",
-																							    "weight": 4.0 
-																							  },
-
-{
-																								    "id": 16661, //ITEM ID
-																								    "name": "@zol@Aphrodite's greaves", 
-																								    "low-alch": 2, 
-																								    "high-alch": 3, 
-																								    "base-value": 5,
-																							            "street-value": 18403, 
-																								    "equipment-slot": "BOOTS",
-																								    "weight": 4.0 
-																								  },
-
-
-{
-			 "id": 16662, 
-			 "name": "@zo1@Aphrodite Bow", 
-			 "low-alch": 2, 
-			 "high-alch": 3, 
-			 "base-value": 5,
-			 "street-value": 18403, 
-			 "equipment-slot": "WEAPON",
-			"weapon-interface": "LONGBOW",
-			"weight": 4.0 
-			},
-
-{
-			    "id": 16658,
-			    "name": "@zol@Aphrodite's chestplate", 
-			    "low-alch": 2, 
-			    "high-alch": 3, 
-			    "base-value": 5,
-		            "street-value": 18403, 
-			    "equipment-slot": "BODY",
-			    "weight": 4.0 
-			  },
-
-{
-				    "id": 16663,
-				    "name": "Aphrodite Cape", 
-				    "low-alch": 2, 
-				    "high-alch": 3, 
-				    "base-value": 5,
-			            "street-value": 18403, 
-				    "equipment-slot": "CAPE",
-				    "weight": 4.0 
-				  },
-
-{
-					    "id": 16664,
-					    "name": "Infernal boots", 
-					    "low-alch": 2, 
-					    "high-alch": 3, 
-					    "base-value": 5,
-				            "street-value": 18403, 
-					    "equipment-slot": "BOOTS",
-					    "weight": 4.0 
-					  },
-
-{
-						    "id": 16665,
-						    "name": "Infernal gloves", 
-						    "low-alch": 2, 
-						    "high-alch": 3, 
-						    "base-value": 5,
-					            "street-value": 18403, 
-						    "equipment-slot": "GLOVES",
-						    "weight": 4.0 
-						  },
-
-{
-							    "id": 16666,
-							    "name": "Infernal hat", 
-							    "low-alch": 2, 
-							    "high-alch": 3, 
-							    "base-value": 5,
-						            "street-value": 18403, 
-							    "equipment-slot": "HELM",
-							    "weight": 4.0 
-							  },
-
-{
-								    "id": 16667,
-								    "name": "Infernal kiteshield", 
-								    "low-alch": 2, 
-								    "high-alch": 3, 
-								    "base-value": 5,
-							            "street-value": 18403, 
-								    "equipment-slot": "SHIELD",
-								    "weight": 4.0 
-								  },
-
-{
-									    "id": 16668,
-									    "name": "Infernal top", 
-									    "low-alch": 2, 
-									    "high-alch": 3, 
-									    "base-value": 5,
-								            "street-value": 18403, 
-									    "equipment-slot": "HELM",
-									    "weight": 4.0 
-									  },
-
-{
-										    "id": 16668,
-										    "name": "Infernal top", 
-										    "low-alch": 2, 
-										    "high-alch": 3, 
-										    "base-value": 5,
-									            "street-value": 18403, 
-										    "equipment-slot": "BODY",
-										    "weight": 4.0 
-										  },
-
-{
-											    "id": 16669,
-											    "name": "Infernal bottoms", 
-											    "low-alch": 2, 
-											    "high-alch": 3, 
-											    "base-value": 5,
-										            "street-value": 18403, 
-											    "equipment-slot": "LEGS",
-											    "weight": 4.0 
-											  },
-
-{
-												    "id": 13717,
-												    "name": "Icy Spirit Shield", 
-												    "low-alch": 2, 
-												    "high-alch": 3, 
-												    "base-value": 5,
-											            "street-value": 18403, 
-												    "equipment-slot": "SHIELD",
-												    "weight": 4.0 
-												  },
-
-{
-		 "id": 13718,
-		"name": "Lava spirit shield", 
-		 "low-alch": 2, 
-		"high-alch": 3, 
-		 "base-value": 5,
-		"street-value": 18403, 
-		"equipment-slot": "SHIELD",
-		"weight": 4.0 
-													  },
-
-{
-		"id": 13719,
-		 "name": "Elite spirit shield", 
-		  "low-alch": 2, 
-		"high-alch": 3, 
-		 "base-value": 5,
-		"street-value": 18403, 
-		"equipment-slot": "SHIELD",
-		"weight": 4.0 
-														  },
-
-{
-															    "id": 13720,
-															    "name": "Aqua spirit shield", 
+															    "id": 13721,
+															    "name": "Candy spirit shield", 
 															    "low-alch": 2, 
 															    "high-alch": 3, 
 															    "base-value": 5,
@@ -125420,8 +125409,8 @@
 															  },
 
 {
-																    "id": 13721,
-																    "name": "Candy spirit shield", 
+																    "id": 13722,
+																    "name": "Lava spirit shield", 
 																    "low-alch": 2, 
 																    "high-alch": 3, 
 																    "base-value": 5,
@@ -125431,8 +125420,8 @@
 																  },
 
 {
-																	    "id": 13722,
-																	    "name": "Lava spirit shield", 
+																	    "id": 13723,
+																	    "name": "Mystical Spirit Shield", 
 																	    "low-alch": 2, 
 																	    "high-alch": 3, 
 																	    "base-value": 5,
@@ -125442,8 +125431,8 @@
 																	  },
 
 {
-																		    "id": 13723,
-																		    "name": "Mystical Spirit Shield", 
+																		    "id": 13724,
+																		    "name": "Deathly Spirit Shield", 
 																		    "low-alch": 2, 
 																		    "high-alch": 3, 
 																		    "base-value": 5,
@@ -125453,8 +125442,8 @@
 																		  },
 
 {
-																			    "id": 13724,
-																			    "name": "Deathly Spirit Shield", 
+																			    "id": 13725,
+																			    "name": "Lime Spirit Shield", 
 																			    "low-alch": 2, 
 																			    "high-alch": 3, 
 																			    "base-value": 5,
@@ -125464,8 +125453,8 @@
 																			  },
 
 {
-																				    "id": 13725,
-																				    "name": "Lime Spirit Shield", 
+																				    "id": 13726,
+																				    "name": "Pink Spirit Shield", 
 																				    "low-alch": 2, 
 																				    "high-alch": 3, 
 																				    "base-value": 5,
@@ -125475,37 +125464,26 @@
 																				  },
 
 {
-																					    "id": 13726,
-																					    "name": "Pink Spirit Shield", 
-																					    "low-alch": 2, 
-																					    "high-alch": 3, 
-																					    "base-value": 5,
-																				            "street-value": 18403, 
-																					    "equipment-slot": "SHIELD",
-																					    "weight": 4.0 
+	"id": 13727,
+	"name": "Green Spirit Shield", 
+	"low-alch": 2, 
+	"high-alch": 3, 
+	"base-value": 5,
+	 "street-value": 18403, 
+	 "equipment-slot": "SHIELD",
+	"weight": 4.0 
 																					  },
 
 {
-		"id": 13727,
-		"name": "Green Spirit Shield", 
-		"low-alch": 2, 
-		"high-alch": 3, 
-		"base-value": 5,
-		 "street-value": 18403, 
-		 "equipment-slot": "SHIELD",
-		"weight": 4.0 
+																						    "id": 13728,
+																						    "name": "Purple Spirit Shield", 
+																						    "low-alch": 2, 
+																						    "high-alch": 3, 
+																						    "base-value": 5,
+																					            "street-value": 18403, 
+																						    "equipment-slot": "SHIELD",
+																						    "weight": 4.0 
 																						  },
-
-{
-																							    "id": 13728,
-																							    "name": "Purple Spirit Shield", 
-																							    "low-alch": 2, 
-																							    "high-alch": 3, 
-																							    "base-value": 5,
-																						            "street-value": 18403, 
-																							    "equipment-slot": "SHIELD",
-																							    "weight": 4.0 
-																							  },
 
 {
 "id": 13729,
@@ -125519,153 +125497,53 @@
 },
 
 {
-	    "id": 4062,
-	    "name": "Inferno spirit shield", 
-	    "low-alch": 2, 
-	    "high-alch": 3, 
-	    "base-value": 5,
-       "street-value": 18403, 
-	    "equipment-slot": "SHIELD",
-	    "weight": 4.0 
-	  },
-
-{
-		    "id": 17161,
-		    "name": "Minigun", 
-		    "low-alch": 2, 
-		    "high-alch": 3, 
-		    "base-value": 5,
-	   "two-handed": true,
-	            "street-value": 18403, 
-		    "equipment-slot": "WEAPON",
-		    "weight": 4.0 
-		  },
-
-{
-			    "id": 17153,
-			    "name": "Lava Torva Platebody", 
-			    "low-alch": 2, 
-			    "high-alch": 3, 
-			    "base-value": 5,
-		               "street-value": 18403, 
-			    "equipment-slot": "BODY",
-			    "weight": 4.0 
-			  },
-
-{
-				    "id": 17154,
-				    "name": "Lava Torva Full Helm", 
-				    "low-alch": 2, 
-				    "high-alch": 3, 
-				    "base-value": 5,
-			               "street-value": 18403, 
-				    "equipment-slot": "HELM",
-				    "weight": 4.0 
-				  },
-
-{
-					    "id": 17155,
-					    "name": "Lava Torva Platelegs", 
-					    "low-alch": 2, 
-					    "high-alch": 3, 
-					    "base-value": 5,
-				               "street-value": 18403, 
-					    "equipment-slot": "LEGS",
-					    "weight": 4.0 
-					  },
-
-
-{
-							    "id": 17157,
-							    "name": "Death Full Helm", 
-							    "low-alch": 2, 
-							    "high-alch": 3, 
-							    "base-value": 5,
-						               "street-value": 18403, 
-							    "equipment-slot": "HELM",
-							    "weight": 4.0 
-							  },
-
-{
-								    "id": 17158,
-								    "name": "Death Boots", 
-								    "low-alch": 2, 
-								    "high-alch": 3, 
-								    "base-value": 5,
-							               "street-value": 18403, 
-								    "equipment-slot": "BOOTS",
-								    "weight": 4.0 
-								  },
-
-{
-"id": 17159,
-"name": "Death Platelegs", 
-"low-alch": 2, 
-"high-alch": 3, 
-"base-value": 5,
-"street-value": 18403, 
-"equipment-slot": "LEGS",
-"weight": 4.0 
-},
-
-{
-  "id": 17160,
-  "name": "Soulflare", 
+  "id": 4062,
+  "name": "Inferno spirit shield", 
   "low-alch": 2, 
   "high-alch": 3, 
   "base-value": 5,
-         "street-value": 18403, 
-  "equipment-slot": "WEAPON",
+ "street-value": 18403, 
+  "equipment-slot": "SHIELD",
   "weight": 4.0 
 },
 
 {
-	    "id": 17162,
-	    "name": "Soulflare", 
+	    "id": 17161,
+	    "name": "Minigun", 
 	    "low-alch": 2, 
 	    "high-alch": 3, 
 	    "base-value": 5,
-           "street-value": 18403, 
-	    "equipment-slot": "BODY",
+ "two-handed": true,
+          "street-value": 18403, 
+	    "equipment-slot": "WEAPON",
 	    "weight": 4.0 
 	  },
 
 {
-	    "id": 17162,
-	    "name": "Soulflare", 
-	    "low-alch": 2, 
-	    "high-alch": 3, 
-	    "base-value": 5,
-             "street-value": 18403, 
-	    "equipment-slot": "BODY",
-	    "weight": 4.0 
-	  },
-
-{
-		    "id": 17163,
-		    "name": "Raptor Helm", 
+		    "id": 17153,
+		    "name": "Lava Torva Platebody", 
 		    "low-alch": 2, 
 		    "high-alch": 3, 
 		    "base-value": 5,
 	               "street-value": 18403, 
-		    "equipment-slot": "HELM",
+		    "equipment-slot": "BODY",
 		    "weight": 4.0 
 		  },
 
 {
-			    "id": 17164,
-			    "name": "Raptor Platebody", 
+			    "id": 17154,
+			    "name": "Lava Torva Full Helm", 
 			    "low-alch": 2, 
 			    "high-alch": 3, 
 			    "base-value": 5,
 		               "street-value": 18403, 
-			    "equipment-slot": "BODY",
+			    "equipment-slot": "HELM",
 			    "weight": 4.0 
 			  },
 
 {
-				    "id": 17165,
-				    "name": "Raptor Platelegs", 
+				    "id": 17155,
+				    "name": "Lava Torva Platelegs", 
 				    "low-alch": 2, 
 				    "high-alch": 3, 
 				    "base-value": 5,
@@ -125676,15 +125554,83 @@
 
 
 {
-								    "id": 17172,
-								    "name": "Legion Helm",
-								    "low-alch": 2, 
-								    "high-alch": 3, 
-								    "base-value": 5,
-							               "street-value": 18403, 
-								    "equipment-slot": "HELM",
-								    "weight": 4.0 
-								  },
+	    "id": 17166,
+	    "name": "Flame Raptor Helm", 
+	    "low-alch": 2, 
+	    "high-alch": 3, 
+	    "base-value": 5,
+             "street-value": 18403, 
+	    "equipment-slot": "HELM",
+	    "weight": 4.0 
+	  },
+
+{
+		    "id": 17167,
+		    "name": "Flame Raptor Platebody", 
+		    "low-alch": 2, 
+		    "high-alch": 3, 
+		    "base-value": 5,
+	               "street-value": 18403, 
+		    "equipment-slot": "BODY",
+		    "weight": 4.0 
+		  },
+
+{
+			    "id": 17168,
+			    "name": "Flame Raptor Platelegs", 
+			    "low-alch": 2, 
+			    "high-alch": 3, 
+			    "base-value": 5,
+		               "street-value": 18403, 
+			    "equipment-slot": "LEGS",
+			    "weight": 4.0 
+			  },
+
+
+{
+	    "id": 17163,
+	    "name": "Raptor Helm", 
+	    "low-alch": 2, 
+	    "high-alch": 3, 
+	    "base-value": 5,
+             "street-value": 18403, 
+	    "equipment-slot": "HELM",
+	    "weight": 4.0 
+	  },
+
+{
+		    "id": 17164,
+		    "name": "Raptor Platebody", 
+		    "low-alch": 2, 
+		    "high-alch": 3, 
+		    "base-value": 5,
+	               "street-value": 18403, 
+		    "equipment-slot": "BODY",
+		    "weight": 4.0 
+		  },
+
+{
+			    "id": 17165,
+			    "name": "Raptor Platelegs", 
+			    "low-alch": 2, 
+			    "high-alch": 3, 
+			    "base-value": 5,
+		               "street-value": 18403, 
+			    "equipment-slot": "LEGS",
+			    "weight": 4.0 
+			  },
+
+
+{
+							    "id": 17172,
+							    "name": "Legion Helm",
+							    "low-alch": 2, 
+							    "high-alch": 3, 
+							    "base-value": 5,
+						               "street-value": 18403, 
+							    "equipment-slot": "HELM",
+							    "weight": 4.0 
+							  },
 
 {
 "id": 17173,
@@ -125692,33 +125638,559 @@
 "low-alch": 2, 
 "high-alch": 3, 
 "base-value": 5,
-       "street-value": 18403, 
+ "street-value": 18403, 
 "equipment-slot": "BODY",
 "weight": 4.0 
 },
 
 {
-    "id": 17174,
-    "name": "Legion Platelegs", 
-    "low-alch": 2, 
-    "high-alch": 3, 
-    "base-value": 5,
-           "street-value": 18403, 
-    "equipment-slot": "LEGS",
-    "weight": 4.0 
-  },
+"id": 17174,
+"name": "Legion Platelegs", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+     "street-value": 18403, 
+"equipment-slot": "LEGS",
+"weight": 4.0 
+},
 
 {
-	    "id": 17175,
-	    "name": "Corrupt Torva Boots",
+  "id": 17175,
+  "name": "Corrupt Torva Boots",
+  "low-alch": 2, 
+  "high-alch": 3, 
+  "base-value": 5,
+       "street-value": 18403, 
+  "equipment-slot": "BOOTS",
+  "weight": 4.0 
+},
+
+{
+	    "id": 17176,
+	    "name": "Corrupt Torva Gloves", 
 	    "low-alch": 2, 
 	    "high-alch": 3, 
 	    "base-value": 5,
              "street-value": 18403, 
-	    "equipment-slot": "BOOTS",
+	    "equipment-slot": "GLOVES",
 	    "weight": 4.0 
 	  },
 
+{
+		    "id": 17177,
+		    "name": "Corrupt Torva Helm", 
+		    "low-alch": 2, 
+		    "high-alch": 3, 
+		    "base-value": 5,
+	               "street-value": 18403, 
+		    "equipment-slot": "HELM",
+		    "weight": 4.0 
+		  },
+
+{
+			    "id": 17178,
+			    "name": "Corrupt Torva Platebody", 
+			    "low-alch": 2, 
+			    "high-alch": 3, 
+			    "base-value": 5,
+		               "street-value": 18403, 
+			    "equipment-slot": "BODY",
+			    "weight": 4.0 
+			  },
+
+{
+				    "id": 17179,
+				    "name": "Corrupt Torva Platelegs", 
+				    "low-alch": 2, 
+				    "high-alch": 3, 
+				    "base-value": 5,
+			               "street-value": 18403, 
+				    "equipment-slot": "LEGS",
+				    "weight": 4.0 
+				  },
+
+{
+					    "id": 17180,
+					    "name": "Corrupt Whip", 
+					    "low-alch": 2, 
+					    "high-alch": 3, 
+					    "base-value": 5,
+				               "street-value": 18403, 
+					    "equipment-slot": "WEAPON",
+					    "weight": 4.0 
+					  },
+
+{
+						    "id": 17181,
+						    "name": "Corrupt Torva Wings", 
+						    "low-alch": 2, 
+						    "high-alch": 3, 
+						    "base-value": 5,
+					               "street-value": 18403, 
+						    "equipment-slot": "CAPE",
+						    "weight": 4.0 
+						  },
+
+{
+							    "id": 19914,
+							    "name": "Imperial Helm", 
+							    "low-alch": 2, 
+							    "high-alch": 3, 
+							    "base-value": 5,
+						               "street-value": 18403, 
+							    "equipment-slot": "HELM",
+							    "weight": 4.0 
+							  },
+
+{
+"id": 19917,
+"name": "Imperial platebody", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "BODY",
+"weight": 4.0 
+},
+
+{
+  "id": 19920,
+  "name": "Imperial Platelegs", 
+  "low-alch": 2, 
+  "high-alch": 3, 
+  "base-value": 5,
+      "street-value": 18403, 
+  "equipment-slot": "LEGS",
+  "weight": 4.0 
+},
+
+{
+	    "id": 20250,
+	    "name": "@red@Amer@whi@ican @blu@Whip", 
+	    "low-alch": 2, 
+	    "high-alch": 3, 
+	    "base-value": 5,
+             "street-value": 18403, 
+	    "equipment-slot": "WEAPON",
+	    "weight": 4.0 
+	  },
+
+{
+		    "id": 20251,
+		    "name": "@red@American @whi@Torva @blu@platelegs", 
+		    "low-alch": 2, 
+		    "high-alch": 3, 
+		    "base-value": 5,
+	               "street-value": 18403, 
+		    "equipment-slot": "LEGS",
+		    "weight": 4.0 
+		  },
+
+{
+			    "id": 20252,
+			    "name": "@red@American @whi@Torva @blu@Fullhelm", 
+			    "low-alch": 2, 
+			    "high-alch": 3, 
+			    "base-value": 5,
+		               "street-value": 18403, 
+			    "equipment-slot": "HELM",
+			    "weight": 4.0 
+			  },
+
+{
+				    "id": 20253,
+				    "name": "@red@American @whi@Torva @blu@Platebody", 
+				    "low-alch": 2, 
+				    "high-alch": 3, 
+				    "base-value": 5,
+			               "street-value": 18403, 
+				    "equipment-slot": "BODY",
+				    "weight": 4.0 
+				  },
+
+{
+					    "id": 14556,
+					    "name": "@red@Amer@whi@ican @blu@Gloves", 
+					    "low-alch": 2, 
+					    "high-alch": 3, 
+					    "base-value": 5,
+				               "street-value": 18403, 
+					    "equipment-slot": "GLOVES",
+					    "weight": 4.0 
+					  },
+
+{
+						    "id": 14557,
+						    "name": "@red@Amer@whi@ican @blu@Boots", 
+						    "low-alch": 2, 
+						    "high-alch": 3, 
+						    "base-value": 5,
+					               "street-value": 18403, 
+						    "equipment-slot": "BOOTS",
+						    "weight": 4.0 
+						  },
+
+{
+							    "id": 14558,
+							    "name": "@red@Amer@whi@ican @blu@Wings", 
+							    "low-alch": 2, 
+							    "high-alch": 3, 
+							    "base-value": 5,
+						               "street-value": 18403, 
+							    "equipment-slot": "CAPE",
+							    "weight": 4.0 
+							  },
+
+{
+								    "id": 13689,
+								    "name": "Silver Chain", 
+								    "low-alch": 2, 
+								    "high-alch": 3, 
+								    "base-value": 5,
+							               "street-value": 18403, 
+								    "equipment-slot": "AMULET",
+								    "weight": 4.0 
+								  },
+{
+  "id": 20690,
+  "name": "Darth Maul Whip", 
+  "low-alch": 2, 
+  "high-alch": 3, 
+  "base-value": 5,
+       "street-value": 18403, 
+  "equipment-slot": "WEAPON",
+  "weight": 4.0 
+},
+
+{
+	    "id": 14581,
+	    "name": "Darth Maul Torva Platelegs", 
+	    "low-alch": 2, 
+	    "high-alch": 3, 
+	    "base-value": 5,
+             "street-value": 18403, 
+	    "equipment-slot": "LEGS",
+	    "weight": 4.0 
+	  },
+
+{
+		    "id": 14582,
+		    "name": "Darth Maul Torva Fullhelm", 
+		    "low-alch": 2, 
+		    "high-alch": 3, 
+		    "base-value": 5,
+	               "street-value": 18403, 
+		    "equipment-slot": "HELM",
+		    "weight": 4.0 
+		  },
+
+{
+			    "id": 14583,
+			    "name": "Darth Maul Torva Platebody", 
+			    "low-alch": 2, 
+			    "high-alch": 3, 
+			    "base-value": 5,
+		               "street-value": 18403, 
+			    "equipment-slot": "BODY",
+			    "weight": 4.0 
+			  },
+
+{
+				    "id": 14584,
+				    "name": "Darth Maul Gloves", 
+				    "low-alch": 2, 
+				    "high-alch": 3, 
+				    "base-value": 5,
+			               "street-value": 18403, 
+				    "equipment-slot": "GLOVES",
+				    "weight": 4.0 
+				  },
+
+{
+					    "id": 14585,
+					    "name": "Darth Maul Boots", 
+					    "low-alch": 2, 
+					    "high-alch": 3, 
+					    "base-value": 5,
+				               "street-value": 18403, 
+					    "equipment-slot": "BOOTS",
+					    "weight": 4.0 
+					  },
+
+{
+					    "id": 14586,
+					    "name": "Darth Maul Wings", 
+					    "low-alch": 2, 
+					    "high-alch": 3, 
+					    "base-value": 5,
+				               "street-value": 18403, 
+					    "equipment-slot": "CAPE",
+					    "weight": 4.0 
+					  },
+
+{
+						    "id": 14587,
+						    "name": "Gold Santa Hat", 
+						    "low-alch": 2, 
+						    "high-alch": 3, 
+						    "base-value": 5,
+					               "street-value": 18403, 
+						    "equipment-slot": "HAT",
+						    "weight": 4.0 
+						  },
+
+{
+"id": 14588,
+"name": "Gold Partyhat", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "HAT",
+"weight": 4.0 
+},
+
+{
+"id": 14589,
+"name": "Staff of gods", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+     "street-value": 18403, 
+"equipment-slot": "WEAPON",
+"weight": 4.0 
+},
+
+{
+  "id": 13207,
+  "name": "Purgatory Offhand", 
+  "low-alch": 2, 
+  "high-alch": 3, 
+  "base-value": 5,
+       "street-value": 18403, 
+  "equipment-slot": "SHIELD",
+  "weight": 4.0 
+},
+
+{
+	    "id": 13209,
+	    "name": "Purgatory Full Helmet", 
+	    "low-alch": 2, 
+	    "high-alch": 3, 
+	    "base-value": 5,
+             "street-value": 18403, 
+	    "equipment-slot": "HELM",
+	    "weight": 4.0 
+	  },
+
+{
+		    "id": 13210,
+		    "name": "Purgatory Platebody", 
+		    "low-alch": 2, 
+		    "high-alch": 3, 
+		    "base-value": 5,
+	               "street-value": 18403, 
+		    "equipment-slot": "BODY",
+		    "weight": 4.0 
+		  },
+
+{
+			    "id": 13212,
+			    "name": "Purgatory Platelegs", 
+			    "low-alch": 2, 
+			    "high-alch": 3, 
+			    "base-value": 5,
+		               "street-value": 18403, 
+			    "equipment-slot": "LEGS",
+			    "weight": 4.0 
+			  },
+
+{
+				    "id": 13213,
+				    "name": "Purgatory Boots", 
+				    "low-alch": 2, 
+				    "high-alch": 3, 
+				    "base-value": 5,
+			               "street-value": 18403, 
+				    "equipment-slot": "BOOTS",
+				    "weight": 4.0 
+				  },
+
+{
+					    "id": 13661,
+					    "name": "Purgatory Wings", 
+					    "low-alch": 2, 
+					    "high-alch": 3, 
+					    "base-value": 5,
+				               "street-value": 18403, 
+					    "equipment-slot": "CAPE",
+					    "weight": 4.0 
+					  },
+
+{
+						    "id": 13662,
+						    "name": "Purgatory Longsword", 
+						    "low-alch": 2, 
+						    "high-alch": 3, 
+						    "base-value": 5,
+					               "street-value": 18403, 
+						    "equipment-slot": "WEAPON",
+						    "weight": 4.0 
+						  },
+
+{
+							    "id": 13189,
+							    "name": "KBD Helm", 
+							    "low-alch": 2, 
+							    "high-alch": 3, 
+							    "base-value": 5,
+						               "street-value": 18403, 
+							    "equipment-slot": "HELM",
+							    "weight": 4.0 
+							  },
+
+{
+								    "id": 13299,
+								    "name": "KBD Platebody", 
+								    "low-alch": 2, 
+								    "high-alch": 3, 
+								    "base-value": 5,
+							               "street-value": 18403, 
+								    "equipment-slot": "BODY",
+								    "weight": 4.0 
+								  },
+
+{
+									    "id": 13300,
+									    "name": "KBD Boots", 
+									    "low-alch": 2, 
+									    "high-alch": 3, 
+									    "base-value": 5,
+								               "street-value": 18403, 
+									    "equipment-slot": "BOOTS",
+									    "weight": 4.0 
+									  },
+
+{
+										    "id": 15177,
+										    "name": "KBD Gloves", 
+										    "low-alch": 2, 
+										    "high-alch": 3, 
+										    "base-value": 5,
+									               "street-value": 18403, 
+										    "equipment-slot": "GLOVES",
+										    "weight": 4.0 
+										  },
+{
+"id": 21777,
+"name": "Dragon Slayer Helm", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+     "street-value": 18403, 
+"equipment-slot": "HELM",
+"weight": 4.0 
+},
+
+{
+  "id": 22123,
+  "name": "Dragon Slayer Platebody", 
+  "low-alch": 2, 
+  "high-alch": 3, 
+  "base-value": 5,
+       "street-value": 18403, 
+  "equipment-slot": "BODY",
+  "weight": 4.0 
+},
+
+{
+	    "id": 21954,
+	    "name": "Dragon Slayer Platelegs", 
+	    "low-alch": 2, 
+	    "high-alch": 3, 
+	    "base-value": 5,
+             "street-value": 18403, 
+	    "equipment-slot": "LEGS",
+	    "weight": 4.0 
+	  },
+
+{
+		    "id": 22099,
+		    "name": "Dragon Slayer Boots", 
+		    "low-alch": 2, 
+		    "high-alch": 3, 
+		    "base-value": 5,
+	               "street-value": 18403, 
+		    "equipment-slot": "BOOTS",
+		    "weight": 4.0 
+		  },
+
+{
+			    "id": 22078,
+			    "name": "Dragon Slayer Wings", 
+			    "low-alch": 2, 
+			    "high-alch": 3, 
+			    "base-value": 5,
+		               "street-value": 18403, 
+			    "equipment-slot": "CAPE",
+			    "weight": 4.0 
+			  },
+
+{
+				    "id": 22304,
+				    "name": "Zaros Platebody", 
+				    "low-alch": 2, 
+				    "high-alch": 3, 
+				    "base-value": 5,
+			               "street-value": 18403, 
+				    "equipment-slot": "BODY",
+				    "weight": 4.0 
+				  },
+
+{
+					    "id": 22307,
+					    "name": "Zaros Platelegs", 
+					    "low-alch": 2, 
+					    "high-alch": 3, 
+					    "base-value": 5,
+				               "street-value": 18403, 
+					    "equipment-slot": "LEGS",
+					    "weight": 4.0 
+					  },
+
+{
+						    "id": 15011,
+						    "name": "Zaros Scythe",
+						    "low-alch": 2, 
+						    "high-alch": 3, 
+						    "base-value": 5,
+					               "street-value": 18403, 
+						    "equipment-slot": "WEAPON",
+						    "weapon-interface": "SCYTHE",
+						    "weight": 4.0 
+						  },
+
+{
+							    "id": 22301,
+							    "name": "Zaros Helmet",
+							    "low-alch": 2, 
+							    "high-alch": 3, 
+							    "base-value": 5,
+						               "street-value": 18403, 
+							    "equipment-slot": "HELM",
+							    "weight": 4.0 
+							  },
+
+{
+								    "id": 3273,
+								    "name": "Ice katana",
+								    "low-alch": 2, 
+								    "high-alch": 3, 
+								    "base-value": 5,
+							               "street-value": 18403, 
+								    "equipment-slot": "WEAPON",
+								    "weight": 4.0 
+								  },
 
 
 
@@ -125727,42 +126199,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  {
-    "id": 22125,
-    "name": "Superior dragon bones",
-    "stackable": true,
-    "unnoted-id": 22124,
-    "weight": 1.0
-  }
+{
+"id": 22125,
+"name": "Superior dragon bones",
+"stackable": true,
+"unnoted-id": 22124,
+"weight": 1.0
+}
 
 ]
