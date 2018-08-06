@@ -39,7 +39,7 @@ public class Prestige {
 	public Set<PrestigePerk> activePerks = new HashSet<>();
 
 	/** Animations that the player will do once prestiged. */
-	private static final int[] ANIMATIONS = { 7118, 2109, 862, 6303, 6999 };
+	private static final int[] ANIMATIONS = { 7118, 2109, 862, 6303 };
 
 	/** Constructs a new <code>Prestige</code>. */
 	public Prestige(Player player) {

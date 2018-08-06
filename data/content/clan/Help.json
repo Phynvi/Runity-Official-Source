@@ -48,15 +48,6 @@
       "total-level": 0
     },
     {
-      "name": "Adam",
-      "joined": "2018/08/01",
-      "rank": "SYSTEM",
-      "exp-gained": 0.0,
-      "npc-kills": 0,
-      "player-kills": 0,
-      "total-level": 0
-    },
-    {
       "name": "Christopher",
       "joined": "2018/04/24",
       "rank": "MEMBER",
@@ -84,15 +75,6 @@
       "total-level": 0
     },
     {
-      "name": "Adam11",
-      "joined": "2018/07/26",
-      "rank": "MEMBER",
-      "exp-gained": 0.0,
-      "npc-kills": 0,
-      "player-kills": 0,
-      "total-level": 0
-    },
-    {
       "name": "Dice",
       "joined": "2018/04/24",
       "rank": "MEMBER",
@@ -102,8 +84,44 @@
       "total-level": 0
     },
     {
+      "name": "Jordanrsps",
+      "joined": "2018/08/06",
+      "rank": "SYSTEM",
+      "exp-gained": 0.0,
+      "npc-kills": 0,
+      "player-kills": 0,
+      "total-level": 0
+    },
+    {
+      "name": "Adam",
+      "joined": "2018/08/01",
+      "rank": "SYSTEM",
+      "exp-gained": 0.0,
+      "npc-kills": 0,
+      "player-kills": 0,
+      "total-level": 0
+    },
+    {
+      "name": "Adam11",
+      "joined": "2018/07/26",
+      "rank": "MEMBER",
+      "exp-gained": 0.0,
+      "npc-kills": 0,
+      "player-kills": 0,
+      "total-level": 0
+    },
+    {
       "name": "Jody",
       "joined": "2018/04/17",
+      "rank": "MEMBER",
+      "exp-gained": 0.0,
+      "npc-kills": 0,
+      "player-kills": 0,
+      "total-level": 0
+    },
+    {
+      "name": "Adammmmmm",
+      "joined": "2018/08/06",
       "rank": "MEMBER",
       "exp-gained": 0.0,
       "npc-kills": 0,

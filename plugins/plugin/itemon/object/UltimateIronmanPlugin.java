@@ -3,7 +3,6 @@ package plugin.itemon.object;
 import io.battlerune.game.event.impl.ItemOnObjectEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 
 public class UltimateIronmanPlugin extends PluginContext {
@@ -11,8 +10,8 @@ public class UltimateIronmanPlugin extends PluginContext {
 	@Override
 	protected boolean itemOnObject(Player player, ItemOnObjectEvent event) {
 		final Item used = event.getUsed();
-		if (player.right.equals(PlayerRight.ULTIMATE_IRONMAN)
-				&& event.getObject().getDefinition().name.equals("Bank booth")) {
+		if (/*player.right.equals(PlayerRight.ULTIMATE_IRONMAN)
+				&& */event.getObject().getDefinition().name.equals("Bank booth") || event.getObject().getDefinition().name.equals("")) {
 			if (!used.isTradeable()) {
 				player.dialogueFactory.sendStatement("This item can not be noted!").execute();
 				return true;

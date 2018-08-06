@@ -2,9 +2,9 @@
   "owner": "Dice",
   "established": "2018/04/08",
   "name": "Dice",
-  "password": "1997",
+  "password": "1231",
   "forum": "",
-  "slogan": "Generic slogan here",
+  "slogan": "Test",
   "clan-tag": "",
   "clan-type": "SOCIAL",
   "clan-color": "<col=2ADE36>",
@@ -30,6 +30,15 @@
   ],
   "banned-members": [],
   "members": [
+    {
+      "name": "Adam",
+      "joined": "2018/08/06",
+      "rank": "SYSTEM",
+      "exp-gained": 0.0,
+      "npc-kills": 0,
+      "player-kills": 0,
+      "total-level": 0
+    },
     {
       "name": "Dice",
       "joined": "2018/04/08",
