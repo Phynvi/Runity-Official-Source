@@ -12,6 +12,7 @@ import io.battlerune.content.activity.ActivityType;
 import io.battlerune.content.activity.GroupActivity;
 import io.battlerune.content.activity.impl.JailActivity;
 import io.battlerune.content.activity.impl.TutorialActivity;
+import io.battlerune.content.activity.impl.barrows.Barrows;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
 import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.content.dialogue.Expression;
@@ -302,7 +303,7 @@ public class PlayerAssistant {
 		} else if (Area.inWarriorGuild(player)) {
 			WarriorGuild.create(player);
 		} else if (Area.inBarrows(player)) {
-			// Barrows.create(player);
+			Barrows.create(player);
 		} else if (Area.inWilderness(player)) {
 			player.valueIcon = getValueIcon(player).getCode();
 			player.updateFlags.add(UpdateFlag.APPEARANCE);

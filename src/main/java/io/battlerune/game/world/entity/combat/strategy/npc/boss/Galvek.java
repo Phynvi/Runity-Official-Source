@@ -12,6 +12,7 @@ import io.battlerune.game.Graphic;
 import io.battlerune.game.Projectile;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.task.TickableTask;
+import io.battlerune.game.task.impl.CeillingCollapseTask;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
 import io.battlerune.game.world.entity.combat.CombatUtil;
@@ -242,16 +243,35 @@ public class Galvek extends MultiStrategy {
 
 		@Override
 		public void hit(Npc attacker, Mob defender, Hit hit) {
-			if (Utility.random(1, 5) == 1) {
+			if (Utility.random(1, 3) == 1) {
 				attacker.animate(7909);
 				attacker.transform(8096);
 				attacker.animate(7908);
 				attacker.getCombat().attack(defender);
 				attacker.getCombat().isAttacking(defender);
 
-				for (int x = 1; x < 10; x++) {
-					System.out.println("[GALVEK] Transformation is good to go.");
-				}
+					System.out.println("[GALVEK] 1 Transformation is good to go.");
+				
+			}
+			if (Utility.random(1, 3) == 2) {
+				attacker.animate(7909);
+				attacker.transform(8097);
+				attacker.animate(7908);
+				attacker.getCombat().attack(defender);
+				attacker.getCombat().isAttacking(defender);
+
+					System.out.println("[GALVEK] 2 Transformation is good to go.");
+				
+			}
+			if (Utility.random(1, 3) == 3) {
+				attacker.animate(7909);
+				attacker.transform(8098);
+				attacker.animate(7908);
+				attacker.getCombat().attack(defender);
+				attacker.getCombat().isAttacking(defender);
+
+					System.out.println("[GALVEK] 3 Transformation is good to go.");
+				
 			}
 			defender.graphic(new Graphic(369));
 			// defender.locking.lock(LockType.FREEZE);
@@ -280,6 +300,13 @@ public class Galvek extends MultiStrategy {
 				tsunami.walkTo(defender, () -> {
 					World.sendGraphic(new Graphic(1460, true), tsunami.getPosition());
 					defender.damage(new Hit(60 * tsunami.getCurrentHealth() / tsunami.getMaximumHealth()));
+			        World.schedule(new CeillingCollapseTask(defender.getPlayer()));
+			        for(int i = 0; i < 5; i++) {
+			    		defender.graphic(60);
+			    		defender.speak("Ouch!");
+			    		defender.damage(new Hit(Utility.random(5, 8)));
+			    		defender.getPlayer().message("Some rocks fall from the ceiling and hit you.");
+			        }
 					tsunami.unregister();
 				});
 			});

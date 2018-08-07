@@ -7,6 +7,8 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
  
 /**
+ * Adam_#6723
+ * 
  */
 public class PickupItemPlugin extends PluginContext {
  

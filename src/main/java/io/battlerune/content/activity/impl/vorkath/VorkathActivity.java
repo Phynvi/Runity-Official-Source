@@ -46,17 +46,15 @@ public class VorkathActivity extends Activity {
 	}
 
 	public static void CreatePaidInstance(Player player) {
-		if (player.bank.contains(995, 100000)) {
+		if (!player.bank.contains(995, 100000)) {
+			player.message("You need to have 100,00 coins inside your bank to pay for the instance!");
+			return;
+		} else {
 			player.bank.remove(995, 100000);
 			Teleportation.teleport(player, new Position(2272, 4055, 0), 20, () -> create(player));
 			player.send(new SendMessage("You have teleported to the Instanced Version of Vorkath"));
 			player.send(new SendMessage("100,000 coins has been taken out of your bank, as a fee."));
 
-		} else {
-			DialogueFactory factory = player.dialogueFactory;
-			Teleportation.teleport(player, new Position(2271, 4046, 0));
-			factory.sendNpcChat(5608, Expression.HAPPY, "You need to have 100,000 in your bank!");
-			player.message("You need to have 100,000 in your bank!");
 		}
 	}
 

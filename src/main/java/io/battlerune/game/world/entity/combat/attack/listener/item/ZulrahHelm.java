@@ -67,11 +67,13 @@ public class ZulrahHelm extends SimplifiedListener<Player> {
 				attacker.inventory.add(13196, 1);
 				attacker.getCombat().removeListener(listener);
 			}
-			if (attacker.equipment.contains(12931)) {
-				attacker.equipment.replace(12_931, Equipment.HELM_SLOT, true);
-				attacker.inventory.add(12929, 1);
-				attacker.getCombat().removeListener(listener);
-			}
+	        if (attacker.serpentineHelmCharges == 0) {
+	            attacker.message("Your Serpentine helm is out of charges.");
+	            attacker.equipment.replace(12_931, Equipment.HELM_SLOT, true);
+	            attacker.inventory.add(12926, 1);
+	            attacker.message("You have been given an uncharged Serpentine helm.");
+	            attacker.getCombat().removeListener(listener);
+	        }
 		}
 
 	}
@@ -96,11 +98,14 @@ public class ZulrahHelm extends SimplifiedListener<Player> {
 			}
 		}
 
-		if (attacker.tanzaniteHelmCharges == 0) {
-			attacker.message("Your Tanzanite helm is out of charges.");
-			attacker.equipment.replace(13_197, 13_196, Equipment.HELM_SLOT, true);
-			attacker.getCombat().removeListener(listener);
-		}
+
+        if (attacker.tanzaniteHelmCharges == 0) {
+            attacker.message("Your Tanzanite helm is out of charges.");
+            attacker.equipment.replace(13_197, Equipment.HELM_SLOT, true);
+            attacker.inventory.add(13196, 1);
+            attacker.message("you have been given an uncharged Tanzanite helm.");
+            attacker.getCombat().removeListener(listener);
+        }
 	}
 
 	private static void magma(Player attacker, Mob defender, ZulrahHelm listener) {
@@ -125,7 +130,9 @@ public class ZulrahHelm extends SimplifiedListener<Player> {
 
 		if (attacker.magmaHelmCharges == 0) {
 			attacker.message("Your Magma helm is out of charges.");
-			attacker.equipment.replace(13_199, 13_198, Equipment.HELM_SLOT, true);
+			attacker.equipment.replace(13_199, Equipment.HELM_SLOT, true);
+			attacker.inventory.add(13198, 1);
+			attacker.message("You've been given an uncharged magma helm.");
 			attacker.getCombat().removeListener(listener);
 		}
 	}

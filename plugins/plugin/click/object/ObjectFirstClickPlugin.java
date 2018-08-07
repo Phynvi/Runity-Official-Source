@@ -6,7 +6,6 @@ import io.battlerune.Config;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.impl.fightcaves.FightCaves;
 import io.battlerune.content.activity.impl.pestcontrol.PestControl;
-import io.battlerune.content.activity.impl.recipefordisaster.RecipeForDisaster;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
 import io.battlerune.content.combat.cannon.CannonManager;
 import io.battlerune.content.dialogue.impl.WellOfGoodwillDialogue;
@@ -50,7 +49,6 @@ import io.battlerune.net.packet.out.SendFadeScreen;
 import io.battlerune.net.packet.out.SendInputAmount;
 import io.battlerune.net.packet.out.SendInputMessage;
 import io.battlerune.net.packet.out.SendMessage;
-import io.battlerune.net.packet.out.SendRunEnergy;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
@@ -229,20 +227,13 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		 * only file you gotta edit for the portals.
 		 */
 
-		case 29042:
-			if (player.barrowsKillCount == 6) {
+	   case 29042:
 				player.send(new SendMessage(
-						"@or2@You have completed @or1@ Barrows Minigame @red@" + player.getName() + "!"));
+						"@or2@You have completed @lre@ Barrows Minigame @red@" + player.getName() + "!"));
 				Teleportation.teleport(player, Config.DEFAULT_POSITION, 20, () -> {
 					player.send(new SendFadeScreen("@or2@Thanks for completing barrows!", 1, 3));
 					player.send(new SendMessage("@red@Congratulations"));
-					// player.send(new SendMessage("@red@No refunds will be given out without any
-					// kind of video proof"));
-				});
-			} else {
-				player.message("You Must kill the barrows brother! Otherwise you will not be able to leave my cave!!!");
-				player.message("The other alternative " + player.getName() + "Is by DYING IN HERE! MUHAHAHA");
-			}
+				}); 
 			break;
 			
 		case 31556: //REV CAVE REVANANT CAVE. REV CAVE OSRS

@@ -8,6 +8,12 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.util.Utility;
 
+/**
+ * 
+ * @author Adam_#6723
+ *
+ */
+
 public class CerberusActivityListener extends ActivityListener<CerberusActivity> {
 
 	CerberusActivityListener(CerberusActivity minigame) {

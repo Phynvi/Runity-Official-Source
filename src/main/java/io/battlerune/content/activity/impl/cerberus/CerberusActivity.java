@@ -24,6 +24,12 @@ import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.Utility;
 
+/**
+ * 
+ * @author Adam_#6723
+ *
+ */
+
 public class CerberusActivity extends Activity {
 
 	private final Player player;
@@ -48,18 +54,17 @@ public class CerberusActivity extends Activity {
 	}
 
 	public static void CreatePaidInstance(Player player) {
-		if (player.bank.contains(995, 75000)) {
+		if (!player.bank.contains(995, 75000)) {
+			player.message("You need to have 75,000 coins inside your bank to pay for the instance!");
+			return;
+		}
+		else {
 			player.bank.remove(995, 75000);
 			Teleportation.teleport(player, new Position(1240, 1226, 0), 20, () -> CerberusActivity.create(player));
 			player.send(new SendMessage("You have teleported to the Instanced Version of Cerberus"));
 			player.send(new SendMessage("75,000 coins has been taken out of your bank, as a fee."));
 
-		} else {
-			DialogueFactory factory = player.dialogueFactory;
-			Teleportation.teleport(player, new Position(1240, 1226, 0));
-			factory.sendNpcChat(5608, Expression.HAPPY, "You need to have 75,000 in your bank!");
-			player.message("You need to have 75,000 in your bank!");
-		}
+		} 
 	}
 
 	public static void CreateUnPaidInstance(Player player) {

@@ -52,6 +52,10 @@ public class MiscButtonPlugin extends PluginContext {
 				TeleportHandler.open(player, TeleportType.FAVORITES);
 			}
 			return true;
+			
+		case 13390:
+			player.interfaceManager.close();
+			return true;
 		case 14176:
 			player.dialogueFactory.clear();
 			return true;

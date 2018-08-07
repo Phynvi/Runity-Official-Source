@@ -3,12 +3,14 @@ package plugin.click.button;
 import io.battlerune.Config;
 import io.battlerune.content.DropDisplay;
 import io.battlerune.content.DropSimulator;
+import io.battlerune.content.RoyaltyProgram;
 import io.battlerune.content.Skillguides.AttackApp;
 import io.battlerune.content.achievement.AchievementInterface;
 import io.battlerune.content.activity.ActivityType;
 import io.battlerune.content.playerguide.PlayerGuideHandler;
 import io.battlerune.content.presetInterface.PresetInterfaceHandler;
 import io.battlerune.content.skill.impl.magic.teleport.TeleportType;
+import io.battlerune.content.skill.impl.slayer.SlayerTab;
 import io.battlerune.content.staff.PanelType;
 import io.battlerune.content.staff.StaffPanel;
 import io.battlerune.content.teleport.TeleportHandler;
@@ -54,14 +56,15 @@ public class InformationTabButtonPlugin extends PluginContext {
 			player.dialogueFactory.sendOption("Hall of Fame", () -> {
 				player.dialogueFactory.onAction(() -> player.interfaceManager.open(58500));
 			}, "Royalty program", () -> {
-				player.dialogueFactory.onAction(() -> AttackApp.open(player));
+				player.dialogueFactory.onAction(() -> RoyaltyProgram.open(player));
 			}, "Activity Logger", () -> {
 				player.dialogueFactory.onAction(player.activityLogger::open);
-			}, "Game Records", () -> {
-				player.dialogueFactory.onAction(() -> player.gameRecord.display(ActivityType.getFirst()));
 			}, "Title Manager", () -> {
 				player.dialogueFactory.onAction(() -> TitleManager.open(player));
-			}).execute();
+			}, "Slayer Interface", () -> {
+				player.dialogueFactory.onAction(() -> player.slayer.open(SlayerTab.MAIN));
+			}
+			).execute();
 			break;
 		case 29429:
 			PresetInterfaceHandler presets = new PresetInterfaceHandler();

@@ -29,6 +29,12 @@ import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.util.RandomGen;
 
+/**
+ * 
+ * @author Adam_#6723
+ *
+ */
+
 public class Cerberus extends MultiStrategy {
 
 	private static final RangedAttack RANGED = new RangedAttack();

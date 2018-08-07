@@ -8,8 +8,8 @@
   "clan-tag": "",
   "clan-type": "SOCIAL",
   "clan-color": "<col=2ADE36>",
-  "clan-points": 0,
-  "clan-experience": 0.0,
+  "clan-points": 10,
+  "clan-experience": 20000.0,
   "clan-level": "BRONZE",
   "clan-task": "TRVIA_TASK",
   "task-amount": 60,
@@ -32,7 +32,7 @@
   "members": [
     {
       "name": "Adam",
-      "joined": "2018/08/06",
+      "joined": "2018/08/07",
       "rank": "SYSTEM",
       "exp-gained": 0.0,
       "npc-kills": 0,

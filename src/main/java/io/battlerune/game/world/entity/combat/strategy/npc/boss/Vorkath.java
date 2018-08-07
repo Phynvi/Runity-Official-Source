@@ -12,6 +12,7 @@ import io.battlerune.game.Graphic;
 import io.battlerune.game.Projectile;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.task.TickableTask;
+import io.battlerune.game.task.impl.CeillingCollapseTask;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
 import io.battlerune.game.world.entity.combat.CombatUtil;
@@ -263,6 +264,13 @@ public class Vorkath extends MultiStrategy {
 					defender.damage(new Hit(60 * zombie.getCurrentHealth() / zombie.getMaximumHealth()));
 					// defender.locking.unlock();
 					// defender.getPlayer().send(new SendWidget(SendWidget.WidgetType.FROZEN, 0));
+			        World.schedule(new CeillingCollapseTask(defender.getPlayer()));
+			        for(int i = 0; i < 5; i++) {
+			    		defender.graphic(60);
+			    		defender.speak("Ouch!");
+			    		defender.damage(new Hit(Utility.random(5, 8)));
+			    		defender.getPlayer().message("Some rocks fall from the ceiling and hit you.");
+			        }
 					zombie.unregister();
 				});
 			});
