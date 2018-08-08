@@ -138,6 +138,17 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			}
 			break;
 			
+		case 1558:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
+		case 27264:
+			player.bank.open();
+			break;
+			
 			/* Bandos godwars. */
 		case 27485:
 			if (player.getPosition().getX() < object.getPosition().getX()) {

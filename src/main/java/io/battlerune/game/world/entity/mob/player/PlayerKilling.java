@@ -13,10 +13,12 @@ public class PlayerKilling {
 
 	public static void handle(Player killer, Player victim) {
 		if (killer.isBot) {
+			killer.setpkPoints(killer.getpkPoints() + 1);
+			killer.message("Because the victim was a bot, you only get 1 PK Point for your efforts.");
 			return;
 		}
 		
-		//TODO ADAM NEEDS TO ADD PK POINTS PROPERLY, THIS IS BROKEN.
+		//TODO FIXED.
 
 		if (killer.lastHost.equalsIgnoreCase(victim.lastHost)) {
 			killer.message("<col=FF0019>You were not rewarded since you killed someone with your same IP.");
@@ -29,23 +31,53 @@ public class PlayerKilling {
 			return;
 		}
 
-		int reward = PlayerRight.getPkPoints(killer);
+	/*	int reward = PlayerRight.getPkPoints(killer);
 		killer.kill++;
 		victim.death++;
 		killer.pkPoints += reward;
 		killer.message("<col=295EFF>You were rewarded with " + reward + " points for that kill. You now have: "
 				+ Utility.formatDigits(killer.pkPoints) + ".");
-		killer.killstreak.add();
+		killer.killstreak.add();*/
+		
+		if (PlayerRight.isDonator(killer)) {
+			killer.setpkPoints(killer.getpkPoints() + 11);
+			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints() + " points for that kill. You now have: "
+					+ Utility.formatDigits(killer.pkPoints) + ".");
+		}
+		if (PlayerRight.isSuper(killer)) {
+			killer.setpkPoints(killer.getpkPoints() + 13);
+			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints() + " points for that kill. You now have: "
+					+ Utility.formatDigits(killer.pkPoints) + ".");
+		}
+		if (PlayerRight.isExtreme(killer)) {
+			killer.setpkPoints(killer.getpkPoints() + 15);
+			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints() + " points for that kill. You now have: "
+					+ Utility.formatDigits(killer.pkPoints) + ".");
+		}
+		if (PlayerRight.isElite(killer)) {
+			killer.setpkPoints(killer.getpkPoints() + 17);
+			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints() + " points for that kill. You now have: "
+					+ Utility.formatDigits(killer.pkPoints) + ".");
+		}
+		if (PlayerRight.isKing(killer)) {
+			killer.setpkPoints(killer.getpkPoints() + 20);
+			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints() + " points for that kill. You now have: "
+					+ Utility.formatDigits(killer.pkPoints) + ".");
+		}
+		if (PlayerRight.isSupreme(killer)) {
+			killer.setpkPoints(killer.getpkPoints() + 25);
+			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints() + " points for that kill. You now have: "
+					+ Utility.formatDigits(killer.pkPoints) + ".");
+		}
 
 		/** User has a 1/100 Chance of recieveing a blood key. **/
 		int Random_Chance = Utility.random(1, 100);
 		if (Random_Chance == 5 && PlayerRight.isDonator(killer)) {
 			killer.inventory.add(6640, 1);
+			World.sendMessage("<col=8714E6> A blood crystal was given to " + killer.getName() + "!");
 		}
 			killer.message("The gods have looked down upon you and smiled! They have rewarded you with"
 					+ "@red@ 1x Blood Key!");
-			World.sendMessage("<col=8714E6> A blood crystal was given to " + killer.getName() + ", a clan member of "
-					+ killer.clanChannel.getName() + "!");
 			World.sendMessage(
 					"<col=8714E6> To get a chance of obtaining a blood key, you must be a donator or higher!");
 

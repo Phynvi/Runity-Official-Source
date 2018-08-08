@@ -400,6 +400,25 @@
 	      }
 	    ]
 	  },
+  
+  {
+		    "name": "Trivia Point Store",
+		    "currency": "TRIVIA_POINTS",
+		    "restock": true,
+		    "sellType": "NONE",
+		    "items": [
+		      {
+		        "id": 299, // Mith. Seeds
+		        "value": 50000,
+		        "amount": 10000
+		      },
+		      {
+		        "id": 15098, // Dice Bag
+		        "value": 100000000,
+		        "amount": 100
+		      }
+		    ]
+		  },
 
   {
 			    "name": "Pk Rewards Shop 1", // Donator pk shop
@@ -4807,16 +4826,6 @@
         "id": 7460, //Rune gloves
         "amount": 10,
         "value": 6500
-      },
-      {
-        "id": 7461, //Dragon gloves
-        "amount": 10,
-        "value": 130000
-      },
-      {
-        "id": 7462, //Barrows gloves
-        "amount": 10,
-        "value": 130000
       },
       {
         "id": 7433, //Wooden spoon

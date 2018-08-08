@@ -98,14 +98,14 @@ public class TriviaBot {
 		if (PlayerRight.isDonator(player) || PlayerRight.isSuper(player)) {
 			player.SetTriviaPoints(player.getTriviaPoints() + 2);
 			player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
-
 		}
+		
 
-		else if (PlayerRight.isExtreme(player) || PlayerRight.isElite(player)) {
+		if (PlayerRight.isExtreme(player) || PlayerRight.isElite(player)) {
 			player.SetTriviaPoints(player.getTriviaPoints() + 3);
 			player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
 
-		} else if (PlayerRight.isKing(player)) {
+		} if (PlayerRight.isKing(player)) {
 			player.SetTriviaPoints(player.getTriviaPoints() + 4);
 			player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
 		} else {

@@ -200,6 +200,10 @@ public class Player extends Mob {
 	public int getpkPoints() {
 		return pkPoints;
 	}
+	
+	public void setpkPoints(int pkPoints) {
+		this.pkPoints = pkPoints;
+	}
 
 	public int skillingPoints;
 	public int bossPoints;

@@ -58,6 +58,7 @@ import plugin.command.impl.player.DropInterfaceCommand;
 import plugin.command.impl.player.DropSimulatorCommand;
 import plugin.command.impl.player.DropsCommand;
 import plugin.command.impl.player.DuelArenaCommand;
+import plugin.command.impl.player.DustiesCommand;
 import plugin.command.impl.player.Easts;
 import plugin.command.impl.player.EmptyInventoryCommand;
 import plugin.command.impl.player.FameBoardCommand;
@@ -138,6 +139,8 @@ public class CommandManager {
 		plugin.put(new String[] { "slayertask", "task" }, new SlayerTaskCommand());
 		plugin.put(new String[] { "players", "online" }, new PlayerCountCommand());
 		plugin.put(new String[] { "empty", "emptyinventory" }, new EmptyInventoryCommand());
+		plugin.put(new String[] { "dusties", "dusti" }, new DustiesCommand());
+
 		/*
 		 * @Donator Command
 		 */

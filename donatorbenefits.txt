@@ -10,6 +10,7 @@
      * X2 Boss Points
      * X2 Trivia Points
      * X2 Pest Control points
+     * Donators get a chance to obtain a red crystal from pk'ing in wilderness
      * Access to the donator Tab interface!
      * Allowed to use the Deposit item box.
      * Able to restore health and hp every 2 minutes.

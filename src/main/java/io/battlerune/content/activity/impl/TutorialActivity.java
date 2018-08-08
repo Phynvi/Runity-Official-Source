@@ -16,7 +16,6 @@ import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.teleport.TeleportHandler;
 import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
-import io.battlerune.game.event.email.EmailInputListener;
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
@@ -182,8 +181,8 @@ public class TutorialActivity extends Activity {
 			pause();
 			break;
 		case 9:
-			Teleportation.teleport(player, new Position(3089, 3492), MODERN, () -> {
-				player.face(Direction.EAST);
+			Teleportation.teleport(player, new Position(3091, 3494), MODERN, () -> {
+				player.face(Direction.WEST);
 				next();
 				player.locking.lock();
 			});
@@ -197,7 +196,7 @@ public class TutorialActivity extends Activity {
 			pause();
 			break;
 		case 11:
-			Teleportation.teleport(player, new Position(3091, 3494), MODERN, () -> {
+			Teleportation.teleport(player, new Position(3091, 3496), MODERN, () -> {
 				player.face(Direction.WEST);
 				next();
 				player.locking.lock();
@@ -212,7 +211,7 @@ public class TutorialActivity extends Activity {
 			pause();
 			break;
 		case 13:
-			Teleportation.teleport(player, new Position(3093, 3500), MODERN, () -> {
+			Teleportation.teleport(player, new Position(3071, 3498), MODERN, () -> {
 				player.face(Direction.EAST);
 				next();
 				player.locking.lock();
@@ -225,7 +224,7 @@ public class TutorialActivity extends Activity {
 			pause();
 			break;
 		case 15:
-			Teleportation.teleport(player, new Position(3079, 3494), MODERN, () -> {
+			Teleportation.teleport(player, new Position(3080, 3508), MODERN, () -> {
 				player.face(Direction.NORTH);
 				next();
 				player.locking.lock();
@@ -239,8 +238,8 @@ public class TutorialActivity extends Activity {
 			pause();
 			break;
 		case 17:
-			Teleportation.teleport(player, new Position(3079, 3489), MODERN, () -> {
-				player.face(Direction.SOUTH);
+			Teleportation.teleport(player, new Position(3078, 3509), MODERN, () -> {
+				player.face(Direction.NORTH);
 				next();
 				player.locking.lock();
 			});
@@ -253,7 +252,7 @@ public class TutorialActivity extends Activity {
 			pause();
 			break;
 		case 19:
-			Teleportation.teleport(player, new Position(3085, 3501), MODERN, () -> {
+			Teleportation.teleport(player, new Position(3085, 3500), MODERN, () -> {
 				player.face(Direction.SOUTH);
 				next();
 				player.locking.lock();
@@ -267,7 +266,7 @@ public class TutorialActivity extends Activity {
 			pause();
 			break;
 		case 21:
-			Teleportation.teleport(player, new Position(3078, 3509), MODERN, () -> {
+			Teleportation.teleport(player, new Position(3069, 3517), MODERN, () -> {
 				player.face(Direction.SOUTH);
 				next();
 				player.locking.lock();
@@ -301,8 +300,8 @@ public class TutorialActivity extends Activity {
 			pause();
 			break;
 		case 25:
-			Teleportation.teleport(player, new Position(3089, 3498), MODERN, () -> {
-				player.face(Direction.EAST);
+			Teleportation.teleport(player, new Position(3097, 3498), MODERN, () -> {
+				player.face(Direction.NORTH);
 				next();
 				player.locking.lock();
 			});
