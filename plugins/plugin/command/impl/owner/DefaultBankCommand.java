@@ -10,15 +10,15 @@ import io.battlerune.game.world.items.Item;
  * @author Adam_#6723 test
  */
 
-public class SpawnCustomCommand implements Command {
+public class DefaultBankCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
 		player.bank.clear();
-		player.bank.addAll(Config.NOT_ALLOWED);
+		player.bank.addAll(Config.BANK_ITEMS);
 		System.arraycopy(Config.TAB_AMOUNT, 0, player.bank.tabAmounts, 0, Config.TAB_AMOUNT.length);
 		player.bank.shift();
-		player.message("Spawned! Customs.");
+		player.message("Spawned! Normal RS Items.");
 	}
 
 

@@ -18,6 +18,7 @@ import plugin.command.impl.moderator.UnmuteCommand;
 import plugin.command.impl.owner.AllToMeCommand;
 import plugin.command.impl.owner.AnimationCommand;
 import plugin.command.impl.owner.ArenaSpawnCommand;
+import plugin.command.impl.owner.DefaultBankCommand;
 import plugin.command.impl.owner.DeveloperInstanceCommand;
 import plugin.command.impl.owner.DownCommand;
 import plugin.command.impl.owner.EventBossInterfaceHide;
@@ -165,7 +166,8 @@ public class CommandManager {
 		plugin.put(new String[] { "item" }, new ItemCommand());
 		plugin.put(new String[] { "master" }, new MasterCommand());
 		plugin.put(new String[] { "instance" }, new DeveloperInstanceCommand());
-		plugin.put(new String[] { "spawncustoms" }, new SpawnCustomCommand());
+		plugin.put(new String[] { "customs" }, new SpawnCustomCommand());
+		plugin.put(new String[] { "defaultbank" }, new DefaultBankCommand());
 		plugin.put(new String[] { "master", "max" }, new MasterCommand());
 		plugin.put(new String[] { "find", "finditem" }, new FindCommand());
 		plugin.put(new String[] { "anim", "animation" }, new AnimationCommand());

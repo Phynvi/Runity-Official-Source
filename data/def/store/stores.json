@@ -6,379 +6,379 @@
     "sellType": "NONE",
     "items": [
       {
-        "id": 21079,
+        "id": 21079, // Arcane Prayer Scroll
         "amount": 100,
-        "value": 150
+        "value": 750 // ~50 kills
       },
 
       {
-        "id": 21034,
+        "id": 21034, // Dexterous Prayer Scroll
         "amount": 100,
-        "value": 150
+        "value": 750 // ~50 kills
       },
 
       {
-        "id": 10382,
+        "id": 10382, // Guthix Coif
         "amount": 100,
-        "value": 15
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 10378,
+        "id": 10378, // Guthix dragonhide
         "amount": 100,
-        "value": 20
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 10380,
+        "id": 10380, // Guthix Chaps
         "amount": 100,
-        "value": 20
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 10376,
+        "id": 10376, // Guthix Bracers
         "amount": 100,
-        "value": 15
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 10390,
+        "id": 10390, // Saradomin Coif
         "amount": 100,
-        "value": 15
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 10386,
+        "id": 10386, // Saradomin d'hide
         "amount": 100,
-        "value": 20
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 10388,
+        "id": 10388, // Saradomin chaps
         "amount": 100,
-        "value": 15
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 10384,
+        "id": 10384, // Saradomin Bracers
         "amount": 100,
-        "value": 15
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 10374,
+        "id": 10374, // Zamorak Coif
         "amount": 100,
-        "value": 20
+        "value": 150 // ~10 kills
       },
       {
-        "id": 10370,
+        "id": 10370, // Zamorak d' hide
         "amount": 100,
-        "value": 20
-      },
-
-      {
-        "id": 10372,
-        "amount": 100,
-        "value": 20
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 10368,
+        "id": 10372, // Zamorak Chaps
         "amount": 100,
-        "value": 15
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 10547,
+        "id": 10368, // Zamorak Bracers
         "amount": 100,
-        "value": 25
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 10548,
+        "id": 10547, // Healer Hat
         "amount": 100,
-        "value": 25
+        "value": 225 // ~15 kills
       },
 
       {
-        "id": 10549,
+        "id": 10548, // Fighter Hat
         "amount": 100,
-        "value": 25
+        "value": 225 // ~15 kills
       },
 
       {
-        "id": 10550,
+        "id": 10549, // Runner hat
         "amount": 100,
-        "value": 25
+        "value": 225 // ~15 kills
       },
 
       {
-        "id": 4151,
+        "id": 10550, // Ranger hat
         "amount": 100,
-        "value": 30
+        "value": 225 // ~15 kills
       },
 
       {
-        "id": 6585,
+        "id": 4151, // Abyssal Whip
         "amount": 100,
-        "value": 25
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 11840,
+        "id": 6585, // Amulet of fury
         "amount": 100,
-        "value": 15
+        "value": 225 // ~15 kills
       },
 
       {
-        "id": 11235,
+        "id": 11840, // Dragon Boots
         "amount": 100,
-        "value": 30
+        "value": 150 // ~10 kills
       },
 
       {
-        "id": 11791,
+        "id": 11235, // Dark Bow
         "amount": 100,
-        "value": 45
+        "value": 1200 // ~80 kills
       },
 
       {
-        "id": 13652,
+        "id": 11791, // Staff of the Dead
         "amount": 100,
-        "value": 60
+        "value": 2250 // ~150 kills
       },
 
       {
-        "id": 11889,
+        "id": 13652, // Dragon Claws
         "amount": 100,
-        "value": 45
+        "value": 4500 // ~300 kills
       },
 
       {
-        "id": 12004,
+        "id": 11889, // Zamorakian hasta
         "amount": 100,
-        "value": 45
+        "value": 600 // ~40 kills
       },
 
       {
-        "id": 12601,
+        "id": 12004, // Kraken tentacle
         "amount": 100,
-        "value": 35
+        "value": 675 // ~45 kills
       },
 
       {
-        "id": 12603,
+        "id": 12601, // Ring of the gods
         "amount": 100,
-        "value": 35
+        "value": 1200 // ~80 kills
       },
 
       {
-        "id": 12605,
+        "id": 12603, // Tyrnnical Ring
         "amount": 100,
-        "value": 35
-      },
-      {
-        "id": 6737,
-        "amount": 100,
-        "value": 25
+        "value": 1200 // ~80 kills
       },
 
       {
-        "id": 6733,
+        "id": 12605, // Treasonous ring
         "amount": 100,
-        "value": 25
+        "value": 1200 // ~80 kills
+      },
+      {
+        "id": 6737, // Berserker ring
+        "amount": 100,
+        "value": 675 // ~45 kills
       },
 
       {
-        "id": 6731,
+        "id": 6733, // Archers ring
         "amount": 100,
-        "value": 25
+        "value": 675 // ~45 kills 
       },
 
       {
-        "id": 13263,
+        "id": 6731, // Seers ring
         "amount": 100,
-        "value": 70
+        "value": 675 // ~45 kills 
       },
 
       {
-        "id": 13265,
+        "id": 13263, // Abyssal bludgeon
         "amount": 100,
-        "value": 55
+        "value": 2250 // ~150 kills
       },
 
       {
-        "id": 13576,
+        "id": 13265, // Abyssal dagger
         "amount": 100,
-        "value": 55
+        "value": 2250 // ~150 kills
       },
 
       {
-        "id": 13235,
+        "id": 13576, // Dragon Warhammer
         "amount": 100,
-        "value": 70
+        "value": 2700 // ~180 kills
       },
 
       {
-        "id": 13239,
+        "id": 13235, // Eternal boots
         "amount": 100,
-        "value": 70
+        "value": 1050 // ~70 kills
       },
 
       {
-        "id": 13237,
+        "id": 13239, // Primordial boots
         "amount": 100,
-        "value": 70
+        "value": 1050 // ~70 kills
       },
 
       {
-        "id": 19553,
+        "id": 13237, // Pegasian boots
         "amount": 100,
-        "value": 50
+        "value": 1050 // ~70 kills
       },
 
       {
-        "id": 19547,
+        "id": 19553, // Amulet of torture
         "amount": 100,
-        "value": 50
+        "value": 1050 // ~70 kills
       },
 
       {
-        "id": 19544,
+        "id": 19547, // Necklace of anguish
         "amount": 100,
-        "value": 50
+        "value": 1050 // ~70 kills
       },
 
       {
-        "id": 11832,
+        "id": 19544, // Tormented bracelet
         "amount": 100,
-        "value": 45
+        "value": 1050 // ~70 kills
       },
 
       {
-        "id": 11834,
+        "id": 11832, // Bandos Chestplate
         "amount": 100,
-        "value": 45
+        "value": 525 // ~35 kills
       },
 
       {
-        "id": 12929,
+        "id": 11834, // Bandos tassets
         "amount": 100,
-        "value": 55
+        "value": 525 // ~35 kills
       },
 
       {
-        "id": 12926,
+        "id": 12929, // Serpentine helm (uncharged
         "amount": 100,
-        "value": 70
+        "value": 600 // ~40 kills
       },
 
       {
-        "id": 12817,
+        "id": 12926, // Toxic blowpipe
         "amount": 100,
-        "value": 150
+        "value": 1200 // ~80 kills
       },
 
       {
-        "id": 12821,
+        "id": 12817, // Elysian Spirit Shield
         "amount": 100,
-        "value": 150
+        "value": 3750 // ~250 kills
       },
 
       {
-        "id": 12825,
+        "id": 12821, // Spectral spirit shield
         "amount": 100,
-        "value": 150
+        "value": 3000 // ~200 kills
       },
 
       {
-        "id": 11926,
+        "id": 12825, // Arcane spirit shield
+        "amount": 100,
+        "value": 150 // ~175 kills
+      },
+
+      {
+        "id": 11926, // Odium ward
         "amount": 250,
-        "value": 100
+        "value": 600 // ~40 kills
       },
 
       {
-        "id": 11924,
+        "id": 11924, // malediction
         "amount": 100,
-        "value": 100
+        "value": 600 // ~40 kills
       },
 
       {
-        "id": 11785,
+        "id": 11785, // Armadyl crossbow
         "amount": 100,
-        "value": 70
+        "value": 1200 // ~80 kills
       },
 
       {
-        "id": 11802,
+        "id": 11802, // Armadyl Godsword
         "amount": 100,
-        "value": 70
+        "value": 1200 // ~80 kills 
       },
 
       {
-        "id": 11826,
+        "id": 11826, // Armadyl helmet
         "amount": 100,
-        "value": 35
+        "value": 375 // ~25 kills
       },
 
       {
-        "id": 11828,
+        "id": 11828, // Armadyl chestplate
         "amount": 100,
-        "value": 45
+        "value": 450 // ~30 kills
       },
 
       {
-        "id": 11830,
+        "id": 11830, // Armadyl chainskirt
         "amount": 100,
-        "value": 35
+        "value": 450 // ~30
       },
 
       {
-        "id": 21018,
+        "id": 21018, // Ancestral hat
         "amount": 100,
-        "value": 150
+        "value": 375 // ~25 kills
       },
 
       {
-        "id": 21021,
+        "id": 21021, // Ancestral robe top
         "amount": 100,
-        "value": 150
+        "value": 450 // ~30 kills
       },
 
       {
-        "id": 21024,
+        "id": 21024, // Ancestral robe bottom
         "amount": 100,
-        "value": 150
+        "value": 450 // ~30 kills 
       },
 
       {
-        "id": 21006,
+        "id": 21006, // Kodai Wand
         "amount": 100,
-        "value": 150
+        "value": 4875 // ~325 kills
       },
 
       {
-        "id": 21003,
+        "id": 21003, // Elder Maul
         "amount": 100,
-        "value": 100
+        "value": 5250 // ~350 kills
       },
 
       {
-        "id": 21000,
+        "id": 21000, // Twisted Buckler
         "amount": 100,
-        "value": 70
+        "value": 4500 // ~350 kills
       },
 
       {
-        "id": 20997,
+        "id": 20997, // Twisted Bow
         "amount": 100,
-        "value": 500
+        "value": 6000 // ~400 kills
       },
 
       {
-        "id": 21015,
+        "id": 21015, // Dinh Bulwark
         "amount": 100,
-        "value": 100
+        "value": 4500 // ~350 kills
       }
     ]
   },
@@ -389,12 +389,12 @@
 	    "sellType": "NONE",
 	    "items": [
 	      {
-	        "id": 299,
-	        "value": 100000,
+	        "id": 299, // Mith. Seeds
+	        "value": 50000,
 	        "amount": 10000
 	      },
 	      {
-	        "id": 15098,
+	        "id": 15098, // Dice Bag
 	        "value": 100000000,
 	        "amount": 100
 	      }
@@ -402,196 +402,196 @@
 	  },
 
   {
-			    "name": "Pk Rewards Shop 1",
+			    "name": "Pk Rewards Shop 1", // Donator pk shop
 			    "currency": "PVP_POINTS",//arlo
 			    "restock": true,
 			    "sellType": "NONE",
 			    "items": [
 			              {
-							     "id": 7462,
-							     "value": 1,
+							     "id": 7462, // Barrows gloves
+							     "value": 150, // ~10 kills
 							     "amount": 100
 							  },
 			              {
-								     "id": 10551,
-								     "value": 1,
+								     "id": 10551, // Fighter torso
+								     "value": 150, // ~10 kills
 								     "amount": 100
 								  },
 			              {
-									     "id": 10548,
-									     "value": 1,
+									     "id": 10548, // Fighter Hat
+									     "value": 150, // ~10 kills
 									     "amount": 100
 									  },
 			              {
-										     "id": 6570,
-										     "value": 1,
+										     "id": 6570, // firecape
+										     "value": 750, // ~50 kills
 										     "amount": 100
 										  },  
 			              
 			              {
-											     "id": 21295,
-											     "value": 1,
+											     "id": 21295, // Infernal cape
+											     "value": 2250, // ~150 kills,
 											     "amount": 100
 											  },    
 			              
 			      {
-			        "id": 4745,
-			        "value": 50,
+			        "id": 4745, // Torag's helm
+			        "value": 150, // ~10 kills
 			        "amount": 100
 			      },
 			      {
-				     "id": 4753,
-				     "value": 50,
+				     "id": 4753, // verac's helm
+				     "value": 150, // ~10 kills
 				     "amount": 100
 				  },
 			      {
-					 "id": 4745,
-					 "value": 50,
+					 "id": 4745, // Torag's helm
+					 "value": 150, // ~10 kills
 					 "amount": 100
 				  },
 			      {
-						        "id": 4708,
-						        "value": 50,
-						        "amount": 100
+						        "id": 4708, // Ahrim's hood
+						        "value": 150, // ~10 kills
+						        "amount": 100 
 						      },
 			      {
-							        "id": 4716,
-							        "value": 50,
+							        "id": 4716, // Dharkok's helm
+							        "value": 225, // ~15 kills
 							        "amount": 100
 							      },
 			      {
-								        "id": 4732,
-								        "value": 50,
+								        "id": 4732, // Karil's coif
+								        "value": 150, // ~10 kills
 								        "amount": 100
 								      },
 			      {
-									        "id": 13235,
-									        "value": 50,
+									        "id": 13235, // Eternal boots
+									        "value": 825, // ~55 kills (15 less than the other store)
 									        "amount": 100
 									      },
 			      {
-										        "id": 13237,
-										        "value": 50,
+										        "id": 13237, //Pegasian boots
+										        "value": 825, // ~55 kills (15 less than the other store)
 										        "amount": 100
 										      },
 			      {
-											        "id": 4728,
-											        "value": 50,
+											        "id": 4728, // Guthan's Platebody
+											        "value": 300, // ~20 kills
 											        "amount": 100
 										      },
 			      {
-											        "id": 4757,
-											        "value": 50,
-											        "amount": 100
+											        "id": 4757, // Verac's brassard
+											        "value": 300, // ~20 kills 
+											        "amount": 100 
 											      },
 			      {
-												        "id": 4749,
-												        "value": 50,
+												        "id": 4749, // Torag's platebody
+												        "value": 300, // ~20 kills
 												        "amount": 100
 												      },
 			      {
-													        "id": 4712,
-													        "value": 50,
+													        "id": 4712, // Ahrim's robetop
+													        "value": 300, // ~20 kills
 													        "amount": 100
 													      },
 			      {
-														        "id": 4720,
-														        "value": 50,
+														        "id": 4720, // Dharok's platebody
+														        "value": 300, // ~20 kills
 														        "amount": 100
 														      },
 			      {
-															        "id": 4736,
-															        "value": 50,
+															        "id": 4736, // Karil's leathertop
+															        "value": 300, // ~20 kills
 															        "amount": 100
 															      },
 			      {
-																        "id": 13239,
-																        "value": 50,
+																        "id": 13239, // Primordial boots
+																        "value": 825, // ~55 kills (15 less than the other store)	
 																        "amount": 100
 																      },
 			      {
-																	        "id": 6920,
-																	        "value": 50,
+																	        "id": 6920, // Infinity boots
+																	        "value": 225, // ~15 kills
 																	        "amount": 100
 																	      },
 			      {
-																		        "id": 4730,
-																		        "value": 50,
+																		        "id": 4730, // guthan's chainskirt
+																		        "value": 300, // ~20 kills
 																		        "amount": 100
 																		      },
 			      {
-																			        "id": 4759,
-																			        "value": 50,
+																			        "id": 4759, // Verac's plateskirt
+																			        "value": 300, // ~20 kills
 																			        "amount": 100
 																			      },
 			      {
-																				        "id": 4751,
-																				        "value": 50,
+																				        "id": 4751, // Torag's platelegs
+																				        "value": 300, // ~20 kills
 																				        "amount": 100
 																				      },
 			      {
-																					        "id": 4714,
-																					        "value": 50,
+																					        "id": 4714, // Ahrim's robeskirt
+																					        "value": 300, // ~20 kills
 																					        "amount": 100
 																					      },
 			      {
-																						        "id": 4722,
-																						        "value": 50,
+																						        "id": 4722, // Dharok's platelegs
+																						        "value": 300, // ~20 kills
 																						        "amount": 100
 																						      },
 			      {
-																							        "id": 4738,
-																							        "value": 50,
+																							        "id": 4738, // Karil's leatherskirt
+																							        "value": 300, // ~20 kills
 																							        "amount": 100
 																							      },
 			      {
-																								        "id": 2577,
-																								        "value": 50,
+																								        "id": 2577, // ranger boots
+																								        "value": 300, // ~20 kills
 																								        "amount": 100
 																								      },
 			      {
-																									        "id": 11840,
-																									        "value": 50,
+																									        "id": 11840, //dragon boots
+																									        "value": 150, // ~10 kills
 																									        "amount": 100
 																									      },
 			      {
-																										        "id": 4726,
-																										        "value": 50,
+																										        "id": 4726, // Guthan's Warspear
+																										        "value": 375, // ~25 kills
 																										        "amount": 100
 																										      },
 			      {
-																											        "id": 4755,
-																											        "value": 50,
+																											        "id": 4755, //Verac's flail
+																											        "value": 375, // ~25 kills
 																											        "amount": 100
 																											      },
 			      {
-																												        "id": 4747,
-																												        "value": 50,
+																												        "id": 4747, // Torag's hammers
+																												        "value": 375, // ~25 kills
 																												        "amount": 100
 																												      },
 			      {
-																													        "id": 4710,
-																													        "value": 50,
+																													        "id": 4710, // Ahrim's staff
+																													        "value": 375, // ~25 kills
 																													        "amount": 100
 																													      },
 			      {
-																														        "id": 4718,
-																														        "value": 50,
+																														        "id": 4718, // Dharok's greataxe
+																														        "value": 375, // ~25 kills
 																														        "amount": 100
 																														      },
 			      {
 																															        "id": 4734,
-																															        "value": 50,
+																															        "value": 375, // ~25 kills
 																															        "amount": 100
 																															      },
 			      {
-																																        "id": 11836,
-																																        "value": 50,
+																																        "id": 11836, // bandos boots
+																																        "value": 150, // ~10 kills
 																																        "amount": 100
 																																      },
 			      {
 			        "id": 4740,
-			        "value": 50,
+			        "value": 10,
 			        "amount": 10000
 			      }
 			    ]
@@ -851,38 +851,48 @@
     "sellType": "NONE",
     "items": [
       {
-        "id": 8841,
+        "id": 8841, // void knight staff
+        "value": 100,
+        "amount": 100
+      },
+      {
+        "id": 11663, // Void mage helm
+        "value": 60,
+        "amount": 100
+      },
+      {
+        "id": 11664, // Void Range Helm
+        "value": 60,
+        "amount": 100
+      },
+      {
+        "id": 11665, // Void Melee Helm
+        "value": 60,
+        "amount": 100
+      },
+      {
+        "id": 8839, // Void Knight Top
+        "value": 100,
+        "amount": 100
+      },
+      {
+        "id": 8840, // Void Knight robe
+        "value": 100,
+        "amount": 100
+      },
+      {
+          "id": 13072, // Elite Void Top
+          "value": 200,
+          "amount": 100
+        },
+      {
+            "id": 13073, // Elite Void robe
+            "value": 200,
+            "amount": 100
+          },
+      {
+        "id": 8842, // Void Gloves
         "value": 50,
-        "amount": 100
-      },
-      {
-        "id": 11663,
-        "value": 150,
-        "amount": 100
-      },
-      {
-        "id": 11664,
-        "value": 150,
-        "amount": 100
-      },
-      {
-        "id": 11665,
-        "value": 150,
-        "amount": 100
-      },
-      {
-        "id": 8839,
-        "value": 150,
-        "amount": 100
-      },
-      {
-        "id": 8840,
-        "value": 150,
-        "amount": 100
-      },
-      {
-        "id": 8842,
-        "value": 150,
         "amount": 100
       }
     ]
@@ -895,48 +905,48 @@
     "items": [
       {
         "id": 1931,
-        "amount": 100
+        "amount": 10000
       },
       {
         "id": 1935,
-        "amount": 100
+        "amount": 10000
       },
       {
         "id": 1735,
-        "amount": 100
+        "amount": 10000
       },
       {
         "id": 1925,
-        "amount": 100
+        "amount": 10000
       },
       {
         "id": 1923,
-        "amount": 100
+        "amount": 10000
       },
       {
         "id": 1887,
-        "amount": 100,
+        "amount": 10000,
         "value": 1584
       },
       {
         "id": 590,
-        "amount": 100
+        "amount": 10000
       },
       {
         "id": 1755,
-        "amount": 100
+        "amount": 10000
       },
       {
         "id": 2347,
-        "amount": 100
+        "amount": 10000
       },
       {
         "id": 952,
-        "amount": 100
+        "amount": 10000
       },
       {
         "id": 1540,
-        "amount": 100
+        "amount": 10000
       }
     ]
   },
@@ -3559,7 +3569,7 @@
         "id": 20838,
         //CORRUPT FULL HELM
         "amount": 1000,
-        "value": 50
+        "value": 50 //VALUE IN DONATOR_POINTS WHICH IS THE CURRENCY
       },
       {
           "id": 20838,
