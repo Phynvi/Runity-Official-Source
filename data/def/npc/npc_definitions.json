@@ -71761,6 +71761,50 @@
     "walk": 7181
   },
   {
+	    "id": 7760,
+	    "name": "Herbi",
+	    "attackable": false,
+	    "combat-level": 1
+  },
+  {
+	    "id": 473,
+	    "name": "Zygomite",
+	    "attackable": false,
+	    "combat-level": 1
+},
+  {
+    "id": 787,
+    "name": "Suqah Monster",
+    "attackable": false,
+    "combat-level": 1
+},
+  {
+    "id": 8091,
+    "name": "Baby Rune Dragon",
+    "attackable": false,
+    "combat-level": -1
+},
+  {
+    "id": 137,
+    "name": "Baby Red Dragon",
+    "attackable": false,
+    "combat-level": -1
+},
+  {
+    "id": 3354,
+    "name": "Hobgoblin",
+    "attackable": false,
+    "combat-level": 1
+},
+  {
+  "id": 7785,
+  "name": "Herbibore",
+  "attackable": false,
+  "combat-level": 1,
+  "stand": 7694,
+  "walk": 7695
+  },
+  {
     "id": 6717,
     "name": "Beaver",
     "combat-level": 1,

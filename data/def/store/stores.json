@@ -402,23 +402,229 @@
 	  },
   
   {
-		    "name": "Trivia Point Store",
-		    "currency": "TRIVIA_POINTS",
-		    "restock": true,
-		    "sellType": "NONE",
-		    "items": [
-		      {
-		        "id": 299, // Mith. Seeds
-		        "value": 50000,
-		        "amount": 10000
-		      },
-		      {
-		        "id": 15098, // Dice Bag
-		        "value": 100000000,
-		        "amount": 100
-		      }
-		    ]
-		  },
+	      "name": "Trivia Point Store",
+	      "currency": "TRIVIA_POINTS",
+	      "restock": true,
+	      "sellType": "NONE",
+	      "items": [
+	        {
+	          "id": 21209, // Birthday Balloons
+	          "value": 600,
+	          "amount": 10000
+	        },
+	        {
+	            "id": 20836, // Giant Present
+	            "value": 600,
+	            "amount": 10000
+	          },
+	        {
+	              "id": 12351, // Musketeer hat
+	              "value": 200,
+	              "amount": 10000
+	            },
+	        {
+	                "id": 12441, // Musketeer tabard
+	                "value": 200,
+	                "amount": 10000
+	              },
+	        {
+	                  "id": 12443, // Musketeer pants
+	                  "value": 200,
+	                  "amount": 10000
+	                },
+	        {
+	                    "id": 13646, // Farmer's strawhat
+	                    "value": 200,
+	                    "amount": 10000
+	                  },
+	        {
+	                      "id": 13643, // Farmer's shirt
+	                      "value": 200,
+	                      "amount": 10000
+	                    },
+	        {
+	                        "id": 13640, // Farmer's boro trousers
+	                        "value": 200,
+	                        "amount": 10000
+	                      },
+	        {
+	                          "id": 13644, // Farmer's boots
+	                          "value": 200,
+	                          "amount": 10000
+	                        },
+	        {
+	                            "id": 10836, // Silly jester hat
+	                            "value": 200,
+	                            "amount": 10000
+	                          },
+	        {
+	                              "id": 10837, // Silly jester top
+	                              "value": 200,
+	                              "amount": 10000
+	                            },
+	        {
+	                                "id": 10838, // Silly jester tights
+	                                "value": 200,
+	                                "amount": 10000
+	                              },
+	        {
+	                                  "id": 10840, // A jester sick
+	                                  "value": 200,
+	                                  "amount": 10000
+	                                },
+	        {
+	                                    "id": 10839, // Silly jester boots
+	                                    "value": 200,
+	                                    "amount": 10000
+	                                  },
+	        {
+	                                      "id": 7671, // Red boxing gloves
+	                                      "value": 300,
+	                                      "amount": 10000
+	                                    },
+	        {
+	                                        "id": 7673, // Blue boxing gloves
+	                                        "value": 300,
+	                                        "amount": 10000
+	                                      },
+	        {
+	                                          "id": 11705, // Yellow Beach boxing gloves
+	                                          "value": 300,
+	                                          "amount": 10000
+	                                        },
+	        {
+	                                            "id": 11706, // Pink Beach boxing gloves
+	                                            "value": 300,
+	                                            "amount": 10000
+	                                          },
+	        {
+	"id": 20125, // Shayzien house hood
+	"value": 300,
+	"amount": 10000
+	},
+	        {
+	"id": 19949, // Lovakeng house scarf
+	"value": 300,
+	"amount": 10000
+	},
+	        {
+	"id": 20263, // Shayzien banner
+	"value": 300,
+	"amount": 10000
+	},
+	        {
+	"id": 20119, // Lovakengj house hood
+	"value": 300,
+	"amount": 10000
+	},
+	        {
+	"id": 19949, // Lovakeng house scarf
+	"value": 300,
+	"amount": 10000
+	},
+	        {
+	"id": 20257, // Lovakengj banner
+	"value": 300,
+	"amount": 10000
+	},
+	        {
+	"id": 20113, // Arceuus house hood
+	"value": 300,
+	"amount": 10000
+	},
+	        {
+	"id": 19943, // Arceus house scarf
+	"value": 300,
+	"amount": 10000
+	},
+	        {
+	"id": 21314, // Rainbow scarf
+	"value": 300,
+	"amount": 10000
+	},
+	        {
+	"id": 9470, // Gnome scarf
+	"value": 300,
+	"amount": 10000
+	},
+	        {
+	"id": 1057, // Red halloween mask
+	"value": 2100,
+	"amount": 10000
+	},
+	        {
+	"id": 1055, // Blue halloween mask
+	"value": 2100,
+	"amount": 10000
+	},
+	        {
+	"id": 1053, // Green halloween mask
+	"value": 2100,
+	"amount": 10000
+	},
+	        {
+	"id": 11863, // Rainbow partyhat
+	"value": 3600,
+	"amount": 10000
+	},
+	        {
+	"id": 11862, // Black partyhat
+	"value": 3600,
+	"amount": 10000
+	},
+	        {
+	"id": 11847, // Black h'ween mask
+	"value": 3600,
+	"amount": 10000
+	},
+	        {
+	"id": 1053, // Piscarilius hoose scarf
+	"value": 180,
+	"amount": 10000
+	},
+	        {
+	"id": 21847, // Snow imp costume head
+	"value": 180,
+	"amount": 10000
+	},
+	        {
+	"id": 21849, // Snow imp costume body
+	"value": 180,
+	"amount": 10000
+	},
+	        {
+	"id": 21851, // Snow imp costume legs
+	"value": 180,
+	"amount": 10000
+	},
+	        {
+	"id": 21855, // Snow imp costume gloves
+	"value": 180,
+	"amount": 10000
+	},
+	        {
+	"id": 21857, // Snow imp costume feet
+	"value": 180,
+	"amount": 10000
+	},
+
+	        {
+	          "id": 21853, // Snow imp costume tail
+	          "value": 180,
+	          "amount": 100
+	        },
+	        {
+	            "id": 21853, // Pirate pet
+	            "value": 3000,
+	            "amount": 100
+	          },
+	        {
+	"id": 21859, // Wise old man's santa hat
+	"value": 6000,
+	"amount": 10000
+	        }
+	  	    ]
+	  	  },
 
   {
 			    "name": "Pk Rewards Shop 1", // Donator pk shop
@@ -3577,7 +3783,7 @@
   },
   
   {
-    "name": "Second Donator Store",
+    "name": "Custom Donator Store",
     "currency": "DONATOR_POINTS",
     "restock": true,
     "sellType": "NONE",
@@ -4203,7 +4409,7 @@
   
   
   {
-    "name": "Ironman Donator Store",
+    "name": "Rare Donator Store",
     "currency": "DONATOR_POINTS",
     "restock": true,
     "sellType": "NONE",

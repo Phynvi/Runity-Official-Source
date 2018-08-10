@@ -23,6 +23,7 @@ import io.battlerune.net.packet.out.SendConfig;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendPoison;
 import io.battlerune.net.packet.out.SendRunEnergy;
+import io.battlerune.net.packet.out.SendWidget;
 
 /**
  * The enumerated type managing consumable potion types.
@@ -61,6 +62,8 @@ public enum PotionData {
 		@Override // fixed now
 		public void onEffect(Player player) {
 			PotionData.onBasicEffect(player, Skill.RANGED, BoostType.SUPER_RANGE);
+			player.send(new SendWidget(SendWidget.WidgetType.RANGE, 480));
+
 
 		}
 	},
@@ -94,7 +97,6 @@ public enum PotionData {
 			PotionData.onOverloadEffect(player, Skill.DEFENCE, BoostType.OVERLOAD, true);
 			PotionData.onOverloadEffect(player, Skill.RANGED, BoostType.OVERLOAD, true);
 			PotionData.onOverloadEffect(player, Skill.MAGIC, BoostType.OVERLOAD, true);
-
 		}
 	},
 	SUPER_COMBAT_POTION(12695, 12697, 12699, 12701) {
@@ -103,6 +105,10 @@ public enum PotionData {
 			PotionData.onBasicEffect(player, Skill.ATTACK, BoostType.SUPER);
 			PotionData.onBasicEffect(player, Skill.STRENGTH, BoostType.SUPER);
 			PotionData.onBasicEffect(player, Skill.DEFENCE, BoostType.SUPER);
+			player.send(new SendWidget(SendWidget.WidgetType.STRENGTH, 660));
+			player.send(new SendWidget(SendWidget.WidgetType.ATTACK, 660));
+			player.send(new SendWidget(SendWidget.WidgetType.DEFENCE, 660));
+
 		}// its got two seperate json files for datas, for loading what, not sure but i
 			// think it loads 503 and osrs rev
 	},
@@ -122,12 +128,16 @@ public enum PotionData {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onAntiPoisonEffect(player, true, 1000);
+			player.send(new SendWidget(SendWidget.WidgetType.POISON, 320));
+
 		}
 	},
 	ANTIDOTE_PLUS_PLUS(5952, 5954, 5956, 5958) {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onAntiPoisonEffect(player, true, 1200);
+			player.send(new SendWidget(SendWidget.WidgetType.POISON, 420));
+
 		}
 	},
 	AGILITY_POTION(3032, 3034, 3036, 3038) {
@@ -146,6 +156,8 @@ public enum PotionData {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onBasicEffect(player, Skill.RANGED, BoostType.RANGING);
+			player.send(new SendWidget(SendWidget.WidgetType.RANGE, 360));
+
 		}
 	},
 	ENERGY_POTIONS(3008, 3010, 3012, 3014) {
@@ -164,42 +176,55 @@ public enum PotionData {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onBasicEffect(player, Skill.MAGIC, BoostType.MAGIC);
+			player.send(new SendWidget(SendWidget.WidgetType.MAGIC, 360));
+
 		}
 	},
 	DEFENCE_POTIONS(2432, 133, 135, 137) {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onBasicEffect(player, Skill.DEFENCE, BoostType.NORMAL);
+			player.send(new SendWidget(SendWidget.WidgetType.DEFENCE, 360));
+
 		}
 	},
 	STRENGTH_POTIONS(113, 115, 117, 119) {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onBasicEffect(player, Skill.STRENGTH, BoostType.NORMAL);
+			player.send(new SendWidget(SendWidget.WidgetType.STRENGTH, 360));
+
 		}
 	},
 	ATTACK_POTIONS(2428, 121, 123, 125) {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onBasicEffect(player, Skill.ATTACK, BoostType.NORMAL);
+			player.send(new SendWidget(SendWidget.WidgetType.ATTACK, 360));
+
 		}
 	},
 	SUPER_DEFENCE_POTIONS(2442, 163, 165, 167) {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onBasicEffect(player, Skill.DEFENCE, BoostType.SUPER);
+			player.send(new SendWidget(SendWidget.WidgetType.DEFENCE, 480));
+
 		}
 	},
 	SUPER_ATTACK_POTIONS(2436, 145, 147, 149) {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onBasicEffect(player, Skill.ATTACK, BoostType.SUPER);
+			player.send(new SendWidget(SendWidget.WidgetType.ATTACK, 480));
+
 		}
 	},
 	SUPER_STRENGTH_POTIONS(2440, 157, 159, 161) {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onBasicEffect(player, Skill.STRENGTH, BoostType.SUPER);
+			player.send(new SendWidget(SendWidget.WidgetType.STRENGTH, 480));
 		}
 	},
 	RESTORE_POTIONS(2430, 127, 129, 131) {
@@ -233,25 +258,30 @@ public enum PotionData {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onAntiFireEffect(player, false);
-
+			player.send(new SendWidget(SendWidget.WidgetType.ANTI_FIRE, 360));
 		}
 	},
 	SUPER_ANTIFIRE_POTIONS(15304, 15305, 15306, 15307) {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onAntiFireEffect(player, true);
+			player.send(new SendWidget(SendWidget.WidgetType.ANTI_FIRE, 480));
+
 		}
 	},
 	ANTIPOISON_POTIONS(2446, 175, 177, 179) {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onAntiPoisonEffect(player, false, 500);
+			player.send(new SendWidget(SendWidget.WidgetType.POISON, 360));
+
 		}
 	},
 	SUPER_ANTIPOISON_POTIONS(2448, 181, 183, 185) {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onAntiPoisonEffect(player, true, 1500);
+			player.send(new SendWidget(SendWidget.WidgetType.POISON, 480));
 		}
 	},
 	ANTI_VENOM(12905, 12907, 12909, 12911) {
@@ -325,6 +355,7 @@ public enum PotionData {
 	private static void onFishingEffect(Player player) {
 		player.skills.get(Skill.FISHING).modifyLevel(level -> level + 3);
 		player.skills.refresh(Skill.FISHING);
+		player.send(new SendWidget(SendWidget.WidgetType.FISHING, 660));
 	}
 
 	/**
@@ -407,6 +438,7 @@ public enum PotionData {
 				player.send(new SendMessage("You have been granted immunity against poison."));
 				player.getPoisonImmunity().incrementAndGet(length);
 				World.schedule(new SuperAntipoisonTask(player).attach(player));
+				player.send(new SendWidget(SendWidget.WidgetType.POISON, length));
 			} else if (player.getPoisonImmunity().get() > 0) {
 				player.send(new SendMessage("Your immunity against poison has been restored!"));
 				player.getPoisonImmunity().set(length);
@@ -432,6 +464,8 @@ public enum PotionData {
 		}
 
 		player.send(new SendRunEnergy());
+		player.send(new SendWidget(SendWidget.WidgetType.STAMINA, 660));
+
 	}
 
 	/**
@@ -496,6 +530,8 @@ public enum PotionData {
 		} else {
 			CombatUtil.effect(player, CombatEffectType.ANTIFIRE_POTION);
 		}
+		player.send(new SendWidget(SendWidget.WidgetType.ANTI_FIRE, 360));
+
 	}
 
 	/**
@@ -532,7 +568,7 @@ public enum PotionData {
 		player.animate(3170);
 		player.damage(new Hit(5));
 		player.speak("OUCH!");
-
+		player.send(new SendWidget(SendWidget.WidgetType.OVERLOAD, 360));
 	}
 
 	/**

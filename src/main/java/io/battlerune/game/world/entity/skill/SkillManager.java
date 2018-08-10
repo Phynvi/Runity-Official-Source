@@ -302,6 +302,7 @@ public class SkillManager {
 
 		if (Config.DOUBLE_EXPERIENCE) {
 			modified_experience = experience * 2;
+			World.sendEXPWidgetforday();
 		} else {
 			modified_experience = experience * (WellOfGoodwill.isActive() ? 2 : 1);
 		}

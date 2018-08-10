@@ -1,6 +1,5 @@
 package plugin.click.item;
 
-import io.battlerune.content.skill.impl.magic.RunePouch;
 import io.battlerune.game.event.impl.ItemClickEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;

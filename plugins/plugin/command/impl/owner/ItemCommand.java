@@ -4,6 +4,7 @@ import io.battlerune.content.command.Command;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
+import io.battlerune.net.packet.out.SendWidget;
 
 public class ItemCommand implements Command {
 
@@ -19,6 +20,7 @@ public class ItemCommand implements Command {
 			System.out.println("Catched ArrayIndexOutOfBounds, ::item command, inproper use of it.");
 			player.message("Inproper use of the command do... ::item ItemID Amount (e.g ::item 6199 1)");
 		}
+		
 
 	}
 

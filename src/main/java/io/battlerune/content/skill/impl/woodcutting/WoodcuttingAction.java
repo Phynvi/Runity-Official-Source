@@ -42,7 +42,6 @@ public class WoodcuttingAction extends Action<Player> {
 			getMob().dialogueFactory.sendStatement("You can't carry anymore log.").execute();
 			return false;
 		}
-
 		getMob().animate(axe.animation);
 		if (Woodcutting.success(getMob(), tree, axe)) {
 			if (object == null || !object.active()) {
@@ -84,11 +83,27 @@ public class WoodcuttingAction extends Action<Player> {
 
 			if (getMob().equipment.contains(13241)) {
 				getMob().skills.addExperience(Skill.WOODCUTTING, tree.experience * Config.MINING_MODIFICATION * 5);
+				getMob().skills.addExperience(Skill.FIREMAKING, tree.experience * Config.FIREMAKING_MODIFICATION * 5);
 				getMob().message("You are now recieving 5x Woodcutting Experience.");
 			}
+			if(tree == TreeData.NORMAL_TREE) {
+				getMob().inventory.add(995, tree.getMoney());
+			}
+			if(tree == TreeData.WILLOW_TREE || tree == TreeData.WILLOW_TREE1) {
+				getMob().inventory.add(995, tree.getMoney());
+			}
+			if(tree == TreeData.MAPLE_TREE) {
+				getMob().inventory.add(995, tree.getMoney());
+			}
+
+		/*	for(TreeData data : TreeData.values()) {
+				if(data.)
+				getMob().inventory.add(995, tree.getMoney());
+			}*/
 
 			if (tree == TreeData.OAK_TREE || tree == TreeData.OAK_TREE) {
 				AchievementHandler.activate(getMob(), AchievementKey.CUT_A_OAK_TREE, 1);
+				getMob().inventory.add(995, tree.getMoney());
 			}
 			/** CUT 100 TREES **/
 			if (tree == TreeData.OAK_TREE || tree == TreeData.ACHEY_TREE || tree == TreeData.NORMAL_TREE
@@ -98,15 +113,18 @@ public class WoodcuttingAction extends Action<Player> {
 
 			if (tree == TreeData.WILLOW_TREE || tree == TreeData.WILLOW_TREE1) {
 				getMob().forClan(channel -> channel.activateTask(ClanTaskKey.CHOP_WILLOW_LOG, getMob().getName()));
+				getMob().inventory.add(995, tree.getMoney());
 			}
 			if (tree == TreeData.YEW_TREE) {
 				getMob().forClan(channel -> channel.activateTask(ClanTaskKey.YEW_LOG, getMob().getName()));
 				AchievementHandler.activate(getMob(), AchievementKey.CUT_YEWTREE, 1);
-
+				getMob().inventory.add(995, tree.getMoney());
 			}
 			if (tree == TreeData.MAGIC_TREE) {
 				getMob().forClan(channel -> channel.activateTask(ClanTaskKey.MAGIC_LOG, getMob().getName()));
 				AchievementHandler.activate(getMob(), AchievementKey.CUT_MAGICTREE, 1);
+				getMob().inventory.add(995, tree.getMoney());
+
 			}
 
 			getMob().forClan(channel -> channel.activateTask(ClanTaskKey.CHOP_ANY_LOG, getMob().getName()));

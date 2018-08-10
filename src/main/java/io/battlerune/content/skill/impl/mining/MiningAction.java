@@ -5,6 +5,8 @@ import io.battlerune.content.achievement.AchievementHandler;
 import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.randomevent.RandomEventHandler;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
+import io.battlerune.content.pet.PetData;
+import io.battlerune.content.pet.Pets;
 import io.battlerune.content.prestige.PrestigePerk;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
@@ -75,9 +77,13 @@ public class MiningAction extends Action<Player> {
 			}
 
 			getMob().inventory.add(harvest, 1);
+			getMob().inventory.add(995, ore.getMoney());
 			getMob().skills.addExperience(Skill.MINING, ore.experience * Config.MINING_MODIFICATION);
 			RandomEventHandler.trigger(getMob());
-//            Pets.onReward(getMob(), PetData.GOLEM.getItem(), ore.pet);
+            if(Utility.random(1, 500) == 2) {
+            	Pets.onReward(getMob(), PetData.ROCK_GOLEM.getItem(), ore.pet);
+            	World.sendMessage(getMob().getName() + " Has just recieved a skilling pet from mining!");
+            }
 
 			if (getMob().equipment.contains(21343)) {
 				getMob().skills.addExperience(Skill.MINING, ore.experience * Config.MINING_MODIFICATION * 1.5);
@@ -98,10 +104,6 @@ public class MiningAction extends Action<Player> {
 
 			if (ore == OreData.RUNITE) {
 				getMob().forClan(channel -> channel.activateTask(ClanTaskKey.RUNITE_ORES, getMob().getName()));
-			}
-			if (ore == OreData.IRON) {
-				AchievementHandler.activate(getMob(), AchievementKey.MINE_A_IRON_ORE, 1);
-				getMob().send(new SendMessage("You have Completed an Achievement " + "!"));
 			}
 
 			if (getMob().prestige.hasPerk(PrestigePerk.THE_ROCK) && RandomUtils.success(.10)) {

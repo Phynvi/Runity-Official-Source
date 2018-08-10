@@ -175,8 +175,9 @@ public class FightCaves extends Activity {
 				"</col>Wave: <col=FF5500>" + (wave.ordinal() + 1) + "/" + (TzhaarData.WaveData.values().length),
 				"</col>Monsters Left: <col=FF5500>" + npcs.size(),
 				"</col>Tokkuls Gained: <col=FF5500>" + Utility.formatDigits(tokkuls),
-				"</col>Time: <col=FF5500>" + Utility.getTime(time));
+				"</col>Time: <col=FF5500>" + Utility.getTime());
 	}
+	//TODO FIX FIGHT CAVES TIME SO IT INITIATES AS SOON AS YOU ENTER THE MINIGAME.
 
 	@Override
 	public boolean canTeleport(Player player) {

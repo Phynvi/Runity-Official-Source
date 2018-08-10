@@ -11,6 +11,76 @@ import io.battlerune.content.dialogue.DialogueFactory;
  * @author adam
  */
 public enum PetData {
+	BABY_RUNE_DRAGON("Baby Rune Dragon", 21911, 8091) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Hello");
+			factory.sendNpcChat(5883, "Are you my dad?!");
+			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
+			factory.execute();
+
+		}
+	},
+	BABY_RED_DRAGON("Baby Red Dragon", 8134, 137) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Hello");
+			factory.sendNpcChat(5883, "Are you my dad?!");
+			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
+			factory.execute();
+
+		}
+	},
+	HOBGOBLIN("Hobgoblin", 8133, 3354) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Hello");
+			factory.sendNpcChat(5883, "Are you my dad?!");
+			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
+			factory.execute();
+
+		}
+	},
+	SUQAH_MONSTER("Suqah Monster", 9105, 787) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Hello");
+			factory.sendNpcChat(5883, "Are you my dad?!");
+			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
+			factory.execute();
+
+		}
+	},
+	MUTATED_ZYGOMITE("Mutated Zygomite", 7420, 473) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Hello");
+			factory.sendNpcChat(5883, "Are you my dad?!");
+			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
+			factory.execute();
+
+		}
+	},
+	HERBIBORE("Herbibore", 21511, 7785) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Hello");
+			factory.sendNpcChat(5883, "Are you my dad?!");
+			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
+			factory.execute();
+
+		}
+	},
+	HERBI("Herbi", 21509, 7760) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Hello");
+			factory.sendNpcChat(5883, "Are you my dad?!");
+			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
+			factory.execute();
+
+		}
+	},
 	ABYSSAL_ORPHAN("Abyssal Orphan", 13262, 5883) {
 		@Override
 		public void dialogue(DialogueFactory factory) {

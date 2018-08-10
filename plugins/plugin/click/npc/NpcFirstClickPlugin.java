@@ -4,6 +4,7 @@ import static io.battlerune.content.pet.PetData.JAD;
 
 import java.util.concurrent.TimeUnit;
 
+import io.battlerune.Config;
 import io.battlerune.content.activity.impl.TutorialActivity;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.dialogue.Expression;
@@ -16,6 +17,7 @@ import io.battlerune.content.dialogue.impl.RoyalKingDialogue;
 import io.battlerune.content.dialogue.impl.SailorKingDialouge;
 import io.battlerune.content.dialogue.impl.VoteDialogue;
 import io.battlerune.content.pet.Pets;
+import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.skill.impl.thieving.Thieving;
 import io.battlerune.content.store.Store;
 import io.battlerune.content.store.impl.SkillcapeStore;
@@ -25,6 +27,8 @@ import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpec
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
+import io.battlerune.game.world.position.Position;
+import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendRunEnergy;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
@@ -42,6 +46,43 @@ public class NpcFirstClickPlugin extends PluginContext {
 			player.dialogueFactory.sendNpcChat(4925, "Oh you saved me! Take this as a reward!")
 					.sendItem("Reward", "Dusty Key", 1590).execute();
 			player.inventory.add(1590, 1);
+			break;
+		case 3220:
+			player.dialogueFactory.sendOption("Air Altar", () -> {
+				if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+					player.message("@or2@you can't teleport above 30 wilderness");
+				} else {
+					Teleportation.teleport(player, Config.AIR_ZONE, 20, () -> {
+						player.send(new SendMessage(
+								"@or2@Welcome to the Air Altar!, " + player.getName() + "!"));
+					});
+				}
+			}, "Nature Altar", () -> {
+				if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+					player.message("@or2@you can't teleport above 30 wilderness");
+				} else {
+					Teleportation.teleport(player, Config.NATURE_ZONE, 20, () -> {
+						player.send(new SendMessage("@or2@Welcome to the Nature altar, " + player.getName() + "!"));
+					});
+
+				}
+			}, "Blood Altar", () -> {
+				if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+					player.message("@or2@you can't teleport above 30 wilderness");
+				} else {
+					Teleportation.teleport(player, Config.BLOOD_ZONE, 20, () -> {
+						player.send(new SendMessage("@or2@Welcome to the Blood altar, " + player.getName() + "!"));
+					});
+				}
+			}, "Law Altar", () -> {
+				if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+					player.message("@or2@you can't teleport above 30 wilderness");
+				} else {
+					Teleportation.teleport(player, Config.LAW_ALTAR, 20, () -> {
+						player.send(new SendMessage("@or2@Welcome to the Law Altar, " + player.getName() + "!"));
+					});
+				}
+			}, "Nowhere", player.interfaceManager::close).execute();
 			break;
 
 		case 7481:

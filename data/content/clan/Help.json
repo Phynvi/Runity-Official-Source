@@ -8,7 +8,7 @@
   "clan-tag": "",
   "clan-type": "SOCIAL",
   "clan-color": "<col=ffffff>",
-  "clan-points": 40,
+  "clan-points": 15,
   "clan-experience": 70000.0,
   "clan-level": "IRON",
   "task-amount": 0,
@@ -103,7 +103,7 @@
     },
     {
       "name": "Adam",
-      "joined": "2018/08/01",
+      "joined": "2018/08/10",
       "rank": "SYSTEM",
       "exp-gained": 0.0,
       "npc-kills": 0,

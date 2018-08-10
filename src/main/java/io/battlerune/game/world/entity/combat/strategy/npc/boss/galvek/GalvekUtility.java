@@ -35,7 +35,6 @@ public class GalvekUtility {
 		Galvek.definition.setRespawnTime(-1);
 		Galvek.definition.setAggressive(true);
 		Galvek.speak("Darkness is here to penetrate your souls!");
-		activated = true;
 		return Galvek;
 	}
 

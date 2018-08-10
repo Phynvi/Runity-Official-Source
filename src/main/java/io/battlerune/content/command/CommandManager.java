@@ -18,6 +18,7 @@ import plugin.command.impl.moderator.UnmuteCommand;
 import plugin.command.impl.owner.AllToMeCommand;
 import plugin.command.impl.owner.AnimationCommand;
 import plugin.command.impl.owner.ArenaSpawnCommand;
+import plugin.command.impl.owner.BroadcastCommand;
 import plugin.command.impl.owner.DefaultBankCommand;
 import plugin.command.impl.owner.DeveloperInstanceCommand;
 import plugin.command.impl.owner.DownCommand;
@@ -31,6 +32,7 @@ import plugin.command.impl.owner.GodCommand;
 import plugin.command.impl.owner.GraphicCommand;
 import plugin.command.impl.owner.InterfaceCommand;
 import plugin.command.impl.owner.ItemCommand;
+import plugin.command.impl.owner.KillCommand;
 import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.owner.MiniMeCommand;
 import plugin.command.impl.owner.NpcCommand;
@@ -196,6 +198,8 @@ public class CommandManager {
 		plugin.put(new String[] { "removetask", "slayer" }, new RemovePlayerTask());
 		plugin.put(new String[] { "randomevent", "randomeven" }, new RandomEvent());
 		plugin.put(new String[] { "teleall", "all2me" }, new AllToMeCommand());
+		plugin.put(new String[] { "broadcast", "announcement" }, new BroadcastCommand());
+		plugin.put(new String[] { "kill", "killplayer" }, new KillCommand());
 
 		
 		for (Entry<String[], Command> map : plugin.entrySet()) {

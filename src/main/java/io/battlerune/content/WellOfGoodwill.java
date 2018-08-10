@@ -117,6 +117,7 @@ public class WellOfGoodwill {
 		World.schedule(new DoubleExperienceEvent());
 		World.sendMessage(
 				"<col=2b58a0>WOG</col>: The well has been fully replenished. 30 minutes of double XP is active.");
+		World.sendEXPWidgetforwell();
 	}
 
 	public static void add(String name, PlayerRight rank, int amount) {

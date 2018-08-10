@@ -63,8 +63,10 @@ public class FishingAction extends Action<Player> {
 			}
 
 			int id = f.getRawFishId();
+			int money = f.getMoney();
 			String name = ItemDefinition.get(id).getName();
 			player.inventory.add(new Item(id, 1));
+			player.inventory.add(new Item(995, money));
 			player.skills.addExperience(Skill.FISHING, f.getExperience() * Config.FISHING_MODIFICATION);
 			player.message("You manage to catch a " + name + ".");
 			RandomEventHandler.trigger(player);

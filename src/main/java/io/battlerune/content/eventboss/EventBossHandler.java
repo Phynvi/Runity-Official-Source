@@ -36,17 +36,17 @@ public class EventBossHandler {
 }
 	
 	public static void sendStringsArena(Player player) {
-		World.sendTeleportButtonNpc(5129);
-		World.sendTeleportButton();
-		player.send(new SendString("@whi@Glod", 45604, true));
-		player.send(new SendString("806", 45610, true)); //combat level/
-		player.send(new SendString("1150", 45610, true)); //hit points
-		player.send(new SendString("Magic", 45613, true)); //Weaknesses 45614
-		player.send(new SendString("Melee,\\nCrush Special", 45614, true)); //Attack Styles 
+		World.sendTeleportButtonNpc1(5129);
+		World.sendTeleportButton1();
+		player.send(new SendString("@whi@Glod", 46604, true));
+		player.send(new SendString("806", 46610, true)); //combat level/
+		player.send(new SendString("1150", 46610, true)); //hit points
+		player.send(new SendString("Magic", 46613, true)); //Weaknesses 45614
+		player.send(new SendString("Melee,\\nCrush Special", 46614, true)); //Attack Styles 
 		player.send(new SendString("Glod is a boss that spawns hourly, He drops juicy\\nloots @whi@all over the ground, " + 
 		"@lre@he hits really high, but is slow!" + "\\nHe spawns in a safe location." + "\\nGlod has a special attack which teleports its enemies, "
 				+ "\\nRecommended to take a group to take Glod down!"
-		, 45616, true)); //Information of the boss (long text) 
+		, 46616, true)); //Information of the boss (long text) 
 	}
 	
 	public static void openJusticar(Player player) {

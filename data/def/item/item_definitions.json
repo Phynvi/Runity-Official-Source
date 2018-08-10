@@ -27625,77 +27625,78 @@
     "id": 2998,
     "name": "Toadflax",
     "noted-id": 2999,
-    "low-alch": 19,
-    "high-alch": 28,
-    "base-value": 48,
-    "street-value": 2490
+    "low-alch": 58,
+    "high-alch": 109,
+    "base-value": 108,
+    "street-value": 5450
   },
   {
     "id": 2999,
     "name": "Toadflax",
     "stackable": true,
     "unnoted-id": 2998,
-    "low-alch": 19,
-    "high-alch": 28,
-    "base-value": 48,
-    "street-value": 2490
+    "low-alch": 58,
+    "high-alch": 109,
+    "base-value": 108,
+    "street-value": 5450
   },
   {
     "id": 3000,
     "name": "Snapdragon",
     "noted-id": 3001,
-    "low-alch": 23,
-    "high-alch": 35,
-    "base-value": 59,
-    "street-value": 7561
+    "low-alch": 123,
+    "high-alch": 135,
+    "base-value": 159,
+    "street-value": 11561
   },
   {
     "id": 3001,
     "name": "Snapdragon",
     "stackable": true,
     "unnoted-id": 3000,
-    "low-alch": 23,
-    "high-alch": 35,
-    "base-value": 59,
-    "street-value": 7561
+    "low-alch": 123,
+    "high-alch": 135,
+    "base-value": 159,
+    "street-value": 11561
   },
   {
     "id": 3002,
     "name": "Toadflax potion (unf)",
     "noted-id": 3003,
-    "low-alch": 19,
-    "high-alch": 28,
-    "base-value": 48,
-    "street-value": 2877
+    "low-alch": 119,
+    "high-alch": 228,
+    "base-value": 480,
+    "street-value": 5877
   },
   {
     "id": 3003,
     "name": "Toadflax potion (unf)",
     "stackable": true,
     "unnoted-id": 3002,
-    "low-alch": 19,
-    "high-alch": 28,
-    "base-value": 48,
-    "street-value": 2877
+    "low-alch": 119,
+    "high-alch": 228,
+    "base-value": 480,
+    "street-value": 5877
   },
   {
     "id": 3004,
     "name": "Snapdragon potion (unf)",
     "noted-id": 3005,
-    "low-alch": 23,
-    "high-alch": 35,
-    "base-value": 59,
-    "street-value": 8114
+    "low-alch": 319,
+    "high-alch": 428,
+    "base-value": 540,
+    "street-value": 7877
   },
   {
     "id": 3005,
     "name": "Snapdragon potion (unf)",
     "stackable": true,
     "unnoted-id": 3004,
-    "low-alch": 23,
-    "high-alch": 35,
-    "base-value": 59,
-    "street-value": 8114
+    "noted-id": 3005,
+    "low-alch": 319,
+    "high-alch": 428,
+    "base-value": 540,
+    "street-value": 7877
   },
   {
     "id": 3006,
@@ -27712,20 +27713,20 @@
     "id": 3008,
     "name": "Energy potion(4)",
     "noted-id": 3009,
-    "low-alch": 58,
-    "high-alch": 87,
-    "base-value": 146,
-    "street-value": 146
+    "low-alch": 108,
+    "high-alch": 167,
+    "base-value": 246,
+    "street-value": 346
   },
   {
     "id": 3009,
     "name": "Energy potion(4)",
     "stackable": true,
     "unnoted-id": 3008,
-    "low-alch": 58,
-    "high-alch": 87,
-    "base-value": 146,
-    "street-value": 146
+    "low-alch": 108,
+    "high-alch": 167,
+    "base-value": 246,
+    "street-value": 346
   },
   {
     "id": 3010,

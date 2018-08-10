@@ -30397,26 +30397,6 @@
     "radius": 0
   },
   {
-    "id": 7406,
-    "position": {
-      "x": 3246,
-      "y": 9367,
-      "height": 0
-    },
-    "facing": "NORTH",
-    "radius": 0
-  },
-  {
-    "id": 7406,
-    "position": {
-      "x": 3248,
-      "y": 9358,
-      "height": 0
-    },
-    "facing": "NORTH",
-    "radius": 0
-  },
-  {
     "id": 423,
     "position": {
       "x": 3236,
@@ -30425,6 +30405,16 @@
     },
     "facing": "NORTH",
     "radius": 0
+  },
+  {
+	    "id": 3220,
+	    "position": {
+	      "x": 3079,
+	      "y": 3506,
+	      "height": 0
+	    },
+	    "facing": "SOUTH",
+	    "radius": 0
   },
   {
     "id": 423,

@@ -27,24 +27,32 @@ public class BossEventButtonPlugin extends PluginContext {
 			Teleportation.teleport(player, galvekpos.getPosition());
             player.message("You have teleported to Galvek");
             player.hideTeleportButton();
+            return true;
 		}
-		if(ArenaUtility.activated == true) {
+/*		if(ArenaUtility.activated == true) {
 			Teleportation.teleport(player, Config.ARENA_ZONE);
 			player.message("Teleporting you to Glod");
             player.hideTeleportButton();
-		}
-		if(JusticarUtility.activated == true) {
+		}*/
+	/*	if(JusticarUtility.activated == true) {
 		 	SpawnData justicar = JusticarUtility.spawn;
 			Teleportation.teleport(player, justicar.getPosition());
 			player.message("Teleporting you to Justicar");
             player.hideTeleportButton();
 		}
-		if(ArenaUtility.activated == true && GalvekUtility.activated == true && JusticarUtility.activated == true) {
+		if(ArenaUtility.activated == false && GalvekUtility.activated == true && JusticarUtility.activated == true) {
 			player.message("Adam fucked up, spam tf outta him so he fixes this.");
 			return false;
-		}
-        player.hideTeleportButton();
+		}*/
 
+	}
+	if(button == -18935) {
+		if(ArenaUtility.activated == true) {
+			Teleportation.teleport(player, Config.ARENA_ZONE);
+			player.message("Teleporting you to Glod");
+            player.hideTeleportButton1();
+            return true;
+		}
 	}
 
 		return false;

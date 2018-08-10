@@ -47,8 +47,8 @@ public class RoyalKingDialogue extends Dialogue {
 
 	private void store(DialogueFactory factory) {
 		factory.sendOption("Open Donator Store", () -> Store.STORES.get("Donator Store").open(factory.getPlayer()),
-				"Custom Donator Store", () -> Store.STORES.get("Second Donator Store").open(factory.getPlayer()),
-				"Rare Donator Store", () -> Store.STORES.get("Ironman Donator Store").open(factory.getPlayer()),
+				"Custom Donator Store", () -> Store.STORES.get("Custom Donator Store").open(factory.getPlayer()),
+				"Rare Donator Store", () -> Store.STORES.get("Rare Donator Store").open(factory.getPlayer()),
 				"Nevermind", factory::clear);
 	}
 }

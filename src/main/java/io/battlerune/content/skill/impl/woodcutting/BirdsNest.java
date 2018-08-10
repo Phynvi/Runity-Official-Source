@@ -35,7 +35,7 @@ public class BirdsNest {
 			GroundItem.create(player, item);
 			player.send(new SendMessage("A bird's nest falls out of the tree.", MessageColor.RED));
 		}
-		if (Utility.random(1, 100) < chance) {
+		if (Utility.random(1, 150) < chance) {
 			player.inventory.add(CASH, 250000);
 			player.send(new SendMessage("[RARE LOOT] You Have Recieved 250,000 Coins!", MessageColor.RED));
 		}

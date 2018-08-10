@@ -49,6 +49,7 @@ import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendObjectAnimation;
 import io.battlerune.net.packet.out.SendProjectile;
 import io.battlerune.net.packet.out.SendString;
+import io.battlerune.net.packet.out.SendWidget;
 import io.battlerune.util.GameSaver;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
@@ -343,6 +344,37 @@ public final class World {
 		for(Player player : getPlayers()) {
 		player.send(new SendString("0", 45600));
 
+		   }
+		}
+	
+	public static void sendTeleportButtonNpc1(int npcId) {
+		for(Player player : getPlayers()) {
+	        player.send(new SendString(""+npcId, 46615));
+		   }
+		}
+	
+	public static void sendTeleportButton1() {
+		for(Player player : getPlayers()) {
+			player.send(new SendString("1", 46600));
+		   }
+		}
+	
+	public static void hideTeleportButton1() {
+		for(Player player : getPlayers()) {
+		player.send(new SendString("0", 46600));
+
+		   }
+		}
+	
+	public static void sendEXPWidgetforwell() {
+		for(Player player : getPlayers()) {
+			player.send(new SendWidget(SendWidget.WidgetType.DOUBLEXP, 1800));
+		   }
+		}
+	
+	public static void sendEXPWidgetforday() {
+		for(Player player : getPlayers()) {
+			player.send(new SendWidget(SendWidget.WidgetType.DOUBLEXP, 86400));
 		   }
 		}
 	

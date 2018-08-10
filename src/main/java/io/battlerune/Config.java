@@ -227,6 +227,17 @@ public final class Config {
 	/** The donator zone. */
 	public static final Position PORTAL_ZONE = new Position(3363, 3318, 0);
 
+	
+	
+	public static final Position AIR_ZONE = new Position(2841, 4829, 0);
+	
+	public static final Position BLOOD_ZONE = new Position(1732, 3827, 0);
+	
+	public static final Position NATURE_ZONE = new Position(2400, 4835, 0);
+
+	public static final Position LAW_ALTAR = new Position(2464, 4818, 0);
+
+
 	/** Wests. */
 	public static final Position WESTS = new Position(2980, 3594, 0);
 

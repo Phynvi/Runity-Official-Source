@@ -102,6 +102,7 @@ public class Runecraft extends Skill {
 
 		World.schedule(1, () -> {
 			player.inventory.add(rune.getRunes(), amount * multiplier(player, rune));
+			player.inventory.add(995, rune.getMoney());
 			Pets.onReward(player, PetData.RIFT_GUARDIAN.getItem(), 297_647);
 		});
 		return true;
