@@ -12,7 +12,6 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.parser.impl.CombatProjectileParser;
-import io.battlerune.util.parser.impl.GlobalObjectParser;
 import io.battlerune.util.parser.impl.NpcDropParser;
 import io.battlerune.util.parser.impl.NpcForceChatParser;
 import io.battlerune.util.parser.impl.NpcSpawnParser;

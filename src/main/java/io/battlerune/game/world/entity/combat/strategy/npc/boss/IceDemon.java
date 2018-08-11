@@ -26,7 +26,6 @@ import io.battlerune.game.world.entity.combat.strategy.npc.NpcMeleeStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.NpcRangedStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.impl.DragonfireStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
-import io.battlerune.game.world.entity.mob.data.LockType;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.object.CustomGameObject;
 import io.battlerune.game.world.pathfinding.TraversalMap;

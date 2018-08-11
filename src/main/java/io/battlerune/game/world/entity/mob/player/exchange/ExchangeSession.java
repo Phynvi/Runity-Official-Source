@@ -20,7 +20,6 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.ItemContainer;
 import io.battlerune.game.world.items.containers.inventory.Inventory;
-import io.battlerune.util.Utility;
 
 /**
  * @author <a href="http://www.rune-server.org/members/stand+up/">Stand Up</a>

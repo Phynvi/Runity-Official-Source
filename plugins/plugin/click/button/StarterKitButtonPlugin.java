@@ -8,8 +8,6 @@ import java.util.concurrent.TimeUnit;
 import io.battlerune.Config;
 import io.battlerune.content.StarterKit;
 import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
-import io.battlerune.content.dialogue.Expression;
-import io.battlerune.game.event.email.EmailInputListener;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;

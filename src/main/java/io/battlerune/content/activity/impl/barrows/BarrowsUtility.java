@@ -1,5 +1,10 @@
 package io.battlerune.content.activity.impl.barrows;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import io.battlerune.content.ActivityLog;
 import io.battlerune.content.achievement.AchievementHandler;
 import io.battlerune.content.achievement.AchievementKey;
@@ -11,11 +16,6 @@ import io.battlerune.net.packet.out.SendItemOnInterface;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 public class BarrowsUtility {
 

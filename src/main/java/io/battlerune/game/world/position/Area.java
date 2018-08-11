@@ -3,7 +3,6 @@ package io.battlerune.game.world.position;
 import static io.battlerune.content.activity.impl.battlerealm.BattleRealmCallers.getAreas;
 
 import com.google.common.collect.ImmutableList;
-import io.battlerune.game.world.position.Area;
 
 import io.battlerune.game.world.Interactable;
 import io.battlerune.game.world.entity.Entity;

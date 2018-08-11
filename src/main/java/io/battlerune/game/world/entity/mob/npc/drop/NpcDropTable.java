@@ -1,10 +1,5 @@
 package io.battlerune.game.world.entity.mob.npc.drop;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.List;
 

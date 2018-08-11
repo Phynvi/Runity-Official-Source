@@ -8,7 +8,6 @@ import io.battlerune.game.task.TaskManager;
 import io.battlerune.game.task.impl.ObjectPlacementEvent;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.Mob;
-import io.battlerune.game.world.entity.mob.movement.Movement;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.game.world.object.CustomGameObject;

@@ -1,8 +1,8 @@
 package io.battlerune.content.clanchannel.content;
 
-import io.battlerune.util.Difficulty;
-
 import java.util.Optional;
+
+import io.battlerune.util.Difficulty;
 
 /**
  * Handles the clan achievements.

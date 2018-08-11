@@ -1,8 +1,6 @@
 package io.battlerune.content.skill.impl.mining;
 
 import io.battlerune.Config;
-import io.battlerune.content.achievement.AchievementHandler;
-import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.randomevent.RandomEventHandler;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.content.pet.PetData;

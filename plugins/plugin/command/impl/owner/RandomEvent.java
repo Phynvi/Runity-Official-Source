@@ -2,7 +2,6 @@ package plugin.command.impl.owner;
 
 import io.battlerune.content.activity.randomevent.impl.MimeEvent;
 import io.battlerune.content.command.Command;
-import io.battlerune.content.prestige.Prestige;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;

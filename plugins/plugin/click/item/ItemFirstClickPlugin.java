@@ -1,11 +1,9 @@
 package plugin.click.item;
 
-import io.battlerune.Config;
 import io.battlerune.content.DiceBag;
 import io.battlerune.content.activity.impl.flowerpoker.FlowerHandler;
 import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
 import io.battlerune.content.consume.Anglerfish;
-import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.skill.impl.slayer.Slayer;
 import io.battlerune.content.skill.impl.slayer.SlayerTask;
 import io.battlerune.content.skill.impl.woodcutting.BirdsNest;

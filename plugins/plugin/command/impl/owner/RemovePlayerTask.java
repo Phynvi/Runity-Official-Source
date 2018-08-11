@@ -2,7 +2,6 @@ package plugin.command.impl.owner;
 
 import io.battlerune.content.command.Command;
 import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 

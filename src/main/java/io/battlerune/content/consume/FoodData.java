@@ -3,9 +3,6 @@ package io.battlerune.content.consume;
 import java.util.Arrays;
 import java.util.Optional;
 
-import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.skill.Skill;
-
 /**
  * Holds all the food data.
  *

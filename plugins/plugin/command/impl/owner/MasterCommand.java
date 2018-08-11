@@ -4,7 +4,6 @@ import io.battlerune.content.achievement.AchievementHandler;
 import io.battlerune.content.command.Command;
 import io.battlerune.content.emote.EmoteHandler;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.MessageColor;
 

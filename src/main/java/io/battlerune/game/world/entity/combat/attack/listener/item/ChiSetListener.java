@@ -7,9 +7,7 @@ import io.battlerune.game.world.entity.combat.attack.listener.ItemCombatListener
 import io.battlerune.game.world.entity.combat.attack.listener.SimplifiedListener;
 import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.mob.Mob;
-import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
-import io.battlerune.util.Utility;
 
 /**
  * Handles the Chi/kril armour effect, which if equipped reduces drain rate by 12% 

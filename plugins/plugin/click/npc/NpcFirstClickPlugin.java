@@ -27,7 +27,6 @@ import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpec
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendRunEnergy;
 import io.battlerune.net.packet.out.SendString;

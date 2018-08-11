@@ -1,6 +1,5 @@
 package plugin.command.impl.player;
 
-import io.battlerune.Config;
 import io.battlerune.content.activity.impl.barrows.Barrows;
 import io.battlerune.content.command.Command;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;

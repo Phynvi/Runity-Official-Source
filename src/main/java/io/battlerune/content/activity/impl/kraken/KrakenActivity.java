@@ -22,7 +22,6 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
-import io.battlerune.util.Utility;
 
 /**
  * Handles the Kraken boss.
