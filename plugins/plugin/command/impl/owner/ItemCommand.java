@@ -8,27 +8,26 @@ public class ItemCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		
+
 		try {
-		int itemId = Integer.parseInt(command[1]);
-		int amount = Integer.parseInt(command[2]);
-		player.inventory.add(new Item(itemId, amount));
-		player.message("[Item Spawner] Added " + amount + " [Amount] : " + itemId + " [Item id]");
+			int itemId = Integer.parseInt(command[1]);
+			int amount = Integer.parseInt(command[2]);
+			player.inventory.add(new Item(itemId, amount));
+			player.message("[Item Spawner] Added " + amount + " [Amount] : " + itemId + " [Item id]");
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Catched ArrayIndexOutOfBounds, ::item command, inproper use of it.");
 			player.message("Inproper use of the command do... ::item ItemID Amount (e.g ::item 6199 1)");
 		}
-		
 
 	}
 
 	@Override
 	public boolean canUse(Player player) {
-	/*	if (PlayerRight.isDeveloper(player)) {
-			return true;
-		}
-		player.speak("Hey everyone, i just tried doing something silly.");
-		return false;*/
+		/*
+		 * if (PlayerRight.isDeveloper(player)) { return true; }
+		 * player.speak("Hey everyone, i just tried doing something silly."); return
+		 * false;
+		 */
 		return true;
 	}
 

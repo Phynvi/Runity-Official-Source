@@ -56,7 +56,7 @@ public enum TreeData {
 
 	/** The tree identifications. */
 	public final int[] tree;
-	
+
 	public int money;
 
 	/** Constructs a new <enum>TreeData</enum>. */
@@ -73,13 +73,14 @@ public enum TreeData {
 		this.success = success;
 		this.money = money;
 	}
+
 	public int getMoney() {
 		return money;
 	}
+
 	public void setMoney(int money) {
 		this.money = money;
 	}
-	
 
 	/** Gets the tree data based on the object identification. */
 	public static TreeData forId(int id) {

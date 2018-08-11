@@ -358,12 +358,11 @@ public final class PersonalStore extends Store {
 				if (this.isOwner(player)) {
 					this.remove(player, new Item(id, amount), slot);
 				} else {
-					/*if (updating) {
-						player.send(
-								new SendMessage("The owner is currently updating the shop, try again in a few seconds.",
-										MessageColor.RED));
-						return;
-					}*/
+					/*
+					 * if (updating) { player.send( new
+					 * SendMessage("The owner is currently updating the shop, try again in a few seconds."
+					 * , MessageColor.RED)); return; }
+					 */
 					this.purchase(player, new Item(id, amount), slot);
 				}
 			} else {

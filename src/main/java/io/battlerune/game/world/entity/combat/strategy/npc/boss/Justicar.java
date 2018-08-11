@@ -32,8 +32,7 @@ import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 /**
- * Handles JUSTICAR Combat Strategy
- * Justicar
+ * Handles JUSTICAR Combat Strategy Justicar
  *
  * @author Adam_#6723
  */

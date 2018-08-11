@@ -19,15 +19,13 @@ public class DefaultBankCommand implements Command {
 		player.message("Spawned! Normal RS Items.");
 	}
 
-
-
 	@Override
 	public boolean canUse(Player player) {
-/*		if (PlayerRight.isDeveloper(player)) {
-			return true;
-		}
-		player.speak("Hey everyone, i just tried doing something silly.");
-		return false;*/
+		/*
+		 * if (PlayerRight.isDeveloper(player)) { return true; }
+		 * player.speak("Hey everyone, i just tried doing something silly."); return
+		 * false;
+		 */
 		return true;
 	}
 }

@@ -62,7 +62,7 @@ public class KrakenActivity extends Activity {
 	public static KrakenActivity create(Player player) {
 		KrakenActivity minigame = new KrakenActivity(player, player.playerAssistant.instance());
 		minigame.add(player);
-	///	player.gameRecord.start();
+		/// player.gameRecord.start();
 		minigame.count = 0;
 		return minigame;
 	}

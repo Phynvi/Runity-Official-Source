@@ -136,7 +136,7 @@ public class Player extends Mob {
 	 * @param npcId - The identifier for the NPC to display
 	 */
 	public void sendTeleportButtonNpc(int npcId) {
-        send(new SendString(""+npcId, 45615));
+		send(new SendString("" + npcId, 45615));
 	}
 
 	/**
@@ -152,13 +152,15 @@ public class Player extends Mob {
 	public void hideTeleportButton() {
 		send(new SendString("0", 45600));
 	}
-	
+
 	public void hideTeleportButton1() {
 		send(new SendString("0", 46600));
 	}
+
 	public void hideTeleportButton2() {
 		send(new SendString("0", 47600));
 	}
+
 	public void hideTeleportButton3() {
 		send(new SendString("0", 48600));
 	}
@@ -210,7 +212,7 @@ public class Player extends Mob {
 	public int getpkPoints() {
 		return pkPoints;
 	}
-	
+
 	public void setpkPoints(int pkPoints) {
 		this.pkPoints = pkPoints;
 	}

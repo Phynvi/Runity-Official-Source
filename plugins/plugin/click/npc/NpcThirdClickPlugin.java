@@ -30,8 +30,7 @@ public class NpcThirdClickPlugin extends PluginContext {
 					player.message("@or2@you can't teleport above 30 wilderness");
 				} else {
 					Teleportation.teleport(player, RunecraftTeleport.MIND.getPosition(), 20, () -> {
-						player.send(new SendMessage(
-								"@or2@Welcome to the Air Altar!, " + player.getName() + "!"));
+						player.send(new SendMessage("@or2@Welcome to the Air Altar!, " + player.getName() + "!"));
 					});
 				}
 			}, "Earth Altar", () -> {

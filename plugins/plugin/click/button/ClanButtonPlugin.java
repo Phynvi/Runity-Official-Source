@@ -17,7 +17,7 @@ import io.battlerune.net.packet.out.SendInputMessage;
 import io.battlerune.net.packet.out.SendMessage;
 
 public class ClanButtonPlugin extends PluginContext {
-	
+
 	public static void Method(Player player) {
 		if (player.clanChannel != null) {
 			player.dialogueFactory.sendOption("View Clan Information",

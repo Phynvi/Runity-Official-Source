@@ -63,7 +63,8 @@ public class FlowerHandler {
 							player.getPosition().copy(), ObjectDirection.valueOf(0).orElse(ObjectDirection.WEST),
 							ObjectType.INTERACTABLE);
 					World.schedule(new ObjectPlacementEvent(gameObject, 50));
-					player.message("You have planted @red@" + ItemDefinition.get(getTempFlower().getItemId()).getName());
+					player.message(
+							"You have planted @red@" + ItemDefinition.get(getTempFlower().getItemId()).getName());
 					break;
 				case 1:
 					player.walkExactlyTo(new Position(player.getPosition().getX() + 1, player.getPosition().getY(),

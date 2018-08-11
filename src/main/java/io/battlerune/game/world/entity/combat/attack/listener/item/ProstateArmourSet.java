@@ -9,17 +9,17 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
 
 /**
- * Handles the proselyte armour effect, which if equipped reduces drain rate by 10%
+ * Handles the proselyte armour effect, which if equipped reduces drain rate by
+ * 10%
  *
  * @author Adam_#6723
  */
-@ItemCombatListenerSignature(requireAll = false, items = { 9672, 9674, 9676})
+@ItemCombatListenerSignature(requireAll = false, items = { 9672, 9674, 9676 })
 public class ProstateArmourSet extends SimplifiedListener<Player> {
-	
-		
+
 	public void method(Mob attacker) {
-		for(Prayer prayer : Prayer.values()) {
-			prayer.setdrainRate(prayer.getDrainRate() / 10 );
+		for (Prayer prayer : Prayer.values()) {
+			prayer.setdrainRate(prayer.getDrainRate() / 10);
 		}
 	}
 

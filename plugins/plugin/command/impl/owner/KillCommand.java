@@ -16,8 +16,7 @@ public class KillCommand implements Command {
 	public void execute(Player player, String[] command) {
 		final String name = String.format(command[1]);
 
-         
-               World.search(name.toString()).ifPresent(other -> other.damage(new Hit(other.getCurrentHealth())));
+		World.search(name.toString()).ifPresent(other -> other.damage(new Hit(other.getCurrentHealth())));
 
 	}
 
@@ -29,7 +28,5 @@ public class KillCommand implements Command {
 		player.speak("Hey everyone, i just tried doing something silly.");
 		return false;
 	}
-	
+
 }
-
-

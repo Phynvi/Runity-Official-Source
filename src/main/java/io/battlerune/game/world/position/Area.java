@@ -57,9 +57,9 @@ public abstract class Area {
 	private static final ImmutableList<Area> TOURNAMENT_ARENA = ImmutableList
 			.of(new SquareArea("Tournament Arena", 3317, 3268, 4987, 4932));
 
-    private static final ImmutableList<Area> BARROWS = ImmutableList.of(
-            new SquareArea("Barrows", 3533, 3261, 3585, 3328),
-            new SquareArea("Barrows Underground", 3523, 9672, 3591, 9725, 3));
+	private static final ImmutableList<Area> BARROWS = ImmutableList.of(
+			new SquareArea("Barrows", 3533, 3261, 3585, 3328),
+			new SquareArea("Barrows Underground", 3523, 9672, 3591, 9725, 3));
 
 	/** The collection of areas that resemble the duel arena. */
 	private static final ImmutableList<Area> DUEL_ARENA_LOBBY = ImmutableList.of(

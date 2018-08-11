@@ -29,7 +29,6 @@ import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.RandomUtils;
 
-
 /**
  * @author daniel
  * @edited by Adam_#66723

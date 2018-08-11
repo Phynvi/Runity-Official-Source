@@ -93,17 +93,16 @@ public class StarterKitButtonPlugin extends PluginContext {
 		player.locking.unlock();
 		player.playerAssistant.setSidebar(false);
 		player.runEnergy = 100;
-		//EmailInputListener.input(player);
-		/*player.dialogueFactory
-				.sendNpcChat(306, Expression.HAPPY, "As a new player, you can sign up for Brutal Mode.",
-						"This mode enables open-world PvP and sets you at 3x less exp.", "Are you interested?")
-				.sendOption("That sounds like me!", () -> {
-					player.brutalMode = true;
-					player.expRate = 0.34;
-					player.message("That was a mistake! (Brutal Mode selected).");
-				}, "What? No!", () -> {
-					// Do nothing!
-				}).execute();*/
+		// EmailInputListener.input(player);
+		/*
+		 * player.dialogueFactory .sendNpcChat(306, Expression.HAPPY,
+		 * "As a new player, you can sign up for Brutal Mode.",
+		 * "This mode enables open-world PvP and sets you at 3x less exp.",
+		 * "Are you interested?") .sendOption("That sounds like me!", () -> {
+		 * player.brutalMode = true; player.expRate = 0.34;
+		 * player.message("That was a mistake! (Brutal Mode selected)."); },
+		 * "What? No!", () -> { // Do nothing! }).execute();
+		 */
 
 		World.sendMessage("Welcome to Runity @blu@" + player.getName() + "");
 		player.send(new SendMessage(

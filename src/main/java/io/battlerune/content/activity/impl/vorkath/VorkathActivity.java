@@ -38,7 +38,7 @@ public class VorkathActivity extends Activity {
 	public static VorkathActivity create(Player player) {
 		VorkathActivity minigame = new VorkathActivity(player, player.playerAssistant.instance());
 		minigame.add(player);
-		//player.gameRecord.start();
+		// player.gameRecord.start();
 		return minigame;
 	}
 
@@ -136,7 +136,7 @@ public class VorkathActivity extends Activity {
 						player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
 
 					}
-			     }
+				}
 			});
 		}
 	}

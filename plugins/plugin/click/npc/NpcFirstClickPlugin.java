@@ -52,8 +52,7 @@ public class NpcFirstClickPlugin extends PluginContext {
 					player.message("@or2@you can't teleport above 30 wilderness");
 				} else {
 					Teleportation.teleport(player, Config.AIR_ZONE, 20, () -> {
-						player.send(new SendMessage(
-								"@or2@Welcome to the Air Altar!, " + player.getName() + "!"));
+						player.send(new SendMessage("@or2@Welcome to the Air Altar!, " + player.getName() + "!"));
 					});
 				}
 			}, "Nature Altar", () -> {
@@ -384,7 +383,7 @@ public class NpcFirstClickPlugin extends PluginContext {
 			if (PlayerRight.isDonator(player) || PlayerRight.isPriviledged(player)) {
 				Store.STORES.get("Grace's Graceful Store").open(player);
 			} else {
-			  player.message("You need to be a donator or higher to access this store!");
+				player.message("You need to be a donator or higher to access this store!");
 			}
 			break;
 

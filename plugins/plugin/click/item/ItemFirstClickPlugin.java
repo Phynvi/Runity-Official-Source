@@ -54,14 +54,14 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				player.message("@red@You were lucky and received 20 Million GP!");
 			}
 			player.inventory.remove(10028, 1);
-            player.message("you were unfortunate and did not recieve anything.");
+			player.message("you were unfortunate and did not recieve anything.");
 			break;
-			
+
 		case 299:
-			if(PlayerRight.isDeveloper(player)) {
+			if (PlayerRight.isDeveloper(player)) {
 				player.dialogueFactory.sendOption("Plant Red Flower", () -> {
-				player.message("Sike bitch ahahah this aint fucking dreamscape retard");
-				player.message("@red@no rigged seeds in here nigga");
+					player.message("Sike bitch ahahah this aint fucking dreamscape retard");
+					player.message("@red@no rigged seeds in here nigga");
 				}, "Plant Blue Flower", () -> {
 					player.message("Sike bitch ahahah this aint fucking dreamscape retard.");
 					player.message("@red@no rigged seeds in here nigga");
@@ -73,9 +73,9 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 					player.message("@red@no rigged seeds in here nigga");
 				}, "Win the entire FP", player.interfaceManager::close).execute();
 			} else {
-		    player.inventory.remove(299, 1);    
-			FlowerHandler flower = new FlowerHandler(player);
-			flower.plantFlower();
+				player.inventory.remove(299, 1);
+				FlowerHandler flower = new FlowerHandler(player);
+				flower.plantFlower();
 			}
 			break;
 		case 6199:

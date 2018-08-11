@@ -16,12 +16,10 @@ public class RandomEvent implements Command {
 	public void execute(Player player, String[] command) {
 		final String name = String.format(command[1]);
 
-            World.search(name.toString()).ifPresent(MimeEvent::create);
-            player.message("Remember command use; ::randomevent daniel");
+		World.search(name.toString()).ifPresent(MimeEvent::create);
+		player.message("Remember command use; ::randomevent daniel");
 
-        } 
-	
- 
+	}
 
 	@Override
 	public boolean canUse(Player player) {

@@ -227,16 +227,13 @@ public final class Config {
 	/** The donator zone. */
 	public static final Position PORTAL_ZONE = new Position(3363, 3318, 0);
 
-	
-	
 	public static final Position AIR_ZONE = new Position(2841, 4829, 0);
-	
+
 	public static final Position BLOOD_ZONE = new Position(1732, 3827, 0);
-	
+
 	public static final Position NATURE_ZONE = new Position(2400, 4835, 0);
 
 	public static final Position LAW_ALTAR = new Position(2464, 4818, 0);
-
 
 	/** Wests. */
 	public static final Position WESTS = new Position(2980, 3594, 0);
@@ -311,7 +308,8 @@ public final class Config {
 	/** Strings that are classified as bad. */
 	public static final String[] BAD_STRINGS = { "fag", "f4g", "faggot", "nigger", "fuck", "bitch", "whore", "slut",
 			"gay", "lesbian", "scape", ".net", ".org", "vagina", "dick", "cock", "penis", "hoe", "soulsplit", "ikov",
-			"retard", "cunt", "g ay", "ga y", "g a y", "h o e", "o r g", "osroyale", "OS royale", "osr", "niger", "nardarh", "dreamscape", "imagineps", "vision317" };
+			"retard", "cunt", "g ay", "ga y", "g a y", "h o e", "o r g", "osroyale", "OS royale", "osr", "niger",
+			"nardarh", "dreamscape", "imagineps", "vision317" };
 
 	/** Messages that are sent periodically to all players. */
 	public static final String[] MESSAGES = { "The owner & founder of Runity is Jordan & Adam.",
@@ -394,83 +392,44 @@ public final class Config {
 	public final static int[] TAB_AMOUNT = { 7, 46, 19, 42, 41, 15, 21, 4, 0, 0, };
 	static int amount = 10000;
 
-	public final static Item[] NOT_ALLOWED = {
-			new Item(13738, amount), new Item(13739, amount), 
-			new Item(13740, amount), new Item(13741, amount), 
-			new Item(13742, amount), new Item(13743, amount),
-			new Item(13744, amount), new Item(13745, amount), 
-			 new Item(13746, amount), new Item(13747, amount),
-			 new Item(13748, amount), new Item(13749, amount),
-			 new Item(16628, amount), new Item(16629, amount),
-			 new Item(16630, amount), new Item(16631, amount),
-			 new Item(16647, amount), new Item(16648, amount),
-			 new Item(16649, amount), new Item(16650, amount),
-			 new Item(16651, amount), new Item(16653, amount),
-			 new Item(16654, amount), new Item(16655, amount),
-			 new Item(16656, amount), new Item(19923, amount),
-			 new Item(16657, amount), new Item(16658, amount),
-			 new Item(16659, amount), new Item(16660, amount),
-			 new Item(16661, amount), new Item(16662, amount),
-			 new Item(16663, amount), new Item(16664, amount),
-			 new Item(16665, amount), new Item(16666, amount),
-			 new Item(16667, amount), new Item(16668, amount),
-			 new Item(16669, amount), new Item(13717, amount),
-			 new Item(13718, amount), new Item(13719, amount),
-			 new Item(13720, amount), new Item(13721, amount),
-			 new Item(13722, amount), new Item(13723, amount),
-			 new Item(13724, amount), new Item(13725, amount),
-			 new Item(13726, amount), new Item(13727, amount),
-			 new Item(13728, amount), new Item(13729, amount),
-			 new Item(4062, amount), new Item(17161, amount),
-			 new Item(11642, amount), new Item(17153, amount),
-			 new Item(17154, amount), new Item(17155, amount),
-			 new Item(17156, amount), new Item(17157, amount),
-			 new Item(17158, amount), new Item(17159, amount),
-			 new Item(17160, amount), new Item(17162, amount),
-			 new Item(17163, amount), new Item(17164, amount),
-			 new Item(17165, amount), new Item(17166, amount),
-			 new Item(17167, amount), new Item(17168, amount),
-			 new Item(17172, amount), new Item(17173, amount),
-			 new Item(17174, amount), new Item(17175, amount),
-			 new Item(17176, amount), new Item(17177, amount),
-			 new Item(17178, amount), new Item(17179, amount),
-			 new Item(17180, amount), new Item(17181, amount),
-			 new Item(19914, amount), new Item(19917, amount),
-			 new Item(19920, amount), new Item(13689, amount),
-			 new Item(20251, amount), new Item(20252, amount),
-			 new Item(13690, amount), new Item(13686, amount),
-			 new Item(13687, amount), new Item(11609, amount),
-			 new Item(20690, amount), new Item(14581, amount),
-			 new Item(14582, amount), new Item(14583, amount),
-			 new Item(14584, amount), new Item(14585, amount),
-			 new Item(14586, amount), new Item(14589, amount),
-			 new Item(13207, amount), new Item(13209, amount),
-			 new Item(13210, amount), new Item(13212, amount),
-			 new Item(13213, amount), new Item(1321, amount),
-			 new Item(13661, amount), new Item(13662, amount),
-			 new Item(13189, amount), new Item(10028, amount),
-             new Item(21777, amount),
-			 new Item(13208, amount), new Item(22123, amount),
-			 new Item(21954, amount), new Item(22099, amount),
-			 new Item(22078, amount), new Item(22301, amount),
-			 new Item(22304, amount), new Item(22307, amount),
-			 new Item(15011, amount), new Item(3273, amount),
-			 new Item(3274, amount), new Item(3275, amount),
-			 new Item(15300, amount), new Item(15307, amount),
-			 new Item(10860, amount), new Item(10861, amount),
-			 new Item(15301, amount), new Item(15302, amount),
-			 new Item(15303, amount), new Item(15304, amount),
-			 new Item(3929, amount),  new Item(15308, amount),
-			 new Item(15309, amount), new Item(15310, amount),
-			 new Item(13703, amount), new Item(13704, amount),
-			 new Item(13705, amount), new Item(13695, amount),
-			 new Item(13692, amount), new Item(13693, amount), 
-			 new Item(13696, amount), new Item(13697, amount),
-			 new Item(13698, amount), new Item(13699, amount),
-			 new Item(13700, amount), new Item(13701, amount),
-			 new Item(13702, amount), new Item(22317, amount),
-			 new Item(22280, amount)
-			 };
+	public final static Item[] NOT_ALLOWED = { new Item(13738, amount), new Item(13739, amount),
+			new Item(13740, amount), new Item(13741, amount), new Item(13742, amount), new Item(13743, amount),
+			new Item(13744, amount), new Item(13745, amount), new Item(13746, amount), new Item(13747, amount),
+			new Item(13748, amount), new Item(13749, amount), new Item(16628, amount), new Item(16629, amount),
+			new Item(16630, amount), new Item(16631, amount), new Item(16647, amount), new Item(16648, amount),
+			new Item(16649, amount), new Item(16650, amount), new Item(16651, amount), new Item(16653, amount),
+			new Item(16654, amount), new Item(16655, amount), new Item(16656, amount), new Item(19923, amount),
+			new Item(16657, amount), new Item(16658, amount), new Item(16659, amount), new Item(16660, amount),
+			new Item(16661, amount), new Item(16662, amount), new Item(16663, amount), new Item(16664, amount),
+			new Item(16665, amount), new Item(16666, amount), new Item(16667, amount), new Item(16668, amount),
+			new Item(16669, amount), new Item(13717, amount), new Item(13718, amount), new Item(13719, amount),
+			new Item(13720, amount), new Item(13721, amount), new Item(13722, amount), new Item(13723, amount),
+			new Item(13724, amount), new Item(13725, amount), new Item(13726, amount), new Item(13727, amount),
+			new Item(13728, amount), new Item(13729, amount), new Item(4062, amount), new Item(17161, amount),
+			new Item(11642, amount), new Item(17153, amount), new Item(17154, amount), new Item(17155, amount),
+			new Item(17156, amount), new Item(17157, amount), new Item(17158, amount), new Item(17159, amount),
+			new Item(17160, amount), new Item(17162, amount), new Item(17163, amount), new Item(17164, amount),
+			new Item(17165, amount), new Item(17166, amount), new Item(17167, amount), new Item(17168, amount),
+			new Item(17172, amount), new Item(17173, amount), new Item(17174, amount), new Item(17175, amount),
+			new Item(17176, amount), new Item(17177, amount), new Item(17178, amount), new Item(17179, amount),
+			new Item(17180, amount), new Item(17181, amount), new Item(19914, amount), new Item(19917, amount),
+			new Item(19920, amount), new Item(13689, amount), new Item(20251, amount), new Item(20252, amount),
+			new Item(13690, amount), new Item(13686, amount), new Item(13687, amount), new Item(11609, amount),
+			new Item(20690, amount), new Item(14581, amount), new Item(14582, amount), new Item(14583, amount),
+			new Item(14584, amount), new Item(14585, amount), new Item(14586, amount), new Item(14589, amount),
+			new Item(13207, amount), new Item(13209, amount), new Item(13210, amount), new Item(13212, amount),
+			new Item(13213, amount), new Item(1321, amount), new Item(13661, amount), new Item(13662, amount),
+			new Item(13189, amount), new Item(10028, amount), new Item(21777, amount), new Item(13208, amount),
+			new Item(22123, amount), new Item(21954, amount), new Item(22099, amount), new Item(22078, amount),
+			new Item(22301, amount), new Item(22304, amount), new Item(22307, amount), new Item(15011, amount),
+			new Item(3273, amount), new Item(3274, amount), new Item(3275, amount), new Item(15300, amount),
+			new Item(15307, amount), new Item(10860, amount), new Item(10861, amount), new Item(15301, amount),
+			new Item(15302, amount), new Item(15303, amount), new Item(15304, amount), new Item(3929, amount),
+			new Item(15308, amount), new Item(15309, amount), new Item(15310, amount), new Item(13703, amount),
+			new Item(13704, amount), new Item(13705, amount), new Item(13695, amount), new Item(13692, amount),
+			new Item(13693, amount), new Item(13696, amount), new Item(13697, amount), new Item(13698, amount),
+			new Item(13699, amount), new Item(13700, amount), new Item(13701, amount), new Item(13702, amount),
+			new Item(22317, amount), new Item(22280, amount) };
 	public final static Item[] BANK_ITEMS = { new Item(995, 10000), new Item(11665, 10000), new Item(11663, 10000),
 			new Item(11664, 10000), new Item(8840, 10000), new Item(8839, 10000), new Item(8842, 10000),
 			new Item(4151, 10000), new Item(11802, 10000), new Item(11804, 10000), new Item(11806, 10000),

@@ -250,8 +250,8 @@ public class Galvek extends MultiStrategy {
 				attacker.getCombat().attack(defender);
 				attacker.getCombat().isAttacking(defender);
 
-					System.out.println("[GALVEK] 1 Transformation is good to go.");
-				
+				System.out.println("[GALVEK] 1 Transformation is good to go.");
+
 			}
 			if (Utility.random(1, 3) == 2) {
 				attacker.animate(7909);
@@ -260,8 +260,8 @@ public class Galvek extends MultiStrategy {
 				attacker.getCombat().attack(defender);
 				attacker.getCombat().isAttacking(defender);
 
-					System.out.println("[GALVEK] 2 Transformation is good to go.");
-				
+				System.out.println("[GALVEK] 2 Transformation is good to go.");
+
 			}
 			if (Utility.random(1, 3) == 3) {
 				attacker.animate(7909);
@@ -270,8 +270,8 @@ public class Galvek extends MultiStrategy {
 				attacker.getCombat().attack(defender);
 				attacker.getCombat().isAttacking(defender);
 
-					System.out.println("[GALVEK] 3 Transformation is good to go.");
-				
+				System.out.println("[GALVEK] 3 Transformation is good to go.");
+
 			}
 			defender.graphic(new Graphic(369));
 			// defender.locking.lock(LockType.FREEZE);
@@ -281,7 +281,6 @@ public class Galvek extends MultiStrategy {
 			attacker.face(new Position(2277, 4057));
 			attacker.animate(new Animation(7904, UpdatePriority.HIGH));
 			PROJECTILE.send(attacker, new Position(2277, 4057));
-
 
 			SpawnData1 data = GalvekUtility.spawn;
 			World.schedule(4, () -> {
@@ -300,13 +299,13 @@ public class Galvek extends MultiStrategy {
 				tsunami.walkTo(defender, () -> {
 					World.sendGraphic(new Graphic(1460, true), tsunami.getPosition());
 					defender.damage(new Hit(60 * tsunami.getCurrentHealth() / tsunami.getMaximumHealth()));
-			        World.schedule(new CeillingCollapseTask(defender.getPlayer()));
-			        for(int i = 0; i < 5; i++) {
-			    		defender.graphic(60);
-			    		defender.speak("Ouch!");
-			    		defender.damage(new Hit(Utility.random(5, 8)));
-			    		defender.getPlayer().message("Some rocks fall from the ceiling and hit you.");
-			        }
+					World.schedule(new CeillingCollapseTask(defender.getPlayer()));
+					for (int i = 0; i < 5; i++) {
+						defender.graphic(60);
+						defender.speak("Ouch!");
+						defender.damage(new Hit(Utility.random(5, 8)));
+						defender.getPlayer().message("Some rocks fall from the ceiling and hit you.");
+					}
 					tsunami.unregister();
 				});
 			});

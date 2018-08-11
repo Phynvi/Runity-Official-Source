@@ -22,8 +22,9 @@ public enum Fishable {
 	FROG_SPAWN(5004, SMALL_FISHING_NET, 33, 75.0D, -1, 3500), TUNA(359, HARPOON, 35, 80.0D, -1, 5000),
 	CAVE_EEL(5001, FISHING_ROD, 38, 80.0D, FISHING_BAIT, 5500), LOBSTER(377, LOBSTER_POT, 40, 90.0D, -1, 7500),
 	BASS(363, BIG_FISHING_NET, 46, 100.0D, -1, 10000), SWORD_FISH(371, HARPOON, 50, 100.0D, -1, 12500),
-	LAVA_EEL(2148, FISHING_ROD, 53, 30.0D, FISHING_BAIT, 13500), MONK_FISH(7944, SMALL_FISHING_NET, 62, 110.0D, -1, 15000),
-	KARAMBWAN(3142, 3157, 65, 100.0D, -1, 17500), SHARK(383, HARPOON, 76, 125.0D, -1, 20000), SEA_TURTLE(395, -1, 79, 38.0D, -1, 25000),
+	LAVA_EEL(2148, FISHING_ROD, 53, 30.0D, FISHING_BAIT, 13500),
+	MONK_FISH(7944, SMALL_FISHING_NET, 62, 110.0D, -1, 15000), KARAMBWAN(3142, 3157, 65, 100.0D, -1, 17500),
+	SHARK(383, HARPOON, 76, 125.0D, -1, 20000), SEA_TURTLE(395, -1, 79, 38.0D, -1, 25000),
 	MANTA_RAY(389, HARPOON, 76, 125.0D, -1, 25000),
 //rawFishid, toolid, levelneeded, baitneeded, experience recieved., int money
 	DARK_CRAB(11934, 301, 85, 205.0D, DARK_FISHING_BAIT, 25000);
@@ -73,9 +74,11 @@ public enum Fishable {
 	public short getToolId() {
 		return toolId;
 	}
+
 	public int getMoney() {
 		return money;
 	}
+
 	public void setMoney(int money) {
 		this.money = money;
 	}

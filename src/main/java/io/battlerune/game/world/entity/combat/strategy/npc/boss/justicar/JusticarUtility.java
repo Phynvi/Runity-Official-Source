@@ -12,12 +12,11 @@ import io.battlerune.util.Utility;
  * generate
  */
 public class JusticarUtility {
-	
 
 	public static SpawnData2 spawn;
 
 	public static boolean activated = false;
-	
+
 	public static boolean justicarbutton;
 
 	public static Npc generateSpawn() {
@@ -49,7 +48,7 @@ public class JusticarUtility {
 		if (hasClan) {
 			player.clanChannel.getDetails().points += 5;
 			player.clanChannel.addExperience(10000);
-			World.sendMessage("<col=8714E6> Skotizo has been defeated by " + player.getName() +  " !");
+			World.sendMessage("<col=8714E6> Skotizo has been defeated by " + player.getName() + " !");
 			player.clanChannel.message("Hell yeah boys! We just killed Skotizo!! We earned 10,000 EXP & 5 CP.");
 		} else {
 			World.sendMessage("<col=8714E6> Skotizo has been defeated by " + player.getName()
@@ -57,8 +56,9 @@ public class JusticarUtility {
 		}
 
 		justicar.unregister();
-        activated = false;
+		activated = false;
 	}
+
 	public enum SpawnData2 {
 		LEVEL_46("lvl 46 wild near Spider Hill", new Position(3135, 3888, 0), new Position(3132, 3881, 0)),
 		LEVEL_16("lvl 16 wild near Bone Yard", new Position(3273, 3648, 0), new Position(3267, 3654, 0)),

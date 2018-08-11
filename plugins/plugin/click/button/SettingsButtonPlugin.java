@@ -144,8 +144,10 @@ public class SettingsButtonPlugin extends PluginContext {
 			player.send(new SendConfig(287, player.settings.privateChat ? 1 : 0));
 			return true;
 		case -15433:
-			/*player.settings.profanityFilter = !player.settings.profanityFilter;
-			player.send(new SendConfig(203, player.settings.profanityFilter ? 1 : 0));*/
+			/*
+			 * player.settings.profanityFilter = !player.settings.profanityFilter;
+			 * player.send(new SendConfig(203, player.settings.profanityFilter ? 1 : 0));
+			 */
 			return true;
 		case -15335:
 			player.settings.mouse = !player.settings.mouse;

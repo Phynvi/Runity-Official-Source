@@ -64,7 +64,6 @@ public enum PotionData {
 			PotionData.onBasicEffect(player, Skill.RANGED, BoostType.SUPER_RANGE);
 			player.send(new SendWidget(SendWidget.WidgetType.RANGE, 480));
 
-
 		}
 	},
 	SANFEW_POTIONS(10925, 10927, 10929, 10931) {

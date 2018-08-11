@@ -15,9 +15,9 @@ public class UpdateCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-    		int time = Integer.parseInt(command[1]);
-            World.update(time, false);
-        
+		int time = Integer.parseInt(command[1]);
+		World.update(time, false);
+
 	}
 
 	@Override

@@ -92,8 +92,8 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			player.animate(839);
 			player.move(new Position(2272, 4054));
 			break;
-			
-		case 12356: //ROD Portal
+
+		case 12356: // ROD Portal
 			Teleportation.teleport(player, Config.DEFAULT_POSITION);
 			player.message("You've teleported Home, and all your data in RFD Has been lost.e");
 			break;
@@ -137,7 +137,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.message("You cannot complete this course");
 			}
 			break;
-			
+
 		case 1558:
 			if (player.getPosition().getX() < object.getPosition().getX()) {
 				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
@@ -148,8 +148,8 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		case 27264:
 			player.bank.open();
 			break;
-			
-			/* Bandos godwars. */
+
+		/* Bandos godwars. */
 		case 27485:
 			if (player.getPosition().getX() < object.getPosition().getX()) {
 				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
@@ -238,18 +238,18 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		 * only file you gotta edit for the portals.
 		 */
 
-	   case 29042:
-				player.send(new SendMessage(
-						"@or2@You have completed @lre@ Barrows Minigame @red@" + player.getName() + "!"));
-				Teleportation.teleport(player, Config.DEFAULT_POSITION, 20, () -> {
-					player.send(new SendFadeScreen("@or2@Thanks for completing barrows!", 1, 3));
-					player.send(new SendMessage("@red@Congratulations"));
-				}); 
+		case 29042:
+			player.send(
+					new SendMessage("@or2@You have completed @lre@ Barrows Minigame @red@" + player.getName() + "!"));
+			Teleportation.teleport(player, Config.DEFAULT_POSITION, 20, () -> {
+				player.send(new SendFadeScreen("@or2@Thanks for completing barrows!", 1, 3));
+				player.send(new SendMessage("@red@Congratulations"));
+			});
 			break;
-			
-		case 31556: //REV CAVE REVANANT CAVE. REV CAVE OSRS
-			//pos = 3124, 3830, 0 = REV CAVE POSITION
-		break;
+
+		case 31556: // REV CAVE REVANANT CAVE. REV CAVE OSRS
+			// pos = 3124, 3830, 0 = REV CAVE POSITION
+			break;
 
 		case 24064:
 			player.move(new Position(3046, 3372, 0));
@@ -576,21 +576,16 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.dialogueFactory.sendStatement("You need 5,000 coins to do this!").execute();
 				return true;
 			}
-			
-			
-		
-
 
 			Position destination = null;
 			Direction direction = null;
-			
-			
+
 			if (player.getY() < 3480) {
 				player.movement.walkTo(new Position(player.getX(), 3480));
 			} else if (player.getY() > 3481) {
 				player.movement.walkTo(new Position(player.getX(), 3481));
 			}
-			
+
 			if (player.getY() == 3481) {
 				direction = Direction.SOUTH;
 				destination = new Position(player.getX(), 3480);
@@ -617,7 +612,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.getCombat().reset();
 				player.face(direction);
 				player.locking.lock(1, LockType.MASTER_WITH_MOVEMENT);
-					player.inventory.remove(995, 5000);
+				player.inventory.remove(995, 5000);
 				player.movement.walkTo(destination);
 			}
 			break;
@@ -706,9 +701,9 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 
 		case 5960:// MAGE BANK LEVER
-			if(player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
 				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
-			      return false;
+				return false;
 			}
 			player.action.execute(new LeverAction(player, object, new Position(3090, 3956, 0), Direction.SOUTH));
 			break;
@@ -753,7 +748,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		 * START OF DOOR SYSTEM, BECAUSE HARRYL THE FUCKER WILL NOT WRITE A NEW ONE SO I
 		 * HAVE TO USE THIS BULLSHIT !!!!?!?!?!?!
 		 **/
-			
+
 		case 30388:
 			if (player.getPosition().getX() < object.getPosition().getX()) {
 				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
@@ -770,7 +765,6 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			}
 			break;
 
-			
 		case 25814:
 			if (player.getPosition().getX() < object.getPosition().getX()) {
 				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
@@ -778,7 +772,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
 			}
 			break;
-			
+
 		case 1723:
 			if (player.getPosition().getX() < object.getPosition().getX()) {
 				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
@@ -788,7 +782,8 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 		case 24309:
 		case 24306:
-			if(player.getPosition().getX() == 2855 && player.getPosition().getY() == 3546 && player.getPosition().getHeight() == 0) {
+			if (player.getPosition().getX() == 2855 && player.getPosition().getY() == 3546
+					&& player.getPosition().getHeight() == 0) {
 				return true;
 			}
 			if (player.getPosition().getX() < object.getPosition().getX()) {
@@ -804,8 +799,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
 			}
 			break;
-			
-			
+
 		case 11773:
 			if (player.getPosition().getX() < object.getPosition().getX()) {
 				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
@@ -821,7 +815,6 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
 			}
 			break;
-
 
 		case 14917:// SEERS DOOR
 			if (player.getY() <= object.getY()) {
@@ -1126,29 +1119,30 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				StaffPanel.open(player, PanelType.INFORMATION_PANEL);
 			}
 			break;
-			
+
 		case 29241:
-				for (int skill = 0; skill < Skill.SKILL_COUNT; skill++) {
-					player.skills.setLevel(skill, player.skills.getMaxLevel(skill));
-				}
-				player.runEnergy = 100;
-				player.skulling.unskull();
-				player.skills.restoreAll();
-				player.inventory.refresh();
-				player.action.reset();
-				player.playerAssistant.reset();
-				player.interfaceManager.close();
-				player.setSpecialActivated(false);
-				player.getCombat().getDamageCache().clear();
-				CombatSpecial.restore(player, 100);
-				player.unpoison();
-				CombatUtil.cancelEffect(player, CombatEffectType.POISON);
-				CombatUtil.cancelEffect(player, CombatEffectType.VENOM);
-				player.movement.reset();
-				player.teleblockTimer.set(0);
-				player.equipment.updateAnimation();
-				player.animate(1327);
-				player.send(new SendMessage("You take a sip from the juice fountain and feel your body pulsing with ecstasy."));
+			for (int skill = 0; skill < Skill.SKILL_COUNT; skill++) {
+				player.skills.setLevel(skill, player.skills.getMaxLevel(skill));
+			}
+			player.runEnergy = 100;
+			player.skulling.unskull();
+			player.skills.restoreAll();
+			player.inventory.refresh();
+			player.action.reset();
+			player.playerAssistant.reset();
+			player.interfaceManager.close();
+			player.setSpecialActivated(false);
+			player.getCombat().getDamageCache().clear();
+			CombatSpecial.restore(player, 100);
+			player.unpoison();
+			CombatUtil.cancelEffect(player, CombatEffectType.POISON);
+			CombatUtil.cancelEffect(player, CombatEffectType.VENOM);
+			player.movement.reset();
+			player.teleblockTimer.set(0);
+			player.equipment.updateAnimation();
+			player.animate(1327);
+			player.send(
+					new SendMessage("You take a sip from the juice fountain and feel your body pulsing with ecstasy."));
 			break;
 
 		/* Altar of the occult */
@@ -1184,15 +1178,13 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 
 		/* Ornate Restoration Pool */
-		/*case 29241:
-			if (PlayerRight.isManagement(player)) {
-				for (int skill = 0; skill < Skill.SKILL_COUNT; skill++) {
-					player.skills.setLevel(skill, player.skills.getMaxLevel(skill));
-				}
-				player.send(new SendMessage(
-						"You take a sip from the juice fountain and feel your body pulsing with ecstasy."));
-			}
-			break;*/
+		/*
+		 * case 29241: if (PlayerRight.isManagement(player)) { for (int skill = 0; skill
+		 * < Skill.SKILL_COUNT; skill++) { player.skills.setLevel(skill,
+		 * player.skills.getMaxLevel(skill)); } player.send(new SendMessage(
+		 * "You take a sip from the juice fountain and feel your body pulsing with ecstasy."
+		 * )); } break;
+		 */
 
 		/* Donator deposit. */
 		case 26254:
@@ -1258,7 +1250,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 		/* Wilderness ditch. */
 		case 23271: {
-			if(player.inventory.containsAny(Config.NOT_ALLOWED)) {
+			if (player.inventory.containsAny(Config.NOT_ALLOWED)) {
 				player.message("You cannot bring custom item's into the wilderness!");
 				return false;
 			}

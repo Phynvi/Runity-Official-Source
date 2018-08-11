@@ -157,16 +157,17 @@ public class TeleportHandler {
 			special(player, teleport);
 			return;
 		}
-		
-		if(!teleport.getcustomsAllowed() == true && player.inventory.containsAny(Config.NOT_ALLOWED)) {
+
+		if (!teleport.getcustomsAllowed() == true && player.inventory.containsAny(Config.NOT_ALLOWED)) {
 			player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
 			return;
 		}
-		if(!teleport.getcustomsAllowed() == true && player.equipment.containsAny(Config.NOT_ALLOWED)) {
-			player.message("@red@You are not allowed to bring in custom items into this area " + player.getName() + "!");
+		if (!teleport.getcustomsAllowed() == true && player.equipment.containsAny(Config.NOT_ALLOWED)) {
+			player.message(
+					"@red@You are not allowed to bring in custom items into this area " + player.getName() + "!");
 			return;
 		}
-		
+
 		Teleportation.teleport(player, teleport.getPosition());
 		player.send(new SendMessage("You have teleported to " + teleport.getName() + "."));
 	}
@@ -217,17 +218,17 @@ public class TeleportHandler {
 				if (player.skills.getLevel(Skill.MAGIC) <= 51) {
 					player.message("Get 52 Agility before attempting this course.");
 				} else {
-					if(player.inventory.containsAny(Config.NOT_ALLOWED)) {
-					 player.message("No Custom's in the wilderness...period.");
+					if (player.inventory.containsAny(Config.NOT_ALLOWED)) {
+						player.message("No Custom's in the wilderness...period.");
 						return;
 					}
-					if(player.equipment.containsAny(Config.NOT_ALLOWED)) {
-					 player.message("No Custom's in the wilderness...period.");
-				      return;
+					if (player.equipment.containsAny(Config.NOT_ALLOWED)) {
+						player.message("No Custom's in the wilderness...period.");
+						return;
 					}
 					Teleportation.teleport(player, new Position(2998, 3915, 0));
 					player.send(new SendMessage("You have teleported to the Wilderness agility course."));
-					
+
 				}
 			}, "Rooftop courses", () -> {
 				factory.sendStatement("Loading").sendOption("Seer's Village rooftop course", () -> {

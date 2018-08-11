@@ -23,9 +23,9 @@ public class EventBossManager extends Task {
 
 	@Override
 	protected void execute() {
-		
+
 	}
-	
+
 	public static void start(String key, int timer) {
 		if (event.containsKey(key)) {
 			World.getPlayers().forEach(player -> {

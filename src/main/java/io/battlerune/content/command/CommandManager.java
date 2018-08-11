@@ -153,11 +153,10 @@ public class CommandManager {
 		plugin.put(new String[] { "portals", "portalzone" }, new PortalsZoneCommand());
 		plugin.put(new String[] { "yell", "shout" }, new DonatorYellCommand());
 
-		
 		/**
 		 * @Moderator/Helper Commands
 		 */
-		
+
 		plugin.put(new String[] { "mute", "mutee" }, new MuteCommand());
 		plugin.put(new String[] { "unmute", "unmutee" }, new UnmuteCommand());
 		plugin.put(new String[] { "jail", "jaill" }, new JailCommand());
@@ -197,14 +196,13 @@ public class CommandManager {
 		plugin.put(new String[] { "minime" }, new MiniMeCommand());
 		plugin.put(new String[] { "giveall", "give" }, new GiveAllCommand());
 		plugin.put(new String[] { "update", "udpateserver" }, new UpdateCommand());
-		//plugin.put(new String[] { "reload", "reloadserver" }, new ReloadCommand());
+		// plugin.put(new String[] { "reload", "reloadserver" }, new ReloadCommand());
 		plugin.put(new String[] { "removetask", "slayer" }, new RemovePlayerTask());
 		plugin.put(new String[] { "randomevent", "randomeven" }, new RandomEvent());
 		plugin.put(new String[] { "teleall", "all2me" }, new AllToMeCommand());
 		plugin.put(new String[] { "broadcast", "announcement" }, new BroadcastCommand());
 		plugin.put(new String[] { "kill", "killplayer" }, new KillCommand());
 
-		
 		for (Entry<String[], Command> map : plugin.entrySet()) {
 			for (int i = 0; i < map.getKey().length; i++) {
 				plugin_input.put(map.getKey()[i], map.getValue());

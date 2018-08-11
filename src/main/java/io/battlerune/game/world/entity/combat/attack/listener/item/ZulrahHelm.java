@@ -67,13 +67,13 @@ public class ZulrahHelm extends SimplifiedListener<Player> {
 				attacker.inventory.add(13196, 1);
 				attacker.getCombat().removeListener(listener);
 			}
-	        if (attacker.serpentineHelmCharges == 0) {
-	            attacker.message("Your Serpentine helm is out of charges.");
-	            attacker.equipment.replace(12_931, Equipment.HELM_SLOT, true);
-	            attacker.inventory.add(12926, 1);
-	            attacker.message("You have been given an uncharged Serpentine helm.");
-	            attacker.getCombat().removeListener(listener);
-	        }
+			if (attacker.serpentineHelmCharges == 0) {
+				attacker.message("Your Serpentine helm is out of charges.");
+				attacker.equipment.replace(12_931, Equipment.HELM_SLOT, true);
+				attacker.inventory.add(12926, 1);
+				attacker.message("You have been given an uncharged Serpentine helm.");
+				attacker.getCombat().removeListener(listener);
+			}
 		}
 
 	}
@@ -98,14 +98,13 @@ public class ZulrahHelm extends SimplifiedListener<Player> {
 			}
 		}
 
-
-        if (attacker.tanzaniteHelmCharges == 0) {
-            attacker.message("Your Tanzanite helm is out of charges.");
-            attacker.equipment.replace(13_197, Equipment.HELM_SLOT, true);
-            attacker.inventory.add(13196, 1);
-            attacker.message("you have been given an uncharged Tanzanite helm.");
-            attacker.getCombat().removeListener(listener);
-        }
+		if (attacker.tanzaniteHelmCharges == 0) {
+			attacker.message("Your Tanzanite helm is out of charges.");
+			attacker.equipment.replace(13_197, Equipment.HELM_SLOT, true);
+			attacker.inventory.add(13196, 1);
+			attacker.message("you have been given an uncharged Tanzanite helm.");
+			attacker.getCombat().removeListener(listener);
+		}
 	}
 
 	private static void magma(Player attacker, Mob defender, ZulrahHelm listener) {

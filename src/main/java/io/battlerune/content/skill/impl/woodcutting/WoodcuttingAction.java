@@ -86,20 +86,20 @@ public class WoodcuttingAction extends Action<Player> {
 				getMob().skills.addExperience(Skill.FIREMAKING, tree.experience * Config.FIREMAKING_MODIFICATION * 5);
 				getMob().message("You are now recieving 5x Woodcutting Experience.");
 			}
-			if(tree == TreeData.NORMAL_TREE) {
+			if (tree == TreeData.NORMAL_TREE) {
 				getMob().inventory.add(995, tree.getMoney());
 			}
-			if(tree == TreeData.WILLOW_TREE || tree == TreeData.WILLOW_TREE1) {
+			if (tree == TreeData.WILLOW_TREE || tree == TreeData.WILLOW_TREE1) {
 				getMob().inventory.add(995, tree.getMoney());
 			}
-			if(tree == TreeData.MAPLE_TREE) {
+			if (tree == TreeData.MAPLE_TREE) {
 				getMob().inventory.add(995, tree.getMoney());
 			}
 
-		/*	for(TreeData data : TreeData.values()) {
-				if(data.)
-				getMob().inventory.add(995, tree.getMoney());
-			}*/
+			/*
+			 * for(TreeData data : TreeData.values()) { if(data.)
+			 * getMob().inventory.add(995, tree.getMoney()); }
+			 */
 
 			if (tree == TreeData.OAK_TREE || tree == TreeData.OAK_TREE) {
 				AchievementHandler.activate(getMob(), AchievementKey.CUT_A_OAK_TREE, 1);

@@ -46,7 +46,7 @@ public class CerberusActivity extends Activity {
 	public static CerberusActivity create(Player player) {
 		CerberusActivity minigame = new CerberusActivity(player, player.playerAssistant.instance());
 		minigame.add(player);
-		//player.gameRecord.start();
+		// player.gameRecord.start();
 		return minigame;
 	}
 
@@ -54,14 +54,13 @@ public class CerberusActivity extends Activity {
 		if (!player.bank.contains(995, 75000)) {
 			player.message("You need to have 75,000 coins inside your bank to pay for the instance!");
 			return;
-		}
-		else {
+		} else {
 			player.bank.remove(995, 75000);
 			Teleportation.teleport(player, new Position(1240, 1226, 0), 20, () -> CerberusActivity.create(player));
 			player.send(new SendMessage("You have teleported to the Instanced Version of Cerberus"));
 			player.send(new SendMessage("75,000 coins has been taken out of your bank, as a fee."));
 
-		} 
+		}
 	}
 
 	public static void CreateUnPaidInstance(Player player) {

@@ -17,24 +17,22 @@ public class GiveAllCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		/*int itemId = Integer.parseInt(command[1]);
-		int amount = Integer.parseInt(command[2]);
-        World.sendItem(itemId, amount);*/
+		/*
+		 * int itemId = Integer.parseInt(command[1]); int amount =
+		 * Integer.parseInt(command[2]); World.sendItem(itemId, amount);
+		 */
 		int itemId = Integer.parseInt(command[1]);
 		int amount = Integer.parseInt(command[2]);
-			for (Player players : World.getPlayers()) {
-				if (players != null) {
-					players.inventory.add(new Item(itemId, amount));
-					Item starterbox = new Item(itemId);
-					players.send(new SendMessage("You have all received a " + starterbox.getName() + " From Adam!"));
-					players.send(new SendMessage("@lre@This is a token of appreciation from Adam himself, for being loyal players!"));
-				}
+		for (Player players : World.getPlayers()) {
+			if (players != null) {
+				players.inventory.add(new Item(itemId, amount));
+				Item starterbox = new Item(itemId);
+				players.send(new SendMessage("You have all received a " + starterbox.getName() + " From Adam!"));
+				players.send(new SendMessage(
+						"@lre@This is a token of appreciation from Adam himself, for being loyal players!"));
 			}
 		}
-	
-    
-
-	
+	}
 
 	@Override
 	public boolean canUse(Player player) {

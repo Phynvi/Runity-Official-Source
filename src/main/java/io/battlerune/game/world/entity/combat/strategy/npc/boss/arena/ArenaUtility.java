@@ -15,7 +15,7 @@ import io.battlerune.util.Utility;
  * Created by Daniel on 2017-12-20.
  */
 public class ArenaUtility {
-	
+
 	public static boolean activated = false;
 
 	public static Npc generateSpawn() {
@@ -47,7 +47,7 @@ public class ArenaUtility {
 		if (hasClan) {
 			player.clanChannel.getDetails().points += 5;
 			player.clanChannel.addExperience(10000);
-			World.sendMessage("<col=8714E6> arena has been defeated by " + player.getName() +" !");
+			World.sendMessage("<col=8714E6> arena has been defeated by " + player.getName() + " !");
 			player.clanChannel.message("Hell yeah boys! We just killed arena!! We earned 10,000 EXP & 5 CP.");
 		}
 		World.sendMessage("<col=8714E6> arena has been defeated by " + player.getName()
@@ -99,7 +99,7 @@ public class ArenaUtility {
 		player.send(new SendMessage("Glod drop's lootation all over the map.", MessageColor.RED));
 
 		arena.unregister();
-        activated = false;
+		activated = false;
 
 	}
 

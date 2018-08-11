@@ -17,7 +17,7 @@ public class ItemSecondClickPlugin extends PluginContext {
 		case 15098:
 			DiceBag.roll(player, true);
 			break;
-			
+
 		case 4079:
 			player.animate(1458);
 			break;

@@ -23,12 +23,12 @@ public class PortalsZoneCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		if (PlayerRight.isDonator(player) || PlayerRight.isSuper(player) || PlayerRight.isExtreme(player) 
+		if (PlayerRight.isDonator(player) || PlayerRight.isSuper(player) || PlayerRight.isExtreme(player)
 				|| PlayerRight.isElite(player) || PlayerRight.isKing(player) || PlayerRight.isSupreme(player)) {
 			return true;
 		} else {
 			player.speak("I just tried to do something silly!");
-		return false;
+			return false;
 		}
 	}
 

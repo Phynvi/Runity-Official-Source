@@ -11,11 +11,9 @@ import io.battlerune.util.Utility;
  * Created by Daniel on 2017-12-20.
  */
 public class SkotizoUtility {
-	
-	
+
 	public static SpawnData spawn;
 	public static boolean activated = false;
-
 
 	public static Npc generateSpawn() {
 		activated = true;
@@ -38,7 +36,7 @@ public class SkotizoUtility {
 		if (hasClan) {
 			player.clanChannel.getDetails().points += 5;
 			player.clanChannel.addExperience(10000);
-			World.sendMessage("<col=8714E6> Skotizo has been defeated by " + player.getName() +  " !");
+			World.sendMessage("<col=8714E6> Skotizo has been defeated by " + player.getName() + " !");
 			player.clanChannel.message("Hell yeah boys! We just killed Skotizo!! We earned 10,000 EXP & 5 CP.");
 		} else {
 			World.sendMessage("<col=8714E6> Skotizo has been defeated by " + player.getName()
@@ -46,7 +44,7 @@ public class SkotizoUtility {
 		}
 
 		skotizo.unregister();
-        activated = false;
+		activated = false;
 	}
 
 	public enum SpawnData {

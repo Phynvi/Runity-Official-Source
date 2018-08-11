@@ -35,7 +35,6 @@ public class ExaminePacketListener implements PacketListener {
 					MessageColor.DEVELOPER));
 		}
 
-
 		if (slot == -1) {
 			player.settings.clientWidth = interfaceId;
 			player.settings.clientHeight = itemId;
@@ -43,17 +42,20 @@ public class ExaminePacketListener implements PacketListener {
 		}
 
 		ItemDefinition itemDef = ItemDefinition.get(itemId);
-		
-		 Item item = player.inventory.get(slot); 
-         if (item == null || item.getId() != itemId) return;
-         if (item.isTradeable()) {
-             String message = "";
-             message += "Item: <col=A52929>" + item.getName() + "</col> ";
-             message += "Value: <col=A52929>" + Utility.formatDigits(item.getValue(PriceType.VALUE)) + " (" + Utility.formatDigits(item.getValue(PriceType.VALUE) * item.getAmount()) + ")</col> ";
-             message += "High alch: <col=A52929>" + Utility.formatDigits(item.getValue(PriceType.HIGH_ALCH_VALUE)) + "</col> ";
-             player.send(new SendMessage(message));
-         }
-         
+
+		Item item = player.inventory.get(slot);
+		if (item == null || item.getId() != itemId)
+			return;
+		if (item.isTradeable()) {
+			String message = "";
+			message += "Item: <col=A52929>" + item.getName() + "</col> ";
+			message += "Value: <col=A52929>" + Utility.formatDigits(item.getValue(PriceType.VALUE)) + " ("
+					+ Utility.formatDigits(item.getValue(PriceType.VALUE) * item.getAmount()) + ")</col> ";
+			message += "High alch: <col=A52929>" + Utility.formatDigits(item.getValue(PriceType.HIGH_ALCH_VALUE))
+					+ "</col> ";
+			player.send(new SendMessage(message));
+		}
+
 		if (itemDef != null) {
 			player.interfaceManager.close();
 			if (itemDef.getEquipmentType() == EquipmentType.NOT_WIELDABLE

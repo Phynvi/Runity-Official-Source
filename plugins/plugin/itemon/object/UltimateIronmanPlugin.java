@@ -10,8 +10,10 @@ public class UltimateIronmanPlugin extends PluginContext {
 	@Override
 	protected boolean itemOnObject(Player player, ItemOnObjectEvent event) {
 		final Item used = event.getUsed();
-		if (/*player.right.equals(PlayerRight.ULTIMATE_IRONMAN)
-				&& */event.getObject().getDefinition().name.equals("Bank booth") || event.getObject().getDefinition().name.equals("")) {
+		if (/*
+			 * player.right.equals(PlayerRight.ULTIMATE_IRONMAN) &&
+			 */event.getObject().getDefinition().name.equals("Bank booth")
+				|| event.getObject().getDefinition().name.equals("")) {
 			if (!used.isTradeable()) {
 				player.dialogueFactory.sendStatement("This item can not be noted!").execute();
 				return true;

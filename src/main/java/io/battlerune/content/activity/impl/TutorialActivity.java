@@ -359,7 +359,7 @@ public class TutorialActivity extends Activity {
 		if (player.needsStarter) {
 			StarterKit.open(player);
 		}
-		//EmailInputListener.input(player);
+		// EmailInputListener.input(player);
 	}
 
 	@Override

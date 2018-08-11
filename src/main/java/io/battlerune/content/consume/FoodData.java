@@ -39,7 +39,7 @@ public enum FoodData {
 	POT_OF_CREAM(2130, 1, "Pot of cream"), BANDAGES(4049, 3, "Bandages"),
 	COOKED_KARAMBWAN(3144, 18, "Cooked Karambwan"), DARK_CRAB(11936, 22, "Dark Crab"), MACKEREL(355, 6, "Mackerel");
 
-	//ANGLERFISH(13441, 22, "Anglerfish");
+	// ANGLERFISH(13441, 22, "Anglerfish");
 
 	/** The id of the consumable item. */
 	private final int id;
@@ -72,8 +72,6 @@ public enum FoodData {
 	public static Optional<FoodData> forId(int id) {
 		return Arrays.stream(values()).filter(a -> a.id == id).findFirst();
 	}
-
-
 
 	/**
 	 * Gets the healing amount of the consumable.

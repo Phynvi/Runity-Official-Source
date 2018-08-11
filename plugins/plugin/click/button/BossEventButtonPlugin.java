@@ -19,64 +19,61 @@ import io.battlerune.game.world.entity.mob.player.Player;
  */
 
 public class BossEventButtonPlugin extends PluginContext {
-	
-	
+
 	@Override
 	protected boolean onClick(Player player, int button) {
-	if(button ==  -19935) {
-		if(GalvekUtility.activated == true) {
-		 	SpawnData1 galvekpos = GalvekUtility.spawn;
-			Teleportation.teleport(player, galvekpos.getPosition());
-            player.message("You have teleported to Galvek");
-            player.hideTeleportButton();
-            return true;
+		if (button == -19935) {
+			if (GalvekUtility.activated == true) {
+				SpawnData1 galvekpos = GalvekUtility.spawn;
+				Teleportation.teleport(player, galvekpos.getPosition());
+				player.message("You have teleported to Galvek");
+				player.hideTeleportButton();
+				return true;
+			}
+			/*
+			 * if(ArenaUtility.activated == true) { Teleportation.teleport(player,
+			 * Config.ARENA_ZONE); player.message("Teleporting you to Glod");
+			 * player.hideTeleportButton(); }
+			 */
+			/*
+			 * if(JusticarUtility.activated == true) { SpawnData justicar =
+			 * JusticarUtility.spawn; Teleportation.teleport(player,
+			 * justicar.getPosition()); player.message("Teleporting you to Justicar");
+			 * player.hideTeleportButton(); } if(ArenaUtility.activated == false &&
+			 * GalvekUtility.activated == true && JusticarUtility.activated == true) {
+			 * player.message("Adam fucked up, spam tf outta him so he fixes this."); return
+			 * false; }
+			 */
+
 		}
-/*		if(ArenaUtility.activated == true) {
-			Teleportation.teleport(player, Config.ARENA_ZONE);
-			player.message("Teleporting you to Glod");
-            player.hideTeleportButton();
-		}*/
-	/*	if(JusticarUtility.activated == true) {
-		 	SpawnData justicar = JusticarUtility.spawn;
-			Teleportation.teleport(player, justicar.getPosition());
-			player.message("Teleporting you to Justicar");
-            player.hideTeleportButton();
+		if (button == -18935) {
+			if (ArenaUtility.activated == true) {
+				Teleportation.teleport(player, Config.ARENA_ZONE);
+				player.message("Teleporting you to Glod");
+				player.hideTeleportButton1();
+				return true;
+			}
 		}
-		if(ArenaUtility.activated == false && GalvekUtility.activated == true && JusticarUtility.activated == true) {
-			player.message("Adam fucked up, spam tf outta him so he fixes this.");
+		if (button == -17935) {
+			if (JusticarUtility.activated == true) {
+				SpawnData2 justicar = JusticarUtility.spawn;
+				Teleportation.teleport(player, justicar.getPosition());
+				player.message("You have teleported to Justicar");
+				player.hideTeleportButton2();
+				return true;
+			}
 			return false;
-		}*/
-
-	}
-	if(button == -18935) {
-		if(ArenaUtility.activated == true) {
-			Teleportation.teleport(player, Config.ARENA_ZONE);
-			player.message("Teleporting you to Glod");
-            player.hideTeleportButton1();
-            return true;
 		}
-	}
-	if(button == -17935) {
-		if(JusticarUtility.activated == true) {
-			SpawnData2 justicar = JusticarUtility.spawn;
-			Teleportation.teleport(player, justicar.getPosition());
-            player.message("You have teleported to Justicar");
-            player.hideTeleportButton2();
-            return true;
+		if (button == -16935) {
+			if (SkotizoUtility.activated == true) {
+				SpawnData skotizo = SkotizoUtility.spawn;
+				Teleportation.teleport(player, skotizo.getPosition());
+				player.message("You have teleported to Skotizo");
+				player.hideTeleportButton2();
+				return true;
+			}
+			return false;
 		}
-        return false;
+		return false;
 	}
-	if(button == -16935) {
-		if(SkotizoUtility.activated == true) {
-			SpawnData skotizo = SkotizoUtility.spawn;
-			Teleportation.teleport(player, skotizo.getPosition());
-            player.message("You have teleported to Skotizo");
-            player.hideTeleportButton2();
-            return true;
-		}
-        return false;
-	}
-	return false;
-  }
 }
-

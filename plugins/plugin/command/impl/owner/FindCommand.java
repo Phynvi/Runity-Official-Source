@@ -20,13 +20,12 @@ public class FindCommand implements Command {
 	public void execute(Player player, String[] command) {
 		try {
 			method(player, command);
-		} catch(ArrayIndexOutOfBoundsException e) {
+		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Catched ArrayIndexOutOfBounds, ::find command, inproper use of it.");
 			player.message("Inproper use of the command do... ::find ITEMNAME (e.g ::find dragon)");
 		}
 	}
-	
-	
+
 	public static void method(Player player, String[] command) {
 		final String name = String.format(command[1]);
 
@@ -54,11 +53,11 @@ public class FindCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		/*if (PlayerRight.isDeveloper(player)) {
-			return true;
-		}
-		player.speak("Hey everyone, i just tried doing something silly.");
-		return false;*/
+		/*
+		 * if (PlayerRight.isDeveloper(player)) { return true; }
+		 * player.speak("Hey everyone, i just tried doing something silly."); return
+		 * false;
+		 */
 		return true;
 	}
 

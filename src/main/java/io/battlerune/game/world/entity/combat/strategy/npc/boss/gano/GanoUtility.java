@@ -56,8 +56,7 @@ public class GanoUtility {
 		if (hasClan) {
 			player.clanChannel.getDetails().points += 5;
 			player.clanChannel.addExperience(10000);
-			World.sendMessage("<col=8714E6> gano has been defeated by " + player.getName() 
-					 + "!");
+			World.sendMessage("<col=8714E6> gano has been defeated by " + player.getName() + "!");
 			player.clanChannel.message("Hell yeah boys! We just killed gano!! We earned 10,000 EXP & 5 CP.");
 		} else {
 			World.sendMessage("<col=8714E6> gano has been defeated by " + player.getName()

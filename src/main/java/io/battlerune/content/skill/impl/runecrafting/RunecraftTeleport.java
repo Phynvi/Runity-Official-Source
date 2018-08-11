@@ -7,17 +7,11 @@ import io.battlerune.game.world.position.Position;
 
 /** Holds the runecrafting teleport data - @author Daniel */
 public enum RunecraftTeleport {
-	CHAOS(24976, new Position(2281, 4837)), 
-	LAW(25034, new Position(2464, 4818)),
-	DEATH(25035, new Position(2208, 4830)), 
-	SOUL(25377, new Position(3494, 4832)), 
-	AIR(25378, new Position(2841, 4829)),
-	MIND(25379, new Position(2793, 4828)), 
-	EARTH(24972, new Position(2655, 4830)),
-	FIRE(24971, new Position(2577, 4846)), 
-	BLOOD(25380, new Position(1732, 3827)),
-	COSMIC(24974, new Position(2162, 4833)), 
-	NATURE(24975, new Position(2400, 4835)),
+	CHAOS(24976, new Position(2281, 4837)), LAW(25034, new Position(2464, 4818)),
+	DEATH(25035, new Position(2208, 4830)), SOUL(25377, new Position(3494, 4832)), AIR(25378, new Position(2841, 4829)),
+	MIND(25379, new Position(2793, 4828)), EARTH(24972, new Position(2655, 4830)),
+	FIRE(24971, new Position(2577, 4846)), BLOOD(25380, new Position(1732, 3827)),
+	COSMIC(24974, new Position(2162, 4833)), NATURE(24975, new Position(2400, 4835)),
 	BODY(24973, new Position(2521, 4834));
 
 	/** The object identification. */

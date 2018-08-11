@@ -13,8 +13,8 @@ public class Commands implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-     player.send(new SendURL("insert guide link here."));
-	 player.message("Opening command list!");
+		player.send(new SendURL("insert guide link here."));
+		player.message("Opening command list!");
 	}
 
 	@Override

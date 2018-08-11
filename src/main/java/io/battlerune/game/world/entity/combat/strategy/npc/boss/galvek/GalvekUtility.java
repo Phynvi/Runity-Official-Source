@@ -12,16 +12,14 @@ import io.battlerune.util.MessageColor;
 import io.battlerune.util.Utility;
 
 /**
- * Created by Adam_#6723 Galvek Utility Class, handles the spawning &
- * generate
+ * Created by Adam_#6723 Galvek Utility Class, handles the spawning & generate
  */
 public class GalvekUtility {
-	
 
 	public static SpawnData1 spawn;
 
 	public static boolean activated = false;
-	
+
 	public static boolean galvekbutton;
 
 	public static Npc generateSpawn() {
@@ -98,7 +96,7 @@ public class GalvekUtility {
 
 		player.send(new SendMessage("Galvek drop's lootation all over the map.", MessageColor.RED));
 		Galvek.unregister();
-        activated = false;
+		activated = false;
 	}
 
 	public enum SpawnData1 {

@@ -24,17 +24,16 @@ public class BossInformationButtonPlugin extends PluginContext {
 	 */
 
 	protected boolean onClick(Player player, int button) {
-		
-			
+
 		if (player.wilderness > 20 && !PlayerRight.isPriviledged(player)) {
 			player.send(new SendMessage("You can't teleport above 20 wilderness!"));
 			return false;
 		}
 		if (button == -14335) {
-			if(player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
 				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
-			      return false;
-				}
+				return false;
+			}
 			Teleportation.teleport(player, new Position(2997, 3849, 0));
 			player.send(new SendMessage("You have teleported to King Black Dragon!"));
 		}
@@ -43,10 +42,10 @@ public class BossInformationButtonPlugin extends PluginContext {
 			player.send(new SendMessage("You have teleported to Giant Mole!"));
 		}
 		if (button == -14305) {
-			if(player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
 				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
-			      return false;
-				}
+				return false;
+			}
 			Teleportation.teleport(player, new Position(3195, 3865, 0));
 			player.send(new SendMessage("You have teleported to Lava Dragon!"));
 		}
@@ -63,26 +62,26 @@ public class BossInformationButtonPlugin extends PluginContext {
 			player.send(new SendMessage("You have teleported to Lizard Shamen!"));
 		}
 		if (button == -14245) {
-			if(player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
-				 player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
-			      return false;
-				}
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(3217, 3781, 0));
 			player.send(new SendMessage("You have teleported to Vet'ion!"));
 		}
 		if (button == -14230) {
-			if(player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
-				 player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
-			      return false;
-				}
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(2982, 3832, 0));
 			player.send(new SendMessage("You have teleported to Chaos Fanatic"));
 		}
 		if (button == -14215) {
-			if(player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
-				 player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
-			      return false;
-				}
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(2966, 3698, 0));
 			player.send(new SendMessage("You have teleported to Crazy Archaeologist"));
 		}
@@ -95,7 +94,7 @@ public class BossInformationButtonPlugin extends PluginContext {
 				player.message("You are currently under the affects of a teleblock spell and can not teleport!");
 				return false;
 			}
-			if(Area.inWilderness(player)) {
+			if (Area.inWilderness(player)) {
 				player.message("You can't teleport out of the wilderness!");
 				return false;
 			}
@@ -126,40 +125,40 @@ public class BossInformationButtonPlugin extends PluginContext {
 			}, "Nevermind", factory::clear).execute();
 		}
 		if (button == -14155) {
-			if(player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
-				 player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
-			      return false;
-				}
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(3307, 3916, 0));
 			player.send(new SendMessage("You have teleported to Chaos Elemental!"));
 		}
 		if (button == -14140) {
-			if(player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
-				 player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
-			      return false;
-				}
-			if (player.skills.getLevel(Skill.SLAYER) < 55) {
-					player.message("You need a Slayer Level of 55 And above to teleport to this boss!");
-					return false;
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
 			}
-				
-				Teleportation.teleport(player, new Position(3307, 3916, 0));
-				player.send(new SendMessage("You have teleported to Giant Roc!"));
-			} 
-		
+			if (player.skills.getLevel(Skill.SLAYER) < 55) {
+				player.message("You need a Slayer Level of 55 And above to teleport to this boss!");
+				return false;
+			}
+
+			Teleportation.teleport(player, new Position(3307, 3916, 0));
+			player.send(new SendMessage("You have teleported to Giant Roc!"));
+		}
+
 		if (button == -14110) {
-			if(player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
-				 player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
-			      return false;
-				}
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(3233, 3944, 0));
 			player.send(new SendMessage("You have teleported to Scopria!"));
 		}
 		if (button == -14125) {
-			if(player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
-				 player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
-			      return false;
-				}
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(3274, 3847, 0));
 			player.send(new SendMessage("You have teleported to Callisto!"));
 		}

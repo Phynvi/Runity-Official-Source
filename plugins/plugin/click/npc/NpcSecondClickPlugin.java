@@ -22,15 +22,14 @@ public class NpcSecondClickPlugin extends PluginContext {
 		case 5523:
 			player.dialogueFactory.sendDialogue(new RoyalKingDialogue(2));
 			break;
-			
+
 		case 3220:
 			player.dialogueFactory.sendOption("Chaos Altar", () -> {
 				if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
 					player.message("@or2@you can't teleport above 30 wilderness");
 				} else {
 					Teleportation.teleport(player, RunecraftTeleport.CHAOS.getPosition(), 20, () -> {
-						player.send(new SendMessage(
-								"@or2@Welcome to the Air Altar!, " + player.getName() + "!"));
+						player.send(new SendMessage("@or2@Welcome to the Air Altar!, " + player.getName() + "!"));
 					});
 				}
 			}, "Death Altar", () -> {

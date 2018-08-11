@@ -160,8 +160,6 @@ public final class PlayerDeath extends MobDeath<Player> {
 			return;
 		}
 
-
-
 		mob.runEnergy = 100;
 		mob.skulling.unskull();
 		mob.skills.restoreAll();

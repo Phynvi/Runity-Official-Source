@@ -15,17 +15,15 @@ public class UnmuteCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		     
-		     final String name = String.format(command[1]);
-             World.search(name.toString()).ifPresent(other -> {
-                 other.punishment.unmute();
-                 other.dialogueFactory.sendStatement("@or2@You have been unmuted!").execute();
-                 player.message("@or2@unmute was complete");
-                 
-             });
-         } 
 
-	
+		final String name = String.format(command[1]);
+		World.search(name.toString()).ifPresent(other -> {
+			other.punishment.unmute();
+			other.dialogueFactory.sendStatement("@or2@You have been unmuted!").execute();
+			player.message("@or2@unmute was complete");
+
+		});
+	}
 
 	@Override
 	public boolean canUse(Player player) {

@@ -6,7 +6,7 @@ import io.battlerune.net.packet.OutgoingPacket;
 public class SendMiniMeData extends OutgoingPacket {
 
 	private final int model;
-	
+
 	public SendMiniMeData(int model) {
 		super(157, 2);
 		this.model = model;

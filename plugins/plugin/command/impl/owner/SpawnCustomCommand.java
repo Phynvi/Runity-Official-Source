@@ -19,15 +19,13 @@ public class SpawnCustomCommand implements Command {
 		player.message("Spawned! Customs.");
 	}
 
-
-
 	@Override
 	public boolean canUse(Player player) {
-/*		if (PlayerRight.isDeveloper(player)) {
-			return true;
-		}
-		player.speak("Hey everyone, i just tried doing something silly.");
-		return false;*/
+		/*
+		 * if (PlayerRight.isDeveloper(player)) { return true; }
+		 * player.speak("Hey everyone, i just tried doing something silly."); return
+		 * false;
+		 */
 		return true;
 	}
 }

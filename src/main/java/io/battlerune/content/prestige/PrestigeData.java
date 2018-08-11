@@ -21,8 +21,7 @@ public enum PrestigeData {
 	SMITHING("Smithing", Skill.SMITHING, -13459, 52025), MINING("Mining", Skill.MINING, -13462, 52024),
 	HERBLORE("Herblore", Skill.HERBLORE, -13477, 52019), AGILITY("Agility", Skill.AGILITY, -13480, 52018),
 	THIEVING("Thieving", Skill.THIEVING, -13474, 52020), SLAYER("Slayer", Skill.SLAYER, -13465, 52023),
-	FARMING("Farming", Skill.FARMING, -13444, 52030), 
-	RUNECRAFTING("Runecraft", Skill.RUNECRAFTING, -13486, 52016),
+	FARMING("Farming", Skill.FARMING, -13444, 52030), RUNECRAFTING("Runecraft", Skill.RUNECRAFTING, -13486, 52016),
 	HUNTER("Hunter", Skill.HUNTER, -13441, 52031);
 
 	/** The name of the prestige. */

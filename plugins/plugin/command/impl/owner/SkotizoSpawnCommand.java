@@ -13,7 +13,7 @@ public class SkotizoSpawnCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-    SkotizoUtility.generateSpawn();
+		SkotizoUtility.generateSpawn();
 	}
 
 	@Override

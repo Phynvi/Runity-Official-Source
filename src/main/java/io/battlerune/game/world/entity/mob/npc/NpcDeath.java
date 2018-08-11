@@ -169,13 +169,13 @@ public final class NpcDeath extends MobDeath<Npc> {
 				}
 
 				return;
-				
+
 			case "JUSTICAR":
 				JusticarUtility.defeated(mob, playerKiller);
 				playerKiller.activityLogger.add(ActivityLog.JUSTICAR);
-				
-             return;
-             
+
+				return;
+
 			case "GLOD":
 				ArenaUtility.defeated(mob, playerKiller);
 				playerKiller.activityLogger.add(ActivityLog.GLOD);

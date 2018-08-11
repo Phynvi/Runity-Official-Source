@@ -48,7 +48,7 @@ public class RecipeForDisaster extends Activity {
 				"Wave starting in 6 seconds");
 		player.move(new Position(1899, 5356, 2));
 		// pos[x=1899, y=5356, z=2]
-		//player.gameRecord.start();
+		// player.gameRecord.start();
 		minigame.add(player);
 		minigame.resetCooldown();
 		return minigame;
@@ -57,9 +57,9 @@ public class RecipeForDisaster extends Activity {
 	@Override
 	public void update() {
 		if (wave == null) {
-			ActivityPanel.update(player, 100, "Recipe For Disaster", new Item(7462),
-					"</col>Wave: <col=FF5500>" + RecipeForDisasterData.values().length + "/"
-							+ RecipeForDisasterData.values().length,
+			ActivityPanel.update(
+					player, 100, "Recipe For Disaster", new Item(7462), "</col>Wave: <col=FF5500>"
+							+ RecipeForDisasterData.values().length + "/" + RecipeForDisasterData.values().length,
 					"</col>Boss: <col=FF5500>None!");
 			return;
 		}
@@ -91,15 +91,13 @@ public class RecipeForDisaster extends Activity {
 		monster.getCombat().attack(player);
 		pause();
 	}
-	
-	
 
 	@Override
 	public void finish() {
 		cleanup();
 		int reward;
 		if (wave == null) {
-			//long time = player.gameRecord.end(ActivityType.RECIPE_FOR_DISASTER);
+			// long time = player.gameRecord.end(ActivityType.RECIPE_FOR_DISASTER);
 			reward = RecipeForDisasterData.CULINAROMANCER.gloves;
 			AchievementHandler.activate(player, AchievementKey.COMPLETE_RFD);
 			player.send(new SendMessage("You have completed the Recipe For Disaster activity. Final time: @red@"));
@@ -134,10 +132,10 @@ public class RecipeForDisaster extends Activity {
 
 	@Override
 	public boolean canTeleport(Player player) {
-		/*if (player.getCombat().inCombat()) {
-			player.send(new SendMessage("You can not do that right now!"));
-			return false;
-		} */
+		/*
+		 * if (player.getCombat().inCombat()) { player.send(new
+		 * SendMessage("You can not do that right now!")); return false; }
+		 */
 		player.locking.lock();
 		cleanup();
 		remove(player);

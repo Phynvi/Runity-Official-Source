@@ -66,11 +66,11 @@ public class DropItemPacketListener implements PacketListener {
 			return;
 		}
 
-		/*if (player.playTime < 3000 && !player.right.isPriviledged(player)) {
-			player.message("You can't drop items until you have 30 mins of playtime. "
-					+ Utility.getTime((3000 - player.playTime) * 3 / 5) + " mins left.");
-			return;
-		}*/
+		/*
+		 * if (player.playTime < 3000 && !player.right.isPriviledged(player)) {
+		 * player.message("You can't drop items until you have 30 mins of playtime. " +
+		 * Utility.getTime((3000 - player.playTime) * 3 / 5) + " mins left."); return; }
+		 */
 
 		boolean inWilderness = Area.inWilderness(player);
 		if (inWilderness && item.getValue(PriceType.VALUE) >= 500_000) {

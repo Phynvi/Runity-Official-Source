@@ -17,19 +17,20 @@ public class RemovePlayerTask implements Command {
 	public void execute(Player player, String[] command) {
 		try {
 			final String name = String.format(command[1]);
-            World.search(name.toString()).ifPresent(other -> {
-                other.slayer.setTask(null);
-                other.slayer.setAmount(0);
-                other.message("Your slayer task was reset.");
-                player.message("Remember command use; ::removetask daniel");
-            });
-        
+			World.search(name.toString()).ifPresent(other -> {
+				other.slayer.setTask(null);
+				other.slayer.setAmount(0);
+				other.message("Your slayer task was reset.");
+				player.message("Remember command use; ::removetask daniel");
+			});
+
 		} catch (ArrayIndexOutOfBoundsException e) {
 			player.message("its used like this ::removetask playername, (e.g. ::removetask adam)");
 			System.out.println("");
 		}
-    		
+
 	}
+
 	@Override
 	public boolean canUse(Player player) {
 		if (PlayerRight.isDeveloper(player)) {

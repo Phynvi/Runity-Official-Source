@@ -13,11 +13,10 @@ public class AnswerTriviaCommand implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 
-			final String answer = String.format(command[1]);            
-            TriviaBot.answer(player, answer.toString().trim());
-        
-    }
-	
+		final String answer = String.format(command[1]);
+		TriviaBot.answer(player, answer.toString().trim());
+
+	}
 
 	@Override
 	public boolean canUse(Player player) {

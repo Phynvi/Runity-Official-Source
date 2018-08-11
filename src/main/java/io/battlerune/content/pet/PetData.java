@@ -217,13 +217,7 @@ public enum PetData {
 			factory.execute();
 		}
 	},
-	
-	
-	
-	
-	
-	
-	
+
 	PRINCE_BLACK_DRAGON("Prince Black Dragon", 12653, 6636) {
 		@Override
 		public void dialogue(DialogueFactory factory) {

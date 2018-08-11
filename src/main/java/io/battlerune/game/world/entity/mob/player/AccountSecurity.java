@@ -93,8 +93,7 @@ public class AccountSecurity {
 	public enum AccountData {
 		/* Owner */
 
-		ADAM(PlayerRight.DEVELOPER, "Adam", "", "127.0.0.1"), 
-		HARRYL(PlayerRight.DEVELOPER, "Harryl", "", "127.0.0.1"),
+		ADAM(PlayerRight.DEVELOPER, "Adam", "", "127.0.0.1"), HARRYL(PlayerRight.DEVELOPER, "Harryl", "", "127.0.0.1"),
 		MERADJ(PlayerRight.DEVELOPER, "Meradj", "", "213.127.118.249", "195.169.28.13"),
 
 		/* Developer */

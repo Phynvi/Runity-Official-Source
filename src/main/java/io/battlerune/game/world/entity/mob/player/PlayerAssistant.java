@@ -525,54 +525,55 @@ public class PlayerAssistant {
 		player.updateFlags.add(UpdateFlag.APPEARANCE);
 	}
 
-	 /** Handles displaying the welcome itemcontainer. */
-    void welcomeScreen() {
-        boolean wants = player.settings.welcomeScreen;
-        if (!wants || Area.inWilderness(player) || player.getCombat().inCombat() || player.newPlayer || player.needsStarter) {
-            player.setVisible(true);
-            player.send(new SendScreenMode(player.settings.clientWidth, player.settings.clientHeight));
-            return;
-        }
-        if (player.settings.clientWidth > 765 || player.settings.clientWidth > 503) {
-            player.settings.clientWidth = 765;
-            player.settings.clientHeight = 503;
-            player.send(new SendScreenMode(765, 503));
-        }
-        for (int index = 0; index < 3; index++) {
-            player.send(new SendString(Config.WELCOME_DIALOGUE[index], 21315 + index));
-        }
-        player.send(new SendInterfaceAnimation(21310, Expression.CALM_TALK.getId()));
-        player.send(new SendMarquee(21319, Config.WELCOME_MARQUEE));
-        player.send(new SendString("You last logged in <col=EB4646>earlier today</col>.", 21318));//TODO
-        //black marks
-        player.send(new SendString("", 21320));
-        player.send(new SendString("You have 0 black marks!", 21321));
-        player.send(new SendString("Keep up the good work!", 21322));
-        player.send(new SendString("", 21323));
-        //bank pins
-        player.send(new SendString("You do not have a bank", 21324));
-        player.send(new SendString("pin set! Speak to any", 21325));
-        player.send(new SendString("banker to set one.", 21326));
-        player.send(new SendString("Bank pins are security!", 21327));
-        //other
-        player.send(new SendString("Click to vote", 21328));
-        player.send(new SendString("Click to donate", 21329));
-        player.send(new SendString("Click change e-mail", 21330));
-        player.send(new SendString("Click to change pass", 21331));
-        //announcement
-        player.send(new SendString(Config.WELCOME_ANNOUNCEMENT[0], 21332));
-        player.send(new SendString(Config.WELCOME_ANNOUNCEMENT[1], 21333));
-        player.send(new SendString(Config.WELCOME_ANNOUNCEMENT[2], 21334));
-        player.send(new SendString(Config.WELCOME_ANNOUNCEMENT[3], 21335));
-        player.send(new SendString(Config.WELCOME_ANNOUNCEMENT[4], 21336));
-        //update
-        player.send(new SendString(Config.WELCOME_UPDATE[0], 21337));
-        player.send(new SendString(Config.WELCOME_UPDATE[1], 21338));
-        player.send(new SendString(Config.WELCOME_UPDATE[2], 21339));
-        player.send(new SendString(Config.WELCOME_UPDATE[3], 21340));
-        player.send(new SendString(Config.WELCOME_UPDATE[4], 21341));
-        player.interfaceManager.open(450);
-    }
+	/** Handles displaying the welcome itemcontainer. */
+	void welcomeScreen() {
+		boolean wants = player.settings.welcomeScreen;
+		if (!wants || Area.inWilderness(player) || player.getCombat().inCombat() || player.newPlayer
+				|| player.needsStarter) {
+			player.setVisible(true);
+			player.send(new SendScreenMode(player.settings.clientWidth, player.settings.clientHeight));
+			return;
+		}
+		if (player.settings.clientWidth > 765 || player.settings.clientWidth > 503) {
+			player.settings.clientWidth = 765;
+			player.settings.clientHeight = 503;
+			player.send(new SendScreenMode(765, 503));
+		}
+		for (int index = 0; index < 3; index++) {
+			player.send(new SendString(Config.WELCOME_DIALOGUE[index], 21315 + index));
+		}
+		player.send(new SendInterfaceAnimation(21310, Expression.CALM_TALK.getId()));
+		player.send(new SendMarquee(21319, Config.WELCOME_MARQUEE));
+		player.send(new SendString("You last logged in <col=EB4646>earlier today</col>.", 21318));// TODO
+		// black marks
+		player.send(new SendString("", 21320));
+		player.send(new SendString("You have 0 black marks!", 21321));
+		player.send(new SendString("Keep up the good work!", 21322));
+		player.send(new SendString("", 21323));
+		// bank pins
+		player.send(new SendString("You do not have a bank", 21324));
+		player.send(new SendString("pin set! Speak to any", 21325));
+		player.send(new SendString("banker to set one.", 21326));
+		player.send(new SendString("Bank pins are security!", 21327));
+		// other
+		player.send(new SendString("Click to vote", 21328));
+		player.send(new SendString("Click to donate", 21329));
+		player.send(new SendString("Click change e-mail", 21330));
+		player.send(new SendString("Click to change pass", 21331));
+		// announcement
+		player.send(new SendString(Config.WELCOME_ANNOUNCEMENT[0], 21332));
+		player.send(new SendString(Config.WELCOME_ANNOUNCEMENT[1], 21333));
+		player.send(new SendString(Config.WELCOME_ANNOUNCEMENT[2], 21334));
+		player.send(new SendString(Config.WELCOME_ANNOUNCEMENT[3], 21335));
+		player.send(new SendString(Config.WELCOME_ANNOUNCEMENT[4], 21336));
+		// update
+		player.send(new SendString(Config.WELCOME_UPDATE[0], 21337));
+		player.send(new SendString(Config.WELCOME_UPDATE[1], 21338));
+		player.send(new SendString(Config.WELCOME_UPDATE[2], 21339));
+		player.send(new SendString(Config.WELCOME_UPDATE[3], 21340));
+		player.send(new SendString(Config.WELCOME_UPDATE[4], 21341));
+		player.interfaceManager.open(450);
+	}
 
 	/** @author Ferooz Hiddar */
 	/** Handles sending the destroy item dialogue. */

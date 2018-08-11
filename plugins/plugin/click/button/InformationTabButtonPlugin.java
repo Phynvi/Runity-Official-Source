@@ -44,8 +44,8 @@ public class InformationTabButtonPlugin extends PluginContext {
 			InterfaceWriter.write(new InformationWriter(player));
 			return true;
 		case 29420:
-           PlayerGuideHandler guide = new PlayerGuideHandler();
-           guide.open(player);
+			PlayerGuideHandler guide = new PlayerGuideHandler();
+			guide.open(player);
 			break;
 		case 29421:
 		case 29419:
@@ -60,8 +60,7 @@ public class InformationTabButtonPlugin extends PluginContext {
 				player.dialogueFactory.onAction(() -> TitleManager.open(player));
 			}, "Slayer Interface", () -> {
 				player.dialogueFactory.onAction(() -> player.slayer.open(SlayerTab.MAIN));
-			}
-			).execute();
+			}).execute();
 			break;
 		case 29429:
 			PresetInterfaceHandler presets = new PresetInterfaceHandler();
@@ -100,9 +99,10 @@ public class InformationTabButtonPlugin extends PluginContext {
 			InterfaceWriter.write(new AchievementInterface(player));
 			player.interfaceManager.setSidebar(Config.QUEST_TAB, 35_000);
 			return true;
-		/*case 29410:
-			player.interfaceManager.setSidebar(Config.QUEST_TAB, 37_300);
-			break;*/
+		/*
+		 * case 29410: player.interfaceManager.setSidebar(Config.QUEST_TAB, 37_300);
+		 * break;
+		 */
 		case 29414:
 		case -30525:
 		case -30125:

@@ -78,10 +78,10 @@ public class MiningAction extends Action<Player> {
 			getMob().inventory.add(995, ore.getMoney());
 			getMob().skills.addExperience(Skill.MINING, ore.experience * Config.MINING_MODIFICATION);
 			RandomEventHandler.trigger(getMob());
-            if(Utility.random(1, 500) == 2) {
-            	Pets.onReward(getMob(), PetData.ROCK_GOLEM.getItem(), ore.pet);
-            	World.sendMessage(getMob().getName() + " Has just recieved a skilling pet from mining!");
-            }
+			if (Utility.random(1, 500) == 2) {
+				Pets.onReward(getMob(), PetData.ROCK_GOLEM.getItem(), ore.pet);
+				World.sendMessage(getMob().getName() + " Has just recieved a skilling pet from mining!");
+			}
 
 			if (getMob().equipment.contains(21343)) {
 				getMob().skills.addExperience(Skill.MINING, ore.experience * Config.MINING_MODIFICATION * 1.5);

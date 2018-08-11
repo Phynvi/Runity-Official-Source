@@ -15,10 +15,10 @@ public class BroadcastCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		
+
 		try {
-		final String input = String.format(command[1]);
-        World.sendBroadcast(1, input, true);
+			final String input = String.format(command[1]);
+			World.sendBroadcast(1, input, true);
 		} catch (ArrayIndexOutOfBoundsException e) {
 			player.message("Invalid use of the command do ::broadcast 'input message'.");
 		}

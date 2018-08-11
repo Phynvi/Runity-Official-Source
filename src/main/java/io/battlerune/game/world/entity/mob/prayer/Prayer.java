@@ -41,9 +41,9 @@ import io.battlerune.net.packet.out.SendMessage;
  * Handles the prayer book.
  *
  * @author Michael
- * @author Daniel
- * this is the enum for the prayer drain rates and what not. we can only set the drainrate as an instance otherwise it will affect all the players instead of only one
- * sers? let me test it
+ * @author Daniel this is the enum for the prayer drain rates and what not. we
+ *         can only set the drainrate as an instance otherwise it will affect
+ *         all the players instead of only one sers? let me test it
  */
 public enum Prayer {
 	THICK_SKIN("Thick Skin", 1, 3, 83, 630, 5609, new ThickSkinListener(), Type.DEFENSIVE),
@@ -157,6 +157,7 @@ public enum Prayer {
 	public int getDrainRate() {
 		return drainRate;
 	}
+
 	public void setdrainRate(int drainRate) {
 		this.drainRate = drainRate;
 	}
