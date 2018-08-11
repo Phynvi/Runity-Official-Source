@@ -48,7 +48,7 @@ public final class NpcDropManager {
 		}
 
 		RandomGen gen = new RandomGen();
-		List<NpcDrop> npc_drops = table.generate();
+		List<NpcDrop> npc_drops = table.generate(killer);
 		Position dropPosition = npc.getPosition().copy();
 		/*
 		 * if(killer.equipment.contains(1995)) {

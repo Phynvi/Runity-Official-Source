@@ -84,7 +84,7 @@ public class DropSimulator {
 		Map<Integer, Item> items = new HashMap<>();
 		long value = 0;
 		for (int index = 0; index < amount; index++) {
-			List<NpcDrop> npc_drops = drop.generate();
+			List<NpcDrop> npc_drops = drop.generate(player);
 			RandomGen gen = new RandomGen();
 			for (NpcDrop drops : npc_drops) {
 				Item item = drops.toItem(gen);
