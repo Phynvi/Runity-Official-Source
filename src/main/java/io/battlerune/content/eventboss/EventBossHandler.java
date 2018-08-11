@@ -50,22 +50,41 @@ public class EventBossHandler {
 	}
 	
 	public static void openJusticar(Player player) {
-		sendStringsJusticar(player);	
+		sendJusticarStrings(player);	
 }
 	
 	
-	public static void sendStringsJusticar(Player player) {
-		World.sendTeleportButtonNpc(7858);
-		World.sendTeleportButton();
-		player.send(new SendString("@whi@Justicar", 45604, true));
-		player.send(new SendString("806", 45610, true)); //combat level/
-		player.send(new SendString("1150", 45610, true)); //hit points
-		player.send(new SendString("Magic", 45613, true)); //Weaknesses 45614
-		player.send(new SendString("Melee,\\nCrush Special", 45614, true)); //Attack Styles 
+	public static void sendJusticarStrings(Player player) {
+		World.sendTeleportButtonNpc2(7858);
+		World.sendTeleportButton2();
+		player.send(new SendString("@whi@Justicar", 47604, true));
+		player.send(new SendString("806", 47610, true)); //combat level/
+		player.send(new SendString("1150", 47610, true)); //hit points
+		player.send(new SendString("Magic", 47613, true)); //Weaknesses 45614
+		player.send(new SendString("Melee,\\nCrush Special", 47614, true)); //Attack Styles 
 		player.send(new SendString("Justicar is a boss that drops nothing but the justicar hand" + 
 		"@lre@\\nhe hits really high, but is slow!" + "\\nHe spawns in a safe location." + "\\nGlod has a special attack which teleports its enemies, "
 				+ "\\nRecommended to take a group to take Glod down!"
-		, 45616, true)); //Information of the boss (long text) 
+		, 47616, true)); //Information of the boss (long text) 
+	}
+	
+	public static void openSkotizo(Player player) {
+		sendSkotizoStrings(player);	
+}
+	
+	
+	public static void sendSkotizoStrings(Player player) {
+		World.sendTeleportButtonNpc3(7286);
+		World.sendTeleportButton3();
+		player.send(new SendString("@whi@Skotizo", 48604, true));
+		player.send(new SendString("321", 48610, true)); //combat level/
+		player.send(new SendString("1500", 48610, true)); //hit points
+		player.send(new SendString("Range", 48613, true)); //Weaknesses 45614
+		player.send(new SendString("Melee,\\nCrush Special", 48614, true)); //Attack Styles 
+		player.send(new SendString("Skotizo is a boss that drops High tier loot" + 
+		"@lre@\\nhe hits really high, but is slow!" + "\\nHe spawns in a dangerous location." + "\\nSkotizo has a special attack which teleports its enemies, "
+				+ "\\nRecommended to take a group to take Skotizo down!"
+		, 48616, true)); //Information of the boss (long text) 
 	}
 
 }

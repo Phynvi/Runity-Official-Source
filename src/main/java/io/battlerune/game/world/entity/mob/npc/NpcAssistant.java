@@ -27,7 +27,7 @@ import io.battlerune.game.world.entity.combat.strategy.npc.boss.Derwen;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.Galvek;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.GiantRoc;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.IceDemon;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.Justiciar;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.Justicar;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.KingBlackDragonStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.LizardShaman;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.MutantTarn;
@@ -122,7 +122,7 @@ public class NpcAssistant {
 			put(8096, Galvek::new);
 			put(8097, Galvek::new);
 			put(8098, Galvek::new);
-			put(7858, Justiciar::new);
+			put(7858, Justicar::new);
 			put(7860, Porazdir::new);
 			put(7859, Derwen::new);
 			put(7585, IceDemon::new);

@@ -1,13 +1,17 @@
 package plugin.click.npc;
 
+import io.battlerune.Config;
 import io.battlerune.content.dialogue.impl.RealmLordDialogue;
 import io.battlerune.content.dialogue.impl.RoyalKingDialogue;
+import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
+import io.battlerune.content.skill.impl.runecrafting.RunecraftTeleport;
 import io.battlerune.content.skill.impl.slayer.SlayerTab;
 import io.battlerune.content.store.Store;
 import io.battlerune.game.event.impl.NpcClickEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.net.packet.out.SendMessage;
 
 public class NpcSecondClickPlugin extends PluginContext {
 
@@ -18,6 +22,44 @@ public class NpcSecondClickPlugin extends PluginContext {
 		/* King Royal dialogue */
 		case 5523:
 			player.dialogueFactory.sendDialogue(new RoyalKingDialogue(2));
+			break;
+			
+		case 3220:
+			player.dialogueFactory.sendOption("Chaos Altar", () -> {
+				if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+					player.message("@or2@you can't teleport above 30 wilderness");
+				} else {
+					Teleportation.teleport(player, RunecraftTeleport.CHAOS.getPosition(), 20, () -> {
+						player.send(new SendMessage(
+								"@or2@Welcome to the Air Altar!, " + player.getName() + "!"));
+					});
+				}
+			}, "Death Altar", () -> {
+				if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+					player.message("@or2@you can't teleport above 30 wilderness");
+				} else {
+					Teleportation.teleport(player, RunecraftTeleport.DEATH.getPosition(), 20, () -> {
+						player.send(new SendMessage("@or2@Welcome to the Nature altar, " + player.getName() + "!"));
+					});
+
+				}
+			}, "Soul Altar", () -> {
+				if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+					player.message("@or2@you can't teleport above 30 wilderness");
+				} else {
+					Teleportation.teleport(player, RunecraftTeleport.SOUL.getPosition(), 20, () -> {
+						player.send(new SendMessage("@or2@Welcome to the Blood altar, " + player.getName() + "!"));
+					});
+				}
+			}, "Fire Altar", () -> {
+				if (player.wilderness > 30 && !PlayerRight.isPriviledged(player)) {
+					player.message("@or2@you can't teleport above 30 wilderness");
+				} else {
+					Teleportation.teleport(player, RunecraftTeleport.FIRE.getPosition(), 20, () -> {
+						player.send(new SendMessage("@or2@Welcome to the Law Altar, " + player.getName() + "!"));
+					});
+				}
+			}, "Nowhere", player.interfaceManager::close).execute();
 			break;
 
 		case 7481:

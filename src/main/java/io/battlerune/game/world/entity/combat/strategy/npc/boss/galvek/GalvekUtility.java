@@ -13,8 +13,7 @@ import io.battlerune.util.Utility;
 
 /**
  * Created by Adam_#6723 Galvek Utility Class, handles the spawning &
- * generates// i dont even wanna type my name under such shit the location of
- * the spawning
+ * generate
  */
 public class GalvekUtility {
 	
@@ -54,8 +53,7 @@ public class GalvekUtility {
 		if (hasClan) {
 			player.clanChannel.getDetails().points += 5;
 			player.clanChannel.addExperience(10000);
-			World.sendMessage("<col=8714E6>Galvek has been defeated by " + player.getName() + ", a clan member of "
-					+ player.clanChannel.getName() + "!");
+			World.sendMessage("<col=8714E6>Galvek has been defeated by " + player.getName() + "!");
 			player.clanChannel.message("Hell yeah boys! We just killed Galvek!! We earned 10,000 EXP & 5 CP.");
 		}
 		World.sendMessage("<col=8714E6>Galvek has been defeated by " + player.getName() + ", the legend.");

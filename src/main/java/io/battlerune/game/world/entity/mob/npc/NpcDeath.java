@@ -16,6 +16,7 @@ import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.arena.ArenaUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.justicar.JusticarUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoUtility;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.MobDeath;
@@ -168,7 +169,13 @@ public final class NpcDeath extends MobDeath<Npc> {
 				}
 
 				return;
-
+				
+			case "JUSTICAR":
+				JusticarUtility.defeated(mob, playerKiller);
+				playerKiller.activityLogger.add(ActivityLog.JUSTICAR);
+				
+             return;
+             
 			case "GLOD":
 				ArenaUtility.defeated(mob, playerKiller);
 				playerKiller.activityLogger.add(ActivityLog.GLOD);

@@ -6,8 +6,10 @@ import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.arena.ArenaUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility.SpawnData1;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.magearena.JusticarUtility;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.magearena.JusticarUtility.SpawnData;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.justicar.JusticarUtility;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.justicar.JusticarUtility.SpawnData2;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoUtility;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoUtility.SpawnData;
 import io.battlerune.game.world.entity.mob.player.Player;
 
 /**
@@ -54,8 +56,27 @@ public class BossEventButtonPlugin extends PluginContext {
             return true;
 		}
 	}
-
-		return false;
+	if(button == -17935) {
+		if(JusticarUtility.activated == true) {
+			SpawnData2 justicar = JusticarUtility.spawn;
+			Teleportation.teleport(player, justicar.getPosition());
+            player.message("You have teleported to Justicar");
+            player.hideTeleportButton2();
+            return true;
+		}
+        return false;
 	}
+	if(button == -16935) {
+		if(SkotizoUtility.activated == true) {
+			SpawnData skotizo = SkotizoUtility.spawn;
+			Teleportation.teleport(player, skotizo.getPosition());
+            player.message("You have teleported to Skotizo");
+            player.hideTeleportButton2();
+            return true;
+		}
+        return false;
+	}
+	return false;
+  }
 }
 

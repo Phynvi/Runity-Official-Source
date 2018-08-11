@@ -11,12 +11,20 @@ import io.battlerune.util.Utility;
  * Created by Daniel on 2017-12-20.
  */
 public class SkotizoUtility {
+	
+	
+	public static SpawnData spawn;
+	public static boolean activated = false;
 
-	static Npc generateSpawn() {
-		SpawnData spawn = SpawnData.generate();
+
+	public static Npc generateSpawn() {
+		activated = true;
+		spawn = SpawnData.generate();
 		Npc skotizo = new Npc(7286, spawn.position, 10, Direction.NORTH);
 		World.sendMessage("<col=8714E6> Skotizo has just spawned! He is located at " + spawn.location + "!",
 				"<col=8714E6> First clan to kill him will be rewarded handsomely!");
+		World.sendBroadcast(1, "The Skotizo boss has spawned!" + spawn.location + "!", true);
+		World.sendSkotizoInformation();
 		skotizo.register();
 		skotizo.definition.setRespawnTime(-1);
 		skotizo.definition.setAggressive(true);
@@ -30,8 +38,7 @@ public class SkotizoUtility {
 		if (hasClan) {
 			player.clanChannel.getDetails().points += 5;
 			player.clanChannel.addExperience(10000);
-			World.sendMessage("<col=8714E6> Skotizo has been defeated by " + player.getName() + ", a clan member of "
-					+ player.clanChannel.getName() + "!");
+			World.sendMessage("<col=8714E6> Skotizo has been defeated by " + player.getName() +  " !");
 			player.clanChannel.message("Hell yeah boys! We just killed Skotizo!! We earned 10,000 EXP & 5 CP.");
 		} else {
 			World.sendMessage("<col=8714E6> Skotizo has been defeated by " + player.getName()
@@ -39,6 +46,7 @@ public class SkotizoUtility {
 		}
 
 		skotizo.unregister();
+        activated = false;
 	}
 
 	public enum SpawnData {
@@ -50,7 +58,7 @@ public class SkotizoUtility {
 		LEVEL_53("lvl 53 wild near scorpia's cave entrance", new Position(3211, 3944, 0));
 
 		public final String location;
-		public final Position position;
+		public Position position;
 
 		SpawnData(String location, Position position) {
 			this.location = location;
@@ -59,6 +67,14 @@ public class SkotizoUtility {
 
 		public static SpawnData generate() {
 			return Utility.randomElement(values());
+		}
+
+		public String getLocation() {
+			return location;
+		}
+
+		public Position getPosition() {
+			return position;
 		}
 	}
 }

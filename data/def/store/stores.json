@@ -3895,14 +3895,14 @@
           "value": 100
       },
       {
-          "id": 13719,
+          "id": 13719, // Elite ss
           "amount": 1000,
-          "value": 400
+          "value": 10000 // $500
       },
       {
-          "id": 13722,
+          "id": 13722, // Lava ss
           "amount": 1000,
-          "value": 650
+          "value": 5500 // $275
       },
       {
           "id": 17160,
@@ -4672,30 +4672,30 @@
         "value": 500
       },
       {
-        "id": 20035,
-        "amount": 100,
-        "value": 100
-      },
-      {
-        "id": 20038,
-        "amount": 100,
-        "value": 100
-      },
-      {
-        "id": 20044,
-        "amount": 100,
-        "value": 100
-      },
-      {
-        "id": 20041,
-        "amount": 100,
-        "value": 50
-      },
-      {
-        "id": 20047,
-        "amount": 100,
-        "value": 50
-      },
+          "id": 20035, // samurai kasa
+          "amount": 100,
+          "value": 1000 // $50
+        },
+        {
+          "id": 20038, // Samurai shirt
+          "amount": 100,
+          "value": 1000 // $50
+        },
+        {
+          "id": 20044, // Samurai greaves
+          "amount": 100,
+          "value": 1000 // $50
+        },
+        {
+          "id": 20041, // samurai gloves
+          "amount": 100,
+          "value": 1000 // $50
+        },
+        {
+          "id": 20047, // samurai boots
+          "amount": 100,
+          "value": 1000 // $50
+        },
       {
         "id": 20020,
         "amount": 100,

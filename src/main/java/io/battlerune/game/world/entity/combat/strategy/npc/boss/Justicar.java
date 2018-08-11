@@ -32,11 +32,12 @@ import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 /**
- * Handles Justiciar Combat Strategy
+ * Handles JUSTICAR Combat Strategy
+ * Justicar
  *
  * @author Adam_#6723
  */
-public class Justiciar extends MultiStrategy {
+public class Justicar extends MultiStrategy {
 	private static Magic MAGIC = new Magic();
 	private static Melee MELEE = new Melee();
 	private static LightingRain LIGHTNING_RAIN = new LightingRain();
@@ -50,7 +51,7 @@ public class Justiciar extends MultiStrategy {
 			TELE_GRAB, LIGHTNING_RAIN);
 
 	/** Constructs a new <code>Justiciar</code>. */
-	public Justiciar() {
+	public Justicar() {
 		currentStrategy = MAGIC;
 		currentStrategy = MELEE;
 	}

@@ -366,6 +366,43 @@ public final class World {
 		   }
 		}
 	
+	public static void sendTeleportButtonNpc2(int npcId) {
+		for(Player player : getPlayers()) {
+	        player.send(new SendString(""+npcId, 47615));
+		   }
+		}
+	
+	public static void sendTeleportButton2() {
+		for(Player player : getPlayers()) {
+			player.send(new SendString("1", 47600));
+		   }
+		}
+	
+	public static void hideTeleportButton2() {
+		for(Player player : getPlayers()) {
+		player.send(new SendString("0", 47600));
+
+		   }
+		}
+	
+	public static void sendTeleportButtonNpc3(int npcId) {
+		for(Player player : getPlayers()) {
+	        player.send(new SendString(""+npcId, 48615));
+		   }
+		}
+	
+	public static void sendTeleportButton3() {
+		for(Player player : getPlayers()) {
+			player.send(new SendString("1", 48600));
+		   }
+		}
+	
+	public static void hideTeleportButton3() {
+		for(Player player : getPlayers()) {
+		player.send(new SendString("0", 48600));
+		   }
+		}
+	
 	public static void sendEXPWidgetforwell() {
 		for(Player player : getPlayers()) {
 			player.send(new SendWidget(SendWidget.WidgetType.DOUBLEXP, 1800));
@@ -403,6 +440,12 @@ public final class World {
 	public static void sendJusticarInformation() {
 		for(Player player : getPlayers()) {
           EventBossHandler.openJusticar(player);
+	   }
+	}
+	
+	public static void sendSkotizoInformation() {
+		for(Player player : getPlayers()) {
+          EventBossHandler.openSkotizo(player);
 	   }
 	}
 

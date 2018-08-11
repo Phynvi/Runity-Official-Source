@@ -14,7 +14,7 @@ public class DerwenUtility {
 
 	public static Npc generatederwenSpawn() {
 		SpawnData spawn = SpawnData.generate();
-		Npc derwen = new Npc(7858, spawn.position, 10, Direction.NORTH);
+		Npc derwen = new Npc(7859, spawn.position, 10, Direction.NORTH);
 		World.sendMessage("<col=8714E6> Derwen has just spawned! He is located at " + spawn.location + "!");
 		World.sendBroadcast(1, "The Derwen boss has spawned!" + spawn.location + "!", true);
 		derwen.register();
@@ -31,8 +31,7 @@ public class DerwenUtility {
 		if (hasClan) {
 			player.clanChannel.getDetails().points += 5;
 			player.clanChannel.addExperience(10000);
-			World.sendMessage("<col=8714E6> Derwen has been defeated by " + player.getName() + ", a clan member of "
-					+ player.clanChannel.getName() + "!");
+			World.sendMessage("<col=8714E6> Derwen has been defeated by " + player.getName() + "!");
 			player.clanChannel.message("Hell yeah boys! We just killed jusiticar!! We earned 10,000 EXP & 5 CP!");
 		} else {
 			World.sendMessage("<col=8714E6> Derwen has been defeated by " + player.getName()

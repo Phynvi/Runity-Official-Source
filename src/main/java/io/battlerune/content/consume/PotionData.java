@@ -144,6 +144,7 @@ public enum PotionData {
 		@Override
 		public void onEffect(Player player) {
 			PotionData.onAgilityEffect(player);
+			player.send(new SendWidget(SendWidget.WidgetType.AGILITY, 320));
 		}
 	},
 	FISHING_POTION(2438, 151, 153, 155) {
@@ -289,6 +290,7 @@ public enum PotionData {
 		public void onEffect(Player player) {
 			player.unvenom();
 			player.unpoison();
+			player.send(new SendWidget(SendWidget.WidgetType.VENOM, 360));
 
 			if (player.getPoisonImmunity().get() <= 0) {
 				player.send(new SendMessage("You have been granted immunity against poison."));
@@ -304,6 +306,7 @@ public enum PotionData {
 		public void onEffect(Player player) {
 			player.unvenom();
 			player.unpoison();
+			player.send(new SendWidget(SendWidget.WidgetType.SUPERVENOM, 420));
 
 			if (player.getPoisonImmunity().get() <= 0) {
 				player.send(new SendMessage("You have been granted immunity against poison."));
