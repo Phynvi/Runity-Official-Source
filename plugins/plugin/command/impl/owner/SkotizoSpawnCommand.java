@@ -6,7 +6,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 
 /**
- * @author Adam_#6723
+ * @author Adam_#6723r
  */
 
 public class SkotizoSpawnCommand implements Command {
