@@ -32,7 +32,6 @@ import io.battlerune.content.activity.impl.duelarena.DuelRule;
 import io.battlerune.content.clanchannel.ClanRepository;
 import io.battlerune.content.clanchannel.channel.ClanChannel;
 import io.battlerune.content.clanchannel.content.ClanMemberComporator;
-import io.battlerune.content.dailyachievement.DailyAchievementKey;
 import io.battlerune.content.emote.EmoteUnlockable;
 import io.battlerune.content.masterminer.MasterMinerTaskHandler;
 import io.battlerune.content.masterminer.MobData;
@@ -1413,21 +1412,7 @@ public final class PlayerPersistFile implements PlayerPersistable {
 							new TypeToken<HashMap<AchievementKey, Integer>>() {
 							}.getType());
 				}
-			}, new PlayerJSONProperty("daily-achievement") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.playerAchievements1 = GSON.fromJson(property,
-							new TypeToken<HashMap<DailyAchievementKey, Integer>>() {
-							}.getType());
-				}
-
-				@Override
-				Object write(Player player) {
-					return GSON.toJsonTree(player.playerAchievements1,
-							new TypeToken<HashMap<DailyAchievementKey, Integer>>() {
-							}.getType());
-				}
-			},
+			}, 
 
 			new PlayerJSONProperty("last-killed") {
 				@Override

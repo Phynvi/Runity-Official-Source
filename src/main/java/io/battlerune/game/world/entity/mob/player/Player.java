@@ -35,7 +35,6 @@ import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.content.clanchannel.content.ClanViewer;
 import io.battlerune.content.combat.Killstreak;
 import io.battlerune.content.combat.Skulling;
-import io.battlerune.content.dailyachievement.DailyAchievementKey;
 import io.battlerune.content.dialogue.ChatBoxItemDialogue;
 import io.battlerune.content.dialogue.Dialogue;
 import io.battlerune.content.dialogue.DialogueFactory;
@@ -398,14 +397,6 @@ public class Player extends Mob {
 			AchievementKey.values().length) {
 		{
 			for (final AchievementKey achievement : AchievementKey.values())
-				put(achievement, 0);
-		}
-	};
-
-	public HashMap<DailyAchievementKey, Integer> playerAchievements1 = new HashMap<DailyAchievementKey, Integer>(
-			DailyAchievementKey.values().length) {
-		{
-			for (final DailyAchievementKey achievement : DailyAchievementKey.values())
 				put(achievement, 0);
 		}
 	};
