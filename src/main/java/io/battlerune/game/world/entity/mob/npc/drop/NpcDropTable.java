@@ -1,8 +1,17 @@
 package io.battlerune.game.world.entity.mob.npc.drop;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.List;
 
+import io.battlerune.game.world.entity.mob.npc.dropchance.DropChanceData;
+import io.battlerune.game.world.entity.mob.npc.dropchance.DropChanceHandler;
+import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.items.Item;
 import io.battlerune.util.RandomUtils;
 
 /**
@@ -41,16 +50,23 @@ public final class NpcDropTable {
 		this.drops = npcDrops;
 	}
 
-	public List<NpcDrop> generate() {
+	public List<NpcDrop> generate(Player player) {
 		LinkedList<NpcDrop> items = new LinkedList<>();
 		int roll = RandomUtils.inclusive(1300);
+
+		for (DropChanceData data : DropChanceData.values()) {
+			for (Item item : player.equipment) {
+				if (item != null) {
+					if (data.getItemId() == item.getId()) {
+						roll = (int) (new DropChanceHandler(player, data).modify() * roll);
+					}
+				}
+			}
+		}
 
 		if (veryRare.length > 0 && roll < 2) {
 			items.addFirst(RandomUtils.random(veryRare));
 		} else if (rare.length > 0 && roll < 45) {
-//            if (RandomUtils.success(0.40)) TODO: add rare table
-//                items.add(RandomUtils.random(RARE_TABLE));
-//            else
 			items.addFirst(RandomUtils.random(rare));
 		} else {
 			if (common.length > 0 && roll < 850) {
@@ -66,4 +82,5 @@ public final class NpcDropTable {
 		}
 		return items;
 	}
+
 }
