@@ -1,6 +1,7 @@
 package io.battlerune.content.combat.cannon;
 
 import io.battlerune.game.world.items.Item;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.game.Animation;
 import io.battlerune.game.Projectile;
@@ -49,6 +50,22 @@ public class CannonManager {
 	}
 
 	public static void drop(Player player, Cannon cannon) {
+		if(Area.inVorkath(player)) {
+			player.message("Cannon cannot be used in vorkath!");
+			return;
+		}
+		if(Area.inCerberus(player)) {
+			player.message("Cannon cannot be used in cerberus!");
+			return;
+		}
+		if(Area.inZulrah(player)) {
+			player.message("Cannon cannot be used in Zulrah!");
+			return;
+		}
+		if(Area.inKraken(player)) {
+			player.message("Cannon cannot be used in Kraken!");
+			return;
+		}
 		if (ACTIVE_CANNONS.containsKey(player.getName())) {
 			player.send(new SendMessage("You already have a cannon active!"));
 			return;

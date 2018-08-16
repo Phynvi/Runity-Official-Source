@@ -79,7 +79,8 @@ public class NpcAssistant {
 			6615, /* Scorpia */
 			6611, /* Vet'ion */
 			7286, /* Skotizo */
-			5129, 6504, /* Venenatis */
+			1207,
+			6504, /* Venenatis */
 			3162, /* Kree'arra */
 	};
 
@@ -105,7 +106,7 @@ public class NpcAssistant {
 			put(6617, ScorpiaGuardian::new);
 			put(6611, Vetion::new);
 			put(7286, Skotizo::new);
-			put(5129, Arena::new);
+			put(1207, Arena::new);
 			put(763, GiantRoc::new);
 			put(6504, Venenatis::new);
 			put(3130, Tstanon::new);

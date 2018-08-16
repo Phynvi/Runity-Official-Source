@@ -9,6 +9,7 @@ import io.battlerune.game.world.entity.combat.hit.HitIcon;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
+import io.battlerune.Config;
 import io.battlerune.content.combat.cannon.CannonManager.Rotation;
 import io.battlerune.game.world.World;
 
@@ -85,7 +86,8 @@ public final class CannonFireAction extends Task {
             World.sendProjectile(CannonManager.getCannonFire(), cannonPosition, lockon, offsetX, offsetY);
 
             Hit hit = new Hit(Utility.random(0, 30), HitIcon.CANON);
-            player.skills.addExperience(Skill.RANGED,150);
+            double experience = hit.getDamage() * Config.COMBAT_MODIFICATION;
+            player.skills.addExperience(Skill.RANGED, experience);
 
             npc.damage(hit);
             cannon.setAmmunition(cannon.getAmmunition() - 1);

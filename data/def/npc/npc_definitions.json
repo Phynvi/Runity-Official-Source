@@ -14548,10 +14548,15 @@
   },
   {
     "id": 1198,
-    "name": "Ceril Carnillean",
+    "name": "Baron Maple",
     "combat-level": 1,
-    "stand": 808,
-    "walk": 819
+    "stand": 4656,
+    "attackable": true,
+    "aggressive": true,
+    "attack-animation": 4652,
+    "block-animation": 4651,
+    "death-animation": 4653,
+    "walk": 4654
   },
   {
     "id": 1199,
@@ -52388,27 +52393,6 @@
     "walk": 819
   },
   {
-    "id": 4708,
-    "name": "The Shaikahan",
-    "size": 3,
-    "combat-level": 83,
-    "stand": 1198,
-    "walk": 1197,
-    "attackable": true,
-    "aggressive": true,
-    "attack-style": "Melee (slash)",
-    "weakness": "Karambwan-poisoned spears or hastae",
-    "attack-cooldown": 4,
-    "attack-level": 80,
-    "defence-level": 80,
-    "strength-level": 80,
-    "hitpoints-level": 100,
-    "ranged-level": 80,
-    "magic-level": 80,
-    "defence-magic": 10000,
-    "defence-ranged": 10000
-  },
-  {
     "id": 4709,
     "name": "The Shaikahan",
     "size": 3,
@@ -56218,6 +56202,49 @@
     "defence-magic": 40,
     "defence-ranged": 60
   },
+  {
+	    "id": 1207,
+	    "name": "Exoden",
+	    "size": 4,
+	    "combat-level": 999,
+	    "stand": 6504,
+	    "walk": 6505,
+	    "attack-animation": 6501,
+	    "block-animation": 6503,
+	    "death-animation": 6502,
+	    "attackable": true,
+	    "aggressive": true,
+	    "poison-immunity": true,
+	    "venom-immunity": true,
+	    "attack-style": "Melee (crush)",
+	    "weakness": "Magic",
+	    "attack-cooldown": 4,
+	    "attack-level": 150,
+	    "defence-level": 130,
+	    "strength-level": 120,
+	    "hitpoints-level": 1150,
+	    "ranged-level": 100,
+	    "magic-level": 120,
+	    "defence-stab": 125,
+	    "defence-slash": 80,
+	    "defence-crush": 80,
+	    "defence-magic": 40,
+	    "defence-ranged": 60
+	  },
+  {
+		    "id": 4708,
+		    "name": "King Chimera",
+		    "combat-level": 1,
+		    "stand": 7032,
+		    "walk": 7033
+		  },
+  {
+			    "id": 3829,
+			    "name": "Chimera's cub",
+			    "combat-level": 1,
+			    "stand": 7032,
+			    "walk": 7033
+			  },
   {
     "id": 5130,
     "name": "Broken clay golem",
@@ -66192,13 +66219,6 @@
   {
     "id": 6091,
     "name": "Captain Errdo",
-    "combat-level": 1,
-    "stand": 195,
-    "walk": 189
-  },
-  {
-    "id": 6092,
-    "name": "Captain Klemfoodle",
     "combat-level": 1,
     "stand": 195,
     "walk": 189
