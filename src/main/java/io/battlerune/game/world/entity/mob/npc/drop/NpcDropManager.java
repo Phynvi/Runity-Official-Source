@@ -148,7 +148,7 @@ public final class NpcDropManager {
 //                return;
 //            }
 
-			if(CannonManager.getCannon(killer) != null) {
+			if(CannonManager.getCannon(killer).isRegistered()) {
 				if (!item.isStackable()) {
 					Item single = item.createWithAmount(1);
 					for (int i = 0; i < item.getAmount(); i++)

@@ -146,6 +146,7 @@ public class CannonManager {
 		Projectile p = new Projectile(53);
 		p.setStartHeight(50);
 		p.setEndHeight(50);
+		p.setDelay(2);
 		return p;
 	}
 
