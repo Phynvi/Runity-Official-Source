@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import io.battlerune.content.CrystalChest;
+import io.battlerune.content.combat.cannon.CannonManager;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -33,6 +34,8 @@ public final class NpcDropManager {
 
 	/** Attempts to drop the drop table which belongs to {@code npc#id}. */
 	public static void drop(Player killer, Npc npc) {
+
+		
 		if (killer == null) {
 			return;
 		}
@@ -47,6 +50,10 @@ public final class NpcDropManager {
 			return;
 		}
 
+		if(CannonManager.getCannon(killer) != null) {
+
+        }
+		
 		RandomGen gen = new RandomGen();
 		List<NpcDrop> npc_drops = table.generate(killer);
 		Position dropPosition = npc.getPosition().copy();
@@ -141,6 +148,17 @@ public final class NpcDropManager {
 //                return;
 //            }
 
+			if(CannonManager.getCannon(killer) != null) {
+				if (!item.isStackable()) {
+					Item single = item.createWithAmount(1);
+					for (int i = 0; i < item.getAmount(); i++)
+						GroundItem.create(killer, single, dropPosition);
+				} else {
+					GroundItem.create(killer, item, dropPosition);
+				}
+				return;
+	        }
+			
 			if (killer.settings.dropNotification && item.getValue() > 1_000_000) {
 				String name = item.getName();
 				killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + name + " ("
@@ -152,6 +170,17 @@ public final class NpcDropManager {
 				killer.send(new SendMessage("<col=F5424B>Untradeable Drop Notification: </col>" + item.getName()));
 			}
 
+			if(CannonManager.getCannon(killer) != null) {
+				if (!item.isStackable()) {
+					Item single = item.createWithAmount(1);
+					for (int i = 0; i < item.getAmount(); i++)
+						GroundItem.create(killer, single, dropPosition);
+				} else {
+					GroundItem.create(killer, item, dropPosition);
+				}
+				return;
+	        }
+			
 			if (!item.isStackable()) {
 				Item single = item.createWithAmount(1);
 				for (int i = 0; i < item.getAmount(); i++)
