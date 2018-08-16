@@ -53,7 +53,6 @@ public class TeleportButtonPlugin extends PluginContext {
 			return true;
 		case 1174:
 		case -7510:
-		case 29432:
 			TeleportHandler.open(player, TeleportType.CITIES);
 			return true;
 		case 13061:

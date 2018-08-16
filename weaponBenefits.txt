@@ -4,3 +4,7 @@ Proselyte set gives less than 10% drain rate, you do not need all the items to a
 
 Chi/kril set gives less than 12.5% drain rate, you do not need all the items to activate this 
 && also steals 25% of all incflicted damagte
+
+Every single custom item gives a 10% heal rate, on all inflicted damage.
+
+Soul set gives 50% heal rate and has a 50% lower drain rate.

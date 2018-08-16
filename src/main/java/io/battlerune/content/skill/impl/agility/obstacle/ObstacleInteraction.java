@@ -177,6 +177,7 @@ public interface ObstacleInteraction {
 
 		player.skills.addExperience(Skill.AGILITY, bonus * Config.AGILITY_MODIFICATION);
 		player.send(new SendMessage("You have completed the " + course + " and receive 5 tickets."));
+		player.inventory.add(995, 50000);
 		player.forClan(channel -> channel.activateTask(ClanTaskKey.AGILITY_COURSE, player.getName()));
 		player.inventory.addOrDrop(new Item(2996, 5));
 		player.attributes.set("AGILITY_FLAGS", 0);

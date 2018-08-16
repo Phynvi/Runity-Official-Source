@@ -75,14 +75,14 @@ public final class NpcDropManager {
 		}
 
 		// starter box drop
-		if (npc.getMaximumHealth() > 10 && Utility.random(1, 500) <= 5) {
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 900) <= 5) {
 			Item starterbox = new Item(10028);
 			GroundItem.create(killer, starterbox, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + starterbox.getName()));
 		}
 
 		// Mystery box
-		if (npc.getMaximumHealth() > 10 && Utility.random(1, 900) <= 3) {
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 1500) <= 3) {
 			Item mbox = new Item(6199);
 			GroundItem.create(killer, mbox, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + mbox.getName()));
@@ -91,7 +91,7 @@ public final class NpcDropManager {
 		}
 
 		// Bond box
-		if (npc.getMaximumHealth() > 10 && Utility.random(1, 1200) == 2) {
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 2000) == 2) {
 			Item bond = new Item(13190, 2);
 			GroundItem.create(killer, bond, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + bond.getName()));

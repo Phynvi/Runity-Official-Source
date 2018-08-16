@@ -119187,6 +119187,33 @@
     ]
   },
   {
+	    "id": 3274,
+	    "name": "Phoenix bow",
+	    "two-handed": true,
+	    "noted-id": 20998,
+	    "low-alch": 36000,
+	    "high-alch": 54000,
+	    "base-value": 90000,
+	    "street-value": 208957337,
+	    "weight": 1.8,
+	    "equipment-slot": "WEAPON",
+	    "weapon-interface": "LONGBOW",
+	    "req-ranged": 75,
+	    "attack-ranged": 75,
+	    "ranged-strength": 25,
+	    "bonus-prayer": 4,
+	    "ranged-type": "SHOT",
+	    "allowed": [
+	      "BRONZE_ARROW",
+	      "IRON_ARROW",
+	      "STEEL_ARROW",
+	      "MITHRIL_ARROW",
+	      "ADAMANT_ARROW",
+	      "RUNE_ARROW",
+	      "DRAGON_ARROW"
+	    ]
+	  },
+  {
     "id": 20998,
     "name": "Twisted bow",
     "stackable": true,
@@ -125010,16 +125037,29 @@
   },
   
   
-  
   {
 	    "id": 13738, //ITEM ID
 	    "name": "Lava virtus mask", 
 	    "low-alch": 2, 
 	    "high-alch": 3, 
 	    "base-value": 5,
-          "street-value": 18403, 
+      "street-value": 18403, 
 	    "equipment-slot": "HELM",
-	    "weight": 4.0 
+	    "weight": 4.0,
+	    "attack-stab": 0,
+	    "attack-slash": 0,
+	    "attack-crush": 0,
+	    "attack-magic": 16,
+	    "attack-ranged": 0,
+	    "defence-stab": 34,
+	    "defence-slash": 32,
+	    "defence-crush": 36,
+	    "defence-magic": 20,
+	    "defence-ranged": 0,
+	    "bonus-strength": 0,  
+	    "bonus-prayer": 0,
+	    "bonus-magic": 2
+
 	  },
 
 {
@@ -125028,9 +125068,23 @@
 		    "low-alch": 2, 
 		    "high-alch": 3, 
 		    "base-value": 5,
-	            "street-value": 18403, 
+	        "street-value": 18403, 
 		    "equipment-slot": "WEAPON",
-		    "weight": 4.0 
+		    "weight": 4.0,
+		    "attack-stab": 60,
+		    "attack-slash": 85,
+		    "attack-crush":  15,
+		    "attack-magic": -6,
+		    "attack-ranged": 0,
+		    "defence-stab": 0,
+		    "defence-slash": 6,
+		    "defence-crush": 0,
+		    "defence-magic": 0,
+		    "defence-ranged": 0,
+		    "bonus-strength": 50,  
+		    "bonus-prayer": 3,
+		    "bonus-magic": 15
+
 		  },
 
 {
@@ -125089,71 +125143,160 @@
 							  },
 
 {
-								    "id": 13747, //ITEM ID
-								    "name": "Lava Virtus Top", 
-								    "low-alch": 2, 
-								    "high-alch": 3, 
-								    "base-value": 5,
-							            "street-value": 18403, 
-								    "equipment-slot": "LEGS",
-								    "weight": 4.0 
+"id": 13747, //ITEM ID
+"name": "Lava Virtus Top", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "BODY",
+"weight": 4.0,
+"attack-stab": 0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-magic": 70,
+"attack-ranged": -16,
+"defence-stab": 90,
+"defence-slash": 67,
+"defence-crush": 69,
+"defence-magic": 65,
+"defence-ranged": 0,
+"bonus-strength": 0,  
+"bonus-prayer": 0,
+"bonus-magic": 2
+
 								  },
 
 {
-									    "id": 13748, //ITEM ID
-									    "name": "Lava virtus bottom", 
-									    "low-alch": 2, 
-									    "high-alch": 3, 
-									    "base-value": 5,
-								            "street-value": 18403, 
-									    "equipment-slot": "LEGS",
-									    "weight": 4.0 
-									  },
+"id": 13748, //ITEM ID
+"name": "Lava virtus bottom", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "LEGS",
+"weight": 4.0,
+"attack-stab": 0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-magic": 52,
+"attack-ranged": -14,
+"defence-stab": 62,
+"defence-slash": 53,
+"defence-crush": 64,
+"defence-magic": 30,
+"defence-ranged": 0,
+"bonus-strength": 0,  
+"bonus-prayer": 0,
+"bonus-magic": 2 
+
+},
 
 {
-										    "id": 13749, //ITEM ID
-										    "name": "Lava bow", 
-										    "low-alch": 2, 
-										    "high-alch": 3, 
-										    "base-value": 5,
-									            "street-value": 18403, 
-										    "equipment-slot": "WEAPON",
-									            "weapon-interface": "LONGBOW",
-										    "weight": 4.0 
-										  },
+"id": 13749, //ITEM ID
+"name": "Lava bow", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"two-handed": true,
+"street-value": 18403, 
+"equipment-slot": "WEAPON",
+"weapon-interface": "LONGBOW",
+"weight": 4.0,
+"attack-stab": 0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-range": 80,
+"req-defence": 0,
+"attack-magic": 0,
+"attack-ranged": 3,
+"defence-stab": 0,
+"defence-slash": 0,
+"defence-crush": 0,
+"defence-magic": 0,
+"defence-ranged": 0,
+"bonus-ranged": 25,
+"bonus-prayer": 4 
+
+},
 
 {
-											    "id": 16647, //ITEM ID
-											    "name": "Elite torva body", 
-											    "low-alch": 2, 
-											    "high-alch": 3, 
-											    "base-value": 5,
-										            "street-value": 18403, 
-											    "equipment-slot": "BODY",
-											    "weight": 4.0 
+"id": 16647, //ITEM ID
+"name": "Elite torva body", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "BODY",
+"weight": 4.0,
+"attack-stab": 0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-magic": -15,
+"attack-ranged": -10,
+"attack-magic": -5,
+"attack-ranged": -5,
+"defence-stab": 178,
+"defence-slash": 163,
+"defence-crush": 155,
+"defence-magic": 0,
+"defence-ranged": 210,
+"bonus-strength": 27,
+"bonus-prayer": 22,
+"req-defence": 90 
+
+
+
+
 											  },
 
 {
-												    "id": 16648, //ITEM ID
-												    "name": "Elite torva helm", 
-												    "low-alch": 2, 
-												    "high-alch": 3, 
-												    "base-value": 5,
-											            "street-value": 18403, 
-												    "equipment-slot": "HELM",
-												    "weight": 4.0 
+"id": 16648, //ITEM ID
+"name": "Elite torva helm", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "HELM",
+"weight": 4.0",
+"weight": 4.0,
+"attack-stab": 0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-magic": -15,
+"attack-ranged": -10,
+"defence-stab": 110,
+"defence-slash": 103,
+"defence-crush": 115,
+"defence-magic": -6,
+"defence-ranged": -10  
 												  },
 
 {
-													    "id": 16649, //ITEM ID
-													    "name": "Elite torva legs", 
-													    "low-alch": 2, 
-													    "high-alch": 3, 
-													    "base-value": 5,
-												            "street-value": 18403, 
-													    "equipment-slot": "LEGS",
-													    "weight": 4.0 
-													  },
+"id": 16649, //ITEM ID
+"name": "Elite torva legs", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "LEGS",
+"weight": 4.0,
+"attack-stab": 0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-ranged": -10,
+"attack-magic": -15,
+"defence-stab": 110,
+"defence-slash": 125,
+"defence-crush": 100,
+"defence-magic": 0,
+"defence-ranged": 220,
+"bonus-strength": 26,
+"bonus-prayer": 1,
+"req-defence": 92
+
+
+},
 
 {
 														    "id": 16650, //ITEM ID
@@ -125163,7 +125306,21 @@
 														    "base-value": 5,
 													            "street-value": 18403, 
 														    "equipment-slot": "HELM",
-														    "weight": 4.0 
+														    "weight": 4.0,
+														    "attack-stab": 0,
+														    "attack-slash": 0,
+														    "attack-crush": 0,
+														    "attack-magic": 16,
+														    "attack-ranged": 0,
+														    "defence-stab": 24,
+														    "defence-slash": 22,
+														    "defence-crush": 26,
+														    "defence-magic": 10,
+														    "defence-ranged": 0,
+														    "bonus-strength": 0,  
+														    "bonus-prayer": 0,
+														    "bonus-magic": 2
+
 														  },
 
 {
@@ -125174,7 +125331,21 @@
 															    "base-value": 5,
 														            "street-value": 18403, 
 															    "equipment-slot": "BODY",
-															    "weight": 4.0 
+															    "weight": 4.0,
+															    "attack-stab": 0,
+															    "attack-slash": 0,
+															    "attack-crush": 0,
+															    "attack-magic": 70,
+															    "attack-ranged": -16,
+															    "defence-stab": 84,
+															    "defence-slash": 62,
+															    "defence-crush": 60,
+															    "defence-magic": 56,
+															    "defence-ranged": 0,
+															    "bonus-strength": 0,  
+															    "bonus-prayer": 0,
+															    "bonus-magic": 2
+
 															  },
 
 {
@@ -125185,7 +125356,21 @@
 																    "base-value": 5,
 															            "street-value": 18403, 
 																    "equipment-slot": "LEGS",
-																    "weight": 4.0 
+																    "weight": 4.0,
+																    "attack-stab": 0,
+																    "attack-slash": 0,
+																    "attack-crush": 0,
+																    "attack-magic": 52,
+																    "attack-ranged": -14,
+																    "defence-stab": 54,
+																    "defence-slash": 48,
+																    "defence-crush": 60,
+																    "defence-magic": 20,
+																    "defence-ranged": 0,
+																    "bonus-strength": 0,  
+																    "bonus-prayer": 0,
+																    "bonus-magic": 2
+
 																  },
 
 {
@@ -125196,7 +125381,21 @@
 																	    "base-value": 5,
 																            "street-value": 18403, 
 																	    "equipment-slot": "HELM",
-																	    "weight": 4.0 
+																	    "weight": 4.0,
+																	    "attack-stab": 0,
+																	    "attack-slash": 0,
+																	    "attack-crush": 0,
+																	    "attack-magic": 0,
+																	    "attack-ranged": 45,
+																	    "defence-stab": 54,
+																	    "defence-slash": 48,
+																	    "defence-crush": 60,
+																	    "defence-magic": 20,
+																	    "defence-ranged": 45,
+																	    "bonus-strength": 0,  
+																	    "bonus-prayer": 3,
+																	    "bonus-magic": 0
+
 																	  },
 
 {
@@ -125207,7 +125406,20 @@
 																		    "base-value": 5,
 																	            "street-value": 18403, 
 																		    "equipment-slot": "BODY",
-																		    "weight": 4.0 
+																		    "weight": 4.0,
+																		    "attack-slash": 0,
+																		    "attack-crush": 0,
+																		    "attack-magic": 0,
+																		    "attack-ranged": 65,
+																		    "defence-stab": 64,
+																		    "defence-slash": 68,
+																		    "defence-crush": 60,
+																		    "defence-magic": -10,
+																		    "defence-ranged": 65,
+																		    "bonus-strength": 0,  
+																		    "bonus-prayer": 3,
+																		    "bonus-magic": 0
+
 																		  },
 
 {
@@ -125218,52 +125430,79 @@
 																			    "base-value": 5,
 																		            "street-value": 18403, 
 																			    "equipment-slot": "LEGS",
-																			    "weight": 4.0 
+																			    "weight": 4.0,
+																			    "attack-slash": 0,
+																			    "attack-crush": 0,
+																			    "attack-magic": 0,
+																			    "attack-ranged": 65,
+																			    "defence-stab": 44,
+																			    "defence-slash": 48,
+																			    "defence-crush": 40,
+																			    "defence-magic": -10,
+																			    "defence-ranged": 45,
+																			    "bonus-strength": 0,  
+																			    "bonus-prayer": 3,
+																			    "bonus-magic": 0
+
 																			  },
 
 {
-																				    "id": 16657, //ITEM ID
-																				    "name": "Aphrodite's helm", 
-																				    "low-alch": 2, 
-																				    "high-alch": 3, 
-																				    "base-value": 5,
-																			            "street-value": 18403, 
-																				    "equipment-slot": "HELM",
-																				    "weight": 4.0 
-																				  },
+"id": 16657, //ITEM ID
+"name": "Aphrodite's helm", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "HELM",
+"weight": 4.0,
+"attack-stab": 0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-magic": 0,
+"attack-ranged": 56,
+"defence-stab": 64,
+"defence-slash": 58,
+"defence-crush": 70,
+"defence-magic": 24,
+"defence-ranged": 55,
+"bonus-strength": 0,  
+"bonus-prayer": 3,
+"bonus-magic": 0 
+
+},
 
 {
-																					    "id": 16659, //ITEM ID
-																					    "name": "Aphrodite's platelegs", 
-																					    "low-alch": 2, 
-																					    "high-alch": 3, 
-																					    "base-value": 5,
-																				            "street-value": 18403, 
-																					    "equipment-slot": "LEGS",
-																					    "weight": 4.0 
-																					  },
+"id": 16659, //ITEM ID
+"name": "Aphrodite's platelegs", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "LEGS",
+"weight": 4.0 
+},
 
 {
-																						    "id": 16660, //ITEM ID
-																						    "name": "Aphrodite's gauntlets", 
-																						    "low-alch": 2, 
-																						    "high-alch": 3, 
-																						    "base-value": 5,
-																					            "street-value": 18403, 
-																						    "equipment-slot": "GLOVES",
-																						    "weight": 4.0 
-																						  },
+"id": 16660, //ITEM ID
+"name": "Aphrodite's gauntlets", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "GLOVES",
+"weight": 4.0 
+},
 
 {
-																							    "id": 16661, //ITEM ID
-																							    "name": "Aphrodite's greaves", 
-																							    "low-alch": 2, 
-																							    "high-alch": 3, 
-																							    "base-value": 5,
-																						            "street-value": 18403, 
-																							    "equipment-slot": "BOOTS",
-																							    "weight": 4.0 
-																							  },
+"id": 16661, //ITEM ID
+"name": "Aphrodite's greaves", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "BOOTS",
+"weight": 4.0 
+},
 
 
 {
@@ -125275,7 +125514,24 @@
 		 "street-value": 18403, 
 		 "equipment-slot": "WEAPON",
 		"weapon-interface": "LONGBOW",
-		"weight": 4.0 
+		"weight": 4.0,
+	    "attack-stab": 0,
+	    "attack-slash": 0,
+	    "attack-crush": 0,
+	    "attack-range": 90,
+	    "req-defence": 0,
+	    "attack-magic": 0,
+	    "attack-ranged": 3,
+	    "stackable": false,
+	    "defence-stab": 0,
+	    "defence-slash": 0,
+	    "defence-crush": 0,
+	    "defence-magic": 0,
+	    "defence-ranged": 0,
+	    "bonus-ranged": 30,
+     "bonus-prayer": 4,
+
+	    "bonus-strength": 55
 		},
 
 {
@@ -125286,7 +125542,20 @@
 		    "base-value": 5,
 	            "street-value": 18403, 
 		    "equipment-slot": "BODY",
-		    "weight": 4.0 
+		    "weight": 4.0,
+		    "attack-slash": 0,
+		    "attack-crush": 0,
+		    "attack-magic": 0,
+		    "attack-ranged": 72,
+		    "defence-stab": 70,
+		    "defence-slash": 72,
+		    "defence-crush": 68,
+		    "defence-magic": -10,
+		    "defence-ranged": 71,
+		    "bonus-strength": 0,  
+		    "bonus-prayer": 3,
+		    "bonus-magic": 0 
+
 		  },
 
 {
@@ -125297,7 +125566,21 @@
 			    "base-value": 5,
 		            "street-value": 18403, 
 			    "equipment-slot": "CAPE",
-			    "weight": 4.0 
+			    "weight": 4.0,
+			    "attack-stab": 0,
+			    "attack-slash": 0,
+			    "attack-crush": 0,
+			    "attack-magic": 0,
+			    "attack-ranged": 20,
+			    "defence-stab": 6,
+			    "defence-slash": 6,
+			    "defence-crush": 6,
+			    "defence-magic": 4,
+			    "defence-ranged": 20,
+			    "bonus-strength": 0,  
+			    "bonus-prayer": 0,
+			    "bonus-magic": 0 
+
 			  },
 
 {
@@ -125397,7 +125680,20 @@
 	 "base-value": 5,
 	"street-value": 18403, 
 	"equipment-slot": "SHIELD",
-	"weight": 4.0 
+	"weight": 4.0,
+	"attack-slash": 0,
+	"attack-crush": 0,
+	"attack-magic": 0,
+	"attack-ranged": 0,
+	"defence-stab": 73,
+	"defence-slash": 75,
+	"defence-crush": 85,
+	"defence-magic": 2,
+	"defence-ranged": 67,
+	"bonus-strength": 0,  
+	"bonus-prayer": 3,
+	"bonus-magic": 0
+
 													  },
 
 {
@@ -125452,7 +125748,20 @@
 																		    "base-value": 5,
 																	            "street-value": 18403, 
 																		    "equipment-slot": "SHIELD",
-																		    "weight": 4.0 
+																		    "weight": 4.0,
+																		    "attack-slash": 0,
+																		    "attack-crush": 0,
+																		    "attack-magic": 0,
+																		    "attack-ranged": 0,
+																		    "defence-stab": 48,
+																		    "defence-slash": 50,
+																		    "defence-crush": 60,
+																		    "defence-magic": 2,
+																		    "defence-ranged": 40,
+																		    "bonus-strength": 0,  
+																		    "bonus-prayer": 3,
+																		    "bonus-magic": 0
+
 																		  },
 
 {
@@ -125511,14 +125820,14 @@
 },
 
 {
-  "id": 4062,
-  "name": "Inferno spirit shield", 
-  "low-alch": 2, 
-  "high-alch": 3, 
-  "base-value": 5,
- "street-value": 18403, 
-  "equipment-slot": "SHIELD",
-  "weight": 4.0 
+"id": 4062,
+"name": "Inferno spirit shield", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "SHIELD",
+"weight": 4.0 
 },
 
 {
@@ -125527,12 +125836,25 @@
 	    "low-alch": 2, 
 	    "high-alch": 3, 
 	    "base-value": 5,
- "two-handed": true,
-          "street-value": 18403, 
+        "two-handed": true,
+        "street-value": 18403, 
 	    "equipment-slot": "WEAPON",
-	    "weight": 4.0 
+	    "weight": 4.0,
+	    "attack-stab": 0,
+	    "attack-slash": 0,
+	    "attack-crush": 0,
+	    "attack-range": 80,
+	    "req-defence": 0,
+	    "attack-magic": 0,
+	    "attack-ranged": 3,
+	    "defence-stab": 0,
+	    "defence-slash": 0,
+	    "defence-crush": 0,
+	    "defence-magic": 0,
+	    "defence-ranged": 0,
+	    "bonus-ranged": 25,
+     "bonus-prayer": 4 
 	  },
-
 {
 		    "id": 17153,
 		    "name": "Lava Torva Platebody", 
@@ -125541,7 +125863,19 @@
 		    "base-value": 5,
 	               "street-value": 18403, 
 		    "equipment-slot": "BODY",
-		    "weight": 4.0 
+		    "weight": 4.0,
+		    "attack-stab": 0,
+		    "attack-slash": 0,
+		    "attack-crush": 0,
+		    "attack-magic": -15,
+		    "attack-ranged": -10,
+		    "defence-stab": 160,
+		    "defence-slash": 150,
+		    "defence-crush": 150,
+		    "defence-magic": -6,
+		    "defence-ranged": -10  	
+
+
 		  },
 
 {
@@ -125552,7 +125886,19 @@
 			    "base-value": 5,
 		               "street-value": 18403, 
 			    "equipment-slot": "HELM",
-			    "weight": 4.0 
+			    "weight": 4.0,
+			    "attack-stab": 0,
+			    "attack-slash": 0,
+			    "attack-crush": 0,
+			    "attack-magic": -15,
+			    "attack-ranged": -10,
+			    "defence-stab": 120,
+			    "defence-slash": 110,
+			    "defence-crush": 120,
+			    "defence-magic": -6,
+			    "defence-ranged": -10  
+
+
 			  },
 
 {
@@ -125563,76 +125909,157 @@
 				    "base-value": 5,
 			               "street-value": 18403, 
 				    "equipment-slot": "LEGS",
-				    "weight": 4.0 
+				    "weight": 4.0,
+				    "attack-stab": 0,
+				    "attack-slash": 0,
+				    "attack-crush": 0,
+				     "attack-ranged": -10,
+				    "attack-magic": -15,
+				    "attack-ranged": -10,
+				    "defence-stab": 110,
+				    "defence-slash": 96,
+				    "defence-crush": 78,
+				    "defence-magic": -4,
+				    "defence-ranged": 20  
+
 				  },
 
 
 {
-	    "id": 17166,
-	    "name": "Flame Raptor Helm", 
-	    "low-alch": 2, 
-	    "high-alch": 3, 
-	    "base-value": 5,
-             "street-value": 18403, 
-	    "equipment-slot": "HELM",
-	    "weight": 4.0 
-	  },
+					    "id": 17166,
+					    "name": "Flame Raptor Helm", 
+					    "low-alch": 2, 
+					    "high-alch": 3, 
+					    "base-value": 5,
+				             "street-value": 18403, 
+					    "equipment-slot": "HELM",
+					    "weight": 4.0,
+					    "attack-stab": 0,
+					    "attack-slash": 0,
+					    "attack-crush": 0,
+					    "attack-magic": -15,
+					    "attack-ranged": -10,
+					    "defence-stab": 88,
+					    "defence-slash": 83,
+					    "defence-crush": 95,
+					    "defence-magic": 90,
+					    "defence-ranged": -6 
+
+
+
+					  },
 
 {
-		    "id": 17167,
-		    "name": "Flame Raptor Platebody", 
-		    "low-alch": 2, 
-		    "high-alch": 3, 
-		    "base-value": 5,
-	               "street-value": 18403, 
-		    "equipment-slot": "BODY",
-		    "weight": 4.0 
-		  },
+						    "id": 17167,
+						    "name": "Flame Raptor Platebody", 
+						    "low-alch": 2, 
+						    "high-alch": 3, 
+						    "base-value": 5,
+					             "street-value": 18403, 
+						    "equipment-slot": "BODY",
+						    "weight": 4.0,
+						    "attack-stab": 0,
+						    "attack-slash": 0,
+						    "attack-crush":0,
+						    "attack-magic": -3,
+						    "attack-ranged": -10,
+						    "defence-stab": 85,
+						    "defence-slash": 80,
+						    "defence-crush": 88,
+						    "defence-magic": 110,
+						    "defence-ranged": -6
+},
+{
+						    "id": 17168,
+						    "name": "Flame Raptor Platelegs", 
+						    "low-alch": 2, 
+						    "high-alch": 3, 
+						    "base-value": 5,
+					               "street-value": 18403, 
+						    "equipment-slot": "LEGS",
+						    "weight": 4.0,
+						    "attack-stab": 0,
+						    "attack-slash": 0,
+						    "attack-crush": 0,
+						    "attack-magic": -15,
+						    "attack-ranged": -10,
+						    "defence-stab": 71,
+						    "defence-slash": 63,
+						    "defence-crush": 66,
+						    "defence-magic": -4,
+						    "defence-ranged": 93 
+
+						  },
+
 
 {
-			    "id": 17168,
-			    "name": "Flame Raptor Platelegs", 
-			    "low-alch": 2, 
-			    "high-alch": 3, 
-			    "base-value": 5,
-		               "street-value": 18403, 
-			    "equipment-slot": "LEGS",
-			    "weight": 4.0 
-			  },
+				    "id": 17163,
+				    "name": "Raptor Helm", 
+				    "low-alch": 2, 
+				    "high-alch": 3, 
+				    "base-value": 5,
+			             "street-value": 18403, 
+				    "equipment-slot": "HELM",
+				    "weight": 4.0,
+				    "attack-stab": 0,
+				    "attack-slash": 0,
+				    "attack-crush": 0,
+				     "attack-magic": -15,
+				     "attack-ranged": -10,
+				    "defence-stab": 98,
+				    "defence-slash": 93,
+				    "defence-crush": 105,
+				    "defence-magic": -6,
+				    "defence-ranged": 133
+
+				  },
 
 
 {
-	    "id": 17163,
-	    "name": "Raptor Helm", 
-	    "low-alch": 2, 
-	    "high-alch": 3, 
-	    "base-value": 5,
-             "street-value": 18403, 
-	    "equipment-slot": "HELM",
-	    "weight": 4.0 
-	  },
+					    "id": 17164,
+					    "name": "Raptor Platebody", 
+					    "low-alch": 2, 
+					    "high-alch": 3, 
+					    "base-value": 5,
+				               "street-value": 18403, 
+					    "equipment-slot": "BODY",
+					    "weight": 4.0,
+					    "attack-stab": 0,
+					    "attack-slash": 0,
+					    "attack-crush": 0,
+					    "attack-magic": -15,
+					     "attack-ranged": -10,
+					    "defence-stab": 110,
+					    "defence-slash": 100,
+					    "defence-crush": 120,
+					    "defence-magic": -6,
+					    "defence-ranged": 163
+
+					  },
+
 
 {
-		    "id": 17164,
-		    "name": "Raptor Platebody", 
-		    "low-alch": 2, 
-		    "high-alch": 3, 
-		    "base-value": 5,
-	               "street-value": 18403, 
-		    "equipment-slot": "BODY",
-		    "weight": 4.0 
-		  },
+						    "id": 17165,
+						    "name": "Raptor Platelegs", 
+						    "low-alch": 2, 
+						    "high-alch": 3, 
+						    "base-value": 5,
+					               "street-value": 18403, 
+						    "equipment-slot": "LEGS",
+						    "weight": 4.0,
+						    "attack-stab": 0,
+						    "attack-slash": 0,
+						    "attack-crush": 0,
+						    "attack-magic": -15,
+						     "attack-ranged": -10,
+						    "defence-stab": 100,
+						    "defence-slash": 90,
+						    "defence-crush": 110,
+						    "defence-magic": -6,
+						    "defence-ranged": 140
 
-{
-			    "id": 17165,
-			    "name": "Raptor Platelegs", 
-			    "low-alch": 2, 
-			    "high-alch": 3, 
-			    "base-value": 5,
-		               "street-value": 18403, 
-			    "equipment-slot": "LEGS",
-			    "weight": 4.0 
-			  },
+						  },
+
 
 
 {
@@ -125652,7 +126079,7 @@
 "low-alch": 2, 
 "high-alch": 3, 
 "base-value": 5,
- "street-value": 18403, 
+"street-value": 18403, 
 "equipment-slot": "BODY",
 "weight": 4.0 
 },
@@ -125663,20 +126090,20 @@
 "low-alch": 2, 
 "high-alch": 3, 
 "base-value": 5,
-     "street-value": 18403, 
+   "street-value": 18403, 
 "equipment-slot": "LEGS",
 "weight": 4.0 
 },
 
 {
-  "id": 17175,
-  "name": "Corrupt Torva Boots",
-  "low-alch": 2, 
-  "high-alch": 3, 
-  "base-value": 5,
-       "street-value": 18403, 
-  "equipment-slot": "BOOTS",
-  "weight": 4.0 
+"id": 17175,
+"name": "Corrupt Torva Boots",
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+     "street-value": 18403, 
+"equipment-slot": "BOOTS",
+"weight": 4.0 
 },
 
 {
@@ -125685,7 +126112,7 @@
 	    "low-alch": 2, 
 	    "high-alch": 3, 
 	    "base-value": 5,
-             "street-value": 18403, 
+           "street-value": 18403, 
 	    "equipment-slot": "GLOVES",
 	    "weight": 4.0 
 	  },
@@ -125768,14 +126195,14 @@
 },
 
 {
-  "id": 19920,
-  "name": "Imperial Platelegs", 
-  "low-alch": 2, 
-  "high-alch": 3, 
-  "base-value": 5,
-      "street-value": 18403, 
-  "equipment-slot": "LEGS",
-  "weight": 4.0 
+"id": 19920,
+"name": "Imperial Platelegs", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+    "street-value": 18403, 
+"equipment-slot": "LEGS",
+"weight": 4.0 
 },
 
 {
@@ -125784,7 +126211,7 @@
 	    "low-alch": 2, 
 	    "high-alch": 3, 
 	    "base-value": 5,
-             "street-value": 18403, 
+           "street-value": 18403, 
 	    "equipment-slot": "WEAPON",
 	    "weight": 4.0 
 	  },
@@ -125866,14 +126293,14 @@
 								    "weight": 4.0 
 								  },
 {
-  "id": 20690,
-  "name": "Darth Maul Whip", 
-  "low-alch": 2, 
-  "high-alch": 3, 
-  "base-value": 5,
-       "street-value": 18403, 
-  "equipment-slot": "WEAPON",
-  "weight": 4.0 
+"id": 20690,
+"name": "Darth Maul Whip", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+     "street-value": 18403, 
+"equipment-slot": "WEAPON",
+"weight": 4.0 
 },
 
 {
@@ -125882,7 +126309,7 @@
 	    "low-alch": 2, 
 	    "high-alch": 3, 
 	    "base-value": 5,
-             "street-value": 18403, 
+           "street-value": 18403, 
 	    "equipment-slot": "LEGS",
 	    "weight": 4.0 
 	  },
@@ -125970,20 +126397,20 @@
 "low-alch": 2, 
 "high-alch": 3, 
 "base-value": 5,
-     "street-value": 18403, 
+   "street-value": 18403, 
 "equipment-slot": "WEAPON",
 "weight": 4.0 
 },
 
 {
-  "id": 13207,
-  "name": "Purgatory Offhand", 
-  "low-alch": 2, 
-  "high-alch": 3, 
-  "base-value": 5,
-       "street-value": 18403, 
-  "equipment-slot": "SHIELD",
-  "weight": 4.0 
+"id": 13207,
+"name": "Purgatory Offhand", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+     "street-value": 18403, 
+"equipment-slot": "SHIELD",
+"weight": 4.0 
 },
 
 {
@@ -125992,7 +126419,7 @@
 	    "low-alch": 2, 
 	    "high-alch": 3, 
 	    "base-value": 5,
-             "street-value": 18403, 
+           "street-value": 18403, 
 	    "equipment-slot": "HELM",
 	    "weight": 4.0 
 	  },
@@ -126101,20 +126528,20 @@
 "low-alch": 2, 
 "high-alch": 3, 
 "base-value": 5,
-     "street-value": 18403, 
+   "street-value": 18403, 
 "equipment-slot": "HELM",
 "weight": 4.0 
 },
 
 {
-  "id": 22123,
-  "name": "Dragon Slayer Platebody", 
-  "low-alch": 2, 
-  "high-alch": 3, 
-  "base-value": 5,
-       "street-value": 18403, 
-  "equipment-slot": "BODY",
-  "weight": 4.0 
+"id": 22123,
+"name": "Dragon Slayer Platebody", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+     "street-value": 18403, 
+"equipment-slot": "BODY",
+"weight": 4.0 
 },
 
 {
@@ -126123,7 +126550,7 @@
 	    "low-alch": 2, 
 	    "high-alch": 3, 
 	    "base-value": 5,
-             "street-value": 18403, 
+           "street-value": 18403, 
 	    "equipment-slot": "LEGS",
 	    "weight": 4.0 
 	  },
@@ -126158,7 +126585,22 @@
 				    "base-value": 5,
 			               "street-value": 18403, 
 				    "equipment-slot": "BODY",
-				    "weight": 4.0 
+				    "weight": 4.0,
+				    "attack-stab": 0,
+				    "attack-slash": 0,
+				    "attack-crush": 0,
+				    "attack-magic": -15,
+				    "attack-ranged": -10,
+				    "defence-stab": 180,
+				    "defence-slash": 170,
+				    "defence-crush": 168,
+				    "defence-magic": -6,
+				    "defence-ranged": -10,
+				    "bonus-strength": 0,  
+				    "bonus-prayer": 0,
+				    "bonus-magic": 2 
+
+
 				  },
 
 {
@@ -126169,7 +126611,21 @@
 					    "base-value": 5,
 				               "street-value": 18403, 
 					    "equipment-slot": "LEGS",
-					    "weight": 4.0 
+					    "weight": 4.0,
+					    "attack-stab": 0,
+					    "attack-slash": 0,
+					    "attack-crush": 0,
+					    "attack-magic": -15,
+					    "attack-ranged": -14,
+					    "defence-stab": 137,
+					    "defence-slash": 114,
+					    "defence-crush": 96,
+					    "defence-magic": -5,
+					    "defence-ranged": 40,
+					    "bonus-strength": 2,  
+					    "bonus-prayer": 0,
+					    "bonus-magic": 0 
+
 					  },
 
 {
@@ -126178,10 +126634,26 @@
 						    "low-alch": 2, 
 						    "high-alch": 3, 
 						    "base-value": 5,
+						    "two-handed": true,
 					               "street-value": 18403, 
 						    "equipment-slot": "WEAPON",
 						    "weapon-interface": "SCYTHE",
-						    "weight": 4.0 
+						    "weight": 4.0,
+						    "attack-stab": 65,
+						    "attack-slash": 92,
+						    "attack-crush":  15,
+						    "attack-magic": -6,
+						    "attack-ranged": 0,
+						    "defence-stab": 0,
+						    "defence-slash": 6,
+						    "defence-crush": 0,
+						    "defence-magic": 0,
+						    "defence-ranged": 0,
+						    "bonus-strength": 56,  
+						    "bonus-prayer": 3,
+						    "bonus-magic": 15
+
+
 						  },
 
 {
@@ -126192,7 +126664,40 @@
 							    "base-value": 5,
 						               "street-value": 18403, 
 							    "equipment-slot": "HELM",
-							    "weight": 4.0 
+							    "weight": 4.0,
+							    "attack-stab": 0,
+							    "attack-slash": 0,
+							    "attack-crush": 0,
+							    "attack-magic": -15,
+							    "attack-ranged": -10,
+							    "defence-stab": 148,
+							    "defence-slash": 132,
+							    "defence-crush": 146,
+							    "defence-magic": 30,
+							    "defence-ranged": 0,
+							    "bonus-strength": 0,  
+							    "bonus-ranged": 30,  
+							    "bonus-prayer": 0,
+							    "bonus-magic": 2 
+
+},
+							    {
+							    "id": 22307,
+							    "name": "Zaros Platelegs", 
+							    "low-alch": 2, 
+							    "high-alch": 3, 
+							    "base-value": 5,
+						               "street-value": 18403, 
+							    "equipment-slot": "LEGS",
+							    "weight": 4.0,
+							    "req-defence": 70,
+							    "attack-magic": -3,
+							    "attack-ranged": -1,
+							    "defence-stab": 90,
+							    "defence-slash": 95,
+							    "defence-crush": 80,
+							    "defence-magic": 270,
+							    "defence-ranged": 230 
 							  },
 
 {
@@ -126248,7 +126753,7 @@
 												    "equipment-slot": "LEGS",
 												    "weight": 4.0 
 												  },
-                                                   {
+                                                 {
 													    "id": 13699,
 													    "name": "Cryptic Boots", 
 													    "low-alch": 2, 
@@ -126258,7 +126763,7 @@
 													    "equipment-slot": "BOOTS",
 													    "weight": 4.0 
 													  },
-                                                   {
+                                                 {
 														    "id": 13700,
 														    "name": "Cryptic Wings", 
 														    "low-alch": 2, 
@@ -126268,7 +126773,7 @@
 														    "equipment-slot": "CAPE",
 														    "weight": 4.0 
 														  },
-                                                   {
+                                                 {
 															    "id": 13701,
 															    "name": "Cryptic Sword", 
 															    "low-alch": 2, 
@@ -126279,7 +126784,7 @@
 															    "weapon-interface": "SWORD",
 															    "weight": 4.0 
 															  },
-                                                   {
+                                                 {
 																    "id": 13702,
 																    "name": "Cryptic Offhand", 
 																    "low-alch": 2, 
@@ -126289,7 +126794,7 @@
 																    "equipment-slot": "SHIELD",
 																    "weight": 4.0 
 																  },
-                                                   {
+                                                 {
 																	    "id": 13692,
 																	    "name": "soul glove", 
 																	    "low-alch": 2, 
@@ -126297,9 +126802,21 @@
 																	    "base-value": 5,
 																               "street-value": 18403, 
 																	    "equipment-slot": "GLOVES",
-																	    "weight": 4.0 
+																	    "weight": 4.0,
+																	    "req-defence": 65,
+																	    "attack-stab": 22,
+																	    "attack-slash": 22,
+																	    "attack-crush": 15,
+																	    "attack-magic": 12,
+																	    "attack-ranged": 6,
+																	    "defence-stab": 34,
+																	    "defence-slash": 34,
+																	    "defence-crush": 34,
+																	    "defence-magic": 32,
+																	    "defence-ranged": 35,
+																	    "bonus-strength": 25
 																	  },
-                                                   {
+                                                 {
 																		    "id": 13693,
 																		    "name": "soul helm", 
 																		    "low-alch": 2, 
@@ -126307,19 +126824,38 @@
 																		    "base-value": 5,
 																	               "street-value": 18403, 
 																		    "equipment-slot": "HELM",
-																		    "weight": 4.0 
+																		    "weight": 4.0,
+																		    "req-defence": 92,
+																		    "attack-magic": 6,
+																		    "attack-ranged": 6,
+																		    "defence-stab": 70,
+																		    "defence-slash": 72,
+																		    "defence-crush": 57,
+																		    "defence-magic": 40,
+																		    "defence-ranged": 70
 																		  },
-                                                   {
+                                                 {
 																			    "id": 13695,
 																			    "name": "soul platelegs", 
-																			    "low-alch": 2, 
-																			    "high-alch": 3, 
-																			    "base-value": 5,
-																		               "street-value": 18403, 
+																			    "low-alch": 115964,
+																			    "high-alch": 173946,
+																			    "base-value": 289910,
+																			    "street-value": 25700301,
+																			    "weight": 4.0,
 																			    "equipment-slot": "LEGS",
-																			    "weight": 4.0 
-																			  },
-                                                   {
+																			    "attack-magic": -10,
+																			    "attack-ranged": -2,
+																			    "defence-stab": 120,
+																			    "defence-slash": 130,
+																			    "defence-crush": 106,
+																			    "defence-magic": 0,
+																			    "defence-ranged": 240,
+																			    "bonus-strength": 27,
+																			    "bonus-prayer": 1,
+																			    "req-defence": 92
+                                                 },   
+
+                                                 {
 																				    "id": 13696,
 																				    "name": "soul platebody", 
 																				    "low-alch": 2, 
@@ -126327,38 +126863,120 @@
 																				    "base-value": 5,
 																			               "street-value": 18403, 
 																				    "equipment-slot": "BODY",
-																				    "weight": 4.0 
-																				  },
-                                                   {
-																					    "id": 13703,
-																					    "name": "Chi full helm", 
-																					    "low-alch": 2, 
-																					    "high-alch": 3, 
-																					    "base-value": 5,
-																				               "street-value": 18403, 
-																					    "equipment-slot": "HELM",
-																					    "weight": 4.0 
-																					  },
-                                                   {
-																					    "id": 13704,
-																					    "name": "Chi platebody", 
-																					    "low-alch": 2, 
-																					    "high-alch": 3, 
-																					    "base-value": 5,
-																				               "street-value": 18403, 
-																					    "equipment-slot": "BODY",
-																					    "weight": 4.0 
-																					  },
-                                                   {
-																					    "id": 13705,
-																					    "name": "Chi plateleg", 
-																					    "low-alch": 2, 
-																					    "high-alch": 3, 
-																					    "base-value": 5,
-																				               "street-value": 18403, 
-																					    "equipment-slot": "LEGS",
-																					    "weight": 4.0 
-																					  },
+																				    "weight": 4.0,
+																				    "attack-magic": -5,
+																				    "attack-ranged": -5,
+																				    "defence-stab": 188,
+																				    "defence-slash": 173,
+																				    "defence-crush": 165,
+																				    "defence-magic": 0,
+																				    "defence-ranged": 213,
+																				    "bonus-strength": 33,
+																				    "bonus-prayer": 25,
+																				    "req-defence": 92
+																				  },    
+                                 
+{
+"id": 13703,
+"name": "Chi full helm", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "HELM",
+"weight": 4.0,
+"attack-stab": 0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-magic": -15,
+"attack-ranged": -10,
+"defence-stab": 154,
+"defence-slash": 142,
+"defence-crush": 156,
+"defence-magic": 30,
+"defence-ranged": 30,
+"bonus-strength": 10,  
+"bonus-ranged": 30,  
+"bonus-prayer": 2,
+"bonus-magic": 2
+
+
+},
+{
+"id": 13704,
+"name": "Chi platebody", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "BODY",
+"weight": 4.0,
+"attack-stab": 0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-magic": -15,
+"attack-ranged": -10,
+"defence-stab": 193,
+"defence-slash": 180,
+"defence-crush": 176,
+"defence-magic": 50,
+"defence-ranged": 50,
+"bonus-strength": 20,  
+"bonus-prayer": 2,
+"bonus-magic": 0 
+
+},
+
+{
+"id": 13705,
+"name": "Chi plateleg", 
+"low-alch": 2, 
+"high-alch": 3, 
+"base-value": 5,
+"street-value": 18403, 
+"equipment-slot": "LEGS",
+"weight": 4.0,
+"attack-stab": 0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-magic": -10,
+"attack-ranged": -20,
+"defence-stab": 150,
+"defence-slash": 144,
+"defence-crush": 155,
+"defence-magic": 30,
+"defence-ranged": 30,
+"bonus-strength": 10,  
+"bonus-prayer": 3,
+"bonus-magic": 0 
+
+},
+
+{
+  "id": 11642,
+  "name": "Death Katana",
+  "low-alch": 2, 
+  "high-alch": 3, 
+  "base-value": 5,
+         "street-value": 18403, 
+  "equipment-slot": "WEAPON",
+  "weapon-interface": "SWORD",
+  "weight": 4.0,
+"attack-stab": 70,
+"attack-slash": 105,
+"attack-crush":  15,
+"attack-magic": -6,
+"attack-ranged": 0,
+"defence-stab": 0,
+"defence-slash": 6,
+"defence-crush": 0,
+"defence-magic": 0,
+"defence-ranged": 0,
+"bonus-strength": 61,  
+"bonus-prayer": 3,
+"bonus-magic": 16
+},
+
 
 {
 "id": 22125,

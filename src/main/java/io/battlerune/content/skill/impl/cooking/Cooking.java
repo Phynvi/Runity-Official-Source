@@ -141,6 +141,7 @@ public class Cooking extends Skill {
 
 				if (success(player, cook.getLevel(), cook.getNoBurn())) {
 					player.inventory.add(cook.getCooked(), 1);
+					player.inventory.add(995, cook.getMoney());
 					player.skills.addExperience(Skill.COOKING, cook.getExp() * modifier());
 					player.send(new SendMessage("You successfully cook the " + name + "."));
 					RandomEventHandler.trigger(player);

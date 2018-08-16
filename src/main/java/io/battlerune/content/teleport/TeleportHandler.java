@@ -22,7 +22,7 @@ import io.battlerune.net.packet.out.SendString;
 import io.battlerune.util.Utility;
 
 /**
- * Handles teleporting to various locations around OS Royale.
+ * Handles teleporting to various locations around Runity.
  *
  * @author Daniel
  * @edit Adam/adameternal123

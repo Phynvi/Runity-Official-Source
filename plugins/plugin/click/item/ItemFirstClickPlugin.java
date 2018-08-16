@@ -3,6 +3,8 @@ package plugin.click.item;
 import io.battlerune.content.DiceBag;
 import io.battlerune.content.activity.impl.flowerpoker.FlowerHandler;
 import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
+import io.battlerune.content.combat.cannon.Cannon;
+import io.battlerune.content.combat.cannon.CannonManager;
 import io.battlerune.content.consume.Anglerfish;
 import io.battlerune.content.skill.impl.slayer.Slayer;
 import io.battlerune.content.skill.impl.slayer.SlayerTask;
@@ -26,6 +28,9 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 	@Override
 	protected boolean firstClickItem(Player player, ItemClickEvent event) {
 		switch (event.getItem().getId()) {
+        case 6:
+        	CannonManager.drop(player, new Cannon(player.getName(), player.getPosition()));
+        	break;
 		case 12746:
 			player.pkPoints += 3;
 			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");

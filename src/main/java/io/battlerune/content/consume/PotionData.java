@@ -64,6 +64,7 @@ public enum PotionData {
 			PotionData.onBasicEffect(player, Skill.RANGED, BoostType.SUPER_RANGE);
 			player.send(new SendWidget(SendWidget.WidgetType.RANGE, 480));
 
+
 		}
 	},
 	SANFEW_POTIONS(10925, 10927, 10929, 10931) {
@@ -266,6 +267,14 @@ public enum PotionData {
 		public void onEffect(Player player) {
 			PotionData.onAntiFireEffect(player, true);
 			player.send(new SendWidget(SendWidget.WidgetType.ANTI_FIRE, 480));
+
+		}
+	},
+	EXTENDED_ANTIFIRE_POTIONS(11951, 11953, 11955, 11957) {
+		@Override
+		public void onEffect(Player player) {
+			PotionData.onAntiFireEffect(player, true);
+			player.send(new SendWidget(SendWidget.WidgetType.ANTI_FIRE, 560));
 
 		}
 	},
@@ -532,8 +541,6 @@ public enum PotionData {
 		} else {
 			CombatUtil.effect(player, CombatEffectType.ANTIFIRE_POTION);
 		}
-		player.send(new SendWidget(SendWidget.WidgetType.ANTI_FIRE, 360));
-
 	}
 
 	/**

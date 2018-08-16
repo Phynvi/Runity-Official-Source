@@ -17,7 +17,7 @@ public final class MeleeFormula implements FormulaModifier<Mob> {
 		FightType fightType = attacker.getCombat().getFightType();
 		int level = attacker.skills.getLevel(Skill.ATTACK);
 		int effectiveAccuracy = attacker.getCombat().modifyAttackLevel(defender, level);
-		return 9 + effectiveAccuracy + fightType.getStyle().getAccuracyIncrease();
+		return 10 + effectiveAccuracy + fightType.getStyle().getAccuracyIncrease();
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public final class MeleeFormula implements FormulaModifier<Mob> {
 		FightType fightType = attacker.getCombat().getFightType();
 		int level = attacker.skills.getLevel(Skill.STRENGTH);
 		int effectiveStrength = attacker.getCombat().modifyStrengthLevel(defender, level);
-		return 9 + effectiveStrength + fightType.getStyle().getStrengthIncrease();
+		return 10 + effectiveStrength + fightType.getStyle().getStrengthIncrease();
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public final class MeleeFormula implements FormulaModifier<Mob> {
 		FightType fightType = defender.getCombat().getFightType();
 		int level = defender.skills.getLevel(Skill.DEFENCE);
 		int effectiveDefence = defender.getCombat().modifyDefenceLevel(attacker, level);
-		return 9 + effectiveDefence + fightType.getStyle().getDefensiveIncrease();
+		return 10 + effectiveDefence + fightType.getStyle().getDefensiveIncrease();
 	}
 
 	@Override

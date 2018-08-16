@@ -69,11 +69,15 @@ public class BossEventButtonPlugin extends PluginContext {
 				SpawnData skotizo = SkotizoUtility.spawn;
 				Teleportation.teleport(player, skotizo.getPosition());
 				player.message("You have teleported to Skotizo");
-				player.hideTeleportButton2();
+				player.hideTeleportButton3();
 				return true;
 			}
 			return false;
 		}
+		player.hideTeleportButton();
+		player.hideTeleportButton1();
+		player.hideTeleportButton2();
+		player.hideTeleportButton3();
 		return false;
 	}
 }

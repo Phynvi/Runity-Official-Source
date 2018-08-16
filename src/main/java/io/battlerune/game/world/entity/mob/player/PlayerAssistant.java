@@ -19,6 +19,7 @@ import io.battlerune.content.dialogue.Expression;
 import io.battlerune.content.emote.EmoteHandler;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.skill.impl.magic.teleport.TeleportType;
+import io.battlerune.content.skill.impl.thieving.StallData;
 import io.battlerune.content.writer.InterfaceWriter;
 import io.battlerune.content.writer.impl.InformationWriter;
 import io.battlerune.game.task.impl.SuperAntipoisonTask;
@@ -75,6 +76,7 @@ import io.battlerune.net.packet.out.SendTooltip;
 import io.battlerune.net.packet.out.SendWidget;
 import io.battlerune.net.packet.out.SendWidget.WidgetType;
 import io.battlerune.util.TinterfaceText;
+import io.battlerune.util.Utility;
 
 /**
  * Method handles small methods for players that do not have any parent class.
@@ -158,6 +160,33 @@ public class PlayerAssistant {
 	}
 
 	private Player lastTarget;
+	
+	public static void sellCustoms(Player player) {
+			int amount = 0, count = 0;
+
+			for (Item item : player.inventory.toArray()) {
+				if (player.inventory.containsAny(Config.NOT_ALLOWED) && player.inventory.remove(item, -1, false)) {
+					amount += 2;
+					count++;
+				}
+			}
+
+			if (count == 0) {
+				player.dialogueFactory.sendNpcChat(3439, Expression.ANGRY,
+						"You do not have any items of which I am interested", "in purchasing.").execute();
+				return;
+			}
+
+			if (player.inventory.add(new Item(Config.BILL_CURRENCY, amount))) {
+				player.send(new SendMessage(
+						"You have exchanged " + count + " goods for " + Utility.formatDigits(amount) + " coins."));
+				player.inventory.refresh();
+				return;
+			}
+
+			player.send(new SendMessage("You have no items which the merchant would like to purchase."));
+		}
+	
 
 	public void sendOpponentStatsInterface(boolean on, Player other) {
 		if (on) {

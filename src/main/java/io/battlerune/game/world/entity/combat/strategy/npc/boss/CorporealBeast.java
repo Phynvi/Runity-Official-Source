@@ -3,6 +3,7 @@ package io.battlerune.game.world.entity.combat.strategy.npc.boss;
 import static io.battlerune.game.world.entity.combat.CombatUtil.createStrategyArray;
 import static io.battlerune.game.world.entity.combat.CombatUtil.randomStrategy;
 
+import io.battlerune.Config;
 import io.battlerune.game.Animation;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.entity.combat.CombatType;
@@ -40,9 +41,12 @@ public class CorporealBeast extends MultiStrategy {
 
 	@Override
 	public void block(Mob attacker, Npc defender, Hit hit, CombatType combatType) {
+		if(attacker.getPlayer().equipment.containsAny(Config.SPEARS)) {
+			hit.modifyDamage(damage -> hit.getDamage() * 2);
+			//attacker.getPlayer().message("Your attack is " + hit.getDamage());
+		}
 //        if (hit.getDamage() > 32) {
 		// 1/8 chance that the dark core will spawn
-		// TODO: make all non-spear weapons have 50% damage reduction
 //        }
 		defender.getCombat().attack(attacker);
 		super.block(attacker, defender, hit, combatType);

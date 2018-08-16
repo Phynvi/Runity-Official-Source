@@ -42,7 +42,8 @@ public class SkillRepository {
 			new Position(3574, 3322), new Position(2659, 2660), new Position(3377, 3168), new Position(2660, 3706),
 			new Position(2318, 3813), new Position(3054, 3514), new Position(2572, 4329), new Position(2583, 4339),
 			new Position(2593, 4333), new Position(2610, 4308), new Position(2595, 4297), new Position(2598, 4312),
-			new Position(2570, 4344), new Position(2585, 4342), new Position(2604, 4336), new Position(2594, 4322) };
+			new Position(2570, 4344), new Position(2585, 4342), new Position(2604, 4336), new Position(2594, 4322)
+			};
 
 	/** Spawns all the skilling npcs. */
 	public static void spawn() {

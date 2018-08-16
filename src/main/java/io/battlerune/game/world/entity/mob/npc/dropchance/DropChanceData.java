@@ -1,5 +1,12 @@
 package io.battlerune.game.world.entity.mob.npc.dropchance;
 
+/**
+ * 
+ * @author Nerik big pener
+ *
+ */
+
+
 public enum DropChanceData {
 
 	RING_OF_WEALTH(2572, 0.01, DropChanceItemData.EQUIPMENT);

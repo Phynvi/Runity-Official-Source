@@ -13,8 +13,6 @@ import io.battlerune.game.Projectile;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.task.TickableTask;
 import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.combat.CombatType;
-import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;
 import io.battlerune.game.world.entity.combat.hit.Hit;
@@ -23,8 +21,6 @@ import io.battlerune.game.world.entity.combat.strategy.CombatStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.MultiStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.NpcMagicStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.NpcMeleeStrategy;
-import io.battlerune.game.world.entity.combat.strategy.npc.NpcRangedStrategy;
-import io.battlerune.game.world.entity.combat.strategy.npc.impl.DragonfireStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.object.CustomGameObject;
@@ -34,7 +30,7 @@ import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 /**
- * The combat definition for Ice Demon Boss.
+ * The combat Script for Ice Demon Boss.
  *
  * @author Adam_#6723
  */
@@ -42,19 +38,15 @@ public class IceDemon extends MultiStrategy {
 	private static final NpcMeleeStrategy MELEE = NpcMeleeStrategy.get();
 	private static final MagicAttack MAGIC = new MagicAttack();
 	private static final RangedAttack RANGED = new RangedAttack();
-	private static final FireballAttack FIREBALL = new FireballAttack();
 
-	private static final DragonfireStrategy DRAGONFIRE = new DragonfireAttack();
-	private static final DragonfireStrategy PINK_DRAGONFIRE = new PinkDragonfireAttack();
-	private static final DragonfireStrategy VENOM_DRAGONFIRE = new VenomDragonfireAttack();
+
 
 	private static final FrozenSpecial FROZEN_SPECIAL = new FrozenSpecial();
 	private static final IceSpecial ICE_SPECIAL = new IceSpecial();
 
-	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(MELEE, DRAGONFIRE, MAGIC, FIREBALL,
-			RANGED, VENOM_DRAGONFIRE, PINK_DRAGONFIRE);
-	private static final CombatStrategy<Npc>[] NON_MELEE = createStrategyArray(FIREBALL, DRAGONFIRE, MAGIC, RANGED,
-			VENOM_DRAGONFIRE, PINK_DRAGONFIRE);
+	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(MELEE, MAGIC,
+			RANGED);
+	private static final CombatStrategy<Npc>[] NON_MELEE = createStrategyArray(  MAGIC, RANGED);
 	private final CombatStrategy<Npc>[] SPECIALS = createStrategyArray(ICE_SPECIAL, FROZEN_SPECIAL);
 
 	private final Deque<CombatStrategy<Npc>> strategyQueue = new LinkedList<>();
@@ -124,12 +116,12 @@ public class IceDemon extends MultiStrategy {
 
 					final Projectile projectile2 = new Projectile(1014, 15, 95, 26, 25);
 
-					World.schedule(2, () -> World.schedule(DragonFire(attacker, defender, projectile2)));
+					World.schedule(2, () -> World.schedule(specialAttacks(attacker, defender, projectile2)));
 				});
 			});
 		}
 
-		private TickableTask DragonFire(Mob attacker, Mob defender, Projectile projectile) {
+		private TickableTask specialAttacks(Mob attacker, Mob defender, Projectile projectile) {
 			return new TickableTask(false, 1) {
 
 				@Override
@@ -174,7 +166,7 @@ public class IceDemon extends MultiStrategy {
 					}
 
 					if (defender.getPosition().equals(position)) {
-						defender.writeDamage(new Hit(Utility.random(1, 5)));
+						defender.writeDamage(new Hit(Utility.random(10, 15)));
 
 					}
 				}
@@ -190,7 +182,7 @@ public class IceDemon extends MultiStrategy {
 		}
 	}
 
-	private static class RangedAttack extends NpcRangedStrategy {
+	private static class RangedAttack extends NpcMagicStrategy {
 
 		RangedAttack() {
 			super(CombatProjectile.getDefinition("Icedmon tarn randomAttack"));
@@ -229,7 +221,7 @@ public class IceDemon extends MultiStrategy {
 		private final Projectile PROJECTILE = new Projectile(1324, 5, 85, 85, 25);
 
 		FrozenSpecial() {
-			super(CombatProjectile.getDefinition("Galvek Frozen Special"));
+			super(CombatProjectile.getDefinition("Crumble Undead"));
 		}
 
 		@Override
@@ -272,142 +264,4 @@ public class IceDemon extends MultiStrategy {
 			return new CombatHit[] { combatHit };
 		}
 	}
-
-	private static class DragonfireAttack extends DragonfireStrategy {
-		DragonfireAttack() {
-			super(CombatProjectile.getDefinition("Mutant Tarn FireAttack"));
-		}
-
-		@Override
-		public Animation getAttackAnimation(Npc attacker, Mob defender) {
-			return new Animation(64, UpdatePriority.HIGH);
-		}
-
-		@Override
-		public int getAttackDistance(Npc attacker, FightType fightType) {
-			return 10;
-		}
-
-		@Override
-		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			return new CombatHit[] { CombatUtil.generateDragonfire(attacker, defender, 85, true) };
-		}
-	}
-
-	private static class VenomDragonfireAttack extends DragonfireStrategy {
-		VenomDragonfireAttack() {
-			super(CombatProjectile.getDefinition("Icedmon tarn randomAttack"));
-		}
-
-		@Override
-		public Animation getAttackAnimation(Npc attacker, Mob defender) {
-			return new Animation(69, UpdatePriority.HIGH);
-		}
-
-		@Override
-		public int getAttackDistance(Npc attacker, FightType fightType) {
-			return 10;
-		}
-
-		@Override
-		public void hit(Npc attacker, Mob defender, Hit hit) {
-			super.hit(attacker, defender, hit);
-			if (hit.isAccurate()) {
-				defender.venom();
-			}
-		}
-
-		@Override
-		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			CombatHit combatHit = CombatUtil.generateDragonfire(attacker, defender, 75, true);
-			return new CombatHit[] { combatHit };
-		}
-	}
-
-	private static class PinkDragonfireAttack extends DragonfireStrategy {
-		PinkDragonfireAttack() {
-			super(CombatProjectile.getDefinition("Galvek Pink Dragonfire"));
-		}
-
-		@Override
-		public Animation getAttackAnimation(Npc attacker, Mob defender) {
-			return new Animation(64, UpdatePriority.HIGH);
-		}
-
-		@Override
-		public void hitsplat(Npc attacker, Mob defender, Hit hit) {
-			super.hitsplat(attacker, defender, hit);
-
-			if (defender.isPlayer()) {
-				defender.prayer.reset();
-			}
-		}
-
-		@Override
-		public int getAttackDistance(Npc attacker, FightType fightType) {
-			return 10;
-		}
-
-		@Override
-		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			return new CombatHit[] { CombatUtil.generateDragonfire(attacker, defender, 80, true) };
-		}
-	}
-
-	private static class FireballAttack extends DragonfireStrategy {
-		private final Projectile PROJECTILE = new Projectile(500, 5, 105, 85, 25);
-		private final Graphic GRAPHIC = new Graphic(985, true);
-		private Position position;
-
-		FireballAttack() {
-			super(CombatProjectile.getDefinition("EMPTY"));
-		}
-
-		@Override
-		public Animation getAttackAnimation(Npc attacker, Mob defender) {
-			return new Animation(64, UpdatePriority.HIGH);
-		}
-
-		@Override
-		public void start(Npc attacker, Mob defender, Hit[] hits) {
-			super.start(attacker, defender, hits);
-			position = defender.getPosition();
-
-		}
-
-		@Override
-		public void attack(Npc attacker, Mob defender, Hit hit) {
-			PROJECTILE.send(attacker, position);
-
-		}
-
-		@Override
-		public void hit(Npc attacker, Mob defender, Hit hit) {
-			super.hitsplat(attacker, defender, hit);
-			World.sendGraphic(GRAPHIC, position);
-			hit.setAccurate(false);
-
-			if (defender.getPosition().equals(position)) {
-				hit.setAs(CombatUtil.generateDragonfire(attacker, defender, 150, true));
-				hit.setAccurate(true);
-			} else if (Utility.withinOctal(defender.getPosition(), defender.width(), defender.length(), position, 1, 1,
-					1)) {
-				hit.setAs(CombatUtil.generateDragonfire(attacker, defender, 150, true));
-				hit.modifyDamage(damage -> damage / 4);
-				hit.setAccurate(true);
-			}
-		}
-
-		@Override
-		public int getAttackDistance(Npc attacker, FightType fightType) {
-			return 10;
-		}
-
-		@Override
-		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			return new CombatHit[] { nextMagicHit(attacker, defender, -1,
-					CombatUtil.getHitDelay(attacker, defender, CombatType.MAGIC) + 1, 1) };
-		}
-	}
-
 }

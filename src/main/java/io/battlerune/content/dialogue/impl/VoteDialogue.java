@@ -29,7 +29,7 @@ public class VoteDialogue extends Dialogue {
 		factory.sendOption("WHY ARE YOU SCREAMING?", () -> {
 			factory.sendPlayerChat("WHY ARE YOU SCREAMING?");
 			factory.sendNpcChat(7481, "HAVE YOU SEEN WHAT I'M WEARING?", "WHO THE HELL PUT THIS CRAP ON ME!??",
-					"WHY AM I THE VOTE NPC FOR OS ROYALE?", "I HAVE NO IDEA WHAT IS GOING ON AND I'M SCARED!");
+					"WHY AM I THE VOTE NPC FOR RUNITY?", "I HAVE NO IDEA WHAT IS GOING ON AND I'M SCARED!");
 		}, "Exchange vote token", () -> {
 			World.schedule(1, () -> player.send(new SendInputAmount("How many vote tokens would you like to exchange?",
 					10, input -> exchange(factory, Integer.parseInt(input)))));

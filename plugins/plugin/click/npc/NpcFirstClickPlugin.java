@@ -23,8 +23,12 @@ import io.battlerune.content.store.Store;
 import io.battlerune.content.store.impl.SkillcapeStore;
 import io.battlerune.game.event.impl.NpcClickEvent;
 import io.battlerune.game.plugin.PluginContext;
+import io.battlerune.game.world.entity.combat.CombatUtil;
+import io.battlerune.game.world.entity.combat.effect.CombatEffectType;
 import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerAssistant;
+import io.battlerune.game.world.entity.mob.player.PlayerDeath;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendMessage;
@@ -175,13 +179,15 @@ public class NpcFirstClickPlugin extends PluginContext {
 						"Time Passed: " + Utility.getTime(player.restoreDelay.elapsedTime())).execute();
 				return true;
 			}
-
 			player.runEnergy = 100;
 			player.send(new SendRunEnergy());
 			player.skills.restoreAll();
 			CombatSpecial.restore(player, 100);
 			player.dialogueFactory.sendNpcChat(id, "Your health & special attack have been restored!").execute();
 			player.restoreDelay.reset();
+			player.unpoison();
+			CombatUtil.cancelEffect(player, CombatEffectType.POISON);
+			CombatUtil.cancelEffect(player, CombatEffectType.VENOM);
 			break;
 
 		case 506:
@@ -373,6 +379,13 @@ public class NpcFirstClickPlugin extends PluginContext {
 		/* Thieving goods merchant */
 		case 3439:
 			Thieving.exchange(player);
+			break;
+		case 3442:
+				player.dialogueFactory.sendNpcChat(4925, "Oh so you have customs? il take them!");
+				player.dialogueFactory.sendOption("Sell your customs?", () -> PlayerAssistant.sellCustoms(player), "No",
+						() -> player.dialogueFactory.clear());
+				player.dialogueFactory.execute();
+			
 			break;
 
 		case 1755:

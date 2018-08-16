@@ -3018,6 +3018,26 @@
       {
         "id": 6693,
         "amount": 1000
+      },
+      {
+          "id": 4621,
+          "value": 1000,
+          "amount": 15000
+        },
+      {
+        	"id": 11994,
+            "value": 1000,
+            "amount": 15000
+      },
+      {
+            "id": 21975,
+            "value": 1000,
+            "amount": 1000
+          },
+      {
+          "id": 11738,
+          "value": 80000,
+          "amount": 1000
       }
     ]
   },
@@ -4370,7 +4390,62 @@
               ]
             },
 
-
+  {
+                "name": "Customs Store",
+                "currency": "BILL_CHECKS",
+                "restock": true,
+                "sellType": "ANY",
+                "scroll": 1,
+                "items": [
+                  {
+                    "id": 17163,
+                    "amount": 10,
+                    "value": 2
+                  },
+                  {
+                    "id": 17164,
+                    "amount": 10,
+                    "value": 2
+                  },
+                  {
+                    "id": 17165,
+                    "amount": 10,
+                    "value": 2
+                  },
+                  {
+                      "id": 13687,
+                      "amount": 10,
+                      "value": 3
+                  },
+                  {
+                      "id": 13686,
+                      "amount": 10,
+                      "value": 3
+                  },
+                  {
+                      "id": 13723,
+                      "amount": 10,
+                      "value": 2
+                  },
+                  {
+                      "id": 15300,
+                      "amount": 10,
+                      "value": 3
+                  },
+                  
+                  {
+                    "id": 15308,
+                    "amount": 10,
+                    "value": 1
+                  },
+                  {
+                      "id": 15309,
+                      "amount": 10,
+                      "value": 1
+                   }
+                ]
+              },
+              
   
 
   

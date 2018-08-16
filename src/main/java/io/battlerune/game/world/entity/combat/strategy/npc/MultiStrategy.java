@@ -1,4 +1,3 @@
-
 package io.battlerune.game.world.entity.combat.strategy.npc;
 
 import io.battlerune.game.Animation;

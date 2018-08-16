@@ -11,6 +11,7 @@ import io.battlerune.content.combat.cannon.CannonManager;
 import io.battlerune.content.dialogue.impl.WellOfGoodwillDialogue;
 import io.battlerune.content.masterminer.Util;
 import io.battlerune.content.quest.QuestManager;
+import io.battlerune.content.skill.impl.crafting.impl.Tanning;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.staff.PanelType;
@@ -67,6 +68,8 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		// how's loife
 
 		switch (id) {
+		
+		
 		case 27215: {
 			if (!player.itemDelay.elapsed(2, TimeUnit.SECONDS)) {
 				return true;
@@ -147,6 +150,9 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 		case 27264:
 			player.bank.open();
+			break;
+		case 25824:
+			Tanning.open(player);
 			break;
 
 		/* Bandos godwars. */
@@ -571,12 +577,12 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		}
 
 		case 26760: {
-
-			if (!player.inventory.contains(995, 5000)) {
-				player.dialogueFactory.sendStatement("You need 5,000 coins to do this!").execute();
-				return true;
+			if (player.skills.getTotalLevel() < 1250 && !PlayerRight.isDonator(player)) {
+				player.dialogueFactory.sendStatement("You need a total skill level of 1,250", "to enter this skilling area!");
+				player.dialogueFactory.execute();
+				return false;
 			}
-
+			
 			Position destination = null;
 			Direction direction = null;
 
@@ -1207,10 +1213,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			player.house.leave();
 			break;
 
-		/* Dwarf cannon. */
-		case 6:
-			CannonManager.load(player);
-			break;
+			/* Dwarf cannon. */
+        case 6:
+            CannonManager.load(player);
+            break;
 
 		/* Bandos godwars. */
 		case 26503:

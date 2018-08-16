@@ -1,32 +1,51 @@
 package io.battlerune.content.combat.cannon;
 
+import io.battlerune.game.world.items.Item;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.game.Animation;
+import io.battlerune.game.Projectile;
+import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.World;
+import io.battlerune.game.world.region.Region;
+import io.battlerune.util.Utility;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.battlerune.game.Animation;
-import io.battlerune.game.Projectile;
-import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.mob.npc.Npc;
-import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.region.Region;
-import io.battlerune.net.packet.out.SendMessage;
-import io.battlerune.util.Utility;
+/**
+ * 
+ * @author Adam_#6723
+ *
+ */
 
 public class CannonManager {
 
 	static Map<String, Cannon> ACTIVE_CANNONS = new HashMap<>();
 
 	public enum Setup {
-		NO_CANNON, BASE, STAND, BARRELS, FURNACE, COMPLETE_CANNON
+		NO_CANNON,
+		BASE,
+		STAND,
+		BARRELS,
+		FURNACE,
+		COMPLETE_CANNON
 	}
 
 	public enum Rotation {
-		NORTH, NORTH_EAST, EAST, SOUTH_EAST, SOUTH, SOUTH_WEST, WEST, NORTH_WEST
+		NORTH,
+		NORTH_EAST,
+		EAST,
+		SOUTH_EAST,
+		SOUTH,
+		SOUTH_WEST,
+		WEST,
+		NORTH_WEST
 	}
 
-	public static void test(Player player) {
-		drop(player, new Cannon(player.getName(), player.getPosition()));
+	public static Cannon getCannon(Player player) {
+		return ACTIVE_CANNONS.get(player.getName());
 	}
 
 	public static void drop(Player player, Cannon cannon) {
@@ -47,6 +66,11 @@ public class CannonManager {
 			}
 		}
 
+		if (!playerHasCannon(player)) {
+			player.send(new SendMessage("You do not have a full cannon in your inventory!"));
+			return;
+		}
+
 		World.schedule(new CannonBuild(player, cannon));
 	}
 
@@ -62,10 +86,14 @@ public class CannonManager {
 			player.send(new SendMessage("This is not your cannon!"));
 			return;
 		}
-
-		player.animate(new Animation(827));
-		cannon.unregister();
+		player.inventory.add(new Item(6));
+		player.inventory.add(new Item(8));
+		player.inventory.add(new Item(10));
+		player.inventory.add(new Item(12));
+		player.inventory.add(new Item(2, cannon.getAmmunition()));
 		ACTIVE_CANNONS.remove(player.getName());
+		player.animate(new Animation(827));
+		cannon.getObject().unregister();
 	}
 
 	public static void load(Player player) {
@@ -87,14 +115,14 @@ public class CannonManager {
 		}
 
 		int needed = 30 - cannon.getAmmunition();
-
+		
 		if (needed == 0) {
 			player.send(new SendMessage("Your cannon is full."));
 			return;
 		}
-
+		
 		int cannon_balls = player.inventory.computeAmountForId(2);
-
+		
 		if (cannon_balls <= needed) {
 			player.inventory.remove(2, cannon_balls);
 			player.send(new SendMessage("You load the last of your cannon balls"));
@@ -113,7 +141,7 @@ public class CannonManager {
 		cannon.setFiring(true);
 		World.schedule(new CannonFireAction(player, cannon));
 	}
-
+	
 	public static Projectile getCannonFire() {
 		Projectile p = new Projectile(53);
 		p.setStartHeight(50);
@@ -121,6 +149,13 @@ public class CannonManager {
 		return p;
 	}
 
+	public static boolean playerHasCannon(Player player) {
+		return player.inventory.contains(6)
+				&& player.inventory.contains(8)
+				&& player.inventory.contains(10)
+				&& player.inventory.contains(12);
+	}
+	
 	public static Npc[] getNpc(Cannon cannon) {
 		ArrayList<Npc> attack = new ArrayList<>();
 
@@ -128,24 +163,24 @@ public class CannonManager {
 			if (npc == null) {
 				continue;
 			}
-
+			
 			if (!Utility.withinDistance(npc, cannon, Region.VIEW_DISTANCE)) {
 				continue;
 			}
-
+			
 			if (!npc.definition.isAttackable()) {
 				continue;
 			}
-
+			
 			attack.add(npc);
 		}
 
 		Npc[] npc = new Npc[attack.size()];
-
+		
 		for (int i = 0; i < npc.length; i++) {
 			npc[i] = attack.get(i);
 		}
-
+		
 		return npc;
 	}
 

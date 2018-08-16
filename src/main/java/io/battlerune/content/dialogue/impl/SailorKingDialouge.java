@@ -8,7 +8,7 @@ import io.battlerune.content.store.Store;
 /**
  * The royal king dialogue.
  *
- * @author Daniel
+ * @author Adam_#6723
  */
 public class SailorKingDialouge extends Dialogue {
 
@@ -32,7 +32,6 @@ public class SailorKingDialouge extends Dialogue {
 	private void store(DialogueFactory factory) {
 		factory.sendOption("Open Boss Point Store",
 				() -> Store.STORES.get("Boss Point Store").open(factory.getPlayer()), "Open Skilling Point Store",
-				() -> Store.STORES.get("Skilling Point Store").open(factory.getPlayer()), "Open Trivia Point Store",
 				() -> Store.STORES.get("Trivia Point Store").open(factory.getPlayer()), "Nevermind", factory::clear);
 	}
 }

@@ -30,6 +30,7 @@ import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.equipment.Equipment;
 import io.battlerune.game.world.items.ground.GroundItem;
 import io.battlerune.game.world.position.Area;
+import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendRunEnergy;
 import io.battlerune.util.Utility;
@@ -62,6 +63,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 	@Override
 	public void preDeath(Mob killer) {
 		mob.animate(new Animation(836, UpdatePriority.VERY_HIGH));
+	//	mob.resetAnimation();
 	}
 
 	/**
@@ -178,6 +180,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 		mob.movement.reset();
 		mob.teleblockTimer.set(0);
 		mob.equipment.updateAnimation();
+		mob.resetAnimation();
 		// mob.equipment.refresh();
 		mob.equipment.login();
 
@@ -190,6 +193,11 @@ public final class PlayerDeath extends MobDeath<Player> {
 		if (mob.inActivity()) {
 			Activity.forActivity(mob, it -> it.onDeath(mob));
 //            return;
+		}
+		if(Area.inDuelArena(mob)) {
+			mob.move(new Position(3374, 3273, 0));
+			mob.animate(new Animation(-1, UpdatePriority.VERY_HIGH));
+			return;
 		}
 
 		mob.move(Config.DEFAULT_POSITION);

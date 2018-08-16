@@ -31,6 +31,8 @@ public class ObjectSecondClickPlugin extends PluginContext {
 			player.message("There are " + World.get().getWildernessResourcePlayers()
 					+ " players in the wilderness resource area.");
 			break;
+			
+			
 
 		case 14826:
 		case 14827:
@@ -67,10 +69,10 @@ public class ObjectSecondClickPlugin extends PluginContext {
 			WellOfGoodwill.open(player);
 			break;
 
-		/* Dwarf cannon. */
-		case 6:
-			CannonManager.pickup(player);
-			break;
+			/* Dwarf cannon. */
+        case 6:
+            CannonManager.pickup(player);
+            break;
 
 		/* Flax picking. */
 		case 14896:

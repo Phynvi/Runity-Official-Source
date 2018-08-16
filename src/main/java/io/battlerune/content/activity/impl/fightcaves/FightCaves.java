@@ -177,7 +177,6 @@ public class FightCaves extends Activity {
 				"</col>Tokkuls Gained: <col=FF5500>" + Utility.formatDigits(tokkuls),
 				"</col>Time: <col=FF5500>" + Utility.getTime());
 	}
-	// TODO FIX FIGHT CAVES TIME SO IT INITIATES AS SOON AS YOU ENTER THE MINIGAME.
 
 	@Override
 	public boolean canTeleport(Player player) {

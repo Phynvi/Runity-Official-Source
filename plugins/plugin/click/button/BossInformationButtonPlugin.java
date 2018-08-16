@@ -162,6 +162,10 @@ public class BossInformationButtonPlugin extends PluginContext {
 			Teleportation.teleport(player, new Position(3274, 3847, 0));
 			player.send(new SendMessage("You have teleported to Callisto!"));
 		}
+		if (button == -14065) {
+			Teleportation.teleport(player, new Position(2525, 4656, 0));
+			player.send(new SendMessage("You have teleported to Ice Demon!"));
+		}
 		if (button == -14095) {
 			if (player.skills.getLevel(Skill.SLAYER) >= 91) {
 				DialogueFactory factory = player.dialogueFactory;
@@ -185,4 +189,5 @@ public class BossInformationButtonPlugin extends PluginContext {
 		}
 		return false;
 	}
+	//TODO Create a system to teleport to bosses that arent in wildy for donators free or X Amount of cash
 }

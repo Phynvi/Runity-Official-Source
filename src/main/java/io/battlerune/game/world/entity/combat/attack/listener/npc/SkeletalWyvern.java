@@ -52,7 +52,7 @@ public class SkeletalWyvern extends SimplifiedListener<Npc> {
 			attacker.setStrategy(randomStrategy(STRATEGIES));
 		}
 		if (standardAttackRandom == 1) {
-			defender.animate(2989);
+			attacker.animate(2989);
 		}
 	}
 
@@ -67,6 +67,7 @@ public class SkeletalWyvern extends SimplifiedListener<Npc> {
 
 		@Override
 		public Animation getAttackAnimation(Npc attacker, Mob defender) {
+			attacker.animate(ANIMATION);
 			return ANIMATION;
 		}
 

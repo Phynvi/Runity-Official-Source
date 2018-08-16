@@ -117,6 +117,14 @@ public class Firemaking extends Skill {
 				player.skills.addExperience(Skill.FIREMAKING,
 						firemaking.getExperience() * Config.FIREMAKING_MODIFICATION);
 				RandomEventHandler.trigger(player);
+				//TODO HANDLES THE FIRMAKING.
+				
+				/**
+				 * 	player.inventory.add(995, firemaking.getCoins());
+				player.inventory.add(995, firemaking.getMoney());
+				player.inventory.add(firemaking.getLog(), 1);
+				player.message("you have got " + firemaking.getCoins() + " " + firemaking.getMoney() + " !" + " " + firemaking.getLog());
+				 */
 
 				if (firemaking == FiremakingData.WILLOW_LOG) {
 					player.forClan(channel -> channel.activateTask(ClanTaskKey.BURN_WILLOW_LOG, getMob().getName()));
