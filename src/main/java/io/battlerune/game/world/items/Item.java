@@ -6,7 +6,6 @@ import java.util.Optional;
 import java.util.OptionalInt;
 
 import com.google.common.collect.Iterables;
-
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.ranged.RangedWeaponDefinition;
 import io.battlerune.game.world.entity.combat.weapon.WeaponInterface;
@@ -29,6 +28,7 @@ public class Item implements Cloneable {
 	 * The quantity of this item.
 	 */
 	private int amount;
+	
 
 	/**
 	 * Creates a new {@link Item}.
@@ -42,7 +42,7 @@ public class Item implements Cloneable {
 		this.id = id;
 		this.amount = amount;
 	}
-
+	
 	public Item clone() {
 		try {
 			return (Item) super.clone();

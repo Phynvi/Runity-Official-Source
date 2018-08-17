@@ -10,6 +10,7 @@ import io.battlerune.content.event.impl.FirstItemClickInteractionEvent;
 import io.battlerune.content.event.impl.SecondItemClickInteractionEvent;
 import io.battlerune.content.event.impl.ThirdItemClickInteractionEvent;
 import io.battlerune.content.itemaction.ItemActionRepository;
+import io.battlerune.content.mysterybox.MysteryBoxExecuter;
 import io.battlerune.game.event.impl.ItemClickEvent;
 import io.battlerune.game.plugin.PluginManager;
 import io.battlerune.game.world.InterfaceConstants;
@@ -110,6 +111,10 @@ public class ItemOptionPacketListener implements PacketListener {
 				return;
 			}
 
+			if (MysteryBoxExecuter.execute(player, item.getId())) {
+				return;
+			}
+			
 			PluginManager.getDataBus().publish(player, new ItemClickEvent(2, item, slot));
 			break;
 		}

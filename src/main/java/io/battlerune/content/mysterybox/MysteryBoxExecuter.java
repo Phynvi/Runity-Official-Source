@@ -1,0 +1,20 @@
+package io.battlerune.content.mysterybox;
+
+import io.battlerune.game.world.entity.mob.player.Player;
+
+public class MysteryBoxExecuter {
+
+	public static boolean execute(Player player, int box) {
+		MysteryBoxListener Mystery_Box = null;
+		for (MysteryBoxType type : MysteryBoxType.values()) {
+			if (type.getId() == box) {
+				Mystery_Box = MysteryBoxEvent.MYSTERY_BOX.get(type);
+			}
+		}
+		if (Mystery_Box != null) {
+			Mystery_Box.execute(player);
+			return true;
+		}
+		return false;
+	}
+}
