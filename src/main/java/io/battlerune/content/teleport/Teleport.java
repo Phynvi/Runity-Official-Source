@@ -71,6 +71,8 @@ public enum Teleport {
 			true, "", ""),
 	BRIMHAVEN_DUNGEON("Brimhaven Dungeon", TeleportType.MONSTER_KILLING, new Position(2681, 9563, 0), false,
 			new int[] {}, true, "", ""),
+	FREMINEK_DUNGEON("Fremennik Slayer Dungeon", TeleportType.MONSTER_KILLING, new Position(2807, 10002, 0), false,
+			new int[] {}, true, "", ""),
 	SMOKE_DEVILS("Smoke Devils", TeleportType.MONSTER_KILLING, new Position(3208, 9379, 0), false,
 			new int[] { -1, 12002 }, true, "Looks like somebody has been vaping in this dungeon", "Bring a facemask!"),
 	DUST_DEVILS("Dust Devils", TeleportType.MONSTER_KILLING, new Position(3239, 9364, 0), false,

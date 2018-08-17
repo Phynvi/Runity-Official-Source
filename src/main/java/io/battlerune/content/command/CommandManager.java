@@ -53,6 +53,7 @@ import plugin.command.impl.player.AnswerTriviaCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
+import plugin.command.impl.player.ClaimDonationCommand;
 import plugin.command.impl.player.Commands;
 import plugin.command.impl.player.DiceCommand;
 import plugin.command.impl.player.DiscordCommand;
@@ -143,6 +144,7 @@ public class CommandManager {
 		plugin.put(new String[] { "players", "online" }, new PlayerCountCommand());
 		plugin.put(new String[] { "empty", "emptyinventory" }, new EmptyInventoryCommand());
 		plugin.put(new String[] { "dusties", "dusti" }, new DustiesCommand());
+		plugin.put(new String[] { "testdonation", "donatings" }, new ClaimDonationCommand());
 
 		/*
 		 * @Donator Command

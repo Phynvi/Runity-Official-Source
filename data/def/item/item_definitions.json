@@ -126397,11 +126397,23 @@
 "low-alch": 2, 
 "high-alch": 3, 
 "base-value": 5,
-   "street-value": 18403, 
+"street-value": 18403, 
 "equipment-slot": "WEAPON",
-"weight": 4.0 
+"weight": 4.0,
+"attack-stab": 55,
+"attack-slash": 70,
+"attack-crush": 0,
+"attack-magic": 27,
+"attack-ranged": 0,
+"defence-stab": 0,
+"defence-slash": 3,
+"defence-crush": 3,
+"defence-magic": 27,
+"defence-ranged": 0,
+"bonus-strength": 82,
+"bonus-prayer": 0,
+"bonus-magic": 15 
 },
-
 {
 "id": 13207,
 "name": "Purgatory Offhand", 
