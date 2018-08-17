@@ -83,11 +83,7 @@ public class ItemOptionPacketListener implements PacketListener {
 			if (ItemActionRepository.inventory(player, item, 1)) {
 				return;
 			}
-
-			if (player.mysteryBox.click(item)) {
-				return;
-			}
-
+			
 			PluginManager.getDataBus().publish(player, new ItemClickEvent(1, item, slot));
 			break;
 		}

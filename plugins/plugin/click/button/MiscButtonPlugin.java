@@ -65,9 +65,6 @@ public class MiscButtonPlugin extends PluginContext {
 		case 26702:
 			player.lootingBag.close();
 			return true;
-		case -6027:
-			player.mysteryBox.spin();
-			return true;
 		case -21823:
 			player.send(new SendInputAmount("How much would you like to contribute?", 8, input -> {
 				input = input.toLowerCase();

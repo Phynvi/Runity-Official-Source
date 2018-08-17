@@ -47,7 +47,6 @@ import io.battlerune.content.masterminer.AdventureGUI;
 import io.battlerune.content.masterminer.MasterMinerData;
 import io.battlerune.content.masterminer.MasterMinerGUI;
 import io.battlerune.content.masterminer.MasterMinerTaskHandler;
-import io.battlerune.content.mysterybox.MysteryBoxManager;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.preset.PresetManager;
@@ -347,7 +346,6 @@ public class Player extends Mob {
 	public final PlayerAssistant playerAssistant = new PlayerAssistant(this);
 	public final InterfaceManager interfaceManager = new InterfaceManager(this);
 	public final RequestManager requestManager = new RequestManager(this);
-	public final MysteryBoxManager mysteryBox = new MysteryBoxManager(this);
 	public final Settings settings = new Settings(this);
 	private final AccountSecurity security = new AccountSecurity(this);
 	public final Inventory inventory = new Inventory(this);
