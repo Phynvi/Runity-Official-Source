@@ -83,9 +83,6 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				flower.plantFlower();
 			}
 			break;
-		case 6199:
-			player.message("123");
-			break;
 
 		case 5020:
 			if (player.inventory.contains(995, 1147000000)) {

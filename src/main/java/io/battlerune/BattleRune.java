@@ -10,7 +10,6 @@ import io.battlerune.content.activity.record.GlobalRecords;
 import io.battlerune.content.clanchannel.ClanRepository;
 import io.battlerune.content.command.CommandManager;
 import io.battlerune.content.itemaction.ItemActionRepository;
-import io.battlerune.content.mysterybox.MysteryBox;
 import io.battlerune.content.skill.SkillRepository;
 import io.battlerune.content.store.PersonalStoreSaver;
 import io.battlerune.content.triviabot.TriviaBot;
@@ -119,7 +118,6 @@ public final class BattleRune {
 		startupService.submit(ProfileRepository::load);
 		startupService.submit(ItemActionRepository::declare);
 		startupService.submit(ClueScrollPlugin::declare);
-		startupService.submit(MysteryBox::load);
 		// startupService.submit(Discord::start);
 		startupService.submit(GameSaver::load);
 		startupService.shutdown();
