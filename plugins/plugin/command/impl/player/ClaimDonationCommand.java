@@ -6,7 +6,7 @@ import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendMessage;
 
 /**
- * @author Adam_#6723
+ * @author Adam_#6723s
  */
 
 public class ClaimDonationCommand implements Command {
