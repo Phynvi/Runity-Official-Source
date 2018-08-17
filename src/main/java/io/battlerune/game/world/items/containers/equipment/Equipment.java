@@ -109,15 +109,15 @@ public final class Equipment extends ItemContainer {
 		WeaponInterface.execute(player, getWeapon());
 		updateBonus();
 		updateWeight();
-		refresh();
 		/**
 		 * Combat listener manager, should update combat listneres upon login/
 		 * author @Adam_#6723 if this is broken, to let me know.
 		 */
-     CombatListenerManager.equipmenteffectsonlogin(player);
-		/*
-		 * 
-		 */
+	     CombatListenerManager.equipmenteffectsonlogin(player);
+			/*
+			 * 
+			 */
+		refresh();
 	}
 
 	/** Handles opening the equipment screen itemcontainer. */

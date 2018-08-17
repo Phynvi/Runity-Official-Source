@@ -137,7 +137,6 @@ public final class CombatListenerManager {
 			if (i == null) {
 				return;
 			}
-
 			for (CombatListenerSet set : i) {
 				if (set.requireAll && player.equipment.containsAll(set.set) || !set.requireAll && player.equipment.containsAny(set.set)) {
 					player.getCombat().addListener(set.listener);
