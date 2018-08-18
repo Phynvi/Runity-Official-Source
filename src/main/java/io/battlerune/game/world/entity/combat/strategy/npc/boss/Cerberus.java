@@ -86,12 +86,12 @@ public class Cerberus extends MultiStrategy {
 		if (attacker.getCurrentHealth() < 200 && new RandomGen().inclusive(10) == 0) {
 			executeSpecial(attacker, defender.getPlayer(), CerberusSpecial.LAVA);
 		}
-		if (new RandomGen().inclusive(10) == 0) {
+		/*if (new RandomGen().inclusive(10) == 0) {
 			boolean ghostsPresent = !((CerberusActivity) attacker.activity).ghosts.isEmpty();
 			if (!ghostsPresent) {
 				executeSpecial(attacker, defender.getPlayer(), CerberusSpecial.GHOSTS);
 			}
-		}
+		}*/
 
 	}
 
