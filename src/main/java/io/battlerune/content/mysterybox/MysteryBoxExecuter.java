@@ -14,6 +14,8 @@ public class MysteryBoxExecuter {
 		if (Mystery_Box != null) {
 			Mystery_Box.execute(player);
 			return true;
+		} else {
+			System.out.println("adam my code is shit");
 		}
 		return false;
 	}

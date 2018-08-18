@@ -6,6 +6,8 @@ import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
 import io.battlerune.content.combat.cannon.Cannon;
 import io.battlerune.content.combat.cannon.CannonManager;
 import io.battlerune.content.consume.Anglerfish;
+import io.battlerune.content.mysterybox.MysteryBoxExecuter;
+import io.battlerune.content.mysterybox.impl.SilverMysteryBox;
 import io.battlerune.content.skill.impl.slayer.Slayer;
 import io.battlerune.content.skill.impl.slayer.SlayerTask;
 import io.battlerune.content.skill.impl.woodcutting.BirdsNest;
@@ -115,6 +117,10 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 		case 4079:
 			player.animate(1460);
+			break;
+		case 12955:
+			SilverMysteryBox box = new SilverMysteryBox();
+			box.execute(player);
 			break;
 		case 12749:
 			player.pkPoints += 7;

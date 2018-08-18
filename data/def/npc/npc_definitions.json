@@ -56234,7 +56234,7 @@
   {
 		    "id": 4708,
 		    "name": "King Chimera",
-		    "combat-level": 1,
+		    "combat-level": 646,
 		    "stand": 7032,
 		    "walk": 7033,
 		    "death-animation": 7034,
@@ -56250,7 +56250,7 @@
 		    "attack-level": 190,
 		    "defence-level": 190,
 		    "strength-level": 140,
-		    "hitpoints-level": 1200,
+		    "hitpoints-level": 1000,
 		    "ranged-level": 140,
 		    "magic-level": 150,
 		    "defence-stab": 165,
