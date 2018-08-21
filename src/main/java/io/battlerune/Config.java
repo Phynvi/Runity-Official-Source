@@ -254,6 +254,9 @@ public final class Config {
 	/** DUSTIES. */
 	public static final Position DUSTIES = new Position(3208, 9379, 0);
 
+	/** **/
+	public static final Position CHIMERA = new Position(2310, 5240, 0);
+
 	/** Mb. */
 	public static final Position MB = new Position(2540, 4717, 0);
 

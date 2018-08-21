@@ -56,6 +56,8 @@ public abstract class Area {
 	public static final ImmutableList<Area> BOSS_ARENA = ImmutableList.of(
 	new SquareArea("Arena Zone", 2257, 5309, 2285, 5370));
 
+	public static final ImmutableList<Area> CHIMERA_ARENA = ImmutableList.of(
+	new SquareArea("Chimera Zone", 2363, 4738, 2433, 4667));
 
 	private static final ImmutableList<Area> TOURNAMENT_ARENA = ImmutableList
 			.of(new SquareArea("Tournament Arena", 3317, 3268, 4987, 4932));
@@ -341,6 +343,15 @@ public abstract class Area {
 
 	public static boolean inGlodArena(Entity entity) {
 		for (Area zone : BOSS_ARENA) {
+			if (zone.inArea(entity.getPosition())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static boolean inChimeraZone(Entity entity) {
+		for (Area zone : CHIMERA_ARENA) {
 			if (zone.inArea(entity.getPosition())) {
 				return true;
 			}

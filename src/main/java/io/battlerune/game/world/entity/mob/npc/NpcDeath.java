@@ -13,6 +13,8 @@ import io.battlerune.game.Animation;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.arena.ArenaUtility;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.chimera.ChimeraDrops;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.chimera.ChimeraUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.justicar.JusticarUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoUtility;
@@ -224,6 +226,31 @@ public final class NpcDeath extends MobDeath<Npc> {
 				}
 				return;
 
+			case "CHIMERA":
+                ChimeraDrops.defeated(mob, playerKiller);
+				playerKiller.activityLogger.add(ActivityLog.CHIMERA);
+				
+				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+
+				}
+
+				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+
+				}
+				if (PlayerRight.isKing(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+
+				} else {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+
+				}
+				return;
 			case "VORKATH":
 				playerKiller.activityLogger.add(ActivityLog.VORKATH);
 

@@ -3289,6 +3289,97 @@
     }
   },
   {
+	    "name": "Chimera Venom Dragonfire",
+	    "end": {
+	      "id": 1472,
+	      "delay": 0,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 1470,
+	      "delay": 5,
+	      "duration": 85,
+	      "startHeight": 11,
+	      "endHeight": 10
+	    }
+	  },
+	  {
+	    "name": "Chimera Pink Dragonfire",
+	    "end": {
+	      "id": 1473,
+	      "delay": 0,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 1471,
+	      "delay": 5,
+	      "duration": 85,
+	      "startHeight": 11,
+	      "endHeight": 10
+	    }
+	  },
+	  {
+	    "name": "Chimera Ranged",
+	    "end": {
+	      "id": 1460,
+	      "delay": 0,
+	      "height": 0,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 1459,
+	      "delay": 5,
+	      "duration": 85,
+	      "startHeight": 11,
+	      "endHeight": 10
+	    }
+	  },
+{
+	    "name": "Chimera Magic",
+	    "end": {
+	      "id": 1480,
+	      "delay": 0,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 1479,
+	      "delay": 5,
+	      "duration": 85,
+	      "startHeight": 11,
+	      "endHeight": 10
+	    }
+	  },
+	  {
+	    "name": "Chimera Frozen Special",
+	    "end": {
+	      "id": 1480,
+	      "delay": 0,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 1490,
+	      "delay": 5,
+	      "duration": 85,
+	      "startHeight": 11,
+	      "endHeight": 10
+	    }
+	  },
+{
+	    "name": "Metalic Chimera dragonfire",
+	    "animation": {
+	      "id": 81,
+	      "delay": 0,
+	      "priority": "HIGH"
+	    },
+	    "projectile": {
+	      "id": 393,
+	      "delay": 50,
+	      "duration": 75,
+	      "startHeight": 11,
+	      "endHeight": 10
+	    }
+	  },
+  {
     "name": "Dragonfire Shield",
     "animation": {
       "id": 6696,

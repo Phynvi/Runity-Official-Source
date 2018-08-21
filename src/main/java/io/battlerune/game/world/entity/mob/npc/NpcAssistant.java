@@ -20,6 +20,7 @@ import io.battlerune.game.world.entity.combat.strategy.npc.boss.BluriteDragonStr
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.Callisto;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.Cerberus;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.ChaosFanatic;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.Chimera;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.CorporealBeast;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.CrazyArchaeologist;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.DemonicGorillas;
@@ -129,6 +130,7 @@ public class NpcAssistant {
 			put(7585, IceDemon::new);
 			put(6766, LizardShaman::new);
 			put(6767, LizardShaman::new);
+			put(4708, Chimera::new);
 		}
 	};
 

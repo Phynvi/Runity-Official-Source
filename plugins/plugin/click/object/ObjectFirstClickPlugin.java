@@ -37,6 +37,7 @@ import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.hit.HitIcon;
 import io.battlerune.game.world.entity.combat.hit.Hitsplat;
 import io.battlerune.game.world.entity.combat.magic.Autocast;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.chimera.ChimeraUtility;
 import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.data.LockType;
@@ -141,7 +142,25 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			}
 			break;
 
+		case 2971:
+			if(player.getBossPoints() <= 250) {
+				player.message("You need to offer a sacrifice of 250 Boss Points to enter Chimera's lair!");
+				return false;
+			}
+			//ChimeraUtility.generateSpawn();
+			//World.sendMessage(player.getName() + " Has initiated the Chimera Boss! Wish him luck!!");
+            player.move(new Position(2420, 4689, 0));
+			break;
+			
 		case 1558:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
+		case 23728:
+		case 23727:
 			if (player.getPosition().getX() < object.getPosition().getX()) {
 				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
 			} else if (player.getPosition().getX() > object.getPosition().getX()) {

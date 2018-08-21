@@ -266,6 +266,15 @@ public class Player extends Mob {
 	public void setkolodionPoints(int kolodionPoints) {
 		this.kolodionPoints = kolodionPoints;
 	}
+	
+	public int getChimeraPoints() {
+		return chimeraPoints;
+	}
+
+	public void setChimeraPoints(int chimeraPoints) {
+		this.chimeraPoints = chimeraPoints;
+	}
+
 
 	/**
 	 * LMS
@@ -284,6 +293,7 @@ public class Player extends Mob {
 	public int votePoints;
 	public int totalVotes;
 	public int kolodionPoints;
+	public int chimeraPoints;
 	public int ringOfRecoil = 40;
 	public int profileView;
 	public int ROW = 5;

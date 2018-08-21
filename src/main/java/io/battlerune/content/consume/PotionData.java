@@ -15,15 +15,19 @@ import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.PoisonType;
 import io.battlerune.game.world.entity.combat.effect.CombatEffectType;
 import io.battlerune.game.world.entity.combat.hit.Hit;
+import io.battlerune.game.world.entity.mob.npc.definition.NpcDefinition;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendInputMessage;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendPoison;
 import io.battlerune.net.packet.out.SendRunEnergy;
 import io.battlerune.net.packet.out.SendWidget;
+import io.battlerune.util.MessageColor;
+import plugin.command.impl.owner.PnpcCommand;
 
 /**
  * The enumerated type managing consumable potion types.
@@ -53,7 +57,8 @@ public enum PotionData {
 			PotionData.onAntiFireEffect(player, false);
 			PotionData.onPrayerEffect(player, true);
 			PotionData.onPrayerEffect(player, false);
-
+			PotionData.Transformnpc(player);
+			
 		}
 	},
 
@@ -404,6 +409,22 @@ public enum PotionData {
 		modifySkill(player, Skill.DEFENCE, -0.10, 2);
 		modifySkill(player, Skill.HITPOINTS, -0.10, 2);
 		modifySkill(player, Skill.PRAYER, 0.10, 0);
+	}
+	
+	public static void Transformnpc(Player player) {
+		final String message = "That player was not valid, please re-select a player.";
+
+		player.send(new SendInputMessage("Enter id", 10, input -> {
+			if (player != null) {
+				player.playerAssistant.transform(Integer.parseInt(input));
+			}
+			player.send(new SendMessage(
+					player == null ? message
+							: "You have turned " + player.getName() + " into "
+									+ NpcDefinition.get(Integer.parseInt(input)).getName() + ".",
+					MessageColor.DARK_BLUE));
+		}));
+
 	}
 
 	/**

@@ -26155,6 +26155,16 @@
     "radius": 0
   },
   {
+	    "id": 4418,
+	    "position": {
+	      "x": 2420,
+	      "y": 4680,
+	      "height": 0
+	    },
+	    "facing": "NORTH",
+	    "radius": 0
+	  },
+  {
     "id": 2492,
     "position": {
       "x": 1877,
