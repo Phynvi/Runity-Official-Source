@@ -20,6 +20,56 @@
     }
   },
   {
+	    "id": 3399,
+	    "name": "Crates",
+	    "type": 10,
+	    "rotation": "EAST",
+	    "position": {
+	      "x": 3094,
+	      "y": 3478
+	    }
+	  },
+  {
+		    "id": 29771,
+		    "name": "Supplies",
+		    "type": 10,
+		    "rotation": "EAST",
+		    "position": {
+		      "x": 3095,
+		      "y": 3481
+		    }
+		  },
+  {
+			    "id": 26281,
+			    "name": "Shield",
+			    "type": 10,
+			    "rotation": "EAST",
+			    "position": {
+			      "x": 3082,
+			      "y": 3481
+			    }
+			  },
+  {
+				    "id": 32293,
+				    "name": "Hammer",
+				    "type": 10,
+				    "rotation": "EAST",
+				    "position": {
+				      "x": 3090,
+				      "y": 3476
+				    }
+				  },
+  {
+					    "id": 15931,
+					    "name": "Logs",
+					    "type": 10,
+					    "rotation": "EAST",
+					    "position": {
+					      "x": 3082,
+					      "y": 3460
+					    }
+					  },
+  {
     "id": 6084,
     "name": "Blurite bank booth",
     "type": 10,

@@ -10,7 +10,7 @@ import io.battlerune.game.world.entity.mob.Mob;
  * which if steals 10% of the mob's life for the player themselves.
  * @author Adam_#6723
  */
-@ItemCombatListenerSignature(requireAll = false, items = {  13738,   13739, 
+@ItemCombatListenerSignature(requireAll = false, items = {  13738,  /* 13739, 
 		 13740,   13741,   13742,   13743, 
 		 13744,   13745,   13746,   13747, 
 		 13748,   13749,   16628,   16629, 
@@ -43,7 +43,7 @@ import io.battlerune.game.world.entity.mob.Mob;
 		 15302,   15303,   15304,   3929, 
 		 15308,   15309,   15310, 13697,   13698, 
 		 13699,   13700,   13701,   13702, 
-		 22317,   22280,})
+		 22317,   22280,*/}) //TODO UNCOMMENT THIS ON RELEASE, ITS COMMENTED DUE TO THE STAARTUP TIME BEING INCREASED DRASTICALLY.
 public class DefaultCustomListener extends SimplifiedListener<Mob> {
 
 	@Override

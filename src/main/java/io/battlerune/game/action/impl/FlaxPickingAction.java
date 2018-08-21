@@ -4,6 +4,8 @@ import io.battlerune.Config;
 import io.battlerune.game.Animation;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
+import io.battlerune.game.task.impl.ObjectReplacementEvent;
+import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
@@ -40,16 +42,18 @@ public final class FlaxPickingAction extends Action<Player> {
 
 		if (pickup) {
 			player.inventory.add(new Item(1779, 1));
-			player.skills.addExperience(Skill.CRAFTING, 15 * Config.CRAFTING_MODIFICATION);
-			if (Utility.random(6) == 1) {
-//                World.submit(new ObjectReplacementEvent(object, 20));
-			}
+			player.skills.addExperience(Skill.CRAFTING, 7 * Config.CRAFTING_MODIFICATION);
+	//		if (Utility.random(6) == 1) {
+	//		}
 			cancel();
 		} else {
 			player.animate(new Animation(827));
 			pickup = true;
+			
 			setDelay(2);
 		}
+		World.schedule(new ObjectReplacementEvent(object, 5));
+
 	}
 
 	@Override

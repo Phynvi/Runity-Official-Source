@@ -393,7 +393,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 				return true;
 			}
-			player.dialogueFactory.sendNpcChat(7481, "You've stolen the hammers before anyone could see you!")
+			player.dialogueFactory.sendNpcChat(7481, "You've stolen the Logs before anyone could see you!")
 					.execute();
 			player.takeLogsDelay.reset();
 			player.animate(881);
