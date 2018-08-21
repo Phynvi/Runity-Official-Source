@@ -32,7 +32,8 @@ import io.battlerune.util.Utility;
 /**
  * This class handles the warrior's guild activity.
  *
- * @author Daniel
+ * @author Daniel 
+ * @author Nerik#8690 / Hamza
  */
 public class WarriorGuild extends Activity {
 
@@ -89,13 +90,17 @@ public class WarriorGuild extends Activity {
 
 			@Override
 			protected void execute() {
-				if (count == 0) {
+				switch(count) {
+				
+				case 0:
 					player.animate(new Animation(827, UpdatePriority.HIGH));
 					player.send(new SendMessage("You place the armour pieces inside the animator..."));
-				} else if (count == 2) {
+					break;
+				case 2:
 					player.send(new SendMessage("The animator begins to hum, something appears to be working..."));
 					player.walkExactlyTo(animator.walkToPosition);
-				} else if (count == 7) {
+					break;
+				case 7:
 					animated.setVisible(true);
 					animated.animate(4410);
 					animated.speak("I'M ALIVE!");
@@ -104,6 +109,7 @@ public class WarriorGuild extends Activity {
 					player.send(new SendEntityHintArrow(animated));
 					player.send(new SendMessage("The animated armour comes to life!"));
 					cancel();
+					break;
 				}
 				count++;
 			}

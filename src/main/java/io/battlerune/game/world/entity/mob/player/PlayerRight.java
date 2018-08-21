@@ -18,7 +18,7 @@ public enum PlayerRight {
 	EXTREME_DONATOR("Extreme Donator", "158A76", 7, 100, 4113), ELITE_DONATOR("Elite Donator", "2CA395", 8, 250, 4114),
 	KING_DONATOR("King Donator", "E32973", 9, 500, 4115), SUPREME_DONATOR("Supreme Donator", "E30b1A", 10, 1000, 4115),
 
-	VETERAN("Veteran", "B1800A", 18, -1, 4115), YOUTUBER("Youtuber", "91111A", 11, -1, 4112),
+	CLASSIC("Classic", "B1800A", 18, -1, 4115), YOUTUBER("Youtuber", "91111A", 11, -1, 4112),
 	IRONMAN("Ironman", "7A6F74", 12, -1, 4112), ULTIMATE_IRONMAN("Ultimate Ironman", "7A6F74", 13, -1, 4113),
 	HARDCORE_IRONMAN("Hardcore Ironman", "7A6F74", 14, -1, 4114), HELPER("Helper", "5C5858", 16, -1, 4115),
 	GRAPHIC("Graphic", "CE795A", 17, -1, 4112)

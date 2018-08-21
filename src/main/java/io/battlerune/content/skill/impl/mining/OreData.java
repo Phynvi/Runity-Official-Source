@@ -6,6 +6,7 @@ package io.battlerune.content.skill.impl.mining;
  * @author Daniel
  */
 public enum OreData {
+	
 	CLAY(434, 1, 5, 0, 7468, 15, 741_600, 5, 0.3, new int[] { 7454, 7487 }, 500),
 	COPPER(436, 1, 17.5, 0, 7468, 15, 741_600, 5, 0.5, new int[] { 7484, 7453 }, 1000),
 	TIN(438, 1, 17.5, 0, 7468, 15, 741_600, 5, 0.5, new int[] { 7485, 7486 }, 1500),

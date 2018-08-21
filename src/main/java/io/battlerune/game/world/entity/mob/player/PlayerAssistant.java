@@ -111,6 +111,7 @@ public class PlayerAssistant {
 		EmoteHandler.refresh(player);
 		ClanChannelHandler.onLogin(player);
 		player.getFarming().doConfig();
+		player.experienceRate = StarterKit.modifyExperience(player);
 	}
 
 	/** Sets the effects for the player. */

@@ -16,19 +16,7 @@ import io.battlerune.util.Utility;
  * @author Adam_#6723
  */
 public enum SlayerTask implements TaskInterface<Player> {
-	// GOBLIN("Goblin", 2, 300, TaskDifficulty.EASY, new Position(1, 1),
-	// "Lumbridge", 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667,
-	// 668) {
-//        @Override
-//        public boolean canAssign(Player player) {
-//            return true;
-//        }
-//
-//        @Override
-//        public boolean canAttack(Player player) {
-//            return true;
-//        }
-//    },
+	
 	ROCK_CRAB("Rock crab", 1, 300, TaskDifficulty.EASY, new Position(1, 1), "Camelot", 2261, 5940, 100, 102) {
 		@Override
 		public boolean canAssign(Player player) {

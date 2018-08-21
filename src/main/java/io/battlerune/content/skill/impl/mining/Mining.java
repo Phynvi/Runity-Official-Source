@@ -20,6 +20,7 @@ import io.battlerune.util.chance.WeightedChance;
  * @author Daniel
  */
 public final class Mining extends Skill {
+	
 	static final Chance<Item> GEM_ITEMS = new Chance<>(Arrays.asList(new WeightedChance<>(6, new Item(1623, 1)), // SAPPHIRE
 			new WeightedChance<>(5, new Item(1621, 1)), // EMERALD
 			new WeightedChance<>(4, new Item(1619, 1)), // RUBY

@@ -7,8 +7,8 @@ import io.battlerune.content.mysterybox.impl.MysteryBox;
 import io.battlerune.content.mysterybox.impl.SilverMysteryBox;
 
 /**
- * 
- * @author Nerik_gaylord
+ * Mystery Box Event Listener
+ * @author Nerik#8690
  *
  */
 public class MysteryBoxEvent {

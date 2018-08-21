@@ -5,9 +5,11 @@ import io.battlerune.game.event.impl.ItemClickEvent;
 import io.battlerune.game.event.impl.ItemContainerContextMenuEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.equipment.Equipment;
 import io.battlerune.game.world.position.Position;
+import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.Utility;
 
 public class AmuletOfGloryPlugin extends PluginContext {
@@ -16,6 +18,11 @@ public class AmuletOfGloryPlugin extends PluginContext {
 
 	public void teleport(Player player, Item item, Position position, int index, boolean equipment) {
 		index = index - 1;
+
+		if (player.wilderness > 20 && !PlayerRight.isPriviledged(player)) {
+			player.send(new SendMessage("You can't teleport past 20 wilderness!"));
+			return;
+		}
 
 		if (Teleportation.teleport(player, position)) {
 			if (equipment) {
