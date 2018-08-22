@@ -49,7 +49,7 @@ public class Bank extends ItemContainer {
 
 	/** Constructs a new <code>Bank<code>. */
 	public Bank(Player player) {
-		super(SIZE, StackPolicy.ALWAYS, false);
+		super(SIZE, StackPolicy.ALWAYS);
 		this.player = player;
 		this.placeHolder = false;
 		addListener(new BankListener());

@@ -28,7 +28,7 @@ public class LootingBag extends ItemContainer {
 
 	/** Constructs a new <code>LootingBag</code>. */
 	public LootingBag(Player player) {
-		super(28, StackPolicy.STANDARD, false);
+		super(28, StackPolicy.STANDARD);
 		this.addListener(new LootingBagListener(player));
 		this.player = player;
 	}

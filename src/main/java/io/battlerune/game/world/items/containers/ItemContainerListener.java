@@ -24,9 +24,9 @@ public interface ItemContainerListener {
 	 * @param index     The index the update is occurring on.
 	 * @param refresh   The condition if we have to refresh this container.
 	 */
-	default void itemUpdated(ItemContainer container, Optional<Item> oldItem, Optional<Item> newItem, int index, boolean refresh) {
+	default void itemUpdated(ItemContainer container, Optional<Item> oldItem, Optional<Item> newItem, int index,
+			boolean refresh) {
 	}
-
 	/**
 	 * Fired when an {@link Item}s are added, removed, or replaced in bulk. This is
 	 * to prevent firing multiple {@code
