@@ -145,8 +145,8 @@ public final class CombatListenerManager {
 					System.out.println("Listener is null.");
 					return;
 				}
-				System.out.println("(Adding equipmenteffectsonlogin) listener " +
-				 set.listener.getClass().getSimpleName() + " from " + player.getName());
+			//	System.out.println("(Adding equipmenteffectsonlogin) listener " +
+		///		 set.listener.getClass().getSimpleName() + " from " + player.getName());
 			}
 		}
 	}

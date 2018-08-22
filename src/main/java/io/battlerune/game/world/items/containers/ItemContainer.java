@@ -239,10 +239,10 @@ public class ItemContainer implements Iterable<Item> {
 
 		preferredIndex = preferredIndex == -1 ? computeFreeIndex() : preferredIndex;
 
-		System.err.println(preferredIndex + " getting free index top - "+items.length+" ");
+	///	System.err.println(preferredIndex + " getting free index top - "+items.length+" ");
 		
 		if (preferredIndex == -1) { // Not enough space in container.
-			System.err.println("here blocked no space.. 1");
+			///System.err.println("here blocked no space.. 1");
 			fireCapacityExceededEvent();
 			return false;
 		}
@@ -263,7 +263,7 @@ public class ItemContainer implements Iterable<Item> {
 						? preferredIndex
 						: computeFreeIndex();
 				
-				System.out.println(preferredIndex+" slot given..");
+				//System.out.println(preferredIndex+" slot given..");
 
 				fireItemUpdatedEvent(null, item, preferredIndex, true);
 
@@ -991,7 +991,7 @@ public class ItemContainer implements Iterable<Item> {
 	 *            lesser than the container.
 	 */
 	public final void setItems(Item[] items, boolean copy) {
-		System.err.println("args setting items.. "+(items.length <= capacity));
+	//	System.err.println("args setting items.. "+(items.length <= capacity));
 		Preconditions.checkArgument(items.length <= capacity);
 		clear();
 		for (int i = 0; i < items.length; i++) {
@@ -1215,7 +1215,7 @@ public class ItemContainer implements Iterable<Item> {
 	 */
 	public final void removeAllListeners() {
 		for (ItemContainerListener listener : listeners) {
-			System.out.println("combat.java: Removing combatListener " + listener.getClass().getSimpleName());
+			//System.out.println("combat.java: Removing combatListener " + listener.getClass().getSimpleName());
 		}
 
 		listeners.clear();
