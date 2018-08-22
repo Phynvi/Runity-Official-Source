@@ -59,7 +59,7 @@ public final class DefaultStore extends Store {
 		this.items = items;
 		this.restock = restock;
 		this.sellType = sellType;
-		this.original = new ItemContainer(items.length, ItemContainer.StackPolicy.ALWAYS);
+		this.original = new ItemContainer(items.length, ItemContainer.StackPolicy.ALWAYS, false);
 		this.original.setItems(items, false);
 		this.container.setItems(items, false);
 		Arrays.stream(items).filter(Objects::nonNull).forEach(item -> itemCache.put(item.getId(), item.getAmount()));

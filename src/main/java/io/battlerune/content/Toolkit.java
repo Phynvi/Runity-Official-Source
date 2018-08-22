@@ -83,7 +83,7 @@ public class Toolkit extends ItemContainer {
 	 * @param player {@link Player} player
 	 */
 	public Toolkit(Player player) {
-		super(33, StackPolicy.ALWAYS);
+		super(33, StackPolicy.ALWAYS, false);
 		this.player = player;
 		this.placeHolder = true;
 	}

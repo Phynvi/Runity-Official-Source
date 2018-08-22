@@ -37,6 +37,21 @@ public class NewPresetsButtonPlugin extends PluginContext {
 
 		};
 	}
+	
+	/** Melee126Equipment **/
+	public Item[] PureEquipment() {
+		return new Item[] { new Item(10828), new Item(1712), new Item(4355), new Item(4587), new Item(1127),
+				new Item(8850), new Item(1079), new Item(3105), new Item(2250), new Item(7461) };
+	}
+
+	/** Hybrid Inventory! Array **/
+	public Item[] PureInventory() {
+		return new Item[] { new Item(12695), new Item(3024, 2), new Item(9075, 80), new Item(1215), new Item(3024),
+				new Item(6685), new Item(560, 40), new Item(391), new Item(391), new Item(391), new Item(557, 200),
+				new Item(391, 12), new Item(3144, 4),
+
+		};
+	}
 
 	/** Hybrid Equipment Array **/
 	public Item[] Hybrid126Equipment() {
@@ -107,10 +122,9 @@ public class NewPresetsButtonPlugin extends PluginContext {
 
 				player.equipment.manualWearAll(Melee126Equipment());
 				player.inventory.addAll(Melee126Inventory());
+				player.spellbook = Spellbook.LUNAR;
 				player.inventory.refresh();
 				player.equipment.refresh();
-				player.spellbook = Spellbook.LUNAR;
-
 			}
 
 		} else {
@@ -158,6 +172,49 @@ public class NewPresetsButtonPlugin extends PluginContext {
 				player.inventory.refresh();
 				player.equipment.refresh();
 				player.spellbook = Spellbook.ANCIENT;
+
+			}
+
+		} else {
+			player.message("You need to have 100k in the bank!");
+		}
+
+	}
+	
+	
+	
+	
+	
+	public void sendPureDialouge(Player player) {
+
+		DialogueFactory factory = player.dialogueFactory;
+		factory.sendNpcChat(306, "Would you like this preset for 100k? " + player.getName());
+		factory.sendOption("Yes", () -> tribrid126(player), "Nevermind", factory::clear);
+		factory.execute();
+
+	}
+
+	/**
+	 * Handles the equipping of gear, whilst also subtracting the preset cost from
+	 * the players inventory!
+	 * 
+	 * @param player
+	 */
+	public void PureGear(Player player) {
+		if (player.bank.contains(995, 100000)) {
+			player.bank.remove(995, 100000);
+
+			if (!player.equipment.isEmpty() || !player.inventory.isEmpty()) {
+				player.bank.depositeInventory();
+				player.bank.depositeEquipment();
+				player.bank.shift();
+				player.bank.refresh();
+
+				player.equipment.manualWearAll(Melee126Equipment());
+				player.inventory.addAll(Melee126Inventory());
+				player.inventory.refresh();
+				player.equipment.refresh();
+				player.spellbook = Spellbook.LUNAR;
 
 			}
 

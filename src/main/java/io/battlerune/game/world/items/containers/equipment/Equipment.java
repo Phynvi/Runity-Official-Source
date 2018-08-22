@@ -91,7 +91,7 @@ public final class Equipment extends ItemContainer {
 
 	/** Creates a new {@link Equipment}. */
 	public Equipment(Player player) {
-		super(SIZE, StackPolicy.STANDARD);
+		super(SIZE, StackPolicy.STANDARD, false);
 		this.player = player;
 		addListener(new EquipmentListener());
 	}

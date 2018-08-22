@@ -33,7 +33,7 @@ public final class Inventory extends ItemContainer {
 
 	/** Creates a new {@link Inventory}. */
 	public Inventory(Player player) {
-		super(SIZE, StackPolicy.STANDARD);
+		super(SIZE, StackPolicy.STANDARD, true);
 		addListener(new InventoryListener(player));
 //		addListener(new ItemWeightListener(player));TODO
 		this.player = player;

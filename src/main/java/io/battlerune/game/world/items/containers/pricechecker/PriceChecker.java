@@ -42,7 +42,7 @@ public class PriceChecker extends ItemContainer {
 
 	/** Creates a new <code>PriceChecker<code>. */
 	public PriceChecker(Player player) {
-		super(28, StackPolicy.STANDARD);
+		super(28, StackPolicy.STANDARD, false);
 		this.player = player;
 		this.priceType = PriceType.VALUE;
 		addListener(new PriceCheckerListener());

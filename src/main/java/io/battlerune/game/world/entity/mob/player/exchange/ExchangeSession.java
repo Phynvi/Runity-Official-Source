@@ -53,7 +53,7 @@ public abstract class ExchangeSession {
 		this.player = player;
 		this.other = other;
 		this.type = type;
-		forEach(p -> item_containers.put(p, new ItemContainer(28, ItemContainer.StackPolicy.STANDARD)));
+		forEach(p -> item_containers.put(p, new ItemContainer(28, ItemContainer.StackPolicy.STANDARD, false)));
 	}
 
 	/** Determines if the player can offer or withdraw items. */

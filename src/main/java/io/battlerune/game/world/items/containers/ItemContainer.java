@@ -106,7 +106,7 @@ public class ItemContainer implements Iterable<Item> {
 	private final List<ItemContainerListener> listeners = new ArrayList<>();
 
 	/** The capacity of this container. */
-	private final int capacity;
+	private int capacity;
 
 	/** The policy of this container. */
 	private final StackPolicy policy;
@@ -119,13 +119,13 @@ public class ItemContainer implements Iterable<Item> {
 
 	/** Creates a new {@link ItemContainer}. */
 	public ItemContainer(int capacity, StackPolicy policy, Item[] items) {
-		this.capacity = capacity;
+		this.capacity = capacity != 14 && capacity < 30 ? 28 : capacity;
 		this.policy = policy;
 		this.items = items;
 	}
 
 	/** Creates a new {@link ItemContainer}. */
-	public ItemContainer(int capacity, StackPolicy policy) {
+	public ItemContainer(int capacity, StackPolicy policy, boolean override) {
 		this(capacity, policy, new Item[capacity]);
 	}
 
@@ -165,7 +165,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Attempts to deposit {@code item} into this container.
 	 *
-	 * @param item The {@link Item} to deposit.
+	 * @param item
+	 *            The {@link Item} to deposit.
 	 * @return {@code true} the {@code Item} was added, {@code false} if there was
 	 *         not enough space left.
 	 */
@@ -176,8 +177,10 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Attempts to deposit {@code item} into this container.
 	 *
-	 * @param item The {@link Item} to deposit.
-	 * @param slot The slot to deposit the item too.
+	 * @param item
+	 *            The {@link Item} to deposit.
+	 * @param slot
+	 *            The slot to deposit the item too.
 	 * @return {@code true} the {@code Item} was added, {@code false} if there was
 	 *         not enough space left.
 	 */
@@ -188,8 +191,10 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Attempts to deposit {@code item} into this container.
 	 *
-	 * @param id     the id of the item.
-	 * @param amount the amount of the item.
+	 * @param id
+	 *            the id of the item.
+	 * @param amount
+	 *            the amount of the item.
 	 * @return {@code true} the item was added, {@code false} if there was not
 	 *         enough space left.
 	 */
@@ -209,14 +214,17 @@ public class ItemContainer implements Iterable<Item> {
 	 * Attempts to deposit {@code item} into this container, preferably at
 	 * {@code preferredIndex}.
 	 *
-	 * @param item           The {@link Item} to deposit.
-	 * @param preferredIndex The preferable index to deposit {@code item} to.
-	 * @param refresh        The condition if we will be refreshing our container.
+	 * @param item
+	 *            The {@link Item} to deposit.
+	 * @param preferredIndex
+	 *            The preferable index to deposit {@code item} to.
+	 * @param refresh
+	 *            The condition if we will be refreshing our container.
 	 * @return {@code true} if the {@code Item} was added, {@code false} if there
 	 *         was not enough space left.
 	 */
 	public boolean add(Item item, int preferredIndex, boolean refresh, boolean stack) {
-		checkArgument(preferredIndex >= -1, "invalid index identifier");
+		 checkArgument(preferredIndex >= -1, "invalid index identifier");
 
 		item = item.copy();
 
@@ -231,30 +239,40 @@ public class ItemContainer implements Iterable<Item> {
 
 		preferredIndex = preferredIndex == -1 ? computeFreeIndex() : preferredIndex;
 
+		System.err.println(preferredIndex + " getting free index top - "+items.length+" ");
+		
 		if (preferredIndex == -1) { // Not enough space in container.
+			System.err.println("here blocked no space.. 1");
 			fireCapacityExceededEvent();
 			return false;
 		}
-
+		
 		if (stackable) {
 			Item current = items[preferredIndex];
 			items[preferredIndex] = (current == null) ? item : current.createAndIncrement(item.getAmount());
 			fireItemUpdatedEvent(current, items[preferredIndex], preferredIndex, refresh);
 		} else {
+
 			int remaining = remaining();
+
 			int until = (remaining > item.getAmount()) ? item.getAmount() : remaining;
 
 			for (int index = 0; index < until; index++) {
-				preferredIndex = (preferredIndex > capacity || preferredIndex < 0 || items[preferredIndex] == null)
+
+				preferredIndex = (preferredIndex < 0 || preferredIndex > capacity || items[preferredIndex] == null)
 						? preferredIndex
 						: computeFreeIndex();
+				
+				System.out.println(preferredIndex+" slot given..");
+
+				fireItemUpdatedEvent(null, item, preferredIndex, true);
+
 				if (preferredIndex == -1) {// Couldn't find an empty spot.
 					fireCapacityExceededEvent();
 					return false;
 				}
 				item.setAmount(1);
 				items[preferredIndex] = item;
-
 				fireItemUpdatedEvent(null, item, preferredIndex++, refresh);
 			}
 		}
@@ -264,7 +282,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Attempts to deposit {@code items} in bulk into this container.
 	 *
-	 * @param items The {@link Item}s to deposit.
+	 * @param items
+	 *            The {@link Item}s to deposit.
 	 * @return {@code true} if at least {@code 1} of the {@code Item}s were added,
 	 *         {@code false} if none could be added.
 	 */
@@ -296,7 +315,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Attempts to deposit {@code items} in bulk into this container.
 	 *
-	 * @param items The {@link Item}s to deposit.
+	 * @param items
+	 *            The {@link Item}s to deposit.
 	 * @return {@code true} if at least {@code 1} of the {@code Item}s were added,
 	 *         {@code false} if none could be added.
 	 */
@@ -307,7 +327,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Attempts to deposit {@code items} in bulk into this container.
 	 *
-	 * @param items The {@link Item}s to deposit.
+	 * @param items
+	 *            The {@link Item}s to deposit.
 	 * @return {@code true} if at least {@code 1} of the {@code Item}s were added,
 	 *         {@code false} if none could be added.
 	 */
@@ -318,7 +339,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Attempts to withdraw {@code item} from this container.
 	 *
-	 * @param item The {@link Item} to withdraw.
+	 * @param item
+	 *            The {@link Item} to withdraw.
 	 * @return {@code true} if the {@code Item} was removed, {@code false} if it
 	 *         isn't present in this container.
 	 */
@@ -330,8 +352,10 @@ public class ItemContainer implements Iterable<Item> {
 	 * Attempts to withdraw {@code item} from this container, preferably from
 	 * {@code preferredIndex}.
 	 *
-	 * @param item           The {@link Item} to withdraw.
-	 * @param preferredIndex The preferable index to withdraw {@code item} from.
+	 * @param item
+	 *            The {@link Item} to withdraw.
+	 * @param preferredIndex
+	 *            The preferable index to withdraw {@code item} from.
 	 * @return {@code true} if the {@code Item} was removed, {@code false} if it
 	 *         isn't present in this container.
 	 */
@@ -355,11 +379,15 @@ public class ItemContainer implements Iterable<Item> {
 	 * Attempts to withdraw {@code item} from this container, preferably from
 	 * {@code preferredIndex}.
 	 *
-	 * @param item           The {@link Item} to withdraw.
-	 * @param preferredIndex The preferable index to withdraw {@code item} from.
-	 * @param refresh        The condition if we will be refreshing our container.
-	 * @param removeAll      Determines if the items should be removed from all
-	 *                       slots or only the specified s
+	 * @param item
+	 *            The {@link Item} to withdraw.
+	 * @param preferredIndex
+	 *            The preferable index to withdraw {@code item} from.
+	 * @param refresh
+	 *            The condition if we will be refreshing our container.
+	 * @param removeAll
+	 *            Determines if the items should be removed from all slots or only
+	 *            the specified s
 	 * @return {@code true} if the {@code Item} was removed, {@code false} if it
 	 *         isn't present in this container.
 	 */
@@ -431,7 +459,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Attempts to withdraw {@code items} in bulk from this container.
 	 *
-	 * @param items The {@link Item}s to withdraw.
+	 * @param items
+	 *            The {@link Item}s to withdraw.
 	 * @return {@code true} if at least {@code 1} of the {@code Item}s were
 	 *         withdraw, {@code false} if none could be removed.
 	 */
@@ -462,7 +491,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Attempts to withdraw {@code items} in bulk from this container.
 	 *
-	 * @param items The {@link Item}s to withdraw.
+	 * @param items
+	 *            The {@link Item}s to withdraw.
 	 * @return {@code true} if at least {@code 1} of the {@code Item}s were
 	 *         withdraw, {@code false} if none could be removed.
 	 */
@@ -473,7 +503,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Attempts to withdraw {@code items} in bulk from this container.
 	 *
-	 * @param items The {@link Item}s to withdraw.
+	 * @param items
+	 *            The {@link Item}s to withdraw.
 	 * @return {@code true} if at least {@code 1} of the {@code Item}s were
 	 *         withdraw, {@code false} if none could be removed.
 	 */
@@ -511,7 +542,7 @@ public class ItemContainer implements Iterable<Item> {
 	 *
 	 * @return The free index, {@code -1} if no free indexes could be found.
 	 */
-	public final int computeFreeIndex() {
+	public int computeFreeIndex() {
 		for (int index = 0; index < capacity; index++) {
 			if (items[index] == null) {
 				return index;
@@ -523,9 +554,10 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Computes the first index found that {@code id} is in.
 	 *
-	 * @param id The identifier to compute for.
+	 * @param id
+	 *            The identifier to compute for.
 	 * @return The first index found, {@code -1} if no {@link Item} with {@code
-	 * id}  is in this container.
+	 * id} is in this container.
 	 */
 
 	/**
@@ -553,8 +585,9 @@ public class ItemContainer implements Iterable<Item> {
 	 * Computes the total quantity of the {@link Item}s in this container with
 	 * {@code id}.
 	 *
-	 * @param id The identifier of the {@code Item} to determine the total quantity
-	 *           of.
+	 * @param id
+	 *            The identifier of the {@code Item} to determine the total quantity
+	 *            of.
 	 * @return The total quantity.
 	 */
 	public final int computeAmountForId(int id) {
@@ -570,7 +603,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Computes the identifier of the {@link Item} on {@code index}.
 	 *
-	 * @param index The index to compute the identifier for.
+	 * @param index
+	 *            The index to compute the identifier for.
 	 * @return The identifier wrapped in an optional.
 	 */
 	public final Optional<Integer> computeIdForIndex(int index) {
@@ -581,9 +615,12 @@ public class ItemContainer implements Iterable<Item> {
 	 * Replaces the first occurrence of the {@link Item} having the identifier
 	 * {@code oldId} with {@code newId}.
 	 *
-	 * @param oldId   The old identifier to replace.
-	 * @param newId   The new identifier to replace.
-	 * @param refresh The condition if the coontainer will be refreshed.
+	 * @param oldId
+	 *            The old identifier to replace.
+	 * @param newId
+	 *            The new identifier to replace.
+	 * @param refresh
+	 *            The condition if the coontainer will be refreshed.
 	 * @return {@code true} if the replace operation was successful, {@code
 	 * false otherwise}.
 	 */
@@ -598,9 +635,12 @@ public class ItemContainer implements Iterable<Item> {
 	 * Replaces the first occurrence of the {@link Item} having the identifier
 	 * {@code oldId} with {@code newId}.
 	 *
-	 * @param oldId   The old identifier to replace.
-	 * @param newId   The new identifier to replace.
-	 * @param refresh The condition if the coontainer will be refreshed.
+	 * @param oldId
+	 *            The old identifier to replace.
+	 * @param newId
+	 *            The new identifier to replace.
+	 * @param refresh
+	 *            The condition if the coontainer will be refreshed.
 	 * @return {@code true} if the replace operation was successful, {@code
 	 * false otherwise}.
 	 */
@@ -620,7 +660,8 @@ public class ItemContainer implements Iterable<Item> {
 	 * Replaces the first occurrence of the {@link Item} having the identifier
 	 * {@code oldId} with {@code newId}.
 	 *
-	 * @param refresh The condition if the coontainer will be refreshed.
+	 * @param refresh
+	 *            The condition if the coontainer will be refreshed.
 	 * @return {@code true} if the replace operation was successful, {@code
 	 * false otherwise}.
 	 */
@@ -639,8 +680,10 @@ public class ItemContainer implements Iterable<Item> {
 	 * Replaces all occurrences of {@link Item}s having the identifier {@code
 	 * oldId} with {@code newId}.
 	 *
-	 * @param oldId The old identifier to replace.
-	 * @param newId The new identifier to replace.
+	 * @param oldId
+	 *            The old identifier to replace.
+	 * @param newId
+	 *            The new identifier to replace.
 	 * @return {@code true} if the replace operation was successful at least once,
 	 *         {@code false otherwise}.
 	 */
@@ -663,7 +706,8 @@ public class ItemContainer implements Iterable<Item> {
 	 * Computes the amount of indexes required to hold {@code items} in this
 	 * container.
 	 *
-	 * @param forItems The items to compute the index count for.
+	 * @param forItems
+	 *            The items to compute the index count for.
 	 * @return The index count.
 	 */
 	public final int computeIndexCount(Item... forItems) {
@@ -695,7 +739,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Determines if this container has the capacity for {@code item}.
 	 *
-	 * @param item The {@link Item} to determine this for.
+	 * @param item
+	 *            The {@link Item} to determine this for.
 	 * @return {@code true} if {@code item} can be added, {@code false} otherwise.
 	 */
 	public final boolean hasCapacityFor(Item... item) {
@@ -707,8 +752,10 @@ public class ItemContainer implements Iterable<Item> {
 	 * Creates a copy of the underlying container and removes the items specified
 	 * from it and after tries to deposit the specified items to it.
 	 *
-	 * @param add    the items to deposit to this container.
-	 * @param remove the items that should be removed before adding.
+	 * @param add
+	 *            the items to deposit to this container.
+	 * @param remove
+	 *            the items that should be removed before adding.
 	 * @return {@code true} if {@code item} can be added, {@code false} otherwise.
 	 */
 	public final boolean hasCapacityAfter(Item[] add, Item... remove) {
@@ -720,7 +767,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Determines if this container contains {@code id}.
 	 *
-	 * @param id The identifier to check this container for.
+	 * @param id
+	 *            The identifier to check this container for.
 	 * @return {@code true} if this container has {@code id}, {@code false}
 	 *         otherwise.
 	 */
@@ -736,7 +784,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Determines if this container contains all {@code identifiers}.
 	 *
-	 * @param identifiers The identifiers to check this container for.
+	 * @param identifiers
+	 *            The identifiers to check this container for.
 	 * @return {@code true} if this container has all {@code identifiers},
 	 *         {@code false} otherwise.
 	 */
@@ -752,7 +801,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Determines if this container contains any {@code identifiers}.
 	 *
-	 * @param identifiers The identifiers to check this container for.
+	 * @param identifiers
+	 *            The identifiers to check this container for.
 	 * @return {@code true} if this container has any {@code identifiers},
 	 *         {@code false} otherwise.
 	 */
@@ -825,7 +875,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Sends the items on the itemcontainer.
 	 *
-	 * @param widget The widget to send the {@code Item}s on.
+	 * @param widget
+	 *            The widget to send the {@code Item}s on.
 	 */
 	public void refresh(Player player, int widget) {
 		player.send(new SendItemOnInterface(widget, items));
@@ -840,8 +891,10 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Swaps the {@link Item}s on {@code oldIndex} and {@code newIndex}.
 	 *
-	 * @param oldIndex The old index.
-	 * @param newIndex The new index.
+	 * @param oldIndex
+	 *            The old index.
+	 * @param newIndex
+	 *            The new index.
 	 */
 	public final void swap(int oldIndex, int newIndex) {
 		swap(false, oldIndex, newIndex, true);
@@ -850,11 +903,14 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Swaps the {@link Item}s on {@code oldIndex} and {@code newIndex}.
 	 *
-	 * @param insert   If the {@code Item} should be inserted.
-	 * @param oldIndex The old index.
-	 * @param newIndex The new index.
-	 * @param refresh  The condition that determines if we will refresh the
-	 *                 container.
+	 * @param insert
+	 *            If the {@code Item} should be inserted.
+	 * @param oldIndex
+	 *            The old index.
+	 * @param newIndex
+	 *            The new index.
+	 * @param refresh
+	 *            The condition that determines if we will refresh the container.
 	 */
 	public final void swap(boolean insert, int oldIndex, int newIndex, boolean refresh) {
 		if (insert) {
@@ -930,10 +986,12 @@ public class ItemContainer implements Iterable<Item> {
 	 * Sets the container of items to {@code items}. The container will not hold any
 	 * references to the array, nor the item instances in the array.
 	 *
-	 * @param items the new array of items, the capacities of this must be equal to
-	 *              or lesser than the container.
+	 * @param items
+	 *            the new array of items, the capacities of this must be equal to or
+	 *            lesser than the container.
 	 */
 	public final void setItems(Item[] items, boolean copy) {
+		System.err.println("args setting items.. "+(items.length <= capacity));
 		Preconditions.checkArgument(items.length <= capacity);
 		clear();
 		for (int i = 0; i < items.length; i++) {
@@ -996,9 +1054,12 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Sets the {@code index} to {@code item}.
 	 *
-	 * @param index   The index to set.
-	 * @param item    The {@link Item} to set on the index.
-	 * @param refresh The condition if the container must be refreshed.
+	 * @param index
+	 *            The index to set.
+	 * @param item
+	 *            The {@link Item} to set on the index.
+	 * @param refresh
+	 *            The condition if the container must be refreshed.
 	 */
 	public void set(int index, Item item, boolean refresh) {
 		Item oldItem = items[index];
@@ -1009,7 +1070,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Retrieves the item located on {@code index}.
 	 *
-	 * @param index the index to get the item on.
+	 * @param index
+	 *            the index to get the item on.
 	 * @return the item on the index, or {@code null} if no item exists on the
 	 *         index.
 	 */
@@ -1023,7 +1085,8 @@ public class ItemContainer implements Iterable<Item> {
 	 * Consumes an action if the {@code index} is a valid item index in this
 	 * container.
 	 *
-	 * @param index the index to get the item on.
+	 * @param index
+	 *            the index to get the item on.
 	 */
 	public final void ifPresent(int index, Consumer<Item> action) {
 		if (index >= 0 && index < items.length)
@@ -1033,7 +1096,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Gets the {@link Item} located on {@code index}.
 	 *
-	 * @param index The index to get the {@code Item} on.
+	 * @param index
+	 *            The index to get the {@code Item} on.
 	 * @return The {@code Item} instance, {@code null} if the index is empty.
 	 */
 	public final Item get(int index) {
@@ -1045,7 +1109,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Gets the item id located on {@code index}.
 	 *
-	 * @param index The index to get the {@code Item} on.
+	 * @param index
+	 *            The index to get the {@code Item} on.
 	 * @return The {@code Item} instance, {@code null} if the index is empty.
 	 */
 	public final int getId(int index) {
@@ -1058,7 +1123,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Searches and returns the first item found with {@code id}.
 	 *
-	 * @param id the identifier to search this container for.
+	 * @param id
+	 *            the identifier to search this container for.
 	 * @return the item wrapped within an optional, or an empty optional if no item
 	 *         was found.
 	 */
@@ -1070,7 +1136,8 @@ public class ItemContainer implements Iterable<Item> {
 	 * Searches and returns the first item found with {@code id} and {@code
 	 * amount}.
 	 *
-	 * @param item the item to search this container for.
+	 * @param item
+	 *            the item to search this container for.
 	 * @return the item wrapped within an optional, or an empty optional if no item
 	 *         was found.
 	 */
@@ -1124,7 +1191,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Adds an {@link ItemContainerListener} to this container.
 	 *
-	 * @param listener The listener to deposit to this container.
+	 * @param listener
+	 *            The listener to deposit to this container.
 	 * @return {@code true} if the listener was added, {@code false} otherwise.
 	 */
 	public final boolean addListener(ItemContainerListener listener) {
@@ -1134,7 +1202,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Removes an {@link ItemContainerListener} from this container.
 	 *
-	 * @param listener The listener to withdraw from this container.
+	 * @param listener
+	 *            The listener to withdraw from this container.
 	 * @return {@code true} if the listener was removed, {@code false} otherwise.
 	 */
 	public final boolean removeListener(ItemContainerListener listener) {
@@ -1176,7 +1245,8 @@ public class ItemContainer implements Iterable<Item> {
 	/**
 	 * Gets the total amount of items in the container with the specified id.
 	 * 
-	 * @param id The id of the item to search for.
+	 * @param id
+	 *            The id of the item to search for.
 	 * @return The total amount of items in the container with said id.
 	 */
 	public int getAmount(int id) {
@@ -1210,7 +1280,7 @@ public class ItemContainer implements Iterable<Item> {
 	}
 
 	/** @return the amount of remaining free indices */
-	public final int remaining() {
+	public int remaining() {
 		return capacity - size();
 	}
 
@@ -1220,12 +1290,12 @@ public class ItemContainer implements Iterable<Item> {
 	}
 
 	/** @return the amount of used indices */
-	public final int size() {
+	public int size() {
 		return (int) Arrays.stream(items).filter(Objects::nonNull).count();
 	}
 
 	/** @return the total amount of used and free indices */
-	public final int capacity() {
+	public int capacity() {
 		return capacity;
 	}
 
@@ -1239,7 +1309,7 @@ public class ItemContainer implements Iterable<Item> {
 		return false;
 	}
 
-//    public boolean isFull() {
-//        return size() == capacity();
-//    }
+	// public boolean isFull() {
+	// return size() == capacity();
+	// }
 }

@@ -44,7 +44,7 @@ public class PlayerKilling {
 			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
 					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
 		}
-		if (PlayerRight.isSuper(killer)) {
+		/*if (PlayerRight.isSuper(killer)) {
 			killer.setpkPoints(killer.getpkPoints() + 13);
 			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
 					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
@@ -68,7 +68,7 @@ public class PlayerKilling {
 			killer.setpkPoints(killer.getpkPoints() + 25);
 			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
 					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
-		}
+		}*/
 
 		/** User has a 1/100 Chance of recieveing a blood key. **/
 		int Random_Chance = Utility.random(1, 100);
@@ -76,17 +76,15 @@ public class PlayerKilling {
 			killer.inventory.add(6640, 1);
 			World.sendMessage("<col=8714E6> A blood crystal was given to " + killer.getName() + "!");
 		}
-		killer.message(
-				"The gods have looked down upon you and smiled! They have rewarded you with" + "@red@ 1x Blood Key!");
-		World.sendMessage("<col=8714E6> To get a chance of obtaining a blood key, you must be a donator or higher!");
-
 		killer.forClan(channel -> {
 			channel.activateTask(victim.isBot ? BOT_KILLING : PLAYER_KILLING, killer.getName());
 			channel.activateAchievement(ClanAchievement.PLAYER_KILLER_I);
 			channel.activateAchievement(ClanAchievement.PLAYER_KILLER_II);
 			channel.activateAchievement(ClanAchievement.PLAYER_KILLER_III);
 		});
-
+		killer.setpkPoints(killer.getpkPoints() + 5);
+		killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
+				+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
 		InterfaceWriter.write(new InformationWriter(killer));
 		add(killer, victim.lastHost);
 	}

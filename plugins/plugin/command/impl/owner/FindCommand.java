@@ -29,7 +29,7 @@ public class FindCommand implements Command {
 	public static void method(Player player, String[] command) {
 		final String name = String.format(command[1]);
 
-		ItemContainer container = new ItemContainer(400, ItemContainer.StackPolicy.ALWAYS);
+		ItemContainer container = new ItemContainer(400, ItemContainer.StackPolicy.ALWAYS, false);
 		int randomint = 0;
 		for (final ItemDefinition itemNAME : ItemDefinition.DEFINITIONS) {
 			if (itemNAME == null || itemNAME.getName() == null || itemNAME.isNoted())
