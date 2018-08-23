@@ -2,7 +2,7 @@ package io.battlerune.content.scratchcard;
 
 public enum ScratchCardData {
 
-	FOURHUNDERD(1), FIVEHUNDERD(2), NINEHUNDERD(3);
+	ABYSSAL_WHIP(4151), ABYSSAL_DAGGER(13265), ABYSSAL_BLUDGEON(13263);
 	
 	private int displayId;
 	
