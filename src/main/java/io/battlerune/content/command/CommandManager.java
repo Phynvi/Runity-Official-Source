@@ -43,6 +43,7 @@ import plugin.command.impl.owner.PlayerGuideCommand;
 import plugin.command.impl.owner.PnpcCommand;
 import plugin.command.impl.owner.RandomEvent;
 import plugin.command.impl.owner.RemovePlayerTask;
+import plugin.command.impl.owner.ScratchNig;
 import plugin.command.impl.owner.SkotizoSpawnCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
 import plugin.command.impl.owner.SpecCommand;
@@ -97,120 +98,121 @@ import plugin.command.impl.player.Wests;
  */
 public class CommandManager {
 
-	public static Map<String[], Command> plugin = new HashMap<>();
-	public static Map<String, Command> plugin_input = new HashMap<>();
+	public static final Map<String[], Command> PLUGIN = new HashMap<>();
+	public static final Map<String, Command> PLUGIN_INPUT = new HashMap<>();
 
 	public static void load() {
 		/*
 		 * @Player Commands
 		 */
-		plugin.put(new String[] { "easts" }, new Easts());
-		plugin.put(new String[] { "testcom", "command" }, new Commands());
-		plugin.put(new String[] { "plant" }, new PlantFlowerCommand());
-		plugin.put(new String[] { "home", "hom" }, new HomeCommand());
-		plugin.put(new String[] { "train", "training" }, new TrainZone());
-		plugin.put(new String[] { "tele" }, new TeleCommand());
-		plugin.put(new String[] { "tier1", "tierone" }, new Tier1Teleport());
-		plugin.put(new String[] { "tier2", "tiertwo" }, new Tier2Teleport());
-		plugin.put(new String[] { "tier3", "tierthree" }, new Tier3Teleport());
-		plugin.put(new String[] { "tier4", "tierfour" }, new Tier4Teleport());
-		plugin.put(new String[] { "pouch" }, new PouchCommand());
-		plugin.put(new String[] { "fameboard", "fame" }, new FameBoardCommand());
-		plugin.put(new String[] { "shops", "store", "shop", "stores" }, new ShopCommand());
-		plugin.put(new String[] { "drops", "drop", "droplist", "droptable" }, new DropsCommand());
-		plugin.put(new String[] { "simulate", "simulator", "dropsim" }, new DropSimulatorCommand());
-		plugin.put(new String[] { "vote" }, new VoteCommand());
-		plugin.put(new String[] { "dice", "dp" }, new DiceCommand());
-		plugin.put(new String[] { "skull" }, new SkullCommand());
-		plugin.put(new String[] { "duel", "duelarena" }, new DuelArenaCommand());
-		plugin.put(new String[] { "barrows" }, new BarrowsCommand());
-		plugin.put(new String[] { "skill", "skillingarea" }, new SkillAreaCommand());
-		plugin.put(new String[] { "donate", "webstore" }, new DonateCommand());
-		plugin.put(new String[] { "vault", "vaultamount" }, new VaultCommand());
-		plugin.put(new String[] { "drops", "drop" }, new DropInterfaceCommand());
-		plugin.put(new String[] { "gamble", "gamblezone" }, new GambleCommand());
-		plugin.put(new String[] { "arena", "arenazone" }, new ArenaZoneCommand());
-		plugin.put(new String[] { "cashout", "pins" }, new CashOutCommand());
-		plugin.put(new String[] { "help", "helpp" }, new Helpcommand());
-		plugin.put(new String[] { "answer", "trivia" }, new AnswerTriviaCommand());
-		plugin.put(new String[] { "staff", "staffonline" }, new StaffCommand());
-		plugin.put(new String[] { "forums", "website" }, new ForumCommand());
-		plugin.put(new String[] { "discord", "discords" }, new DiscordCommand());
-		plugin.put(new String[] { "stuck", "stucks" }, new StuckCommand());
-		plugin.put(new String[] { "wests", "west" }, new Wests());
-		plugin.put(new String[] { "mb", "magebank" }, new MageBankCommand());
-		plugin.put(new String[] { "gd", "gdz" }, new GdzCommand());
-		plugin.put(new String[] { "slayertask", "task" }, new SlayerTaskCommand());
-		plugin.put(new String[] { "players", "online" }, new PlayerCountCommand());
-		plugin.put(new String[] { "empty", "emptyinventory" }, new EmptyInventoryCommand());
-		plugin.put(new String[] { "dusties", "dusti" }, new DustiesCommand());
-		plugin.put(new String[] { "testdonation", "donatings" }, new ClaimDonationCommand());
+		PLUGIN.put(new String[] { "easts" }, new Easts());
+		PLUGIN.put(new String[] { "testcom", "command" }, new Commands());
+		PLUGIN.put(new String[] { "plant" }, new PlantFlowerCommand());
+		PLUGIN.put(new String[] { "home", "hom" }, new HomeCommand());
+		PLUGIN.put(new String[] { "train", "training" }, new TrainZone());
+		PLUGIN.put(new String[] { "tele" }, new TeleCommand());
+		PLUGIN.put(new String[] { "tier1", "tierone" }, new Tier1Teleport());
+		PLUGIN.put(new String[] { "tier2", "tiertwo" }, new Tier2Teleport());
+		PLUGIN.put(new String[] { "tier3", "tierthree" }, new Tier3Teleport());
+		PLUGIN.put(new String[] { "tier4", "tierfour" }, new Tier4Teleport());
+		PLUGIN.put(new String[] { "pouch" }, new PouchCommand());
+		PLUGIN.put(new String[] { "fameboard", "fame" }, new FameBoardCommand());
+		PLUGIN.put(new String[] { "shops", "store", "shop", "stores" }, new ShopCommand());
+		PLUGIN.put(new String[] { "drops", "drop", "droplist", "droptable" }, new DropsCommand());
+		PLUGIN.put(new String[] { "simulate", "simulator", "dropsim" }, new DropSimulatorCommand());
+		PLUGIN.put(new String[] { "vote" }, new VoteCommand());
+		PLUGIN.put(new String[] { "dice", "dp" }, new DiceCommand());
+		PLUGIN.put(new String[] { "skull" }, new SkullCommand());
+		PLUGIN.put(new String[] { "duel", "duelarena" }, new DuelArenaCommand());
+		PLUGIN.put(new String[] { "barrows" }, new BarrowsCommand());
+		PLUGIN.put(new String[] { "skill", "skillingarea" }, new SkillAreaCommand());
+		PLUGIN.put(new String[] { "donate", "webstore" }, new DonateCommand());
+		PLUGIN.put(new String[] { "vault", "vaultamount" }, new VaultCommand());
+		PLUGIN.put(new String[] { "drops", "drop" }, new DropInterfaceCommand());
+		PLUGIN.put(new String[] { "gamble", "gamblezone" }, new GambleCommand());
+		PLUGIN.put(new String[] { "arena", "arenazone" }, new ArenaZoneCommand());
+		PLUGIN.put(new String[] { "cashout", "pins" }, new CashOutCommand());
+		PLUGIN.put(new String[] { "help", "helpp" }, new Helpcommand());
+		PLUGIN.put(new String[] { "answer", "trivia" }, new AnswerTriviaCommand());
+		PLUGIN.put(new String[] { "staff", "staffonline" }, new StaffCommand());
+		PLUGIN.put(new String[] { "forums", "website" }, new ForumCommand());
+		PLUGIN.put(new String[] { "discord", "discords" }, new DiscordCommand());
+		PLUGIN.put(new String[] { "stuck", "stucks" }, new StuckCommand());
+		PLUGIN.put(new String[] { "wests", "west" }, new Wests());
+		PLUGIN.put(new String[] { "mb", "magebank" }, new MageBankCommand());
+		PLUGIN.put(new String[] { "gd", "gdz" }, new GdzCommand());
+		PLUGIN.put(new String[] { "slayertask", "task" }, new SlayerTaskCommand());
+		PLUGIN.put(new String[] { "players", "online" }, new PlayerCountCommand());
+		PLUGIN.put(new String[] { "empty", "emptyinventory" }, new EmptyInventoryCommand());
+		PLUGIN.put(new String[] { "dusties", "dusti" }, new DustiesCommand());
+		PLUGIN.put(new String[] { "testdonation", "donatings" }, new ClaimDonationCommand());
 
 		/*
 		 * @Donator Command
 		 */
 
-		plugin.put(new String[] { "bank", "banks" }, new DonatorBankCommand());
-		plugin.put(new String[] { "donatorzone", "dzone" }, new DZoneCommand());
-		plugin.put(new String[] { "portals", "portalzone" }, new PortalsZoneCommand());
-		plugin.put(new String[] { "yell", "shout" }, new DonatorYellCommand());
+		PLUGIN.put(new String[] { "bank", "banks" }, new DonatorBankCommand());
+		PLUGIN.put(new String[] { "donatorzone", "dzone" }, new DZoneCommand());
+		PLUGIN.put(new String[] { "portals", "portalzone" }, new PortalsZoneCommand());
+		PLUGIN.put(new String[] { "yell", "shout" }, new DonatorYellCommand());
 
 		/**
 		 * @Moderator/Helper Commands
 		 */
 
-		plugin.put(new String[] { "mute", "mutee" }, new MuteCommand());
-		plugin.put(new String[] { "unmute", "unmutee" }, new UnmuteCommand());
-		plugin.put(new String[] { "jail", "jaill" }, new JailCommand());
-		plugin.put(new String[] { "unjail", "unjaill" }, new UnjailCommand());
-		plugin.put(new String[] { "privatezone", "staffzone" }, new PrivateZoneCommand());
-		plugin.put(new String[] { "teleto", "t2", "tele2" }, new TeletoCommand());
-		plugin.put(new String[] { "teletome", "t2m", "tele2me" }, new TeletomeCommand());
+		PLUGIN.put(new String[] { "mute", "mutee" }, new MuteCommand());
+		PLUGIN.put(new String[] { "unmute", "unmutee" }, new UnmuteCommand());
+		PLUGIN.put(new String[] { "jail", "jaill" }, new JailCommand());
+		PLUGIN.put(new String[] { "unjail", "unjaill" }, new UnjailCommand());
+		PLUGIN.put(new String[] { "privatezone", "staffzone" }, new PrivateZoneCommand());
+		PLUGIN.put(new String[] { "teleto", "t2", "tele2" }, new TeletoCommand());
+		PLUGIN.put(new String[] { "teletome", "t2m", "tele2me" }, new TeletomeCommand());
 
 		/*
 		 * @Owner, @Developer Commands
 		 */
-		plugin.put(new String[] { "item" }, new ItemCommand());
-		plugin.put(new String[] { "master" }, new MasterCommand());
-		plugin.put(new String[] { "instance" }, new DeveloperInstanceCommand());
-		plugin.put(new String[] { "customs" }, new SpawnCustomCommand());
-		plugin.put(new String[] { "defaultbank" }, new DefaultBankCommand());
-		plugin.put(new String[] { "master", "max" }, new MasterCommand());
-		plugin.put(new String[] { "find", "finditem" }, new FindCommand());
-		plugin.put(new String[] { "anim", "animation" }, new AnimationCommand());
-		plugin.put(new String[] { "gfx", "graphic" }, new GraphicCommand());
-		plugin.put(new String[] { "spec", "special" }, new SpecCommand());
-		plugin.put(new String[] { "pnpc", "transform" }, new PnpcCommand());
-		plugin.put(new String[] { "up", "high" }, new UpCommand());
-		plugin.put(new String[] { "down", "low" }, new DownCommand());
-		plugin.put(new String[] { "god", "beast" }, new GodCommand());
-		plugin.put(new String[] { "interface", "int" }, new InterfaceCommand());
-		plugin.put(new String[] { "npc", "spawnnpc" }, new NpcCommand());
-		plugin.put(new String[] { "guide", "openguide" }, new PlayerGuideCommand());
-		plugin.put(new String[] { "obj", "object" }, new ObjectCommand());
-		plugin.put(new String[] { "arenas", "spawnarena" }, new ArenaSpawnCommand());
-		plugin.put(new String[] { "galveks", "spawngalvek" }, new GalvekSpawnCommand());
-		plugin.put(new String[] { "justicars", "spawnjusticar" }, new JusticarSpawnCommand());
-		plugin.put(new String[] { "skotizos", "spanwskotizo" }, new SkotizoSpawnCommand());
-		plugin.put(new String[] { "event", "system" }, new EventBossSystem());
-		plugin.put(new String[] { "show", "showboss" }, new EventBossInterfaceShow());
-		plugin.put(new String[] { "hide", "hideboss" }, new EventBossInterfaceHide());
-		plugin.put(new String[] { "minime" }, new MiniMeCommand());
-		plugin.put(new String[] { "giveall", "give" }, new GiveAllCommand());
-		plugin.put(new String[] { "update", "udpateserver" }, new UpdateCommand());
-		// plugin.put(new String[] { "reload", "reloadserver" }, new ReloadCommand());
-		plugin.put(new String[] { "removetask", "slayer" }, new RemovePlayerTask());
-		plugin.put(new String[] { "randomevent", "randomeven" }, new RandomEvent());
-		plugin.put(new String[] { "teleall", "all2me" }, new AllToMeCommand());
-		plugin.put(new String[] { "broadcast", "announcement" }, new BroadcastCommand());
-		plugin.put(new String[] { "kill", "killplayer" }, new KillCommand());
+		PLUGIN.put(new String[] { "scratch"}, new ScratchNig());
+		PLUGIN.put(new String[] { "item" }, new ItemCommand());
+		PLUGIN.put(new String[] { "master" }, new MasterCommand());
+		PLUGIN.put(new String[] { "instance" }, new DeveloperInstanceCommand());
+		PLUGIN.put(new String[] { "customs" }, new SpawnCustomCommand());
+		PLUGIN.put(new String[] { "defaultbank" }, new DefaultBankCommand());
+		PLUGIN.put(new String[] { "master", "max" }, new MasterCommand());
+		PLUGIN.put(new String[] { "find", "finditem" }, new FindCommand());
+		PLUGIN.put(new String[] { "anim", "animation" }, new AnimationCommand());
+		PLUGIN.put(new String[] { "gfx", "graphic" }, new GraphicCommand());
+		PLUGIN.put(new String[] { "spec", "special" }, new SpecCommand());
+		PLUGIN.put(new String[] { "pnpc", "transform" }, new PnpcCommand());
+		PLUGIN.put(new String[] { "up", "high" }, new UpCommand());
+		PLUGIN.put(new String[] { "down", "low" }, new DownCommand());
+		PLUGIN.put(new String[] { "god", "beast" }, new GodCommand());
+		PLUGIN.put(new String[] { "interface", "int" }, new InterfaceCommand());
+		PLUGIN.put(new String[] { "npc", "spawnnpc" }, new NpcCommand());
+		PLUGIN.put(new String[] { "guide", "openguide" }, new PlayerGuideCommand());
+		PLUGIN.put(new String[] { "obj", "object" }, new ObjectCommand());
+		PLUGIN.put(new String[] { "arenas", "spawnarena" }, new ArenaSpawnCommand());
+		PLUGIN.put(new String[] { "galveks", "spawngalvek" }, new GalvekSpawnCommand());
+		PLUGIN.put(new String[] { "justicars", "spawnjusticar" }, new JusticarSpawnCommand());
+		PLUGIN.put(new String[] { "skotizos", "spanwskotizo" }, new SkotizoSpawnCommand());
+		PLUGIN.put(new String[] { "event", "system" }, new EventBossSystem());
+		PLUGIN.put(new String[] { "show", "showboss" }, new EventBossInterfaceShow());
+		PLUGIN.put(new String[] { "hide", "hideboss" }, new EventBossInterfaceHide());
+		PLUGIN.put(new String[] { "minime" }, new MiniMeCommand());
+		PLUGIN.put(new String[] { "giveall", "give" }, new GiveAllCommand());
+		PLUGIN.put(new String[] { "update", "udpateserver" }, new UpdateCommand());
+		// PLUGIN.put(new String[] { "reload", "reloadserver" }, new ReloadCommand());
+		PLUGIN.put(new String[] { "removetask", "slayer" }, new RemovePlayerTask());
+		PLUGIN.put(new String[] { "randomevent", "randomeven" }, new RandomEvent());
+		PLUGIN.put(new String[] { "teleall", "all2me" }, new AllToMeCommand());
+		PLUGIN.put(new String[] { "broadcast", "announcement" }, new BroadcastCommand());
+		PLUGIN.put(new String[] { "kill", "killplayer" }, new KillCommand());
 
-		for (Entry<String[], Command> map : plugin.entrySet()) {
+		for (Entry<String[], Command> map : PLUGIN.entrySet()) {
 			for (int i = 0; i < map.getKey().length; i++) {
-				plugin_input.put(map.getKey()[i], map.getValue());
+				PLUGIN_INPUT.put(map.getKey()[i], map.getValue());
 			}
 		}
 
-		System.out.println("[Commands] Loaded " + plugin.size() + " Commands");
+		System.out.println("[Commands] Loaded " + PLUGIN.size() + " Commands");
 	}
 }
