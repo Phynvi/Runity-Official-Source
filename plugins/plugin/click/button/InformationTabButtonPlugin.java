@@ -65,6 +65,7 @@ public class InformationTabButtonPlugin extends PluginContext {
 		case 29429:
 			PresetInterfaceHandler presets = new PresetInterfaceHandler();
 			presets.open(player);
+			player.message("The preset system is still under development!");
 			break;
 		/** here **/
 		case 29423:

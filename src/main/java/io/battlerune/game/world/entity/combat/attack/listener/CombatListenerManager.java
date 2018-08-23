@@ -146,7 +146,7 @@ public final class CombatListenerManager {
 					return;
 				}
 			//	System.out.println("(Adding equipmenteffectsonlogin) listener " +
-		///		 set.listener.getClass().getSimpleName() + " from " + player.getName());
+		//		 set.listener.getClass().getSimpleName() + " from " + player.getName());
 			}
 		}
 	}

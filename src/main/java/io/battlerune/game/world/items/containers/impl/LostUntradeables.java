@@ -18,7 +18,7 @@ public class LostUntradeables extends ItemContainer {
 	private final Player player;
 
 	public LostUntradeables(Player player) {
-		super(30, StackPolicy.ALWAYS, false);
+		super(30, StackPolicy.ALWAYS);
 		this.player = player;
 	}
 

@@ -354,7 +354,7 @@ public class DuelArenaActivity extends Activity {
 
 		long value = 0;
 
-		final ItemContainer rewardContainer = new ItemContainer(28, ItemContainer.StackPolicy.STANDARD, false);
+		final ItemContainer rewardContainer = new ItemContainer(28, ItemContainer.StackPolicy.STANDARD);
 
 		rewardContainer.addAll(winnerContainer.toArray());
 		value += winnerContainer.containerValue(PriceType.VALUE);

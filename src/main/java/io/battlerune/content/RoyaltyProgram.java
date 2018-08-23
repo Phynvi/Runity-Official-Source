@@ -23,14 +23,14 @@ public class RoyaltyProgram {
 
 	/** Holds all the RoyaltyReward data. */
 	public enum RoyaltyReward {
-	ONE(1, new Item(380, 100)), // LOBSTER
-	THIRTEEN(13, new Item(560, 175)), // DEATH RUNE
+	ONE(1, new Item(4587, 1)), // LOBSTER
+	THIRTEEN(13, new Item(560, 17500)), // DEATH RUNE
 	TWENTY_FIVE(25, new Item(7158, 1)), // DRAGON 2H
-	THIRTY_EIGHT(38, new Item(4588, 3)), // DRAGON SCIMITAR
-	FIFTY(50, new Item(537, 100)), // DRAGON BONES
-	SIXTY_SEVEN(67, new Item(12934, 300)), // ZULRAH_SCALES
-	SEVENTY_FIVE(75, new Item(11936, 250)), // DARK CRAB
-	EIGHTY_EIGHT(88, new Item(995, 500_000)), // COINS
+	THIRTY_EIGHT(38, new Item(4588, 5)), // DRAGON SCIMITAR
+	FIFTY(50, new Item(537, 300)), // DRAGON BONES
+	SIXTY_SEVEN(67, new Item(12934, 1500)), // ZULRAH_SCALES
+	SEVENTY_FIVE(75, new Item(11936, 500)), // DARK CRAB
+	EIGHTY_EIGHT(88, new Item(995, 999_000)), // COINS
 	ONE_HUNDRED(100, new Item(6199, 1)); // MYSTERY BOX
 
 		private final int level;

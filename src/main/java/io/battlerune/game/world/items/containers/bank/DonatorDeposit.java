@@ -31,7 +31,7 @@ public class DonatorDeposit extends ItemContainer {
 
 	/** * Constructs a new <code>DonatorDeposit</code>. */
 	public DonatorDeposit(Player player) {
-		super(28, ItemContainer.StackPolicy.STANDARD, false);
+		super(28, ItemContainer.StackPolicy.STANDARD);
 		this.player = player;
 		this.stopwatch.reset();
 	}
