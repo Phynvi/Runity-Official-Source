@@ -28,6 +28,9 @@ public class ScratchCard {
 
 	}
 
+	/**
+	 * On {@code display}
+	 */
 	private void cleanInterface() {
 
 		COMBINATION.clear();
@@ -45,6 +48,9 @@ public class ScratchCard {
 		player.send(new SendString("Match 3 to Win!", 20014));
 	}
 
+	/**
+	 * Processes on button {@click} 
+	 */
 	private void process() {
 		if (COMBINATION_COUNT.size() >= 3) {
 			if ((COMBINATION_COUNT.get(0).getId() == COMBINATION_COUNT.get(1).getId())
@@ -57,6 +63,10 @@ public class ScratchCard {
 		}
 	}
 
+	/**
+	 * Reveals the clicked card
+	 * @param button 
+	 */
 	public void reveal(int button) {
 		switch (button) {
 		case 20016:
@@ -85,12 +95,6 @@ public class ScratchCard {
 				player.send(new SendString("", 20029));
 				player.send(new SendItemOnInterface(20030, new Item(COMBINATION.get(i).getThird().getId())));
 			}
-			break;
-		case 20033:
-			Item[] item = { new Item(4151), new Item(995, 100000) };
-			Item generated = item[random.nextInt(item.length)];
-			player.send(new SendItemOnInterface(20036, generated));
-			player.inventory.add(generated);
 			break;
 		}
 		process();
