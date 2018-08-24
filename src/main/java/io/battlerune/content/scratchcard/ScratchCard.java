@@ -7,6 +7,7 @@ import java.util.Random;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendItemOnInterface;
+import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendString;
 
 public class ScratchCard {
@@ -49,7 +50,7 @@ public class ScratchCard {
 	}
 
 	/**
-	 * Processes on button {@click} 
+	 * Processes on button {@click}
 	 */
 	private void process() {
 		if (COMBINATION_COUNT.size() >= 3) {
@@ -60,12 +61,14 @@ public class ScratchCard {
 			} else {
 				player.send(new SendString("Bad luck, you have lost!", 20014));
 			}
+			getBonus();
 		}
 	}
 
 	/**
 	 * Reveals the clicked card
-	 * @param button 
+	 * 
+	 * @param button
 	 */
 	public void reveal(int button) {
 		switch (button) {
@@ -98,6 +101,17 @@ public class ScratchCard {
 			break;
 		}
 		process();
+	}
+
+	/**
+	 * Fetches a random bonus
+	 */
+
+	public void getBonus() {
+			Item[] items = new Item[] { new Item(4151, 1), new Item(995, 111) };
+			Item item = items[random.nextInt(items.length)];
+			player.inventory.add(item);
+			player.send(new SendItemOnInterface(20036, item));
 	}
 
 	/**
