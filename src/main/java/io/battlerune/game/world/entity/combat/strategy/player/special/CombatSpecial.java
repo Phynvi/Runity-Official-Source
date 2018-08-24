@@ -31,6 +31,7 @@ import io.battlerune.game.world.entity.combat.strategy.player.special.melee.Drag
 import io.battlerune.game.world.entity.combat.strategy.player.special.melee.GraniteMaul;
 import io.battlerune.game.world.entity.combat.strategy.player.special.melee.SaradominGodsword;
 import io.battlerune.game.world.entity.combat.strategy.player.special.melee.SaradominSword;
+import io.battlerune.game.world.entity.combat.strategy.player.special.melee.ScytheOfViturStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.special.melee.ToxicGlaiveSpecialAttack;
 import io.battlerune.game.world.entity.combat.strategy.player.special.melee.ZamorakGodsword;
 import io.battlerune.game.world.entity.combat.strategy.player.special.range.ArmadylCrossbow;
@@ -106,6 +107,8 @@ public enum CombatSpecial {
 	ARMADYL_GODSWORD(new int[] { 11802, 20368 }, 50, ArmadylGodsword.get()),
 	ZAMORAK_GODSWORD(new int[] { 11808, 20374 }, 50, ZamorakGodsword.get()),
 	BANDOS_GODSWORD(new int[] { 11804, 20370 }, 50, BandosGodsword.get()),
+	SCYTHE_OF_VITUR(new int[]{22325}, 30, ScytheOfViturStrategy.get()),
+
 
 	/* Ranged **/
 	BLOW_PIPE(new int[] { 12926 }, 50, Blowpipe.get()),

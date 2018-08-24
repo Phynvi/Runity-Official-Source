@@ -3,6 +3,7 @@ package io.battlerune.content.mysterybox;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.battlerune.content.mysterybox.impl.GoldMysteryBox;
 import io.battlerune.content.mysterybox.impl.MysteryBox;
 import io.battlerune.content.mysterybox.impl.SilverMysteryBox;
 
@@ -19,6 +20,8 @@ public class MysteryBoxEvent {
 		
 		MYSTERY_BOX.put(MysteryBoxType.MYSTERY_BOX, new MysteryBox());
 		MYSTERY_BOX.put(MysteryBoxType.SILVER_MBOX, new SilverMysteryBox());
+		MYSTERY_BOX.put(MysteryBoxType.GOLD_MBOX, new GoldMysteryBox());
+
 		
 		System.out.println("[Mystery Box] Loaded " + MYSTERY_BOX.size() + " Mysery Box Plugins");
 

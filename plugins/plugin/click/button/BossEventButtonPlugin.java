@@ -23,6 +23,10 @@ public class BossEventButtonPlugin extends PluginContext {
 	@Override
 	protected boolean onClick(Player player, int button) {
 		if (button == -19935) {
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
+			}
 			if (GalvekUtility.activated == true) {
 				SpawnData1 galvekpos = GalvekUtility.spawn;
 				Teleportation.teleport(player, galvekpos.getPosition());
@@ -55,6 +59,10 @@ public class BossEventButtonPlugin extends PluginContext {
 			}
 		}
 		if (button == -17935) {
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
+			}
 			if (JusticarUtility.activated == true) {
 				SpawnData2 justicar = JusticarUtility.spawn;
 				Teleportation.teleport(player, justicar.getPosition());
@@ -65,6 +73,10 @@ public class BossEventButtonPlugin extends PluginContext {
 			return false;
 		}
 		if (button == -16935) {
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
+			}
 			if (SkotizoUtility.activated == true) {
 				SpawnData skotizo = SkotizoUtility.spawn;
 				Teleportation.teleport(player, skotizo.getPosition());

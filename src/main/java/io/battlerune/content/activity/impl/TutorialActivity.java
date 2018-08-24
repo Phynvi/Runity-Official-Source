@@ -73,7 +73,7 @@ public class TutorialActivity extends Activity {
 
 	/** Updates the activity panel. */
 	private void update(String... strings) {
-		ActivityPanel.update(player, (int) Utility.getPercentageAmount(stage, 27), "Tutorial", "Progress", strings);
+		ActivityPanel.update(player, (int) Utility.getPercentageAmount(stage, 29), "Tutorial", "Progress", strings);
 	}
 
 	@Override
@@ -330,6 +330,7 @@ public class TutorialActivity extends Activity {
 					"Check out our forums for detail guides or ask a moderator.", "Good luck #name!")
 					.onAction(this::next).execute();
 			pause();
+			Utility.setPercentageAmount(100);
 			break;
 		case 29:
 			completed = true;

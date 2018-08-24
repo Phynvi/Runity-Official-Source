@@ -58,7 +58,7 @@ public class StarterKit {
 				 new Item(386, 300), new Item(565, 1000), new Item(555, 5000), new Item(560, 4000), new Item(557, 4000),
 				new Item(3025, 75), new Item(6686, 20), new Item(12696, 10), new Item(841), new Item(861),
 				new Item(995, 850000), new Item(1321), new Item(1325), new Item(4587), new Item(1215),
-				new Item(884, 1000), new Item(1704)}, 1.5),
+				new Item(884, 1000), new Item(1704), new Item(11902)}, 5),
 
 		CLASSIC(PlayerRight.CLASSIC,
 				new String[] { "", "Play Runity as a Classic player.",
@@ -67,7 +67,7 @@ public class StarterKit {
 				 new Item(386, 300), new Item(565, 1000), new Item(555, 5000), new Item(560, 4000), new Item(557, 4000),
 				new Item(3025, 75), new Item(6686, 20), new Item(12696, 10), new Item(841), new Item(861),
 				new Item(995, 850000), new Item(1321), new Item(1325), new Item(4587), new Item(1215),
-				new Item(884, 1000), new Item(1704) }, 1.5),
+				new Item(884, 1000), new Item(1704), new Item(13111) }, 1.5),
 
 		IRONMAN(PlayerRight.IRONMAN,
 				new String[] { "Playing as an ironman will restrict you from trading, picking up drops from other",

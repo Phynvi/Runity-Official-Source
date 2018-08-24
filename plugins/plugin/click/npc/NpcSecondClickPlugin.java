@@ -22,6 +22,10 @@ public class NpcSecondClickPlugin extends PluginContext {
 		case 5523:
 			player.dialogueFactory.sendDialogue(new RoyalKingDialogue(2));
 			break;
+			
+		case 394:
+			player.bank.open();
+		break;
 
 		case 3220:
 			player.dialogueFactory.sendOption("Chaos Altar", () -> {

@@ -51,6 +51,7 @@ import io.battlerune.util.parser.impl.ObjectRemovalParser;
 import io.battlerune.util.parser.impl.PacketSizeParser;
 import io.battlerune.util.parser.impl.StoreParser;
 import io.battlerune.util.sql.MySqlConnector;
+import io.battlerune.util.tools.ItemStatsDumper;
 import plugin.click.item.ClueScrollPlugin;
 
 public final class BattleRune {
@@ -99,6 +100,7 @@ public final class BattleRune {
 		new NpcForceChatParser().run();
 		new StoreParser().run();
 		new GlobalObjectParser().run();
+		ItemStatsDumper.printStats();
 		// MySqlLogHandler.run(MySqlCommands.INSERT, "Harryl has used ::commands");
 	}
 
