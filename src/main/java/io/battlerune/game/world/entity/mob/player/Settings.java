@@ -25,7 +25,7 @@ public class Settings {
 	/** The yell flag. */
 	public boolean yell = true;
 	/** Brightness. */
-	public int brightness = -1;
+	public int brightness = 4;
 	/** Zoom. */
 	public int zoom = -1;
 	/** Auto-retaliate. */
@@ -44,6 +44,8 @@ public class Settings {
 	public boolean cameraMovement = true;
 	/** ESC Close flage */
 	public boolean ESC_CLOSE = false;
+	
+	public boolean CUSTOM_LIGHTING = true;
 	public int clientWidth = 765;
 	public int clientHeight = 503;
 	/** The player instance. */
@@ -56,7 +58,12 @@ public class Settings {
 	public Settings(Player player) {
 		this.player = player;
 	}
-
+	
+	public boolean MOVING_TEXTURE = true;
+	public boolean TWEENING = true;
+   public boolean SMOOTH_SHADING = true;
+   public boolean particles = true;
+   
 	/** Handles a player logging in. */
 	public void login() {
 		setZoom(zoom, false);
@@ -71,7 +78,25 @@ public class Settings {
 		player.send(new SendConfig(207, cameraMovement ? 1 : 0));
 		player.send(new SendConfig(980, 0));
 		player.send(new SendConfig(594, ESC_CLOSE ? 1 : 0));
-		player.send(new SendConfig(394, clanMemberComporator.ordinal()));
+		player.send(new SendConfig(394, clanMemberComporator.ordinal()));		//client.toggleConfig(880, CUSTOM_LIGHTING ? 1 : 0);
+        player.send(new SendConfig(890, CUSTOM_LIGHTING ? 1 : 0));
+        
+        /*
+         	MOVING_TEXTURE = high;
+		TWEENING = high;
+		HD_MINIMAP = high;
+		MIPMAPPING = high;
+		FOG = high;
+		SMOOTH_SHADING = high;
+		PARTICLES = high;
+		client.loadingStage = 1;
+		client.minimapImage.method343();
+		System.runFinalization();
+		System.gc();
+		update(client);
+		client.pushMessage("Your client will now be performing in " + (!high ? "standard" : "high") + " definition.");
+         */
+
 	}
 
 	/** Sets the Zoom */

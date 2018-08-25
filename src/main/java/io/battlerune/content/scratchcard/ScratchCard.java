@@ -9,6 +9,7 @@ import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendItemOnInterface;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendString;
+import io.battlerune.util.Utility;
 
 public class ScratchCard {
 
@@ -20,12 +21,17 @@ public class ScratchCard {
 
 	public void display() {
 
-		cleanInterface();
+		if (player.inventory.contains(455)) { // this is actually a double check as the itemclick already checks but just incase
+			
+			player.inventory.remove(new Item(455, 1)); 
 
-		player.interfaceManager.open(20011);
+			cleanInterface();
 
-		COMBINATION.add(new ScratchCardCombination(new ScratchCardInstanced(20016, getRandom()),
-				new ScratchCardInstanced(20021, getRandom()), new ScratchCardInstanced(20026, getRandom())));
+			player.interfaceManager.open(20011);
+
+			COMBINATION.add(new ScratchCardCombination(new ScratchCardInstanced(20016, getRandom()),
+					new ScratchCardInstanced(20021, getRandom()), new ScratchCardInstanced(20026, getRandom())));
+		}
 
 	}
 
@@ -104,14 +110,14 @@ public class ScratchCard {
 	}
 
 	/**
-	 * Fetches a random bonus
+	 * Fetches a random bonus [NOT FiNISHED]
 	 */
-
+//its un let me talk so all u do for now just put the prizes that u want and ill finish it up laterkk
 	public void getBonus() {
-			Item[] items = new Item[] { new Item(4151, 1), new Item(995, 111) };
-			Item item = items[random.nextInt(items.length)];
-			player.inventory.add(item);
-			player.send(new SendItemOnInterface(20036, item));
+		Item[] items = new Item[] { new Item(995, Utility.random(35000000, 50000000)), new Item(6199) };
+		Item item = items[random.nextInt(items.length)];
+		player.inventory.add(item);
+		player.send(new SendItemOnInterface(20036, item));
 	}
 
 	/**

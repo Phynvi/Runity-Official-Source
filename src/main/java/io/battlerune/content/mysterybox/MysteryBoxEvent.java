@@ -16,14 +16,11 @@ public class MysteryBoxEvent {
 
 	public static final Map<MysteryBoxType, MysteryBoxListener> MYSTERY_BOX = new HashMap<>();
 	
-	public static void load() {
+	static {
 		
-		MYSTERY_BOX.put(MysteryBoxType.MYSTERY_BOX, new MysteryBox());
-		MYSTERY_BOX.put(MysteryBoxType.SILVER_MBOX, new SilverMysteryBox());
-		MYSTERY_BOX.put(MysteryBoxType.GOLD_MBOX, new GoldMysteryBox());
-
-		
-		System.out.println("[Mystery Box] Loaded " + MYSTERY_BOX.size() + " Mysery Box Plugins");
+		MYSTERY_BOX.putIfAbsent(MysteryBoxType.MYSTERY_BOX, new MysteryBox());
+		MYSTERY_BOX.putIfAbsent(MysteryBoxType.SILVER_MBOX, new SilverMysteryBox());
+		MYSTERY_BOX.putIfAbsent(MysteryBoxType.GOLD_MBOX, new GoldMysteryBox());
 
 	}
 }

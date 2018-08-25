@@ -103,6 +103,9 @@ public final class NpcDropManager {
 		for (NpcDrop drop : npc_drops) {
 			Item item = drop.toItem(gen);
 
+			/**
+			 * sell this on the store
+			 */
 			if (killer.equipment.contains(10557)) {
 				killer.message("@or2@[AUTO LOOT] Your Loot has been added to your inventory.");
 				killer.inventory.add(new Item(item.getId()));

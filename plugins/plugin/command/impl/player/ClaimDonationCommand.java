@@ -13,7 +13,7 @@ public class ClaimDonationCommand implements Command {
 
 	@Override
 	public void execute(Player player, String[] command) {
-		/* new java.lang.Thread() {
+		 new java.lang.Thread() {
 			public void run() {
 				try {
 					com.everythingrs.donate.Donation[] donations = com.everythingrs.donate.Donation.
@@ -36,7 +36,7 @@ public class ClaimDonationCommand implements Command {
 					e.printStackTrace();
 				}	
 			}
-		}.start();*/
+		}.start();
 	}
 
 	@Override

@@ -8,6 +8,7 @@ import io.battlerune.content.combat.cannon.CannonManager;
 import io.battlerune.content.consume.Anglerfish;
 import io.battlerune.content.mysterybox.MysteryBoxExecuter;
 import io.battlerune.content.mysterybox.impl.SilverMysteryBox;
+import io.battlerune.content.scratchcard.ScratchCard;
 import io.battlerune.content.skill.impl.slayer.Slayer;
 import io.battlerune.content.skill.impl.slayer.SlayerTask;
 import io.battlerune.content.skill.impl.woodcutting.BirdsNest;
@@ -32,6 +33,9 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 		switch (event.getItem().getId()) {
         case 6:
         	CannonManager.drop(player, new Cannon(player.getName(), player.getPosition()));
+        	break;
+        case 455:
+        	new ScratchCard(player).display();
         	break;
 		case 12746:
 			player.pkPoints += 3;
@@ -90,25 +94,22 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			if (player.inventory.contains(995, 1147000000)) {
 				player.message("You can't claim this ticket, make some room!");
 				return false;
-			} else {
+			} 
+			
 				player.inventory.add(995, 1000000000);
 				player.message("You have just claimed 1 1Bil Ticket!");
 				player.inventory.remove(5020, 1);
-			}
-			player.inventory.remove(5020, 1);
-			player.message("@red@You were unfortunate on this day, " + player.getName() + "!");
-			player.inventory.add(995, 5000000);
-			player.inventory.add(1, 1);
+			
 			break;
 		case 5021:
 			if (player.inventory.contains(995, 1647000000)) {
 				player.message("You can't claim this ticket, make some room!");
 				return false;
-			} else {
+			} 
 				player.inventory.add(995, 500000000);
 				player.message("You have just claimed 1 500M Ticket!");
 				player.inventory.remove(5021, 1);
-			}
+		
 			break;
 		case 12748:
 			player.pkPoints += 5;
