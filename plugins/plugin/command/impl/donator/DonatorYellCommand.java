@@ -17,7 +17,7 @@ public class DonatorYellCommand implements Command {
 	public void execute(Player player, String[] command) {
 		try {
 			final String message = String.format(command[1]);
-			Yell.yell(player, message.toString().trim());
+			Yell.yell(player, message);
 		} catch (final Exception e) {
 			player.send(new SendMessage("@or2@Invalid yell format, syntax: -messsage"));
 		}

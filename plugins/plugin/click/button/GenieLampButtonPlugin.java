@@ -52,7 +52,7 @@ public class GenieLampButtonPlugin extends PluginContext {
 				player.message("<img=14>You have been lucky enough to win a Prize! @or2@There is a 1/10 Chance");
 				player.message("of winning one!");
 				player.inventory.add(6199, 1);
-				World.sendMessage("<col=CF2192>NR: </col>Random Mystery Box Won by " + player.getName() + "!");
+				World.sendMessage("<col=CF2192>Runity: </col>Random Mystery Box Won by " + player.getName() + "!");
 
 			} else {
 				player.message("<img=14>You have been unfortunate in this occasion, and did not win the mystery box.");

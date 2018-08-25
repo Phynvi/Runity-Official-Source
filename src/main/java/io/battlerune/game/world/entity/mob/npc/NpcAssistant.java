@@ -108,6 +108,7 @@ public class NpcAssistant {
 			put(6611, Vetion::new);
 			put(7286, Skotizo::new);
 			put(1207, Arena::new);
+			put(5129, Arena::new);
 			put(763, GiantRoc::new);
 			put(6504, Venenatis::new);
 			put(3130, Tstanon::new);

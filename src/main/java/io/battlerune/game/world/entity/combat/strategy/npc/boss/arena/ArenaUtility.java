@@ -24,7 +24,7 @@ public class ArenaUtility {
 	public static Npc generateSpawn() {
 		activated = true;
 		SpawnData spawn = SpawnData.generate();
-		Npc arena = new Npc(1207, spawn.position, 10, Direction.NORTH);
+		Npc arena = new Npc(5129, spawn.position, 10, Direction.NORTH);
 		World.sendMessage("<col=8714E6>[ARENA EVENT] arena has just spawned! He is located at " + spawn.location + "!",
 				"<col=8714E6> First clan to kill him will be rewarded handsomely!");
 		World.sendMessage("to enter the arena do ::arena and rid this beast from the world of NR!");

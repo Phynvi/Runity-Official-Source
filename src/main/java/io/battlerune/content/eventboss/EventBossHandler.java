@@ -38,7 +38,7 @@ public class EventBossHandler {
 	}
 
 	public static void sendStringsArena(Player player) {
-		World.sendTeleportButtonNpc1(1207);
+		World.sendTeleportButtonNpc1(5129);
 		World.sendTeleportButton1();
 		player.send(new SendString("@whi@Glod", 46604, true));
 		player.send(new SendString("806", 46610, true)); // combat level/
