@@ -110,7 +110,7 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(10559, 1), // healer icon
 
 				new Item(11847, 1), // black h'ween mask
-				new Item(4083, 1), // sled
+				new Item(4084, 1), // sled
 				new Item(1048, 1), // white phat
 				new Item(1040, 1), // yellow phat
 				new Item(1042, 1), // blue phat

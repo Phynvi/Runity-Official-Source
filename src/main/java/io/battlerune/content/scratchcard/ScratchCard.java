@@ -21,17 +21,12 @@ public class ScratchCard {
 
 	public void display() {
 
-		if (player.inventory.contains(455)) { // this is actually a double check as the itemclick already checks but just incase
-			
-			player.inventory.remove(new Item(455, 1)); 
+		cleanInterface();
 
-			cleanInterface();
+		player.interfaceManager.open(20011);
 
-			player.interfaceManager.open(20011);
-
-			COMBINATION.add(new ScratchCardCombination(new ScratchCardInstanced(20016, getRandom()),
-					new ScratchCardInstanced(20021, getRandom()), new ScratchCardInstanced(20026, getRandom())));
-		}
+		COMBINATION.add(new ScratchCardCombination(new ScratchCardInstanced(20016, getRandom()),
+				new ScratchCardInstanced(20021, getRandom()), new ScratchCardInstanced(20026, getRandom())));
 
 	}
 
@@ -110,14 +105,28 @@ public class ScratchCard {
 	}
 
 	/**
-	 * Fetches a random bonus [NOT FiNISHED]
+	 * Fetches a random bonus
 	 */
-//its un let me talk so all u do for now just put the prizes that u want and ill finish it up laterkk
+
 	public void getBonus() {
-		Item[] items = new Item[] { new Item(995, Utility.random(35000000, 50000000)), new Item(6199) };
-		Item item = items[random.nextInt(items.length)];
-		player.inventory.add(item);
-		player.send(new SendItemOnInterface(20036, item));
+		Item[] items = new Item[] { new Item(995, Utility.random(35000000, 50000000)), new Item(6199), new Item(4151), new Item(13175, 1),
+				 new Item(13173, 11), // phat set
+					new Item(13175, 1), // h'ween set
+					new Item(21000, 1), // twisted buckler
+					new Item(21006, 1), // kodai wand
+					new Item(21003, 1), // elder maul
+					new Item(21015, 1), // Dinh bulwark
+					new Item(20997, 1), // twisted bow
+					new Item(12817, 1), // ely ss
+					new Item(12821, 1), // spectral ss
+					new Item(12825, 1), // arcane ss
+					new Item(12819, 1), // ely sigil
+					new Item(12823, 1), // spectral sigil
+					new Item(12827, 1), // arcane sigil
+					new Item(21225, 1),};
+			Item item = items[random.nextInt(items.length)];
+			player.inventory.add(item);
+			player.send(new SendItemOnInterface(20036, item));
 	}
 
 	/**
