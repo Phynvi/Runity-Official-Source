@@ -75,8 +75,10 @@ public class ScratchCard {
 		switch (button) {
 		case 20016:
 			for (int i = 0; i < COMBINATION.size(); i++) {
-				if (COMBINATION_COUNT.contains(COMBINATION.get(i).getFirst()))
-					continue;
+				if (COMBINATION_COUNT.contains(COMBINATION.get(i).getFirst())) {
+					player.send(new SendMessage("You've already revealed the first card!"));
+					return;
+				}
 				COMBINATION_COUNT.add(COMBINATION.get(i).getFirst());
 				player.send(new SendString("", 20019));
 				player.send(new SendItemOnInterface(20020, new Item(COMBINATION.get(i).getFirst().getId())));
@@ -84,8 +86,10 @@ public class ScratchCard {
 			break;
 		case 20021:
 			for (int i = 0; i < COMBINATION.size(); i++) {
-				if (COMBINATION_COUNT.contains(COMBINATION.get(i).getSecond()))
-					continue;
+				if (COMBINATION_COUNT.contains(COMBINATION.get(i).getSecond())) {
+					player.send(new SendMessage("You've already revealed the second card!"));
+					return;
+				}
 				COMBINATION_COUNT.add(COMBINATION.get(i).getSecond());
 				player.send(new SendString("", 20024));
 				player.send(new SendItemOnInterface(20025, new Item(COMBINATION.get(i).getSecond().getId())));
@@ -93,8 +97,10 @@ public class ScratchCard {
 			break;
 		case 20026:
 			for (int i = 0; i < COMBINATION.size(); i++) {
-				if (COMBINATION_COUNT.contains(COMBINATION.get(i).getThird()))
-					continue;
+				if (COMBINATION_COUNT.contains(COMBINATION.get(i).getThird())) {
+					player.send(new SendMessage("You've already revealed the third card!"));
+					return;
+				}
 				COMBINATION_COUNT.add(COMBINATION.get(i).getThird());
 				player.send(new SendString("", 20029));
 				player.send(new SendItemOnInterface(20030, new Item(COMBINATION.get(i).getThird().getId())));
