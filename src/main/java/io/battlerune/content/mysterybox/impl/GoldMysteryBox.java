@@ -174,8 +174,9 @@ public class GoldMysteryBox implements MysteryBoxListener {
 		} else {
 			player.inventory.add(getCommon()[random.nextInt(getCommon().length)]);
 		}
-		player.setBossPoints(player.getBossPoints() + 500);
-		player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
+		player.setBossPoints(player.getBossPoints() + 100);
+		
+		player.message("<img=14>You have been given @red@" + player.getBossPoints() + " Boss Points!");
 
 	}
 

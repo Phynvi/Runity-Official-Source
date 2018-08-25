@@ -69,7 +69,7 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 
 		case 299:
-			if (PlayerRight.isDeveloper(player)) {
+		/*	if (PlayerRight.isDeveloper(player)) {
 				player.dialogueFactory.sendOption("Plant Red Flower", () -> {
 					player.message("Sike bitch ahahah this aint fucking dreamscape retard");
 					player.message("@red@no rigged seeds in here nigga");
@@ -83,11 +83,10 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 					player.message("Sike bitch ahahah this aint fucking dreamscape retard");
 					player.message("@red@no rigged seeds in here nigga");
 				}, "Win the entire FP", player.interfaceManager::close).execute();
-			} else {
+			} else {*/
 				player.inventory.remove(299, 1);
 				FlowerHandler flower = new FlowerHandler(player);
 				flower.plantFlower();
-			}
 			break;
 
 		case 5020:

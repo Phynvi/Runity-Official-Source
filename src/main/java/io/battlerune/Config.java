@@ -442,7 +442,9 @@ public final class Config {
 			new Item(13693), new Item(13696), new Item(13697), new Item(13698),
 			new Item(13699), new Item(13700), new Item(13701), new Item(13702),
 			new Item(22317), new Item(22280) };
-	public final static Item[] BANK_ITEMS = { new Item(995, 10000), new Item(11665, 10000), new Item(11663, 10000),
+	public final static Item[] BANK_ITEMS = { new Item(995, 10000), new Item(6199, 10000), new Item(12955, 10000), new Item(11739, 10000),
+			new Item(299, 10000),
+			new Item(455, 10000), new Item(11665, 10000), new Item(11663, 10000),
 			new Item(11664, 10000), new Item(8840, 10000), new Item(8839, 10000), new Item(8842, 10000),
 			new Item(4151, 10000), new Item(11802, 10000), new Item(11804, 10000), new Item(11806, 10000),
 			new Item(11808, 10000), new Item(13652, 10000), new Item(13576, 10000), new Item(4587, 10000),
