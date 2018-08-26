@@ -84,7 +84,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 			return;
 		}
 
-		if (Area.inEventArena(mob)) {
+	/*	if (Area.inEventArena(mob)) {
 			safe = true;
 			mob.equipment.unequip(Equipment.ARROWS_SLOT);
 			mob.equipment.unequip(Equipment.AMULET_SLOT);
@@ -100,7 +100,11 @@ public final class PlayerDeath extends MobDeath<Player> {
 
 			mob.send(new SendMessage("@red@Your Items have either been banked or sent to your inventory."));
 			return;
-		}
+		}*/
+		  if (Area.inEventArena(mob)) {
+	            safe = true;
+	            return;
+	        }
 
 		if (!PlayerRight.isPriviledged(mob)) {
 			Pets.onDeath(mob);

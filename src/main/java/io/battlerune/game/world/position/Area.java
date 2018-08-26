@@ -50,8 +50,17 @@ public abstract class Area {
 	private static final ImmutableList<Area> PEST_CONTROL_GAME = ImmutableList
 			.of(new SquareArea("Pest Control Game", 2622, 2558, 2693, 2627));
 
-	private static final ImmutableList<Area> EVENT_ARENA = ImmutableList
-			.of(new SquareArea("Event Arena", 3118, 3481, 3127, 3487));
+    private static final ImmutableList<Area> EVENT_ARENA = ImmutableList.of(new SquareArea("Event Arena", 3075, 3506, 3082, 3513));
+
+    
+    public static boolean inEventArena(Interactable entity) {
+        for (Area zone : EVENT_ARENA) {
+            if (zone.inArea(entity.getPosition())) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 	public static final ImmutableList<Area> BOSS_ARENA = ImmutableList.of(
 	new SquareArea("Arena Zone", 2257, 5309, 2285, 5370));
@@ -207,14 +216,6 @@ public abstract class Area {
 		return false;
 	}
 
-	public static boolean inEventArena(Interactable entity) {
-		for (Area zone : EVENT_ARENA) {
-			if (zone.inArea(entity.getPosition())) {
-				return true;
-			}
-		}
-		return false;
-	}
 
 	/*
 	 * public static boolean inBossArena(Interactable entity) { for (Area zone :

@@ -984,8 +984,8 @@
     "facing": "NORTH",
     "radius": 2,
     "position": {
-      "x": 3050,
-      "y": 4962,
+      "x": 3076,
+      "y": 3490,
       "height": 1
     }
   },
@@ -1364,8 +1364,8 @@
     "facing": "NORTH",
     "radius": 2,
     "position": {
-      "x": 3076,
-      "y": 3484,
+      "x": 3089,
+      "y": 3482,
       "height": 0
     }
   },
@@ -1793,16 +1793,6 @@
       "height": 0
     }
   },
-  {
-	    "id": 5919,
-	    "facing": "SOUTH",
-	    "radius": 0,
-	    "position": {
-	      "x": 3083,
-	      "y": 3511,
-	      "height": 0
-	    }
-	  },
   {
 	    "id": 305,
 	    "facing": "SOUTH",
@@ -2287,12 +2277,12 @@
   {
     "id": 1152,
     "position": {
-      "x": 3085,
-      "y": 3513,
+      "x": 3087,
+      "y": 3512,
       "height": 0
     },
     "facing": "SOUTH",
-    "radius": 5
+    "radius": 3
   },
   {
     "id": 2215,
@@ -3567,11 +3557,11 @@
   {
 	    "id": 6797,
 	    "position": {
-	      "x": 3081,
-	      "y": 3506,
+	      "x": 3083,
+	      "y": 3490,
 	      "height": 0
 	    },
-	    "facing": "SOUTH",
+	    "facing": "EAST",
 	    "radius": 0
 	  },
   {
@@ -3657,18 +3647,18 @@
   {
     "id": 345,
     "position": {
-      "x": 3093,
-      "y": 3485,
+      "x": 3092,
+      "y": 3487,
       "height": 0
     },
-    "facing": "NORTH",
-    "radius": 2
+    "facing": "WEST",
+    "radius": 1
   },
   {
     "id": 6526,
     "position": {
-      "x": 3082,
-      "y": 3506,
+      "x": 3080,
+      "y": 3497,
       "height": 0
     },
     "facing": "NORTH",
@@ -3687,8 +3677,8 @@
   {
     "id": 506,
     "position": {
-      "x": 3080,
-      "y": 3509,
+      "x": 3079,
+      "y": 3491,
       "height": 0
     },
     "facing": "EAST",
@@ -3697,18 +3687,18 @@
   {
     "id": 6481,
     "position": {
-      "x": 3073,
-      "y": 3496,
+      "x": 3076,
+      "y": 3500,
       "height": 0
     },
     "facing": "EAST",
-    "radius": 0
+    "radius": 2
   },
   {
     "id": 1146,
     "position": {
-      "x": 3081,
-      "y": 3513,
+      "x": 3076,
+      "y": 3491,
       "height": 0
     },
     "facing": "EAST",
@@ -4041,7 +4031,7 @@
       "y": 3492,
       "height": 0
     },
-    "facing": "NORTH",
+    "facing": "EAST",
     "radius": 0
   },
   {
@@ -4107,8 +4097,8 @@
   {
     "id": 311,
     "position": {
-      "x": 3078,
-      "y": 3506,
+      "x": 3079,
+      "y": 3497,
       "height": 0
     },
     "facing": "SOUTH",
@@ -4137,21 +4127,21 @@
   {
     "id": 505,
     "position": {
-      "x": 3077,
-      "y": 3511,
+      "x": 3076,
+      "y": 3488,
       "height": 0
     },
-    "facing": "SOUTH",
+    "facing": "EAST",
     "radius": 0
   },
   {
     "id": 5440,
     "position": {
-      "x": 3082,
-      "y": 3511,
+      "x": 3076,
+      "y": 3496,
       "height": 0
     },
-    "facing": "SOUTH",
+    "facing": "EAST",
     "radius": 0
   },
   {
@@ -4391,17 +4381,17 @@
       "y": 3499,
       "height": 0
     },
-    "facing": "WEST",
+    "facing": "SOUTH",
     "radius": 0
   },
   {
     "id": 4306,
     "position": {
-      "x": 3076,
-      "y": 3511,
+      "x": 3083,
+      "y": 3489,
       "height": 0
     },
-    "facing": "SOUTH",
+    "facing": "EAST",
     "radius": 0
   },
   {
@@ -4417,8 +4407,8 @@
   {
     "id": 1307,
     "position": {
-      "x": 3077,
-      "y": 3506,
+      "x": 3078,
+      "y": 3497,
       "height": 0
     },
     "facing": "SOUTH",
@@ -4427,8 +4417,8 @@
   {
     "id": 3439,
     "position": {
-      "x": 3081,
-      "y": 3499,
+      "x": 3099,
+      "y": 3500,
       "height": 0
     },
     "facing": "SOUTH",
@@ -10447,21 +10437,21 @@
   {
     "id": 3218,
     "position": {
-      "x": 3081,
-      "y": 3511,
+      "x": 3076,
+      "y": 3495,
       "height": 0
     },
-    "facing": "SOUTH",
+    "facing": "EAST",
     "radius": 0
   },
   {
     "id": 3217,
     "position": {
-      "x": 3079,
-      "y": 3511,
+      "x": 3076,
+      "y": 3494,
       "height": 0
     },
-    "facing": "SOUTH",
+    "facing": "EAST",
     "radius": 0
   },
   {
@@ -10477,11 +10467,11 @@
   {
     "id": 3216,
     "position": {
-      "x": 3080,
-      "y": 3511,
+      "x": 3076,
+      "y": 3493,
       "height": 0
     },
-    "facing": "SOUTH",
+    "facing": "EAST",
     "radius": 0
   },
   {
@@ -24487,11 +24477,11 @@
   {
     "id": 1199,
     "position": {
-      "x": 3078,
-      "y": 3511,
+      "x": 3076,
+      "y": 3489,
       "height": 0
     },
-    "facing": "SOUTH",
+    "facing": "EAST",
     "radius": 0
   },
   {
@@ -30429,11 +30419,11 @@
   {
 	    "id": 3220,
 	    "position": {
-	      "x": 3079,
-	      "y": 3506,
+	      "x": 3076,
+	      "y": 3487,
 	      "height": 0
 	    },
-	    "facing": "SOUTH",
+	    "facing": "EAST",
 	    "radius": 0
   },
   {

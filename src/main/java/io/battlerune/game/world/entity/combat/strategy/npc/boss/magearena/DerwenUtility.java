@@ -45,7 +45,6 @@ public class DerwenUtility {
 		LEVEL_19("lvl 15 wild near dark warrior's fortress", new Position(3009, 3637, 0)),
 		LEVEL_28("lvl 54 wild near wilderness resource area", new Position(3184, 3948, 0)),
 		LEVEL_41("lvl 52 wild near Rouges Castle", new Position(3270, 3933, 0)),
-		LEVEL_52("lvl 1 wild North of edgeville", new Position(3100, 3528, 0)),
 		LEVEL_53("lvl 19 wild near graveyard of shadows", new Position(3146, 3672, 0));
 
 		public final String location;
