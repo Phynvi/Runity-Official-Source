@@ -11,9 +11,9 @@ import io.battlerune.game.world.entity.mob.player.Player;
 public class AnswerTriviaCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 
-		final String answer = String.format(command[1]);
+		final String answer = String.format(parts[1]);
 		TriviaBot.answer(player, answer.toString().trim());
 
 	}

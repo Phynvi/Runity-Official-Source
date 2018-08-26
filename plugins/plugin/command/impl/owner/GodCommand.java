@@ -14,13 +14,13 @@ import io.battlerune.net.packet.out.SendMessage;
 public class GodCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		player.skills.setLevel(0, 1500);
 		player.skills.setLevel(1, 1500);
 		player.skills.setLevel(2, 1500);
 		player.skills.setLevel(3, 1500);
 		player.skills.setLevel(4, 1500);
-		player.send(new SendMessage("You are now in god mode my nigga, cherish it whilst you can."));
+		player.send(new SendMessage("You are now in God mode."));
 	}
 
 	@Override

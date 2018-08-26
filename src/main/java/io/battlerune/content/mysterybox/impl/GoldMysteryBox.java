@@ -160,22 +160,21 @@ public class GoldMysteryBox implements MysteryBoxListener {
 		 * and 150 and if the RANDOM NUMBER is equal to 10 then it will execute.
 		 */
 		if (Utility.random(1, 125) <= 10) {
-			player.inventory.add(getUncommon()[random.nextInt(getCommon().length)]);
+			player.inventory.add(getUncommon()[random.nextInt(getUncommon().length)]);
 			player.message("You have recieved a Uncommon loot!");
 		}
 		if (Utility.random(1, 225) <= 7) {
-			player.inventory.add(getRare()[random.nextInt(getCommon().length)]);
+			player.inventory.add(getRare()[random.nextInt(getRare().length)]);
 			player.message("@gre@You have recieved a Rare loot!");
 		}
 		if (Utility.random(1, 325) <= 5) {
-			player.inventory.add(getUltra()[random.nextInt(getCommon().length)]);
+			player.inventory.add(getUltra()[random.nextInt(getUltra().length)]);
 			player.message("You have recieved a ULTRA RARE LOOT!");
 			World.sendMessage(player.getName() + " @red@Has received ULTRA RARE LOOT!");
 		} else {
 			player.inventory.add(getCommon()[random.nextInt(getCommon().length)]);
 		}
-		player.setBossPoints(player.getBossPoints() + 100);
-		
+		player.setBossPoints(player.getBossPoints() + 75);
 		player.message("<img=14>You have been given @red@" + player.getBossPoints() + " Boss Points!");
 
 	}

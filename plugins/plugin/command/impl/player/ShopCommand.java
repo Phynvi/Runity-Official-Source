@@ -12,7 +12,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 public class ShopCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		Teleportation.teleport(player, Config.STORES_POSITION);
 		player.message("Here you will find all the stores that are irrelavant to take space up at home");
 	}

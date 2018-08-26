@@ -17,7 +17,7 @@ import io.battlerune.net.packet.out.SendMessage;
 public class PrivateZoneCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		DialogueFactory factory = player.dialogueFactory;
 		factory.sendOption("Private Room", () -> {
 			Teleportation.teleport(player, new Position(3108, 3161, 3));

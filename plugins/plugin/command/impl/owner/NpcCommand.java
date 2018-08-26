@@ -14,9 +14,9 @@ import io.battlerune.net.packet.out.SendMessage;
 public class NpcCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 
-		int id = Integer.parseInt(command[1]);
+		int id = Integer.parseInt(parts[1]);
 		Npc npc = new Npc(id, player.getPosition(), Config.NPC_WALKING_RADIUS);
 		npc.walk = false;
 		npc.register();

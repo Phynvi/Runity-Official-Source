@@ -12,7 +12,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class PlayerGuideCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 
 		PlayerGuideHandler guide = new PlayerGuideHandler();
 		guide.open(player);

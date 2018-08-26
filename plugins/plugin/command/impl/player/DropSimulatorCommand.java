@@ -11,7 +11,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 public class DropSimulatorCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		DropSimulator.open(player);
 	}
 

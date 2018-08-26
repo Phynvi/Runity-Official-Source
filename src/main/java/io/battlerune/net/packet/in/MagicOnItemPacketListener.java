@@ -31,6 +31,7 @@ public class MagicOnItemPacketListener implements PacketListener {
 		final int childId = packet.readShort();
 		final int spell = packet.readShort(ByteModification.ADD);
 
+
 		if (player.positionChange) {
 			return;
 		}
@@ -41,7 +42,7 @@ public class MagicOnItemPacketListener implements PacketListener {
 			return;
 		}
 
-		if (PlayerRight.isDeveloper(player) && player.debug) {
+		if (PlayerRight.isDeveloper(player)) {
 			player.message("[MagicOnItemPacket] spell=" + spell + " itemId=" + itemId + " slot=" + slot + " childId="
 					+ childId);
 		}

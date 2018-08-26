@@ -13,7 +13,7 @@ import io.battlerune.net.packet.out.SendMessage;
 public class StrongholdTele implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		Teleportation.teleport(player, Config.CHIMERA, 20, () -> {
 			player.send(new SendMessage("@or2@Welcome to Chimera's Lair! Kill the demi-bosses for points!."));
 		});

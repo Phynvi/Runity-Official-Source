@@ -143,15 +143,15 @@ public class MysteryBox implements MysteryBoxListener {
 		Random random = new Random();
 		player.inventory.remove(6199, 1);
 		if (Utility.random(1, 100) <= 10) {
-			player.inventory.add(getUncommon()[random.nextInt(getCommon().length)]);
+			player.inventory.add(getUncommon()[random.nextInt(getUncommon().length)]);
 			player.message("You have recieved a Uncommon loot!");
 		}
 		if (Utility.random(1, 200) <= 7) {
-			player.inventory.add(getRare()[random.nextInt(getCommon().length)]);
+			player.inventory.add(getRare()[random.nextInt(getRare().length)]);
 			player.message("@gre@You have recieved a Rare loot!");
 		}
 		if (Utility.random(1, 300) <= 5) {
-			player.inventory.add(getUltra()[random.nextInt(getCommon().length)]);
+			player.inventory.add(getUltra()[random.nextInt(getUltra().length)]);
 			player.message("You have recieved a ULTRA RARE LOOT!");
 			World.sendMessage(player.getName() + " @red@Has received ULTRA RARE LOOT!");
 		} else {

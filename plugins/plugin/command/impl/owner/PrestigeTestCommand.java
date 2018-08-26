@@ -12,7 +12,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class PrestigeTestCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		Prestige prestige = new Prestige(player);
 
 		if (player.skills.isMaxed()) {

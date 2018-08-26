@@ -12,7 +12,7 @@ import io.battlerune.net.packet.out.SendInputAmount;
 public class PouchCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		if (player.getCombat().isUnderAttack() || player.getCombat().isAttacking() || Area.inWilderness(player)
 				|| Area.inWilderness(player) || Area.inWildernessCourse(player) || Area.inWildernessResource(player)) {
 			player.message("You cannot access your Vault whilst in combat! or in the wilderness!");

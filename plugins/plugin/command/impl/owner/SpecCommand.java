@@ -14,7 +14,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class SpecCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] parts) {
+	public void execute(Player player, String command, String[] parts) {
 		int amount = 2000;
 		CombatSpecial.restore(player, amount);
 	}

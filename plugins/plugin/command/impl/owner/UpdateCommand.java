@@ -14,8 +14,8 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class UpdateCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
-		int time = Integer.parseInt(command[1]);
+	public void execute(Player player, String command, String[] parts) {
+		int time = Integer.parseInt(parts[1]);
 		World.update(time, false);
 
 	}

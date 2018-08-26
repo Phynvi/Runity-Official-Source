@@ -15,9 +15,9 @@ import io.battlerune.net.packet.out.SendMessage;
 public class TeletoCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 
-		final String name = String.format(command[1]);
+		final String name = String.format(parts[1]);
 
 		if (World.search(name).isPresent()) {
 			final Player target = World.search(name).get();

@@ -14,7 +14,7 @@ import io.battlerune.net.packet.out.SendMessage;
 public class GambleCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		Teleportation.teleport(player, Config.DICE_ZONE);
 		player.send(new SendMessage("@or2@Welcome to Gamble, " + player.getName() + "!"));
 		player.send(new SendMessage("@red@Make sure you record at ALL times"));

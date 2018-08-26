@@ -13,8 +13,8 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class RandomEvent implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
-		final String name = String.format(command[1]);
+	public void execute(Player player, String command, String[] parts) {
+		final String name = String.format(parts[1]);
 
 		World.search(name.toString()).ifPresent(MimeEvent::create);
 		player.message("Remember command use; ::randomevent daniel");

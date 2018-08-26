@@ -14,10 +14,10 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class BroadcastCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 
 		try {
-			final String input = String.format(command[1]);
+			final String input = String.format(parts[1]);
 			World.sendBroadcast(1, input, true);
 		} catch (ArrayIndexOutOfBoundsException e) {
 			player.message("Invalid use of the command do ::broadcast 'input message'.");

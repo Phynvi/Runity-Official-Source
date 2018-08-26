@@ -13,7 +13,7 @@ import io.battlerune.net.packet.out.SendMessage;
 public class MageBankCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		Teleportation.teleport(player, Config.MB);
 		player.send(new SendMessage("@or2@Goodluck, " + player.getName() + "!"));
 		player.send(new SendMessage("@or2@You might need it.."));

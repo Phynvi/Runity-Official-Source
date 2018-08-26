@@ -26,9 +26,9 @@ import io.battlerune.util.parser.impl.StoreParser;
 public class ReloadCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 
-		final String name = String.format(command[1]);
+		final String name = String.format(parts[1]);
 		CombatListenerManager.load();
 		player.send(new SendMessage("Combat listeners have been successfully loaded."));
 

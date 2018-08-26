@@ -9,8 +9,8 @@ import io.battlerune.net.packet.out.SendMessage;
 public class AnimationCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
-		int id = Integer.parseInt(command[1]);
+	public void execute(Player player, String command, String[] parts) {
+		int id = Integer.parseInt(parts[1]);
 		player.animate(new Animation(id));
 		player.send(new SendMessage("Performing animation = " + id));
 

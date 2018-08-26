@@ -12,7 +12,7 @@ import io.battlerune.game.world.position.Area;
 public class DonatorBankCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		if (Area.inWilderness(player) && (!PlayerRight.isDeveloper(player))) {
 			player.message("You cannot open the bank in the wilderness.");
 		} else {

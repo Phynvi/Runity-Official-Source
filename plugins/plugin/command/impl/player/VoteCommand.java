@@ -11,7 +11,7 @@ import io.battlerune.net.packet.out.SendURL;
 public class VoteCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		player.send(new SendURL("https://www.runity.io/vote"));
 	}
 

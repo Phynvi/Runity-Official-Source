@@ -9,7 +9,7 @@ import io.battlerune.util.MessageColor;
 public class PlayerCountCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		player.send(new SendMessage("There are currently " + World.getPlayerCount() + " players playing Runity!",
 				MessageColor.RED));
 	}

@@ -15,7 +15,7 @@ public interface Command {
 	 * 
 	 * @param player
 	 */
-	void execute(Player player, String[] parts);
+	void execute(Player player, String command, String[] parts);
 
 	/**
 	 * Checks if the player has the recuirements to execute the command

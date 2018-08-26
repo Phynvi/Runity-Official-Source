@@ -13,8 +13,8 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class KillCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
-		final String name = String.format(command[1]);
+	public void execute(Player player, String command, String[] parts) {
+		final String name = String.format(parts[1]);
 
 		World.search(name.toString()).ifPresent(other -> other.damage(new Hit(other.getCurrentHealth())));
 

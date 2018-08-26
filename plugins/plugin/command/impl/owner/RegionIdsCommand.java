@@ -12,7 +12,7 @@ import io.battlerune.net.packet.out.SendMessage;
 public class RegionIdsCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] parts) {
+	public void execute(Player player, String command, String[] parts) {
 
 		Region[] regions = RegionManager.getSurroundingRegions(player.getPosition().copy());
 

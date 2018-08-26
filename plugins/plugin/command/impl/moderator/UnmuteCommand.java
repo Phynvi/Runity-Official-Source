@@ -14,9 +14,9 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class UnmuteCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 
-		final String name = String.format(command[1]);
+		final String name = String.format(parts[1]);
 		World.search(name.toString()).ifPresent(other -> {
 			other.punishment.unmute();
 			other.dialogueFactory.sendStatement("@or2@You have been unmuted!").execute();

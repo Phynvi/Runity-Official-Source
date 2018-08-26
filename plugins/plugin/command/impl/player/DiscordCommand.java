@@ -12,7 +12,7 @@ import io.battlerune.net.packet.out.SendURL;
 public class DiscordCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		player.send(new SendURL("https://discord.gg/mjgpDZN"));
 		player.send(new SendMessage("Launching Runity Discord."));
 	}

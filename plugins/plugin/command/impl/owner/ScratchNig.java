@@ -7,7 +7,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 public class ScratchNig implements Command {
 
 	@Override
-	public void execute(Player player, String[] parts) {
+	public void execute(Player player, String command, String[] parts) {
 		new ScratchCard(player).display();
 	}
 

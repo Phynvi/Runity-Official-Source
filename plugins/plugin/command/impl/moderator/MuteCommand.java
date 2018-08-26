@@ -18,9 +18,9 @@ import io.battlerune.net.packet.out.SendInputAmount;
 public class MuteCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 
-		final String name = String.format(command[1]);
+		final String name = String.format(parts[1]);
 
 		World.search(name.toString()).ifPresent(other -> {
 			if (PlayerRight.isPriviledged(other) && !PlayerRight.isDeveloper(player)) {

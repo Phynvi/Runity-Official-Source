@@ -13,8 +13,8 @@ import io.battlerune.util.MessageColor;
 public class InterfaceCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
-		int id = Integer.parseInt(command[1]);
+	public void execute(Player player, String command, String[] parts) {
+		int id = Integer.parseInt(parts[1]);
 		player.interfaceManager.open(id);
 		player.send(new SendMessage("Opening interface: " + id, MessageColor.LIGHT_PURPLE));
 

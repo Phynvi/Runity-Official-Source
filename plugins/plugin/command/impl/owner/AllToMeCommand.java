@@ -16,7 +16,7 @@ import io.battlerune.net.packet.out.SendMessage;
 public class AllToMeCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		Position position = player.getPosition().copy();
 		World.getPlayers().forEach(players -> {
 			if (!players.equals(player)) {

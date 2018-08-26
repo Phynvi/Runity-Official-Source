@@ -14,9 +14,9 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class RemovePlayerTask implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		try {
-			final String name = String.format(command[1]);
+			final String name = String.format(parts[1]);
 			World.search(name.toString()).ifPresent(other -> {
 				other.slayer.setTask(null);
 				other.slayer.setAmount(0);

@@ -11,7 +11,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class EventBossInterfaceShow implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		player.sendTeleportButton();
 		player.sendTeleportButtonNpc(6593);
 	}

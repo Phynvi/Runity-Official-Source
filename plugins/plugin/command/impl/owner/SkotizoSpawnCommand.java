@@ -12,7 +12,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class SkotizoSpawnCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		SkotizoUtility.generateSpawn();
 	}
 

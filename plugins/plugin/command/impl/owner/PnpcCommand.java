@@ -15,7 +15,7 @@ import io.battlerune.util.MessageColor;
 public class PnpcCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		final String message = "That player was not valid, please re-select a player.";
 
 		player.send(new SendInputMessage("Enter id", 10, input -> {

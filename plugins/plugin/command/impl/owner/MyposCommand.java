@@ -6,7 +6,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 public class MyposCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] parts) {
+	public void execute(Player player, String command, String[] parts) {
 		player.message("Position X [" + player.getPosition().getX() + "]" + "- Y [" + player.getPosition().getY()
 				+ "] - Z [" + player.getPosition().getHeight() + "]");
 	}

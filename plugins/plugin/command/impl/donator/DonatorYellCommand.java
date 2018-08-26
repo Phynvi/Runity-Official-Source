@@ -14,9 +14,9 @@ import io.battlerune.net.packet.out.SendMessage;
 public class DonatorYellCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		try {
-			final String message = String.format(command[1]);
+			final String message = command.substring(4, command.length());
 			Yell.yell(player, message);
 		} catch (final Exception e) {
 			player.send(new SendMessage("@or2@Invalid yell format, syntax: -messsage"));

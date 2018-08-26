@@ -14,7 +14,7 @@ import io.battlerune.util.MessageColor;
 public class MasterCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		player.skills.master();
 		AchievementHandler.completeAll(player);
 		EmoteHandler.unlockAll(player);

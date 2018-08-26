@@ -16,7 +16,7 @@ import io.battlerune.net.packet.out.SendMessage;
 public class StaffZoneCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		Teleportation.teleport(player, new Position(2602, 3874, 0));
 		player.send(new SendMessage("@or2@Welcome to the staffzone, " + player.getName() + "."));
 	}

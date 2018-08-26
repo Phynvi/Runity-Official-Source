@@ -12,7 +12,7 @@ import io.battlerune.net.packet.out.SendMessage;
 public class ClaimDonationCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		 new java.lang.Thread() {
 			public void run() {
 				try {

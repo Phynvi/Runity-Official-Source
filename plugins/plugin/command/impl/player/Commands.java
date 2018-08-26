@@ -12,7 +12,7 @@ import io.battlerune.net.packet.out.SendURL;
 public class Commands implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		player.send(new SendURL("insert guide link here."));
 		player.message("Opening command list!");
 	}

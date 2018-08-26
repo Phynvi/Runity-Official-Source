@@ -9,7 +9,7 @@ import io.battlerune.game.world.position.Position;
 public class TeleCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] parts) {
+	public void execute(Player player, String command, String[] parts) {
 
 		Teleportation.teleport(player, new Position(Integer.parseInt(parts[1]), Integer.parseInt(parts[2])));
 

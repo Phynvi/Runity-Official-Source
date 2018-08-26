@@ -10,7 +10,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 public class VaultCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		player.bankVault.value();
 	}
 

@@ -18,17 +18,8 @@ import io.battlerune.net.packet.out.SendString;
 public class FindCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
-		try {
-			method(player, command);
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("Catched ArrayIndexOutOfBounds, ::find command, inproper use of it.");
-			player.message("Inproper use of the command do... ::find ITEMNAME (e.g ::find dragon)");
-		}
-	}
-
-	public static void method(Player player, String[] command) {
-		final String name = String.format(command[1]);
+	public void execute(Player player, String command, String[] parts) {
+		final String name = String.format(parts[1]);
 
 		ItemContainer container = new ItemContainer(400, ItemContainer.StackPolicy.ALWAYS);
 		int randomint = 0;
@@ -50,7 +41,10 @@ public class FindCommand implements Command {
 		player.interfaceManager.open(37500);
 		player.send(new SendMessage(
 				String.format("Found %s item%s containing the key '%s'.", randomint, randomint != 1 ? "s" : "", name)));
+	
 	}
+
+
 
 	@Override
 	public boolean canUse(Player player) {

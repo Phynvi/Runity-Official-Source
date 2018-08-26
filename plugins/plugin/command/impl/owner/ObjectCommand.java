@@ -17,8 +17,8 @@ import io.battlerune.net.packet.out.SendMessage;
 public class ObjectCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
-		int id = Integer.parseInt(command[1]);
+	public void execute(Player player, String command, String[] parts) {
+		int id = Integer.parseInt(parts[1]);
 		int rotation = 0;
 		CustomGameObject gameObject = new CustomGameObject(id, player.getPosition().copy(),
 				ObjectDirection.valueOf(rotation).orElse(ObjectDirection.WEST), ObjectType.INTERACTABLE);

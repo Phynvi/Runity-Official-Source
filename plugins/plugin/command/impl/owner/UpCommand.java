@@ -13,7 +13,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class UpCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		player.move(player.getPosition().transform(0, 0, 1));
 	}
 

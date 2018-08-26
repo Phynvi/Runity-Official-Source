@@ -7,7 +7,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class DeveloperInstanceCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		player.message("instance is " + player.instance);
 	}
 

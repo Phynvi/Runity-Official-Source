@@ -8,11 +8,11 @@ import io.battlerune.game.world.items.Item;
 public class ItemCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 
 		try {
-			int itemId = Integer.parseInt(command[1]);
-			int amount = Integer.parseInt(command[2]);
+			int itemId = Integer.parseInt(parts[1]);
+			int amount = Integer.parseInt(parts[2]);
 			player.inventory.add(new Item(itemId, amount));
 			player.message("[Item Spawner] Added " + amount + " [Amount] : " + itemId + " [Item id]");
 		} catch (ArrayIndexOutOfBoundsException e) {

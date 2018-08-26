@@ -12,7 +12,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class SpawnCustomCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		player.bank.clear();
 		player.bank.addAll(Config.NOT_ALLOWED);
 		System.arraycopy(Config.TAB_AMOUNT, 0, player.bank.tabAmounts, 0, Config.TAB_AMOUNT.length);

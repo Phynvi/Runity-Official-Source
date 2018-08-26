@@ -44,7 +44,7 @@ public final class CommandPacketListener implements PacketListener {
 		Command plugin = CommandManager.PLUGIN_INPUT.get(parts[0]);
 		if (plugin != null) {
 			if (plugin.canUse(player)) {
-				plugin.execute(player, parts);
+				plugin.execute(player, input, parts);
 			}
 		}
 	}

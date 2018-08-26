@@ -16,13 +16,13 @@ import io.battlerune.net.packet.out.SendMessage;
 public class GiveAllCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		/*
 		 * int itemId = Integer.parseInt(command[1]); int amount =
 		 * Integer.parseInt(command[2]); World.sendItem(itemId, amount);
 		 */
-		int itemId = Integer.parseInt(command[1]);
-		int amount = Integer.parseInt(command[2]);
+		int itemId = Integer.parseInt(parts[1]);
+		int amount = Integer.parseInt(parts[2]);
 		for (Player players : World.getPlayers()) {
 			if (players != null) {
 				players.inventory.add(new Item(itemId, amount));

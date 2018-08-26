@@ -10,7 +10,7 @@ import io.battlerune.net.packet.out.SendMessage;
 public class BarrowsCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		Teleportation.teleport(player, new Position(3565, 3315, 0), 20, () -> Barrows.create(player));
 		player.send(new SendMessage("@or2@Welcome to Barrows, " + player.getName() + "!"));
 		player.send(new SendMessage("@red@Goodluck with grinding!"));

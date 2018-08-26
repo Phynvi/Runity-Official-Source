@@ -8,7 +8,7 @@ import io.battlerune.util.Utility;
 public class EmptyInventoryCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		if (Area.inWilderness(player) || player.getCombat().inCombat() || Area.inDuelArena(player)
 				|| player.playerAssistant.busy()) {
 			player.message("@or2@You can not clear your inventory at this current moment.");

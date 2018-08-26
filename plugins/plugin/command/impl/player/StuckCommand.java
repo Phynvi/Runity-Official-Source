@@ -7,7 +7,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 public class StuckCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		World.sendStaffMessage("[STUCK]" + player.getName() + " Is Stuck!");
 		player.message("Staff team have been alerted!");
 	}

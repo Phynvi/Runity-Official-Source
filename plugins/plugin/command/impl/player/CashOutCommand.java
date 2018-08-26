@@ -11,7 +11,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 public class CashOutCommand implements Command {
 
 	@Override
-	public void execute(Player player, String[] command) {
+	public void execute(Player player, String command, String[] parts) {
 		World.sendStaffMessage(
 				"[CASHOUT] " + player.getName() + "Would Like to Cash out! If you're a moderator+ Teleport to him!");
 		World.sendStaffMessage("[CASHOUT] " + "They are only allowed to Cash out Pins, and NOTHING ELSE!");

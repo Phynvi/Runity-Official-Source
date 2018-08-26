@@ -14,7 +14,7 @@ import io.battlerune.net.packet.out.SendMessage;
 public class Tier1Teleport implements Command {
 
 	@Override
-	public void execute(Player player, String[] parts) {
+	public void execute(Player player, String command, String[] parts) {
 		// TODO Auto-generated method stub
 		Teleportation.teleport(player, Config.TIER_1_ZONE);
 		player.send(new SendMessage("You have teleported to Tier 1!"));
