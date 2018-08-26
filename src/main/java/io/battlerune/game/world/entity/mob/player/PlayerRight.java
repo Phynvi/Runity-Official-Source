@@ -10,6 +10,7 @@ import java.util.Optional;
  */
 
 public enum PlayerRight {
+	
 	PLAYER("Player", "000000", 0, -1, 4111), MODERATOR("Moderator", "245EFF", 1, -1, 4116),
 	ADMINISTRATOR("Administrator", "D17417", 2, -1, 4116), OWNER("Owner", "ED0C0C", 3, -1, 4117),
 	DEVELOPER("Developer", "7D0CED", 4, -1, 4117),

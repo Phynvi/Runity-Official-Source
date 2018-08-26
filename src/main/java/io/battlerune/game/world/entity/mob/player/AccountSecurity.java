@@ -44,7 +44,6 @@ public class AccountSecurity {
 				player.skillingPoints = 0;
 				player.bossPoints = 0;
 				player.triviaPoints = 0;
-				player.expRate = 1;
 				player.votePoints = 0;
 				player.donation.setCredits(0);
 				player.pestPoints = 0;

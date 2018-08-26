@@ -43,6 +43,7 @@ import io.battlerune.content.donators.Donation;
 import io.battlerune.content.emote.EmoteUnlockable;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.LogInEvent;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.masterminer.AdventureGUI;
 import io.battlerune.content.masterminer.MasterMinerData;
 import io.battlerune.content.masterminer.MasterMinerGUI;
@@ -289,7 +290,6 @@ public class Player extends Mob {
 		this.lmsCoffer = lmsCoffer;
 	}
 
-	public double expRate;
 	public int votePoints;
 	public int totalVotes;
 	public int kolodionPoints;
@@ -493,6 +493,7 @@ public class Player extends Mob {
 		security.login();
 
 		getFarming().doConfig();
+
 
 		/**
 		 * Sends the teleport button for the hoverable NPC Event teleport system. Only

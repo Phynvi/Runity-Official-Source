@@ -66,15 +66,6 @@
       "total-level": 0
     },
     {
-      "name": "Harryl",
-      "joined": "2018/08/24",
-      "rank": "SYSTEM",
-      "exp-gained": 0.0,
-      "npc-kills": 0,
-      "player-kills": 0,
-      "total-level": 0
-    },
-    {
       "name": "Dice",
       "joined": "2018/04/24",
       "rank": "MEMBER",
@@ -120,6 +111,15 @@
       "total-level": 0
     },
     {
+      "name": "Harrylnormal",
+      "joined": "2018/08/27",
+      "rank": "MEMBER",
+      "exp-gained": 0.0,
+      "npc-kills": 0,
+      "player-kills": 0,
+      "total-level": 0
+    },
+    {
       "name": "Adam11",
       "joined": "2018/07/26",
       "rank": "MEMBER",
@@ -140,6 +140,15 @@
     {
       "name": "Jody",
       "joined": "2018/04/17",
+      "rank": "MEMBER",
+      "exp-gained": 0.0,
+      "npc-kills": 0,
+      "player-kills": 0,
+      "total-level": 0
+    },
+    {
+      "name": "Harryclass",
+      "joined": "2018/08/27",
       "rank": "MEMBER",
       "exp-gained": 0.0,
       "npc-kills": 0,

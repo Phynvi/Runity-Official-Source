@@ -1412,7 +1412,7 @@ public final class PlayerPersistFile implements PlayerPersistable {
 							new TypeToken<HashMap<AchievementKey, Integer>>() {
 							}.getType());
 				}
-			}, 
+			},
 
 			new PlayerJSONProperty("last-killed") {
 				@Override
@@ -1962,19 +1962,6 @@ public final class PlayerPersistFile implements PlayerPersistable {
 				@Override
 				Object write(Player player) {
 					return player.lmsCoffer;
-				}
-			},
-
-			new PlayerJSONProperty("exp-rate") {
-				@Override
-				void read(Player player, JsonElement property) {
-					double exp = property.getAsDouble();
-					player.expRate = exp == 0.0 ? 1 : exp;
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.expRate;
 				}
 			},
 

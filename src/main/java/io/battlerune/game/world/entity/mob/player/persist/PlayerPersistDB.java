@@ -1817,19 +1817,6 @@ public final class PlayerPersistDB implements PlayerPersistable {
 				}
 			},
 
-			new PlayerJSONProperty("exp-rate") {
-				@Override
-				void read(Player player, JsonElement property) {
-					double exp = property.getAsDouble();
-					player.expRate = exp == 0 ? 1 : exp;
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.expRate;
-				}
-			},
-
 			new PlayerJSONProperty("brutal-mode") {
 				@Override
 				void read(Player player, JsonElement property) {

@@ -2,7 +2,7 @@ package io.battlerune.game.world.entity.mob.npc.dropchance;
 
 /**
  * 
- * @author Nerik big pener
+ * @author Nerik 
  *
  */
 

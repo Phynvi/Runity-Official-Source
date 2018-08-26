@@ -17,6 +17,7 @@ import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
 import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.content.dialogue.Expression;
 import io.battlerune.content.emote.EmoteHandler;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.skill.impl.magic.teleport.TeleportType;
 import io.battlerune.content.skill.impl.thieving.StallData;
@@ -113,7 +114,8 @@ public class PlayerAssistant {
 		EmoteHandler.refresh(player);
 		ClanChannelHandler.onLogin(player);
 		player.getFarming().doConfig();
-		player.experienceRate = StarterKit.modifyExperience(player);
+		player.experienceRate = new ExperienceModifier(player).getModifier();
+		
 	}
 
 	/** Sets the effects for the player. */

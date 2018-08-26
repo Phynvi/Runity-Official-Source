@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import io.battlerune.Config;
 import io.battlerune.content.bot.PlayerBot;
 import io.battlerune.game.task.Task;
 import io.battlerune.game.world.World;
@@ -73,6 +74,12 @@ public class Combat<T extends Mob> {
 //        if (attacker.isPlayer() && attacker.getPlayer().isBot) {
 //            attacker.getPlayer().getBot().opponent = defender;
 //        }
+
+		if (attacker.isPlayer()) {
+			System.out.println("[" + attacker.getPlayer().getUsername() + "] : ["
+					+ attacker.getPlayer().experienceRate * Config.COMBAT_MODIFICATION + "] : ["
+					+ attacker.getPlayer().experienceRate +"]");
+		}
 
 		target.setTarget(defender);
 		attacker.attack(defender);
