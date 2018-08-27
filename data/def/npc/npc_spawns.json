@@ -1815,7 +1815,7 @@
   },
   {
     "id": 7601,
-    "facing": "WEST",
+    "facing": "EAST",
     "radius": 0,
     "position": {
       "x": 3099,
@@ -30430,7 +30430,7 @@
 	    "id": 5811,
 	    "position": {
 	      "x": 3108,
-	      "y": 3496,
+	      "y": 3497,
 	      "height": 0
 	    },
 	    "facing": "NORTH",

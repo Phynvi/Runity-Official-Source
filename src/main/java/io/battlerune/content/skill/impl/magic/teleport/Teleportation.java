@@ -41,6 +41,10 @@ public class Teleportation {
 		if (!player.interfaceManager.isClear()) {
 			player.interfaceManager.close(false);
 		}
+	//ADAM ADDED THIS INCASE IT BREAKS SOMETHING	
+		if(mob.getPlayer().playerAssistant.busy()) {
+			return false;
+		}
 
 		if (Activity.evaluate(player, it -> !it.canTeleport(player))) {
 			return false;

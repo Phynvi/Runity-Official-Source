@@ -26,7 +26,7 @@ import io.battlerune.util.Utility;
 /**
  * Handles the thieving skill.
  *
- * @author Daniel
+ * @author Daniel <-- adam is better
  */
 public class Thieving extends Skill {
 
