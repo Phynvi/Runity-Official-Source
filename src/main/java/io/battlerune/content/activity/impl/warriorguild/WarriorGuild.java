@@ -32,7 +32,7 @@ import io.battlerune.util.Utility;
 /**
  * This class handles the warrior's guild activity.
  *
- * @author Daniel 
+ * @author Daniel
  * @author Nerik#8690 / Hamza
  */
 public class WarriorGuild extends Activity {
@@ -90,8 +90,8 @@ public class WarriorGuild extends Activity {
 
 			@Override
 			protected void execute() {
-				switch(count) {
-				
+				switch (count) {
+
 				case 0:
 					player.animate(new Animation(827, UpdatePriority.HIGH));
 					player.send(new SendMessage("You place the armour pieces inside the animator..."));

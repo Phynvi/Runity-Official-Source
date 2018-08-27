@@ -1,15 +1,15 @@
 package io.battlerune.content.combat.cannon;
 
-import io.battlerune.net.packet.out.SendAddObject;
-import io.battlerune.net.packet.out.SendRemoveObject;
+import io.battlerune.content.combat.cannon.CannonManager.Rotation;
+import io.battlerune.content.combat.cannon.CannonManager.Setup;
 import io.battlerune.game.world.entity.Entity;
 import io.battlerune.game.world.entity.EntityType;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.content.combat.cannon.CannonManager.Rotation;
-import io.battlerune.content.combat.cannon.CannonManager.Setup;
-import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.object.CustomGameObject;
+import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
+import io.battlerune.net.packet.out.SendAddObject;
+import io.battlerune.net.packet.out.SendRemoveObject;
 
 /**
  * Handles the dwarf cannon.
@@ -17,21 +17,21 @@ import io.battlerune.game.world.region.Region;
  * @Adam_#6723
  */
 public class Cannon extends Entity {
-	
+
 	private final String owner;
-	
+
 	private final Position position;
-	
+
 	private CustomGameObject object;
-	
+
 	private int ammunition;
-	
+
 	private boolean firing;
-	
-    private Setup stage;
-    
-    private Rotation rotation;
-	
+
+	private Setup stage;
+
+	private Rotation rotation;
+
 	public Cannon(String owner, Position position) {
 		super(position);
 		this.owner = owner;
@@ -42,51 +42,51 @@ public class Cannon extends Entity {
 		this.rotation = Rotation.NORTH;
 		this.object = new CustomGameObject(8, position);
 	}
-	
+
 	public String getOwner() {
 		return owner;
 	}
-	
+
 	public Position getPosition() {
 		return position;
 	}
-	
+
 	public int getAmmunition() {
 		return ammunition;
 	}
-	
+
 	public void setAmmunition(int ammunition) {
 		this.ammunition = ammunition;
 	}
-	
+
 	public boolean isFiring() {
 		return firing;
 	}
-	
+
 	public void setFiring(boolean firing) {
 		this.firing = firing;
 	}
-	
+
 	public Setup getStage() {
 		return stage;
 	}
-	
+
 	public void setStage(Setup stage) {
 		this.stage = stage;
 	}
-	
+
 	public CustomGameObject getObject() {
 		return object;
 	}
-	
+
 	public void setObject(CustomGameObject object) {
 		this.object = object;
 	}
-	
+
 	public Rotation getRotation() {
 		return rotation;
 	}
-	
+
 	public void setRotation(Rotation rotation) {
 		this.rotation = rotation;
 	}
@@ -96,7 +96,7 @@ public class Cannon extends Entity {
 		if (!isRegistered()) {
 			Region region = getRegion();
 			setRegistered(true);
-			
+
 			if (region == null) {
 				setPosition(getPosition());
 			} else if (!region.containsObject(getHeight(), object)) {
@@ -114,16 +114,18 @@ public class Cannon extends Entity {
 
 	@Override
 	public void addToRegion(Region region) {
-		region.getPlayers(getHeight()).stream().filter(Player::isValid).forEach(player -> player.send(new SendAddObject(object)));
+		region.getPlayers(getHeight()).stream().filter(Player::isValid)
+				.forEach(player -> player.send(new SendAddObject(object)));
 		region.addObject(object);
 	}
 
 	@Override
 	public void removeFromRegion(Region region) {
-		region.getPlayers(getHeight()).stream().filter(Player::isValid).forEach(player -> player.send(new SendRemoveObject(object)));
+		region.getPlayers(getHeight()).stream().filter(Player::isValid)
+				.forEach(player -> player.send(new SendRemoveObject(object)));
 		region.removeObject(object);
 	}
-	
+
 	@Override
 	public String getName() {
 		return "Dwarf cannon";

@@ -43,7 +43,6 @@ import io.battlerune.content.donators.Donation;
 import io.battlerune.content.emote.EmoteUnlockable;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.LogInEvent;
-import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.masterminer.AdventureGUI;
 import io.battlerune.content.masterminer.MasterMinerData;
 import io.battlerune.content.masterminer.MasterMinerGUI;
@@ -267,7 +266,7 @@ public class Player extends Mob {
 	public void setkolodionPoints(int kolodionPoints) {
 		this.kolodionPoints = kolodionPoints;
 	}
-	
+
 	public int getChimeraPoints() {
 		return chimeraPoints;
 	}
@@ -275,7 +274,6 @@ public class Player extends Mob {
 	public void setChimeraPoints(int chimeraPoints) {
 		this.chimeraPoints = chimeraPoints;
 	}
-
 
 	/**
 	 * LMS
@@ -493,7 +491,6 @@ public class Player extends Mob {
 		security.login();
 
 		getFarming().doConfig();
-
 
 		/**
 		 * Sends the teleport button for the hoverable NPC Event teleport system. Only

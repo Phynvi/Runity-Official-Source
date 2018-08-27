@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 /**
  * Compares 2 values to return the biggest
+ * 
  * @author Nerik#8690
  *
  */

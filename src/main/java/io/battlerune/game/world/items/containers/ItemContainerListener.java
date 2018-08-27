@@ -27,6 +27,7 @@ public interface ItemContainerListener {
 	default void itemUpdated(ItemContainer container, Optional<Item> oldItem, Optional<Item> newItem, int index,
 			boolean refresh) {
 	}
+
 	/**
 	 * Fired when an {@link Item}s are added, removed, or replaced in bulk. This is
 	 * to prevent firing multiple {@code

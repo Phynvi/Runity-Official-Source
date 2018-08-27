@@ -78,7 +78,7 @@ public class Combat<T extends Mob> {
 		if (attacker.isPlayer()) {
 			System.out.println("[" + attacker.getPlayer().getUsername() + "] : ["
 					+ attacker.getPlayer().experienceRate * Config.COMBAT_MODIFICATION + "] : ["
-					+ attacker.getPlayer().experienceRate +"]");
+					+ attacker.getPlayer().experienceRate + "]");
 		}
 
 		target.setTarget(defender);

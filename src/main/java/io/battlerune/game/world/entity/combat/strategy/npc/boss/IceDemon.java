@@ -39,14 +39,11 @@ public class IceDemon extends MultiStrategy {
 	private static final MagicAttack MAGIC = new MagicAttack();
 	private static final RangedAttack RANGED = new RangedAttack();
 
-
-
 	private static final FrozenSpecial FROZEN_SPECIAL = new FrozenSpecial();
 	private static final IceSpecial ICE_SPECIAL = new IceSpecial();
 
-	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(MELEE, MAGIC,
-			RANGED);
-	private static final CombatStrategy<Npc>[] NON_MELEE = createStrategyArray(  MAGIC, RANGED);
+	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(MELEE, MAGIC, RANGED);
+	private static final CombatStrategy<Npc>[] NON_MELEE = createStrategyArray(MAGIC, RANGED);
 	private final CombatStrategy<Npc>[] SPECIALS = createStrategyArray(ICE_SPECIAL, FROZEN_SPECIAL);
 
 	private final Deque<CombatStrategy<Npc>> strategyQueue = new LinkedList<>();

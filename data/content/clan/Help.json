@@ -75,6 +75,15 @@
       "total-level": 0
     },
     {
+      "name": "Nerik",
+      "joined": "2018/08/27",
+      "rank": "SYSTEM",
+      "exp-gained": 0.0,
+      "npc-kills": 0,
+      "player-kills": 0,
+      "total-level": 0
+    },
+    {
       "name": "Jordanrsps",
       "joined": "2018/08/06",
       "rank": "SYSTEM",
@@ -140,15 +149,6 @@
     {
       "name": "Jody",
       "joined": "2018/04/17",
-      "rank": "MEMBER",
-      "exp-gained": 0.0,
-      "npc-kills": 0,
-      "player-kills": 0,
-      "total-level": 0
-    },
-    {
-      "name": "Harryclass",
-      "joined": "2018/08/27",
       "rank": "MEMBER",
       "exp-gained": 0.0,
       "npc-kills": 0,

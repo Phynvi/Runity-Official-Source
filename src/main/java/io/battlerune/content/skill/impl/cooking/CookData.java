@@ -9,9 +9,10 @@ import java.util.Optional;
  * @author Daniel
  */
 public enum CookData {
-	RAW_MEAT(13199, 1, 34, 2142, 2146, 30.0D, 250), RAW_SHRIMP(317, 1, 34, 315, 323, 30.0D,500),
-	SARDINE(327, 1, 38, 325, 369, 40.0D, 750), ANCHOVIES(321, 1, 34, 319, 323, 30.0D, 1000), HERRING(345, 5, 41, 347, 353, 50.0D, 1250),
-	MACKEREL(353, 10, 45, 355, 353, 60.0D, 1500), TROUT(335, 15, 50, 333, 343, 70.0D, 1750), COD(341, 18, 52, 339, 343, 75.0D, 2000),
+	RAW_MEAT(13199, 1, 34, 2142, 2146, 30.0D, 250), RAW_SHRIMP(317, 1, 34, 315, 323, 30.0D, 500),
+	SARDINE(327, 1, 38, 325, 369, 40.0D, 750), ANCHOVIES(321, 1, 34, 319, 323, 30.0D, 1000),
+	HERRING(345, 5, 41, 347, 353, 50.0D, 1250), MACKEREL(353, 10, 45, 355, 353, 60.0D, 1500),
+	TROUT(335, 15, 50, 333, 343, 70.0D, 1750), COD(341, 18, 52, 339, 343, 75.0D, 2000),
 	PIKE(349, 20, 53, 351, 343, 80.0D, 2250), SALMON(331, 25, 58, 329, 343, 90.0D, 2500),
 	SLIMY_EEL(3379, 28, 58, 3381, 3383, 95.0D, 2750), TUNA(359, 30, 65, 361, 367, 100.0D, 3000),
 	KARAMBWAN(3142, 30, 200, 3144, 3148, 190.0D, 3250), RAINBOW_FISH(10138, 35, 60, 10136, 10140, 110.0D, 3500),
@@ -32,7 +33,7 @@ public enum CookData {
 	private final int burnt;
 
 	private final int noBurn;
-	
+
 	public int money;
 
 	CookData(int item, int level, int noBurnrate, int cooked, int burnt, double exp, int money) {
@@ -52,7 +53,7 @@ public enum CookData {
 	public int getItem() {
 		return item;
 	}
-	
+
 	public int getMoney() {
 		return money;
 	}

@@ -31,7 +31,6 @@ public class MagicOnItemPacketListener implements PacketListener {
 		final int childId = packet.readShort();
 		final int spell = packet.readShort(ByteModification.ADD);
 
-
 		if (player.positionChange) {
 			return;
 		}

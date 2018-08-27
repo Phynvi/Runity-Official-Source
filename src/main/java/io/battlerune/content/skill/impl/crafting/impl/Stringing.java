@@ -161,7 +161,8 @@ public class Stringing {
 				player.inventory.remove(amulet.ingredient, 1);
 				player.inventory.remove(1759, 1);
 				player.inventory.add(amulet.product, 1);
-				player.skills.addExperience(Skill.CRAFTING, (4 * Config.CRAFTING_MODIFICATION) * new ExperienceModifier(player).getModifier());
+				player.skills.addExperience(Skill.CRAFTING,
+						(4 * Config.CRAFTING_MODIFICATION) * new ExperienceModifier(player).getModifier());
 				player.send(new SendMessage("You string the " + ItemDefinition.get(amulet.ingredient).getName()
 						+ " into " + Utility.getAOrAn(ItemDefinition.get(amulet.product).getName()) + " "
 						+ ItemDefinition.get(amulet.product).getName() + "."));

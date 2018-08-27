@@ -3,8 +3,6 @@ package io.battlerune.content.mysterybox.impl;
 import java.util.Random;
 
 import io.battlerune.content.mysterybox.MysteryBoxListener;
-import io.battlerune.game.task.Task;
-import io.battlerune.game.task.TaskManager;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;

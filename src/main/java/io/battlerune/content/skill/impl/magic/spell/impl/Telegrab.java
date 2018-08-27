@@ -15,7 +15,7 @@ public class Telegrab implements Spell {
 
 	@Override
 	public Item[] getRunes() {
-		return new Item[] { new Item(556, 1), new Item(563, 1)};
+		return new Item[] { new Item(556, 1), new Item(563, 1) };
 	}
 
 	@Override

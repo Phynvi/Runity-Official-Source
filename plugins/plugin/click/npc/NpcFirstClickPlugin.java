@@ -28,7 +28,6 @@ import io.battlerune.game.world.entity.combat.effect.CombatEffectType;
 import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerAssistant;
-import io.battlerune.game.world.entity.mob.player.PlayerDeath;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendMessage;
@@ -381,11 +380,11 @@ public class NpcFirstClickPlugin extends PluginContext {
 			Thieving.exchange(player);
 			break;
 		case 3442:
-				player.dialogueFactory.sendNpcChat(4925, "Oh so you have customs? il take them!");
-				player.dialogueFactory.sendOption("Sell your customs?", () -> PlayerAssistant.sellCustoms(player), "No",
-						() -> player.dialogueFactory.clear());
-				player.dialogueFactory.execute();
-			
+			player.dialogueFactory.sendNpcChat(4925, "Oh so you have customs? il take them!");
+			player.dialogueFactory.sendOption("Sell your customs?", () -> PlayerAssistant.sellCustoms(player), "No",
+					() -> player.dialogueFactory.clear());
+			player.dialogueFactory.execute();
+
 			break;
 
 		case 1755:

@@ -27,7 +27,6 @@ import io.battlerune.game.world.entity.mob.MobDeath;
 import io.battlerune.game.world.entity.mob.UpdateFlag;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.game.world.items.containers.equipment.Equipment;
 import io.battlerune.game.world.items.ground.GroundItem;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
@@ -63,7 +62,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 	@Override
 	public void preDeath(Mob killer) {
 		mob.animate(new Animation(836, UpdatePriority.VERY_HIGH));
-	//	mob.resetAnimation();
+		// mob.resetAnimation();
 	}
 
 	/**
@@ -84,27 +83,28 @@ public final class PlayerDeath extends MobDeath<Player> {
 			return;
 		}
 
-	/*	if (Area.inEventArena(mob)) {
+		/*
+		 * if (Area.inEventArena(mob)) { safe = true;
+		 * mob.equipment.unequip(Equipment.ARROWS_SLOT);
+		 * mob.equipment.unequip(Equipment.AMULET_SLOT);
+		 * mob.equipment.unequip(Equipment.HEAD_SLOT);
+		 * mob.equipment.unequip(Equipment.HANDS_SLOT);
+		 * mob.equipment.unequip(Equipment.LEGS_SLOT);
+		 * mob.equipment.unequip(Equipment.FEET_SLOT);
+		 * mob.equipment.unequip(Equipment.CHEST_SLOT);
+		 * mob.equipment.unequip(Equipment.WEAPON_SLOT);
+		 * mob.equipment.unequip(Equipment.SHIELD_SLOT);
+		 * mob.equipment.unequip(Equipment.RING_SLOT);
+		 * mob.equipment.unequip(Equipment.CAPE_SLOT);
+		 * 
+		 * mob.send(new
+		 * SendMessage("@red@Your Items have either been banked or sent to your inventory."
+		 * )); return; }
+		 */
+		if (Area.inEventArena(mob)) {
 			safe = true;
-			mob.equipment.unequip(Equipment.ARROWS_SLOT);
-			mob.equipment.unequip(Equipment.AMULET_SLOT);
-			mob.equipment.unequip(Equipment.HEAD_SLOT);
-			mob.equipment.unequip(Equipment.HANDS_SLOT);
-			mob.equipment.unequip(Equipment.LEGS_SLOT);
-			mob.equipment.unequip(Equipment.FEET_SLOT);
-			mob.equipment.unequip(Equipment.CHEST_SLOT);
-			mob.equipment.unequip(Equipment.WEAPON_SLOT);
-			mob.equipment.unequip(Equipment.SHIELD_SLOT);
-			mob.equipment.unequip(Equipment.RING_SLOT);
-			mob.equipment.unequip(Equipment.CAPE_SLOT);
-
-			mob.send(new SendMessage("@red@Your Items have either been banked or sent to your inventory."));
 			return;
-		}*/
-		  if (Area.inEventArena(mob)) {
-	            safe = true;
-	            return;
-	        }
+		}
 
 		if (!PlayerRight.isPriviledged(mob)) {
 			Pets.onDeath(mob);
@@ -198,7 +198,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 			Activity.forActivity(mob, it -> it.onDeath(mob));
 //            return;
 		}
-		if(Area.inDuelArena(mob)) {
+		if (Area.inDuelArena(mob)) {
 			mob.move(new Position(3374, 3273, 0));
 			mob.animate(new Animation(-1, UpdatePriority.VERY_HIGH));
 			return;

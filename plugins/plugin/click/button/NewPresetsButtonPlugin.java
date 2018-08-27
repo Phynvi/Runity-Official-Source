@@ -37,7 +37,7 @@ public class NewPresetsButtonPlugin extends PluginContext {
 
 		};
 	}
-	
+
 	/** Melee126Equipment **/
 	public Item[] PureEquipment() {
 		return new Item[] { new Item(1169), new Item(4395), new Item(544), new Item(1725), new Item(892, 100),
@@ -46,7 +46,7 @@ public class NewPresetsButtonPlugin extends PluginContext {
 
 	/** Hybrid Inventory! Array **/
 	public Item[] PureInventory() {
-		return new Item[] { new Item(113), new Item(1319), new Item(373, 26), 
+		return new Item[] { new Item(113), new Item(1319), new Item(373, 26),
 
 		};
 	}
@@ -178,11 +178,7 @@ public class NewPresetsButtonPlugin extends PluginContext {
 		}
 
 	}
-	
-	
-	
-	
-	
+
 	public void sendPureDialouge(Player player) {
 
 		DialogueFactory factory = player.dialogueFactory;
@@ -211,7 +207,7 @@ public class NewPresetsButtonPlugin extends PluginContext {
 				player.equipment.manualWearAll(PureEquipment());
 				player.inventory.addAll(PureInventory());
 				player.inventory.refresh();
-				player.equipment.refresh();          
+				player.equipment.refresh();
 			}
 
 		} else {
@@ -236,7 +232,7 @@ public class NewPresetsButtonPlugin extends PluginContext {
 			send126tribridDialouge(player);
 
 		}
-		if(button == -23026) {
+		if (button == -23026) {
 			sendPureDialouge(player);
 		}
 

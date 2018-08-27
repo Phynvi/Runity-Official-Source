@@ -80,8 +80,7 @@ public class NpcAssistant {
 			6615, /* Scorpia */
 			6611, /* Vet'ion */
 			7286, /* Skotizo */
-			1207,
-			6504, /* Venenatis */
+			1207, 6504, /* Venenatis */
 			3162, /* Kree'arra */
 	};
 

@@ -1,7 +1,5 @@
 package io.battlerune.game.world.entity.combat.strategy.player.custom;
 
-import io.battlerune.game.Animation;
-import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.entity.combat.CombatType;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;

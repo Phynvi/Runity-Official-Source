@@ -9,7 +9,6 @@ import io.battlerune.content.dialogue.ChatBoxItemDialogue;
 import io.battlerune.content.event.impl.ItemInteractionEvent;
 import io.battlerune.content.event.impl.ItemOnItemInteractionEvent;
 import io.battlerune.content.experiencerate.ExperienceModifier;
-import io.battlerune.content.skill.impl.woodcutting.TreeData;
 import io.battlerune.game.Animation;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;

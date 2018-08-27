@@ -18,7 +18,6 @@ import java.util.stream.StreamSupport;
 
 import com.google.common.base.Preconditions;
 
-import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.ItemDefinition;

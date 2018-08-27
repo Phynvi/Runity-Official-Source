@@ -10,7 +10,6 @@ import java.util.List;
 import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.game.world.items.containers.equipment.EquipmentType;
 
-
 /**
  * 
  * @author Adam_#6723

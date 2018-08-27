@@ -451,8 +451,8 @@ public class Crafting extends Skill {
 			@Override
 			public void execute() {
 				player.animate(new Animation(craftable.getAnimation()));
-				player.skills.addExperience(Skill.CRAFTING, 
-						(item.getExperience() * Config.CRAFTING_MODIFICATION) * new ExperienceModifier(player).getModifier());
+				player.skills.addExperience(Skill.CRAFTING, (item.getExperience() * Config.CRAFTING_MODIFICATION)
+						* new ExperienceModifier(player).getModifier());
 				player.inventory.removeAll(craftable.getIngediants(index));
 				player.inventory.add(item.getProduct());
 

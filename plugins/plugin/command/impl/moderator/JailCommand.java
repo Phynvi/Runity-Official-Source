@@ -18,7 +18,7 @@ import io.battlerune.net.packet.out.SendInputAmount;
 public class JailCommand implements Command {
 
 	@Override
-	public void execute(Player player, String command,  String[] parts) {
+	public void execute(Player player, String command, String[] parts) {
 		final String name = String.format(parts[1]);
 		World.search(name.toString()).ifPresent(other -> {
 			if (PlayerRight.isPriviledged(other) && !PlayerRight.isDeveloper(player)) {

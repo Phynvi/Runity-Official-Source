@@ -21,13 +21,20 @@ public class ScratchCard {
 
 	public void display() {
 
-		cleanInterface();
+		if (inSession()) {
+			return;
+		}
 
-		player.interfaceManager.open(20011);
+		if (player.inventory.contains(455)) {
+			player.inventory.remove(new Item(455, 1));
 
-		COMBINATION.add(new ScratchCardCombination(new ScratchCardInstanced(20016, getRandom()),
-				new ScratchCardInstanced(20021, getRandom()), new ScratchCardInstanced(20026, getRandom())));
+			cleanInterface();
 
+			player.interfaceManager.open(20011);
+
+			COMBINATION.add(new ScratchCardCombination(new ScratchCardInstanced(20016, getRandom()),
+					new ScratchCardInstanced(20021, getRandom()), new ScratchCardInstanced(20026, getRandom())));
+		}
 	}
 
 	/**
@@ -35,6 +42,7 @@ public class ScratchCard {
 	 */
 	private void cleanInterface() {
 
+		setBonus(false);
 		COMBINATION.clear();
 		COMBINATION_COUNT.clear();
 
@@ -62,7 +70,6 @@ public class ScratchCard {
 			} else {
 				player.send(new SendString("Bad luck, you have lost!", 20014));
 			}
-			getBonus();
 		}
 	}
 
@@ -72,6 +79,10 @@ public class ScratchCard {
 	 * @param button
 	 */
 	public void reveal(int button) {
+		if (button == 20037 || button == 20033) {
+			miscButton(button);
+			return;
+		}
 		switch (button) {
 		case 20016:
 			for (int i = 0; i < COMBINATION.size(); i++) {
@@ -110,29 +121,62 @@ public class ScratchCard {
 		process();
 	}
 
+	private void miscButton(int button) {
+		switch (button) {
+
+		case 20033:
+			if (BONUS) {
+				player.send(new SendMessage("You have revealed your bonus prize already!"));
+				return;
+			}
+			getBonus();
+			break;
+		case 20037:
+			if (COMBINATION_COUNT.size() < 3 || !BONUS) {
+				player.send(new SendMessage("Please finish your scratch session!"));
+				return;
+			}
+			player.interfaceManager.close();
+			break;
+		}
+	}
+
 	/**
 	 * Fetches a random bonus
 	 */
-
 	public void getBonus() {
-		Item[] items = new Item[] { new Item(995, Utility.random(35000000, 50000000)), new Item(6199), new Item(4151), new Item(13175, 1),
-				 new Item(13173, 11), // phat set
-					new Item(13175, 1), // h'ween set
-					new Item(21000, 1), // twisted buckler
-					new Item(21006, 1), // kodai wand
-					new Item(21003, 1), // elder maul
-					new Item(21015, 1), // Dinh bulwark
-					new Item(20997, 1), // twisted bow
-					new Item(12817, 1), // ely ss
-					new Item(12821, 1), // spectral ss
-					new Item(12825, 1), // arcane ss
-					new Item(12819, 1), // ely sigil
-					new Item(12823, 1), // spectral sigil
-					new Item(12827, 1), // arcane sigil
-					new Item(21225, 1),};
-			Item item = items[random.nextInt(items.length)];
-			player.inventory.add(item);
-			player.send(new SendItemOnInterface(20036, item));
+		setBonus(true);
+		Item[] items = new Item[] { new Item(995, Utility.random(35000000, 50000000)), new Item(6199), new Item(4151),
+				new Item(13175, 1), new Item(13173, 11), // phat set
+				new Item(13175, 1), // h'ween set
+				new Item(21000, 1), // twisted buckler
+				new Item(21006, 1), // kodai wand
+				new Item(21003, 1), // elder maul
+				new Item(21015, 1), // Dinh bulwark
+				new Item(20997, 1), // twisted bow
+				new Item(12817, 1), // ely ss
+				new Item(12821, 1), // spectral ss
+				new Item(12825, 1), // arcane ss
+				new Item(12819, 1), // ely sigil
+				new Item(12823, 1), // spectral sigil
+				new Item(12827, 1), // arcane sigil
+				new Item(21225, 1), };
+		Item item = items[random.nextInt(items.length)];
+		player.inventory.add(item);
+		player.send(new SendItemOnInterface(20036, item));
+	}
+
+	/**
+	 * Checks if player is in session
+	 * 
+	 * @return
+	 */
+	private boolean inSession() {
+		if (player.interfaceManager.isInterfaceOpen(20011)) {
+			player.send(new SendMessage("You are already in a scratch session!"));
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -142,6 +186,15 @@ public class ScratchCard {
 
 	private int getRandom() {
 		return ScratchCardData.values()[random.nextInt(ScratchCardData.values().length)].getDisplayId();
+	}
+
+	/**
+	 * Checks if the player has revealed the bonus prize
+	 */
+	private static boolean BONUS = false;
+
+	public static void setBonus(boolean BONUS) {
+		ScratchCard.BONUS = BONUS;
 	}
 
 	/**

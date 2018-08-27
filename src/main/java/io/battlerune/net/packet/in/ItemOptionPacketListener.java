@@ -84,12 +84,12 @@ public class ItemOptionPacketListener implements PacketListener {
 			if (ItemActionRepository.inventory(player, item, 1)) {
 				return;
 			}
-			
+
 			if (MysteryBoxExecuter.execute(player, item.getId())) {
 				return;
 			}
-			
- 			PluginManager.getDataBus().publish(player, new ItemClickEvent(1, item, slot));
+
+			PluginManager.getDataBus().publish(player, new ItemClickEvent(1, item, slot));
 			break;
 		}
 	}
@@ -114,7 +114,7 @@ public class ItemOptionPacketListener implements PacketListener {
 			if (ItemActionRepository.inventory(player, item, 2)) {
 				return;
 			}
-			
+
 			PluginManager.getDataBus().publish(player, new ItemClickEvent(2, item, slot));
 			break;
 		}

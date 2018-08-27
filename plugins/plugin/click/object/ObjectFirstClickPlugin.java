@@ -37,7 +37,6 @@ import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.hit.HitIcon;
 import io.battlerune.game.world.entity.combat.hit.Hitsplat;
 import io.battlerune.game.world.entity.combat.magic.Autocast;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.chimera.ChimeraUtility;
 import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.data.LockType;
@@ -69,8 +68,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		// how's loife
 
 		switch (id) {
-		
-		
+
 		case 27215: {
 			if (!player.itemDelay.elapsed(2, TimeUnit.SECONDS)) {
 				return true;
@@ -143,15 +141,16 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 
 		case 2971:
-			if(player.getBossPoints() <= 250) {
+			if (player.getBossPoints() <= 250) {
 				player.message("You need to offer a sacrifice of 250 Boss Points to enter Chimera's lair!");
 				return false;
 			}
-			//ChimeraUtility.generateSpawn();
-			//World.sendMessage(player.getName() + " Has initiated the Chimera Boss! Wish him luck!!");
-            player.move(new Position(2420, 4689, 0));
+			// ChimeraUtility.generateSpawn();
+			// World.sendMessage(player.getName() + " Has initiated the Chimera Boss! Wish
+			// him luck!!");
+			player.move(new Position(2420, 4689, 0));
 			break;
-			
+
 		case 1558:
 			if (player.getPosition().getX() < object.getPosition().getX()) {
 				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
@@ -393,8 +392,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 				return true;
 			}
-			player.dialogueFactory.sendNpcChat(7481, "You've stolen the Logs before anyone could see you!")
-					.execute();
+			player.dialogueFactory.sendNpcChat(7481, "You've stolen the Logs before anyone could see you!").execute();
 			player.takeLogsDelay.reset();
 			player.animate(881);
 
@@ -597,11 +595,12 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 		case 26760: {
 			if (player.skills.getTotalLevel() < 1250 && !PlayerRight.isDonator(player)) {
-				player.dialogueFactory.sendStatement("You need a total skill level of 1,250", "to enter this skilling area!");
+				player.dialogueFactory.sendStatement("You need a total skill level of 1,250",
+						"to enter this skilling area!");
 				player.dialogueFactory.execute();
 				return false;
 			}
-			
+
 			Position destination = null;
 			Direction direction = null;
 
@@ -1232,10 +1231,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			player.house.leave();
 			break;
 
-			/* Dwarf cannon. */
-        case 6:
-            CannonManager.load(player);
-            break;
+		/* Dwarf cannon. */
+		case 6:
+			CannonManager.load(player);
+			break;
 
 		/* Bandos godwars. */
 		case 26503:

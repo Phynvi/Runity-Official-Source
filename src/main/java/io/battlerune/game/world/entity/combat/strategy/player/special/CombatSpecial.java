@@ -107,8 +107,7 @@ public enum CombatSpecial {
 	ARMADYL_GODSWORD(new int[] { 11802, 20368 }, 50, ArmadylGodsword.get()),
 	ZAMORAK_GODSWORD(new int[] { 11808, 20374 }, 50, ZamorakGodsword.get()),
 	BANDOS_GODSWORD(new int[] { 11804, 20370 }, 50, BandosGodsword.get()),
-	SCYTHE_OF_VITUR(new int[]{22325}, 30, ScytheOfViturStrategy.get()),
-
+	SCYTHE_OF_VITUR(new int[] { 22325 }, 30, ScytheOfViturStrategy.get()),
 
 	/* Ranged **/
 	BLOW_PIPE(new int[] { 12926 }, 50, Blowpipe.get()),

@@ -37,16 +37,15 @@ public class ArenaUtility {
 		return arena;
 	}
 
-
 	/** Identification of all loot, it selects the loot */
 
-	public static int[] ALWAYSLOOT = { 12829, 4151, 10828, 4153, 1704, 6889, 1231, 1305, 1434, 4747, 4712, 4710, 4708, 4759
-			, 4755};
-	public static int[] COMMONLOOT = { 6199, 989, 3140, 4087, 11732, 989, 12878, 6585, 4675, 12955};
+	public static int[] ALWAYSLOOT = { 12829, 4151, 10828, 4153, 1704, 6889, 1231, 1305, 1434, 4747, 4712, 4710, 4708,
+			4759, 4755 };
+	public static int[] COMMONLOOT = { 6199, 989, 3140, 4087, 11732, 989, 12878, 6585, 4675, 12955 };
 	public static int[] RARELOOT = { 11834, 11832, 11828, 11830, 11836, 11773, 13239, 13237, 13235, 11772, 11771, 11770,
-			20143, 20002, 13689, 14589, 13208, 13701, 13702};
+			20143, 20002, 13689, 14589, 13208, 13701, 13702 };
 	public static int[] SUPERRARELOOT = { 11862, 21225, 12817, 12825, 12821, 20997, 13652, 11802, 13576, 11785, 19481,
-			11791, 12904, 10860, 3274, 13692, 13662, 11642, 13724, 11063, 11739};
+			11791, 12904, 10860, 3274, 13692, 13662, 11642, 13724, 11063, 11739 };
 
 	public static void defeated(Npc Arena, Player player) {
 
@@ -56,7 +55,8 @@ public class ArenaUtility {
 			player.clanChannel.getDetails().points += 5;
 			player.clanChannel.addExperience(10000);
 			World.sendMessage("<col=8714E6>[ARENA EVENT] Arena Boss has been defeated by " + player.getName() + "!");
-			player.clanChannel.message("[ARENA EVENT] Hell yeah boys! We just killed Galvek!! We earned 10,000 EXP & 5 CP.");
+			player.clanChannel
+					.message("[ARENA EVENT] Hell yeah boys! We just killed Galvek!! We earned 10,000 EXP & 5 CP.");
 		}
 		World.sendMessage("<col=8714E6>[ARENA EVENT] Arena has been defeated by " + player.getName() + ", the legend.");
 
@@ -72,22 +72,19 @@ public class ArenaUtility {
 		if (random <= 50) {
 			for (int i = 0; i < COMMONLOOT.length; i++) {
 				GroundItem.createGlobal(player, new Item(COMMONLOOT[i], 1),
-						new Position(2273 + Utility.random(10),
-								5341 + Utility.random(10), 0));
+						new Position(2273 + Utility.random(10), 5341 + Utility.random(10), 0));
 			}
 		}
 		if (random <= 25) {
 			for (int i = 0; i < RARELOOT.length; i++) {
 				GroundItem.createGlobal(player, new Item(RARELOOT[i], 1),
-						new Position(2273 + Utility.random(10),
-								5341 + Utility.random(10), 0));
+						new Position(2273 + Utility.random(10), 5341 + Utility.random(10), 0));
 			}
 		}
 		if (random <= 5) {
 			for (int i = 0; i < SUPERRARELOOT.length; i++) {
 				GroundItem.createGlobal(player, new Item(SUPERRARELOOT[i], 1),
-						new Position(2273 + Utility.random(10),
-								5341 + Utility.random(10), 0));
+						new Position(2273 + Utility.random(10), 5341 + Utility.random(10), 0));
 				World.sendMessage("<img=10><col=FF0000>[ARENA EVENT] Arena has dropped Bank Loot!");
 			}
 		}
@@ -97,10 +94,11 @@ public class ArenaUtility {
 					new Position(2273 + Utility.random(10), 5341 + Utility.random(10), 0));
 		}
 		for (Player players : World.getPlayers()) {
-			if(Area.inGlodArena(players)) {
+			if (Area.inGlodArena(players)) {
 				int randomAmount = Utility.random(1000000, 2000000);
 				players.inventory.add(995, randomAmount);
-				players.message("<col=8714E6>[ARENA EVENT] You have recieved " + randomAmount + " coins for completing the arena event.");
+				players.message("<col=8714E6>[ARENA EVENT] You have recieved " + randomAmount
+						+ " coins for completing the arena event.");
 			}
 		}
 

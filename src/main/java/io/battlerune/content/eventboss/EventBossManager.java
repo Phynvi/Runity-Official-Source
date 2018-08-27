@@ -3,10 +3,12 @@ package io.battlerune.content.eventboss;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+
 import io.battlerune.game.world.World;
 
 /**
  * Event boss manager
+ * 
  * @author Nerik#8690
  *
  */

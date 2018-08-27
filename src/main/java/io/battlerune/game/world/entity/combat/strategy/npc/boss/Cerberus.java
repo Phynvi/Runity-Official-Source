@@ -6,7 +6,6 @@ import static io.battlerune.game.world.entity.combat.projectile.CombatProjectile
 
 import java.util.HashSet;
 
-import io.battlerune.content.activity.impl.cerberus.CerberusActivity;
 import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.Projectile;
@@ -86,12 +85,11 @@ public class Cerberus extends MultiStrategy {
 		if (attacker.getCurrentHealth() < 200 && new RandomGen().inclusive(10) == 0) {
 			executeSpecial(attacker, defender.getPlayer(), CerberusSpecial.LAVA);
 		}
-		/*if (new RandomGen().inclusive(10) == 0) {
-			boolean ghostsPresent = !((CerberusActivity) attacker.activity).ghosts.isEmpty();
-			if (!ghostsPresent) {
-				executeSpecial(attacker, defender.getPlayer(), CerberusSpecial.GHOSTS);
-			}
-		}*/
+		/*
+		 * if (new RandomGen().inclusive(10) == 0) { boolean ghostsPresent =
+		 * !((CerberusActivity) attacker.activity).ghosts.isEmpty(); if (!ghostsPresent)
+		 * { executeSpecial(attacker, defender.getPlayer(), CerberusSpecial.GHOSTS); } }
+		 */
 
 	}
 

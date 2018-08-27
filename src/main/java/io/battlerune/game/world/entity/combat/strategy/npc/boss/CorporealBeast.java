@@ -41,9 +41,9 @@ public class CorporealBeast extends MultiStrategy {
 
 	@Override
 	public void block(Mob attacker, Npc defender, Hit hit, CombatType combatType) {
-		if(attacker.getPlayer().equipment.containsAny(Config.SPEARS)) {
+		if (attacker.getPlayer().equipment.containsAny(Config.SPEARS)) {
 			hit.modifyDamage(damage -> hit.getDamage() * 2);
-			//attacker.getPlayer().message("Your attack is " + hit.getDamage());
+			// attacker.getPlayer().message("Your attack is " + hit.getDamage());
 		}
 //        if (hit.getDamage() > 32) {
 		// 1/8 chance that the dark core will spawn

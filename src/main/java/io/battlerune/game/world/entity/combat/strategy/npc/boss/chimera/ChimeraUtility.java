@@ -26,7 +26,8 @@ public class ChimeraUtility {
 		activated = true;
 		spawn = SpawnData6.generate();
 		Npc Chimera = new Npc(4708, spawn.position, 10, Direction.NORTH);
-		//World.sendBroadcast(1, "Chimera has just spawned! He is located at " + spawn.location + "!", true);
+		// World.sendBroadcast(1, "Chimera has just spawned! He is located at " +
+		// spawn.location + "!", true);
 		Chimera.register();
 		Chimera.definition.setRespawnTime(-1);
 		Chimera.definition.setAggressive(true);
@@ -44,8 +45,6 @@ public class ChimeraUtility {
 			11791, 12904, };
 
 	public static void defeated(Npc Chimera, Player player) {
-
-
 
 		World.sendMessage("<col=8714E6>Chimera has been defeated by " + player.getName() + ", the legend.");
 

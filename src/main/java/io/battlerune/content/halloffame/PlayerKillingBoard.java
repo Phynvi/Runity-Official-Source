@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -24,12 +23,6 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 public class PlayerKillingBoard {
 
 	static List<FameBoardPlayer> player = new ArrayList<FameBoardPlayer>();
-	static List<FameBoardPlayer> ordered_players = new ArrayList<FameBoardPlayer>();
-
-	public static void main(String[] args) {
-		load();
-
-	}
 
 	public static void load() {
 		File dir = new File("./data/profile/save/");
@@ -47,10 +40,6 @@ public class PlayerKillingBoard {
 		}
 		System.out.println("Added " + player.size() + " Players to the database!");
 
-	}
-
-	private static FameBoardPlayer getOrderedList() {
-		return Collections.max(player, new FameBoardComparer());
 	}
 
 	private static PlayerRight getPlayerRank(String username) {

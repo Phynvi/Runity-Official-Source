@@ -21,8 +21,8 @@ public abstract class Area {
 
 	/** The General Graardor room. */
 	public static final Area RFD_MINIGAME = new SquareArea("RFD Minigame", 1889, 5345, 1910, 5366, 2);
-	
-	public static final Area BOSS_ARENA1 =  new SquareArea("Arena Zone", 2257, 5309, 2285, 5370);
+
+	public static final Area BOSS_ARENA1 = new SquareArea("Arena Zone", 2257, 5309, 2285, 5370);
 
 	/** The General drop catcher quest room. */
 	// public static final Area Dropcatcher_MINIGAME = new SquareArea("RFD
@@ -50,23 +50,23 @@ public abstract class Area {
 	private static final ImmutableList<Area> PEST_CONTROL_GAME = ImmutableList
 			.of(new SquareArea("Pest Control Game", 2622, 2558, 2693, 2627));
 
-    private static final ImmutableList<Area> EVENT_ARENA = ImmutableList.of(new SquareArea("Event Arena", 3075, 3506, 3082, 3513));
+	private static final ImmutableList<Area> EVENT_ARENA = ImmutableList
+			.of(new SquareArea("Event Arena", 3075, 3506, 3082, 3513));
 
-    
-    public static boolean inEventArena(Interactable entity) {
-        for (Area zone : EVENT_ARENA) {
-            if (zone.inArea(entity.getPosition())) {
-                return true;
-            }
-        }
-        return false;
-    }
+	public static boolean inEventArena(Interactable entity) {
+		for (Area zone : EVENT_ARENA) {
+			if (zone.inArea(entity.getPosition())) {
+				return true;
+			}
+		}
+		return false;
+	}
 
-	public static final ImmutableList<Area> BOSS_ARENA = ImmutableList.of(
-	new SquareArea("Arena Zone", 2257, 5309, 2285, 5370));
+	public static final ImmutableList<Area> BOSS_ARENA = ImmutableList
+			.of(new SquareArea("Arena Zone", 2257, 5309, 2285, 5370));
 
-	public static final ImmutableList<Area> CHIMERA_ARENA = ImmutableList.of(
-	new SquareArea("Chimera Zone", 2363, 4738, 2433, 4667));
+	public static final ImmutableList<Area> CHIMERA_ARENA = ImmutableList
+			.of(new SquareArea("Chimera Zone", 2363, 4738, 2433, 4667));
 
 	private static final ImmutableList<Area> TOURNAMENT_ARENA = ImmutableList
 			.of(new SquareArea("Tournament Arena", 3317, 3268, 4987, 4932));
@@ -97,8 +97,7 @@ public abstract class Area {
 	private static final ImmutableList<Area> MULTI_COMBAT_ZONES = ImmutableList.of(
 			new SquareArea("Lizard shamans", 1408, 3692, 1457, 3729),
 			new SquareArea("Al-kahrid Warrior", 3281, 3158, 3304, 3178),
-			new SquareArea("Rock Crab", 2660, 3711, 2743, 3739), 
-			new SquareArea("Arena Zone", 2257, 5309, 2285, 5370),
+			new SquareArea("Rock Crab", 2660, 3711, 2743, 3739), new SquareArea("Arena Zone", 2257, 5309, 2285, 5370),
 			new SquareArea("Wilderness Resource", 3174, 3924, 3196, 3944),
 			new SquareArea("Start of Varrock Wilderness", 3134, 3525, 3327, 3607),
 			new SquareArea("North of GE, near gravestones", 3190, 3648, 3327, 3839),
@@ -215,7 +214,6 @@ public abstract class Area {
 		}
 		return false;
 	}
-
 
 	/*
 	 * public static boolean inBossArena(Interactable entity) { for (Area zone :
@@ -350,7 +348,7 @@ public abstract class Area {
 		}
 		return false;
 	}
-	
+
 	public static boolean inChimeraZone(Entity entity) {
 		for (Area zone : CHIMERA_ARENA) {
 			if (zone.inArea(entity.getPosition())) {
@@ -359,6 +357,7 @@ public abstract class Area {
 		}
 		return false;
 	}
+
 	public static boolean inGraardor(Mob mob) {
 		return GRAARDOR_ROOM.inArea(mob.getPosition());
 	}

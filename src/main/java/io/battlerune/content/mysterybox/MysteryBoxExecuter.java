@@ -4,6 +4,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 /**
  * Executes the selected mystery box
+ * 
  * @author Nerik#8690
  *
  */
@@ -19,7 +20,7 @@ public class MysteryBoxExecuter {
 		if (Mystery_Box != null) {
 			Mystery_Box.execute(player);
 			return true;
-		} 
+		}
 		return false;
 	}
 }

@@ -41,23 +41,20 @@ public class FindCommand implements Command {
 		player.interfaceManager.open(37500);
 		player.send(new SendMessage(
 				String.format("Found %s item%s containing the key '%s'.", randomint, randomint != 1 ? "s" : "", name)));
-	
+
 	}
-
-
 
 	@Override
 	public boolean canUse(Player player) {
-		
-		  if (!PlayerRight.isDeveloper(player)) { 
-			  player.speak("Hey everyone, i just tried doing something silly."); 
-			  return false; 
-			  
-			  }
-		else {
-			
-		return true;
-		
+
+		if (!PlayerRight.isDeveloper(player)) {
+			player.speak("Hey everyone, i just tried doing something silly.");
+			return false;
+
+		} else {
+
+			return true;
+
 		}
 	}
 }

@@ -189,5 +189,6 @@ public class BossInformationButtonPlugin extends PluginContext {
 		}
 		return false;
 	}
-	//TODO Create a system to teleport to bosses that arent in wildy for donators free or X Amount of cash
+	// TODO Create a system to teleport to bosses that arent in wildy for donators
+	// free or X Amount of cash
 }

@@ -7,9 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import io.battlerune.Config;
 import io.battlerune.content.StarterKit;
-import io.battlerune.content.StarterKit.KitData;
 import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
-import io.battlerune.content.dialogue.Expression;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
@@ -96,17 +94,15 @@ public class StarterKitButtonPlugin extends PluginContext {
 		player.playerAssistant.setSidebar(false);
 		player.runEnergy = 100;
 		// EmailInputListener.input(player);
-		  /* player.dialogueFactory.sendNpcChat(306, Expression.HAPPY, "As a new player, you can sign up for Classic Mode.",
-	                "You get 10% Drop rate, A Special Weapon & 20x EXP Rate",
-	                "Are you interested?").sendOption("That sounds like me!",
-	                () -> {
-	        			refresh(player, StarterKit.KitData.CLASSIC);
-	                    player.expRate = 0.34;
-	                    player.message("That was a mistake! (Classic Mode selected).");
-	                }, "What? No!",
-	                () -> {
-	                    //Do nothing!
-	                }).execute();*/
+		/*
+		 * player.dialogueFactory.sendNpcChat(306, Expression.HAPPY,
+		 * "As a new player, you can sign up for Classic Mode.",
+		 * "You get 10% Drop rate, A Special Weapon & 20x EXP Rate",
+		 * "Are you interested?").sendOption("That sounds like me!", () -> {
+		 * refresh(player, StarterKit.KitData.CLASSIC); player.expRate = 0.34;
+		 * player.message("That was a mistake! (Classic Mode selected)."); },
+		 * "What? No!", () -> { //Do nothing! }).execute();
+		 */
 
 		World.sendMessage("Welcome to Runity @blu@" + player.getName() + "");
 		player.send(new SendMessage(

@@ -92,8 +92,9 @@ public class ZulrahActivity extends Activity {
 			for (CustomGameObject cloud : clouds) {
 				Position[] boundaries = Utility.getInnerBoundaries(cloud.getPosition().transform(+1, +1), 2, 2);
 				for (Position position : boundaries) {
-				//	System.out.println("Checking if " + player.getName() + "s position(" + player.getPosition()
-					//		+ " is in " + position);
+					// System.out.println("Checking if " + player.getName() + "s position(" +
+					// player.getPosition()
+					// + " is in " + position);
 					if (player.getPosition().equals(position))
 						player.damage(new Hit(RandomUtils.inclusive(1, 5), Hitsplat.POISON));
 				}

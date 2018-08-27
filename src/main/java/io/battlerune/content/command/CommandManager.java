@@ -90,6 +90,7 @@ import plugin.command.impl.player.Wests;
 
 /**
  * Stores Commands
+ * 
  * @author Nerik#8690
  *
  */
@@ -168,7 +169,7 @@ public class CommandManager {
 		/*
 		 * @Owner, @Developer Commands
 		 */
-		PLUGIN.putIfAbsent(new String[] { "scratch"}, new ScratchNig());
+		PLUGIN.putIfAbsent(new String[] { "scratch" }, new ScratchNig());
 		PLUGIN.putIfAbsent(new String[] { "item" }, new ItemCommand());
 		PLUGIN.putIfAbsent(new String[] { "master" }, new MasterCommand());
 		PLUGIN.putIfAbsent(new String[] { "instance" }, new DeveloperInstanceCommand());

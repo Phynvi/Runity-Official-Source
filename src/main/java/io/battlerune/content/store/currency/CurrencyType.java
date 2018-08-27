@@ -35,8 +35,7 @@ public enum CurrencyType {
 	KOLODION_POINTS(9, new KolodionsPointCurrency()), GRACEFUL_TOKEN(10, new ItemCurrency(11849)),
 	PET_TOKENS(10, new ItemCurrency(20527)), SKILLING_POINTS(11, new SkillingPointCurrency()),
 	BOSS_POINTS(12, new BossPointCurrency()), TRIVIA_POINTS(13, new TriviaPointCurrency()),
-	BILL_CHECKS(14, new ItemCurrency(5020)),
-	;
+	BILL_CHECKS(14, new ItemCurrency(5020)),;
 
 	private static final ImmutableSet<CurrencyType> VALUES = ImmutableSet.copyOf(values());
 
@@ -67,7 +66,8 @@ public enum CurrencyType {
 		String value = "";
 		switch (currency) {
 		case BILL_CHECKS:
-			value = Utility.formatDigits(player.inventory.contains(5020) ? player.inventory.computeAmountForId(5020) : 0);
+			value = Utility
+					.formatDigits(player.inventory.contains(5020) ? player.inventory.computeAmountForId(5020) : 0);
 			break;
 		case COINS:
 			value = Utility.formatDigits(player.inventory.contains(995) ? player.inventory.computeAmountForId(995) : 0);

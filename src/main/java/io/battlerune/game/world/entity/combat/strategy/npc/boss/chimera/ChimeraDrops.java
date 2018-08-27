@@ -1,7 +1,6 @@
 package io.battlerune.game.world.entity.combat.strategy.npc.boss.chimera;
 
 import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.chimera.ChimeraUtility.SpawnData6;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility.SpawnData1;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -13,7 +12,7 @@ import io.battlerune.util.MessageColor;
 import io.battlerune.util.Utility;
 
 public class ChimeraDrops {
-	
+
 	public static SpawnData1 spawn;
 
 	/** Identification of all loot, it selects the loot */
@@ -26,8 +25,6 @@ public class ChimeraDrops {
 			11791, 12904, };
 
 	public static void defeated(Npc Chimera, Player player) {
-
-
 
 		World.sendMessage("<col=8714E6>Chimera has been defeated by " + player.getName() + ", the legend.");
 		int random = Utility.random(100);
@@ -65,7 +62,7 @@ public class ChimeraDrops {
 	}
 
 	public enum SpawnData6 {
-		
+
 		LEVEL_46("", new Position(2420, 4680, 0), new Position(2407, 4680, 0));
 		public final String location;
 		public final Position position;
@@ -94,6 +91,5 @@ public class ChimeraDrops {
 		}
 
 	}
-
 
 }

@@ -2,6 +2,7 @@ package io.battlerune.content.mysterybox;
 
 /**
  * Type of mystery box
+ * 
  * @author Nerik#8690
  *
  */

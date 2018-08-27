@@ -13,14 +13,15 @@ public class ClaimDonationCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		 new java.lang.Thread() {
+		new java.lang.Thread() {
 			public void run() {
 				try {
-					com.everythingrs.donate.Donation[] donations = com.everythingrs.donate.Donation.
-							donations("q4rhr25th8khv9615x19ssjoret8cj0nrfk23xho17iaspds4i4vi00n01sb8irza2fzsmgf1or", 
+					com.everythingrs.donate.Donation[] donations = com.everythingrs.donate.Donation.donations(
+							"q4rhr25th8khv9615x19ssjoret8cj0nrfk23xho17iaspds4i4vi00n01sb8irza2fzsmgf1or",
 							player.getUsername());
 					if (donations.length == 0) {
-						player.send(new SendMessage("You currently don't have any items waiting. You must donate first!"));
+						player.send(
+								new SendMessage("You currently don't have any items waiting. You must donate first!"));
 						return;
 					}
 					if (donations[0].message != null) {
@@ -34,7 +35,7 @@ public class ClaimDonationCommand implements Command {
 				} catch (Exception e) {
 					player.send(new SendMessage("Api Services are currently offline. Please check back shortly"));
 					e.printStackTrace();
-				}	
+				}
 			}
 		}.start();
 	}

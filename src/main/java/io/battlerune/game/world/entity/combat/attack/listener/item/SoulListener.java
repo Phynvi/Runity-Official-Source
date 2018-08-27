@@ -10,14 +10,14 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
 
 /**
- * Handles the Soul armour effect, which if equipped reduces drain rate by
- * 25% && steals 50% of the mob's life for the player themselves.
+ * Handles the Soul armour effect, which if equipped reduces drain rate by 25%
+ * && steals 50% of the mob's life for the player themselves.
  *
  * @author Adam_#6723
  */
 @ItemCombatListenerSignature(requireAll = false, items = { 13693, 13696, 13695, 17158, 13692 })
 public class SoulListener extends SimplifiedListener<Mob> {
-	
+
 	public int healingGraphic = 1296;
 
 	public void method(Mob attacker) {
@@ -25,6 +25,7 @@ public class SoulListener extends SimplifiedListener<Mob> {
 			prayer.setdrainRate(prayer.getDrainRate() / 2);
 		}
 	}
+
 	@Override
 	public void hit(Mob attacker, Mob defender, Hit hit) {
 		if (Math.random() > 0.25) {
@@ -32,6 +33,7 @@ public class SoulListener extends SimplifiedListener<Mob> {
 			attacker.graphic(new Graphic(healingGraphic, UpdatePriority.HIGH));
 		}
 	}
+
 	@Override
 	public void block(Mob attacker, Mob defender, Hit hit, CombatType combatType) {
 		method(attacker);

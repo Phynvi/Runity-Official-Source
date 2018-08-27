@@ -1,19 +1,19 @@
 package io.battlerune.content.combat.cannon;
 
-import io.battlerune.game.world.items.Item;
-import io.battlerune.game.world.position.Area;
-import io.battlerune.net.packet.out.SendMessage;
-import io.battlerune.game.Animation;
-import io.battlerune.game.Projectile;
-import io.battlerune.game.world.entity.mob.npc.Npc;
-import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.World;
-import io.battlerune.game.world.region.Region;
-import io.battlerune.util.Utility;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import io.battlerune.game.Animation;
+import io.battlerune.game.Projectile;
+import io.battlerune.game.world.World;
+import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.items.Item;
+import io.battlerune.game.world.position.Area;
+import io.battlerune.game.world.region.Region;
+import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.util.Utility;
 
 /**
  * 
@@ -26,23 +26,11 @@ public class CannonManager {
 	static Map<String, Cannon> ACTIVE_CANNONS = new HashMap<>();
 
 	public enum Setup {
-		NO_CANNON,
-		BASE,
-		STAND,
-		BARRELS,
-		FURNACE,
-		COMPLETE_CANNON
+		NO_CANNON, BASE, STAND, BARRELS, FURNACE, COMPLETE_CANNON
 	}
 
 	public enum Rotation {
-		NORTH,
-		NORTH_EAST,
-		EAST,
-		SOUTH_EAST,
-		SOUTH,
-		SOUTH_WEST,
-		WEST,
-		NORTH_WEST
+		NORTH, NORTH_EAST, EAST, SOUTH_EAST, SOUTH, SOUTH_WEST, WEST, NORTH_WEST
 	}
 
 	public static Cannon getCannon(Player player) {
@@ -50,19 +38,19 @@ public class CannonManager {
 	}
 
 	public static void drop(Player player, Cannon cannon) {
-		if(Area.inVorkath(player)) {
+		if (Area.inVorkath(player)) {
 			player.message("Cannon cannot be used in vorkath!");
 			return;
 		}
-		if(Area.inCerberus(player)) {
+		if (Area.inCerberus(player)) {
 			player.message("Cannon cannot be used in cerberus!");
 			return;
 		}
-		if(Area.inZulrah(player)) {
+		if (Area.inZulrah(player)) {
 			player.message("Cannon cannot be used in Zulrah!");
 			return;
 		}
-		if(Area.inKraken(player)) {
+		if (Area.inKraken(player)) {
 			player.message("Cannon cannot be used in Kraken!");
 			return;
 		}
@@ -132,14 +120,14 @@ public class CannonManager {
 		}
 
 		int needed = 30 - cannon.getAmmunition();
-		
+
 		if (needed == 0) {
 			player.send(new SendMessage("Your cannon is full."));
 			return;
 		}
-		
+
 		int cannon_balls = player.inventory.computeAmountForId(2);
-		
+
 		if (cannon_balls <= needed) {
 			player.inventory.remove(2, cannon_balls);
 			player.send(new SendMessage("You load the last of your cannon balls"));
@@ -158,7 +146,7 @@ public class CannonManager {
 		cannon.setFiring(true);
 		World.schedule(new CannonFireAction(player, cannon));
 	}
-	
+
 	public static Projectile getCannonFire() {
 		Projectile p = new Projectile(53);
 		p.setStartHeight(50);
@@ -168,12 +156,10 @@ public class CannonManager {
 	}
 
 	public static boolean playerHasCannon(Player player) {
-		return player.inventory.contains(6)
-				&& player.inventory.contains(8)
-				&& player.inventory.contains(10)
+		return player.inventory.contains(6) && player.inventory.contains(8) && player.inventory.contains(10)
 				&& player.inventory.contains(12);
 	}
-	
+
 	public static Npc[] getNpc(Cannon cannon) {
 		ArrayList<Npc> attack = new ArrayList<>();
 
@@ -181,24 +167,24 @@ public class CannonManager {
 			if (npc == null) {
 				continue;
 			}
-			
+
 			if (!Utility.withinDistance(npc, cannon, Region.VIEW_DISTANCE)) {
 				continue;
 			}
-			
+
 			if (!npc.definition.isAttackable()) {
 				continue;
 			}
-			
+
 			attack.add(npc);
 		}
 
 		Npc[] npc = new Npc[attack.size()];
-		
+
 		for (int i = 0; i < npc.length; i++) {
 			npc[i] = attack.get(i);
 		}
-		
+
 		return npc;
 	}
 

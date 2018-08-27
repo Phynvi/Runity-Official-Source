@@ -14,7 +14,6 @@ import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.arena.ArenaUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.chimera.ChimeraDrops;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.chimera.ChimeraUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.justicar.JusticarUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoUtility;
@@ -180,7 +179,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.GLOD);
 
 				AchievementHandler.activate(playerKiller, AchievementKey.KILL_GLOD, 1);
-			if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
+				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
@@ -227,9 +226,9 @@ public final class NpcDeath extends MobDeath<Npc> {
 				return;
 
 			case "CHIMERA":
-                ChimeraDrops.defeated(mob, playerKiller);
+				ChimeraDrops.defeated(mob, playerKiller);
 				playerKiller.activityLogger.add(ActivityLog.CHIMERA);
-				
+
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");

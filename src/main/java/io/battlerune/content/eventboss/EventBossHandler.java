@@ -2,6 +2,7 @@ package io.battlerune.content.eventboss;
 
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendString;
 
 /**
@@ -13,7 +14,11 @@ import io.battlerune.net.packet.out.SendString;
 public class EventBossHandler {
 
 	public static void openGalvek(Player player) {
-		sendStringsGalvek(player);
+		if (player.interfaceManager.isClear()) {
+			sendStringsGalvek(player);
+			return;
+		}
+		player.send(new SendMessage("Join the event boss now!"));
 	}
 
 	public static void sendStringsGalvek(Player player) {

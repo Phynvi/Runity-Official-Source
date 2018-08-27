@@ -3,15 +3,13 @@ package io.battlerune.content.mysterybox.impl;
 import java.util.Random;
 
 import io.battlerune.content.mysterybox.MysteryBoxListener;
-import io.battlerune.game.task.Task;
-import io.battlerune.game.task.TaskManager;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.util.Utility;
 
 public class SilverMysteryBox implements MysteryBoxListener {
-	int randomAmount = Utility.random(1000000, 2500000);//again this shit code?
+	int randomAmount = Utility.random(1000000, 2500000);// again this shit code?
 	int randomAmount1 = Utility.random(2500000, 3500000);
 	int randomAmount2 = Utility.random(3500000, 5000000);
 	int randomAmount3 = Utility.random(5000000, 50000000);
@@ -127,7 +125,8 @@ public class SilverMysteryBox implements MysteryBoxListener {
 		};
 	}
 
-	@Override//ur slave is actually retarded, don't say that about him, he's my left hand lmaooo gay ass
+	@Override // ur slave is actually retarded, don't say that about him, he's my left hand
+				// lmaooo gay ass
 	public void execute(Player player) {
 		Random random = new Random();
 		player.inventory.remove(12955, 1);

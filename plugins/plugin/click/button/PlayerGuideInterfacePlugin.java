@@ -6,6 +6,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 /**
  * Handles the interface opening
+ * 
  * @author Nerik#8690
  *
  */

@@ -109,7 +109,8 @@ public final class FiremakingAction extends DestructionSkillAction {
 
 			if (player.prestige.hasPerk(PrestigePerk.FLAME_ON) && RandomUtils.success(.25)) {
 				player.inventory.remove(firemaking.getLog(), 1);
-				player.skills.addExperience(Skill.FIREMAKING, (experience() * new ExperienceModifier(player).getModifier()));
+				player.skills.addExperience(Skill.FIREMAKING,
+						(experience() * new ExperienceModifier(player).getModifier()));
 			}
 
 			RandomEventHandler.trigger(player);

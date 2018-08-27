@@ -27,7 +27,6 @@ import io.battlerune.net.packet.out.SendPoison;
 import io.battlerune.net.packet.out.SendRunEnergy;
 import io.battlerune.net.packet.out.SendWidget;
 import io.battlerune.util.MessageColor;
-import plugin.command.impl.owner.PnpcCommand;
 
 /**
  * The enumerated type managing consumable potion types.
@@ -58,7 +57,7 @@ public enum PotionData {
 			PotionData.onPrayerEffect(player, true);
 			PotionData.onPrayerEffect(player, false);
 			PotionData.Transformnpc(player);
-			
+
 		}
 	},
 
@@ -68,7 +67,6 @@ public enum PotionData {
 		public void onEffect(Player player) {
 			PotionData.onBasicEffect(player, Skill.RANGED, BoostType.SUPER_RANGE);
 			player.send(new SendWidget(SendWidget.WidgetType.RANGE, 480));
-
 
 		}
 	},
@@ -410,7 +408,7 @@ public enum PotionData {
 		modifySkill(player, Skill.HITPOINTS, -0.10, 2);
 		modifySkill(player, Skill.PRAYER, 0.10, 0);
 	}
-	
+
 	public static void Transformnpc(Player player) {
 		final String message = "That player was not valid, please re-select a player.";
 

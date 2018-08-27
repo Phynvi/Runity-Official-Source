@@ -6,7 +6,7 @@ import io.battlerune.net.packet.out.SendString;
 /**
  * Handles displaying the users on the interface
  * 
- * @author hamza
+ * @author Nerik#8690
  *
  */
 public class FameBoardInterface {

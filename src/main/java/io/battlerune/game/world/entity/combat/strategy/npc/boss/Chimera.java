@@ -243,36 +243,30 @@ public class Chimera extends MultiStrategy {
 
 		@Override
 		public void hit(Npc attacker, Mob defender, Hit hit) {
-			/*if (Utility.random(1, 3) == 1) {
-				attacker.animate(7909);
-				attacker.transform(8096);
-				attacker.animate(7908);
-				attacker.getCombat().attack(defender);
-				attacker.getCombat().isAttacking(defender);
-
-				System.out.println("[Chimera] 1 Transformation is good to go.");
-
-			}
-			if (Utility.random(1, 3) == 2) {
-				attacker.animate(7909);
-				attacker.transform(8097);
-				attacker.animate(7908);
-				attacker.getCombat().attack(defender);
-				attacker.getCombat().isAttacking(defender);
-
-				System.out.println("[Chimera] 2 Transformation is good to go.");
-
-			}
-			if (Utility.random(1, 3) == 3) {
-				attacker.animate(7909);
-				attacker.transform(8098);
-				attacker.animate(7908);
-				attacker.getCombat().attack(defender);
-				attacker.getCombat().isAttacking(defender);
-
-				System.out.println("[Chimera] 3 Transformation is good to go.");
-
-			}*/
+			/*
+			 * if (Utility.random(1, 3) == 1) { attacker.animate(7909);
+			 * attacker.transform(8096); attacker.animate(7908);
+			 * attacker.getCombat().attack(defender);
+			 * attacker.getCombat().isAttacking(defender);
+			 * 
+			 * System.out.println("[Chimera] 1 Transformation is good to go.");
+			 * 
+			 * } if (Utility.random(1, 3) == 2) { attacker.animate(7909);
+			 * attacker.transform(8097); attacker.animate(7908);
+			 * attacker.getCombat().attack(defender);
+			 * attacker.getCombat().isAttacking(defender);
+			 * 
+			 * System.out.println("[Chimera] 2 Transformation is good to go.");
+			 * 
+			 * } if (Utility.random(1, 3) == 3) { attacker.animate(7909);
+			 * attacker.transform(8098); attacker.animate(7908);
+			 * attacker.getCombat().attack(defender);
+			 * attacker.getCombat().isAttacking(defender);
+			 * 
+			 * System.out.println("[Chimera] 3 Transformation is good to go.");
+			 * 
+			 * }
+			 */
 			defender.graphic(new Graphic(369));
 			// defender.locking.lock(LockType.FREEZE);
 
@@ -284,7 +278,7 @@ public class Chimera extends MultiStrategy {
 
 			SpawnData1 data = GalvekUtility.spawn;
 			World.schedule(4, () -> {
-				if(data == null) {
+				if (data == null) {
 					return;
 				}
 				Npc tsunami = new Npc(8099, data.getTsunami()) {

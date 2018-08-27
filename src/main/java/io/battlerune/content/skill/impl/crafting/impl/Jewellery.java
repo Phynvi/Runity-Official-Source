@@ -253,7 +253,8 @@ public final class Jewellery {
 				}
 
 				player.inventory.add(new Item(jewellery.product), -1, true);
-				player.skills.addExperience(Skill.CRAFTING, jewellery.experience * Config.CRAFTING_MODIFICATION * new ExperienceModifier(player).getModifier());
+				player.skills.addExperience(Skill.CRAFTING, jewellery.experience * Config.CRAFTING_MODIFICATION
+						* new ExperienceModifier(player).getModifier());
 				player.send(
 						new SendMessage("You have crafted " + Utility.getAOrAn(new Item(jewellery.product).getName())
 								+ " " + new Item(jewellery.product).getName() + "."));

@@ -44,31 +44,28 @@ public class PlayerKilling {
 			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
 					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
 		}
-		/*if (PlayerRight.isSuper(killer)) {
-			killer.setpkPoints(killer.getpkPoints() + 13);
-			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
-					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
-		}
-		if (PlayerRight.isExtreme(killer)) {
-			killer.setpkPoints(killer.getpkPoints() + 15);
-			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
-					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
-		}
-		if (PlayerRight.isElite(killer)) {
-			killer.setpkPoints(killer.getpkPoints() + 17);
-			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
-					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
-		}
-		if (PlayerRight.isKing(killer)) {
-			killer.setpkPoints(killer.getpkPoints() + 20);
-			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
-					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
-		}
-		if (PlayerRight.isSupreme(killer)) {
-			killer.setpkPoints(killer.getpkPoints() + 25);
-			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
-					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
-		}*/
+		/*
+		 * if (PlayerRight.isSuper(killer)) { killer.setpkPoints(killer.getpkPoints() +
+		 * 13); killer.message("<col=295EFF>You were rewarded with " +
+		 * killer.getpkPoints() + " points for that kill. You now have: " +
+		 * Utility.formatDigits(killer.pkPoints) + "."); } if
+		 * (PlayerRight.isExtreme(killer)) { killer.setpkPoints(killer.getpkPoints() +
+		 * 15); killer.message("<col=295EFF>You were rewarded with " +
+		 * killer.getpkPoints() + " points for that kill. You now have: " +
+		 * Utility.formatDigits(killer.pkPoints) + "."); } if
+		 * (PlayerRight.isElite(killer)) { killer.setpkPoints(killer.getpkPoints() +
+		 * 17); killer.message("<col=295EFF>You were rewarded with " +
+		 * killer.getpkPoints() + " points for that kill. You now have: " +
+		 * Utility.formatDigits(killer.pkPoints) + "."); } if
+		 * (PlayerRight.isKing(killer)) { killer.setpkPoints(killer.getpkPoints() + 20);
+		 * killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints() +
+		 * " points for that kill. You now have: " +
+		 * Utility.formatDigits(killer.pkPoints) + "."); } if
+		 * (PlayerRight.isSupreme(killer)) { killer.setpkPoints(killer.getpkPoints() +
+		 * 25); killer.message("<col=295EFF>You were rewarded with " +
+		 * killer.getpkPoints() + " points for that kill. You now have: " +
+		 * Utility.formatDigits(killer.pkPoints) + "."); }
+		 */
 
 		/** User has a 1/100 Chance of recieveing a blood key. **/
 		int Random_Chance = Utility.random(1, 100);

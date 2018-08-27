@@ -9,15 +9,16 @@ import io.battlerune.content.mysterybox.impl.SilverMysteryBox;
 
 /**
  * Mystery Box Event Listener
+ * 
  * @author Nerik#8690
  *
  */
 public class MysteryBoxEvent {
 
 	public static final Map<MysteryBoxType, MysteryBoxListener> MYSTERY_BOX = new HashMap<>();
-	
+
 	static {
-		
+
 		MYSTERY_BOX.putIfAbsent(MysteryBoxType.MYSTERY_BOX, new MysteryBox());
 		MYSTERY_BOX.putIfAbsent(MysteryBoxType.SILVER_MBOX, new SilverMysteryBox());
 		MYSTERY_BOX.putIfAbsent(MysteryBoxType.GOLD_MBOX, new GoldMysteryBox());
