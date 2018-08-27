@@ -2,6 +2,7 @@ package io.battlerune.content.skill.impl.hunter.net;
 
 import io.battlerune.Config;
 import io.battlerune.content.activity.randomevent.RandomEventHandler;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.impl.hunter.Hunter;
 import io.battlerune.content.skill.impl.hunter.net.impl.Butterfly;
 import io.battlerune.content.skill.impl.hunter.net.impl.Impling;
@@ -103,7 +104,8 @@ public class HunterNetting {
 					Hunter.SPAWNS.remove(npc.id, npc.spawnPosition);
 					npc.action.execute(new ImplingTeleportAction(npc), true);
 					player.inventory.replace(first.getId(), second.getId(), true);
-					player.skills.addExperience(Skill.HUNTER, experience * Config.HUNTER_MODIFICATION);
+					player.skills.addExperience(Skill.HUNTER,
+							(experience * Config.HUNTER_MODIFICATION) * new ExperienceModifier(player).getModifier());
 					player.send(new SendMessage("You catch the " + npc.getName() + " and place it in the jar."));
 					RandomEventHandler.trigger(player);
 				} else {

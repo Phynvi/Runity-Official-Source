@@ -5,6 +5,7 @@ import io.battlerune.content.achievement.AchievementHandler;
 import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.randomevent.RandomEventHandler;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.prestige.PrestigePerk;
@@ -75,15 +76,18 @@ public class WoodcuttingAction extends Action<Player> {
 
 			Pets.onReward(getMob(), PetData.BEAVER.getItem(), tree.petRate);
 			getMob().inventory.add(tree.item, 1);
-			getMob().skills.addExperience(Skill.WOODCUTTING, tree.experience * Config.WOODCUTTING_MODIFICATION);
+			getMob().skills.addExperience(Skill.WOODCUTTING, (tree.experience * Config.WOODCUTTING_MODIFICATION)
+					* new ExperienceModifier(getMob()).getModifier());
 
 			if (getMob().prestige.hasPerk(PrestigePerk.DOUBLE_WOOD) && RandomUtils.success(.15)) {
 				getMob().inventory.addOrDrop(new Item(tree.item, 1));
 			}
 
 			if (getMob().equipment.contains(13241)) {
-				getMob().skills.addExperience(Skill.WOODCUTTING, tree.experience * Config.MINING_MODIFICATION * 5);
-				getMob().skills.addExperience(Skill.FIREMAKING, tree.experience * Config.FIREMAKING_MODIFICATION * 5);
+				getMob().skills.addExperience(Skill.WOODCUTTING, (tree.experience * Config.MINING_MODIFICATION * 5)
+						* new ExperienceModifier(getMob()).getModifier());
+				getMob().skills.addExperience(Skill.FIREMAKING, (tree.experience * Config.FIREMAKING_MODIFICATION * 5)
+						* new ExperienceModifier(getMob()).getModifier());
 				getMob().message("You are now recieving 5x Woodcutting Experience.");
 			}
 			if (tree == TreeData.NORMAL_TREE) {

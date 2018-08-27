@@ -2,6 +2,7 @@ package io.battlerune.content.skill.impl.magic.spell;
 
 import io.battlerune.Config;
 import io.battlerune.content.activity.Activity;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.impl.magic.enchant.BoltEchantData;
 import io.battlerune.content.skill.impl.magic.enchant.SpellEnchant;
 import io.battlerune.content.skill.impl.magic.enchant.SpellEnchantData;
@@ -158,7 +159,8 @@ public class SpellCasting {
 
 		player.inventory.remove(enc.getUnenchanted(), 1);
 		player.inventory.add(enc.getEnchanted(), 1);
-		player.skills.addExperience(Skill.MAGIC, enc.getXp() * Config.MAGIC_MODIFICATION);
+		player.skills.addExperience(Skill.MAGIC,
+				(enc.getXp() * Config.MAGIC_MODIFICATION) * new ExperienceModifier(player).getModifier());
 		player.inventory.remove(ens.getReq1(), ens.getReqAmt1());
 		player.inventory.remove(ens.getReq2(), ens.getReqAmt2());
 		player.animate(enc.getAnim());
@@ -211,7 +213,8 @@ public class SpellCasting {
 		player.inventory.removeAll(enchant.runesRequired);
 		player.inventory.remove(enchant.bolt, 10);
 		player.inventory.add(enchant.enchantedBolt, 10);
-		player.skills.addExperience(Skill.MAGIC, 250 * Config.MAGIC_MODIFICATION);
+		player.skills.addExperience(Skill.MAGIC,
+				(250 * Config.MAGIC_MODIFICATION) * new ExperienceModifier(player).getModifier());
 		player.send(new SendMessage(
 				"@red@You have enchanted 10 " + boltName + (boltName.endsWith("bolts") ? "." : " bolts.")));
 		openBoltEnchant();

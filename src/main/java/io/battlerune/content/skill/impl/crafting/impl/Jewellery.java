@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Optional;
 
 import io.battlerune.Config;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.Animation;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
@@ -252,7 +253,7 @@ public final class Jewellery {
 				}
 
 				player.inventory.add(new Item(jewellery.product), -1, true);
-				player.skills.addExperience(Skill.CRAFTING, jewellery.experience * Config.CRAFTING_MODIFICATION);
+				player.skills.addExperience(Skill.CRAFTING, jewellery.experience * Config.CRAFTING_MODIFICATION * new ExperienceModifier(player).getModifier());
 				player.send(
 						new SendMessage("You have crafted " + Utility.getAOrAn(new Item(jewellery.product).getName())
 								+ " " + new Item(jewellery.product).getName() + "."));

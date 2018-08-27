@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import io.battlerune.Config;
 import io.battlerune.content.activity.randomevent.RandomEventHandler;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.impl.magic.Magic;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.spell.Spell;
@@ -65,7 +66,8 @@ public class LowAlchemy implements Spell {
 		player.inventory.add(Config.CURRENCY, value == 0 ? 1 : value);
 		player.inventory.refresh();
 		player.send(new SendForceTab(6));
-		player.skills.addExperience(Skill.MAGIC, 31 * (Config.MAGIC_MODIFICATION + 5));
+		player.skills.addExperience(Skill.MAGIC,
+				(31 * (Config.MAGIC_MODIFICATION + 5)) * new ExperienceModifier(player).getModifier());
 		player.spellCasting.castingDelay.reset();
 		player.action.clearNonWalkableActions();
 		RandomEventHandler.trigger(player);

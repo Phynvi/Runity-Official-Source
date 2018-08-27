@@ -8,6 +8,7 @@ import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.content.dialogue.Expression;
 import io.battlerune.content.event.impl.NpcInteractionEvent;
 import io.battlerune.content.event.impl.ObjectInteractionEvent;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.Animation;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.hit.Hit;
@@ -90,7 +91,8 @@ public class Thieving extends Skill {
 			player.skills.get(THIEVING).setDoingSkill(false);
 			player.inventory.add(Utility.randomElement(pickpocket.getLoot()));
 			player.send(new SendMessage("You have successfully pickpocket the " + npc.getName() + "."));
-			player.skills.addExperience(Skill.THIEVING, experience * Config.THIEVING_MODIFICATION);
+			player.skills.addExperience(Skill.THIEVING,
+					(experience * Config.THIEVING_MODIFICATION) * new ExperienceModifier(player).getModifier());
 			RandomEventHandler.trigger(player);
 		});
 		return true;
@@ -139,7 +141,8 @@ public class Thieving extends Skill {
 		player.skills.get(THIEVING).setDoingSkill(true);
 
 		World.schedule(3, () -> {
-			double experience = stall.getExperience() * Config.THIEVING_MODIFICATION;
+			double experience = (stall.getExperience() * Config.THIEVING_MODIFICATION)
+					* new ExperienceModifier(player).getModifier();
 			double newExperience = Area.inDonatorZone(player) ? experience * 2 : experience;
 
 			if (failed) {

@@ -3,6 +3,7 @@ package io.battlerune.content.skill.impl.crafting.impl;
 import io.battlerune.Config;
 import io.battlerune.content.dialogue.ChatBoxItemDialogue;
 import io.battlerune.content.dialogue.DialogueFactory;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.Animation;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
@@ -157,7 +158,8 @@ public class Spinning {
 				player.animate(new Animation(896));
 				player.inventory.remove(spinnable.item);
 				player.inventory.add(spinnable.outcome);
-				player.skills.addExperience(Skill.CRAFTING, spinnable.experience * Config.CRAFTING_MODIFICATION);
+				player.skills.addExperience(Skill.CRAFTING, (spinnable.experience * Config.CRAFTING_MODIFICATION)
+						* new ExperienceModifier(player).getModifier());
 				player.send(new SendMessage("You spin the " + spinnable.item.getName() + " into "
 						+ Utility.getAOrAn(spinnable.outcome.getName()) + " " + spinnable.outcome.getName() + "."));
 

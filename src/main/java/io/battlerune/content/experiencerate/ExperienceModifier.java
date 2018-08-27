@@ -1,5 +1,6 @@
 package io.battlerune.content.experiencerate;
 
+import io.battlerune.Config;
 import io.battlerune.game.world.entity.mob.player.Player;
 
 /**
@@ -23,5 +24,5 @@ public class ExperienceModifier {
 		}
 		return 1.0;
 	}
-	
+
 }

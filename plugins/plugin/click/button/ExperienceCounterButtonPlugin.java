@@ -1,6 +1,7 @@
 package plugin.click.button;
 
 import io.battlerune.Config;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendConfig;
@@ -113,13 +114,13 @@ public class ExperienceCounterButtonPlugin extends PluginContext {
 			return true;
 		case -8993:
 		case -8991:
-			player.experienceRate = Config.COMBAT_MODIFICATION;
+			player.experienceRate = Config.COMBAT_MODIFICATION * new ExperienceModifier(player).getModifier();
 			player.send(new SendConfig(776, 0));
 			player.send(new SendMessage("Your experience rate is now normal (" + Config.COMBAT_MODIFICATION + "x)."));
 			return true;
 		case -8992:
 		case -8990:
-			player.experienceRate = 1;
+			player.experienceRate = new ExperienceModifier(player).getModifier();
 			player.send(new SendConfig(776, 1));
 			player.send(new SendMessage("Your experience is now runescape (4x)."));
 			return true;

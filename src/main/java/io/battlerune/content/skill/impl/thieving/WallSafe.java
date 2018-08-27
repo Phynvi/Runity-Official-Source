@@ -1,6 +1,7 @@
 package io.battlerune.content.skill.impl.thieving;
 
 import io.battlerune.Config;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.Animation;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
@@ -74,7 +75,8 @@ public class WallSafe {
 
 				player.send(new SendMessage("You get some loot."));
 				player.inventory.add(Utility.randomElement(REWARD));
-				player.skills.addExperience(Skill.THIEVING, 100 * Config.THIEVING_MODIFICATION);
+				player.skills.addExperience(Skill.THIEVING,
+						(100 * Config.THIEVING_MODIFICATION) * new ExperienceModifier(player).getModifier());
 				cancel();
 			}
 

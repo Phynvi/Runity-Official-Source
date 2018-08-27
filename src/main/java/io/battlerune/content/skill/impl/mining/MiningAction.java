@@ -3,6 +3,7 @@ package io.battlerune.content.skill.impl.mining;
 import io.battlerune.Config;
 import io.battlerune.content.activity.randomevent.RandomEventHandler;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.prestige.PrestigePerk;
@@ -76,7 +77,8 @@ public class MiningAction extends Action<Player> {
 
 			getMob().inventory.add(harvest, 1);
 			getMob().inventory.add(995, ore.getMoney());
-			getMob().skills.addExperience(Skill.MINING, ore.experience * Config.MINING_MODIFICATION);
+			getMob().skills.addExperience(Skill.MINING,
+					(ore.experience * Config.MINING_MODIFICATION) * new ExperienceModifier(getMob()).getModifier());
 			RandomEventHandler.trigger(getMob());
 			if (Utility.random(1, 500) == 2) {
 				Pets.onReward(getMob(), PetData.ROCK_GOLEM.getItem(), ore.pet);
@@ -84,19 +86,23 @@ public class MiningAction extends Action<Player> {
 			}
 
 			if (getMob().equipment.contains(21343)) {
-				getMob().skills.addExperience(Skill.MINING, ore.experience * Config.MINING_MODIFICATION * 1.5);
+				getMob().skills.addExperience(Skill.MINING, (ore.experience * Config.MINING_MODIFICATION * 1.5)
+						* new ExperienceModifier(getMob()).getModifier());
 				getMob().message("You are now Recieved 1.5x Mining Experience");
 			}
 			if (getMob().equipment.contains(21392)) {
-				getMob().skills.addExperience(Skill.MINING, ore.experience * Config.MINING_MODIFICATION * 2);
+				getMob().skills.addExperience(Skill.MINING, (ore.experience * Config.MINING_MODIFICATION * 2)
+						* new ExperienceModifier(getMob()).getModifier());
 				getMob().message("You are now recieving 2x Mining Experience.");
 			}
 			if (getMob().equipment.contains(21345)) {
-				getMob().skills.addExperience(Skill.MINING, ore.experience * Config.MINING_MODIFICATION * 3.5);
+				getMob().skills.addExperience(Skill.MINING, (ore.experience * Config.MINING_MODIFICATION * 3.5)
+						* new ExperienceModifier(getMob()).getModifier());
 				getMob().message("You are now recieving 3.5x Mining Experience.");
 			}
 			if (getMob().equipment.contains(13243)) {
-				getMob().skills.addExperience(Skill.MINING, ore.experience * Config.MINING_MODIFICATION * 5);
+				getMob().skills.addExperience(Skill.MINING, (ore.experience * Config.MINING_MODIFICATION * 5)
+						* new ExperienceModifier(getMob()).getModifier());
 				getMob().message("You are now recieving 5x Mining Experience.");
 			}
 

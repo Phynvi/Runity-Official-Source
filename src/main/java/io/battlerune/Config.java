@@ -339,7 +339,7 @@ public final class Config {
 			{ Config.IGNORE_TAB, 5715 }, { Config.WRENCH_TAB, 50020 }, { Config.EMOTE_TAB, 41000 },
 			{ Config.MUSIC_TAB, 51200 }, { Config.ACTIVITY_TAB, -1 }, { Config.LOGOUT_TAB, 2449 } };
 	public static final String WEBSITE_URL;
-
+	
 	/** The experience modification for combat. */
 	public static final double COMBAT_MODIFICATION;
 

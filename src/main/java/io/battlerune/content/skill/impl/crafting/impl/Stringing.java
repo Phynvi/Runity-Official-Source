@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import io.battlerune.Config;
 import io.battlerune.content.dialogue.ChatBoxItemDialogue;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -160,7 +161,7 @@ public class Stringing {
 				player.inventory.remove(amulet.ingredient, 1);
 				player.inventory.remove(1759, 1);
 				player.inventory.add(amulet.product, 1);
-				player.skills.addExperience(Skill.CRAFTING, 4 * Config.CRAFTING_MODIFICATION);
+				player.skills.addExperience(Skill.CRAFTING, (4 * Config.CRAFTING_MODIFICATION) * new ExperienceModifier(player).getModifier());
 				player.send(new SendMessage("You string the " + ItemDefinition.get(amulet.ingredient).getName()
 						+ " into " + Utility.getAOrAn(ItemDefinition.get(amulet.product).getName()) + " "
 						+ ItemDefinition.get(amulet.product).getName() + "."));

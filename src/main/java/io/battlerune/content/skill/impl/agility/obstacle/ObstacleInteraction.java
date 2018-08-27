@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import io.battlerune.Config;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.impl.agility.Agility;
 import io.battlerune.game.Animation;
 import io.battlerune.game.task.Task;
@@ -121,7 +122,8 @@ public interface ObstacleInteraction {
 				if (getPostMessage() != null)
 					player.send(new SendMessage(getPostMessage()));
 				if (experience > 0)
-					player.skills.addExperience(Skill.AGILITY, experience * Config.AGILITY_MODIFICATION);
+					player.skills.addExperience(Skill.AGILITY,
+							(experience * Config.AGILITY_MODIFICATION) * new ExperienceModifier(player).getModifier());
 				if (ordinal > -1) {
 					if (ordinal == 0) {
 						player.attributes.set("AGILITY_FLAGS", 1 << ordinal);
@@ -175,7 +177,8 @@ public interface ObstacleInteraction {
 		if ((flag & flags) != flags)
 			return false;
 
-		player.skills.addExperience(Skill.AGILITY, bonus * Config.AGILITY_MODIFICATION);
+		player.skills.addExperience(Skill.AGILITY,
+				(bonus * Config.AGILITY_MODIFICATION) * new ExperienceModifier(player).getModifier());
 		player.send(new SendMessage("You have completed the " + course + " and receive 5 tickets."));
 		player.inventory.add(995, 50000);
 		player.forClan(channel -> channel.activateTask(ClanTaskKey.AGILITY_COURSE, player.getName()));

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import io.battlerune.Config;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.store.StoreItem;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.npc.Npc;
@@ -241,16 +242,19 @@ public class Slayer {
 				if (partner != null) {
 					if (!partnerKilled) {
 						partner.slayer.activate(npc, killAmount, true);
-						player.skills.addExperience(Skill.SLAYER, npc.getMaximumHealth() * Config.SLAYER_MODIFICATION);
+						player.skills.addExperience(Skill.SLAYER, (npc.getMaximumHealth() * Config.SLAYER_MODIFICATION)
+								* new ExperienceModifier(player).getModifier());
 						partner.skills.addExperience(Skill.SLAYER,
-								npc.getMaximumHealth() * Config.SLAYER_MODIFICATION / 10);
+								(npc.getMaximumHealth() * Config.SLAYER_MODIFICATION / 10)
+										* new ExperienceModifier(player).getModifier());
 						if (getAmount() != partner.slayer.getAmount()) {
 							System.out.println("Correcting differentiation");
 							partner.slayer.amount = getAmount();
 						}
 					}
 				} else {
-					player.skills.addExperience(Skill.SLAYER, npc.getMaximumHealth() * Config.SLAYER_MODIFICATION);
+					player.skills.addExperience(Skill.SLAYER, (npc.getMaximumHealth() * Config.SLAYER_MODIFICATION)
+							* new ExperienceModifier(player).getModifier());
 				}
 			}
 		}

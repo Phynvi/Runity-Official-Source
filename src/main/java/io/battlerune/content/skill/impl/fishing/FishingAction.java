@@ -3,6 +3,7 @@ package io.battlerune.content.skill.impl.fishing;
 import io.battlerune.Config;
 import io.battlerune.content.activity.randomevent.RandomEventHandler;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.prestige.PrestigePerk;
@@ -67,7 +68,8 @@ public class FishingAction extends Action<Player> {
 			String name = ItemDefinition.get(id).getName();
 			player.inventory.add(new Item(id, 1));
 			player.inventory.add(new Item(995, money));
-			player.skills.addExperience(Skill.FISHING, f.getExperience() * Config.FISHING_MODIFICATION);
+			player.skills.addExperience(Skill.FISHING,
+					(f.getExperience() * Config.FISHING_MODIFICATION) * new ExperienceModifier(player).getModifier());
 			player.message("You manage to catch a " + name + ".");
 			RandomEventHandler.trigger(player);
 

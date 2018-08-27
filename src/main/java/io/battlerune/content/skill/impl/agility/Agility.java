@@ -14,6 +14,7 @@ import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 
 import io.battlerune.Config;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.impl.agility.obstacle.Obstacle;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
@@ -56,23 +57,28 @@ public class Agility {
 		switch (button) {
 		case 8387:
 			amount = 1;
-			onClick = p -> p.skills.addExperience(Skill.AGILITY, TICKET_EXPERIENCE * 1);
+			onClick = p -> p.skills.addExperience(Skill.AGILITY,
+					(TICKET_EXPERIENCE * 1) * new ExperienceModifier(p).getModifier());
 			break;
 		case 8389:
 			amount = 10;
-			onClick = p -> p.skills.addExperience(Skill.AGILITY, TICKET_EXPERIENCE * 10);
+			onClick = p -> p.skills.addExperience(Skill.AGILITY,
+					(TICKET_EXPERIENCE * 10) * new ExperienceModifier(p).getModifier());
 			break;
 		case 8390:
 			amount = 25;
-			onClick = p -> p.skills.addExperience(Skill.AGILITY, TICKET_EXPERIENCE * 25);
+			onClick = p -> p.skills.addExperience(Skill.AGILITY,
+					(TICKET_EXPERIENCE * 25) * new ExperienceModifier(p).getModifier());
 			break;
 		case 8391:
 			amount = 100;
-			onClick = p -> p.skills.addExperience(Skill.AGILITY, TICKET_EXPERIENCE * 100);
+			onClick = p -> p.skills.addExperience(Skill.AGILITY,
+					(TICKET_EXPERIENCE * 100) * new ExperienceModifier(p).getModifier());
 			break;
 		case 8392:
 			amount = 1_000;
-			onClick = p -> p.skills.addExperience(Skill.AGILITY, TICKET_EXPERIENCE * 1000);
+			onClick = p -> p.skills.addExperience(Skill.AGILITY,
+					(TICKET_EXPERIENCE * 1000) * new ExperienceModifier(p).getModifier());
 			break;
 		case 8382:
 			amount = 3;

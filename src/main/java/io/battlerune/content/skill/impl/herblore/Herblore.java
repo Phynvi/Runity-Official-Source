@@ -8,6 +8,7 @@ import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.content.dialogue.ChatBoxItemDialogue;
 import io.battlerune.content.event.impl.ItemInteractionEvent;
 import io.battlerune.content.event.impl.ItemOnItemInteractionEvent;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.impl.woodcutting.TreeData;
 import io.battlerune.game.Animation;
 import io.battlerune.game.action.Action;
@@ -25,7 +26,6 @@ import io.battlerune.util.Utility;
  * @author Daniel
  */
 public class Herblore extends Skill {
-	
 
 	/** Constructs a new <code>Herblore</code>. */
 	public Herblore(int level, double experience) {
@@ -36,9 +36,9 @@ public class Herblore extends Skill {
 	protected double modifier() {
 		return Config.HERBLORE_MODIFICATION;
 	}
+
 	public FinishedPotion finishpotion;
 
-	
 	@Override
 	protected boolean clickItem(Player player, ItemInteractionEvent event) {
 		final int slot = event.getSlot();
@@ -63,7 +63,8 @@ public class Herblore extends Skill {
 
 		player.inventory.remove(item);
 		player.inventory.add(herb.getClean());
-		player.skills.addExperience(Skill.HERBLORE, herb.getExperience() * modifier());
+		player.skills.addExperience(Skill.HERBLORE,
+				(herb.getExperience() * modifier()) * new ExperienceModifier(player).getModifier());
 		RandomEventHandler.trigger(player);
 		return true;
 	}
@@ -142,7 +143,7 @@ public class Herblore extends Skill {
 				player.inventory.removeAll(potion.getIngredients());
 				player.inventory.add(potion.getProduct());
 				player.inventory.add(995, finishpotion.getMoney());
-				//HERE TODO ADAM
+				// HERE TODO ADAM
 				player.skills.addExperience(Skill.HERBLORE, potion.getExperience() * modifier());
 				AchievementHandler.activate(player, AchievementKey.POTION_MAKING, 1);
 				RandomEventHandler.trigger(player);

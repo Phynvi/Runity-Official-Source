@@ -5,6 +5,7 @@ import java.util.Optional;
 import io.battlerune.Config;
 import io.battlerune.content.achievement.AchievementHandler;
 import io.battlerune.content.achievement.AchievementKey;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.SkillAction;
 import io.battlerune.content.skill.impl.prayer.BoneData;
 import io.battlerune.game.Animation;
@@ -46,7 +47,7 @@ public final class BuryBoneAction extends SkillAction {
 		getMob().animate(new Animation(827));
 		Player player = getMob().getPlayer();
 		player.inventory.remove(item, slot, true);
-		player.skills.addExperience(skill(), experience());
+		player.skills.addExperience(skill(), (experience() * new ExperienceModifier(player).getModifier()));
 		player.send(new SendMessage("You bury the " + item.getName() + "."));
 		AchievementHandler.activate(player, AchievementKey.BURY_BONES, 1);
 		cancel();

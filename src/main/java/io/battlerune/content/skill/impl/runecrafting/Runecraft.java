@@ -5,6 +5,7 @@ import io.battlerune.content.activity.randomevent.RandomEventHandler;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.content.event.impl.ItemInteractionEvent;
 import io.battlerune.content.event.impl.ObjectInteractionEvent;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
@@ -91,7 +92,8 @@ public class Runecraft extends Skill {
 		player.animate(new Animation(791));
 		player.graphic(new Graphic(186));
 		player.inventory.remove(new Item(essence, amount), -1, true);
-		player.skills.addExperience(Skill.RUNECRAFTING, (rune.getExperience() * amount) * modifier());
+		player.skills.addExperience(Skill.RUNECRAFTING,
+				((rune.getExperience() * amount) * modifier()) * new ExperienceModifier(player).getModifier());
 		RandomEventHandler.trigger(player);
 
 		if (rune == RunecraftData.BLOOD) {

@@ -1,5 +1,6 @@
 package io.battlerune.game.world.entity.combat.strategy.basic;
 
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.hit.HitIcon;
@@ -64,7 +65,7 @@ public abstract class MeleeStrategy<T extends Mob> extends CombatStrategy<T> {
 			}
 		}
 
-		exp *= player.experienceRate;
+		exp *= player.experienceRate * new ExperienceModifier(player).getModifier();
 		player.skills.addExperience(Skill.HITPOINTS, exp / 3);
 		switch (player.getCombat().getFightType().getStyle()) {
 		case ACCURATE:

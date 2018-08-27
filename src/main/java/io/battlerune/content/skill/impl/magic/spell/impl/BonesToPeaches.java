@@ -1,6 +1,7 @@
 package io.battlerune.content.skill.impl.magic.spell.impl;
 
 import io.battlerune.Config;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.impl.magic.Magic;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.spell.Spell;
@@ -50,7 +51,8 @@ public class BonesToPeaches implements Spell {
 		player.inventory.removeAll(getRunes());
 		player.animate(new Animation(722));
 		player.graphic(new Graphic(141, true));
-		player.skills.addExperience(Skill.MAGIC, 35.5 * Config.MAGIC_MODIFICATION);
+		player.skills.addExperience(Skill.MAGIC,
+				(35.5 * Config.MAGIC_MODIFICATION) * new ExperienceModifier(player).getModifier());
 		player.send(new SendMessage("You have converted " + amount + " bones to peaches."));
 	}
 }

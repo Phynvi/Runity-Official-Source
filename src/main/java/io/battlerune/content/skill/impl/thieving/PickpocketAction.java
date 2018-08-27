@@ -1,6 +1,7 @@
 package io.battlerune.content.skill.impl.thieving;
 
 import io.battlerune.Config;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.Animation;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
@@ -57,7 +58,8 @@ public final class PickpocketAction extends Action<Player> {
 		}
 
 		double experience = Area.inDonatorZone(getMob()) ? pickpocket.getExperience() * 2 : pickpocket.getExperience();
-		getMob().skills.addExperience(Skill.THIEVING, experience * Config.THIEVING_MODIFICATION);
+		getMob().skills.addExperience(Skill.THIEVING,
+				(experience * Config.THIEVING_MODIFICATION) * new ExperienceModifier(getMob()).getModifier());
 		getMob().send(new SendMessage("You have successfully pickpocket the " + npc.getName() + "."));
 		getMob().inventory.add(Utility.randomElement(pickpocket.getLoot()));
 		getMob().locking.unlock();

@@ -5,6 +5,7 @@ import java.util.Optional;
 import io.battlerune.Config;
 import io.battlerune.content.activity.randomevent.RandomEventHandler;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.prestige.PrestigePerk;
 import io.battlerune.content.skill.impl.DestructionSkillAction;
 import io.battlerune.game.Animation;
@@ -108,7 +109,7 @@ public final class FiremakingAction extends DestructionSkillAction {
 
 			if (player.prestige.hasPerk(PrestigePerk.FLAME_ON) && RandomUtils.success(.25)) {
 				player.inventory.remove(firemaking.getLog(), 1);
-				player.skills.addExperience(Skill.FIREMAKING, experience());
+				player.skills.addExperience(Skill.FIREMAKING, (experience() * new ExperienceModifier(player).getModifier()));
 			}
 
 			RandomEventHandler.trigger(player);

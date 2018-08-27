@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Optional;
 
 import io.battlerune.Config;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.Animation;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
@@ -223,7 +224,8 @@ public class Glass {
 				String name = ItemDefinition.get(glass.product).getName();
 				player.animate(new Animation(moltenGlass ? 899 : 884));
 				player.inventory.add(new Item(glass.product));
-				player.skills.addExperience(Skill.CRAFTING, glass.experience * Config.CRAFTING_MODIFICATION);
+				player.skills.addExperience(Skill.CRAFTING, (glass.experience * Config.CRAFTING_MODIFICATION)
+						* new ExperienceModifier(player).getModifier());
 				player.send(new SendMessage("You make " + Utility.getAOrAn(name) + " " + name + "."));
 
 				if (++ticks == amount) {

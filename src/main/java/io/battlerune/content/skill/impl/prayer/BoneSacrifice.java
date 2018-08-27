@@ -5,6 +5,7 @@ import io.battlerune.content.activity.randomevent.RandomEventHandler;
 import io.battlerune.content.dialogue.ChatBoxItemDialogue;
 import io.battlerune.content.event.impl.ItemInteractionEvent;
 import io.battlerune.content.event.impl.ItemOnObjectInteractionEvent;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.action.Action;
@@ -106,7 +107,8 @@ public class BoneSacrifice extends Skill {
 				World.sendGraphic(graphic, position);
 				player.animate(new Animation(645, 5));
 				player.inventory.remove(bone.getId(), 1);
-				player.skills.addExperience(Skill.PRAYER, bone.getExperience() * (modifier() * 1.8));
+				player.skills.addExperience(Skill.PRAYER,
+						(bone.getExperience() * (modifier() * 1.8)) * new ExperienceModifier(player).getModifier());
 				player.send(new SendMessage("You sacrifice the " + ItemDefinition.get(bone.getId()).getName() + " ."));
 				RandomEventHandler.trigger(player);
 				if (++ticks == amount) {

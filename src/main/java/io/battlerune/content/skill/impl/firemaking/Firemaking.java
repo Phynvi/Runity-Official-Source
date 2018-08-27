@@ -7,6 +7,7 @@ import io.battlerune.content.activity.randomevent.RandomEventHandler;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.content.event.impl.ItemOnItemInteractionEvent;
 import io.battlerune.content.event.impl.ObjectInteractionEvent;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.prestige.PrestigePerk;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
@@ -115,15 +116,16 @@ public class Firemaking extends Skill {
 				player.inventory.remove(firemaking.getLog(), 1);
 				player.animate(733);
 				player.skills.addExperience(Skill.FIREMAKING,
-						firemaking.getExperience() * Config.FIREMAKING_MODIFICATION);
+						(firemaking.getExperience() * Config.FIREMAKING_MODIFICATION)
+								* new ExperienceModifier(player).getModifier());
 				RandomEventHandler.trigger(player);
-				//TODO HANDLES THE FIRMAKING.
-				
+				// TODO HANDLES THE FIRMAKING.
+
 				/**
-				 * 	player.inventory.add(995, firemaking.getCoins());
-				player.inventory.add(995, firemaking.getMoney());
-				player.inventory.add(firemaking.getLog(), 1);
-				player.message("you have got " + firemaking.getCoins() + " " + firemaking.getMoney() + " !" + " " + firemaking.getLog());
+				 * player.inventory.add(995, firemaking.getCoins()); player.inventory.add(995,
+				 * firemaking.getMoney()); player.inventory.add(firemaking.getLog(), 1);
+				 * player.message("you have got " + firemaking.getCoins() + " " +
+				 * firemaking.getMoney() + " !" + " " + firemaking.getLog());
 				 */
 
 				if (firemaking == FiremakingData.WILLOW_LOG) {
@@ -167,7 +169,8 @@ public class Firemaking extends Skill {
 				if (player.prestige.hasPerk(PrestigePerk.FLAME_ON) && RandomUtils.success(.25)) {
 					player.inventory.remove(firemaking.getLog(), 1);
 					player.skills.addExperience(Skill.FIREMAKING,
-							firemaking.getExperience() * Config.FIREMAKING_MODIFICATION);
+							(firemaking.getExperience() * Config.FIREMAKING_MODIFICATION)
+									* new ExperienceModifier(player).getModifier());
 				}
 
 				amount--;

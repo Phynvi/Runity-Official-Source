@@ -6,6 +6,7 @@ import io.battlerune.Config;
 import io.battlerune.content.achievement.AchievementHandler;
 import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.randomevent.RandomEventHandler;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.impl.magic.Magic;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.spell.Spell;
@@ -67,7 +68,8 @@ public class HighAlchemy implements Spell {
 		player.inventory.add(Config.CURRENCY, value == 0 ? 1 : value);
 		player.inventory.refresh();
 		player.send(new SendForceTab(6));
-		player.skills.addExperience(Skill.MAGIC, 65 * (Config.MAGIC_MODIFICATION + 5));
+		player.skills.addExperience(Skill.MAGIC,
+				(65 * (Config.MAGIC_MODIFICATION + 5)) * new ExperienceModifier(player).getModifier());
 		AchievementHandler.activate(player, AchievementKey.HIGH_ALCHEMY, 1);
 		player.spellCasting.castingDelay.reset();
 		player.action.clearNonWalkableActions();

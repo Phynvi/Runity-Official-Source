@@ -6,6 +6,7 @@ import io.battlerune.Config;
 import io.battlerune.content.activity.randomevent.RandomEventHandler;
 import io.battlerune.content.dialogue.ChatBoxItemDialogue;
 import io.battlerune.content.event.impl.ItemOnObjectInteractionEvent;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.Animation;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
@@ -142,7 +143,8 @@ public class Cooking extends Skill {
 				if (success(player, cook.getLevel(), cook.getNoBurn())) {
 					player.inventory.add(cook.getCooked(), 1);
 					player.inventory.add(995, cook.getMoney());
-					player.skills.addExperience(Skill.COOKING, cook.getExp() * modifier());
+					player.skills.addExperience(Skill.COOKING,
+							(cook.getExp() * modifier()) * new ExperienceModifier(player).getModifier());
 					player.send(new SendMessage("You successfully cook the " + name + "."));
 					RandomEventHandler.trigger(player);
 				} else {

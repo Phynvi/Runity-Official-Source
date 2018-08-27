@@ -8,6 +8,7 @@ import io.battlerune.content.event.impl.ItemOnItemInteractionEvent;
 import io.battlerune.content.event.impl.ItemOnObjectInteractionEvent;
 import io.battlerune.content.event.impl.NpcInteractionEvent;
 import io.battlerune.content.event.impl.ObjectInteractionEvent;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.impl.crafting.impl.Glass;
 import io.battlerune.content.skill.impl.crafting.impl.Jewellery;
 import io.battlerune.content.skill.impl.crafting.impl.Leather;
@@ -450,7 +451,8 @@ public class Crafting extends Skill {
 			@Override
 			public void execute() {
 				player.animate(new Animation(craftable.getAnimation()));
-				player.skills.addExperience(Skill.CRAFTING, item.getExperience() * Config.CRAFTING_MODIFICATION);
+				player.skills.addExperience(Skill.CRAFTING, 
+						(item.getExperience() * Config.CRAFTING_MODIFICATION) * new ExperienceModifier(player).getModifier());
 				player.inventory.removeAll(craftable.getIngediants(index));
 				player.inventory.add(item.getProduct());
 

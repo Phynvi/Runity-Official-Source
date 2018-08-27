@@ -9,6 +9,7 @@ import io.battlerune.Config;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.content.event.impl.ClickButtonInteractionEvent;
 import io.battlerune.content.event.impl.ItemOnItemInteractionEvent;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.impl.firemaking.FiremakingData;
 import io.battlerune.content.skill.impl.fletching.impl.Stringable;
 import io.battlerune.game.Animation;
@@ -363,7 +364,8 @@ public class Fletching extends Skill {
 				++iterations;
 
 				player.animate(new Animation(fletchable.getAnimation()));
-				player.skills.addExperience(Skill.FLETCHING, item.getExperience() * modifier());
+				player.skills.addExperience(Skill.FLETCHING,
+						(item.getExperience() * modifier()) * new ExperienceModifier(player).getModifier());
 				player.inventory.removeAll(fletchable.getIngediants());
 				player.inventory.add(item.getProduct());
 

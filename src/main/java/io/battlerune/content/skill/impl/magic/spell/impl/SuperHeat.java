@@ -3,6 +3,7 @@ package io.battlerune.content.skill.impl.magic.spell.impl;
 import java.util.Optional;
 
 import io.battlerune.Config;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.spell.Spell;
 import io.battlerune.content.skill.impl.smithing.SmeltingData;
@@ -63,8 +64,10 @@ public class SuperHeat implements Spell {
 		player.send(new SendForceTab(6));
 		player.inventory.removeAll(data.get().required);
 		player.inventory.addAll(data.get().produced);
-		player.skills.addExperience(Skill.MAGIC, 53 * Config.MAGIC_MODIFICATION);
-		player.skills.addExperience(Skill.SMITHING, data.get().experience * Config.SMITHING_MODIFICATION);
+		player.skills.addExperience(Skill.MAGIC,
+				(53 * Config.MAGIC_MODIFICATION) * new ExperienceModifier(player).getModifier());
+		player.skills.addExperience(Skill.SMITHING,
+				(data.get().experience * Config.SMITHING_MODIFICATION) * new ExperienceModifier(player).getModifier());
 		player.spellCasting.castingDelay.reset();
 	}
 }

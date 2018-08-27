@@ -3,6 +3,7 @@ package plugin.itemon.item;
 import io.battlerune.Config;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.content.consume.PotionData;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.event.impl.ItemOnItemEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -31,7 +32,8 @@ public class DecantPotionPlugin extends PluginContext {
 		}
 
 		player.inventory.add(12695, 1);
-		player.skills.addExperience(Skill.HERBLORE, 150 * Config.HERBLORE_MODIFICATION);
+		player.skills.addExperience(Skill.HERBLORE,
+				(150 * Config.HERBLORE_MODIFICATION) * new ExperienceModifier(player).getModifier());
 		player.forClan(channel -> channel.activateTask(ClanTaskKey.SUPER_COMBAT_POTION, player.getName()));
 	}
 

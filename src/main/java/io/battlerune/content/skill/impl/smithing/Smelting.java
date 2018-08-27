@@ -3,6 +3,7 @@ package io.battlerune.content.skill.impl.smithing;
 import java.util.Optional;
 
 import io.battlerune.Config;
+import io.battlerune.content.experiencerate.ExperienceModifier;
 import io.battlerune.game.Animation;
 import io.battlerune.game.action.Action;
 import io.battlerune.game.action.policy.WalkablePolicy;
@@ -116,7 +117,8 @@ public final class Smelting extends Action<Player> {
 //        System.out.println(amount);
 		getMob().inventory.removeAll(definition.required);
 		getMob().inventory.addAll(definition.produced);
-		getMob().skills.addExperience(Skill.SMITHING, definition.experience * Config.SMITHING_MODIFICATION);
+		getMob().skills.addExperience(Skill.SMITHING, 
+				(definition.experience * Config.SMITHING_MODIFICATION) * new ExperienceModifier(getMob()).getModifier());
 		amount--;
 
 		if (amount < 1) {
