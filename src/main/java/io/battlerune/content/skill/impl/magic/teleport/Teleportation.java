@@ -41,7 +41,6 @@ public class Teleportation {
 		if (!player.interfaceManager.isClear()) {
 			player.interfaceManager.close(false);
 		}
-		// ADAM ADDED THIS INCASE IT BREAKS SOMETHING
 		if (mob.getPlayer().playerAssistant.busy()) {
 			return false;
 		}
@@ -84,6 +83,10 @@ public class Teleportation {
 			type = TeleportationData.HOME;
 		} else if (player.spellbook == Spellbook.ANCIENT) {
 			type = TeleportationData.ANCIENT;
+		}
+
+		if (player.action.getCurrentAction() != null) {
+			player.action.getCurrentAction().cancel();
 		}
 
 		teleport(player, position, type, onDestination);
