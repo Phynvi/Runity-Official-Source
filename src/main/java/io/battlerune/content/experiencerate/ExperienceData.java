@@ -9,7 +9,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
  */
 public enum ExperienceData {
 
-	NORMAL(PlayerRight.PLAYER, 1.0),
+	NORMAL(PlayerRight.PLAYER, 2500.0),
 	DONATOR(PlayerRight.DONATOR, 4.0);
 
 	private PlayerRight mode;

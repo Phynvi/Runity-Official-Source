@@ -95,7 +95,6 @@ public final class BattleRune {
 		NpcDefinition.createParser().run();
 		new CombatProjectileParser().run();
 		CombatListenerManager.load();
-		CommandManager.load();
 		new NpcSpawnParser().run();
 		new NpcDropParser().run();
 		new NpcForceChatParser().run();

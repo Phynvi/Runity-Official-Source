@@ -2,6 +2,8 @@ package io.battlerune.content.writer.impl;
 
 import io.battlerune.content.writer.InterfaceWriter;
 import io.battlerune.game.world.World;
+import io.battlerune.game.world.entity.mob.npc.dropchance.DropChanceData;
+import io.battlerune.game.world.entity.mob.npc.dropchance.DropChanceHandler;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.net.packet.out.SendScrollbar;
@@ -19,8 +21,7 @@ public class InformationWriter extends InterfaceWriter {
 	}
 
 	private String[] text = { "<icon=13> <col=FF7000>Game Information:",
-			"     - Date: <col=FFB83F>" + Utility.getDate(), 
-			"     - Uptime: <col=FFB83F>" + Utility.getUptime(),
+			"     - Date: <col=FFB83F>" + Utility.getDate(), "     - Uptime: <col=FFB83F>" + Utility.getUptime(),
 			"     - PK Bots online: <col=FFB83F>" + World.getBotCount(),
 			"     - Staff online: <col=FFB83F>" + World.getStaffCount(),
 			"     - Players online: <col=FFB83F>" + World.getPlayerCount(),
@@ -44,6 +45,7 @@ public class InformationWriter extends InterfaceWriter {
 			"     - Trivia Points: <col=FFB83F>" + Utility.formatDigits(player.triviaPoints),
 			"     - Vote Points: <col=FFB83F>" + Utility.formatDigits(player.votePoints),
 			"     - Total Vote: <col=FFB83F>" + Utility.formatDigits(player.totalVotes),
+			"     - Drop Rate: <col=FFB83F>" + (100 - (new DropChanceHandler(player).getDroprate() * 100)) + " % [Bonus]",
 			"     - Kills: <col=FFB83F>" + player.kill, "     - Deaths: <col=FFB83F> " + player.death,
 			"     - KDR: <col=FFB83F>" + player.playerAssistant.kdr(),
 			"     - Killstreak: <col=FFB83F>" + player.killstreak.streak, };
