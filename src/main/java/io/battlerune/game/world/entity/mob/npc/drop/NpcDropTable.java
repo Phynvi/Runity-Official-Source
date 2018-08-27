@@ -47,17 +47,8 @@ public final class NpcDropTable {
 
 	public List<NpcDrop> generate(Player player) {
 		LinkedList<NpcDrop> items = new LinkedList<>();
-		int roll = RandomUtils.inclusive(1300);
-
-		for (DropChanceData data : DropChanceData.values()) {
-			for (Item item : player.equipment) {
-				if (item != null) {
-					if (data.getItemId() == item.getId()) {
-						roll = (int) (new DropChanceHandler(player, data).modify() * roll);
-					}
-				}
-			}
-		}
+		int roll = RandomUtils.inclusive(
+				(int) (1300 - ((1300 / 100) * new DropChanceHandler(player).getRate())));
 
 		if (veryRare.length > 0 && roll < 2) {
 			items.addFirst(RandomUtils.random(veryRare));
