@@ -80774,6 +80774,7 @@
 	    "defence-stab": 165,
 	    "defence-slash": 170,
 	    "defence-crush": 140,
+	        "attack-distance": 3,
 	    "defence-magic": 185,
 	    "defence-ranged": 190
 	  },
@@ -80800,6 +80801,7 @@
 		    "hitpoints-level": 1200,
 		    "ranged-level": 140,
 		    "magic-level": 150,
+		    	        "attack-distance": 3,
 		    "defence-stab": 165,
 		    "defence-slash": 170,
 		    "defence-crush": 140,
@@ -80818,6 +80820,8 @@
 			    "death-animation": 7915,
 			    "attackable": true,
 			    "aggressive": true,
+			    	        "attack-distance": 3,
+			    
 			    "poison-immunity": true,
 			    "venom-immunity": true,
 			    "attack-style": "Melee (crush)",
@@ -80841,6 +80845,8 @@
 				    "combat-level": 608,
 				    "stand": 7902,
 				    "walk": 7903,
+				    	        "attack-distance": 3,
+				   
 				    "attack-animation": 7900,
 				    "block-animation": -1,
 				    "death-animation": 7915,

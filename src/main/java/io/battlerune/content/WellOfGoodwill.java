@@ -13,6 +13,7 @@ import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendProgressBar;
 import io.battlerune.net.packet.out.SendString;
+import io.battlerune.net.packet.out.SendWidget;
 import io.battlerune.util.Utility;
 
 /**
@@ -117,7 +118,13 @@ public class WellOfGoodwill {
 		World.schedule(new DoubleExperienceEvent());
 		World.sendMessage(
 				"<col=2b58a0>WOG</col>: The well has been fully replenished. 30 minutes of double XP is active.");
-		World.sendEXPWidgetforwell();
+		World.sendEXPWidgetforday();
+	}
+	
+	public static void sendEXPWidgetforday() {
+		for (Player player :  World.getPlayers()) {
+			player.send(new SendWidget(SendWidget.WidgetType.DOUBLEXP, 4200));
+		}
 	}
 
 	public static void add(String name, PlayerRight rank, int amount) {

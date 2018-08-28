@@ -112,18 +112,7 @@
       "y": 3497,
       "z": 0
     }
-  },
-    {
-    "id": 409,
-    "name": "Altar",
-    "type": 10,
-    "rotation": "EAST",
-    "position": {
-      "x": 3091,
-      "y": 3513,
-      "z": 0
-    }
-  },    
+  },  
     {
     "id": 29241,
     "name": "Ornate rejuvenation pool",
@@ -175,17 +164,6 @@
     "rotation": "NORTH",
     "position": {
       "x": 3109,
-      "y": 3156,
-      "z": 3
-    }
-  },
-  {
-    "id": 29150,
-    "name": "Occult altar (Staff Zone)",
-    "type": 10,
-    "rotation": "SOUTH",
-    "position": {
-      "x": 3111,
       "y": 3156,
       "z": 3
     }

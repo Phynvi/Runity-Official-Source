@@ -146,24 +146,34 @@ public class ScratchCard {
 	 */
 	public void getBonus() {
 		setBonus(true);
-		Item[] items = new Item[] { new Item(995, Utility.random(35000000, 50000000)), new Item(6199), new Item(4151),
-				new Item(13175, 1), new Item(13173, 11), // phat set
+		Item[] items = new Item[] { new Item(995, Utility.random(35000000, 50000000)), new Item(6199, 1), new Item(4151, 1),
+				new Item(13175, 1),
 				new Item(13175, 1), // h'ween set
-				new Item(21000, 1), // twisted buckler
 				new Item(21006, 1), // kodai wand
-				new Item(21003, 1), // elder maul
 				new Item(21015, 1), // Dinh bulwark
-				new Item(20997, 1), // twisted bow
-				new Item(12817, 1), // ely ss
 				new Item(12821, 1), // spectral ss
 				new Item(12825, 1), // arcane ss
-				new Item(12819, 1), // ely sigil
-				new Item(12823, 1), // spectral sigil
-				new Item(12827, 1), // arcane sigil
 				new Item(21225, 1), };
+		Item[] items1 = new Item[] { 
+				new Item(995, Utility.random(35000000, 50000000)), 
+                new Item(4587, 1),
+				new Item(7158, 1),
+				new Item(11806, 1), // h'ween set
+				new Item(11808, 1), // kodai wand
+				new Item(4718, 1), // Dinh bulwark
+				new Item(4716, 1), // spectral ss
+				new Item(4720, 1), // arcane ss
+				new Item(4722, 1), };
 		Item item = items[random.nextInt(items.length)];
+		Item item1 = items1[random.nextInt(items1.length)];
+		if(Utility.random(10, 100) <= 20) {
 		player.inventory.add(item);
 		player.send(new SendItemOnInterface(20036, item));
+		} else {
+			player.inventory.add(item1);
+			player.send(new SendItemOnInterface(20036, item1));
+		}
+		
 	}
 
 	/**

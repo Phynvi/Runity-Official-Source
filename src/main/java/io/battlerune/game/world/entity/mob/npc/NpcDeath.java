@@ -145,7 +145,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.GALVEK);
 
 				AchievementHandler.activate(playerKiller, AchievementKey.KILL_GALVEK, 1);
-				System.out.print("Daily Achievement Progress Made");
+		//		System.out.print("Daily Achievement Progress Made");
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");

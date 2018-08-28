@@ -401,12 +401,6 @@ public final class World {
 		}
 	}
 
-	public static void sendEXPWidgetforwell() {
-		for (Player player : getPlayers()) {
-			player.send(new SendWidget(SendWidget.WidgetType.DOUBLEXP, 1800));
-		}
-	}
-
 	public static void sendEXPWidgetforday() {
 		for (Player player : getPlayers()) {
 			player.send(new SendWidget(SendWidget.WidgetType.DOUBLEXP, 86400));

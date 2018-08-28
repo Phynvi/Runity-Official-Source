@@ -39,13 +39,10 @@ public class ArenaUtility {
 
 	/** Identification of all loot, it selects the loot */
 
-	public static int[] ALWAYSLOOT = { 12829, 4151, 10828, 4153, 1704, 6889, 1231, 1305, 1434, 4747, 4712, 4710, 4708,
-			4759, 4755 };
-	public static int[] COMMONLOOT = { 6199, 989, 3140, 4087, 11732, 989, 12878, 6585, 4675, 12955 };
-	public static int[] RARELOOT = { 11834, 11832, 11828, 11830, 11836, 11773, 13239, 13237, 13235, 11772, 11771, 11770,
-			20143, 20002, 13689, 14589, 13208, 13701, 13702 };
-	public static int[] SUPERRARELOOT = { 11862, 21225, 12817, 12825, 12821, 20997, 13652, 11802, 13576, 11785, 19481,
-			11791, 12904, 10860, 3274, 13692, 13662, 11642, 13724, 11063, 11739 };
+	public static int[] ALWAYSLOOT = { 4151, 6889, 4675, 11770, 11771, 11772, 6585, 11840, 11840, 11836, 12877 };
+	public static int[] COMMONLOOT = { 989, 3140, 4087, 11732, 989, 4675 };
+	public static int[] RARELOOT = { 4153, 7158, 1305, 4587, 11840,  6585, 12875, 12873};
+	public static int[] SUPERRARELOOT = { 6199, 11802, 11283, 13652, 12904, 11791, 12691, 12692, 12877, 13749, 13729, 17165, 17164, 17163, 13662, 13207, 13190};
 
 	public static void defeated(Npc Arena, Player player) {
 
@@ -67,7 +64,7 @@ public class ArenaUtility {
 		 * 
 		 **/
 
-		int random = Utility.random(100);
+		int random = Utility.random(300);
 
 		if (random <= 50) {
 			for (int i = 0; i < COMMONLOOT.length; i++) {
@@ -75,13 +72,13 @@ public class ArenaUtility {
 						new Position(2273 + Utility.random(10), 5341 + Utility.random(10), 0));
 			}
 		}
-		if (random <= 25) {
+		if (random <= 10) {
 			for (int i = 0; i < RARELOOT.length; i++) {
 				GroundItem.createGlobal(player, new Item(RARELOOT[i], 1),
 						new Position(2273 + Utility.random(10), 5341 + Utility.random(10), 0));
 			}
 		}
-		if (random <= 5) {
+		if (random <= 2) {
 			for (int i = 0; i < SUPERRARELOOT.length; i++) {
 				GroundItem.createGlobal(player, new Item(SUPERRARELOOT[i], 1),
 						new Position(2273 + Utility.random(10), 5341 + Utility.random(10), 0));
