@@ -42,6 +42,7 @@ import io.battlerune.util.Utility;
  * @author Adam_#6723
  */
 public class Galvek extends MultiStrategy {
+	
 	private static final NpcMeleeStrategy MELEE = NpcMeleeStrategy.get();
 	private static final MagicAttack MAGIC = new MagicAttack();
 	private static final RangedAttack RANGED = new RangedAttack();

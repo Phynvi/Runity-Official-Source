@@ -345,59 +345,9 @@ public final class World {
 		}
 	}
 
-	public static void sendTeleportButtonNpc1(int npcId) {
+	public static void sendEXPWidgetforwell() {
 		for (Player player : getPlayers()) {
-			player.send(new SendString("" + npcId, 46615));
-		}
-	}
-
-	public static void sendTeleportButton1() {
-		for (Player player : getPlayers()) {
-			player.send(new SendString("1", 46600));
-		}
-	}
-
-	public static void hideTeleportButton1() {
-		for (Player player : getPlayers()) {
-			player.send(new SendString("0", 46600));
-
-		}
-	}
-
-	public static void sendTeleportButtonNpc2(int npcId) {
-		for (Player player : getPlayers()) {
-			player.send(new SendString("" + npcId, 47615));
-		}
-	}
-
-	public static void sendTeleportButton2() {
-		for (Player player : getPlayers()) {
-			player.send(new SendString("1", 47600));
-		}
-	}
-
-	public static void hideTeleportButton2() {
-		for (Player player : getPlayers()) {
-			player.send(new SendString("0", 47600));
-
-		}
-	}
-
-	public static void sendTeleportButtonNpc3(int npcId) {
-		for (Player player : getPlayers()) {
-			player.send(new SendString("" + npcId, 48615));
-		}
-	}
-
-	public static void sendTeleportButton3() {
-		for (Player player : getPlayers()) {
-			player.send(new SendString("1", 48600));
-		}
-	}
-
-	public static void hideTeleportButton3() {
-		for (Player player : getPlayers()) {
-			player.send(new SendString("0", 48600));
+			player.send(new SendWidget(SendWidget.WidgetType.DOUBLEXP, 1800));
 		}
 	}
 
@@ -409,37 +359,25 @@ public final class World {
 
 	public static void sendGalvekInformation() {
 		for (Player player : getPlayers()) {
-			EventBossHandler.openGalvek(player);
+			new EventBossHandler(player, 8095).display();
 		}
 	}
-
-	/*
-	 * public static void sendItem(int item, int amounts) { for(Player player :
-	 * getPlayers()) { player.inventory.add(item, amounts); Item starterbox = new
-	 * Item(item); player.send(new SendMessage("You have all recieved a @red@" +
-	 * starterbox.getName() + " from " + player.getName() +
-	 * " for your continued support!")); //World.sendBroadcast(1,
-	 * "You have all recieved a " + starterbox.getName() + " from " + "Adam" +
-	 * " for your continued support!", true);
-	 * 
-	 * } }
-	 */
-
+	
 	public static void sendArenaInformation() {
 		for (Player player : getPlayers()) {
-			EventBossHandler.openArena(player);
+			new EventBossHandler(player, 5129).display();
 		}
 	}
 
 	public static void sendJusticarInformation() {
 		for (Player player : getPlayers()) {
-			EventBossHandler.openJusticar(player);
+			new EventBossHandler(player, 7858).display();
 		}
 	}
 
 	public static void sendSkotizoInformation() {
 		for (Player player : getPlayers()) {
-			EventBossHandler.openSkotizo(player);
+			new EventBossHandler(player, 7286).display();
 		}
 	}
 

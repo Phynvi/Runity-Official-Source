@@ -9,14 +9,10 @@ import io.battlerune.game.world.items.Item;
 import io.battlerune.util.Utility;
 
 public class GoldMysteryBox implements MysteryBoxListener {
-	int randomAmount = Utility.random(1000000, 2500000);
-	int randomAmount1 = Utility.random(2500000, 3500000);
-	int randomAmount2 = Utility.random(3500000, 5000000);
-	int randomAmount3 = Utility.random(5000000, 50000000);
 
 	@Override
 	public Item[] getCommon() {
-		return new Item[] { new Item(995, randomAmount), new Item(12696, 10), // Super combat potion
+		return new Item[] { new Item(995, Utility.random(1000000, 2500000)), new Item(12696, 10), // Super combat potion
 				new Item(10034, 100), // red chins
 				new Item(6257, 1), // Broodoo shield
 				new Item(6235, 1), // Broodoo shield
@@ -61,7 +57,7 @@ public class GoldMysteryBox implements MysteryBoxListener {
 
 	@Override
 	public Item[] getUncommon() {
-		return new Item[] { new Item(995, randomAmount1), new Item(11959, 300), // black chinchompa
+		return new Item[] { new Item(995, Utility.random(2500000, 3500000)), new Item(11959, 300), // black chinchompa
 				new Item(1959, 1), // pumpkin
 				new Item(1961, 1), // easter egg
 				new Item(10507, 1), // reindeer hat
@@ -91,7 +87,7 @@ public class GoldMysteryBox implements MysteryBoxListener {
 
 	@Override
 	public Item[] getRare() {
-		return new Item[] { new Item(995, randomAmount2), new Item(12889, 1), // santa pantaloons
+		return new Item[] { new Item(995, Utility.random(3500000, 5000000)), new Item(12889, 1), // santa pantaloons
 				new Item(13576, 1), // Dragon warhammer
 				new Item(9923, 1), // skeleton leggings
 				new Item(1050, 1), // Santa hat
@@ -130,7 +126,7 @@ public class GoldMysteryBox implements MysteryBoxListener {
 
 	@Override
 	public Item[] getUltra() {
-		return new Item[] { new Item(995, randomAmount3), new Item(13173, 11), // phat set
+		return new Item[] { new Item(995, Utility.random(5000000, 50000000)), new Item(13173, 11), // phat set
 				new Item(13175, 1), // h'ween set
 				new Item(21000, 1), // twisted buckler
 				new Item(21006, 1), // kodai wand

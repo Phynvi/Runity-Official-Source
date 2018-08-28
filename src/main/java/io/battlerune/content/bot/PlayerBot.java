@@ -26,6 +26,7 @@ import io.battlerune.util.Utility;
  * @author Daniel.
  */
 public class PlayerBot extends Player {
+	
 	public static final AtomicInteger BOT_COUNT = new AtomicInteger(0);
 
 	private int ticks;

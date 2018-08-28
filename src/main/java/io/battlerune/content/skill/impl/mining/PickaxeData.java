@@ -12,6 +12,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
  * @author Graham Edgecombe
  */
 public enum PickaxeData {
+	
 	BRONZE_PICKAXE(1265, 1, 625, 0.05), IRON_PICKAXE(1267, 1, 626, 0.08), STEEL_PICKAXE(1269, 6, 627, 0.12),
 	MITHRIL_PICKAXE(1273, 21, 629, 0.16), ADAMANT_PICKAXE(1271, 31, 628, 0.2), RUNE_PICKAXE(1275, 41, 624, 0.25),
 	INFERNO_ADZE(13243, 75, 4483, 0.55), THIRD_AGE_PICKAXE(20014, 90, 7283, 0.6), DRAGON_PICKAXE(11920, 61, 7139, 0.6),
