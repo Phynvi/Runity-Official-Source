@@ -2,6 +2,7 @@ package plugin.command.impl.owner;
 
 import io.battlerune.content.command.Command;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 
 public class MyposCommand implements Command {
 
@@ -13,7 +14,7 @@ public class MyposCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		return true;
+		return PlayerRight.isDeveloper(player);
 	}
 
 }

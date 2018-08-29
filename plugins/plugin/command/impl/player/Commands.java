@@ -4,11 +4,7 @@ import io.battlerune.content.command.Command;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendURL;
 
-/**
- * 
- * @author Adam_#6723
- *
- */
+//TODOCOMMAND
 public class Commands implements Command {
 
 	@Override

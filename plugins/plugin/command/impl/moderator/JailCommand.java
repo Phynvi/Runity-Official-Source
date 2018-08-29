@@ -56,11 +56,7 @@ public class JailCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		if (PlayerRight.isManagement(player)) {
-			return true;
-		}
-		player.speak("Hey everyone, i just tried doing something silly.");
-		return false;
+		return PlayerRight.isManagement(player);
 	}
 
 }

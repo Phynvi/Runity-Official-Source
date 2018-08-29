@@ -8,6 +8,7 @@ import io.battlerune.net.packet.ClientPackets;
 import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.packet.PacketListener;
 import io.battlerune.net.packet.PacketListenerMeta;
+import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.Utility;
 
 /**
@@ -45,6 +46,8 @@ public final class CommandPacketListener implements PacketListener {
 		if (plugin != null) {
 			if (plugin.canUse(player)) {
 				plugin.execute(player, input, parts);
+			} else {
+				player.send(new SendMessage("You are not allowed to use this command!"));
 			}
 		}
 	}

@@ -16,20 +16,14 @@ public class PortalsZoneCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		// TODO Auto-generated method stub
 		Teleportation.teleport(player, Config.PORTAL_ZONE);
 		player.send(new SendMessage("You have teleported to the Portal Zone!"));
 	}
 
 	@Override
 	public boolean canUse(Player player) {
-		if (PlayerRight.isDonator(player) || PlayerRight.isSuper(player) || PlayerRight.isExtreme(player)
-				|| PlayerRight.isElite(player) || PlayerRight.isKing(player) || PlayerRight.isSupreme(player)) {
-			return true;
-		} else {
-			player.speak("I just tried to do something silly!");
-			return false;
-		}
+		return (PlayerRight.isDonator(player) || PlayerRight.isKing(player) || PlayerRight.isSupreme(player) || PlayerRight.isExtreme(player)
+				|| PlayerRight.isElite(player) || PlayerRight.isDeveloper(player));
 	}
 
 }

@@ -37,11 +37,7 @@ public class NpcCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		if (PlayerRight.isDeveloper(player)) {
-			return true;
-		}
-		player.speak("Hey everyone, i just tried doing something silly.");
-		return false;
+		return PlayerRight.isDeveloper(player);
 	}
 
 }

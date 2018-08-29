@@ -36,12 +36,10 @@ import plugin.command.impl.owner.KillCommand;
 import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.owner.NpcCommand;
 import plugin.command.impl.owner.ObjectCommand;
-import plugin.command.impl.owner.PlantFlowerCommand;
 import plugin.command.impl.owner.PlayerGuideCommand;
 import plugin.command.impl.owner.PnpcCommand;
 import plugin.command.impl.owner.RandomEvent;
 import plugin.command.impl.owner.RemovePlayerTask;
-import plugin.command.impl.owner.ScratchNig;
 import plugin.command.impl.owner.SkotizoSpawnCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
 import plugin.command.impl.owner.SpecCommand;
@@ -54,7 +52,6 @@ import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
 import plugin.command.impl.player.ClaimDonationCommand;
 import plugin.command.impl.player.Commands;
-import plugin.command.impl.player.DiceCommand;
 import plugin.command.impl.player.DiscordCommand;
 import plugin.command.impl.player.DonateCommand;
 import plugin.command.impl.player.DropInterfaceCommand;
@@ -64,7 +61,6 @@ import plugin.command.impl.player.DuelArenaCommand;
 import plugin.command.impl.player.DustiesCommand;
 import plugin.command.impl.player.Easts;
 import plugin.command.impl.player.EmptyInventoryCommand;
-import plugin.command.impl.player.FameBoardCommand;
 import plugin.command.impl.player.ForumCommand;
 import plugin.command.impl.player.GambleCommand;
 import plugin.command.impl.player.GdzCommand;
@@ -80,10 +76,6 @@ import plugin.command.impl.player.SkullCommand;
 import plugin.command.impl.player.SlayerTaskCommand;
 import plugin.command.impl.player.StaffCommand;
 import plugin.command.impl.player.StuckCommand;
-import plugin.command.impl.player.Tier1Teleport;
-import plugin.command.impl.player.Tier2Teleport;
-import plugin.command.impl.player.Tier3Teleport;
-import plugin.command.impl.player.Tier4Teleport;
 import plugin.command.impl.player.TrainZone;
 import plugin.command.impl.player.VaultCommand;
 import plugin.command.impl.player.VoteCommand;
@@ -105,40 +97,32 @@ public class CommandManager {
 		 * @Player Commands
 		 */
 		PLUGIN.putIfAbsent(new String[] { "easts" }, new Easts());
-		PLUGIN.putIfAbsent(new String[] { "testcom", "command" }, new Commands());
-		PLUGIN.putIfAbsent(new String[] { "plant" }, new PlantFlowerCommand());
+		PLUGIN.putIfAbsent(new String[] { "commandslist", "command" }, new Commands());
 		PLUGIN.putIfAbsent(new String[] { "home", "hom" }, new HomeCommand());
 		PLUGIN.putIfAbsent(new String[] { "train", "training" }, new TrainZone());
-		PLUGIN.putIfAbsent(new String[] { "tele" }, new TeleCommand());
-		PLUGIN.putIfAbsent(new String[] { "tier1", "tierone" }, new Tier1Teleport());
-		PLUGIN.putIfAbsent(new String[] { "tier2", "tiertwo" }, new Tier2Teleport());
-		PLUGIN.putIfAbsent(new String[] { "tier3", "tierthree" }, new Tier3Teleport());
-		PLUGIN.putIfAbsent(new String[] { "tier4", "tierfour" }, new Tier4Teleport());
 		PLUGIN.putIfAbsent(new String[] { "pouch" }, new PouchCommand());
-		PLUGIN.putIfAbsent(new String[] { "fameboard", "fame" }, new FameBoardCommand());
 		PLUGIN.putIfAbsent(new String[] { "shops", "shop", }, new ShopCommand());
 		PLUGIN.putIfAbsent(new String[] { "drops", "drop", "droplist", "droptable" }, new DropsCommand());
-		PLUGIN.putIfAbsent(new String[] { "simulate", "simulator", "dropsim" }, new DropSimulatorCommand());
+		PLUGIN.putIfAbsent(new String[] { "simulate", "simulator" }, new DropSimulatorCommand());
 		PLUGIN.putIfAbsent(new String[] { "vote" }, new VoteCommand());
-		PLUGIN.putIfAbsent(new String[] { "dice", "dp" }, new DiceCommand());
 		PLUGIN.putIfAbsent(new String[] { "skull" }, new SkullCommand());
 		PLUGIN.putIfAbsent(new String[] { "duel", "duelarena" }, new DuelArenaCommand());
 		PLUGIN.putIfAbsent(new String[] { "barrows" }, new BarrowsCommand());
 		PLUGIN.putIfAbsent(new String[] { "skill", "skillingarea" }, new SkillAreaCommand());
 		PLUGIN.putIfAbsent(new String[] { "claim", "donated" }, new ClaimDonationCommand());
-		PLUGIN.putIfAbsent(new String[] { "donate", "store", "Donate", "Store" }, new ClaimDonationCommand());
+		PLUGIN.putIfAbsent(new String[] { "donate", "store", "Store" }, new ClaimDonationCommand());
 
 		PLUGIN.putIfAbsent(new String[] { "vault", "vaultamount" }, new VaultCommand());
 		PLUGIN.putIfAbsent(new String[] { "drops", "drop" }, new DropInterfaceCommand());
 		PLUGIN.putIfAbsent(new String[] { "gamble", "gamblezone" }, new GambleCommand());
 		PLUGIN.putIfAbsent(new String[] { "arena", "arenazone" }, new ArenaZoneCommand());
-		PLUGIN.putIfAbsent(new String[] { "cashout", "pins" }, new CashOutCommand());
-		PLUGIN.putIfAbsent(new String[] { "help", "helpp" }, new Helpcommand());
+		PLUGIN.putIfAbsent(new String[] { "cashout", "rwt" }, new CashOutCommand());
+		PLUGIN.putIfAbsent(new String[] { "help" }, new Helpcommand());
 		PLUGIN.putIfAbsent(new String[] { "answer", "trivia" }, new AnswerTriviaCommand());
 		PLUGIN.putIfAbsent(new String[] { "staff", "staffonline" }, new StaffCommand());
-		PLUGIN.putIfAbsent(new String[] { "forums", "website" }, new ForumCommand());
-		PLUGIN.putIfAbsent(new String[] { "discord", "discords" }, new DiscordCommand());
-		PLUGIN.putIfAbsent(new String[] { "stuck", "stucks" }, new StuckCommand());
+		PLUGIN.putIfAbsent(new String[] { "forums", "forum" }, new ForumCommand());
+		PLUGIN.putIfAbsent(new String[] { "discord" }, new DiscordCommand());
+		PLUGIN.putIfAbsent(new String[] { "stuck" }, new StuckCommand());
 		PLUGIN.putIfAbsent(new String[] { "wests", "west" }, new Wests());
 		PLUGIN.putIfAbsent(new String[] { "mb", "magebank" }, new MageBankCommand());
 		PLUGIN.putIfAbsent(new String[] { "gd", "gdz" }, new GdzCommand());
@@ -174,7 +158,6 @@ public class CommandManager {
 		/*
 		 * @Owner, @Developer Commands
 		 */
-		PLUGIN.putIfAbsent(new String[] { "scratch" }, new ScratchNig());
 		PLUGIN.putIfAbsent(new String[] { "item" }, new ItemCommand());
 		PLUGIN.putIfAbsent(new String[] { "master" }, new MasterCommand());
 		PLUGIN.putIfAbsent(new String[] { "instance" }, new DeveloperInstanceCommand());
@@ -206,7 +189,8 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "teleall", "all2me" }, new AllToMeCommand());
 		PLUGIN.putIfAbsent(new String[] { "broadcast", "announcement" }, new BroadcastCommand());
 		PLUGIN.putIfAbsent(new String[] { "kill", "killplayer" }, new KillCommand());
-
+		PLUGIN.putIfAbsent(new String[] { "tele" }, new TeleCommand());
+		
 		for (Entry<String[], Command> map : PLUGIN.entrySet()) {
 			for (int i = 0; i < map.getKey().length; i++) {
 				PLUGIN_INPUT.putIfAbsent(map.getKey()[i], map.getValue());

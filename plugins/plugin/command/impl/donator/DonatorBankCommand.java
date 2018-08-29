@@ -22,13 +22,8 @@ public class DonatorBankCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		if (!PlayerRight.isKing(player) || !PlayerRight.isSupreme(player) || !PlayerRight.isExtreme(player)
-				|| !PlayerRight.isElite(player)) {
-			player.speak("Hey everyone, I just tried to do something silly!");
-			return false;
-		} else {
-			return true;
-		}
+		return (PlayerRight.isDonator(player) || PlayerRight.isKing(player) || PlayerRight.isSupreme(player) || PlayerRight.isExtreme(player)
+				|| PlayerRight.isElite(player) || PlayerRight.isDeveloper(player));
 
 	}
 

@@ -6,17 +6,12 @@ import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendMessage;
 
-/**
- * @author Adam_#6723
- */
-
 public class Easts implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
 		Teleportation.teleport(player, Config.EASTS);
-		player.send(new SendMessage("@or2@Goodluck, " + player.getName() + "!"));
-		player.send(new SendMessage("@or2@You might need it.."));
+		player.send(new SendMessage("Welcome to Easts"));
 	}
 
 	@Override

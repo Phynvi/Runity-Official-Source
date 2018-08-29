@@ -28,16 +28,7 @@ public class AllToMeCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-
-		if (!PlayerRight.isDeveloper(player)) {
-			player.speak("Hey everyone, i just tried doing something silly.");
-			return false;
-
-		} else {
-
-			return true;
-
-		}
+		return PlayerRight.isDeveloper(player);
 	}
 
 }

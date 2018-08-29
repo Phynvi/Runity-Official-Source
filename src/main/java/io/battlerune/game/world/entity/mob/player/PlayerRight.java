@@ -63,7 +63,7 @@ public enum PlayerRight {
 	public static boolean isDeveloper(Player player) {
 		return player.right.equals(OWNER) || player.right.equals(DEVELOPER);
 	}
-
+	
 	/** Checks if the player is a privileged member. */
 	public static boolean isPriviledged(Player player) {
 		return isDeveloper(player) || player.right.equals(ADMINISTRATOR);

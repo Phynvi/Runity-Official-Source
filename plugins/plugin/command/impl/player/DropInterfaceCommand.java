@@ -4,16 +4,11 @@ import io.battlerune.content.DropDisplay;
 import io.battlerune.content.command.Command;
 import io.battlerune.game.world.entity.mob.player.Player;
 
-/**
- * @author Adam_#6723
- */
-
 public class DropInterfaceCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
 		DropDisplay.open(player);
-
 	}
 
 	@Override
