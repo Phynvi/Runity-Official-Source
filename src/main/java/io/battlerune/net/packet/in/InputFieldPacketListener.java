@@ -4,7 +4,6 @@ import io.battlerune.content.DropDisplay;
 import io.battlerune.content.DropDisplay.DropType;
 import io.battlerune.content.DropSimulator;
 import io.battlerune.content.ProfileViewer;
-import io.battlerune.content.famehall.FameHandler;
 import io.battlerune.content.staff.StaffPanel;
 import io.battlerune.content.store.impl.PersonalStore;
 import io.battlerune.game.world.World;
@@ -90,15 +89,6 @@ public class InputFieldPacketListener implements PacketListener {
 			player.priceChecker.searchItem(context);
 			break;
 
-		/* Hall of fame */
-		case 58506:
-			FameHandler.search(player, context);
-			break;
-
-		/* Preset */
-		case 57021:
-			player.presetManager.name(context);
-			break;
 
 		/* Drop display */
 		case 54506:

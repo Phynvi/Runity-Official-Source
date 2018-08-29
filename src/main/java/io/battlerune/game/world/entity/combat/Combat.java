@@ -23,6 +23,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
 import io.battlerune.net.packet.out.SendEntityFeed;
+import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.Stopwatch;
 import io.battlerune.util.Utility;
 
@@ -57,6 +58,25 @@ public class Combat<T extends Mob> {
 	}
 
 	public boolean attack(Mob defender) {
+
+		if (attacker.isPlayer()) {
+			if (defender.isPlayer()) {
+				if (attacker.getPlayer().equipment.containsAny(Config.NOT_ALLOWED)
+						|| attacker.getPlayer().inventory.containsAny(Config.NOT_ALLOWED)) {
+					attacker.getPlayer().send(new SendMessage("You can't attack anyone at the moment!"));
+					return false;
+				}
+			}
+		} else if (defender.isPlayer()) {
+			if (attacker.isPlayer()) {
+				if (defender.getPlayer().equipment.containsAny(Config.NOT_ALLOWED)
+						|| defender.getPlayer().inventory.containsAny(Config.NOT_ALLOWED)) {
+					attacker.getPlayer().send(new SendMessage("You can't attack this player at the moment!"));
+					return false;
+				}
+			}
+		}
+
 		if (attacker.isPlayer()) {
 			Player player = attacker.getPlayer();
 			if (!player.interfaceManager.isMainClear() || !player.interfaceManager.isDialogueClear()) {
@@ -69,16 +89,6 @@ public class Combat<T extends Mob> {
 			attacker.movement.reset();
 			target.resetTarget();
 			return false;
-		}
-
-//        if (attacker.isPlayer() && attacker.getPlayer().isBot) {
-//            attacker.getPlayer().getBot().opponent = defender;
-//        }
-
-		if (attacker.isPlayer()) {
-			System.out.println("[" + attacker.getPlayer().getUsername() + "] : ["
-					+ attacker.getPlayer().experienceRate * Config.COMBAT_MODIFICATION + "] : ["
-					+ attacker.getPlayer().experienceRate + "]");
 		}
 
 		target.setTarget(defender);

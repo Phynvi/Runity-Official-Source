@@ -32,7 +32,6 @@ import io.battlerune.content.emote.EmoteUnlockable;
 import io.battlerune.content.masterminer.MasterMinerTaskHandler;
 import io.battlerune.content.masterminer.MobData;
 import io.battlerune.content.pet.PetData;
-import io.battlerune.content.preset.Preset;
 import io.battlerune.content.prestige.PrestigePerk;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.slayer.SlayerTask;
@@ -1032,42 +1031,6 @@ public final class PlayerPersistDB implements PlayerPersistable {
 				}
 			},
 
-			new PlayerJSONProperty("preset-death-open") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.presetManager.deathOpen = property.getAsBoolean();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.presetManager.deathOpen;
-				}
-			},
-
-			new PlayerJSONProperty("preset-death-open") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.presetManager.deathOpen = property.getAsBoolean();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.presetManager.deathOpen;
-				}
-			},
-
-			new PlayerJSONProperty("preset-automatic-deposit") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.presetManager.autoDeposit = property.getAsBoolean();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.presetManager.autoDeposit;
-				}
-			},
-
 			new PlayerJSONProperty("hidden-brother") {
 				@Override
 				void read(Player player, JsonElement property) {
@@ -1440,21 +1403,6 @@ public final class PlayerPersistDB implements PlayerPersistable {
 				@Override
 				Object write(Player player) {
 					return player.appearance;
-				}
-			},
-
-			new PlayerJSONProperty("preset") {
-				@Override
-				void read(Player player, JsonElement property) {
-					Preset[] loaded = GSON.fromJson(property, Preset[].class);
-					for (int idx = 0; idx < loaded.length; idx++) {
-						player.presetManager.preset[idx] = loaded[idx];
-					}
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.presetManager.preset;
 				}
 			},
 
