@@ -16,6 +16,7 @@ import io.battlerune.net.packet.out.SendMessage;
  * Event boss button plugin handler
  * 
  * @author Nerik#8690
+ * @author Adam_#6723
  *
  */
 
