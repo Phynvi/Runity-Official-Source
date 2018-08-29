@@ -60,6 +60,11 @@ public class HighAlchemy implements Spell {
 			player.send(new SendMessage("The value of this item is too high and can not be high-alched."));
 			return;
 		}
+		
+		if(player.inventory.getFreeSlots() == 0) {
+			player.message("You got no space left, store some of your items in your bank.");
+			return;
+		}
 
 		player.animate(new Animation(713));
 		player.graphic(new Graphic(113, true));

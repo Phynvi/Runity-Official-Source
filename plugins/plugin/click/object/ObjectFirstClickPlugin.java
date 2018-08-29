@@ -1274,7 +1274,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 		/* Wilderness ditch. */
 		case 23271: {
-			if (player.inventory.containsAny(Config.NOT_ALLOWED)) {
+			if (player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
 				player.message("You cannot bring custom item's into the wilderness!");
 				return false;
 			}
@@ -1295,6 +1295,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			player.forceMove(3, 6132, 33, 60, offSet, direction);
 			break;
 		}
+		
+		case 7478:
+			player.bank.open();
+			break;
 
 		/* Skeletal wyvern. */
 		case 10596:

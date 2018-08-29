@@ -70,6 +70,7 @@ import plugin.command.impl.player.GambleCommand;
 import plugin.command.impl.player.GdzCommand;
 import plugin.command.impl.player.Helpcommand;
 import plugin.command.impl.player.HomeCommand;
+import plugin.command.impl.player.KeyCommand;
 import plugin.command.impl.player.MageBankCommand;
 import plugin.command.impl.player.PlayerCountCommand;
 import plugin.command.impl.player.PouchCommand;
@@ -115,7 +116,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "tier4", "tierfour" }, new Tier4Teleport());
 		PLUGIN.putIfAbsent(new String[] { "pouch" }, new PouchCommand());
 		PLUGIN.putIfAbsent(new String[] { "fameboard", "fame" }, new FameBoardCommand());
-		PLUGIN.putIfAbsent(new String[] { "shops", "store", "shop", "stores" }, new ShopCommand());
+		PLUGIN.putIfAbsent(new String[] { "shops", "shop", }, new ShopCommand());
 		PLUGIN.putIfAbsent(new String[] { "drops", "drop", "droplist", "droptable" }, new DropsCommand());
 		PLUGIN.putIfAbsent(new String[] { "simulate", "simulator", "dropsim" }, new DropSimulatorCommand());
 		PLUGIN.putIfAbsent(new String[] { "vote" }, new VoteCommand());
@@ -124,7 +125,9 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "duel", "duelarena" }, new DuelArenaCommand());
 		PLUGIN.putIfAbsent(new String[] { "barrows" }, new BarrowsCommand());
 		PLUGIN.putIfAbsent(new String[] { "skill", "skillingarea" }, new SkillAreaCommand());
-		PLUGIN.putIfAbsent(new String[] { "donate", "webstore" }, new DonateCommand());
+		PLUGIN.putIfAbsent(new String[] { "claim", "donated" }, new ClaimDonationCommand());
+		PLUGIN.putIfAbsent(new String[] { "donate", "store", "Donate", "Store" }, new ClaimDonationCommand());
+
 		PLUGIN.putIfAbsent(new String[] { "vault", "vaultamount" }, new VaultCommand());
 		PLUGIN.putIfAbsent(new String[] { "drops", "drop" }, new DropInterfaceCommand());
 		PLUGIN.putIfAbsent(new String[] { "gamble", "gamblezone" }, new GambleCommand());
@@ -144,6 +147,8 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "empty", "emptyinventory" }, new EmptyInventoryCommand());
 		PLUGIN.putIfAbsent(new String[] { "dusties", "dusti" }, new DustiesCommand());
 		PLUGIN.putIfAbsent(new String[] { "testdonation", "donatings" }, new ClaimDonationCommand());
+		PLUGIN.putIfAbsent(new String[] { "key", "security" }, new KeyCommand());
+
 
 		/*
 		 * @Donator Command

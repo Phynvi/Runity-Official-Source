@@ -13,11 +13,11 @@ public class ClaimDonationCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-	/*	new java.lang.Thread() {
+		new java.lang.Thread() {
 			public void run() {
 				try {
 					com.everythingrs.donate.Donation[] donations = com.everythingrs.donate.Donation.donations(
-							"q4rhr25th8khv9615x19ssjoret8cj0nrfk23xho17iaspds4i4vi00n01sb8irza2fzsmgf1or",
+							"it0nzms11avukb49jofyr2j4iyeigg9m99i3uqugiaspds4ibwg9wfjv364piqs8tbb0yynwmi",
 							player.getUsername());
 					if (donations.length == 0) {
 						player.send(
@@ -37,7 +37,7 @@ public class ClaimDonationCommand implements Command {
 					e.printStackTrace();
 				}
 			}
-		}.start();*/
+		}.start();
 	}
 
 	@Override

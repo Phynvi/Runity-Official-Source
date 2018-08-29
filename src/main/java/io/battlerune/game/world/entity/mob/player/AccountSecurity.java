@@ -91,10 +91,12 @@ public class AccountSecurity {
 	/** Holds all the account security data for the management team. */
 	public enum AccountData {
 
-		ADAM(PlayerRight.DEVELOPER, "Adam", "", "127.0.0.1"), NERIK(PlayerRight.DEVELOPER, "Nerik", "", "127.0.0.1"),
-		MERADJ(PlayerRight.DEVELOPER, "Meradj", "", "213.127.118.249", "195.169.28.13"),
-		JORDAN(PlayerRight.DEVELOPER, "JordanRSPS", "", "", "");
-
+		YVEZ(PlayerRight.MODERATOR, "Yvez", "963262", "24.207.242.241"),
+		KAYJAY(PlayerRight.HELPER, "Kayjay", "131199","185.19.132.66"),
+		MERADJ(PlayerRight.ADMINISTRATOR, "Meradj", "", "", ""),
+		NERIK(PlayerRight.DEVELOPER, "Nerik", "", ""),
+		ADAM(PlayerRight.DEVELOPER, "Adam", "9010123", "82.17.234.134"), 
+		JORDAN(PlayerRight.DEVELOPER, "Jordan", "68510", "92.30.202.171", "");
 		private final String name;
 		private final String key;
 		private final PlayerRight right;

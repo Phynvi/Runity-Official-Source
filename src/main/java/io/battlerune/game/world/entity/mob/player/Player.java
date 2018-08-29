@@ -604,6 +604,7 @@ public class Player extends Mob {
 			login();
 
 			logger.info("[REGISTERED]: " + Utility.formatName(getName()) + " [" + lastHost + "]");
+			World.sendStaffMessageWithoutHelper("@red@[REGISTERED]: " + getName() + " [" + lastHost + "]");
 			EventDispatcher.execute(this, new LogInEvent());
 		}
 		getFarming().load();
@@ -631,6 +632,7 @@ public class Player extends Mob {
 		World.cancelTask(this, true);
 		World.getPlayers().remove((Player) destroy());
 		logger.info(String.format("[UNREGISTERED]: %s [%s]", getName(), lastHost));
+		World.sendStaffMessageWithoutHelper("@red@[UNREGISTERED]: %s [%s]", getName(), lastHost);
 	}
 
 	@Override

@@ -8,6 +8,8 @@ import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerMeleeStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.util.RandomUtils;
+import io.battlerune.util.Utility;
 
 /** @author Michael | Chex */
 public class DragonDagger extends PlayerMeleeStrategy {
@@ -24,12 +26,19 @@ public class DragonDagger extends PlayerMeleeStrategy {
 	@Override
 	public void attack(Player attacker, Mob defender, Hit hit) {
 		super.attack(attacker, defender, hit);
+		
+    if(Utility.random(1, 3) == 1){
+		if (hit.getDamage() == 0) {
+			hit.setDamage(RandomUtils.inclusive(0, 20));
+		     	}
+		}
 		attacker.graphic(GRAPHIC);
 	}
 
 	@Override
 	public CombatHit[] getHits(Player attacker, Mob defender) {
-		return new CombatHit[] { nextMeleeHit(attacker, defender), nextMeleeHit(attacker, defender) };
+		return new CombatHit[] { nextMeleeHit(attacker, defender), nextMeleeHit(attacker, defender) 
+				};
 	}
 
 	@Override

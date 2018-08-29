@@ -19,6 +19,16 @@
 	      "height": 0
 	 }
   },
+    {
+	    "id": 6504,
+	    "radius": "2",
+	    "facing": "NORTH",
+	    "position": {
+	      "x": 3109,
+	      "y": 3693, //venatis cords
+	      "height": 0
+	 }
+  },
   {
     "id": 4398,
     "radius": "2",

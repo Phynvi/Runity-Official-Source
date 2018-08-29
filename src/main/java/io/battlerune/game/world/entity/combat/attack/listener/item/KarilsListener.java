@@ -6,6 +6,7 @@ import io.battlerune.game.world.entity.combat.attack.listener.SimplifiedListener
 import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.util.RandomUtils;
+import io.battlerune.util.Utility;
 
 /**
  * @author red
@@ -16,8 +17,11 @@ public class KarilsListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public void hit(Mob attacker, Mob defender, Hit hit) {
+		
+		if(Utility.random(1, 3) == 1) {
 		if (hit.getDamage() == 0) {
 			hit.setDamage(RandomUtils.inclusive(0, 20));
+	     	}
 		}
 	}
 }

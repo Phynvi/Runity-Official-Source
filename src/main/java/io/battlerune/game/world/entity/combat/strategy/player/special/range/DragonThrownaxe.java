@@ -4,10 +4,13 @@ import io.battlerune.game.Animation;
 import io.battlerune.game.Projectile;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;
+import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.projectile.CombatProjectile;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerRangedStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.util.RandomUtils;
+import io.battlerune.util.Utility;
 
 /**
  * Handles the magic shortbow weapon special attack.
@@ -29,6 +32,19 @@ public class DragonThrownaxe extends PlayerRangedStrategy {
 	}
 
 	private DragonThrownaxe() {
+	}
+	
+	@Override
+	public void attack(Player attacker, Mob defender, Hit hit) {
+		super.attack(attacker, defender, hit);
+		
+    if(Utility.random(1, 3) == 1){
+		if (hit.getDamage() == 0) {
+			hit.setDamage(RandomUtils.inclusive(0, 20));
+		     	}
+		}
+    attacker.animate(ANIMATION);
+	PROJECTILE.send(attacker, defender);
 	}
 
 	@Override

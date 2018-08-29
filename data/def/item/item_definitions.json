@@ -93545,9 +93545,9 @@
     "id": 11941,
     "tradeable": false,
     "name": "Looting bag",
-    "low-alch": 4,
-    "high-alch": 6,
-    "base-value": 10
+    "low-alch": 2,
+    "high-alch": 2,
+    "base-value": 3
   },
   {
     "id": 11942,

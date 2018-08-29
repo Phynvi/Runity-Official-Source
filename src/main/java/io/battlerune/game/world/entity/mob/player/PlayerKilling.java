@@ -39,11 +39,7 @@ public class PlayerKilling {
 		 * Utility.formatDigits(killer.pkPoints) + "."); killer.killstreak.add();
 		 */
 
-		if (PlayerRight.isDonator(killer)) {
-			killer.setpkPoints(killer.getpkPoints() + 11);
-			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
-					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
-		}
+	
 		/*
 		 * if (PlayerRight.isSuper(killer)) { killer.setpkPoints(killer.getpkPoints() +
 		 * 13); killer.message("<col=295EFF>You were rewarded with " +
@@ -79,9 +75,15 @@ public class PlayerKilling {
 			channel.activateAchievement(ClanAchievement.PLAYER_KILLER_II);
 			channel.activateAchievement(ClanAchievement.PLAYER_KILLER_III);
 		});
-		killer.setpkPoints(killer.getpkPoints() + 5);
-		killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
-				+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
+		if (PlayerRight.isDonator(killer)) {
+			killer.setpkPoints(killer.getpkPoints() + 11);
+			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
+					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
+		} else {
+			killer.setpkPoints(killer.getpkPoints() + 5);
+			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
+					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
+		}
 		InterfaceWriter.write(new InformationWriter(killer));
 		add(killer, victim.lastHost);
 	}

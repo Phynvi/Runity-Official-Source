@@ -35,6 +35,10 @@ public class ItemPackPlugin extends PluginContext {
 		}
 
 		ItemPack data = pack.get();
+		
+		if(player.inventory.getFreeSlots() <= 5) {
+			return false;
+		}
 
 		if (!player.inventory.hasCapacityFor(data.items)) {
 			player.send(new SendMessage(

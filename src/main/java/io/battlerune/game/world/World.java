@@ -386,6 +386,24 @@ public final class World {
 			player.message(messages);
 		}
 	}
+	
+	public static void sendStaffMessageWithoutHelper(String... messages1) {
+		for (Player player1 : getStaff2()) {
+			player1.message(messages1);
+		}
+	}
+	/** Gets the staff players currently online. */
+	public static List<Player> getStaff2() {
+		List<Player> staff1 = new ArrayList<>();
+
+		for (Player player1 : getPlayers()) {
+			if (player1 != null && (PlayerRight.isManagement(player1)))
+				staff1.add(player1);
+		}
+
+		return staff1;
+	}
+
 
 	/** Sends a game message. */
 	public static void sendBroadcast(int time, String message, boolean countdown) {
