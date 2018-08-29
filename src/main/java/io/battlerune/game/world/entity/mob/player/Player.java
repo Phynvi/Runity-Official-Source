@@ -151,6 +151,18 @@ public class Player extends Mob {
 		send(new SendString("0", 45600));
 	}
 
+	public void hideTeleportButton1() {
+		send(new SendString("0", 46600));
+	}
+
+	public void hideTeleportButton2() {
+		send(new SendString("0", 47600));
+	}
+
+	public void hideTeleportButton3() {
+		send(new SendString("0", 48600));
+	}
+
 
 	private static final Logger logger = LogManager.getLogger();
 	private int memberId = -1;

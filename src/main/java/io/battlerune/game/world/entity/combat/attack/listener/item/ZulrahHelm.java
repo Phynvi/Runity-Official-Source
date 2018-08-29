@@ -59,7 +59,7 @@ public class ZulrahHelm extends SimplifiedListener<Player> {
 			attacker.message("Your Serpentine helm is out of charges.");
 			if (attacker.equipment.contains(13199)) {
 				attacker.equipment.replace(13_199, Equipment.HELM_SLOT, true);
-				attacker.inventory.add(13918, 1);
+				attacker.inventory.add(13198, 1);
 				attacker.getCombat().removeListener(listener);
 			}
 			if (attacker.equipment.contains(13197)) {
@@ -70,7 +70,7 @@ public class ZulrahHelm extends SimplifiedListener<Player> {
 			if (attacker.serpentineHelmCharges == 0) {
 				attacker.message("Your Serpentine helm is out of charges.");
 				attacker.equipment.replace(12_931, Equipment.HELM_SLOT, true);
-				attacker.inventory.add(12926, 1);
+				attacker.inventory.add(12929, 1);
 				attacker.message("You have been given an uncharged Serpentine helm.");
 				attacker.getCombat().removeListener(listener);
 			}

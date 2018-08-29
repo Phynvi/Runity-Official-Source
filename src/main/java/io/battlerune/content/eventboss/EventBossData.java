@@ -1,14 +1,14 @@
-package io.battlerune.content.eventboss;
+/*package io.battlerune.content.eventboss;
 
 import io.battlerune.net.packet.out.SendString;
 
-/**
+*//**
  * Stores galvek display data
  * 
  * @author Nerik#8690
  * @author Adam [Data Writing]
  *
- */
+ *//*
 public enum EventBossData implements EventBossListener {
 
 	GALVEK(8095) {
@@ -86,3 +86,4 @@ public enum EventBossData implements EventBossListener {
 		return npcId;
 	}
 }
+*/

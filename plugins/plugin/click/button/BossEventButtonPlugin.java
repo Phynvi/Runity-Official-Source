@@ -5,17 +5,15 @@ import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.arena.ArenaUtility;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility.SpawnData1;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.justicar.JusticarUtility;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.justicar.JusticarUtility.SpawnData2;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoUtility;
-import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoUtility.SpawnData;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.position.Position;
-import io.battlerune.net.packet.out.SendMessage;
 
 /**
- * Event boss button plugin handler
  * 
- * @author Nerik#8690
  * @author Adam_#6723
  *
  */
@@ -24,49 +22,59 @@ public class BossEventButtonPlugin extends PluginContext {
 
 	@Override
 	protected boolean onClick(Player player, int button) {
-		switch (button) {
-
-		case -19935:
-			if (getRequirements(player)) {
-				if (getNpc().getIndex() == -1) {
-					player.send(new SendMessage("@red@ Woops something went wrong"));
-					return false;
-				}
-				Teleportation.teleport(player, getNpc().getPosition());
-				player.hideTeleportButton();
+		if (button == -19935) {
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
 			}
-			return true;
-
+			if (GalvekUtility.activated == true) {
+				SpawnData1 galvekpos = GalvekUtility.spawn;
+				Teleportation.teleport(player, galvekpos.getPosition());
+				player.message("You have teleported to Galvek");
+				player.hideTeleportButton();
+				return true;
+			}
 		}
+		if (button == -18935) {
+			if (ArenaUtility.activated == true) {
+				Teleportation.teleport(player, Config.ARENA_ZONE);
+				player.message("Teleporting you to Glod");
+				player.hideTeleportButton1();
+				return true;
+			}
+		}
+		if (button == -17935) {
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
+			}
+			if (JusticarUtility.activated == true) {
+				SpawnData2 justicar = JusticarUtility.spawn;
+				Teleportation.teleport(player, justicar.getPosition());
+				player.message("You have teleported to Justicar");
+				player.hideTeleportButton2();
+				return true;
+			}
+			return false;
+		}
+		if (button == -16935) {
+			if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
+				return false;
+			}
+			if (SkotizoUtility.activated == true) {
+				SpawnData skotizo = SkotizoUtility.spawn;
+				Teleportation.teleport(player, skotizo.getPosition());
+				player.message("You have teleported to Skotizo");
+				player.hideTeleportButton3();
+				return true;
+			}
+			return false;
+		}
+		player.hideTeleportButton();
+		player.hideTeleportButton1();
+		player.hideTeleportButton2();
+		player.hideTeleportButton3();
 		return false;
-	}
-
-	private boolean getRequirements(Player player) {
-		if (player.equipment.containsAny(Config.NOT_ALLOWED) || player.inventory.containsAny(Config.NOT_ALLOWED)) {
-			player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
-			return false;
-		}
-		if (player.playerAssistant.busy()) {
-			player.message("@red@You are to busy to do that at the moment!");
-			return false;
-		}
-		if (player.getCombat().inCombat()) {
-			player.message("@red@You can't do this while in combat");
-			return false;
-		}
-		return true;
-	}
-
-	private Npc getNpc() {
-		if (ArenaUtility.activated) {
-			return new Npc(5129, ArenaUtility.spawn.getPosition());
-		} else if (GalvekUtility.activated) {
-			return new Npc(8095, GalvekUtility.spawn.getPosition());
-		} else if (SkotizoUtility.activated) {
-			return new Npc(7286, SkotizoUtility.spawn.getPosition());
-		} else if (JusticarUtility.activated) {
-			return new Npc(7858, JusticarUtility.spawn.getPosition());
-		}
-		return new Npc(-1, new Position(1, 1, 1));
 	}
 }

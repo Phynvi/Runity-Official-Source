@@ -67,25 +67,8 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 
 		case 299:
-			/*
-			 * if (PlayerRight.isDeveloper(player)) {
-			 * player.dialogueFactory.sendOption("Plant Red Flower", () -> {
-			 * player.message("Sike bitch ahahah this aint fucking dreamscape retard");
-			 * player.message("@red@no rigged seeds in here nigga"); }, "Plant Blue Flower",
-			 * () -> {
-			 * player.message("Sike bitch ahahah this aint fucking dreamscape retard.");
-			 * player.message("@red@no rigged seeds in here nigga"); },
-			 * "Plant Rainbow Flower", () -> {
-			 * player.message("Sike bitch ahahah this aint fucking dreamscape retard");
-			 * player.message("@red@no rigged seeds in here nigga"); },
-			 * "Plant Orange Flower", () -> {
-			 * player.message("Sike bitch ahahah this aint fucking dreamscape retard");
-			 * player.message("@red@no rigged seeds in here nigga"); }, "Win the entire FP",
-			 * player.interfaceManager::close).execute(); } else {
-			 */
 			player.inventory.remove(299, 1);
-			FlowerHandler flower = new FlowerHandler(player);
-			flower.plantFlower();
+			new FlowerHandler(player).plantFlower();
 			break;
 
 		case 5020:

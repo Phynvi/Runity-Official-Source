@@ -419,7 +419,7 @@ public final class Config {
 			new Item(19920), new Item(13689), new Item(20251), new Item(20252), new Item(13690), new Item(13686),
 			new Item(13687), new Item(11609), new Item(20690), new Item(14581), new Item(14582), new Item(14583),
 			new Item(14584), new Item(14585), new Item(14586), new Item(14589), new Item(13207), new Item(13209),
-			new Item(13210), new Item(13212), new Item(13213), new Item(1321), new Item(13661), new Item(13662),
+			new Item(13210), new Item(13212), new Item(13213), new Item(13214), new Item(13661), new Item(13662),
 			new Item(13189), new Item(10028), new Item(21777), new Item(13208), new Item(22123), new Item(21954),
 			new Item(22099), new Item(22078), new Item(22301), new Item(22304), new Item(22307), new Item(15011),
 			new Item(3273), new Item(3274), new Item(3275), new Item(15300), new Item(15307), new Item(10860),
@@ -427,6 +427,9 @@ public final class Config {
 			new Item(15308), new Item(15309), new Item(15310), new Item(13703), new Item(13704), new Item(13705),
 			new Item(13695), new Item(13692), new Item(13693), new Item(13696), new Item(13697), new Item(13698),
 			new Item(13699), new Item(13700), new Item(13701), new Item(13702), new Item(22317), new Item(22280) };
+	
+	
+	
 	public final static Item[] BANK_ITEMS = { new Item(995, 10000), new Item(6199, 10000), new Item(12955, 10000),
 			new Item(11739, 10000), new Item(299, 10000), new Item(455, 10000), new Item(11665, 10000),
 			new Item(11663, 10000), new Item(11664, 10000), new Item(8840, 10000), new Item(8839, 10000),
