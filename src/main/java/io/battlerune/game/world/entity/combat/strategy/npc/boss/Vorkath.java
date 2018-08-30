@@ -102,7 +102,7 @@ public class Vorkath extends MultiStrategy {
 		public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {
 			return 30;
 		}
-
+//TODO FIX THIS METHOD MAKE IT CLEANER
 		@Override
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
 			World.schedule(2, () -> {
@@ -118,14 +118,22 @@ public class Vorkath extends MultiStrategy {
 					World.schedule(AcidTask(defender, defender.getPosition()));
 
 					for (int index = 0; index < 40; index++) {
+						if (attacker == null || attacker.isDead() || !Area.inVorkath(attacker)) {
+							return;
+						}
+						System.out.println("1");
 						Position position = boundaries.get(index);
 						projectile.send(attacker, position);
 						World.schedule(AcidTask(defender, position));
 					}
 
 					final Projectile projectile2 = new Projectile(1482, 15, 95, 26, 25);
+					System.out.println("2");
 
 					World.schedule(2, () -> World.schedule(DragonFire(attacker, defender, projectile2)));
+					if (attacker == null || attacker.isDead() || !Area.inVorkath(attacker)) {
+						return;
+					}
 				});
 			});
 		}
@@ -165,6 +173,9 @@ public class Vorkath extends MultiStrategy {
 
 				@Override
 				protected void tick() {
+					if (defender == null || defender.isDead() || !Area.inVorkath(defender)) {
+						return;
+					}
 					if (tick == 1) {
 						object = new CustomGameObject(32000, defender.instance, position);
 						object.register();

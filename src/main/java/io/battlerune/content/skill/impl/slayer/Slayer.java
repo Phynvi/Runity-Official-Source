@@ -213,22 +213,6 @@ public class Slayer {
 						if (PlayerRight.isDonator(player)) {
 							rewardPts *= 2;
 						}
-						if (PlayerRight.isSuper(player)) {
-							rewardPts *= 2;
-						}
-						if (PlayerRight.isExtreme(player)) {
-							rewardPts *= 3;
-						}
-						if (PlayerRight.isElite(player)) {
-							rewardPts *= 3;
-						}
-						if (PlayerRight.isKing(player)) {
-							rewardPts *= 4;
-						}
-						if (PlayerRight.isSupreme(player)) {
-							rewardPts *= 4;
-						}
-
 						player.message("Congratulations, you have completed your assigned task! You have earned "
 								+ rewardPts + " slayer points!");
 					}
@@ -304,8 +288,8 @@ public class Slayer {
 			new StoreItem(10551, 1, 800), new StoreItem(13576, 1, 850),
 
 			new StoreItem(11941, 1, 950), new StoreItem(12821, 1, 1050),
-
-			new StoreItem(21225, 1, 1750)
+			new StoreItem(14589, 1, 1500),
+			new StoreItem(21225, 1, 1750), new StoreItem(3274, 1, 2500)
 
 	};
 

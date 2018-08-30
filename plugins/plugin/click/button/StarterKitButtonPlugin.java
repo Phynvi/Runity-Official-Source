@@ -114,7 +114,7 @@ public class StarterKitButtonPlugin extends PluginContext {
 		player.buttonDelay.reset();
 		ClanChannelHandler.connect(player, "help");
 
-		if (Config.LIVE_SERVER /* && !Config.FORUM_INTEGRATION */) {
+		if (!Config.LIVE_SERVER /* && !Config.FORUM_INTEGRATION */) {
 			player.bank.clear();
 
 			player.bank.addAll(Config.BANK_ITEMS);

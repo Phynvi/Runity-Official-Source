@@ -326,8 +326,8 @@ public final class Config {
 			"Found a bug? Let a moderator know or post it on the forums!",
 			"Did you know you can change your combat level by clicking on the skill?",
 			"You can do ::commands for a list of commands!",
-			"Royalty rewards are given every 30 minutes! ::royaltyprogram",
-			"Saying you don't need privacy because you have nothing to hide is like saying you don't need free speech because you have nothing to say." };
+             "do ::store to purchase bonds to make purchases",
+	"Saying you don't need privacy because you have nothing to hide is like saying you don't need free speech because you have nothing to say." };
 
 	/**
 	 * Holds the array of all the side-bar identification and their corresponding

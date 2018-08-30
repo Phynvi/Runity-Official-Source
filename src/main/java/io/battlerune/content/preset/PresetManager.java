@@ -105,7 +105,7 @@ public class PresetManager {
 		player.send(new SendItemOnInterface(57022, preset[slot] == null ? new Item[0] : preset[slot].getEquipment()));
 	}
 
-	/** Handles naming the preset. */
+	/** Handles naming the preset. *///ye stfu now thnx ur shit code and this nice code i know the difference dw
 	public void name(String name) {
 		int slot = getSlot();
 

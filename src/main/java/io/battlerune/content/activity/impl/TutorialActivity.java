@@ -92,7 +92,7 @@ public class TutorialActivity extends Activity {
 //        System.out.println(stage);
         switch (stage) {
             case 0:
-                guide = new Npc(306, new Position(3086, 3492));
+                guide = new Npc(306, new Position(3222, 3223));
                 add(guide);
                 guide.graphic(new Graphic(86, true));
                 cooldown(2);
@@ -104,12 +104,12 @@ public class TutorialActivity extends Activity {
                 cooldown(2);
                 break;
             case 2:
-                guide.walk(new Position(3086, 3490));
+                guide.walk(new Position(3222, 3218));
                 cooldown(1);
                 break;
             case 3:
                 player.face(guide.getPosition());
-                factory.sendNpcChat(306, "Welcome to <col=D63E3E>OS Royale</col>, " + player.getName(), "Would you like a tutorial of our lands?");
+                factory.sendNpcChat(306, "Welcome to <col=D63E3E>Runity</col>, " + player.getName(), "Would you like a tutorial of our lands?");
                 factory.sendOption("Yes", () -> cooldown(1), "No", this::finish);
                 factory.execute();
                 pause();
@@ -134,8 +134,8 @@ public class TutorialActivity extends Activity {
                 break;
             case 6:
                 factory.sendNpcChat(306, "This is your quest tab. Inside contains information about", "the world and yourself. On the top right corner of the", "tab you will see a bunch of different buttons.");
-                factory.sendNpcChat(306, "The blue button will show you the quest tab", "and the green button will show you the achievement tab.");
-                factory.sendNpcChat(306, "The purple button will provide you with various options.", "Some of these options include - npc drop viwer,", "log drop simulator, log kill logs, title manager and more!");
+                factory.sendNpcChat(306, "The blue button will show you the quest tab", "The green button will provide you with various options.");
+                factory.sendNpcChat(306, "Some of these options include - npc drop viwer,", "log drop simulator, log kill logs, title manager and more!");
                 factory.sendNpcChat(306, "Lastly, the scroll button will open a menu where you can", "change game related options. For example: welcome screen,", " triviabot, drop notification, and more! These options", "are not to be confused with the client options.");
                 factory.onAction(() -> {
                     player.interfaceManager.setSidebar(Config.QUEST_TAB, -1);
@@ -199,20 +199,20 @@ public class TutorialActivity extends Activity {
                 pause();
                 break;
             case 15:
-                Teleportation.teleport(player, new Position(3079, 3494), MODERN, () -> {
-                    player.face(Direction.NORTH);
+                Teleportation.teleport(player, new Position(3080, 3491), MODERN, () -> {
+                    player.face(Direction.WEST);
                     next();
                     player.locking.lock();
                 });
                 pause();
                 break;
             case 16:
-                factory.sendNpcChat(306, "Here are shops that will sell you all the", "general items you will need in your adventure.", "The bounty hunter npc has a wide variety of", "high end items which he will sell for pvp points.").onAction(this::next).execute();
+                factory.sendNpcChat(306, "Here are shops that will sell you all the supplies you may need," ," aswell as gear/food/potions/misc items and more.").onAction(this::next).execute();
                 pause();
                 break;
             case 17:
-                Teleportation.teleport(player, new Position(3079, 3489), MODERN, () -> {
-                    player.face(Direction.SOUTH);
+                Teleportation.teleport(player, new Position(3080, 3491), MODERN, () -> {
+                    player.face(Direction.WEST);
                     next();
                     player.locking.lock();
                 });
@@ -223,15 +223,15 @@ public class TutorialActivity extends Activity {
                 pause();
                 break;
             case 19:
-                Teleportation.teleport(player, new Position(3085, 3501), MODERN, () -> {
-                    player.face(Direction.SOUTH);
+                Teleportation.teleport(player, new Position(3086, 3500), MODERN, () -> {
+                    player.face(Direction.WEST);
                     next();
                     player.locking.lock();
                 });
                 pause();
                 break;
             case 20:
-                factory.sendNpcChat(306, "This is the Well of goodwill,", "you will be able to contribute gold for a server wide", "experience bonus that will last 1 hour.").onAction(this::next).execute();
+                factory.sendNpcChat(306, "This is the Well of goodwill,", "you will be able to contribute gold for a server wide", "experience bonus that will last 30 Minutes.").onAction(this::next).execute();
                 pause();
                 break;
             case 21:
@@ -266,8 +266,8 @@ public class TutorialActivity extends Activity {
                 pause();
                 break;
             case 25:
-                Teleportation.teleport(player, new Position(3089, 3498), MODERN, () -> {
-                    player.face(Direction.EAST);
+                Teleportation.teleport(player, new Position(3097, 3498), MODERN, () -> {
+                    player.face(Direction.NORTH);
                     next();
                     player.locking.lock();
                 });
