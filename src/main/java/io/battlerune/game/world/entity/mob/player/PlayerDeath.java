@@ -208,10 +208,6 @@ public final class PlayerDeath extends MobDeath<Player> {
 		mob.send(new SendMessage("Oh dear, you are dead!"));
 		mob.animate(new Animation(-1, UpdatePriority.VERY_HIGH));
 
-		if (mob.presetManager.deathOpen) {
-			World.schedule(1, mob.presetManager::open);
-		}
-
 		if (!safe) {
 			if (killer != null && killer.isPlayer() && !mob.equals(killer)) {
 				mob.killstreak.end(killer.getName());

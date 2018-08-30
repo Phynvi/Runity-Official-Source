@@ -7,7 +7,6 @@ import io.battlerune.content.RoyaltyProgram;
 import io.battlerune.content.achievement.AchievementInterface;
 import io.battlerune.content.activity.ActivityType;
 import io.battlerune.content.playerguide.PlayerGuideHandler;
-import io.battlerune.content.presetInterface.PresetInterfaceHandler;
 import io.battlerune.content.skill.impl.slayer.SlayerTab;
 import io.battlerune.content.staff.PanelType;
 import io.battlerune.content.staff.StaffPanel;
@@ -50,9 +49,7 @@ public class InformationTabButtonPlugin extends PluginContext {
 		case 29421:
 		case 29419:
 		case 29410:
-			player.dialogueFactory.sendOption("Hall of Fame", () -> {
-				player.dialogueFactory.onAction(() -> player.interfaceManager.open(58500));
-			}, "Royalty program", () -> {
+			player.dialogueFactory.sendOption("Royalty program", () -> {
 				player.dialogueFactory.onAction(() -> RoyaltyProgram.open(player));
 			}, "Activity Logger", () -> {
 				player.dialogueFactory.onAction(player.activityLogger::open);
@@ -61,11 +58,6 @@ public class InformationTabButtonPlugin extends PluginContext {
 			}, "Slayer Interface", () -> {
 				player.dialogueFactory.onAction(() -> player.slayer.open(SlayerTab.MAIN));
 			}).execute();
-			break;
-		case 29429:
-			PresetInterfaceHandler presets = new PresetInterfaceHandler();
-			presets.open(player);
-			player.message("The preset system is still under development!");
 			break;
 		/** here **/
 		case 29423:

@@ -11,7 +11,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
-/** @author Michael | Chex *///Updated
+/** @author Michael | Chex *///Updated 
 public class DragonDagger extends PlayerMeleeStrategy {
 	private static final DragonDagger INSTANCE = new DragonDagger();
 

@@ -49,7 +49,7 @@ import io.battlerune.content.masterminer.MasterMinerGUI;
 import io.battlerune.content.masterminer.MasterMinerTaskHandler;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
-import io.battlerune.content.preset.PresetManager;
+import io.battlerune.content.presets.PresetManager;
 import io.battlerune.content.prestige.Prestige;
 import io.battlerune.content.quest.QuestManager;
 import io.battlerune.content.skill.impl.construction.House;
@@ -190,6 +190,7 @@ public class Player extends Mob {
 	public Optional<OptionDialogue> optionDialogue = Optional.empty();
 	public Optional<Consumer<String>> enterInputListener = Optional.empty();
 	public boolean[] barrowKills = new boolean[BrotherData.values().length];
+	public final PresetManager presetManager = new PresetManager(this);
 	public final PlayerRelation relations = new PlayerRelation(this);
 	public final Donation donation = new Donation(this);
 	public final LostUntradeables lostUntradeables = new LostUntradeables(this);
@@ -366,7 +367,6 @@ public class Player extends Mob {
 	public final LootingBag lootingBag = new LootingBag(this);
 	public final PlayerPunishment punishment = new PlayerPunishment(this);
 	public final Equipment equipment = new Equipment(this);
-	public final PresetManager presetManager = new PresetManager(this);
 	public final Prestige prestige = new Prestige(this);
 	public final PriceChecker priceChecker = new PriceChecker(this);
 	public final DonatorDeposit donatorDeposit = new DonatorDeposit(this);
