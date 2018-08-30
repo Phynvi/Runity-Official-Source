@@ -147,7 +147,7 @@ public class TutorialActivity extends Activity {
                 break;
             case 7:
                 player.send(new SendForceTab(Config.WRENCH_TAB));
-                factory.sendNpcChat(306, "This is your wrench tab. Here you can change all options", "that are for your client. The interface has different tabs.", "You are currently in the display tab. You can change all", " display settings here.");
+                factory.sendNpcChat(306, "This is your settings tab. Here you can change all options", "that are for your client. The interface has different tabs.", "You are currently in the display tab. You can change all", " display settings here.");
                 factory.onAction(this::next);
                 factory.execute();
                 pause();

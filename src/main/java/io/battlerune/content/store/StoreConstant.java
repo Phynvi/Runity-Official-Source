@@ -15,6 +15,6 @@ public class StoreConstant {
 
 	/** Allowed shops for Iron man accounts. */
 	public final static String[] IRON_MAN_STORES = { "Prestige Rewards Store", "The PvP Store",
-			"The Clanmaster's Store", "Slayer Store", "Ironman Store", "Ironman Donator Store", "Runity Vote Store",
+			"The Clanmaster's Store", "Slayer Store", "Ironman Store", "Rare Donator Store", "Runity Vote Store",
 			"The Tzhaar Tokkul Store", };
 }

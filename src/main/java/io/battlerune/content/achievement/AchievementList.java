@@ -33,7 +33,7 @@ public enum AchievementList {
 	MINE_100_ORE(500, AchievementKey.MINE_100_ORE, AchievementDifficulty.MEDIUM, "Mine 500 ore (any)"),
 	// FLETCH250ADAMANET(500, AchievementKey.FLETCH250ADAMANET,
 	// AchievementDifficulty.MEDIUM, "Fletch 500 Adamanet Cbows"),
-	SKILL_MASTERY_I(3, AchievementKey.SKILL_MASTERY, AchievementDifficulty.MEDIUM, "Achieve level 99 in 3 skills"),
+	SKILL_MASTERY_I(6, AchievementKey.SKILL_MASTERY, AchievementDifficulty.MEDIUM, "Achieve level 99 in 6 skills"),
 	TRIVIABOT_I(100, AchievementKey.TRIVIABOT, AchievementDifficulty.MEDIUM, "Answer 100 TriviaBot questions"),
 	KILLER_I(50, AchievementKey.KILLER, AchievementDifficulty.MEDIUM, "Kill 50 players"),
 	WOODCUTTING_I(1000, AchievementKey.CUT100TREES, AchievementDifficulty.MEDIUM, "Chop down 1000 trees"),

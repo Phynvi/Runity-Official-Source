@@ -31,7 +31,7 @@ public class SailorKingDialouge extends Dialogue {
 
 	private void store(DialogueFactory factory) {
 		factory.sendOption("Open Boss Point Store",
-				() -> Store.STORES.get("Boss Point Store").open(factory.getPlayer()), "Open Skilling Point Store",
+				() -> Store.STORES.get("Boss Point Store").open(factory.getPlayer()), "Open Trivia Point Store",
 				() -> Store.STORES.get("Trivia Point Store").open(factory.getPlayer()), "Nevermind", factory::clear);
 	}
 }

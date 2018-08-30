@@ -27,7 +27,7 @@ public class DragonDagger extends PlayerMeleeStrategy {
 	public void attack(Player attacker, Mob defender, Hit hit) {
 		super.attack(attacker, defender, hit);
 		
-    if(Utility.random(1, 3) == 1) {
+		if(Utility.random(1, 5) == 1) {
 		if (hit.getDamage() == 0) {
 			hit.setDamage(RandomUtils.inclusive(0, 20));
 		    }

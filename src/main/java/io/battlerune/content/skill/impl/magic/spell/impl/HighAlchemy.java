@@ -74,7 +74,7 @@ public class HighAlchemy implements Spell {
 		player.inventory.refresh();
 		player.send(new SendForceTab(6));
 		player.skills.addExperience(Skill.MAGIC,
-				(65 * (Config.MAGIC_MODIFICATION + 5)) * new ExperienceModifier(player).getModifier());
+				(65 * (Config.MAGIC_MODIFICATION)) * new ExperienceModifier(player).getModifier());
 		AchievementHandler.activate(player, AchievementKey.HIGH_ALCHEMY, 1);
 		player.spellCasting.castingDelay.reset();
 		player.action.clearNonWalkableActions();

@@ -18,7 +18,7 @@ public class KarilsListener extends SimplifiedListener<Mob> {
 	@Override
 	public void hit(Mob attacker, Mob defender, Hit hit) {
 		
-		if(Utility.random(1, 3) == 1) {
+		if(Utility.random(1, 5) == 1) {
 		if (hit.getDamage() == 0) {
 			hit.setDamage(RandomUtils.inclusive(0, 20));
 	     	}

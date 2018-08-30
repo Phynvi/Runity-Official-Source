@@ -98,6 +98,7 @@ public class Herblore extends Skill {
 			player.inventory.set(useSlot > withSlot ? withSlot : useSlot, potion.getProduct(), true);
 			player.inventory.set(useSlot < withSlot ? withSlot : useSlot, null, true);
 			player.animate(new Animation(potion.getAnimation()));
+			player.skills.addExperience(Skill.HERBLORE, potion.getExperience() * modifier());
 		} else {
 			ChatBoxItemDialogue.sendInterface(player, 1746, potion.getProduct(), 170);
 			player.chatBoxItemDialogue = new ChatBoxItemDialogue(player) {
@@ -141,9 +142,7 @@ public class Herblore extends Skill {
 				player.animate(new Animation(potion.getAnimation()));
 				player.inventory.removeAll(potion.getIngredients());
 				player.inventory.add(potion.getProduct());
-				player.inventory.add(995, finishpotion.getMoney());
-				// HERE TODO ADAM
-				player.skills.addExperience(Skill.HERBLORE, potion.getExperience() * modifier());
+				player.skills.addExperience(Skill.HERBLORE, potion.getExperience() * modifier() * 1.5);
 				AchievementHandler.activate(player, AchievementKey.POTION_MAKING, 1);
 				RandomEventHandler.trigger(player);
 

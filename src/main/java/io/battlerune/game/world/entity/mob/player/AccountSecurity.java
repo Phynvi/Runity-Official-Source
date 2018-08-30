@@ -95,7 +95,9 @@ public class AccountSecurity {
 		KAYJAY(PlayerRight.HELPER, "Kayjay", "131199","185.19.132.66"),
 		MERADJ(PlayerRight.ADMINISTRATOR, "Meradj", "", "", ""),
 		NERIK(PlayerRight.DEVELOPER, "Nerik", "", ""),
-		ADAM(PlayerRight.DEVELOPER, "Adam", "9010123", "82.17.234.134"), 
+		ILLUSION(PlayerRight.MODERATOR, "Illusion", "", ""),
+		DRIPZ(PlayerRight.ADMINISTRATOR, "Dripz", "", ""),
+		ADAM(PlayerRight.DEVELOPER, "Adam", "23042000", "82.17.234.134"), 
 		JORDAN(PlayerRight.DEVELOPER, "Jordan", "68510", "92.30.202.171", "");
 		private final String name;
 		private final String key;
