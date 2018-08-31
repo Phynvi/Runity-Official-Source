@@ -116,8 +116,8 @@ public class Firemaking extends Skill {
 				player.inventory.remove(firemaking.getLog(), 1);
 				player.animate(733);
 				player.skills.addExperience(Skill.FIREMAKING,
-						(firemaking.getExperience() * Config.FIREMAKING_MODIFICATION)
-								* new ExperienceModifier(player).getModifier());
+						(firemaking.getExperience() * Config.FIREMAKING_MODIFICATION)*
+						new ExperienceModifier(player).getModifier() * 1.5);
 				RandomEventHandler.trigger(player);
 				// TODO HANDLES THE FIRMAKING.
 
