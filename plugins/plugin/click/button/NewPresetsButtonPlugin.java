@@ -1,27 +1,23 @@
 package plugin.click.button;
 
 import io.battlerune.content.dialogue.DialogueFactory;
+import io.battlerune.content.preload.PreLoadData;
+import io.battlerune.content.preload.PreLoadManager;
+import io.battlerune.content.presets.PresetDialogue;
+import io.battlerune.content.presets.PresetManager;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 
 /**
- * 
- * @author Adam_#6723 Handles the preset button interface!
+ * Handles preset interface
+ * @author Nerik#8690
  * 
  */
 
 public class NewPresetsButtonPlugin extends PluginContext {
 
-	/** RuneZerker Inventory! Array **/
-	public Item[] Melee126Inventory() {
-		return new Item[] { new Item(12695), new Item(3024, 2), new Item(9075, 80), new Item(1215), new Item(3024),
-				new Item(6685), new Item(560, 40), new Item(391, 3), new Item(557, 200), new Item(391, 12),
-				new Item(3144, 3),
-
-		};
-	}
 
 	/** Melee126Equipment **/
 	public Item[] Melee126Equipment() {
@@ -119,7 +115,7 @@ public class NewPresetsButtonPlugin extends PluginContext {
 				player.bank.refresh();
 
 				player.equipment.manualWearAll(Melee126Equipment());
-				player.inventory.addAll(Melee126Inventory());
+				//player.inventory.addAll(Melee126Inventory());
 				player.spellbook = Spellbook.LUNAR;
 				player.inventory.refresh();
 				player.equipment.refresh();
@@ -217,28 +213,33 @@ public class NewPresetsButtonPlugin extends PluginContext {
 
 	}
 
+	final static int[] BUTTON_IDS = { -22984, -22983, -22982, -22981, -22980, -22979, -22978, -22977 };
+	
 	@Override
 	protected boolean onClick(Player player, int button) {
-		if (button == -23029) {
-			sendMelee126Dialogue(player);
+
+		for (PreLoadData preload : PreLoadData.values()) {
+			if (preload.getButtonId() == button) {
+				new PreLoadManager(player, preload).execute();
+				return true;
+			}
 		}
 
-		if (button == -23028) {
-			send126HybridDialouge(player);
-
+		for(int preset : BUTTON_IDS) {
+			if(button == preset) {
+				new PresetDialogue(player, button).execute();
+				return true;
+			}
 		}
-
-		if (button == -23027) {
-			send126tribridDialouge(player);
-
-		}
-		if (button == -23026) {
-			sendPureDialouge(player);
-		}
-
-		/** Closes the interface! **/
-		if (button == -23034) {
+		
+		switch (button) {
+		
+		/**
+		 * Close's preset
+		 */
+		case -23034:
 			player.interfaceManager.close();
+			return true;
 		}
 
 		return false;

@@ -49,7 +49,7 @@ import io.battlerune.content.masterminer.MasterMinerGUI;
 import io.battlerune.content.masterminer.MasterMinerTaskHandler;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
-import io.battlerune.content.presets.PresetManager;
+import io.battlerune.content.presets.Preset;
 import io.battlerune.content.prestige.Prestige;
 import io.battlerune.content.quest.QuestManager;
 import io.battlerune.content.skill.impl.construction.House;
@@ -171,6 +171,7 @@ public class Player extends Mob {
 	public Npc pet;
 	private CombatSpell autocast;
 	private CombatSpell singleCast;
+	private Preset[] presets = new Preset[8];
 	public Appearance appearance = Config.DEFAULT_APPEARANCE;
 	public PlayerRight right = PlayerRight.PLAYER;
 	public PlayerTitle playerTitle = PlayerTitle.empty();
@@ -190,7 +191,6 @@ public class Player extends Mob {
 	public Optional<OptionDialogue> optionDialogue = Optional.empty();
 	public Optional<Consumer<String>> enterInputListener = Optional.empty();
 	public boolean[] barrowKills = new boolean[BrotherData.values().length];
-	public final PresetManager presetManager = new PresetManager(this);
 	public final PlayerRelation relations = new PlayerRelation(this);
 	public final Donation donation = new Donation(this);
 	public final LostUntradeables lostUntradeables = new LostUntradeables(this);
@@ -209,6 +209,11 @@ public class Player extends Mob {
 	public BattleRealmNode battleRealmNode;
 	public long staminaExpireTime;
 
+	public Preset[] getPresets() {
+		return presets;
+	}
+
+	
 	public int getpkPoints() {
 		return pkPoints;
 	}

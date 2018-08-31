@@ -1,9 +1,10 @@
-package io.battlerune.content.presets;
+package io.battlerune.content.preload;
 
+import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.equipment.Equipment;
 import io.battlerune.game.world.items.containers.inventory.Inventory;
 
-public interface PresetListener {
+public interface PreLoadListener {
 
 	/**
 	 * Preset name
@@ -15,12 +16,12 @@ public interface PresetListener {
 	 * Equipment
 	 * @return All Equipments for the selected preset
 	 */
-	Equipment[] getEquipment();
+	Item[] getEquipment();
 	
 	/**
 	 * 
 	 * @return All Inventory items for the selected preset
 	 */
-	Inventory[] getInventory();
+	Item[] getInventory();
 	
 }
