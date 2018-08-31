@@ -43,6 +43,7 @@ import io.battlerune.content.donators.Donation;
 import io.battlerune.content.emote.EmoteUnlockable;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.LogInEvent;
+import io.battlerune.content.hiscores.Hiscores;
 import io.battlerune.content.masterminer.AdventureGUI;
 import io.battlerune.content.masterminer.MasterMinerData;
 import io.battlerune.content.masterminer.MasterMinerGUI;
@@ -646,12 +647,13 @@ public class Player extends Mob {
 		Pets.onLogout(this);
 		ClanChannelHandler.disconnect(this, true);
 		interfaceManager.close();
+		new Hiscores(this).execute();
 		World.cancelTask(this, true);
 		World.getPlayers().remove((Player) destroy());
 		logger.info(String.format("[UNREGISTERED]: %s [%s]", getName(), lastHost));
 		World.sendStaffMessageWithoutHelper("@red@[UNREGISTERED]: %s [%s]", getName(), lastHost);
+		
 	}
-
 	@Override
 	public void addToRegion(Region region) {
 		region.addPlayer(this);

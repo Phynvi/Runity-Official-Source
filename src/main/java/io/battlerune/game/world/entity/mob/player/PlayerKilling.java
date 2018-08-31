@@ -12,7 +12,7 @@ import io.battlerune.util.Utility;
 public class PlayerKilling {
 
 	public static void handle(Player killer, Player victim) {
-		if (killer.isBot) {
+		if (victim.isBot) {
 			killer.setpkPoints(killer.getpkPoints() + 1);
 			killer.message("Because the victim was a bot, you only get 1 PK Point for your efforts.");
 			return;

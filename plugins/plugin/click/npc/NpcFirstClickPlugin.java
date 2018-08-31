@@ -379,14 +379,6 @@ public class NpcFirstClickPlugin extends PluginContext {
 		case 3439:
 			Thieving.exchange(player);
 			break;
-		case 3442:
-			player.dialogueFactory.sendNpcChat(4925, "Oh so you have customs? il take them!");
-			player.dialogueFactory.sendOption("Sell your customs?", () -> PlayerAssistant.sellCustoms(player), "No",
-					() -> player.dialogueFactory.clear());
-			player.dialogueFactory.execute();
-
-			break;
-
 		case 1755:
 			Store.STORES.get("The Pest Control Store").open(player);
 			break;

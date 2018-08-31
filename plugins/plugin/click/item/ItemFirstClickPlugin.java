@@ -52,14 +52,16 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			}
 			if (Utility.random(1, 25) == 24) {
 				player.inventory.add(995, 15000000);
-				player.inventory.add(13719, 1);
-				player.inventory.add(13686, 1);
+				player.inventory.add(15309, 1);
 				player.message("@blu@You were lucky and received 15 Million GP!");
 			}
-			if (Utility.random(1, 75) == 74) {
+			if (Utility.random(1, 500) <= 5) {
 				player.inventory.add(995, 20000000);
 				player.inventory.add(17160, 1);
 				player.inventory.add(15300, 1);
+				player.inventory.add(13686, 1);
+				player.inventory.add(15308, 1);
+				player.inventory.add(15301, 1);
 				player.message("@red@You were lucky and received 20 Million GP!");
 			}
 			player.inventory.remove(10028, 1);

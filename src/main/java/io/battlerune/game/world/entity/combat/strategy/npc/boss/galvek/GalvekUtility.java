@@ -64,23 +64,19 @@ public class GalvekUtility {
 		int random = Utility.random(300);
 
 		if (random <= 50) {
-			for (int i = 0; i < COMMONLOOT.length; i++) {
-				GroundItem.createGlobal(player, new Item(COMMONLOOT[i], 1),
+				GroundItem.createGlobal(player, new Item(COMMONLOOT[Utility.random(COMMONLOOT.length)], 1),
 						new Position(2273 + Utility.random(11), 5341 + Utility.random(13), 0));
-			}
 		}
 		if (random <= 10) {
-			for (int i = 0; i < RARELOOT.length; i++) {
-				GroundItem.createGlobal(player, new Item(RARELOOT[i], 1),
+				GroundItem.createGlobal(player, new Item(RARELOOT[Utility.random(RARELOOT.length)], 1),
 						new Position(2273 + Utility.random(12), 5341 + Utility.random(14), 0));
-			}
+			
 		}
 		if (random <= 2) {
-			for (int i = 0; i < SUPERRARELOOT.length; i++) {
-				GroundItem.createGlobal(player, new Item(SUPERRARELOOT[i], 1),
+			GroundItem.createGlobal(player, new Item(SUPERRARELOOT[Utility.random(SUPERRARELOOT.length)], 1),
 						new Position(2273 + Utility.random(14), 5341 + Utility.random(15), 0));
 				World.sendMessage("<img=10><col=FF0000>[GALVEK EVENT] Arena has dropped Bank Loot!");
-			}
+			
 		}
 
 		for (int i = 0; i < ALWAYSLOOT.length; i++) {

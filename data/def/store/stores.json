@@ -3811,12 +3811,6 @@
     "items": [
               
       {
-        "id": 20838,
-        //CORRUPT FULL HELM
-        "amount": 1000,
-        "value": 50 //VALUE IN DONATOR_POINTS WHICH IS THE CURRENCY
-      },
-      {
           "id": 20838,
           //CORRUPT FULL HELM
           "amount": 1000,
@@ -3920,31 +3914,6 @@
           "value": 10000 // $500
       },
       {
-          "id": 13722, // Lava ss
-          "amount": 1000,
-          "value": 5500 // $275
-      },
-      {
-          "id": 17160,
-          "amount": 1000,
-          "value": 400
-      },
-      {
-          "id": 17166,
-          "amount": 1000,
-          "value": 100
-      },
-      {
-          "id": 17167,
-          "amount": 1000,
-          "value": 100
-      },
-      {
-          "id": 17168,
-          "amount": 1000,
-          "value": 100
-      },
-      {
           "id": 12357,
           "amount": 1000,
           "value": 150
@@ -3996,26 +3965,6 @@
           "value": 200
       },
       {
-          "id": 13693,
-          "amount": 1000,
-          "value": 300
-      },
-      {
-          "id": 13695,
-          "amount": 1000,
-          "value": 300
-      },
-      {
-          "id": 13696,
-          "amount": 1000,
-          "value": 300
-      },
-      {
-          "id": 13692,
-          "amount": 1000,
-          "value": 300
-      },
-      {
           "id": 11063,
           "amount": 1000,
           "value": 750
@@ -4037,7 +3986,7 @@
       {
           "id": 21225,
           "amount": 1000,
-          "value": 1000
+          "value": 2000
       }
     ]
   },

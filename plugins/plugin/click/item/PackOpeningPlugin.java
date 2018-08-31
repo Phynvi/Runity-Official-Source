@@ -82,6 +82,19 @@ public class PackOpeningPlugin extends PluginContext {
 		ANTI_SANTA_BOX(12898, new Item(12892, 1), new Item(12893, 1), new Item(12896, 1), new Item(12894, 1),
 				new Item(12895, 1), new Item(13192, 1))
 
+		,
+		PURGATORY(13438, new Item(13207, 1), new Item(13209, 1), new Item(13210, 1), new Item(13213, 1),
+				new Item(13212, 1), new Item(13214, 1), new Item(13661, 1), new Item(13662, 1)),
+		ZAROS_SET(12793, new Item(22031, 1), new Item(22304, 1), new Item(22307, 1), new Item(15011, 1),
+				new Item(7804, 1)),
+		CHI_SET(12792, new Item(13703, 1), new Item(13704, 1), new Item(13705, 1), new Item(13687, 1),
+				new Item(13686, 1)),	
+		ELITE_SETS(12794, new Item(16648, 1), new Item(16647, 1), new Item(16649, 1), new Item(16650, 1),
+				new Item(16651, 1), new Item(16653, 1), new Item(16654, 1), new Item(16655, 1), new Item(16656, 1)),
+		/* MAGE Arena Rewards */
+		SOUL_SET(13654, new Item(13692, 1), new Item(13693, 1), new Item(13695, 1), new Item(13696, 1),
+				new Item(17160, 1))
+
 		;
 
 		public final int itemID;

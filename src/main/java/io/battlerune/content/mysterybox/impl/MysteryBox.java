@@ -152,7 +152,6 @@ public class MysteryBox implements MysteryBoxListener {
 			World.sendMessage(player.getName() + " @red@Has received ULTRA RARE LOOT!");
 		} else {
 			player.inventory.add(getCommon()[random.nextInt(getCommon().length)]);
-
 		}
 
 	}

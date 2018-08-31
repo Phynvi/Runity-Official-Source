@@ -63,7 +63,7 @@ public class Combat<T extends Mob> {
 			if (defender.isPlayer()) {
 				if (attacker.getPlayer().equipment.containsAny(Config.NOT_ALLOWED)
 						|| attacker.getPlayer().inventory.containsAny(Config.NOT_ALLOWED)) {
-					attacker.getPlayer().send(new SendMessage("You can't attack anyone at the moment!"));
+					attacker.getPlayer().send(new SendMessage("You can't attack anyone with customs."));
 					return false;
 				}
 			}

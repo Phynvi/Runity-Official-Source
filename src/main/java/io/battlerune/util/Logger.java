@@ -63,7 +63,7 @@ public final class Logger {
 		System.out.println();
 		System.out.println("                                   Runity Perfecting OSRS.  ");
 		System.out.println();
-		System.out.println("                             Created by Adam & Nerik <-- such a beast.");
+		System.out.println("                             Created by Adam & Nerik & Zac <-- such a beast.");
 		System.out.println();
 		System.out.println("--------------------------------------------------------------------------------");
 	}
