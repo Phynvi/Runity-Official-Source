@@ -138,69 +138,7 @@ public enum PetData {
 			factory.execute();
 		}
 	},
-	BANKER("Pet Banker", 83, 396) {
-		@Override
-		public void dialogue(DialogueFactory factory) {
-			factory.sendPlayerChat("Aye i gotta drop dat mulla in the bank G");
-			factory.sendNpcChat(396, "Well Certainly sir.");
-			factory.sendNpcChat(396, "Would you like a recipt with that?!");
-			factory.sendPlayerChat("Nah im gucci my dude.");
-			factory.execute();
 
-		}
-	},
-//    JAL_NIB_REK("Jal-nib-rek", 21291, -1) {
-//        @Override
-//        public void dialogue(DialogueFactory factory) {
-//            //TODO http://oldschoolrunescape.wikia.com/wiki/Jal-nib-rek
-//            factory.sendPlayerChat("Adam has yet to add Jal-nib-rek's dialogue :(");
-//            factory.execute();
-//        }
-//    },
-	YOSHI("Yoshi", 20666, 1873) {
-		@Override
-		public void dialogue(DialogueFactory factory) {
-			factory.sendPlayerChat("Hello aren't you a cute little thing.");
-			factory.sendNpcChat(1873, "I ain't cute when im pounding.", "but I do have a magical gift...");
-			factory.sendNpcChat(1873, "I increase a warrior's drop rate bonus by 10%!");
-			factory.sendPlayerChat("well f me sideways...");
-			factory.execute();
-
-		}
-	},
-	FALLEN_GOD("Fallen God", 20668, 3456) {
-		@Override
-		public void dialogue(DialogueFactory factory) {
-			factory.sendPlayerChat(
-					"Fallen God, what kind of retarded name is that. There's only the god of 'tits and wine'.");
-			factory.sendNpcChat(3456, "Rude...", "However, I have a magical gift");
-			factory.sendNpcChat(3456, "I can teleport you out of any wilderness level!");
-			factory.sendPlayerChat("Not bad, you're pretty useful, i guess il keep you.");
-			factory.execute();
-
-		}
-	},
-	MORDUAT("Mr Morduat", 20670, 5504) {
-		@Override
-		public void dialogue(DialogueFactory factory) {
-			factory.sendPlayerChat("You look really cool, you must have some super power!");
-			factory.sendNpcChat(5504, "Nope. I'm a lazy fart, and don't have a magical gift like the other pets.");
-			factory.sendPlayerChat("welp nice to know you...");
-			factory.execute();
-
-		}
-	},
-	DRAGONKIN("Dragonkin", 20672, 2641) {
-		@Override
-		public void dialogue(DialogueFactory factory) {
-			factory.sendPlayerChat("You remind me of my sister when she wakes up in the morning");
-			factory.sendNpcChat(2641, "Yeah i know who your sister is...very well.");
-			factory.sendNpcChat(2641, "I have a magical gift, and increase special attack!");
-			factory.sendPlayerChat("uwut...");
-			factory.execute();
-
-		}
-	},
 	OLMLET("Olmlet", 20851, 7519) {
 		@Override
 		public void dialogue(DialogueFactory factory) {
