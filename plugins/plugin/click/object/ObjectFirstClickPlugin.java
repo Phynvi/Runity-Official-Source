@@ -1167,12 +1167,6 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 		/* Altar of the occult */
 		case 409:
-			if (player.skills.getLevel(Skill.PRAYER) < player.skills.getMaxLevel(Skill.PRAYER)) {
-				player.skills.setLevel(Skill.PRAYER, player.skills.getMaxLevel(Skill.PRAYER));
-				player.send(new SendMessage("You recharge your prayer points."));
-			} else {
-				player.send(new SendMessage("Your prayer is already full."));
-			}
 			player.dialogueFactory.sendOption("Modern", () -> {
 				Autocast.reset(player);
 				player.animate(new Animation(645));
@@ -1187,13 +1181,18 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.interfaceManager.setSidebar(Config.MAGIC_TAB, player.spellbook.getInterfaceId());
 				player.send(new SendMessage(
 						"You are now using the " + player.spellbook.name().toLowerCase() + " spellbook."));
-			}, "Lunar", () -> {
+			}, 
+			  "Lunar", () -> {
 				Autocast.reset(player);
 				player.animate(new Animation(645));
 				player.spellbook = Spellbook.LUNAR;
 				player.interfaceManager.setSidebar(Config.MAGIC_TAB, player.spellbook.getInterfaceId());
 				player.send(new SendMessage(
 						"You are now using the " + player.spellbook.name().toLowerCase() + " spellbook."));
+			},
+			  "Recharge Prayer", () -> {
+				player.animate(new Animation(645));
+				player.skills.setLevel(Skill.PRAYER, player.skills.getMaxLevel(Skill.PRAYER));
 			}).execute();
 			break;
 

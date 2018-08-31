@@ -24,7 +24,6 @@ public class RoyalKingDialogue extends Dialogue {
 	@Override
 	public void sendDialogues(DialogueFactory factory) {
 		if (index == 1) {
-			claim(factory);
 			factory.execute();
 			return;
 		}
@@ -35,15 +34,12 @@ public class RoyalKingDialogue extends Dialogue {
 		}
 		Player player = factory.getPlayer();
 		factory.sendNpcChat(5523, Expression.HAPPY, "Hello adventurer, how may I help you?");
-		factory.sendOption("Claim Purchase", () -> claim(factory), "Donator Information",
+		factory.sendOption("Donator Information",
 				() -> player.send(new SendURL("www.runity.io/store")), "Open Store", () -> store(factory), "Nevermind",
 				factory::clear);
 		factory.execute();
 	}
 
-	private void claim(DialogueFactory factory) {
-		factory.onAction(() -> DonationService.claimDonation(factory.getPlayer()));
-	}
 
 	private void store(DialogueFactory factory) {
 		factory.sendOption("Open Donator Store", () -> Store.STORES.get("Donator Store").open(factory.getPlayer()),

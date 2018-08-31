@@ -125169,31 +125169,35 @@
 
 	  },
 
-  {
-		    "id": 13739, //ITEM ID
-		    "name": "@red@Lava scythe", 
-		    "low-alch": 2, 
-		    "high-alch": 3, 
-		    "base-value": 5,
-	          "two-handed": true,
-	        "street-value": 18403, 
-		    "equipment-slot": "WEAPON",
-		    "weight": 4.0,
-"attack-stab": 60,
-"attack-slash": 85,
-"attack-crush":  15,
-"attack-magic": -6,
-"attack-ranged": 0,
-"defence-stab": 0,
-"defence-slash": 6,
-"defence-crush": 0,
-"defence-magic": 0,
-"defence-ranged": 0,
-"bonus-strength": 120,  
-"bonus-prayer": 3,
-"bonus-magic": 15
-
-		  },
+ {
+			    "id": 13739,
+			  "name": "Lava Scythe",
+			    "high-alch": 100000000,
+			    "base-value": 150000000,
+			    "weapon-interface": "SCYTHE",
+			    "equipment-slot": "WEAPON",
+			    "two-handed": true, 
+			     "block-animation": 424,
+			    "stand-animation": 808,
+			    "walk-animation": 819,
+			    "run-animation": 824,    
+			    "attack-animations": {
+			      "SCYTHE_REAP": 1203,
+			      "SCYTHE_CHOP": 1203,
+			      "SCYTHE_JAB": 1203,
+			      "SCYTHE_BLOCK": 1203
+			       },
+			    "turn180-animation": 820,
+			    "turn90CW-animation": 821,
+			    "turn90CCW-animation": 821,
+			    "weight": 3.0,
+			    "attack-stab": 80,
+			    "attack-slash": 180,
+			    "attack-crush": 80,
+			    "attack-magic": 1,
+			    "defence-magic": 1,
+			    "bonus-strength": 100
+			  },
 
 
 {
