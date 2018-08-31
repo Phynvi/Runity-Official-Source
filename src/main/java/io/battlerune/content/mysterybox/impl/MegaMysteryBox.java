@@ -146,7 +146,7 @@ public class MegaMysteryBox implements MysteryBoxListener {
 	@Override
 	public void execute(Player player) {
 		Random random = new Random();
-		player.inventory.remove(11739, 1);
+		player.inventory.remove(6508, 1);
 		/**
 		 * Utility.random(1, 150) <-- This generates a RANDOM number between 1 and 150.
 		 * Utility.random(1, 250) <= 10 <---- This generates a RANDOM NUMBER between 1

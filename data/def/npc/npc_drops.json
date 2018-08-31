@@ -81617,6 +81617,775 @@
       }
     ]
   },
+     {
+    "id": [
+      8060
+    ],
+    "rare_table": true,
+    "drops": [
+      {
+        "item": 592,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "ALWAYS"
+      },
+      {
+        "item": 6897,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 1377,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1201,
+        "minimum": 6,
+        "maximum": 6,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 1305,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1377,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 3202,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+            {
+        "item": 21992,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 3000.0,
+        "type": "VERY_RARE"
+      },
+      {
+        "item": 2503,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1163,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1359,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1275,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1113,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1127,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 7937,
+        "minimum": 300,
+        "maximum": 300,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 554,
+        "minimum": 300,
+        "maximum": 300,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 560,
+        "minimum": 100,
+        "maximum": 100,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 566,
+        "minimum": 100,
+        "maximum": 100,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 565,
+        "minimum": 60,
+        "maximum": 60,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 9381,
+        "minimum": 40,
+        "maximum": 40,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 2,
+        "minimum": 50,
+        "maximum": 50,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 3024,
+        "minimum": 2,
+        "maximum": 2,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 5304,
+        "minimum": 3,
+        "maximum": 3,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 220,
+        "minimum": 6,
+        "maximum": 6,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 454,
+        "minimum": 120,
+        "maximum": 120,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 452,
+        "minimum": 5,
+        "maximum": 5,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 995,
+        "minimum": 10000,
+        "maximum": 20000,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 1724,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 7218,
+        "minimum": 3,
+        "maximum": 3,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 593,
+        "minimum": 50,
+        "maximum": 50,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 537,
+        "minimum": 20,
+        "maximum": 20,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 246,
+        "minimum": 15,
+        "maximum": 15,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 570,
+        "minimum": 20,
+        "maximum": 20,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 1618,
+        "minimum": 5,
+        "maximum": 5,
+
+        "type": "COMMON"
+      },
+        {
+        "item": 1305,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 64.0,
+        "type": "UNCOMMON"
+      },
+        {
+        "item": 4087,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "UNCOMMON"
+      },
+              {
+        "item": 4585,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "UNCOMMON"
+      },
+              {
+        "item": 4587,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 13249,
+        "minimum": 3,
+        "maximum": 3,
+        "chance": 64.0,
+        "type": "UNCOMMON"
+      },
+            {
+        "item": 1747,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "UNCOMMON"
+      },
+                  {
+        "item": 1751,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "COMMON"
+      },
+                  {
+        "item": 1753,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "COMMON"
+      },
+                  {
+        "item": 1749,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 12073,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 100.0,
+        "type": "RARE"
+      },
+           {
+        "item": 22111,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+      {
+        "item": 13245,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 2000.0,
+        "type": "VERY_RARE"
+      },
+            {
+        "item": 21633,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 13723,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 21633,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 11286,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 13119,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 13686,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 13687,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+      {
+        "item": 13247,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 3000.0,
+        "type": "VERY_RARE"
+      },
+      {
+        "item": 13190,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 3000.0,
+        "type": "VERY_RARE"
+      }
+    ]
+  },
+  
+  
+  
+  
+  
+  
+    {
+    "id": [
+      7585
+    ],
+    "rare_table": true,
+    "drops": [
+      {
+        "item": 592,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "ALWAYS"
+      },
+      {
+        "item": 6897,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 1377,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1201,
+        "minimum": 6,
+        "maximum": 6,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 1305,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1377,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 3202,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+            {
+        "item": 21992,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 3000.0,
+        "type": "VERY_RARE"
+      },
+      {
+        "item": 2503,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1163,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1359,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1275,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1113,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 1127,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 7937,
+        "minimum": 300,
+        "maximum": 300,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 554,
+        "minimum": 300,
+        "maximum": 300,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 560,
+        "minimum": 100,
+        "maximum": 100,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 566,
+        "minimum": 100,
+        "maximum": 100,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 565,
+        "minimum": 60,
+        "maximum": 60,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 9381,
+        "minimum": 40,
+        "maximum": 40,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 2,
+        "minimum": 50,
+        "maximum": 50,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 3024,
+        "minimum": 2,
+        "maximum": 2,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 5304,
+        "minimum": 3,
+        "maximum": 3,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 220,
+        "minimum": 6,
+        "maximum": 6,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 454,
+        "minimum": 120,
+        "maximum": 120,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 452,
+        "minimum": 5,
+        "maximum": 5,
+
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 995,
+        "minimum": 10000,
+        "maximum": 20000,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 1724,
+        "minimum": 1,
+        "maximum": 1,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 7218,
+        "minimum": 3,
+        "maximum": 3,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 593,
+        "minimum": 50,
+        "maximum": 50,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 537,
+        "minimum": 20,
+        "maximum": 20,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 246,
+        "minimum": 15,
+        "maximum": 15,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 570,
+        "minimum": 20,
+        "maximum": 20,
+
+        "type": "COMMON"
+      },
+      {
+        "item": 1618,
+        "minimum": 5,
+        "maximum": 5,
+
+        "type": "COMMON"
+      },
+        {
+        "item": 1305,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 64.0,
+        "type": "UNCOMMON"
+      },
+        {
+        "item": 4087,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "UNCOMMON"
+      },
+              {
+        "item": 4585,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "UNCOMMON"
+      },
+              {
+        "item": 4587,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 13249,
+        "minimum": 3,
+        "maximum": 3,
+        "chance": 64.0,
+        "type": "UNCOMMON"
+      },
+            {
+        "item": 1747,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "UNCOMMON"
+      },
+                  {
+        "item": 1751,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "COMMON"
+      },
+                  {
+        "item": 1753,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "COMMON"
+      },
+                  {
+        "item": 1749,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "UNCOMMON"
+      },
+      {
+        "item": 12073,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 100.0,
+        "type": "RARE"
+      },
+           {
+        "item": 16662,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+      {
+        "item": 13190,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 2000.0,
+        "type": "VERY_RARE"
+      },
+            {
+        "item": 6199,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 14589,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 10861,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 15308,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 15309,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 15301,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+         {
+        "item": 3273,
+        "minimum": 1,
+        "maximum": 1,
+        "type": "VERY_RARE"
+      },
+      {
+        "item": 13208,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 3000.0,
+        "type": "VERY_RARE"
+      },
+      {
+        "item": 13720,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 3000.0,
+        "type": "VERY_RARE"
+      }
+    ]
+  },
+  
+  
+  
+  
+  
+  
+  
   {
     "id": [
       5862,
@@ -81888,13 +82657,6 @@
         "minimum": 1,
         "maximum": 1,
         "chance": 2000.0,
-        "type": "VERY_RARE"
-      },
-      {
-        "item": 13247,
-        "minimum": 1,
-        "maximum": 1,
-        "chance": 3000.0,
         "type": "VERY_RARE"
       }
     ]
