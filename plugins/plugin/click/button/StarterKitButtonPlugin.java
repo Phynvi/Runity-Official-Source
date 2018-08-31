@@ -114,21 +114,6 @@ public class StarterKitButtonPlugin extends PluginContext {
 		player.buttonDelay.reset();
 		ClanChannelHandler.connect(player, "help");
 
-		if (!Config.LIVE_SERVER /* && !Config.FORUM_INTEGRATION */) {
-			player.bank.clear();
-
-			player.bank.addAll(Config.BANK_ITEMS);
-			System.arraycopy(Config.TAB_AMOUNT, 0, player.bank.tabAmounts, 0, Config.TAB_AMOUNT.length);
-			player.bank.shift();
-//            player.skills.master();
-//            AchievementHandler.completeAll(player);
-//            EmoteHandler.unlockAll(player);
-			player.send(new SendMessage("Your account is now maxed out.", MessageColor.BLUE));
-//           player.inventory.add(13194 , 1);
-			player.send(new SendMessage("Do ::defaultbank for max gear", MessageColor.BLUE));
-
-		}
-
 		// this is needed for logs so players are entered into the db upon first account
 		// creation
 		PlayerSerializer.save(player);
