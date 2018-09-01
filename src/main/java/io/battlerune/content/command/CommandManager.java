@@ -101,7 +101,7 @@ public class CommandManager {
 		 * @Player Commands
 		 */
 		PLUGIN.putIfAbsent(new String[] { "easts" }, new Easts());
-		PLUGIN.putIfAbsent(new String[] { "commandslist", "command" }, new Commands());
+		PLUGIN.putIfAbsent(new String[] { "commands", "command" }, new Commands());
 		PLUGIN.putIfAbsent(new String[] { "home", "hom" }, new HomeCommand());
 		PLUGIN.putIfAbsent(new String[] { "train", "training" }, new TrainZone());
 		PLUGIN.putIfAbsent(new String[] { "pouch" }, new PouchCommand());
