@@ -66,16 +66,6 @@ public class PlayerPunishment {
 		banDuration = TimeUnit.MILLISECONDS.convert(duration, unit);
 		player.send(new SendLogout());
 		World.queueLogout(player);
-		PrintWriter writer = null;
-	/*	try {
-			writer = new PrintWriter("BanReasons", "UTF-8");
-		} catch (FileNotFoundException | UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block i couldn't get that working lol, the ban reasons
-			e.printStackTrace();
-		}*/
-		writer.println("User was banned" + player.getName() + "!");
-		writer.println("Reason for their ban:");
-		writer.close();
 	}
 
 	public void unBan() {
