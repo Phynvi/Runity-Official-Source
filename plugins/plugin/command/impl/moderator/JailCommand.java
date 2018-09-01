@@ -1,5 +1,6 @@
 package plugin.command.impl.moderator;
 
+import io.battlerune.content.activity.impl.JailActivity;
 import io.battlerune.content.command.Command;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -20,6 +21,7 @@ public class JailCommand implements Command {
 		final String name = String.format(parts[1].replaceAll("_", " "));
 
 		World.search(name.toString()).ifPresent(other -> {
+			JailActivity.create(player);
 			new PlayerPunishment(other, PlayerPunishementData.JAIL).execute();
 		});
 	}
