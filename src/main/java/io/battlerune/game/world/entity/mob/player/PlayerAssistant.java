@@ -220,15 +220,16 @@ public class PlayerAssistant {
 			if (item.getId() == 21012) {
 				return DragonHunterCrossbowStrategy.get();
 			}
-
-			if (item.getId() == 21225) {
-				return LimeWhipStrategy.get();
-			}
 			if(item.getId() == 3273) {
 				return IceKatanaStrategy.get();
 			}
 			if(item.getId() == 13701) {
 				return CrypticSword.get();
+			}
+
+
+			if (item.getId() == 21225) {
+				return LimeWhipStrategy.get();
 			}
 			if (item.getId() == 11902) {
 				return LeafbladeSword.get();

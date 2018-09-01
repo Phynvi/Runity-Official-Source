@@ -256,10 +256,9 @@ public class TeleportHandler {
 						new Position(2619, 4347) };
 				Teleportation.teleport(player, Utility.randomElement(teleports));
 				player.send(new SendMessage("You have teleported to the puro puro hunter area."));
-			}, "Traps", () -> {
-				// Teleportation.teleport(player, new Position(3044, 9785, 0));
-				// player.send(new SendMessage("You have teleported to the
-				// falador mining area."));
+			}, "Boxed Butterflys", () -> {
+				 Teleportation.teleport(player, new Position(3166, 3307, 0));
+				player.send(new SendMessage("You have teleported to the Boxed Butterflys area."));
 			}, "Nevermind", factory::clear).execute();
 			break;
 

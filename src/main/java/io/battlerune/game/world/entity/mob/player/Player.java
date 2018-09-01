@@ -515,7 +515,8 @@ public class Player extends Mob {
 	 * 
 	 * 
 	 * ClanChannelHandler.connect(player, "Help");
-	 * 
+	 * Just leave this till tomorrow g
+	 * agreed
 	 * }
 	 */
 	private void sendInitialPackets() {

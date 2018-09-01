@@ -31,10 +31,10 @@ public abstract class RangedStrategy<T extends Mob> extends CombatStrategy<T> {
 	@Override
 	public int modifyDamage(T attacker, Mob defender, int damage) {
 		if (defender.prayer.isActive(Prayer.PROTECT_FROM_RANGE)) {
-			damage *= !attacker.isPlayer() || defender.isNpc() ? 0.0 : 0.6;
+			damage *= !attacker.isPlayer() || defender.isNpc() ? 0.0001 : 0.0003;
 		}
-		return damage;
-	}
+		return damage / 1500;
+		}
 
 	protected static void addCombatExperience(Player player, Hit... hits) {
 		int exp = 0;

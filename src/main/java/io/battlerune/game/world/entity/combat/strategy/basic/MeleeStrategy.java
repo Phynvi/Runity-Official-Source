@@ -50,9 +50,9 @@ public abstract class MeleeStrategy<T extends Mob> extends CombatStrategy<T> {
 //                }
 //            }
 
-			damage *= !attacker.isPlayer() || defender.isNpc() ? 0.0 : 0.6;
+			damage *= !attacker.isPlayer() || defender.isNpc() ? 0.0001 : 0.0003;
 		}
-		return damage;
+		return damage / 1500;
 	}
 
 	protected static void addCombatExperience(Player player, Hit... hits) {

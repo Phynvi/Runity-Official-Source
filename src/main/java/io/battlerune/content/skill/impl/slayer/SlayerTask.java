@@ -239,18 +239,6 @@ public enum SlayerTask implements TaskInterface<Player> {
 			return true;
 		}
 	},
-	BLUE_DRAGONS("Blue Dragon", 1, 150, TaskDifficulty.MEDIUM, new Position(1, 1), "Taverly Dungeon", 268, 269, 241,
-			4385, 5878, 5879, 5880, 5881, 5882) {
-		@Override
-		public boolean canAssign(Player player) {
-			return true;
-		}
-
-		@Override
-		public boolean canAttack(Player player) {
-			return true;
-		}
-	},
 	GARGOYLES("Gargoyle", 75, 150, TaskDifficulty.HARD, new Position(1, 1), "Slayer Tower", 412, 413) {
 		@Override
 		public boolean canAssign(Player player) {

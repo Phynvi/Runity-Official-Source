@@ -61,21 +61,21 @@ public final class NpcDropManager {
 		}
 
 		// crystal key drop
-		if (npc.getMaximumHealth() > 50 && Utility.random(350) <= 5) {
+		if (npc.getMaximumHealth() > 50 && Utility.random(150) <= 5) {
 			Item crystal_key = Utility.randomElement(CrystalChest.KEY_HALVES);
 			GroundItem.create(killer, crystal_key, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + crystal_key.getName()));
 		}
 
 		// casket drop
-		if (npc.getMaximumHealth() > 10 && Utility.random(1, 500) <= 2) {
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 200) <= 2) {
 			Item casket = new Item(405);
 			GroundItem.create(killer, casket, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + casket.getName()));
 		}
 
 		// starter box drop
-		if (npc.getMaximumHealth() > 10 && Utility.random(1, 9000) <= 2) {
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 900) <= 5) {
 			Item starterbox = new Item(10028);
 			GroundItem.create(killer, starterbox, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + starterbox.getName()));

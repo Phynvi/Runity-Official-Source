@@ -13,7 +13,7 @@ public class DiscordCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		player.send(new SendURL("https://discord.gg/mjgpDZN"));
+		player.send(new SendURL("https://discord.gg/698HVdT"));
 		player.send(new SendMessage("Launching Runity Discord."));
 	}
 

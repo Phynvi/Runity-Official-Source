@@ -112,7 +112,7 @@ public class StarterKitButtonPlugin extends PluginContext {
 		player.send(new SendMessage("@red@Tutorial Tip@bla@ Pking is also a very good method to make money."));
 		player.runEnergy = +100;
 		player.buttonDelay.reset();
-		ClanChannelHandler.connect(player, "help");
+		//ClanChannelHandler.connect(player, "help");
 
 		// this is needed for logs so players are entered into the db upon first account
 		// creation

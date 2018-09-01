@@ -9,7 +9,7 @@ public class Commands implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		player.send(new SendURL("insert guide link here."));
+		player.send(new SendURL("https://runity.io/forums/topic/61-runity-commands/"));
 		player.message("Opening command list!");
 	}
 

@@ -109,11 +109,6 @@ public class BossInformationButtonPlugin extends PluginContext {
 			player.send(new SendMessage("You have teleported to Chaos Elemental!"));
 		}
 		if (button == -14140) {
-			if (player.skills.getLevel(Skill.SLAYER) < 55) {
-				player.message("You need a Slayer Level of 55 And above to teleport to this boss!");
-				return false;
-			}
-
 			Teleportation.teleport(player, new Position(3307, 3916, 0));
 			player.send(new SendMessage("You have teleported to Giant Roc!"));
 		}
@@ -128,20 +123,17 @@ public class BossInformationButtonPlugin extends PluginContext {
 		}
 		if (button == -14065) {
 			//Teleportation.teleport(player, new Position(2525, 4656, 0));
-			player.send(new SendMessage("Ice demon has been disabled at the moment."));
+			player.send(new SendMessage("Ice Demon is currently being fixed."));
 		}
 		if (button == -14095) {
-			if (player.skills.getLevel(Skill.SLAYER) >= 91) {
+
 				DialogueFactory factory = player.dialogueFactory;
 				factory.sendOption("Pay 75,000 coins for instanced Cerberus?",
 						() -> CerberusActivity.CreatePaidInstance(player),
 						"avoid paying, and head over to the non-instanced version?",
 						() -> CerberusActivity.CreateUnPaidInstance(player), "Nevermind", factory::clear);
 				factory.execute();
-			} else {
-				player.message("You need a Slayer Level of 75 And above to teleport to this boss!");
-			}
-		}
+			} 
 		if (button == -14080) {
 			DialogueFactory factory = player.dialogueFactory;
 			factory.sendOption("Pay 100,000 coins for instanced vorkath?",

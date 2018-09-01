@@ -13,8 +13,8 @@ public class AnswerTriviaCommand implements Command {
 	@Override
 	public void execute(Player player, String command, String[] parts) {
 
-		final String answer = String.format(parts[1]);
-		TriviaBot.answer(player, answer.toString().trim());
+		final String message = command.substring(4, command.length());
+		TriviaBot.answer(player, message);
 
 	}
 

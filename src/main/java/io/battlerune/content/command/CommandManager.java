@@ -43,7 +43,6 @@ import plugin.command.impl.owner.PlayerGuideCommand;
 import plugin.command.impl.owner.PnpcCommand;
 import plugin.command.impl.owner.RandomEvent;
 import plugin.command.impl.owner.RemovePlayerTask;
-import plugin.command.impl.owner.SaveAll;
 import plugin.command.impl.owner.SkotizoSpawnCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
 import plugin.command.impl.owner.SpecCommand;
@@ -66,6 +65,7 @@ import plugin.command.impl.player.DustiesCommand;
 import plugin.command.impl.player.Easts;
 import plugin.command.impl.player.EmptyInventoryCommand;
 import plugin.command.impl.player.ForumCommand;
+import plugin.command.impl.player.GalvekCommandss;
 import plugin.command.impl.player.GambleCommand;
 import plugin.command.impl.player.GdzCommand;
 import plugin.command.impl.player.Helpcommand;
@@ -110,11 +110,12 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "simulate", "simulator" }, new DropSimulatorCommand());
 		PLUGIN.putIfAbsent(new String[] { "vote" }, new VoteCommand());
 		PLUGIN.putIfAbsent(new String[] { "skull" }, new SkullCommand());
-		//PLUGIN.putIfAbsent(new String[] { "duel", "duelarena" }, new DuelArenaCommand());
+		PLUGIN.putIfAbsent(new String[] { "duel", "duelarena" }, new DuelArenaCommand());
 		PLUGIN.putIfAbsent(new String[] { "barrows" }, new BarrowsCommand());
 		PLUGIN.putIfAbsent(new String[] { "skill", "skillingarea" }, new SkillAreaCommand());
 		PLUGIN.putIfAbsent(new String[] { "claim", "donated" }, new ClaimDonationCommand());
-		PLUGIN.putIfAbsent(new String[] { "donate", "store"}, new DonateCommand());
+		PLUGIN.putIfAbsent(new String[] { "donate", "store", "Store" }, new DonateCommand());
+
 		PLUGIN.putIfAbsent(new String[] { "vault", "vaultamount" }, new VaultCommand());
 		PLUGIN.putIfAbsent(new String[] { "drops", "drop" }, new DropInterfaceCommand());
 		PLUGIN.putIfAbsent(new String[] { "gamble", "gamblezone" }, new GambleCommand());
@@ -133,8 +134,9 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "players", "online" }, new PlayerCountCommand());
 		PLUGIN.putIfAbsent(new String[] { "empty", "emptyinventory" }, new EmptyInventoryCommand());
 		PLUGIN.putIfAbsent(new String[] { "dusties", "dusti" }, new DustiesCommand());
-		PLUGIN.putIfAbsent(new String[] { "testdonation", "donatings" }, new ClaimDonationCommand());
 		PLUGIN.putIfAbsent(new String[] { "key", "security" }, new KeyCommand());
+		PLUGIN.putIfAbsent(new String[] { "galvek", "Galvek" }, new GalvekCommandss());
+
 
 
 		/*
@@ -154,15 +156,13 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "unmute", "unmutee" }, new UnmuteCommand());
 		PLUGIN.putIfAbsent(new String[] { "jail", "jaill" }, new JailCommand());
 		PLUGIN.putIfAbsent(new String[] { "unjail", "unjaill" }, new UnjailCommand());
-		
-		PLUGIN.putIfAbsent(new String[] { "bann", "ban", "ruin" }, new BanCommand());
-		PLUGIN.putIfAbsent(new String[] { "unban", "unbann" }, new Unbancommand());
-		PLUGIN.putIfAbsent(new String[] { "kick", "kickk" }, new KickCommand());
-		
-		
 		PLUGIN.putIfAbsent(new String[] { "privatezone", "staffzone" }, new PrivateZoneCommand());
 		PLUGIN.putIfAbsent(new String[] { "teleto", "t2", "tele2" }, new TeletoCommand());
 		PLUGIN.putIfAbsent(new String[] { "teletome", "t2m", "tele2me" }, new TeletomeCommand());
+		PLUGIN.putIfAbsent(new String[] { "bann", "ban", "ruin" }, new BanCommand());
+		PLUGIN.putIfAbsent(new String[] { "unban", "unbann" }, new Unbancommand());
+		PLUGIN.putIfAbsent(new String[] { "kick", "kickk" }, new KickCommand());
+
 
 		/*
 		 * @Owner, @Developer Commands
@@ -198,7 +198,6 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "teleall", "all2me" }, new AllToMeCommand());
 		PLUGIN.putIfAbsent(new String[] { "broadcast", "announcement" }, new BroadcastCommand());
 		PLUGIN.putIfAbsent(new String[] { "kill", "killplayer" }, new KillCommand());
-		PLUGIN.putIfAbsent(new String[] { "saveAll", "save" }, new SaveAll());
 		PLUGIN.putIfAbsent(new String[] { "tele" }, new TeleCommand());
 		
 		for (Entry<String[], Command> map : PLUGIN.entrySet()) {

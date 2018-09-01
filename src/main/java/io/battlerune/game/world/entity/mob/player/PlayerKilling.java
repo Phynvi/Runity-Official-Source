@@ -13,14 +13,13 @@ public class PlayerKilling {
 
 	public static void handle(Player killer, Player victim) {
 		if (victim.isBot) {
-			killer.setpkPoints(killer.getpkPoints() + 1);
-			killer.message("Because the victim was a bot, you only get 1 PK Point for your efforts.");
+			killer.message("Because the victim was a bot, you do not get any Pk Points.");
 			return;
 		}
 
 		// TODO FIXED.
 
-		if (killer.lastHost.equalsIgnoreCase(victim.lastHost)) {
+	/*	if (killer.lastHost.equalsIgnoreCase(victim.lastHost)) {
 			killer.message("<col=FF0019>You were not rewarded since you killed someone with your same IP.");
 			return;
 		}

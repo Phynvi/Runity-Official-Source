@@ -48,7 +48,7 @@ public class StarterKit {
 				new Item[] { new Item(10828, 1), new Item(1127, 1), new Item(1079, 1), new Item(3105),
 						new Item(386, 300), new Item(565, 1000), new Item(555, 5000), new Item(560, 4000),
 						new Item(557, 4000), new Item(3025, 75), new Item(6686, 20), new Item(12696, 10), new Item(841),
-						new Item(861), new Item(995, 850000), new Item(1321), new Item(1325), new Item(4587),
+						new Item(861), new Item(995, 100000), new Item(1321), new Item(1325), new Item(4587),
 						new Item(1215), new Item(884, 1000), new Item(1704), new Item(11902) }),
 
 		CLASSIC(PlayerRight.CLASSIC, new String[] {

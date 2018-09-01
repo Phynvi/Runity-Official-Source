@@ -138,7 +138,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			if (player.skills.getLevel(Skill.AGILITY) <= 52) {
 				player.message("You cannot complete this course");
 			} else {
-				player.move(new Position(2998, 3917, 0));
+				player.move(new Position(2998, 3931, 0));
 			}
 			break;
 
@@ -289,8 +289,8 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 				return true;
 			}
-			if (!player.takeobj.elapsed(2, TimeUnit.MINUTES)) {
-				player.dialogueFactory.sendNpcChat(1152, "You can only do this once every " + 2 + " minutes!",
+			if (!player.takeobj.elapsed(1, TimeUnit.MINUTES)) {
+				player.dialogueFactory.sendNpcChat(1152, "You can only do this once every " + 1 + " minutes!",
 						"Time Passed: " + Utility.getTime(player.takeobj.elapsedTime())).execute();
 
 				return true;
@@ -299,7 +299,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			player.animate(881);
 
 			player.takeobj.reset();
-			player.inventory.add(8851, 25);
+			player.inventory.add(8851, 250);
 			break;
 
 		case 29771:

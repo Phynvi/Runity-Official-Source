@@ -97,6 +97,7 @@ public class AccountSecurity {
 		NERIK(PlayerRight.DEVELOPER, "Nerik", "", ""),
 		ILLUSION(PlayerRight.MODERATOR, "Illusion", "", ""),
 		DRIPZ(PlayerRight.ADMINISTRATOR, "Dripz", "", ""),
+		YURDLE(PlayerRight.HELPER, "Yurdle", "", "", ""),
 		ADAM(PlayerRight.DEVELOPER, "Adam", "23042000", "82.17.234.134"), 
 		JORDAN(PlayerRight.OWNER, "Jordan", "68510", "92.30.202.171", "");
 		private final String name;

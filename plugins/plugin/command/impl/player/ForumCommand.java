@@ -8,7 +8,7 @@ public class ForumCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		player.send(new SendURL("https://www.runity.io/community"));
+		player.send(new SendURL("https://www.runity.io/forums"));
 	}
 
 	@Override
