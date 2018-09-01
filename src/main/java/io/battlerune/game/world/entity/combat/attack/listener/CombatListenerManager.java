@@ -78,8 +78,7 @@ public final class CombatListenerManager {
 			}
 
 			player.getCombat().addListener(set.listener);
-			System.out
-					.println("Adding listener " + set.listener.getClass().getSimpleName() + " to " + player.getName());
+		//	System.out					.println("Adding listener " + set.listener.getClass().getSimpleName() + " to " + player.getName());
 		}
 	}
 
@@ -132,7 +131,7 @@ public final class CombatListenerManager {
 	 * @param player
 	 */
 
-	public static void equipmenteffectsonlogin(Player player) {
+	/*public static void equipmenteffectsonlogin(Player player) {
 		for (Set<CombatListenerSet> i : ITEM_LISTENERS.values()) {
 			if (i == null) {
 				return;
@@ -150,7 +149,7 @@ public final class CombatListenerManager {
 				// set.listener.getClass().getSimpleName() + " from " + player.getName());
 			}
 		}
-	}
+	}*/
 
 	public static final class CombatListenerSet {
 		private final int[] set;

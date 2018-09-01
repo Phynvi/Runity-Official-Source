@@ -93,6 +93,15 @@
       "total-level": 0
     },
     {
+      "name": "Adam",
+      "joined": "2018/08/31",
+      "rank": "SYSTEM",
+      "exp-gained": 0.0,
+      "npc-kills": 0,
+      "player-kills": 0,
+      "total-level": 0
+    },
+    {
       "name": "Adamnew",
       "joined": "2018/08/22",
       "rank": "MEMBER",
@@ -122,6 +131,15 @@
     {
       "name": "Adammm",
       "joined": "2018/08/08",
+      "rank": "MEMBER",
+      "exp-gained": 0.0,
+      "npc-kills": 0,
+      "player-kills": 0,
+      "total-level": 0
+    },
+    {
+      "name": "Fuck You",
+      "joined": "2018/08/31",
       "rank": "MEMBER",
       "exp-gained": 0.0,
       "npc-kills": 0,

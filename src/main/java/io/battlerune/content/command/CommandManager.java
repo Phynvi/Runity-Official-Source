@@ -8,11 +8,14 @@ import plugin.command.impl.donator.DZoneCommand;
 import plugin.command.impl.donator.DonatorBankCommand;
 import plugin.command.impl.donator.DonatorYellCommand;
 import plugin.command.impl.donator.PortalsZoneCommand;
+import plugin.command.impl.moderator.BanCommand;
 import plugin.command.impl.moderator.JailCommand;
+import plugin.command.impl.moderator.KickCommand;
 import plugin.command.impl.moderator.MuteCommand;
 import plugin.command.impl.moderator.PrivateZoneCommand;
 import plugin.command.impl.moderator.TeletoCommand;
 import plugin.command.impl.moderator.TeletomeCommand;
+import plugin.command.impl.moderator.Unbancommand;
 import plugin.command.impl.moderator.UnjailCommand;
 import plugin.command.impl.moderator.UnmuteCommand;
 import plugin.command.impl.owner.AllToMeCommand;
@@ -40,6 +43,7 @@ import plugin.command.impl.owner.PlayerGuideCommand;
 import plugin.command.impl.owner.PnpcCommand;
 import plugin.command.impl.owner.RandomEvent;
 import plugin.command.impl.owner.RemovePlayerTask;
+import plugin.command.impl.owner.SaveAll;
 import plugin.command.impl.owner.SkotizoSpawnCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
 import plugin.command.impl.owner.SpecCommand;
@@ -106,12 +110,11 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "simulate", "simulator" }, new DropSimulatorCommand());
 		PLUGIN.putIfAbsent(new String[] { "vote" }, new VoteCommand());
 		PLUGIN.putIfAbsent(new String[] { "skull" }, new SkullCommand());
-		PLUGIN.putIfAbsent(new String[] { "duel", "duelarena" }, new DuelArenaCommand());
+		//PLUGIN.putIfAbsent(new String[] { "duel", "duelarena" }, new DuelArenaCommand());
 		PLUGIN.putIfAbsent(new String[] { "barrows" }, new BarrowsCommand());
 		PLUGIN.putIfAbsent(new String[] { "skill", "skillingarea" }, new SkillAreaCommand());
 		PLUGIN.putIfAbsent(new String[] { "claim", "donated" }, new ClaimDonationCommand());
-		PLUGIN.putIfAbsent(new String[] { "donate", "store", "Store" }, new ClaimDonationCommand());
-
+		PLUGIN.putIfAbsent(new String[] { "donate", "store"}, new DonateCommand());
 		PLUGIN.putIfAbsent(new String[] { "vault", "vaultamount" }, new VaultCommand());
 		PLUGIN.putIfAbsent(new String[] { "drops", "drop" }, new DropInterfaceCommand());
 		PLUGIN.putIfAbsent(new String[] { "gamble", "gamblezone" }, new GambleCommand());
@@ -151,6 +154,12 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "unmute", "unmutee" }, new UnmuteCommand());
 		PLUGIN.putIfAbsent(new String[] { "jail", "jaill" }, new JailCommand());
 		PLUGIN.putIfAbsent(new String[] { "unjail", "unjaill" }, new UnjailCommand());
+		
+		PLUGIN.putIfAbsent(new String[] { "bann", "ban", "ruin" }, new BanCommand());
+		PLUGIN.putIfAbsent(new String[] { "unban", "unbann" }, new Unbancommand());
+		PLUGIN.putIfAbsent(new String[] { "kick", "kickk" }, new KickCommand());
+		
+		
 		PLUGIN.putIfAbsent(new String[] { "privatezone", "staffzone" }, new PrivateZoneCommand());
 		PLUGIN.putIfAbsent(new String[] { "teleto", "t2", "tele2" }, new TeletoCommand());
 		PLUGIN.putIfAbsent(new String[] { "teletome", "t2m", "tele2me" }, new TeletomeCommand());
@@ -189,6 +198,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "teleall", "all2me" }, new AllToMeCommand());
 		PLUGIN.putIfAbsent(new String[] { "broadcast", "announcement" }, new BroadcastCommand());
 		PLUGIN.putIfAbsent(new String[] { "kill", "killplayer" }, new KillCommand());
+		PLUGIN.putIfAbsent(new String[] { "saveAll", "save" }, new SaveAll());
 		PLUGIN.putIfAbsent(new String[] { "tele" }, new TeleCommand());
 		
 		for (Entry<String[], Command> map : PLUGIN.entrySet()) {

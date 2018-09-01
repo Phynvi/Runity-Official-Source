@@ -16,7 +16,7 @@ public class KickCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		final String name = String.format(parts[1]);
+		final String name = String.format(parts[1].replaceAll("_", " "));
 		World.kickPlayer(p -> p.getName().equalsIgnoreCase(name));
 		player.send(new SendMessage("@or2@You have kicked " + name + "!"));
 	}

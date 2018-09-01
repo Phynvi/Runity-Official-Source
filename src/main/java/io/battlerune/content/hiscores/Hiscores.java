@@ -37,7 +37,7 @@ public class Hiscores {
 	
 	private int[] getExperience() {
 		for(int i = 0; i < player.skills.getSkills().length; i++) {
-			System.out.println("Experience: " + Skill.getExperienceForLevel(99));
+		//	System.out.println("Experience: " + Skill.getExperienceForLevel(99));
 			experience[i] = (int) player.skills.getSkills()[i].getExperience();
 		}
 		return experience;

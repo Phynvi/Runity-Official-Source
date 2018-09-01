@@ -61,43 +61,26 @@ public final class NpcDropManager {
 		}
 
 		// crystal key drop
-		if (npc.getMaximumHealth() > 50 && Utility.random(150) <= 5) {
+		if (npc.getMaximumHealth() > 50 && Utility.random(350) <= 5) {
 			Item crystal_key = Utility.randomElement(CrystalChest.KEY_HALVES);
 			GroundItem.create(killer, crystal_key, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + crystal_key.getName()));
 		}
 
 		// casket drop
-		if (npc.getMaximumHealth() > 10 && Utility.random(1, 200) <= 2) {
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 500) <= 2) {
 			Item casket = new Item(405);
 			GroundItem.create(killer, casket, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + casket.getName()));
 		}
 
 		// starter box drop
-		if (npc.getMaximumHealth() > 10 && Utility.random(1, 900) <= 5) {
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 9000) <= 2) {
 			Item starterbox = new Item(10028);
 			GroundItem.create(killer, starterbox, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + starterbox.getName()));
 		}
 
-		// Mystery box
-		if (npc.getMaximumHealth() > 10 && Utility.random(1, 12500) <= 1) {
-			Item mbox = new Item(6199);
-			GroundItem.create(killer, mbox, dropPosition);
-			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + mbox.getName()));
-			World.sendMessage("<col=BA383E>Rare Drop Notification: </col>" + mbox.getName() + " Given to : <col=BA383E>"
-					+ killer.getName());
-		}
-
-		// Bond box
-		if (npc.getMaximumHealth() > 10 && Utility.random(1, 15000) <= 1) {
-			Item bond = new Item(13190, 2);
-			GroundItem.create(killer, bond, dropPosition);
-			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + bond.getName()));
-			World.sendMessage("<col=BA383E>Rare Drop Notification: </col>" + bond.getName() + " Given to : <col=BA383E>"
-					+ killer.getName());
-		}
 
 		// drop table
 		for (NpcDrop drop : npc_drops) {

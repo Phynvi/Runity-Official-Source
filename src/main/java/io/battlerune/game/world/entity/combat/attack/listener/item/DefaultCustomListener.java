@@ -11,8 +11,7 @@ import io.battlerune.game.world.entity.mob.Mob;
  * 
  * @author Adam_#6723
  */
-@ItemCombatListenerSignature(requireAll = false, items = {
-		13738, 
+@ItemCombatListenerSignature(requireAll = false, items = { 13738, 
 				  13739, 13740, 13741, 13742, 13743, 13744, 13745, 13746, 13747, 13748, 13749,
 				  16628, 16629, 16630, 16631, 16647, 16648, 16649, 16650, 16651, 16653, 16654,
 				  16655, 16656, 19923, 16657, 16658, 16659, 16660, 16661, 16662, 16663, 16664,

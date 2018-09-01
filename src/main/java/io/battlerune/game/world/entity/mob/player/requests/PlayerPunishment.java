@@ -1,8 +1,6 @@
 package io.battlerune.game.world.entity.mob.player.requests;
 
-import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.concurrent.TimeUnit;
 
 import io.battlerune.content.activity.impl.JailActivity;
@@ -69,12 +67,12 @@ public class PlayerPunishment {
 		player.send(new SendLogout());
 		World.queueLogout(player);
 		PrintWriter writer = null;
-		try {
+	/*	try {
 			writer = new PrintWriter("BanReasons", "UTF-8");
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generated catch block i couldn't get that working lol, the ban reasons
 			e.printStackTrace();
-		}
+		}*/
 		writer.println("User was banned" + player.getName() + "!");
 		writer.println("Reason for their ban:");
 		writer.close();

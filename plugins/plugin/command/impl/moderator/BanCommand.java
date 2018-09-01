@@ -9,47 +9,40 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.net.packet.out.SendInputAmount;
 
-/**
- * 
- * @author Adam_#6723
- *
- */
-
-public class MuteCommand implements Command {
+public class BanCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-
-		final String name = String.format(parts[1].replaceAll("_", " "));
+		String name = parts[1].replaceAll("_", " ");
 
 		World.search(name.toString()).ifPresent(other -> {
 			if (PlayerRight.isPriviledged(other) && !PlayerRight.isDeveloper(player)) {
-				player.message("@or2@You do not have permission to mute this player!");
+				player.message("You do not have permission to ban this player!");
 				return;
 			}
 
 			DialogueFactory factory = player.dialogueFactory;
-			factory.sendOption("Mute by day", () -> {
+			factory.sendOption("Ban by day", () -> {
 				factory.onAction(() -> player
-						.send(new SendInputAmount("How long do you want this mute to last for?", 2, input -> {
-							other.punishment.mute(Integer.parseInt(input), TimeUnit.DAYS);
+						.send(new SendInputAmount("How long do you want this ban to last for?", 2, input -> {
+							other.punishment.banUser(Integer.parseInt(input), TimeUnit.DAYS);
 							factory.clear();
 						})));
-			}, "Mute by hour", () -> {
+			}, "Ban by hour", () -> {
 				factory.onAction(() -> player
-						.send(new SendInputAmount("How long do you want this mute to last for?", 3, input -> {
-							other.punishment.mute(Integer.parseInt(input), TimeUnit.HOURS);
+						.send(new SendInputAmount("How long do you want this ban to last for?", 3, input -> {
+							other.punishment.banUser(Integer.parseInt(input), TimeUnit.HOURS);
 							factory.clear();
 						})));
-			}, "Mute by minute", () -> {
+			}, "Ban by minute", () -> {
 				factory.onAction(() -> player
-						.send(new SendInputAmount("How long do you want this mute to last for?", 3, input -> {
-							other.punishment.mute(Integer.parseInt(input), TimeUnit.MINUTES);
+						.send(new SendInputAmount("How long do you want this ban to last for?", 3, input -> {
+							other.punishment.banUser(Integer.parseInt(input), TimeUnit.MINUTES);
 							factory.clear();
 						})));
-			}, "Mute forever", () -> {
+			}, "Ban forever", () -> {
 				factory.onAction(() -> {
-					other.punishment.mute(9999, TimeUnit.DAYS);
+					other.punishment.banUser(9999, TimeUnit.DAYS);
 					factory.clear();
 				});
 			}).execute();

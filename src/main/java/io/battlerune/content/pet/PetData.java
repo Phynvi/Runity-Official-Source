@@ -11,6 +11,16 @@ import io.battlerune.content.dialogue.DialogueFactory;
  * @author adam
  */
 public enum PetData {
+	CRAWLING_HAND("Crawling Hand", 4133, 457) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Hello");
+			factory.sendNpcChat(5883, "Are you my dad?!");
+			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
+			factory.execute();
+
+		}
+	},
 	BABY_RUNE_DRAGON("Baby Rune Dragon", 21911, 8091) {
 		@Override
 		public void dialogue(DialogueFactory factory) {

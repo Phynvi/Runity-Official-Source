@@ -62,7 +62,7 @@ public class FlowerHandler {
 					CustomGameObject gameObject = new CustomGameObject(getTempFlower().getObjectId(),
 							player.getPosition().copy(), ObjectDirection.valueOf(0).orElse(ObjectDirection.WEST),
 							ObjectType.INTERACTABLE);
-					World.schedule(new ObjectPlacementEvent(gameObject, 50));
+					World.schedule(new ObjectPlacementEvent(gameObject, 200));
 					player.message(
 							"You have planted @red@" + ItemDefinition.get(getTempFlower().getItemId()).getName());
 					break;

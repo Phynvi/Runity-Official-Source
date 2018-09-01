@@ -36,8 +36,10 @@ import io.battlerune.game.world.entity.combat.strategy.CombatStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerMagicStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerMeleeStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerRangedStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.CrypticSword;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.DragonHunterCrossbowStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.FireyBowStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.IceKatanaStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LeafbladeSword;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LimeWhipStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LongbowStrategy;
@@ -221,6 +223,12 @@ public class PlayerAssistant {
 
 			if (item.getId() == 21225) {
 				return LimeWhipStrategy.get();
+			}
+			if(item.getId() == 3273) {
+				return IceKatanaStrategy.get();
+			}
+			if(item.getId() == 13701) {
+				return CrypticSword.get();
 			}
 			if (item.getId() == 11902) {
 				return LeafbladeSword.get();

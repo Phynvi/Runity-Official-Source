@@ -153,15 +153,15 @@ public class GoldMysteryBox implements MysteryBoxListener {
 		 * Utility.random(1, 250) <= 10 <---- This generates a RANDOM NUMBER between 1
 		 * and 150 and if the RANDOM NUMBER is equal to 10 then it will execute.
 		 */
-		if (Utility.random(1, 125) <= 10) {
+		if (Utility.random(1, 125) <= 12) {
 			player.inventory.add(getUncommon()[random.nextInt(getUncommon().length)]);
 			player.message("You have recieved a Uncommon loot!");
 		}
-		if (Utility.random(1, 225) <= 7) {
+		if (Utility.random(1, 200) <= 10) {
 			player.inventory.add(getRare()[random.nextInt(getRare().length)]);
 			player.message("@gre@You have recieved a Rare loot!");
 		}
-		if (Utility.random(1, 325) <= 5) {
+		if (Utility.random(1, 300) <= 7) {
 			player.inventory.add(getUltra()[random.nextInt(getUltra().length)]);
 			player.message("You have recieved a ULTRA RARE LOOT!");
 			World.sendMessage(player.getName() + " @red@Has received ULTRA RARE LOOT!");

@@ -137,6 +137,8 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		case 23555:
 			if (player.skills.getLevel(Skill.AGILITY) <= 52) {
 				player.message("You cannot complete this course");
+			} else {
+				player.move(new Position(2998, 3917, 0));
 			}
 			break;
 

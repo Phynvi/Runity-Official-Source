@@ -214,22 +214,8 @@ public class TeleportHandler {
 				Teleportation.teleport(player, new Position(2546, 3551, 0));
 				player.send(new SendMessage("You have teleported to the Barbarian agility course."));
 			}, "Wilderness agility course", () -> {
-
-				if (player.skills.getLevel(Skill.MAGIC) <= 51) {
-					player.message("Get 52 Agility before attempting this course.");
-				} else {
-					if (player.inventory.containsAny(Config.NOT_ALLOWED)) {
-						player.message("No Custom's in the wilderness...period.");
-						return;
-					}
-					if (player.equipment.containsAny(Config.NOT_ALLOWED)) {
-						player.message("No Custom's in the wilderness...period.");
-						return;
-					}
 					Teleportation.teleport(player, new Position(2998, 3915, 0));
 					player.send(new SendMessage("You have teleported to the Wilderness agility course."));
-
-				}
 			}, "Rooftop courses", () -> {
 				factory.sendStatement("Loading").sendOption("Seer's Village rooftop course", () -> {
 					Teleportation.teleport(player, new Position(2729, 3488, 0));

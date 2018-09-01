@@ -19,7 +19,7 @@ public class JailCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		final String name = String.format(parts[1]);
+		final String name = String.format(parts[1].replaceAll("_", " "));
 		World.search(name.toString()).ifPresent(other -> {
 			if (PlayerRight.isPriviledged(other) && !PlayerRight.isDeveloper(player)) {
 				player.message("@or2@You do not have permission to jail this player!");

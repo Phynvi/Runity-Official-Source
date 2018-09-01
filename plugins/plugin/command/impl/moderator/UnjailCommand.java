@@ -9,13 +9,13 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
  * 
  * @author Adam_#6723
  *
- */
+ *///where are the commands lol
 
 public class UnjailCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		final String name = String.format(parts[1]);
+		final String name = String.format(parts[1].replaceAll("_", " "));
 		World.search(name.toString()).ifPresent(other -> {
 			other.punishment.unJail();
 			other.dialogueFactory.sendStatement("@or2@You have been unjailed!").execute();
