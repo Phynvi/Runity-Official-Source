@@ -139,7 +139,7 @@ public class Slayer {
 			return;
 		}
 
-		if (points < 100 && !PlayerRight.isDonator(player) || !PlayerRight.isDeveloper(player)) {
+		if (points < 100) {
 			player.message("You need 100 slayer points to block a task, unless you are a donator.");
 			return;
 		}

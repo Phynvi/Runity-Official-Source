@@ -140,6 +140,8 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(12823, 1), // spectral sigil
 				new Item(12827, 1), // arcane sigil
 				new Item(21225, 1),
+				new Item(13703, 1), new Item(13704, 1), new Item(13705, 1), new Item(13687, 1),
+				new Item(13686, 1),
 
 		};
 	}
@@ -161,7 +163,7 @@ public class GoldMysteryBox implements MysteryBoxListener {
 			player.inventory.add(getRare()[random.nextInt(getRare().length)]);
 			player.message("@gre@You have recieved a Rare loot!");
 		}
-		if (Utility.random(1, 300) <= 7) {
+		if (Utility.random(1, 250) <= 5) {
 			player.inventory.add(getUltra()[random.nextInt(getUltra().length)]);
 			player.message("You have recieved a ULTRA RARE LOOT!");
 			World.sendMessage(player.getName() + " @red@Has received ULTRA RARE LOOT!");

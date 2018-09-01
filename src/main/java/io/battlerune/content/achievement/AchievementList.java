@@ -25,7 +25,7 @@ public enum AchievementList {
 	KILLER(10, AchievementKey.KILLER, AchievementDifficulty.EASY, "Kill 10 players"),
 	CUT100TREES1(500, AchievementKey.CUT100TREES, AchievementDifficulty.EASY, "Chop down 500 trees"),
 	KILL_KRAKEN_I(25, AchievementKey.KILL_KRAKEN, AchievementDifficulty.EASY, "Kill Kraken 25 Times"),
-	STEAL_FROM_STALL(30, AchievementKey.STEAL_FROM_STALL, AchievementDifficulty.EASY, "Steal from a stall"),
+	STEAL_FROM_STALL(1, AchievementKey.STEAL_FROM_STALL, AchievementDifficulty.EASY, "Steal from a stall"),
 
 	/* Medium achievements */
 	CUT100TREES(500, AchievementKey.CUT100TREES, AchievementDifficulty.MEDIUM, "Cut 500 Trees (any)"),

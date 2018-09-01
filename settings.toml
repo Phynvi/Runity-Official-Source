@@ -39,7 +39,7 @@ runecrafting_modifier = 5.0
 slayer_modifier = 5.0
 woodcutting_modifier = 5.0
 thieving_modifier = 5.0
-smithing_modifier = 5.0
+smithing_modifier = 10.0
 fishing_modifier = 5.0
 farming_modifier = 5.0
 

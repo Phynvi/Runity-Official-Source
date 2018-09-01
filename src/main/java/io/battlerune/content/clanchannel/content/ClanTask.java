@@ -76,8 +76,8 @@ public enum ClanTask {
 			new InclusiveRandom(50, 150)),
 
 	/* -> Easy <- */
-	SEND_CLAN_MESSAGES(ClanType.SOCIAL, Difficulty.EASY, "Send %s Clan Messages!", SEND_CLAN_MESSAGE,
-			new InclusiveRandom(50, 75)),
+	/*SEND_CLAN_MESSAGES(ClanType.SOCIAL, Difficulty.EASY, "Send %s Clan Messages!", SEND_CLAN_MESSAGE,
+			new InclusiveRandom(50, 75)),*/
 	/* -> Easy <- */
 	ANY_TREE(ClanType.IRON_MAN, Difficulty.EASY, "Chop % Logs (Any Tree!)", CHOP_ANY_LOG,
 			new InclusiveRandom(150, 350)),

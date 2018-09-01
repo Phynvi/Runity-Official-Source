@@ -143,7 +143,7 @@ public class SilverMysteryBox implements MysteryBoxListener {
 			player.inventory.add(getRare()[random.nextInt(getRare().length)]);
 			player.message("@gre@You have recieved a Rare loot!");
 		}
-		if (Utility.random(1, 325) <= 5) {
+		if (Utility.random(1, 250) <= 5) {
 			player.inventory.add(getUltra()[random.nextInt(getUltra().length)]);
 			player.message("You have recieved a ULTRA RARE LOOT!");
 			World.sendMessage(player.getName() + " @red@Has received ULTRA RARE LOOT!");

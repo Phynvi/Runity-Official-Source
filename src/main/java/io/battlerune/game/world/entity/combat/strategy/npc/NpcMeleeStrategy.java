@@ -11,6 +11,7 @@ import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.strategy.basic.MeleeStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.util.RandomUtils;
 
 public class NpcMeleeStrategy extends MeleeStrategy<Npc> {
@@ -26,17 +27,20 @@ public class NpcMeleeStrategy extends MeleeStrategy<Npc> {
 	}
 
 	@Override
-	public void attack(Npc attacker, Mob defender, Hit hit) {
-		if (!attacker.definition.isPoisonous()) {
-			return;
-		}
+    public void attack(Npc attacker, Mob defender, Hit hit) {
+		if((defender != null && !defender.isNpc() && defender.getPlayer() != null) && defender.getPlayer().prayer.isActive(Prayer.PROTECT_FROM_MELEE))
+            hit.setDamage(attacker.isNpc() ? 0 : hit.getDamage() / 2);
+		
+        if (!attacker.definition.isPoisonous()) {
+            return;
+        }
 
-		if (CombatVenomEffect.isVenomous(attacker) && RandomUtils.success(0.25)) {
-			defender.venom();
-		} else {
-			CombatPoisonEffect.getPoisonType(attacker.id).ifPresent(defender::poison);
-		}
-	}
+        if (CombatVenomEffect.isVenomous(attacker) && RandomUtils.success(0.25)) {
+            defender.venom();
+        } else {
+            CombatPoisonEffect.getPoisonType(attacker.id).ifPresent(defender::poison);
+        }
+    }
 
 	@Override
 	public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {

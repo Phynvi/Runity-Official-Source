@@ -634,28 +634,28 @@
 			    "items": [
 			              {
 							     "id": 7462, // Barrows gloves
-							     "value": 150, // ~10 kills
+							     "value": 1, // ~10 kills
 							     "amount": 100
 							  },
 			              {
 								     "id": 10551, // Fighter torso
-								     "value": 150, // ~10 kills
+								     "value": 1, // ~10 kills
 								     "amount": 100
 								  },
 			              {
 									     "id": 10548, // Fighter Hat
-									     "value": 150, // ~10 kills
+									     "value": 1, // ~10 kills
 									     "amount": 100
 									  },
 			              {
 										     "id": 6570, // firecape
-										     "value": 750, // ~50 kills
+										     "value": 1, // ~50 kills
 										     "amount": 100
 										  },  
 			              
 			              {
 											     "id": 21295, // Infernal cape
-											     "value": 2250, // ~150 kills,
+											     "value": 250, // ~150 kills,
 											     "amount": 100
 											  },    
 			              
@@ -3987,10 +3987,6 @@
           "value": 750
       },
       {
-          "id": 12774,
-          "amount": 1000,
-          "value": 350
-      },      {
           "id": 12773,
           "amount": 1000,
           "value": 500
@@ -4015,106 +4011,105 @@
       {
         "id": 12875,
         "amount": 1000,
-        "value": 250
+        "value": 350
       },
       
       {
         "id": 12873,
         "amount": 1000,
-        "value": 250
+        "value": 350
       },
       
       {
         "id": 12877,
         "amount": 1000,
-        "value": 250     
+        "value": 350     
       }, 
        
       { 
         "id": 12881,
         "amount": 1000,
-        "value": 250
+        "value": 350
       },
       
       {
         "id": 12883,
         "amount": 1000,
-        "value": 250
+        "value": 350
       },      
       {
         "id": 12879,
         "amount": 1000,
-        "value": 250
+        "value": 350
       },        
       {
         "id": 2572,
         "amount": 1000,
-        "value": 100
+        "value": 300
       },      
       {
         "id": 12785,
         "amount": 1000,
-        "value": 250
+        "value": 350
       },     
       {
         "id": 4178,
         "amount": 1000,
-        "value": 100
+        "value": 200
       },       
       {
         "id": 21223,
         "amount": 1000,
-        "value": 275
+        "value": 375
       }, 
         
       {
         "id": 10551,
         "amount": 1000,
-        "value": 300
+        "value": 400
       }, 
       
       {
         "id": 11834,
         "amount": 1000,
-        "value": 300
+        "value": 400
       },  
         
       {  
         "id": 11832,
         "amount": 1000,
-        "value": 300
+        "value": 500
       },  
       
       {  
         "id": 11836,
         "amount": 1000,
-        "value": 300
+        "value": 500
       }, 
       
       {  
          "id": 11773,
         "amount": 1000,
-        "value": 300
+        "value": 500
       },  
         
       {
         "id": 11770,
         "amount": 1000,
-        "value": 300
+        "value": 500
       },  
         
       {
         "id": 11771,
         "amount": 1000,
-        "value": 300
+        "value": 500
       }, 
         
       {
         "id": 7460,
         "amount": 1000,
-        "value": 65
+        "value": 105
       }, 
-        
       {
         "id": 12954,
         "amount": 1000,

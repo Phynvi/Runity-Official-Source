@@ -319,14 +319,14 @@ public final class Config {
 
 	/** Messages that are sent periodically to all players. */
 	public static final String[] MESSAGES = { "The owner & founder of Runity is Jordan & Adam.",
-			"Runity game developers are Adam & Harry", "Our website is located at: http://runity.io",
+			"Runity game developers are Adam & Harry", "Our website is located at: https://runity.io",
 			"Add more security to your account by setting a bank pin.", "Tired of constantly re-gearing? Set a preset!",
 			"Have any ideas on how we could improve our gameplay? Post on forums!.",
 			"Voting daily can be very beneficial & it supports the server!",
 			"Found a bug? Let a moderator know or post it on the forums!",
 			"Did you know you can change your combat level by clicking on the skill?",
 			"You can do ::commands for a list of commands!",
-             "do ::store to purchase bonds to make purchases",
+             "Do ::store to purchase bonds to make purchases",
 	"Saying you don't need privacy because you have nothing to hide is like saying you don't need free speech because you have nothing to say." };
 
 	/**

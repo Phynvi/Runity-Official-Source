@@ -71,9 +71,6 @@ public class GiantRoc extends MultiStrategy {
 			defender.animate(new Animation(5023, UpdatePriority.VERY_HIGH));
 			defender.graphic(1196);
 			defender.graphic(481);
-			defender.speak("Night King, Lend me your powers for i am your faithful servant!");
-			defender.prayer.deactivate(Prayer.PROTECT_FROM_MAGIC, Prayer.PROTECT_FROM_MELEE, Prayer.PROTECT_FROM_RANGE);
-			defender.getPlayer().send(new SendMessage("Your overhead prayers have been disabled!"));
 
 			RegionManager.forNearbyPlayer(attacker, 20, other -> {
 				if (RandomUtils.success(.65))
@@ -171,7 +168,7 @@ public class GiantRoc extends MultiStrategy {
 				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
 			});
 
-			if (Utility.random(0, 2) == 1)
+			if (Utility.random(0, 10) <= 1)
 				attacker.speak(Utility.randomElement(SHOUTS));
 			defender.prayer.deactivate(Prayer.PROTECT_FROM_MAGIC, Prayer.PROTECT_FROM_MELEE, Prayer.PROTECT_FROM_RANGE);
 			defender.getPlayer().send(new SendMessage("Your overhead prayers have been disabled!"));

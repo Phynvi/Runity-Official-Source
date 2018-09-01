@@ -17,6 +17,7 @@ import io.battlerune.game.world.entity.combat.projectile.CombatProjectile;
 import io.battlerune.game.world.entity.combat.strategy.basic.RangedStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.util.RandomUtils;
 
 public class NpcRangedStrategy extends RangedStrategy<Npc> {
@@ -42,21 +43,24 @@ public class NpcRangedStrategy extends RangedStrategy<Npc> {
 	}
 
 	@Override
-	public void attack(Npc attacker, Mob defender, Hit hit) {
-		Predicate<CombatImpact> filter = effect -> effect.canAffect(attacker, defender, hit);
-		Consumer<CombatImpact> execute = effect -> effect.impact(attacker, defender, hit, null);
-		projectileDefinition.getEffect().filter(filter).ifPresent(execute);
+    public void attack(Npc attacker, Mob defender, Hit hit) {
+        if(defender != null && !defender.isNpc() && defender.getPlayer() != null)
+            if(defender.getPlayer().prayer.isActive(Prayer.PROTECT_FROM_RANGE))
+                hit.setDamage(attacker.isNpc() ? 0:hit.getDamage()/2);
+        Predicate<CombatImpact> filter = effect -> effect.canAffect(attacker, defender, hit);
+        Consumer<CombatImpact> execute = effect -> effect.impact(attacker, defender, hit, null);
+        projectileDefinition.getEffect().filter(filter).ifPresent(execute);
 
-		if (!attacker.definition.isPoisonous()) {
-			return;
-		}
+        if (!attacker.definition.isPoisonous()) {
+            return;
+        }
 
-		if (CombatVenomEffect.isVenomous(attacker) && RandomUtils.success(0.25)) {
-			defender.venom();
-		} else {
-			CombatPoisonEffect.getPoisonType(attacker.id).ifPresent(defender::poison);
-		}
-	}
+        if (CombatVenomEffect.isVenomous(attacker) && RandomUtils.success(0.25)) {
+            defender.venom();
+        } else {
+            CombatPoisonEffect.getPoisonType(attacker.id).ifPresent(defender::poison);
+        }
+    }
 
 	@Override
 	public void hit(Npc attacker, Mob defender, Hit hit) {
