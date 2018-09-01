@@ -18,7 +18,7 @@ public class UnmuteCommand implements Command {
 
 		final String name = String.format(parts[1].replaceAll("_", " "));
 		World.search(name.toString()).ifPresent(other -> {
-			other.punishment.unmute();
+			//other.punishment.unmute();
 			other.dialogueFactory.sendStatement("@or2@You have been unmuted!").execute();
 			player.message("@or2@unmute was complete");
 

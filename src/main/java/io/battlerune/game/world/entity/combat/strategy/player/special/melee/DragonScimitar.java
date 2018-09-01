@@ -13,6 +13,7 @@ import io.battlerune.net.packet.out.SendMessage;
 
 /** @author Daniel | Obey */
 public class DragonScimitar extends PlayerMeleeStrategy {
+	
 	private static final Animation ANIMATION = new Animation(1872, UpdatePriority.HIGH);
 	private static final Graphic GRAPHIC = new Graphic(347);
 	private static final DragonScimitar INSTANCE = new DragonScimitar();

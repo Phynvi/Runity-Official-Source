@@ -3,10 +3,13 @@ package io.battlerune.game.world.entity.mob.player.relations;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Map.Entry;
 
 import io.battlerune.game.event.impl.log.PrivateMessageChatLogEvent;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishementData;
+import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
 import io.battlerune.net.packet.out.SendAddFriend;
 import io.battlerune.net.packet.out.SendAddIgnore;
 import io.battlerune.net.packet.out.SendChatOption;
@@ -203,9 +206,13 @@ public final class PlayerRelation {
 	}
 
 	public void message(Player friend, PrivateChatMessage message) {
-		if (player.punishment.isMuted()) {
-			player.message("You can not send private messages while muted!");
-			return;
+		for (Entry<String, PlayerPunishementData> data : PlayerPunishment.DATA.entrySet()) {
+			if (data.getKey().equalsIgnoreCase(player.getUsername())) {
+				if (data.getValue().equals(PlayerPunishementData.MUTE)) {
+					player.send(new SendMessage("You can not send private messages while muted!"));
+					return;
+				}
+			}
 		}
 		if (friend == null) {
 			player.send(new SendMessage("This player is currently offline."));

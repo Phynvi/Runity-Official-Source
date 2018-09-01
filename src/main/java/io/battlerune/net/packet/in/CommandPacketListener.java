@@ -1,9 +1,13 @@
 package io.battlerune.net.packet.in;
 
+import java.util.Map.Entry;
+
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.content.command.Command;
 import io.battlerune.content.command.CommandManager;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishementData;
+import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
 import io.battlerune.net.packet.ClientPackets;
 import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.packet.PacketListener;
@@ -27,9 +31,13 @@ public final class CommandPacketListener implements PacketListener {
 		parts[0] = parts[0].toLowerCase();
 
 		if (input.startsWith("/")) {
-			if (player.punishment.isMuted()) {
-				player.message("You can not send clan messages while muted!");
-				return;
+			for (Entry<String, PlayerPunishementData> data : PlayerPunishment.DATA.entrySet()) {
+				if (data.getKey().equalsIgnoreCase(player.getUsername())) {
+					if (data.getValue().equals(PlayerPunishementData.MUTE)) {
+						player.send(new SendMessage("You can not send clan messages while muted!"));
+						return;
+					}
+				}
 			}
 
 			player.forClan(channel -> {

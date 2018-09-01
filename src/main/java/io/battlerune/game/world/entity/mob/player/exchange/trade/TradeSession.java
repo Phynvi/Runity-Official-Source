@@ -1,5 +1,6 @@
 package io.battlerune.game.world.entity.mob.player.exchange.trade;
 
+import io.battlerune.content.logger.LoggerExecuter;
 import io.battlerune.game.event.impl.log.TradeLogEvent;
 import io.battlerune.game.world.InterfaceConstants;
 import io.battlerune.game.world.World;
@@ -149,7 +150,25 @@ public final class TradeSession extends ExchangeSession {
 				player.inventory.addAll(otherItems);
 				other.inventory.addAll(playerItems);
 
-				World.getDataBus().publish(new TradeLogEvent(player, playerItems, other, otherItems));
+				String player_items = "";
+				String other_items = "";
+				
+				for(int i = 0; i < playerItems.length; i++) {
+					if(playerItems[i] != null) {
+						player_items += "[" +playerItems[i].getName() + " : " + playerItems[i].getAmount() + "]";
+					}
+				}
+				
+				for(int j = 0; j < otherItems.length; j++) {
+					if(otherItems[j] != null) {
+						other_items += "[" +otherItems[j].getName() + " : " + otherItems[j].getAmount() + "]";
+					}
+				}
+				
+				new LoggerExecuter("trading", player, other, "["+player.getUsername()+"] ["+player_items+"] "
+						+ "- ["+other.getUsername()+"] ["+other_items+"]").execute();
+				
+				//World.getDataBus().publish(new TradeLogEvent(player, playerItems, other, otherItems));
 
 				forEach(p -> p.send(new SendMessage("Trade successfully completed with " + this.getOther(p).getName(),
 						MessageColor.RED)));

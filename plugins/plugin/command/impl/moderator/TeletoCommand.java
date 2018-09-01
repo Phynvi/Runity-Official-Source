@@ -16,8 +16,7 @@ public class TeletoCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-
-		final String name = String.format(parts[1]);
+		final String name = String.format(parts[1].replaceAll("_", " "));
 
 		if (World.search(name).isPresent()) {
 			final Player target = World.search(name).get();

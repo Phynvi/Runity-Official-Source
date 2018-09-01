@@ -1,11 +1,14 @@
 package io.battlerune.content;
 
 import java.util.Arrays;
+import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishementData;
+import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.Utility;
 
@@ -32,14 +35,14 @@ public class Yell {
 			return;
 		}
 
-		if (player.punishment.isMuted()) {
-			player.message("You are muted and can not yell!");
-			return;
-		}
-
-		if (player.punishment.isJailed()) {
-			player.message("You are jailed and can not yell!");
-			return;
+		for (Entry<String, PlayerPunishementData> data : PlayerPunishment.DATA.entrySet()) {
+			if (data.getKey().equalsIgnoreCase(player.getUsername())) {
+				if (data.getValue().equals(PlayerPunishementData.MUTE)
+						|| data.getValue().equals(PlayerPunishementData.JAIL)) {
+					player.send(new SendMessage("You are muted / jailed and can not yell!"));
+					return;
+				}
+			}
 		}
 
 		if (!player.yellDelay.elapsed(20, TimeUnit.SECONDS) && !PlayerRight.isManagement(player)) {

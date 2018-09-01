@@ -86,6 +86,42 @@ public final class PlayerPersistDB implements PlayerPersistable {
 				}
 			},
 
+			new PlayerJSONProperty("kill-streak") {
+				@Override
+				void read(Player player, JsonElement property) {
+					player.killStreak = property.getAsInt();
+				}
+
+				@Override
+				Object write(Player player) {
+					return player.killStreak;
+				}
+			},
+			
+			new PlayerJSONProperty("kill-count") {
+				@Override
+				void read(Player player, JsonElement property) {
+					player.killCount = property.getAsInt();
+				}
+
+				@Override
+				Object write(Player player) {
+					return player.killCount;
+				}
+			},
+			
+			new PlayerJSONProperty("death-count") {
+				@Override
+				void read(Player player, JsonElement property) {
+					player.deathCount = property.getAsInt();
+				}
+
+				@Override
+				Object write(Player player) {
+					return player.deathCount;
+				}
+			},
+			
 			new PlayerJSONProperty("boss-points") {
 				@Override
 				void read(Player player, JsonElement property) {
@@ -205,76 +241,6 @@ public final class PlayerPersistDB implements PlayerPersistable {
 				@Override
 				Object write(Player player) {
 					return player.pestPoints;
-				}
-			},
-
-			new PlayerJSONProperty("mute-start") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.punishment.muteStart = property.getAsLong();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.punishment.muteStart;
-				}
-			},
-
-			new PlayerJSONProperty("mute-duration") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.punishment.muteDuration = property.getAsLong();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.punishment.muteDuration;
-				}
-			},
-
-			new PlayerJSONProperty("jail-start") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.punishment.jailStart = property.getAsLong();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.punishment.jailStart;
-				}
-			},
-
-			new PlayerJSONProperty("jail-duration") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.punishment.jailDuration = property.getAsLong();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.punishment.jailDuration;
-				}
-			}, new PlayerJSONProperty("ban-start") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.punishment.banStart = property.getAsLong();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.punishment.banStart;
-				}
-			},
-
-			new PlayerJSONProperty("ban-duration") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.punishment.banDuration = property.getAsLong();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.punishment.banDuration;
 				}
 			},
 
@@ -487,42 +453,6 @@ public final class PlayerPersistDB implements PlayerPersistable {
 				@Override
 				Object write(Player player) {
 					return player.getIndex();
-				}
-			},
-
-			new PlayerJSONProperty("kills") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.kill = property.getAsInt();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.kill;
-				}
-			},
-
-			new PlayerJSONProperty("deaths") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.death = property.getAsInt();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.death;
-				}
-			},
-
-			new PlayerJSONProperty("kill-streak") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.killstreak.streak = property.getAsInt();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.killstreak.streak;
 				}
 			},
 

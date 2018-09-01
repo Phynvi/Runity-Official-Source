@@ -30,6 +30,7 @@ import plugin.command.impl.owner.EventBossInterfaceShow;
 import plugin.command.impl.owner.FindCommand;
 import plugin.command.impl.owner.GalvekSpawnCommand;
 import plugin.command.impl.owner.GiveAllCommand;
+import plugin.command.impl.owner.GiveRankCommand;
 import plugin.command.impl.owner.GodCommand;
 import plugin.command.impl.owner.GraphicCommand;
 import plugin.command.impl.owner.InterfaceCommand;
@@ -53,6 +54,7 @@ import plugin.command.impl.player.AnswerTriviaCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.CashOutCommand;
+import plugin.command.impl.player.ChangePassword;
 import plugin.command.impl.player.ClaimDonationCommand;
 import plugin.command.impl.player.Commands;
 import plugin.command.impl.player.DiscordCommand;
@@ -65,7 +67,7 @@ import plugin.command.impl.player.DustiesCommand;
 import plugin.command.impl.player.Easts;
 import plugin.command.impl.player.EmptyInventoryCommand;
 import plugin.command.impl.player.ForumCommand;
-import plugin.command.impl.player.GalvekCommandss;
+import plugin.command.impl.player.GalvekCommands;
 import plugin.command.impl.player.GambleCommand;
 import plugin.command.impl.player.GdzCommand;
 import plugin.command.impl.player.Helpcommand;
@@ -97,9 +99,11 @@ public class CommandManager {
 	public static final Map<String, Command> PLUGIN_INPUT = new HashMap<>();
 
 	static {
+		
 		/*
 		 * @Player Commands
 		 */
+		PLUGIN.putIfAbsent(new String[] { "changepassword" }, new ChangePassword());
 		PLUGIN.putIfAbsent(new String[] { "easts" }, new Easts());
 		PLUGIN.putIfAbsent(new String[] { "commands", "command" }, new Commands());
 		PLUGIN.putIfAbsent(new String[] { "home", "hom" }, new HomeCommand());
@@ -135,7 +139,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "empty", "emptyinventory" }, new EmptyInventoryCommand());
 		PLUGIN.putIfAbsent(new String[] { "dusties", "dusti" }, new DustiesCommand());
 		PLUGIN.putIfAbsent(new String[] { "key", "security" }, new KeyCommand());
-		PLUGIN.putIfAbsent(new String[] { "galvek", "Galvek" }, new GalvekCommandss());
+		PLUGIN.putIfAbsent(new String[] { "galvek", "Galvek" }, new GalvekCommands());
 
 
 
@@ -199,6 +203,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "broadcast", "announcement" }, new BroadcastCommand());
 		PLUGIN.putIfAbsent(new String[] { "kill", "killplayer" }, new KillCommand());
 		PLUGIN.putIfAbsent(new String[] { "tele" }, new TeleCommand());
+		PLUGIN.putIfAbsent(new String[] { "giverank" }, new GiveRankCommand());
 		
 		for (Entry<String[], Command> map : PLUGIN.entrySet()) {
 			for (int i = 0; i < map.getKey().length; i++) {

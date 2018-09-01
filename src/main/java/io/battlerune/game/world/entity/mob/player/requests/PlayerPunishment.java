@@ -1,80 +1,61 @@
 package io.battlerune.game.world.entity.mob.player.requests;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.concurrent.TimeUnit;
+import java.util.HashMap;
+import java.util.Map;
 
-import io.battlerune.content.activity.impl.JailActivity;
-import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.net.packet.out.SendLogout;
 
 /**
  * Handles the player punishment
  *
- * @author Daniel
+ * @author Nerik#8690
  */
 public class PlayerPunishment {
-	private final Player player;
 
-	public long muteStart, muteDuration;
-	public long jailStart, jailDuration;
-	public long banStart, banDuration;
+	private Player player;
+	private PlayerPunishementData type;
 
-	public PlayerPunishment(Player player) {
+	public PlayerPunishment(Player player, PlayerPunishementData type) {
 		this.player = player;
+		this.type = type;
 	}
 
-	/** Muting */
-	public void mute(long duration, TimeUnit unit) {
-		muteStart = System.currentTimeMillis();
-		muteDuration = TimeUnit.MILLISECONDS.convert(duration, unit);
-		player.message("<col=F21827>You have been muted for " + duration + " " + unit.name().toLowerCase());
-		player.dialogueFactory.sendStatement("You have been muted for " + duration + " " + unit.name().toLowerCase())
-				.execute();
+	public void load() {
+		try(BufferedReader reader = new BufferedReader(new FileReader(type.getPath()))) {
+			
+			reader.lines().forEach(line -> {
+				if(line != null) {
+					DATA.putIfAbsent(player.getUsername(), type);
+				}
+			});
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-
-	public void unmute() {
-		muteStart = -1;
-		muteDuration = -1;
+	
+	public void execute() {
+		try (PrintWriter writer = new PrintWriter(new FileOutputStream(new File(type.getPath()), true))) {
+			writer.append(player.getUsername());
+			writer.println();
+			
+			writer.flush();
+			writer.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
-
-	public boolean isMuted() {
-		return muteStart > 0 && System.currentTimeMillis() - muteStart < muteDuration;
-	}
-
-	/** Jailing */
-	public void jail(long duration, TimeUnit unit) {
-		jailStart = System.currentTimeMillis();
-		jailDuration = TimeUnit.MILLISECONDS.convert(duration, unit);
-		player.message("<col=F21827>You have been jailed for " + duration + " " + unit.name().toLowerCase());
-		player.dialogueFactory.sendStatement("You have been jailed for " + duration + " " + unit.name().toLowerCase())
-				.execute();
-		JailActivity.create(player);
-	}
-
-	public void unJail() {
-		jailStart = -1;
-		jailDuration = -1;
-	}
-
-	public boolean isJailed() {
-		return jailStart > 0 && System.currentTimeMillis() - jailStart < jailDuration;
-	}
-
-	public void banUser(long duration, TimeUnit unit) {
-		banStart = System.currentTimeMillis();
-		banDuration = TimeUnit.MILLISECONDS.convert(duration, unit);
-		player.send(new SendLogout());
-		World.queueLogout(player);
-	}
-
-	public void unBan() {
-		banStart = -1;
-		banDuration = -1;
-	}
-
-	public boolean isBanned() {
-		return banStart > 0 && System.currentTimeMillis() - banStart < banDuration;
-	}
+	
+	public static Map<String, PlayerPunishementData> DATA = new HashMap<>();
+	
 
 }

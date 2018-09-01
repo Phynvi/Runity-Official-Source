@@ -13,7 +13,7 @@ public class Unbancommand implements Command {
 
 
 		World.search(name.toString()).ifPresent(other -> {
-			other.punishment.unBan();
+			//other.punishment.unBan();
 			player.message("@red@Player has been unbanned");
 		});
 

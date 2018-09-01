@@ -10,6 +10,7 @@ import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.bot.BotUtility;
 import io.battlerune.content.bot.PlayerBot;
+import io.battlerune.content.combat.Killstreak;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.OnKillEvent;
 import io.battlerune.content.pet.Pets;
@@ -204,13 +205,14 @@ public final class PlayerDeath extends MobDeath<Player> {
 			return;
 		}
 
+		new Killstreak(killer.getPlayer(), mob).increase();
 		mob.move(Config.DEFAULT_POSITION);
 		mob.send(new SendMessage("Oh dear, you are dead!"));
 		mob.animate(new Animation(-1, UpdatePriority.VERY_HIGH));
 
 		if (!safe) {
 			if (killer != null && killer.isPlayer() && !mob.equals(killer)) {
-				mob.killstreak.end(killer.getName());
+				new Killstreak(killer.getPlayer(), mob).end();
 			}
 			if (mob.right == PlayerRight.HARDCORE_IRONMAN) {
 				mob.right = PlayerRight.IRONMAN;

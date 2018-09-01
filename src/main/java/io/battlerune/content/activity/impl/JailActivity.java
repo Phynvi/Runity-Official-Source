@@ -7,6 +7,7 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
 
 public class JailActivity extends Activity {
+	
 	private final Player player;
 
 	private JailActivity(Player player) {
@@ -25,9 +26,7 @@ public class JailActivity extends Activity {
 
 	@Override
 	protected void start() {
-		if (!player.punishment.isJailed()) {
 			finish();
-		}
 	}
 
 	@Override

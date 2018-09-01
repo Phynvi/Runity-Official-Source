@@ -69,7 +69,7 @@ public enum CombatSpecial {
 	DRAGON_DAGGER(new int[] { 1215, 1231, 5680, 5698 }, 25, DragonDagger.get()),
 	DRAGON_WARHAMMER(new int[] { 13576 }, 50, DragonWarhammer.get()),
 	DRAGON_LONGSWORD(new int[] { 1305 }, 25, DragonLongsword.get()),
-	DRAGON_SCIMITAR(new int[] { 4587 }, 55, DragonScimitar.get()),
+	DRAGON_SCIMITAR(new int[] { 4587 }, 50, DragonScimitar.get()),
 	DRAGON_SWORD(new int[] { 21206 }, 40, DragonSword.get()),
 	DRAGON_HALBERD(new int[] { 3204 }, 30, DragonHaldberd.get()),
 	DRAGON_CLAWS(new int[] { 13652, 20784 }, 50, DragonClaws.get()),

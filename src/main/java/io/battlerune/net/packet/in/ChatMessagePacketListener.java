@@ -1,5 +1,7 @@
 package io.battlerune.net.packet.in;
 
+import java.util.Map.Entry;
+
 import io.battlerune.game.event.impl.log.ChatLogEvent;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.data.PacketType;
@@ -7,6 +9,8 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.relations.ChatColor;
 import io.battlerune.game.world.entity.mob.player.relations.ChatEffect;
 import io.battlerune.game.world.entity.mob.player.relations.ChatMessage;
+import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishementData;
+import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
 import io.battlerune.net.codec.ByteModification;
 import io.battlerune.net.packet.ClientPackets;
 import io.battlerune.net.packet.GamePacket;
@@ -34,9 +38,13 @@ public class ChatMessagePacketListener implements PacketListener {
 			return;
 		}
 
-		if (player.punishment.isMuted()) {
-			player.send(new SendMessage("You are currently muted and can not talk!"));
-			return;
+		for (Entry<String, PlayerPunishementData> data : PlayerPunishment.DATA.entrySet()) {
+			if (data.getKey().equalsIgnoreCase(player.getUsername())) {
+				if (data.getValue().equals(PlayerPunishementData.MUTE)) {
+					player.send(new SendMessage("You are currently muted and can not talk!"));
+					return;
+				}
+			}
 		}
 
 		if (player.locking.locked(PacketType.CHAT)) {

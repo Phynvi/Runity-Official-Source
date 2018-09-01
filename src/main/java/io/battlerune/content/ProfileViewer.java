@@ -23,7 +23,7 @@ public class ProfileViewer {
 				"" + Utility.formatPrice(player.playerAssistant.networth()) + " RT", "Clan:",
 				player.clan == null ? "None" : player.clan, "Total level:",
 				"" + Utility.formatDigits(player.skills.getTotalLevel()), "Kills/Deaths/KDR",
-				"" + player.kill + "/" + player.death + "/" + player.playerAssistant.kdr() + "",
+				"" + player.killCount + "/" + player.deathCount + "/" + player.playerAssistant.getKdr() + "",
 				"Current KC/Highest KC", "0/0", "Achievements Completed:",
 				"" + AchievementHandler.getTotalCompleted(player) + "", "Quests Completed:",
 				"" + player.quest.getCompleted() };

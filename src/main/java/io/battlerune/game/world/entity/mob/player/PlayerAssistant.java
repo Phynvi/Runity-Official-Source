@@ -135,6 +135,13 @@ public class PlayerAssistant {
 		}
 
 	}
+	
+	public String getKdr() {
+		double KDR = (player.getKillCount() / (double) player.getDeathCount());
+
+		return Double.isNaN(KDR) ? "0.0" : String.format("%.2f", KDR);
+
+	}
 
 	/** initializes the player's random bs. */
 	private void initialize() {
@@ -318,8 +325,6 @@ public class PlayerAssistant {
 	private void setActivity() {
 		if (player.newPlayer) {
 			TutorialActivity.create(player);
-		} else if (player.punishment.isJailed()) {
-			JailActivity.create(player);
 		} else if (player.needsStarter) {
 			StarterKit.open(player);
 		} else if (Area.inWarriorGuild(player)) {
@@ -662,13 +667,6 @@ public class PlayerAssistant {
 
 	public boolean contains(Item item) {
 		return player.inventory.contains(item) || player.equipment.contains(item) || player.bank.contains(item);
-	}
-
-	/** Gets the KDR of the player. */
-	public String kdr() {
-		double KDR = (player.kill / (double) player.death);
-
-		return Double.isNaN(KDR) ? "0.0" : String.format("%.2f", KDR);
 	}
 
 	/** Gets the max hit of a combat type. */

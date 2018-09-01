@@ -16,8 +16,7 @@ public class TeletomeCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-
-		final String name = String.format(parts[1]);
+		final String name = String.format(parts[1].replaceAll("_", " "));
 
 		if (World.search(name).isPresent()) {
 			final Player target = World.search(name).get();
@@ -34,6 +33,7 @@ public class TeletomeCommand implements Command {
 			target.instance = player.instance;
 		} else {
 			player.send(new SendMessage("@or2@The player '" + name + "' @or2@either doesn't exist, or is offline."));
+			player.send(new SendMessage("@or2@For players with spaces in their names use player_name"));
 		}
 	}
 

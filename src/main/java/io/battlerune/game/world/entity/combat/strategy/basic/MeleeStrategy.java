@@ -36,23 +36,17 @@ public abstract class MeleeStrategy<T extends Mob> extends CombatStrategy<T> {
 
 	@Override
 	public int modifyDamage(T attacker, Mob defender, int damage) {
+		System.out.println("Current [First]: " + damage);
 		if (defender.prayer.isActive(Prayer.PROTECT_FROM_MELEE)) {
 			if (defender.attributes.has("VERACS-EFFECT")) {
 				return damage;
 			}
 
-//            if (attacker.isPlayer()) {
-//                Player player = attacker.getPlayer();
-//                if (player.equipment.retrieve(Equipment.WEAPON_SLOT)
-//                        .filter(item -> item.matchesId(11791) || item.matchesId(12904)).isPresent()
-//                        && System.currentTimeMillis() - player.staffOfDeadSpecial <= 60_000) {
-//                    damage /= 2;
-//                }
-//            }
-
-			damage *= !attacker.isPlayer() || defender.isNpc() ? 0.0001 : 0.0003;
+			System.out.println("Current [Second]: " + damage);
+			damage *= !attacker.isPlayer() || defender.isNpc() ? 0.15 : 0.30;
+			System.out.println("After: " + damage);
 		}
-		return damage / 1500;
+		return damage;
 	}
 
 	protected static void addCombatExperience(Player player, Hit... hits) {

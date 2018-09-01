@@ -33,7 +33,6 @@ import io.battlerune.content.activity.record.PlayerRecord;
 import io.battlerune.content.clanchannel.channel.ClanChannel;
 import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.content.clanchannel.content.ClanViewer;
-import io.battlerune.content.combat.Killstreak;
 import io.battlerune.content.combat.Skulling;
 import io.battlerune.content.dialogue.ChatBoxItemDialogue;
 import io.battlerune.content.dialogue.Dialogue;
@@ -165,6 +164,24 @@ public class Player extends Mob {
 	}
 
 
+	/**
+	 * Killstreak
+	 */
+	public int killStreak = 0, killCount = 0, deathCount = 0;
+	
+	public int getKillCount() {
+		return killCount;
+	}
+
+	
+	public int getDeathCount() {
+		return deathCount;
+	}
+
+	public int getKillStreak() {
+		return killStreak;
+	}
+
 	private static final Logger logger = LogManager.getLogger();
 	private int memberId = -1;
 	public final Viewport viewport = new Viewport(this);
@@ -174,7 +191,14 @@ public class Player extends Mob {
 	private CombatSpell singleCast;
 	private Preset[] presets = new Preset[8];
 	public Appearance appearance = Config.DEFAULT_APPEARANCE;
+	
 	public PlayerRight right = PlayerRight.PLAYER;
+	
+	public void setRight(PlayerRight right) {
+		this.right = right;
+	}
+
+
 	public PlayerTitle playerTitle = PlayerTitle.empty();
 	public Spellbook spellbook = Spellbook.MODERN;
 	public ChatBoxItemDialogue chatBoxItemDialogue;
@@ -200,8 +224,6 @@ public class Player extends Mob {
 	public int sequence;
 	public int playTime;
 	public int sessionPlayTime;
-	public int kill;
-	public int death;
 	public int shop;
 	public int headIcon;
 	public int valueIcon = -1;
@@ -369,9 +391,7 @@ public class Player extends Mob {
 	public final BankVault bankVault = new BankVault(this);
 	public final BankPin bankPin = new BankPin(this);
 	public final RunePouch runePouch = new RunePouch(this);
-	public final Killstreak killstreak = new Killstreak(this);
 	public final LootingBag lootingBag = new LootingBag(this);
-	public final PlayerPunishment punishment = new PlayerPunishment(this);
 	public final Equipment equipment = new Equipment(this);
 	public final Prestige prestige = new Prestige(this);
 	public final PriceChecker priceChecker = new PriceChecker(this);
