@@ -21,7 +21,7 @@ public class JailCommand implements Command {
 		final String name = String.format(parts[1].replaceAll("_", " "));
 
 		World.search(name.toString()).ifPresent(other -> {
-			JailActivity.create(player);
+			JailActivity.create(other);
 			new PlayerPunishment(other, PlayerPunishementData.JAIL).execute();
 		});
 	}
