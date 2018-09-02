@@ -1,32 +1,53 @@
 package plugin.command.impl.player;
 
 import io.battlerune.content.command.Command;
+import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendMessage;
 
 /**
- * @author Adam_#6723
+ * @author Nerik#8690
  */
 
 public class ClaimVote implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		String[] args = command.split(" ");
-		if (args.length == 1) {
-			player.send(new SendMessage("Please use [::reward id], [::reward id amount], or [::reward id all]."));
-			return;
-		}
+		DialogueFactory factory = player.dialogueFactory;
+		factory.sendOption("1.000.000 Coins", () -> {
+			if (player.inventory.getFreeSlots() > 2) {
+				run(player, 995, 1000000);
+			} else {
+				player.send(new SendMessage("Please make sure to have atleast 2 free slots"));
+			}
+		}, "Vote Token", () -> {
+			if (player.inventory.getFreeSlots() > 2) {
+				run(player, 7478, 1);
+			} else {
+				player.send(new SendMessage("Please make sure to have atleast 2 free slots"));
+			}
+		}, "Cancel", () -> {
+			factory.clear();
+		});
 
+	}
+
+	@Override
+	public boolean canUse(Player player) {
+		return true;
+	}
+
+	private void run(Player player, int itemId, int itemAmount) {
 		final String playerName = player.getUsername();
-		final String id = args[1];
-		final String amount = args.length == 3 ? args[2] : "1";
+		final String id = String.valueOf(itemId);
+		final String amount = String.valueOf(itemAmount);
 
 		com.everythingrs.vote.Vote.service.execute(new Runnable() {
 			@Override
 			public void run() {
 				try {
-					com.everythingrs.vote.Vote[] reward = com.everythingrs.vote.Vote.reward("secret_key", playerName,
+					com.everythingrs.vote.Vote[] reward = com.everythingrs.vote.Vote.reward(
+							"it0nzms11avukb49jofyr2j4iyeigg9m99i3uqugiaspds4ibwg9wfjv364piqs8tbb0yynwmi", playerName,
 							id, amount);
 					if (reward[0].message != null) {
 						player.send(new SendMessage(reward[0].message));
@@ -42,11 +63,6 @@ public class ClaimVote implements Command {
 			}
 
 		});
-	}
-
-	@Override
-	public boolean canUse(Player player) {
-		return true;
 	}
 
 }

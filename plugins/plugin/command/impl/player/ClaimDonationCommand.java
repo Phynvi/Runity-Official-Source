@@ -1,6 +1,7 @@
 package plugin.command.impl.player;
 
 import io.battlerune.content.command.Command;
+import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendMessage;
@@ -31,6 +32,8 @@ public class ClaimDonationCommand implements Command {
 					for (com.everythingrs.donate.Donation donate : donations) {
 						player.inventory.add(new Item(donate.product_id, donate.product_amount));
 					}
+					World.sendMessage("<col=CF2192>[Donation]</col> <col="+player.right.getColor()+ "> "
+							+ "" +player.getUsername()+ " </col> <col=CF2192> has just donated, thank you! </col>");
 					player.send(new SendMessage("Thank you for donating!"));
 				} catch (Exception e) {
 					player.send(new SendMessage("Api Services are currently offline. Please check back shortly"));

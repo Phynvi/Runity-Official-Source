@@ -242,8 +242,7 @@ public final class DefaultStore extends Store {
 				return;
 			}
 
-			// refresh every 30 seconds
-			if (tick >= 30) {
+			if (tick >= 1) {
 
 				final Item[] items = container.container.toArray();
 
