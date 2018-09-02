@@ -220,13 +220,13 @@ public final class CombatUtil {
 			return false;
 		}
 		if (attacker.equals(defender)) {
-			attacker.send(new SendMessage("Okay low-key, you're not supposed to be able to attack yourself."));
+			/*attacker.send(new SendMessage("Okay low-key, you're not supposed to be able to attack yourself."));
 			attacker.send(new SendMessage("But as a developer (Red Bracket), I'm super curious to know how"));
 			attacker.send(new SendMessage("you pulled this off. I'm gonna let you do it, but please don't"));
 			attacker.send(new SendMessage("break anything :)"));
-			World.sendMessage(attacker.getName() + " is potentially bug abusing. Someone go check him out!");
+			//World.sendMessage(attacker.getName() + " is potentially bug abusing. Someone go check him out!");
 			// attacker.send(new SendMessage("You can't attack yourself!"));
-			// return false;
+			// return false;*/
 			return true;
 		}
 
