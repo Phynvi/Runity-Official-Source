@@ -113,7 +113,7 @@ public final class Equipment extends ItemContainer {
 		 * Combat listener manager, should update combat listneres upon login/
 		 * author @Adam_#6723 if this is broken, to let me know.
 		 */
-      	CombatListenerManager.equipmenteffectsonlogin(player);
+	//	CombatListenerManager.equipmenteffectsonlogin(player);
 		/*
 		 * 
 		 */

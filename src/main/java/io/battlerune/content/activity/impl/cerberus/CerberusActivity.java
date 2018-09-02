@@ -155,26 +155,6 @@ public class CerberusActivity extends Activity {
 		if (successfull) {
 			player.activityLogger.add(ActivityLog.CERBERUS);
 			player.message("Congratulations, you have killed the Cerberus. ");
-			if (PlayerRight.isDonator(player) || PlayerRight.isSuper(player)) {
-				player.setBossPoints(player.getBossPoints() + 2);
-				player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
-
-			}
-
-			if (PlayerRight.isExtreme(player) || PlayerRight.isElite(player)) {
-				player.setBossPoints(player.getBossPoints() + 3);
-				player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
-
-			}
-			if (PlayerRight.isKing(player)) {
-				player.setBossPoints(player.getBossPoints() + 4);
-				player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
-
-			} else {
-				player.setBossPoints(player.getBossPoints() + 1);
-				player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
-
-			}
 			restart(10, () -> {
 				if (Area.inCerberus(player)) {
 					create(player);

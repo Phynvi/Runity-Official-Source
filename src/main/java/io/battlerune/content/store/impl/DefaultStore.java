@@ -242,7 +242,7 @@ public final class DefaultStore extends Store {
 				return;
 			}
 
-			if (tick >= 10) {
+			if (tick >= 1) {
 
 				final Item[] items = container.container.toArray();
 

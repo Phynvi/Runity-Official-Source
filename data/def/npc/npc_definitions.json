@@ -9439,7 +9439,7 @@
     "attack-level": 130,
     "defence-level": 130,
     "strength-level": 130,
-    "hitpoints-level": 750,
+    "hitpoints-level": 250,
     "ranged-level": 130,
     "magic-level": 130,
     "defence-magic": 150

@@ -12,32 +12,49 @@ public class GoldMysteryBox implements MysteryBoxListener {
 
 	@Override
 	public Item[] getCommon() {
-		return new Item[] { new Item(995, Utility.random(2500000, 3500000)), new Item(11959, 300), // black chinchompa		new Item(10034, 100), // Red Chins
-        new Item(454, 500), // 500x Coal Ore (Soo needed in-game)
-        new Item(1437, 2000), // 2k Rune Essence
-        new Item(6, 1), // Cannon Base
-        new Item(8, 1), // Cannon stand
-        new Item(10, 1), // Cannon barrels
-        new Item(12, 1), // Cannon furnace
-        new Item(6137, 1), // Skeleton helm
-        new Item(6139, 1), // Skeleton top
-        new Item(6141, 1), // Skeleton bottom
-        new Item(6147, 1), // Skeleton boots
-        new Item(6153, 1), // Skeleton gloves
-        new Item(10796, 1), // Robin hood hat
-        new Item(19707, 1), // Amulet of eternal glory
-        new Item(299, 50), // 50x Flower Poker Seeds
-        new Item(6343, 1), // Villager Robe
-        new Item(6345, 1), // Villager Hat
-        new Item(6347, 1), // Villager Gloves
-        new Item(6349, 1), // Villager Sandals
-        new Item(811, 500), // 500x Rune Dart
-        new Item(11230, 200), // 200x Dragon Dart
-        new Item(7668, 1), // Gadderhammer
-        new Item(6818, 1), // Bow-Sword (Cool skiller weapon)
-        new Item(6199, 1) // Mummy's leg
-	};
-}
+		return new Item[] { new Item(995, Utility.random(1000000, 2500000)), new Item(12696, 10), // Super combat potion
+				new Item(10034, 100), // red chins
+				new Item(6257, 1), // Broodoo shield
+				new Item(6235, 1), // Broodoo shield
+				new Item(13385, 1), // xerician hat
+				new Item(13387, 1), // xerician top
+				new Item(6279, 1), // brodoodon shield
+				new Item(13389, 1), // xerician robe
+
+				new Item(3095, 1), // bronze claws
+				new Item(3096, 1), // iron claws
+				new Item(3097, 1), // steel claws
+				new Item(3098, 1), // black claws
+				new Item(3099, 1), // mithril claws
+				new Item(3100, 1), // adamant claws
+				new Item(3101, 1), // rune claws
+				new Item(6587, 1), // white claws
+				new Item(7537, 1), // crab claw
+
+				new Item(12245, 1), // beanie
+				new Item(10039, 1), // kyatt hat
+				new Item(10037, 1), // kyatt top
+				new Item(10035, 1), // kyatt legs
+				new Item(6377, 1), // villager sandals
+				new Item(6349, 1), // villager sandals
+				new Item(6357, 1), // villager sandals
+				new Item(6367, 1), // villager sandals
+
+				new Item(7668, 1), // Gadderhammer
+				new Item(811, 300), // rune dart
+				new Item(2890, 1), // elemental shield
+				new Item(299, 1), // mithril seed
+				new Item(6137, 1), // skeletal helm
+				new Item(6139, 1), // skeletal top
+				new Item(6141, 1), // skeletal bottom
+				new Item(6147, 1), // skeletal boots
+				new Item(10796, 1), // robin hood hat
+				new Item(19707, 1), // amulet of eternal glory
+				new Item(6153, 1) // skeleton gloves
+
+		};
+	}
+
 	@Override
 	public Item[] getUncommon() {
 		return new Item[] { new Item(995, Utility.random(2500000, 3500000)), new Item(11959, 300), // black chinchompa
@@ -153,7 +170,7 @@ public class GoldMysteryBox implements MysteryBoxListener {
 		} else {
 			player.inventory.add(getCommon()[random.nextInt(getCommon().length)]);
 		}
-		player.setBossPoints(player.getBossPoints() + 250);
+		player.setBossPoints(player.getBossPoints() + 50);
         player.message("You have recieved 50 Boss points!" + " <img=14>You now have @red@ " + player.getBossPoints() + " boss points");
 	}
 

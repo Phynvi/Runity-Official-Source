@@ -111,18 +111,6 @@ public enum SlayerTask implements TaskInterface<Player> {
 			return true;
 		}
 	},
-	LESSER_DEMONS("Lesser Demons", 72, 150, TaskDifficulty.MEDIUM, new Position(1, 1), "Edgeville Dung & KBD cave", 2006,
-			2005, 2018, 2008) {
-		@Override
-		public boolean canAssign(Player player) {
-			return true;
-		}
-
-		@Override
-		public boolean canAttack(Player player) {
-			return true;
-		}
-	},
 	DUST_DEVILS("Dust devil", 65, 150, TaskDifficulty.MEDIUM, new Position(1, 1), "Pollnivneach Smoke Dungeon", 423,
 			424) {
 		@Override
@@ -147,18 +135,6 @@ public enum SlayerTask implements TaskInterface<Player> {
 			return true;
 		}
 	},
-	BLUE_DRAGONS("Blue Dragons", 60, 50, TaskDifficulty.MEDIUM, new Position(1, 1), "Taverly Dungeon", 267, 268) {
-		@Override
-		public boolean canAssign(Player player) {
-			return true;
-		}
-
-		@Override
-		public boolean canAttack(Player player) {
-			return true;
-		}
-	}, //	SlayerTask(String name, int level, int size, TaskDifficulty difficulty, Position position, String locationString,
-	//int... npc) {
 	ANKOU("Ankou", 1, 300, TaskDifficulty.HARD, new Position(1, 1), "Stronghold of Security", 2514, 2515, 2516, 2517,
 			2518, 2519) {
 		@Override
@@ -219,6 +195,17 @@ public enum SlayerTask implements TaskInterface<Player> {
 //            return true;
 //        }
 //    },
+	JAD("TzTok monsters", 1, 375, TaskDifficulty.MEDIUM, new Position(2446, 5169), "Fight Caves", 6506, 3127, 2173) {
+		@Override
+		public boolean canAssign(Player player) {
+			return true;
+		}
+
+		@Override
+		public boolean canAttack(Player player) {
+			return true;
+		}
+	},
 	MITHRIL_DRAGON("Mithril dragon", 1, 150, TaskDifficulty.HARD, new Position(1, 1), "Ancient Caverns", 2919) {
 		@Override
 		public boolean canAssign(Player player) {

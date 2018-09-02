@@ -3057,7 +3057,7 @@
       },
       {
         "id": 228,
-        "amount": 100000,
+        "amount": 10000,
         "value": 5
       },
       {
@@ -3997,7 +3997,7 @@
       {
           "id": 13739,
           "amount": 1000,
-          "value": 2000
+          "value": 300
       },
       {
           "id": 13749,
@@ -4012,12 +4012,12 @@
       {
           "id": 13724,
           "amount": 1000,
-          "value": 350
+          "value": 100
       },
       {
           "id": 13719, // Elite ss
           "amount": 1000,
-          "value": 3000 // $500
+          "value": 10000 // $500
       },
       {
           "id": 12357,
@@ -4073,12 +4073,12 @@
       {
           "id": 11063,
           "amount": 1000,
-          "value": 1250
+          "value": 750
       },
       {
           "id": 3274,
           "amount": 1000,
-          "value": 1500
+          "value": 750
       },
       {
           "id": 12773,
@@ -4494,111 +4494,6 @@
   
 
   
-  
-  
-    {
-    "name": "Sponsor Store",
-    "currency": "COINS",
-    "restock": false,
-    "sellType": "NONE",
-    "scroll": 1,
-    "items": [
-      {
-        "id": 6816,
-        "amount": 200
-      },
-      {
-        "id": 11730,
-        "amount": 1000
-      },
-      {
-        "id": 3144,
-        "amount": 1000
-      },
-          {
-        "id": 12457,
-        "amount": 1,
-        "value": 30000000
-      },
-          {
-        "id": 12458,
-        "amount": 1,
-        "value": 30000000
-      },
-          {
-        "id": 12459,
-        "amount": 1,
-        "value": 30000000
-      },
-          {
-        "id": 6920,
-        "amount": 1,
-        "value": 30000000
-      },
-          {
-        "id": 6922,
-        "amount": 1,
-        "value": 30000000
-      },
-          {
-        "id": 13321,
-        "amount": 1,
-        "value": 30000000
-      },
-        {
-        "id": 21343,
-        "amount": 1,
-        "value": 15000000
-      },
-       {
-        "id": 21392,
-        "amount": 1,
-        "value": 15000000
-      },
-       {
-        "id": 21345,
-        "amount": 1,
-        "value": 15000000
-      },
-       {
-        "id": 13243,
-        "amount": 1,
-        "value": 15000000
-      },
-      {
-        "id": 21314,
-        "amount": 1,
-        "value": 30000000
-      },
-            {
-        "id": 15308,
-        "amount": 1,
-        "value": 30000000
-      },
-            {
-        "id": 6603,
-        "amount": 1,
-        "value": 30000000
-      },
-            {
-        "id": 1580,
-        "amount": 50
-      },
-            {
-        "id": 6629,
-        "amount": 1,
-        "value": 30000000
-      }
-    ]
-  },
-  
-  
-  
-  
-  
-  
-  
-  
   {
     "name": "Pet Store",
     "currency": "PET_TOKENS",
@@ -4883,27 +4778,27 @@
       {
           "id": 20035, // samurai kasa
           "amount": 100,
-          "value": 1500 // $75
+          "value": 1000 // $50
         },
         {
           "id": 20038, // Samurai shirt
           "amount": 100,
-          "value": 1500 // $75
+          "value": 1000 // $50
         },
         {
           "id": 20044, // Samurai greaves
           "amount": 100,
-          "value": 1500 // $75
+          "value": 1000 // $50
         },
         {
           "id": 20041, // samurai gloves
           "amount": 100,
-          "value": 1500 // $75
+          "value": 1000 // $50
         },
         {
           "id": 20047, // samurai boots
           "amount": 100,
-          "value": 1500 // $75
+          "value": 1000 // $50
         },
       {
         "id": 20020,

@@ -113,7 +113,7 @@ public class ItemCreation {
 	BANDOSGOD_OR(new Item(20370), null, null, new Item(20071, 1), new Item(11804, 1)),
 	ZAMORAKGOD_OR(new Item(20372), null, null, new Item(20074, 1), new Item(11806, 1)),
 	SARADOMINGOD_OR(new Item(20374), null, null, new Item(20077, 1), new Item(11808, 1)),
-	TRIDENT_OF_SWAMPS(new Item(12899), null, null, new Item(11907, 1), new Item(12932, 1)),
+
 	CAP_AND_GOGGLES(new Item(9946), null, null, new Item(9945, 1), new Item(9472, 1));
 
 		/** The product of the creation. */

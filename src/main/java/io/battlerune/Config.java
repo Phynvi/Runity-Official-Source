@@ -22,7 +22,7 @@ import io.netty.util.ResourceLeakDetector;
 public final class Config {
 
 	/** The latest announcement thread link. */
-	public static final String LATEST_ANNOUNCEMENT_THREAD = "http://runity.io/forums/index.php?/topic/5-rebirth-of-Runity/&tab=comments#comment-11";
+	public static final String LATEST_ANNOUNCEMENT_THREAD = "http://runity.io/forums/index.php?/topic/5-rebirth-of-near-reality/&tab=comments#comment-11";
 
 	/** The latest update thread link. */
 	public static final String LATEST_UPDATE_THREAD = "http://runity.io/forums/index.php?/topic/3-updates-of-04012018/&tab=comments#comment-7";

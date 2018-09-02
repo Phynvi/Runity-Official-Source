@@ -20,16 +20,6 @@
     }
   },
   {
-    "id": 2092,
-    "name": "AFK Tree",
-    "type": 10,
-    "rotation": "EAST",
-    "position": {
-      "x": 1807,
-      "y": 3548
-    }
-  },
-  {
 	    "id": 3399,
 	    "name": "Crates",
 	    "type": 10,
