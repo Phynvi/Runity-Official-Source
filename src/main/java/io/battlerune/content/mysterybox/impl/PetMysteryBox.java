@@ -71,7 +71,6 @@ public class PetMysteryBox implements MysteryBoxListener {
 				new Item( 9105,1),
 				new Item( 8133,1),
 				new Item( 8134,1),				
-				new Item( 21911,1),
 				new Item( 7420,1),
 				new Item(21511 ,1),				
 				new Item(21509 ,1),

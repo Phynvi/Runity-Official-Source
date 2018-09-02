@@ -60,6 +60,10 @@ public class ToxicBlowpipeStrategy extends RangedStrategy<Player> {
 
 	@Override
 	public void start(Player attacker, Mob defender, Hit[] hits) {
+		if(attacker.rangedAmmo == null) {
+			return;
+		}
+		
 		if (attacker.isSpecialActivated()) {
 			attacker.getCombatSpecial().drain(attacker);
 		}

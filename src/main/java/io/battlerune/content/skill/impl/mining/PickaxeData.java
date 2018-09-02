@@ -59,7 +59,7 @@ public enum PickaxeData {
 	 *         {@link Optional#empty} otherwise.
 	 */
 	public static Optional<PickaxeData> getBestPickaxe(Player player) {
-		return VALUES.stream().filter(def -> player.equipment.contains(def.id) || player.toolkit.contains(def.id)
+		return VALUES.stream().filter(def -> player.equipment.contains(def.id)
 				|| player.inventory.contains(def.id)).findAny();
 	}
 }

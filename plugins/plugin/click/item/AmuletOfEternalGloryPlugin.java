@@ -21,9 +21,8 @@ public class AmuletOfEternalGloryPlugin extends PluginContext {
 			if (equipment) {
 				player.equipment.set(Equipment.AMULET_SLOT, new Item(AMULETS[index]), true);
 			}
-			player.message("<col=7F007F>" + (index == 0 ? "You have used your last charge."
-					: "Your amulet of glory has " + Utility.convertWord(index).toLowerCase() + "charge"
-							+ (index == 1 ? "" : "s") + " remaining."));
+		//	player.message("<col=7F007F>" + (index == 0 ? "": "Your amulet of glory has " + Utility.convertWord(index).toLowerCase() + "charge"
+		//					+ (index == 1 ? "" : "s") + " remaining."));
 		}
 	}
 

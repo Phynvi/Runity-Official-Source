@@ -47,9 +47,6 @@ public final class CommandPacketListener implements PacketListener {
 			});
 			return;
 		}
-
-		player.forClan(channel -> channel.activateTask(ClanTaskKey.SEND_CLAN_MESSAGE, player.getName()));
-
 		Command plugin = CommandManager.PLUGIN_INPUT.get(parts[0]);
 		if (plugin != null) {
 			if (plugin.canUse(player)) {

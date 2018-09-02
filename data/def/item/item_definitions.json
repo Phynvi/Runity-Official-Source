@@ -111409,10 +111409,10 @@
     "id": 19707,
     "name": "Amulet of eternal glory",
     "noted-id": 19708,
-    "low-alch": 7050,
-    "high-alch": 10575,
-    "base-value": 17625,
-    "street-value": 26149181,
+    "low-alch": 500000,
+    "high-alch": 500000,
+    "base-value": 500000,
+    "street-value": 750000,
     "equipment-slot": "AMULET",
     "attack-stab": 10,
     "attack-slash": 10,
@@ -111432,10 +111432,10 @@
     "name": "Amulet of eternal glory",
     "stackable": true,
     "unnoted-id": 19707,
-    "low-alch": 7050,
-    "high-alch": 10575,
-    "base-value": 17625,
-    "street-value": 26149181
+    "low-alch": 500000,
+    "high-alch": 500000,
+    "base-value": 500000,
+    "street-value": 750000
   },
   {
     "id": 19710,
@@ -125760,9 +125760,9 @@
 {
 											    "id": 13717,
 											    "name": "Icy Spirit Shield", 
-											    "low-alch": 2, 
-											    "high-alch": 3, 
-											    "base-value": 5,
+"low-alch": 21000000, 
+		    "high-alch": 29000000,
+			    "base-value": 32000000,
 										            "street-value": 18403, 
 											    "equipment-slot": "SHIELD",
 											    "weight": 4.0 
@@ -125773,9 +125773,9 @@
 {
 														"id": 13719,
 														 "name": "Elite spirit shield", 
-														  "low-alch": 2, 
-														"high-alch": 3, 
-														 "base-value": 5,
+"low-alch": 21000000, 
+		    "high-alch": 29000000,
+			    "base-value": 32000000,
 														"street-value": 18403, 
 														"equipment-slot": "SHIELD",
 														"weight": 4.0,
@@ -125797,9 +125797,9 @@
 {
 														    "id": 13720,
 														    "name": "Aqua spirit shield", 
-														    "low-alch": 2, 
-														    "high-alch": 3, 
-														    "base-value": 5,
+"low-alch": 21000000, 
+		    "high-alch": 29000000,
+			    "base-value": 32000000,
 													            "street-value": 18403, 
 														    "equipment-slot": "SHIELD",
 														    "weight": 4.0 
@@ -125808,9 +125808,9 @@
 {
 															    "id": 13721,
 															    "name": "Candy spirit shield", 
-															    "low-alch": 2, 
-															    "high-alch": 3, 
-															    "base-value": 5,
+"low-alch": 21000000, 
+		    "high-alch": 29000000,
+			    "base-value": 32000000,
 														            "street-value": 18403, 
 															    "equipment-slot": "SHIELD",
 															    "weight": 4.0 
@@ -125820,9 +125820,9 @@
 {
 																	    "id": 13723,
 																	    "name": "Mystical Spirit Shield", 
-																	    "low-alch": 2, 
-																	    "high-alch": 3, 
-																	    "base-value": 5,
+"low-alch": 21000000, 
+		    "high-alch": 29000000,
+			    "base-value": 32000000,
 																            "street-value": 18403, 
 																	    "equipment-slot": "SHIELD",
 																	    "weight": 4.0 
@@ -125832,9 +125832,9 @@
 																			
 "id": 13724,
 "name": "Deathly Spirit Shield", 
-"low-alch": 2, 
-"high-alch": 3, 
-"base-value": 5,
+"low-alch": 29000000, 
+		    "high-alch": 29000000,
+			    "base-value": 50000000,
 "street-value": 18403, 
 "equipment-slot": "SHIELD",
 "weight": 4.0,
@@ -125857,9 +125857,10 @@
 {
 																			    "id": 13725,
 																			    "name": "Lime Spirit Shield", 
-																			    "low-alch": 2, 
-																			    "high-alch": 3, 
-																			    "base-value": 5,
+"low-alch": 21000000, 
+		    "high-alch": 29000000,
+			    "base-value": 32000000,
+											
 																		            "street-value": 18403, 
 																			    "equipment-slot": "SHIELD",
 																			    "weight": 4.0 
@@ -125868,9 +125869,10 @@
 {
 																				    "id": 13726,
 																				    "name": "Pink Spirit Shield", 
-																				    "low-alch": 2, 
-																				    "high-alch": 3, 
-																				    "base-value": 5,
+"low-alch": 21000000, 
+		    "high-alch": 29000000,
+			    "base-value": 32000000,
+											
 																			            "street-value": 18403, 
 																				    "equipment-slot": "SHIELD",
 																				    "weight": 4.0 
@@ -125879,9 +125881,10 @@
 {
 	"id": 13727,
 	"name": "Green Spirit Shield", 
-	"low-alch": 2, 
-	"high-alch": 3, 
-	"base-value": 5,
+"low-alch": 21000000, 
+		    "high-alch": 29000000,
+			    "base-value": 32000000,
+											
 	 "street-value": 18403, 
 	 "equipment-slot": "SHIELD",
 	"weight": 4.0 
@@ -125890,9 +125893,10 @@
 {
 																						    "id": 13728,
 																						    "name": "Purple Spirit Shield", 
-																						    "low-alch": 2, 
-																						    "high-alch": 3, 
-																						    "base-value": 5,
+"low-alch": 21000000, 
+		    "high-alch": 29000000,
+			    "base-value": 32000000,
+											
 																					            "street-value": 18403, 
 																						    "equipment-slot": "SHIELD",
 																						    "weight": 4.0 
@@ -125901,9 +125905,10 @@
 {
 "id": 13729,
 "name": "Lime Spirit Shield", 
-"low-alch": 2, 
-"high-alch": 3, 
-"base-value": 5,
+"low-alch": 21000000, 
+		    "high-alch": 29000000,
+			    "base-value": 32000000,
+											
 "street-value": 18403, 
 "equipment-slot": "SHIELD",
 "weight": 4.0 
@@ -125912,9 +125917,10 @@
 {
 "id": 4062,
 "name": "Inferno spirit shield", 
-"low-alch": 2, 
-"high-alch": 3, 
-"base-value": 5,
+"low-alch": 21000000, 
+		    "high-alch": 29000000,
+			    "base-value": 32000000,
+											
 "street-value": 18403, 
 "equipment-slot": "SHIELD",
 "weight": 4.0 

@@ -71174,6 +71174,13 @@
     "stand": 90,
     "walk": 4635
   },
+    {
+    "id": 8091,
+    "name": "Rune Dragon",
+    "combat-level": 1,
+    "stand": 90,
+    "walk": 4635
+  },
   {
     "id": 6637,
     "name": "Kalphite Princess",

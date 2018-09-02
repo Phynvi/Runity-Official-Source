@@ -16,13 +16,11 @@ public class AhrimsListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public int modifyDefensive(Mob attacker, Mob defender, int roll) {
-		System.out.println("Roll is: " + roll);
 		return roll / 2;
 	}
 
 	@Override
 	public int modifyDefenceLevel(Mob attacker, Mob defender, int level) {
-		System.out.println("Modifying defence level");
 		return level * 2;
 	}
 

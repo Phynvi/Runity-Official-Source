@@ -39,7 +39,7 @@ public class ArenaUtility {
 
 	/** Identification of all loot, it selects the loot */
 
-	public static int[] ALWAYSLOOT = {6889, 4675, 11836, 12877 };
+	public static int[] ALWAYSLOOT = {6889, 4675, 11836, 12877, 989,  4151,3140, 4087, 11732, 989, 4675, 6585,  };
 	public static int[] COMMONLOOT = { 989,  4151,3140, 4087, 11732, 989, 4675, 11770, 11771, 11772, 6585, };
 	public static int[] RARELOOT = { 4153, 7158, 1305, 4587, 11840,  6585, 12875, 12873, 11840, 12877};
 	public static int[] SUPERRARELOOT = { 13729, 6199, 11802, 11283, 13652, 12904, 11791, 12691, 12692, 12877, 13749, 13729, 17165, 17164, 17163, 13662, 13207, 13190};
@@ -69,29 +69,29 @@ public class ArenaUtility {
 
 		if (random <= 50) {
 				GroundItem.createGlobal(player, new Item(COMMONLOOT[Utility.random(COMMONLOOT.length)], 1),
-						new Position(2273 + Utility.random(11), 5341 + Utility.random(13), 0));
+						new Position(2273 + Utility.random(7), 5341 + Utility.random(8), 0));
 		}
 		if (random <= 10) {
 				GroundItem.createGlobal(player, new Item(RARELOOT[Utility.random(RARELOOT.length)], 1),
-						new Position(2273 + Utility.random(12), 5341 + Utility.random(14), 0));
+						new Position(2273 + Utility.random(5), 5341 + Utility.random(7), 0));
 			
 		}
 		if (random <= 2) {
 			GroundItem.createGlobal(player, new Item(SUPERRARELOOT[Utility.random(SUPERRARELOOT.length)], 1),
-						new Position(2273 + Utility.random(14), 5341 + Utility.random(15), 0));
+						new Position(2273 + Utility.random(12), 5341 + Utility.random(15), 0));
 				World.sendMessage("<img=10><col=FF0000>[GALVEK EVENT] Arena has dropped Bank Loot!");
 			
 		}
 		
 		if (random <= 11 && Utility.random(1, 10) <= 2) {
 			GroundItem.createGlobal(player, new Item(ULTRA[Utility.random(ULTRA.length)], 1),
-						new Position(2273 + Utility.random(14), 5341 + Utility.random(15), 0));
+						new Position(2273 + Utility.random(7), 5341 + Utility.random(8), 0));
 				World.sendMessage("<img=10><col=FF0000>[GALVEK EVENT] Arena has dropped Ultra Rare Loot!");
 			
 		}
 		for (int i = 0; i < ALWAYSLOOT.length; i++) {
 			GroundItem.createGlobal(player, new Item(ALWAYSLOOT[i], 1),
-					new Position(2273 + Utility.random(1, 15), 5341 + Utility.random(12), 0));
+					new Position(2273 + Utility.random(1, 7), 5341 + Utility.random(13), 0));
 		}
 		for (Player players : World.getPlayers()) {
 			if (Area.inGlodArena(players)) {

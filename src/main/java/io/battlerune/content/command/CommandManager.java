@@ -44,6 +44,7 @@ import plugin.command.impl.owner.PlayerGuideCommand;
 import plugin.command.impl.owner.PnpcCommand;
 import plugin.command.impl.owner.RandomEvent;
 import plugin.command.impl.owner.RemovePlayerTask;
+import plugin.command.impl.owner.SaveAll;
 import plugin.command.impl.owner.SkotizoSpawnCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
 import plugin.command.impl.owner.SpecCommand;
@@ -205,6 +206,8 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "kill", "killplayer" }, new KillCommand());
 		PLUGIN.putIfAbsent(new String[] { "tele" }, new TeleCommand());
 		PLUGIN.putIfAbsent(new String[] { "giverank" }, new GiveRankCommand());
+		PLUGIN.putIfAbsent(new String[] { "Saveall", "saveall" }, new SaveAll());
+
 		
 		for (Entry<String[], Command> map : PLUGIN.entrySet()) {
 			for (int i = 0; i < map.getKey().length; i++) {

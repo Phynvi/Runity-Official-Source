@@ -109,7 +109,9 @@ public final class PlayerDeath extends MobDeath<Player> {
 
 		if (!PlayerRight.isPriviledged(mob)) {
 			Pets.onDeath(mob);
-			calculateDropItems(mob, killer);
+			if(Area.inWilderness(mob)) {
+			   calculateDropItems(mob, killer);
+			}
 		}
 
 		if (killer == null)
@@ -205,7 +207,11 @@ public final class PlayerDeath extends MobDeath<Player> {
 			return;
 		}
 
-		new Killstreak(killer.getPlayer(), mob).increase();
+	  /*	if (killer.isPlayer()) {
+			if (killer != null || mob != null) {
+				new Killstreak(killer.getPlayer(), mob).increase();
+			}
+		} */
 		mob.move(Config.DEFAULT_POSITION);
 		mob.send(new SendMessage("Oh dear, you are dead!"));
 		mob.animate(new Animation(-1, UpdatePriority.VERY_HIGH));

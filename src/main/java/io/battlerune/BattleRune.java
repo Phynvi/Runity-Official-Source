@@ -137,13 +137,13 @@ public final class BattleRune {
 		World.schedule(new PlayerSaveEvent());
 		World.schedule(new BotStartupEvent());
 		// World.schedule(new DiscordEvent());
-		World.schedule(new SkotizoEvent());
+		//World.schedule(new SkotizoEvent());
 		World.schedule(new ArenaEvent());
 		// World.schedule(new GanoEvent());
 		World.schedule(new GalvekEvent());
-		World.schedule(new JusticarEvent());
-		World.schedule(new PorazdirEvent());
-		World.schedule(new DerwenEvent());
+		//World.schedule(new JusticarEvent());
+		//World.schedule(new PorazdirEvent());
+		//World.schedule(new DerwenEvent());
 		World.schedule(new RoyaltyEvent());
 		Logger.log("Events have been scheduled");
 		Logger.log("World Schdule Events have loaded adam.");

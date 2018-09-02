@@ -244,36 +244,6 @@ public class Galvek extends MultiStrategy {
 
 		@Override
 		public void hit(Npc attacker, Mob defender, Hit hit) {
-			if (Utility.random(1, 3) == 1) {
-				attacker.animate(7909);
-				attacker.transform(8096);
-				attacker.animate(7908);
-				attacker.getCombat().attack(defender);
-				attacker.getCombat().isAttacking(defender);
-
-				System.out.println("[GALVEK] 1 Transformation is good to go.");
-
-			}
-			if (Utility.random(1, 3) == 2) {
-				attacker.animate(7909);
-				attacker.transform(8097);
-				attacker.animate(7908);
-				attacker.getCombat().attack(defender);
-				attacker.getCombat().isAttacking(defender);
-
-				System.out.println("[GALVEK] 2 Transformation is good to go.");
-
-			}
-			if (Utility.random(1, 3) == 3) {
-				attacker.animate(7909);
-				attacker.transform(8098);
-				attacker.animate(7908);
-				attacker.getCombat().attack(defender);
-				attacker.getCombat().isAttacking(defender);
-
-				System.out.println("[GALVEK] 3 Transformation is good to go.");
-
-			}
 			defender.graphic(new Graphic(369));
 			// defender.locking.lock(LockType.FREEZE);
 
@@ -293,9 +263,6 @@ public class Galvek extends MultiStrategy {
 
 					}
 				};
-				for (int x = 1; x < 10; x++) {
-					System.out.println("SPAWNING TSUNAMI");
-				}
 				tsunami.register();
 				tsunami.walkTo(defender, () -> {
 					World.sendGraphic(new Graphic(1460, true), tsunami.getPosition());

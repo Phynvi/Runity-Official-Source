@@ -29,7 +29,6 @@ import static io.battlerune.content.clanchannel.content.ClanTaskKey.ROCK_CRAB;
 import static io.battlerune.content.clanchannel.content.ClanTaskKey.RUNITE_ORES;
 import static io.battlerune.content.clanchannel.content.ClanTaskKey.SAND_CRAB;
 import static io.battlerune.content.clanchannel.content.ClanTaskKey.SCORPIA;
-import static io.battlerune.content.clanchannel.content.ClanTaskKey.SEND_CLAN_MESSAGE;
 import static io.battlerune.content.clanchannel.content.ClanTaskKey.SHARK;
 import static io.battlerune.content.clanchannel.content.ClanTaskKey.SKELETAL_WYVERN;
 import static io.battlerune.content.clanchannel.content.ClanTaskKey.SUPER_RESTORE_POTION;
@@ -56,11 +55,11 @@ import io.battlerune.util.Utility;
 public enum ClanTask {
 	/** PvP */
 	/* -> Easy <- */
-	KILL_PLAYERS_I(ClanType.PVP, Difficulty.EASY, "Kill % players", PLAYER_KILLING, new InclusiveRandom(10, 25)),
+	KILL_PLAYERS_I(ClanType.PVP, Difficulty.EASY, "Kill % players", PLAYER_KILLING, new InclusiveRandom(10, 20)),
 	KILL_BOT_I(ClanType.PVP, Difficulty.EASY, "Kill % bots", BOT_KILLING, new InclusiveRandom(10, 25)),
 
 	/* -> Medium <- */
-	KILL_PLAYERS_II(ClanType.PVP, Difficulty.MEDIUM, "Kill % players", PLAYER_KILLING, new InclusiveRandom(25, 50)),
+	KILL_PLAYERS_II(ClanType.PVP, Difficulty.MEDIUM, "Kill % players", PLAYER_KILLING, new InclusiveRandom(25, 35)),
 	KILL_BOT_II(ClanType.PVP, Difficulty.MEDIUM, "Kill % bots", BOT_KILLING, new InclusiveRandom(25, 50)),
 
 	/* -> Hard <- */
@@ -76,8 +75,6 @@ public enum ClanTask {
 			new InclusiveRandom(50, 150)),
 
 	/* -> Easy <- */
-	/*SEND_CLAN_MESSAGES(ClanType.SOCIAL, Difficulty.EASY, "Send %s Clan Messages!", SEND_CLAN_MESSAGE,
-			new InclusiveRandom(50, 75)),*/
 	/* -> Easy <- */
 	ANY_TREE(ClanType.IRON_MAN, Difficulty.EASY, "Chop % Logs (Any Tree!)", CHOP_ANY_LOG,
 			new InclusiveRandom(150, 350)),
