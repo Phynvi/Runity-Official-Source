@@ -37,13 +37,16 @@ import io.battlerune.game.world.entity.combat.strategy.player.PlayerMagicStrateg
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerMeleeStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerRangedStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.CrypticSword;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.DeathKatana;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.DragonHunterCrossbowStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.FireyBowStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.IceKatanaStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LeafbladeSword;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LimeWhipStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LongbowStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.MagmaAxeStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.ScytheOfVitur;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.SoulFlareStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.ToxicBlowpipeStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.ToxicGlaiveStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.TridentOfTheSeasStrategy;
@@ -229,6 +232,15 @@ public class PlayerAssistant {
 			}
 			if(item.getId() == 3273) {
 				return IceKatanaStrategy.get();
+			}
+			if(item.getId() == 11642) {
+				return DeathKatana.get();
+			}
+			if(item.getId() == 17160) {
+				return SoulFlareStrategy.get();
+			}
+			if(item.getId() == 13687) {
+				return MagmaAxeStrategy.get();
 			}
 			if(item.getId() == 13701) {
 				return CrypticSword.get();

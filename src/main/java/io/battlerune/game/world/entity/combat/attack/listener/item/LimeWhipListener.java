@@ -29,7 +29,7 @@ public class LimeWhipListener extends SimplifiedListener<Mob> {
 	@Override
 	public void hit(Mob attacker, Mob defender, Hit hit) {
 		if (Math.random() > 0.25) {
-			attacker.heal(hit.getDamage() / 2);
+			attacker.heal(hit.getDamage() / 4);
 			attacker.graphic(new Graphic(healingGraphic, UpdatePriority.HIGH));
 		}
 	}

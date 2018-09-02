@@ -540,14 +540,14 @@ public class Player extends Mob {
 	 * }
 	 */
 	private void sendInitialPackets() {
-		playerAssistant.welcomeScreen();
+		//playerAssistant.welcomeScreen();
 		send(new SendRunEnergy());
 		send(new SendPlayerDetails());
 		send(new SendCameraReset());
 		send(new SendExpCounter(skills.getExpCounter()));
 		message(String.format("Welcome to %s. ", Config.SERVER_NAME + ""));
 		message(String.format("There are currently %s players online.", World.getPlayerCount()));
-
+		message(String.format("Do ::guide for a money making guide! ", "& 250$ Bond Giveaway!"));
 		if (Config.DOUBLE_EXPERIENCE) {
 			message("Double experience is currently active!");
 		}

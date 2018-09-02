@@ -5,6 +5,7 @@ import java.util.Arrays;
 import io.battlerune.content.ActivityLog;
 import io.battlerune.content.achievement.AchievementHandler;
 import io.battlerune.content.achievement.AchievementKey;
+import io.battlerune.content.activity.impl.cerberus.CerberusActivity;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuildUtility;
 import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.content.event.EventDispatcher;
@@ -296,7 +297,6 @@ public final class NpcDeath extends MobDeath<Npc> {
 				} else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
-
 				}
 				return;
 
