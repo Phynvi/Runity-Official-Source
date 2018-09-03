@@ -24,7 +24,7 @@ public class Killstreak {
 	
 	public void end() {
 		World.sendMessage("<col=CF2192>[Killstreak] " + killer.getUsername() + " "
-				+ "ended " + player.getUsername() + " killstreak ["+player.getKillStreak()+" Killstreak]</col>");
+				+ "ended " + player.getUsername() + " killstreak.");
 		player.deathCount++;
 		player.killStreak = 0;
 	}

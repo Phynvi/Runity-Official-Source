@@ -8,6 +8,7 @@ import plugin.command.impl.donator.DZoneCommand;
 import plugin.command.impl.donator.DonatorBankCommand;
 import plugin.command.impl.donator.DonatorYellCommand;
 import plugin.command.impl.donator.PortalsZoneCommand;
+import plugin.command.impl.donator.SponsorStoreCommand;
 import plugin.command.impl.moderator.BanCommand;
 import plugin.command.impl.moderator.JailCommand;
 import plugin.command.impl.moderator.KickCommand;
@@ -148,7 +149,7 @@ public class CommandManager {
 		/*
 		 * @Donator Command
 		 */
-
+		PLUGIN.putIfAbsent(new String[] { "sponsor", "sponsorstore" }, new SponsorStoreCommand());
 		PLUGIN.putIfAbsent(new String[] { "bank", "banks" }, new DonatorBankCommand());
 		PLUGIN.putIfAbsent(new String[] { "donatorzone", "dzone" }, new DZoneCommand());
 		PLUGIN.putIfAbsent(new String[] { "portals", "portalzone" }, new PortalsZoneCommand());
