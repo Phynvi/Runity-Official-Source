@@ -114,8 +114,8 @@ public class BossInformationButtonPlugin extends PluginContext {
 		}
 
 		if (button == -14110) {
-			Teleportation.teleport(player, new Position(3233, 3944, 0));
-			player.send(new SendMessage("You have teleported to Scopria!"));
+			Teleportation.teleport(player, new Position(3217, 3944, 0));
+			player.send(new SendMessage("You have teleported to Scorpia!"));
 		}
 		if (button == -14125) {
 			Teleportation.teleport(player, new Position(3274, 3847, 0));
