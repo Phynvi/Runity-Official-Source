@@ -288,7 +288,7 @@
       {
         "id": 12825, // Arcane spirit shield
         "amount": 100,
-        "value": 150 // ~175 kills
+        "value": 3000 // ~175 kills
       },
 
       {
@@ -3861,7 +3861,7 @@
         "id": 12825,
         //ARCANE_SPIRIT_SHIELD
         "amount": 100,
-        "value": 750
+        "value": 500
       },
       {
         "id": 19481,

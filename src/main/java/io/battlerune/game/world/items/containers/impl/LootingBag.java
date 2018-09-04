@@ -3,6 +3,7 @@ package io.battlerune.game.world.items.containers.impl;
 import io.battlerune.Config;
 import io.battlerune.game.world.InterfaceConstants;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.ItemContainer;
 import io.battlerune.game.world.items.containers.ItemContainerAdapter;
@@ -34,6 +35,10 @@ public class LootingBag extends ItemContainer {
 	}
 
 	public void open() {
+		if(PlayerRight.isIronman(player)) {
+			return;
+		}
+			
 		onRefresh();
 		player.interfaceManager.setSidebar(Config.INVENTORY_TAB, 26700);
 		player.send(new SendForceTab(Config.INVENTORY_TAB));

@@ -13,29 +13,20 @@ public class GoldMysteryBox implements MysteryBoxListener {
 	@Override
 	public Item[] getCommon() {
 		return new Item[] { new Item(995, Utility.random(2500000, 3500000)), new Item(11959, 300), // black chinchompa		new Item(10034, 100), // Red Chins
-		        new Item(454, 500), // 500x Coal Ore (Soo needed in-game)
-		        new Item(1437, 2000), // 2k Rune Essence
-		        new Item(6, 1), // Cannon Base
-		        new Item(8, 1), // Cannon stand
-		        new Item(10, 1), // Cannon barrels
-		        new Item(12, 1), // Cannon furnace
-		        new Item(6137, 1), // Skeleton helm
-		        new Item(6139, 1), // Skeleton top
-		        new Item(6141, 1), // Skeleton bottom
-		        new Item(6147, 1), // Skeleton boots
-		        new Item(6153, 1), // Skeleton gloves
 		        new Item(10796, 1), // Robin hood hat
 		        new Item(19707, 1), // Amulet of eternal glory
 		        new Item(299, 50), // 50x Flower Poker Seeds
-		        new Item(6343, 1), // Villager Robe
-		        new Item(6345, 1), // Villager Hat
-		        new Item(6347, 1), // Villager Gloves
-		        new Item(6349, 1), // Villager Sandals
+				new Item(13652, 1), // Dragon Claws
+				new Item(11785, 1), // Arma crossbow
+				new Item(12926, 1), // Toxic blowpipe
+				new Item(11283, 1), // DFS
 		        new Item(811, 500), // 500x Rune Dart
 		        new Item(11230, 200), // 200x Dragon Dart
 		        new Item(7668, 1), // Gadderhammer
 		        new Item(6818, 1), // Bow-Sword (Cool skiller weapon)
-		        new Item(6199, 1) // Mummy's leg
+		        new Item(6199, 1), // Mummy's leg
+				new Item(12357, 1) // katana
+
 			};
 		}
 
@@ -46,27 +37,28 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(1959, 1), // pumpkin
 				new Item(1961, 1), // easter egg
 				new Item(10507, 1), // reindeer hat
-
-				new Item(9925, 1), // Skeleton mask
-				new Item(9922, 1), // skeleton gloves
-
-				new Item(9924, 1), // skeleton shirt
-				new Item(9921, 1), // skeleton boots
+				new Item(21012, 1), // Dragon hunter cbow
 
 				new Item(21021, 1), // ancestral top
 				new Item(21018, 1), // ancestral hat
 				new Item(12002, 1), // occult necklace
 				new Item(21024, 1), // ancestral robe bottom
-				new Item(20035, 1), // Samurai kasa
-				new Item(20038, 1), // Samurai shirt
-				new Item(20044, 1), // Samurai greaves
-				new Item(20041, 1), // Samurai gloves
-				new Item(20047, 1), // Samurai boots
 				new Item(20086, 1), // Mummy's hand
 				new Item(20092, 1), // Mummy's feet
 				new Item(20080, 1), // Mummy's head
 				new Item(20083, 1), // Mummy's top
-				new Item(20089, 1) // Mummy's leg
+				new Item(20089, 1), // Mummy's leg
+				new Item(11926, 1), // odium ward
+				new Item(12691, 1), // tyrannical ring (i)
+				new Item(12692, 1), // treasonousnring (i)
+				new Item(13202, 1), // ring of gods (i)
+				new Item(12397, 1), // crown
+
+				new Item(19707, 1), // eternal glory
+				new Item(11889, 1), // zam hasta
+				new Item(11791, 1), // SOTD
+				new Item(19710, 1), // ring of suffering (i)
+				new Item(12831, 1), // blessed ss
 		};
 	}
 
@@ -80,7 +72,8 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(13652, 1), // dragon claws
 				new Item(12888, 1), // Santa jacket
 				new Item(12891, 1), // Santa boots
-
+				new Item(12821, 1), // spectral ss
+				new Item(12825, 1), // arcane ss
 				new Item(13343, 1), // black santa hat
 
 				new Item(10556, 1), // attacker icon
@@ -89,7 +82,6 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(10559, 1), // healer icon
 
 				new Item(11847, 1), // black h'ween mask
-				new Item(4084, 1), // sled
 				new Item(1048, 1), // white phat
 				new Item(1040, 1), // yellow phat
 				new Item(1042, 1), // blue phat
@@ -125,8 +117,16 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(12823, 1), // spectral sigil
 				new Item(12827, 1), // arcane sigil
 				new Item(21225, 1),
-				new Item(13703, 1), new Item(13704, 1), new Item(13705, 1), new Item(13687, 1),
+				new Item(13703, 1), 
+				new Item(13704, 1), 
+				new Item(13705, 1), 
+				new Item(13687, 1),
 				new Item(13686, 1),
+				new Item(20035, 1), // Samurai kasa
+				new Item(20038, 1), // Samurai shirt
+				new Item(20044, 1), // Samurai greaves
+				new Item(20041, 1), // Samurai gloves
+				new Item(20047, 1), // Samurai boots
 
 		};
 	}
