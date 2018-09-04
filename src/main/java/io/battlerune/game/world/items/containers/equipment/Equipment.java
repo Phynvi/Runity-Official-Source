@@ -95,6 +95,12 @@ public final class Equipment extends ItemContainer {
 		this.player = player;
 		addListener(new EquipmentListener());
 	}
+	
+	public void fightcavesrefresh() {
+		updateBonus();
+		updateWeight();
+		refresh();
+	}
 
 	/**
 	 * Handles refreshing all the equipment items.

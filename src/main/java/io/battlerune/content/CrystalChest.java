@@ -38,6 +38,27 @@ public class CrystalChest {
 
 	/** Holds all the crystal chest rewards. */
 	private static final Chance<Item> ITEMS = new Chance<>(Arrays.asList(new WeightedChance<>(8, new Item(1163, 1)), // RUNE_FULL_HELM
+			new WeightedChance<>(6, new Item(2453, 100)), // antifire pot
+					new WeightedChance<>(6,new Item(2447, 100)), // antiposion
+							new WeightedChance<>(6,new Item(12906, 100)), // anti-venom
+									new WeightedChance<>(6,new Item(12912, 100)), // anti-venom
+											new WeightedChance<>(6,new Item(2445, 100)), // ranging pot
+													new WeightedChance<>(6,new Item(3041, 100)), // magic pot
+															new WeightedChance<>(6,new Item(12696, 100)), // super combat
+																	new WeightedChance<>(6,new Item(1713, 35)), // amulet of glory
+																			new WeightedChance<>(6,new Item(11959, 100)), // black chin
+																					new WeightedChance<>(6,new Item(10034, 100)), // red chin
+																							new WeightedChance<>(6,new Item(537, 100)), // dragon bones
+																									new WeightedChance<>(6,new Item(11944, 100)), // lava dragon bones
+																											new WeightedChance<>(6,new Item(6816, 100)), // wyvern bones
+
+																													new WeightedChance<>(6,new Item(9342, 100)), // onyx bolts
+																							new WeightedChance<>(6,new Item(10280, 100)), // willow comp bow
+																									new WeightedChance<>(6,new Item(10282, 100)), // yew comp bow
+																											new WeightedChance<>(6,new Item(10284, 100)), // magic comp bow
+																													new WeightedChance<>(6,new Item(1780, 100)), // flax
+
+
 			new WeightedChance<>(6, new Item(1147, 1)), // RUNE_MED_HELM
 			new WeightedChance<>(6, new Item(1127, 1)), // RUNE_PLATEBODY
 			new WeightedChance<>(6, new Item(1093, 1)), // RUNE_PLATESKIRT

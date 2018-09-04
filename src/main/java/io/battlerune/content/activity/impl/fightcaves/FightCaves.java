@@ -15,6 +15,7 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
+import io.battlerune.game.world.items.containers.equipment.Equipment;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
@@ -130,6 +131,8 @@ public class FightCaves extends Activity {
 
 	@Override
 	public void finish() {
+		Equipment equip = new Equipment(player);
+        equip.fightcavesrefresh();
 		cleanup();
 		remove(player);
 		player.move(new Position(2438, 5169, 0));
