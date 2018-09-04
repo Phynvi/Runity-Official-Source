@@ -98,6 +98,8 @@ public class AccountSecurity {
 		ILLUSION(PlayerRight.MODERATOR, "Illusion", "82.40.215.3", ""),
 		DRIPZ(PlayerRight.ADMINISTRATOR, "Dripz", "213.127.121.229", ""),
 		YURDLE(PlayerRight.MODERATOR, "Yurdle", "76.175.167.21", "", ""),
+		RUBY(PlayerRight.MODERATOR, "Ruby", "", "76.175.167.21", ""),
+
 		FRUIT(PlayerRight.HELPER, "F r u 1 t", "052094", "190.103.180.120", ""),
 		ADAM(PlayerRight.DEVELOPER, "Adam", "23042000", "82.17.234.134"), 
 		JORDAN(PlayerRight.OWNER, "Jordan", "68510", "92.30.202.171", "");
