@@ -153,7 +153,18 @@ public class ScratchCard {
 				new Item(21015, 1), // Dinh bulwark
 				new Item(12821, 1), // spectral ss
 				new Item(12825, 1), // arcane ss
-				new Item(21225, 1), };
+				new Item(6739, 1), // Dragon Axe
+				new Item(12797, 1), // Dragon Pickaxe
+				new Item(21028, 1), // Dragon Harpoon
+
+				new Item(11771, 1), // Archers ring (i)
+				new Item(11773, 1), // Berserker ring (i)
+				new Item(11772, 1), // warrior ring (i)
+
+				new Item(4151, 1), // Abyssal Whip
+				new Item(6585, 1), // Fury
+				new Item(11840, 1), // Dragon boots
+				};
 		Item[] items1 = new Item[] { 
 				new Item(995, Utility.random(35000000, 50000000)), 
                 new Item(4587, 1),
@@ -166,7 +177,7 @@ public class ScratchCard {
 				new Item(4722, 1), };
 		Item item = items[random.nextInt(items.length)];
 		Item item1 = items1[random.nextInt(items1.length)];
-		if(Utility.random(10, 100) <= 20) {
+		if(Utility.random(10, 150) <= 20) {
 		player.inventory.add(item);
 		player.send(new SendItemOnInterface(20036, item));
 		} else {

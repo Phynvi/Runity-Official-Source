@@ -74,11 +74,11 @@ public class ItemCreation {
 			new Item(1755, 1)),
 	FIRE_MAX_CAPE(new Item[] { new Item(13329), new Item(13330) }, null, null, new Item(6570), new Item(13280),
 			new Item(13281)),
-	SARADOMIN_MAX_CAPE(new Item[] { new Item(13331), new Item(13332) }, null, null, new Item(10446), new Item(13280),
+	SARADOMIN_MAX_CAPE(new Item[] { new Item(13331), new Item(13332) }, null, null, new Item(2412), new Item(13280),
 			new Item(13281)),
-	ZAMORAK_MAX_CAPE(new Item[] { new Item(13333), new Item(13334) }, null, null, new Item(10450), new Item(13280),
+	ZAMORAK_MAX_CAPE(new Item[] { new Item(13333), new Item(13334) }, null, null, new Item(2414), new Item(13280),
 			new Item(13281)),
-	GUTHIX_MAX_CAPE(new Item[] { new Item(13335), new Item(13336) }, null, null, new Item(10448), new Item(13280),
+	GUTHIX_MAX_CAPE(new Item[] { new Item(13335), new Item(13336) }, null, null, new Item(2413), new Item(13280),
 			new Item(13281)),
 	AVA_MAX_CAPE(new Item[] { new Item(13337), new Item(13338) }, null, null, new Item(10498), new Item(13280),
 			new Item(13281)),
@@ -114,7 +114,8 @@ public class ItemCreation {
 	ZAMORAKGOD_OR(new Item(20372), null, null, new Item(20074, 1), new Item(11806, 1)),
 	SARADOMINGOD_OR(new Item(20374), null, null, new Item(20077, 1), new Item(11808, 1)),
 	TRIDENT_OF_SWAMPS(new Item(12899), null, null, new Item(11907, 1), new Item(12932, 1)),
-
+	INFERNAL_MAXCAPE(new Item[] { new Item(21285), new Item(21282) }, null, null, new Item(21295), new Item(13280),
+			new Item(13281)),
 	CAP_AND_GOGGLES(new Item(9946), null, null, new Item(9945, 1), new Item(9472, 1));
 
 		/** The product of the creation. */

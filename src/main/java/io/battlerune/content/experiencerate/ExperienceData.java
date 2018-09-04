@@ -10,8 +10,8 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
  */
 public enum ExperienceData {
 
-	NORMAL(PlayerRight.PLAYER, 50.0), HELPER(PlayerRight.HELPER, 50.0), MODERATOR(PlayerRight.MODERATOR, 50.0),
-	ADMINISTRATOR(PlayerRight.ADMINISTRATOR, 50.0), DEVELOPER(PlayerRight.DEVELOPER, 50.0), OWNER(PlayerRight.OWNER, 50.0),
+	NORMAL(PlayerRight.PLAYER, 35.0), HELPER(PlayerRight.HELPER, 35.0), MODERATOR(PlayerRight.MODERATOR, 35.0),
+	ADMINISTRATOR(PlayerRight.ADMINISTRATOR, 35.0), DEVELOPER(PlayerRight.DEVELOPER, 35.0), OWNER(PlayerRight.OWNER, 35.0),
 
 	DONATOR(PlayerRight.DONATOR, 52.0), SUPER_DONATOR(PlayerRight.SUPER_DONATOR, 54.0),
 	EXTREME_DONATOR(PlayerRight.EXTREME_DONATOR, 56.0), ELITE_DONATOR(PlayerRight.ELITE_DONATOR, 58.0),

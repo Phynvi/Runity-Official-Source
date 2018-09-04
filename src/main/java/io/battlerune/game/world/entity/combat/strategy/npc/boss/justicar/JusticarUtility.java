@@ -39,7 +39,7 @@ public class JusticarUtility {
 	public static int[] COMMONLOOT = { 6199, 989, 3140, 4087, 11732, 989, 12878, 6585, 4675 };
 	public static int[] RARELOOT = { 11834, 11832, 11828, 11830, 11836, 11773, 13239, 13237, 13235, 11772, 11771, 11770,
 			20143, 20002 };
-	public static int[] SUPERRARELOOT = { 11862, 21225, 12817, 12825, 12821, 20997, 13652, 11802, 13576, 11785, 19481,
+	public static int[] SUPERRARELOOT = { 11862, 12817, 12825, 12821, 20997, 13652, 11802, 13576, 11785, 19481,
 			11791, 12904, };
 
 	public static void defeated(Npc justicar, Player player) {

@@ -19,8 +19,8 @@ public class AmuletOfGloryPlugin extends PluginContext {
 	public void teleport(Player player, Item item, Position position, int index, boolean equipment) {
 		index = index - 1;
 
-		if (player.wilderness > 20 && !PlayerRight.isPriviledged(player)) {
-			player.send(new SendMessage("You can't teleport past 20 wilderness!"));
+		if (player.wilderness >= 30 && !PlayerRight.isPriviledged(player)) {
+			player.send(new SendMessage("You can't teleport past 30 wilderness!"));
 			return;
 		}
 

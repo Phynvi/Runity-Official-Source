@@ -164,7 +164,7 @@ public enum TriviaBotData {
 	_172("What item for slayer helm do you get from cave horrors?", "black mask"),
 	_173("Who sells lottery tickets?", "lottie"), _174("Who sells titles for loyalty points?", "ringmaster"),
 	_175("What is the highest level stall you can thieve in edgeville?", "magic", "magic stall"),
-	_176("What altar switches prayers and curses?", "chaos", "chaos altar"),
+	_176("What altar switches prayers and curses?", "chaos", "chaos altar", "altar", "chaos"),
 	_177("What is the best whip you can get from the zombie minigame?", "barrows", "barrows whip"),
 	_178("How many zombie points does a full zombie set cost?", "5000", "five thousand"),
 	_179("What portal is on the east side of pest control?", "blue", "blue portal"),

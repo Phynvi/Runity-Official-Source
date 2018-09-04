@@ -36,6 +36,7 @@ public class LootingBag extends ItemContainer {
 
 	public void open() {
 		if(PlayerRight.isIronman(player)) {
+			player.message("Looting bag isn't avaliable for ironman accounts.");
 			return;
 		}
 			

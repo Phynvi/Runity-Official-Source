@@ -25,7 +25,10 @@ public class GoldMysteryBox implements MysteryBoxListener {
 		        new Item(7668, 1), // Gadderhammer
 		        new Item(6818, 1), // Bow-Sword (Cool skiller weapon)
 		        new Item(6199, 1), // Mummy's leg
-				new Item(12357, 1) // katana
+				new Item(12357, 1), // katana
+				new Item(21021, 1), // ancestral top
+				new Item(21018, 1), // ancestral hat
+				new Item(12002, 1), // occult necklace
 
 			};
 		}

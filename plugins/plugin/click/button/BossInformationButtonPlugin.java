@@ -122,8 +122,8 @@ public class BossInformationButtonPlugin extends PluginContext {
 			player.send(new SendMessage("You have teleported to Callisto!"));
 		}
 		if (button == -14065) {
-			//Teleportation.teleport(player, new Position(2525, 4656, 0));
-			player.send(new SendMessage("Ice Demon is currently being fixed."));
+			Teleportation.teleport(player, new Position(2525, 4656, 0));
+			player.send(new SendMessage("You have teleported to Ice Demon!"));
 		}
 		if (button == -14095) {
 

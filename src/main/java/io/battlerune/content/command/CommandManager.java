@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 import plugin.command.impl.donator.DZoneCommand;
 import plugin.command.impl.donator.DonatorBankCommand;
 import plugin.command.impl.donator.DonatorYellCommand;
+import plugin.command.impl.donator.EZCommandZone;
 import plugin.command.impl.donator.PortalsZoneCommand;
 import plugin.command.impl.donator.SponsorStoreCommand;
 import plugin.command.impl.moderator.BanCommand;
@@ -145,6 +146,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "dusties", "dusti" }, new DustiesCommand());
 		PLUGIN.putIfAbsent(new String[] { "key", "security" }, new KeyCommand());
 		PLUGIN.putIfAbsent(new String[] { "galvek", "Galvek" }, new GalvekCommands());
+		PLUGIN.putIfAbsent(new String[] { "es", "ed" }, new EZCommandZone());
 
 
 
