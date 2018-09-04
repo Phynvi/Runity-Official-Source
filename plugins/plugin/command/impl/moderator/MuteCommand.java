@@ -6,6 +6,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishementData;
 import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
+import io.battlerune.net.packet.out.SendMessage;
 
 /**
  * 
@@ -20,7 +21,15 @@ public class MuteCommand implements Command {
 		final String name = String.format(parts[1].replaceAll("_", " "));
 
 		World.search(name.toString()).ifPresent(other -> {
-			new PlayerPunishment(other, PlayerPunishementData.MUTE).execute();
+			if (PlayerPunishment.muted(other.getUsername())) {
+	            player.send(new SendMessage("Player " + other.getUsername() + " already has an active mute."));
+	            return;
+	        }
+			
+			PlayerPunishment.addToFile("./data/content/punishements/Mutes.txt", other.getUsername());
+			//World.kickPlayer(other.getUsername());
+			player.send(new SendMessage("@red@Player " + other.getUsername() + " has been muted!"));
+			
 		});
 	}
 

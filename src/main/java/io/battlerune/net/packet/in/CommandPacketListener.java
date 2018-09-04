@@ -31,13 +31,10 @@ public final class CommandPacketListener implements PacketListener {
 		parts[0] = parts[0].toLowerCase();
 
 		if (input.startsWith("/")) {
-			for (Entry<String, PlayerPunishementData> data : PlayerPunishment.DATA.entrySet()) {
-				if (data.getKey().equalsIgnoreCase(player.getUsername())) {
-					if (data.getValue().equals(PlayerPunishementData.MUTE)) {
-						player.send(new SendMessage("You can not send clan messages while muted!"));
-						return;
-					}
-				}
+			
+			if (PlayerPunishment.muted(player.getUsername()) || PlayerPunishment.IPMuted(player.lastHost)) {
+				player.send(new SendMessage("You are muted and cannot chat."));
+				return;
 			}
 
 			player.forClan(channel -> {

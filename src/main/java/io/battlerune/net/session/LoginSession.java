@@ -17,6 +17,7 @@ import io.battlerune.game.service.ForumService;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
+import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
 import io.battlerune.net.codec.game.GamePacketDecoder;
 import io.battlerune.net.codec.game.GamePacketEncoder;
 import io.battlerune.net.codec.login.LoginDetailsPacket;
@@ -86,7 +87,6 @@ public final class LoginSession extends Session {
 		}
 
 		final ChannelFuture future = channel.writeAndFlush(new LoginResponsePacket(response, player.right, false));
-
 		if (response != LoginResponse.NORMAL) {
 			future.addListener(ChannelFutureListener.CLOSE);
 			return;
@@ -112,6 +112,10 @@ public final class LoginSession extends Session {
 		// connections
 		if (!BattleRune.serverStarted.get()) {
 			return LoginResponse.SERVER_BEING_UPDATED;
+		}
+
+		if (PlayerPunishment.banned(player.getUsername()) || PlayerPunishment.IPBanned(player.lastHost)) {
+			return LoginResponse.ACCOUNT_DISABLED;
 		}
 
 //        if (Config.TEST_WORLD && !AccountSecurity.AccountData.forName(username).isPresent()) {

@@ -206,14 +206,6 @@ public final class PlayerRelation {
 	}
 
 	public void message(Player friend, PrivateChatMessage message) {
-		for (Entry<String, PlayerPunishementData> data : PlayerPunishment.DATA.entrySet()) {
-			if (data.getKey().equalsIgnoreCase(player.getUsername())) {
-				if (data.getValue().equals(PlayerPunishementData.MUTE)) {
-					player.send(new SendMessage("You can not send private messages while muted!"));
-					return;
-				}
-			}
-		}
 		if (friend == null) {
 			player.send(new SendMessage("This player is currently offline."));
 			return;

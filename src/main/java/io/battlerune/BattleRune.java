@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import io.battlerune.content.WellOfGoodwill;
+import io.battlerune.content.activity.annoucements.Announcement;
 import io.battlerune.content.activity.record.GlobalRecords;
 import io.battlerune.content.clanchannel.ClanRepository;
 import io.battlerune.content.itemaction.ItemActionRepository;
@@ -36,6 +37,7 @@ import io.battlerune.game.world.entity.combat.strategy.npc.boss.magearena.Porazd
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoEvent;
 import io.battlerune.game.world.entity.mob.npc.definition.NpcDefinition;
 import io.battlerune.game.world.entity.mob.player.profile.ProfileRepository;
+import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
 import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.io.PacketListenerLoader;
 import io.battlerune.util.GameSaver;
@@ -118,7 +120,7 @@ public final class BattleRune {
 		startupService.submit(ProfileRepository::load);
 		startupService.submit(ItemActionRepository::declare);
 		startupService.submit(ClueScrollPlugin::declare);
-		// startupService.submit(Discord::start);
+		startupService.submit(PlayerPunishment::init);
 		startupService.submit(GameSaver::load);
 		startupService.shutdown();
 	}
@@ -132,6 +134,7 @@ public final class BattleRune {
 			World.schedule(new DoubleExperienceEvent());
 		}
 
+		World.schedule(new Announcement());
 		World.schedule(new MessageEvent());
 		World.schedule(new ClanUpdateEvent());
 		World.schedule(new PlayerSaveEvent());

@@ -38,15 +38,12 @@ public class ChatMessagePacketListener implements PacketListener {
 			return;
 		}
 
-		for (Entry<String, PlayerPunishementData> data : PlayerPunishment.DATA.entrySet()) {
-			if (data.getKey().equalsIgnoreCase(player.getUsername())) {
-				if (data.getValue().equals(PlayerPunishementData.MUTE)) {
-					player.send(new SendMessage("You are currently muted and can not talk!"));
-					return;
-				}
-			}
-		}
 
+		if (PlayerPunishment.muted(player.getUsername()) || PlayerPunishment.IPMuted(player.lastHost)) {
+			player.send(new SendMessage("You are muted and cannot chat."));
+			return;
+		}
+		
 		if (player.locking.locked(PacketType.CHAT)) {
 			return;
 		}

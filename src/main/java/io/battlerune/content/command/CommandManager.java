@@ -10,6 +10,8 @@ import plugin.command.impl.donator.DonatorYellCommand;
 import plugin.command.impl.donator.PortalsZoneCommand;
 import plugin.command.impl.donator.SponsorStoreCommand;
 import plugin.command.impl.moderator.BanCommand;
+import plugin.command.impl.moderator.IpbanCommand;
+import plugin.command.impl.moderator.IpmuteCommand;
 import plugin.command.impl.moderator.JailCommand;
 import plugin.command.impl.moderator.KickCommand;
 import plugin.command.impl.moderator.MuteCommand;
@@ -169,6 +171,9 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "bann", "ban", "ruin" }, new BanCommand());
 		PLUGIN.putIfAbsent(new String[] { "unban", "unbann" }, new Unbancommand());
 		PLUGIN.putIfAbsent(new String[] { "kick", "kickk" }, new KickCommand());
+		PLUGIN.putIfAbsent(new String[] { "ipban", "ip" }, new IpbanCommand());
+		PLUGIN.putIfAbsent(new String[] { "ipmute", "imute" }, new IpmuteCommand());
+		
 
 
 		/*

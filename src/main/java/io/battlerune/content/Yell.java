@@ -25,6 +25,10 @@ public class Yell {
 
 	/** Yells a message to the server. */
 	public static void yell(Player player, String message) {
+		if (PlayerPunishment.muted(player.getUsername()) || PlayerPunishment.IPMuted(player.lastHost)) {
+			player.send(new SendMessage("You are muted and cannot chat."));
+			return;
+		}
 		if (!PlayerRight.isDonator(player)) {
 			player.send(new SendMessage("You must be a donator to use this command!"));
 			return;
@@ -33,16 +37,6 @@ public class Yell {
 		if (!player.settings.yell) {
 			player.send(new SendMessage("You can not send a yell message as you have the yell setting disabled!"));
 			return;
-		}
-
-		for (Entry<String, PlayerPunishementData> data : PlayerPunishment.DATA.entrySet()) {
-			if (data.getKey().equalsIgnoreCase(player.getUsername())) {
-				if (data.getValue().equals(PlayerPunishementData.MUTE)
-						|| data.getValue().equals(PlayerPunishementData.JAIL)) {
-					player.send(new SendMessage("You are muted / jailed and can not yell!"));
-					return;
-				}
-			}
 		}
 
 		if (!player.yellDelay.elapsed(20, TimeUnit.SECONDS) && !PlayerRight.isManagement(player)) {
