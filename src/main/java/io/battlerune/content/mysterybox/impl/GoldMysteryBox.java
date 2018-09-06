@@ -16,8 +16,6 @@ public class GoldMysteryBox implements MysteryBoxListener {
 		        new Item(2581, 1), // Robin hood hat
 		        new Item(19707, 1), // Amulet of eternal glory
 		        new Item(299, 50), // 50x Flower Poker Seeds
-				new Item(13652, 1), // Dragon Claws
-				new Item(11785, 1), // Arma crossbow
 				new Item(12926, 1), // Toxic blowpipe
 				new Item(11283, 1), // DFS
 		        new Item(811, 500), // 500x Rune Dart
@@ -59,16 +57,6 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(10507, 1), // reindeer hat
 				new Item(21012, 1), // Dragon hunter cbow
 				new Item(19553, 1), // Amulet of torture
-				new Item(11810, 1), // Arma hilt
-				new Item(11812, 1), // Bandos hilt
-				new Item(11814, 1), // Sara hilt
-				new Item(11816, 1), // Zam hilt
-				new Item(13235, 1), // eternal boots
-				new Item(13237, 1), // peg boots
-				new Item(13239, 1), // prim boots
-				new Item(13652, 1), // Dragon Claws
-				new Item(11785, 1), // Arma crossbow
-				new Item(12926, 1), // Toxic blowpipe
 				new Item(11283, 1), // DFS
 				new Item(21021, 1), // ancestral top
 				new Item(21018, 1), // ancestral hat
@@ -79,6 +67,7 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(20080, 1), // Mummy's head
 				new Item(20083, 1), // Mummy's top
 				new Item(20089, 1), // Mummy's leg
+				new Item(11785, 1), // Arma crossbow
 				new Item(11926, 1), // odium ward
 				new Item(12691, 1), // tyrannical ring (i)
 				new Item(12692, 1), // treasonousnring (i)
@@ -124,7 +113,16 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(12399, 1), // phat and specs
 				new Item(1057, 1), // red h'ween
 				new Item(1053, 1), // green h'ween
-
+				new Item(11810, 1), // Arma hilt
+				new Item(11812, 1), // Bandos hilt
+				new Item(11814, 1), // Sara hilt
+				new Item(11816, 1), // Zam hilt
+				new Item(13235, 1), // eternal boots
+				new Item(13237, 1), // peg boots
+				new Item(13239, 1), // prim boots
+				new Item(13652, 1), // Dragon Claws
+				new Item(11785, 1), // Arma crossbow
+				new Item(12926, 1), // Toxic blowpipe
 				new Item(21079, 1), // arcane prayer scroll
 				new Item(21034, 1), // dexterous prayer scroll
 				new Item(1055, 1) // blue h'ween
@@ -174,21 +172,21 @@ public class GoldMysteryBox implements MysteryBoxListener {
 			player.inventory.add(getUncommon()[random.nextInt(getUncommon().length)]);
 			player.message("You have recieved a Uncommon loot!");
 		}
-		if (Utility.random(1, 200) <= 10) {
+		if (Utility.random(1, 350) <= 2) {
 			player.inventory.add(getRare()[random.nextInt(getRare().length)]);
 			player.message("@gre@You have recieved a Rare loot!");
 			World.sendMessage(player.getName() + " @red@Has received RARE LOOT!");
 
 		}
-		if (Utility.random(1, 250) <= 5) {
+		if (Utility.random(1, 500) <= 2) {
 			player.inventory.add(getUltra()[random.nextInt(getUltra().length)]);
 			player.message("You have recieved a ULTRA RARE LOOT!");
 			World.sendMessage(player.getName() + " @red@Has received ULTRA RARE LOOT!");
 		} else {
 			player.inventory.add(getCommon()[random.nextInt(getCommon().length)]);
 		}
-		player.setBossPoints(player.getBossPoints() + 250);
-        player.message("You have recieved 250 Boss points!" + " <img=14>You now have @red@ " + player.getBossPoints() + " boss points");
+		player.setBossPoints(player.getBossPoints() + 50);
+        player.message("You have recieved 50 Boss points!" + " <img=14>You now have @red@ " + player.getBossPoints() + " boss points");
 	}
 
 }
