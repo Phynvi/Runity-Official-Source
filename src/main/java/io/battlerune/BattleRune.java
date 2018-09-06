@@ -140,7 +140,7 @@ public final class BattleRune {
 		World.schedule(new PlayerSaveEvent());
 		World.schedule(new BotStartupEvent());
 		// World.schedule(new DiscordEvent());
-		//World.schedule(new SkotizoEvent());
+		World.schedule(new SkotizoEvent());
 		World.schedule(new ArenaEvent());
 		// World.schedule(new GanoEvent());
 		World.schedule(new GalvekEvent());

@@ -23,7 +23,7 @@ public class SponsorStoreCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		return (PlayerRight.isSupreme(player) || PlayerRight.isDeveloper(player));
+		return (PlayerRight.isSupreme(player) ||  PlayerRight.isKing(player) || PlayerRight.isDeveloper(player));
 
 	}
 

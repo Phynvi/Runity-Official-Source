@@ -47,7 +47,7 @@ public class MegaMysteryBox implements MysteryBoxListener {
 				new Item(6139, 1), // skeletal top
 				new Item(6141, 1), // skeletal bottom
 				new Item(6147, 1), // skeletal boots
-				new Item(10796, 1), // robin hood hat
+				new Item(2581, 1), // robin hood hat
 				new Item(19707, 1), // amulet of eternal glory
 				new Item(6153, 1) // skeleton gloves
 

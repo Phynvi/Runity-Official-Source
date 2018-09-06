@@ -13,7 +13,7 @@ public class GoldMysteryBox implements MysteryBoxListener {
 	@Override
 	public Item[] getCommon() {
 		return new Item[] { new Item(995, Utility.random(2500000, 3500000)), new Item(11959, 300), // black chinchompa		new Item(10034, 100), // Red Chins
-		        new Item(10796, 1), // Robin hood hat
+		        new Item(2581, 1), // Robin hood hat
 		        new Item(19707, 1), // Amulet of eternal glory
 		        new Item(299, 50), // 50x Flower Poker Seeds
 				new Item(13652, 1), // Dragon Claws
@@ -29,6 +29,23 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(21021, 1), // ancestral top
 				new Item(21018, 1), // ancestral hat
 				new Item(12002, 1), // occult necklace
+				new Item(6739, 1), // Dragon Axe
+				new Item(12797, 1), // Dragon Pickaxe
+				new Item(21028, 1), // Dragon Harpoon
+				new Item(11771, 1), // Archers ring (i)
+				new Item(11773, 1), // Berserker ring (i)
+				new Item(11772, 1), // warrior ring (i)
+
+				new Item(4151, 1), // Abyssal Whip
+				new Item(6585, 1), // Fury
+				new Item(11840, 1), // Dragon boots
+				new Item(12881, 1), // Ahrim set
+				new Item(12883, 1), // Kail's set
+				new Item(12873, 1), // Guthen set
+				new Item(12879, 1), // Torag set
+				new Item(19484, 500), // 500 Dragon Jav
+				new Item(11212, 500), // 500 Dragon Arrows
+				new Item(12875, 1) // Verac set
 
 			};
 		}
@@ -41,7 +58,18 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(1961, 1), // easter egg
 				new Item(10507, 1), // reindeer hat
 				new Item(21012, 1), // Dragon hunter cbow
-
+				new Item(19553, 1), // Amulet of torture
+				new Item(11810, 1), // Arma hilt
+				new Item(11812, 1), // Bandos hilt
+				new Item(11814, 1), // Sara hilt
+				new Item(11816, 1), // Zam hilt
+				new Item(13235, 1), // eternal boots
+				new Item(13237, 1), // peg boots
+				new Item(13239, 1), // prim boots
+				new Item(13652, 1), // Dragon Claws
+				new Item(11785, 1), // Arma crossbow
+				new Item(12926, 1), // Toxic blowpipe
+				new Item(11283, 1), // DFS
 				new Item(21021, 1), // ancestral top
 				new Item(21018, 1), // ancestral hat
 				new Item(12002, 1), // occult necklace
@@ -56,7 +84,6 @@ public class GoldMysteryBox implements MysteryBoxListener {
 				new Item(12692, 1), // treasonousnring (i)
 				new Item(13202, 1), // ring of gods (i)
 				new Item(12397, 1), // crown
-
 				new Item(19707, 1), // eternal glory
 				new Item(11889, 1), // zam hasta
 				new Item(11791, 1), // SOTD
@@ -150,6 +177,8 @@ public class GoldMysteryBox implements MysteryBoxListener {
 		if (Utility.random(1, 200) <= 10) {
 			player.inventory.add(getRare()[random.nextInt(getRare().length)]);
 			player.message("@gre@You have recieved a Rare loot!");
+			World.sendMessage(player.getName() + " @red@Has received RARE LOOT!");
+
 		}
 		if (Utility.random(1, 250) <= 5) {
 			player.inventory.add(getUltra()[random.nextInt(getUltra().length)]);
@@ -158,8 +187,8 @@ public class GoldMysteryBox implements MysteryBoxListener {
 		} else {
 			player.inventory.add(getCommon()[random.nextInt(getCommon().length)]);
 		}
-		player.setBossPoints(player.getBossPoints() + 50);
-        player.message("You have recieved 50 Boss points!" + " <img=14>You now have @red@ " + player.getBossPoints() + " boss points");
+		player.setBossPoints(player.getBossPoints() + 250);
+        player.message("You have recieved 250 Boss points!" + " <img=14>You now have @red@ " + player.getBossPoints() + " boss points");
 	}
 
 }

@@ -8,6 +8,7 @@ import io.battlerune.game.world.entity.combat.attack.listener.SimplifiedListener
 import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.util.Utility;
 
 /**
  * Handles the Elysian spirit shield listener. OSRS Wiki:
@@ -20,7 +21,7 @@ public class ElysianListener extends SimplifiedListener<Player> {
 
 	@Override
 	public void block(Mob attacker, Player defender, Hit hit, CombatType combatType) {
-		if (Math.random() > 0.30) {
+		if (Utility.random(1, 10) <= 7) {
 			hit.modifyDamage(damage -> damage * 3 / 4);
 			defender.graphic(new Graphic(321, UpdatePriority.HIGH));
 		}

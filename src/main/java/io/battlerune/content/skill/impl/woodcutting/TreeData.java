@@ -28,7 +28,7 @@ public enum TreeData {
 	YEW_TREE(60, 1515, 9714, 45, 175.0D, 145_013, 12, 0.3, new int[] { 1753, 1754 }, 12500),
 	MAGIC_TREE(75, 1513, 9713, 60, 250.0D, 72_321, 15, 0.1, new int[] { 1761 }, 25000),
 	REDWOOD_TREE(90, 19669, 28860, 60, 250.0D, 28_321, 19, 0.1, new int[] { 28859 }, 27500),
-	AFK_TREE(1, 2862, 5, 5, 5.0, 317_647, 20_000, 1.0, new int[] { 2092 }, 10);
+	AFK_TREE(1, 2862, 5, 5, 5.0, 317_647, 20_000, 1.0, new int[] { 2092 }, 1000);
 
 	/** The level required to chop the tree. */
 	public final int levelRequired;

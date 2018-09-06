@@ -86,6 +86,8 @@ public class ItemCreation {
 			new Item(13281)),
 	TOXIC_STAFF_OF_THE_DEAD(new Item(12904), null, new Skill[] { new Skill(Skill.CRAFTING, 59, 0) }, new Item(11791, 1),
 			new Item(12932, 1)),
+	AMULET_OF_TORTURE(new Item(19553), null, new Skill[] { new Skill(Skill.CRAFTING, 59, 0) }, new Item(6581, 1),
+			new Item(19529, 1)),
 	TRIDENT_OF_THE_SWAMP(new Item(12899), null, new Skill[] { new Skill(Skill.CRAFTING, 59, 0) }, new Item(12932, 1),
 			new Item(11907, 1)),
 	DRAGON_PICKAXE(new Item(12797), null, null, new Item(11920, 1), new Item(12800, 1)),

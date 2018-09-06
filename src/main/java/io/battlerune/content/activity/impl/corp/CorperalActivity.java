@@ -1,0 +1,211 @@
+package io.battlerune.content.activity.impl.corp;
+
+import java.util.Optional;
+
+import io.battlerune.Config;
+import io.battlerune.content.ActivityLog;
+import io.battlerune.content.activity.Activity;
+import io.battlerune.content.activity.ActivityType;
+import io.battlerune.content.event.impl.ObjectInteractionEvent;
+import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
+import io.battlerune.game.world.World;
+import io.battlerune.game.world.entity.mob.Mob;
+import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.game.world.entity.mob.npc.NpcDeath;
+import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.game.world.position.Area;
+import io.battlerune.game.world.position.Position;
+import io.battlerune.net.packet.out.SendMessage;
+
+/**
+ * 
+ * @author Adam_#6723
+ *
+ */
+
+public class CorperalActivity extends Activity {
+
+	private final Player player;
+	public Npc corp = null;
+	private boolean completed;
+	private final CorperalActivityListener listener = new CorperalActivityListener(this);
+
+	private static final int CORP = 319;
+	private static final Position CORP_POS = new Position(2987, 4381, 2);
+
+	private CorperalActivity(Player player, int instance) {
+		super(1, instance);
+		this.player = player;
+	}
+
+	public static CorperalActivity create(Player player) {
+		CorperalActivity minigame = new CorperalActivity(player, player.playerAssistant.instance());
+		minigame.add(player);
+		// player.gameRecord.start();
+		return minigame;
+	}
+
+	public static void CreatePaidInstance(Player player) {
+		if (!player.bank.contains(995, 75000)) {
+			player.message("You need to have 75,000 coins inside your bank to pay for the instance!");
+			return;
+		} else {
+			player.bank.remove(995, 75000);
+			Teleportation.teleport(player, new Position(2987, 4381, 2), 20, () -> CorperalActivity.create(player));
+			player.send(new SendMessage("You have teleported to the Instanced Version of Corperal"));
+			player.send(new SendMessage("75,000 coins has been taken out of your bank, as a fee."));
+		}
+	}
+
+	public static void CreateUnPaidInstance(Player player) {
+		player.send(new SendMessage("You have teleported to the Non-Instanced Version of Corperal"));
+		Teleportation.teleport(player, new Position(2967, 4383, 2));
+	}
+
+	@Override
+	public void onDeath(Mob mob) {
+		if (mob.isPlayer() && mob.equals(player)) {
+			player.send(new SendMessage("Better luck next time!"));
+			cleanup();
+			remove(player);
+			return;
+		}
+		if (mob.isNpc() && mob.getNpc().id == CORP) {
+			World.schedule(new NpcDeath(mob.getNpc(), () -> {
+				completed = true;
+				finish();
+			}));
+			return;
+		}
+		super.onDeath(mob);
+	}
+
+	@Override
+	public void add(Mob mob) {
+		super.add(mob);
+		if (mob.isNpc()) {
+			if (mob.getNpc().id == CORP) {
+				corp = mob.getNpc();
+			} 
+			mob.locking.lock();
+		}
+	}
+
+	@Override
+	public void remove(Mob mob) {
+		if (!mob.isNpc()) {
+			super.remove(mob);
+			return;
+		}
+		int id = mob.getNpc().id;
+		if (id == CORP) {
+			corp = null;
+			Teleportation.teleport(player, Config.DEFAULT_POSITION, 20, () -> {
+			});
+		} 
+		super.remove(mob);
+	}
+
+	@Override
+	protected void start() {
+		Npc npc = new Npc(CORP, CORP_POS);
+		npc.face(player);
+		npc.owner = player;
+		add(npc);
+		player.face(corp.getPosition());
+		pause();
+	}
+
+	@Override
+	public void onLogout(Player player) {
+		player.move(Config.DEFAULT_POSITION);
+		cleanup();
+		finish();
+	}
+
+	@Override
+	public void onRegionChange(Player player) {
+		if (!Area.inCorp(player)) {
+			cleanup();
+			finish();
+		}
+	}
+
+	@Override
+	public boolean canTeleport(Player player) {
+		return true;
+	}
+
+	// new method = good code.
+	@Override
+	public void finish() {
+		boolean successfull = corp.isDead();
+		cleanup();
+		remove(player);
+		if (successfull) {
+			player.activityLogger.add(ActivityLog.CORPOREAL_BEAST);
+			player.message("Congratulations, you have killed the Corporal. ");
+			restart(10, () -> {
+				if (Area.inCorp(player)) {
+					create(player);
+				} else {
+					remove(player);
+					if (PlayerRight.isDonator(player) || PlayerRight.isSuper(player)) {
+						player.setBossPoints(player.getBossPoints() + 2);
+						player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
+
+					}
+
+					if (PlayerRight.isExtreme(player) || PlayerRight.isElite(player)) {
+						player.setBossPoints(player.getBossPoints() + 3);
+						player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
+
+					}
+					if (PlayerRight.isKing(player)) {
+						player.setBossPoints(player.getBossPoints() + 4);
+						player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
+
+					} else {
+						player.setBossPoints(player.getBossPoints() + 1);
+						player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
+
+					}
+				}
+			});
+		}
+	}
+
+	/*
+	 * @Override public void finish() { //old method, shit code cleanup();
+	 * 
+	 * if (completed) { player.send(new
+	 * SendMessage("Congratulations, you have killed the Cerberus.")); //+
+	 * Utility.getTime(player.gameRecord.end(ActivityType.CERBERUS)) + "</col>."));
+	 * } else { player.gameRecord.end(ActivityType.CERBERUS, false); }
+	 * 
+	 * remove(player);
+	 * player.message("Please teleport back to Cerberus to fight him again!"); }
+	 */
+
+	@Override
+	public void cleanup() {
+		if (corp != null && corp.isRegistered())
+			corp.unregister();
+	}
+
+	@Override
+	protected boolean clickObject(Player player, ObjectInteractionEvent event) {
+		return true;
+	}
+
+	@Override
+	public ActivityType getType() {
+		return ActivityType.CORP_INSTANCE;
+	}
+
+	@Override
+	protected Optional<CorperalActivityListener> getListener() {
+		return Optional.of(listener);
+	}
+}

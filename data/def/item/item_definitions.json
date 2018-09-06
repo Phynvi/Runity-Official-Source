@@ -113827,14 +113827,15 @@
   },
 
   {
-    "id": 20042,
+    "id": 20041,
     "name": "Samurai gloves",
     "stackable": true,
-    "unnoted-id": 20041,
+    "unnoted-id": 20042,
     "low-alch": 1280,
     "high-alch": 1920,
     "base-value": 3200,
     "street-value": 1154485,
+        "equipment-slot": "GLOVES",
     "weight": 0.4,
 "attack-stab": 0,
 "attack-slash": 0,
@@ -126299,39 +126300,6 @@
 						    "equipment-slot": "CAPE",
 						    "weight": 4.0 
 						  },
-
-{
-							    "id": 19914,
-							    "name": "Imperial Helm", 
-							    "low-alch": 2, 
-							    "high-alch": 3, 
-							    "base-value": 5,
-						               "street-value": 18403, 
-							    "equipment-slot": "HELM",
-							    "weight": 4.0 
-							  },
-
-{
-"id": 19917,
-"name": "Imperial platebody", 
-"low-alch": 2, 
-"high-alch": 3, 
-"base-value": 5,
-"street-value": 18403, 
-"equipment-slot": "BODY",
-"weight": 4.0 
-},
-
-{
-"id": 19920,
-"name": "Imperial Platelegs", 
-"low-alch": 2, 
-"high-alch": 3, 
-"base-value": 5,
-    "street-value": 18403, 
-"equipment-slot": "LEGS",
-"weight": 4.0 
-},
 
 {
 	    "id": 20250,

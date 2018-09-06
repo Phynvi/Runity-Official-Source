@@ -11,7 +11,7 @@ import java.util.List;
 public enum ActivityType {
 	SCHOOL_GAME(false), BATTLE_REALM(false), FIGHT_CAVES(true), KOLODION_ARENA(true), RECIPE_FOR_DISASTER(true),
 	BARROWS(true), ZULRAH(true), KRAKEN(true), DUEL_ARENA(false), TUTORIAL(false), PEST_CONTROL(false), CERBERUS(true),
-	LMS(true), JAIL(false), WARRIOR_GUILD(false), RANDOM_EVENT(false), VORKATH(false),;
+	LMS(true), JAIL(false), WARRIOR_GUILD(false), CORP_INSTANCE(true),RANDOM_EVENT(false), VORKATH(false),;
 
 	final boolean record;
 	private static final List<ActivityType> RECORDABLE = new LinkedList<>();

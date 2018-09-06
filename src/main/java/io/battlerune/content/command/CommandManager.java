@@ -53,8 +53,10 @@ import plugin.command.impl.owner.SkotizoSpawnCommand;
 import plugin.command.impl.owner.SpawnCustomCommand;
 import plugin.command.impl.owner.SpecCommand;
 import plugin.command.impl.owner.TeleCommand;
+import plugin.command.impl.owner.TeleCommand1;
 import plugin.command.impl.owner.UpCommand;
 import plugin.command.impl.owner.UpdateCommand;
+import plugin.command.impl.owner.posCommand;
 import plugin.command.impl.player.AnswerTriviaCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
@@ -213,6 +215,9 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "broadcast", "announcement" }, new BroadcastCommand());
 		PLUGIN.putIfAbsent(new String[] { "kill", "killplayer" }, new KillCommand());
 		PLUGIN.putIfAbsent(new String[] { "tele" }, new TeleCommand());
+		PLUGIN.putIfAbsent(new String[] { "tele1" }, new TeleCommand1());
+		PLUGIN.putIfAbsent(new String[] { "pos" }, new posCommand());
+
 		PLUGIN.putIfAbsent(new String[] { "giverank" }, new GiveRankCommand());
 		PLUGIN.putIfAbsent(new String[] { "Saveall", "saveall" }, new SaveAll());
 

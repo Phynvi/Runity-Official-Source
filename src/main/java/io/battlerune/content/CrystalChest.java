@@ -53,9 +53,9 @@ public class CrystalChest {
 																											new WeightedChance<>(6,new Item(6816, 100)), // wyvern bones
 
 																													new WeightedChance<>(6,new Item(9342, 100)), // onyx bolts
-																							new WeightedChance<>(6,new Item(10280, 100)), // willow comp bow
-																									new WeightedChance<>(6,new Item(10282, 100)), // yew comp bow
-																											new WeightedChance<>(6,new Item(10284, 100)), // magic comp bow
+																							new WeightedChance<>(6,new Item(10280, 1)), // willow comp bow
+																									new WeightedChance<>(6,new Item(10282, 1)), // yew comp bow
+																											new WeightedChance<>(6,new Item(10284, 1)), // magic comp bow
 																													new WeightedChance<>(6,new Item(1780, 100)), // flax
 
 

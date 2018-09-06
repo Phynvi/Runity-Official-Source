@@ -20,6 +20,7 @@ import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.RandomUtils;
+import io.battlerune.util.Utility;
 
 /**
  * Handles the woodcutting action event.
@@ -70,6 +71,7 @@ public class WoodcuttingAction extends Action<Player> {
 					getMob().forClan(channel -> channel.activateTask(ClanTaskKey.AFK_LOG, getMob().getName()));
 					getMob().inventory.add(tree.item, 1);
 					getMob().inventory.refresh();
+					getMob().inventory.add(995, tree.getMoney());
 				}
 				object.getGenericAttributes().modify("logs", amount - 1 - bonus);
 			}
