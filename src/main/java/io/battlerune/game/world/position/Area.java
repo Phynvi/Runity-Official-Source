@@ -83,22 +83,10 @@ public abstract class Area {
 	/** CERB AREA **/
 	private static final ImmutableList<Area> CERBERUS = ImmutableList
 			.of(new SquareArea("Cerberus Lair", 1216, 1216, 1278, 1279));
-	
-	
-	private static final ImmutableList<Area> CORP = ImmutableList
-			.of(new SquareArea("Corperal Lair", 2964, 4360, 3001, 4399));
+
 
 	public static boolean inCerberus(Interactable entity) {
 		for (Area zone : CERBERUS) {
-			if (zone.inArea(entity.getPosition())) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public static boolean inCorp(Interactable entity) {
-		for (Area zone : CORP) {
 			if (zone.inArea(entity.getPosition())) {
 				return true;
 			}
@@ -398,6 +386,12 @@ public abstract class Area {
 			}
 		}
 		return false;
+	}
+	
+
+	public static boolean inCorp(Interactable entity) {
+		return inArea(entity, new Position(2964, 4360, entity.getHeight()),
+				new Position(3001, 4399, entity.getHeight()));
 	}
 
 	public abstract boolean inArea(Position position);

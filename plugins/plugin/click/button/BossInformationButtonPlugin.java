@@ -1,7 +1,7 @@
 package plugin.click.button;
 
-import io.battlerune.Config;
 import io.battlerune.content.activity.impl.cerberus.CerberusActivity;
+import io.battlerune.content.activity.impl.corp.CorporealBeastActivity;
 import io.battlerune.content.activity.impl.kraken.KrakenActivity;
 import io.battlerune.content.activity.impl.vorkath.VorkathActivity;
 import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
@@ -11,7 +11,6 @@ import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendFadeScreen;
@@ -46,8 +45,14 @@ public class BossInformationButtonPlugin extends PluginContext {
 			player.send(new SendMessage("You have teleported to Dagganoth Lair!"));
 		}
 		if (button == -14275) {
-			Teleportation.teleport(player, new Position(2967, 4383, 2));
-			player.send(new SendMessage("You have teleported to Corperal Beast!"));
+			DialogueFactory factory = player.dialogueFactory;
+			factory.sendOption("Pay 75,000 coins for instanced Corp?",
+					() -> CorporealBeastActivity.CreatePaidInstance(player),
+					"avoid paying, and head over to the non-instanced version?",
+					() -> CorporealBeastActivity.CreateUnPaidInstance(player), "Nevermind", factory::clear);
+			factory.execute();
+			//Teleportation.teleport(player, new Position(2967, 4383, 2));
+			//player.send(new SendMessage("You have teleported to Corperal Beast!"));
 		}
 		if (button == -14260) {
 			Teleportation.teleport(player, new Position(1454, 3690, 0));

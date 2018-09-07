@@ -67,6 +67,9 @@ public final class Equipment extends ItemContainer {
 			/* - */
 			/* 10 */ "Strength", /* 11 */ "Ranged Strength", /* 12 */ "Magic Strength", /* 13 */ "Prayer" };
 
+	//this method below. what bout it
+	//im pretty sure something related to that is causing the issue for the getmaxhit to double
+	
 	private void updateBonus() {
 		for (Item equipment : toArray()) {
 			if (equipment != null)
@@ -107,7 +110,9 @@ public final class Equipment extends ItemContainer {
 	 */
 
 	public void login() {
-		Arrays.fill(player.getBonuses(), 0);
+		//something do with this here this still the old method?
+		//let me think, i found the fix for this somewhere on r-s im pretty sure
+		//Arrays.fill(player.getBonuses(), 0);
 		for (int index = 0; index < getItems().length; index++) {
 			set(index, get(index), false);
 		}
@@ -352,13 +357,13 @@ public final class Equipment extends ItemContainer {
 
 	private void addBonus(Item item) {
 		for (int index = 0; index < item.getBonuses().length; index++) {
-			player.appendBonus(index, item.getBonus(index));
+			player.appendBonus(index, item.getBonus(index), true);
 		}
 	}
 
 	private void removeBonus(Item item) {
 		for (int index = 0; index < item.getBonuses().length; index++) {
-			player.appendBonus(index, -item.getBonus(index));
+			player.appendBonus(index, item.getBonus(index), false);
 		}
 	}
 

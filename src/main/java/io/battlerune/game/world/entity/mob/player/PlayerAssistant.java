@@ -679,15 +679,15 @@ public class PlayerAssistant {
 	public boolean contains(Item item) {
 		return player.inventory.contains(item) || player.equipment.contains(item) || player.bank.contains(item);
 	}
-
-	/** Gets the max hit of a combat type. */
-	public int getMaxHit(Mob defender, CombatType type) {
-		int max = FormulaFactory.getModifiedMaxHit(player, defender, type);
-		player.getCombat().addFirst(player.getStrategy());
-		max = player.getCombat().modifyDamage(player, max);
-		player.getCombat().removeFirst();
-		return max;
-	}
+	
+	 /** Gets the max hit of a combat type. */
+    public int getMaxHit(Mob defender, CombatType type) {
+        int max = FormulaFactory.getMaxHit(player, defender, type);
+        player.getCombat().addFirst(player.getStrategy());
+        max = player.getCombat().modifyDamage(player, max);
+        player.getCombat().removeFirst();
+        return max;
+    }
 
 	/** Gets the instanced height for player. */
 	public int instance() {

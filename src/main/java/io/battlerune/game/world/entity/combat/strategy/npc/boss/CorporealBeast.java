@@ -17,6 +17,7 @@ import io.battlerune.game.world.entity.combat.strategy.npc.NpcMagicStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.NpcMeleeStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.util.RandomUtils;
 
 /** @author Daniel */
 public class CorporealBeast extends MultiStrategy {
@@ -30,6 +31,11 @@ public class CorporealBeast extends MultiStrategy {
 
 	@Override
 	public boolean canAttack(Npc attacker, Mob defender) {
+		return currentStrategy.canAttack(attacker, defender);
+	}
+	
+	@Override
+	public boolean withinDistance(Npc attacker, Mob defender) {
 		return currentStrategy.canAttack(attacker, defender);
 	}
 

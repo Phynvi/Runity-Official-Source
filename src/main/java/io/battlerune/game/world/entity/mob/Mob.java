@@ -3,8 +3,10 @@ package io.battlerune.game.world.entity.mob;
 import static io.battlerune.game.world.entity.combat.CombatConstants.EMPTY_BONUSES;
 
 import java.util.EnumSet;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -39,6 +41,7 @@ import io.battlerune.game.world.entity.mob.player.relations.ChatMessage;
 import io.battlerune.game.world.entity.mob.prayer.PrayerBook;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.entity.skill.SkillManager;
+import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendPoison;
@@ -541,16 +544,17 @@ public abstract class Mob extends Entity {
 		this.bonuses = bonuses;
 	}
 
-	public void appendBonus(int index, int amount) {
+	public void appendBonus(int index, int amount, boolean add) {
 		if (bonuses == EMPTY_BONUSES)
 			bonuses = new int[EMPTY_BONUSES.length];
-		bonuses[index] += amount;
-	}
 
-	public void setBonus(int equipSlot, int bonus) {
-		if (bonuses == EMPTY_BONUSES)
-			bonuses = new int[EMPTY_BONUSES.length];
-		bonuses[equipSlot] = bonus;
+		if (amount == 0)
+			return;
+		
+		if (add)
+			bonuses[index] += amount;
+		else
+			bonuses[index] -= amount < 0 ? 0 : amount;
 	}
 
 	public int getListIndex() {

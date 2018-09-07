@@ -5,7 +5,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 /**
  * Interface {@code execution} {@code canUse}
  * 
- * @author hamza
+ * @author Nerik#8690
  *
  */
 public interface Command {

@@ -4,21 +4,14 @@ import io.battlerune.content.activity.ActivityListener;
 import io.battlerune.game.world.Interactable;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.Hit;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.CorporealBeast;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.util.Utility;
 
-/**
- * 
- * @author Adam_#6723
- *
- */
+public class CorporealBeastActivityListener extends ActivityListener<CorporealBeastActivity> {
 
-public class CorperalActivityListener extends ActivityListener<CorperalActivity> {
-
-	CorperalActivityListener(CorperalActivity minigame) {
-		super(minigame);
+	CorporealBeastActivityListener(CorporealBeastActivity corpActivity) {
+		super(corpActivity);
 	}
 
 	@Override
@@ -27,8 +20,8 @@ public class CorperalActivityListener extends ActivityListener<CorperalActivity>
 			return true;
 		FightType fightType = attacker.getCombat().getFightType();
 		int distance = attacker.getStrategy().getAttackDistance(attacker, fightType);
-		Interactable corp = Interactable.create(new Position(1238, 1250, attacker.getHeight()), 4, 4);
-		return Utility.getDistance(attacker, corp) <= distance
+		Interactable corporeal = Interactable.create(new Position(2986, 4381, attacker.getHeight()), 4, 4);
+		return Utility.getDistance(attacker, corporeal) <= distance
 				&& attacker.getStrategy().withinDistance(attacker, activity.corp);
 	}
 

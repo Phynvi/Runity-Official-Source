@@ -156,8 +156,12 @@ public class PlayerBot extends Player {
 	public void postDeath() {
 		move(Config.DEFAULT_POSITION);
 		skills.restoreAll();
-		equipment.login();
-		playerAssistant.reset();
+		equipment.login(); 
+		playerAssistant.reset();//do you not lsoe your items on death ? only in wildy 
+		//little backstory, basically when i first worked on osroyale
+		//there was a bug that would double your stats on death.
+		//to fix it i added this
+		//i added the login() method on equipment.java i don't think it accounts for maxhits for range and mage and melee
 		setSpecialActivated(false);
 		getCombat().getDamageCache().clear();
 		CombatSpecial.restore(this, 100);
