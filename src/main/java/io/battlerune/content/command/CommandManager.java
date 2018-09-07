@@ -82,6 +82,7 @@ import plugin.command.impl.player.Helpcommand;
 import plugin.command.impl.player.HomeCommand;
 import plugin.command.impl.player.KeyCommand;
 import plugin.command.impl.player.MageBankCommand;
+import plugin.command.impl.player.MaxStatusCommand;
 import plugin.command.impl.player.PlayerCountCommand;
 import plugin.command.impl.player.PouchCommand;
 import plugin.command.impl.player.ShopCommand;
@@ -111,6 +112,7 @@ public class CommandManager {
 		/*
 		 * @Player Commands
 		 */
+		PLUGIN.putIfAbsent(new String[] { "maxhit" }, new MaxStatusCommand());
 		PLUGIN.putIfAbsent(new String[] { "changepassword" }, new ChangePassword());
 		PLUGIN.putIfAbsent(new String[] { "easts" }, new Easts());
 		PLUGIN.putIfAbsent(new String[] { "commands", "command" }, new Commands());

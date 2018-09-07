@@ -42,6 +42,10 @@ public class CannonManager {
 			player.message("Cannon cannot be used in vorkath!");
 			return;
 		}
+		if(Area.inCorp(player)) {
+			player.message("Cannon cannot be used in vorkath!");
+			return;
+		}
 		if (Area.inCerberus(player)) {
 			player.message("Cannon cannot be used in cerberus!");
 			return;

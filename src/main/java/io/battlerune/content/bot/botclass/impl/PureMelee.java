@@ -1,6 +1,6 @@
 package io.battlerune.content.bot.botclass.impl;
 
-import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.getModifiedMaxHit;
+import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.getMaxHit;
 
 import io.battlerune.content.bot.PlayerBot;
 import io.battlerune.content.bot.botclass.BotClass;
@@ -82,7 +82,7 @@ public class PureMelee extends SimplifiedListener<Player> implements BotClass {
 
 	@Override
 	public void hit(Player attacker, Mob defender, Hit hit) {
-		int max = getModifiedMaxHit(attacker, defender, CombatType.MELEE);
+		int max = getMaxHit(attacker, defender, CombatType.MELEE);
 		max = attacker.getCombat().modifyDamage(defender, max);
 
 		boolean hasRoom = attacker.inventory.getFreeSlots() > 0;

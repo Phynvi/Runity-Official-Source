@@ -1,13 +1,13 @@
-package io.battlerune.content.activity.impl.corp;
+package io.battlerune.content.activity.impl.graador;
 
 import io.battlerune.content.activity.ActivityListener;
 import io.battlerune.game.world.Interactable;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.Hit;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.CorporealBeast;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.util.Utility;
+
 
 /**
  * 
@@ -15,10 +15,11 @@ import io.battlerune.util.Utility;
  *
  */
 
-public class CorperalActivityListener extends ActivityListener<CorperalActivity> {
 
-	CorperalActivityListener(CorperalActivity minigame) {
-		super(minigame);
+public class GraadorActivityListener extends ActivityListener<GraadorActivity> {
+
+	GraadorActivityListener(GraadorActivity corpActivity) {
+		super(corpActivity);
 	}
 
 	@Override
@@ -27,14 +28,14 @@ public class CorperalActivityListener extends ActivityListener<CorperalActivity>
 			return true;
 		FightType fightType = attacker.getCombat().getFightType();
 		int distance = attacker.getStrategy().getAttackDistance(attacker, fightType);
-		Interactable corp = Interactable.create(new Position(1238, 1250, attacker.getHeight()), 4, 4);
-		return Utility.getDistance(attacker, corp) <= distance
-				&& attacker.getStrategy().withinDistance(attacker, activity.corp);
+		Interactable graador = Interactable.create(new Position(2870, 5358, attacker.getHeight()), 4, 4);
+		return Utility.getDistance(attacker, graador) <= distance
+				&& attacker.getStrategy().withinDistance(attacker, activity.graador);
 	}
 
 	@Override
 	public boolean canAttack(Mob attacker, Mob defender) {
-		return activity.corp == null || !activity.corp.isDead();
+		return activity.graador == null || !activity.graador.isDead();
 	}
 
 	@Override

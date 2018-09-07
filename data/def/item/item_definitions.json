@@ -113755,7 +113755,6 @@
 {
     "id": 20035,
     "name": "Samurai kasa",
-    "noted-id": 20036,
     "low-alch": 1600,
     "high-alch": 2400,
     "base-value": 4000,
@@ -113780,7 +113779,6 @@
 {
     "id": 20038,
     "name": "Samurai shirt",
-    "noted-id": 20039,
     "low-alch": 2800,
     "high-alch": 4200,
     "base-value": 7000,
@@ -113804,7 +113802,6 @@
 {
     "id": 20044,
     "name": "Samurai greaves",
-    "noted-id": 20045,
     "low-alch": 1280,
     "high-alch": 1920,
     "base-value": 3200,
@@ -113830,7 +113827,6 @@
     "id": 20041,
     "name": "Samurai gloves",
     "stackable": true,
-    "unnoted-id": 20042,
     "low-alch": 1280,
     "high-alch": 1920,
     "base-value": 3200,
@@ -113856,7 +113852,6 @@
 {
     "id": 20047,
     "name": "Samurai boots",
-    "noted-id": 20048,
     "low-alch": 1800,
     "high-alch": 2700,
     "base-value": 4500,

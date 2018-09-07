@@ -1,6 +1,6 @@
 package io.battlerune.content.bot.botclass.impl;
 
-import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.getModifiedMaxHit;
+import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.getMaxHit;
 
 import java.util.concurrent.TimeUnit;
 
@@ -87,7 +87,7 @@ public class WelfareRuneMelee extends SimplifiedListener<Player> implements BotC
 
 	@Override
 	public void hit(Player attacker, Mob defender, Hit hit) {
-		int max = getModifiedMaxHit(attacker, defender, CombatType.MELEE);
+		int max = getMaxHit(attacker, defender, CombatType.MELEE);
 		max = attacker.getCombat().modifyDamage(defender, max);
 
 		boolean hasSpec = attacker.getSpecialPercentage().intValue() >= 25;

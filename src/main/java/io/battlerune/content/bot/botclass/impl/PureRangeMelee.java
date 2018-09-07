@@ -1,6 +1,5 @@
 package io.battlerune.content.bot.botclass.impl;
 
-import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.getModifiedMaxHit;
 
 import io.battlerune.content.bot.PlayerBot;
 import io.battlerune.content.bot.botclass.BotClass;
@@ -19,6 +18,8 @@ import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.util.RandomUtils;
 import plugin.click.item.EatFoodPlugin;
+import static io.battlerune.game.world.entity.combat.attack.FormulaFactory.getMaxHit;
+
 
 public class PureRangeMelee extends SimplifiedListener<Player> implements BotClass {
 
@@ -82,7 +83,7 @@ public class PureRangeMelee extends SimplifiedListener<Player> implements BotCla
 
 	@Override
 	public void hit(Player attacker, Mob defender, Hit hit) {
-		int max = getModifiedMaxHit(attacker, defender, CombatType.MELEE);
+		int max = getMaxHit(attacker, defender, CombatType.MELEE);
 		max = attacker.getCombat().modifyDamage(defender, max);
 
 		boolean hasSpec = attacker.getSpecialPercentage().intValue() >= 50;

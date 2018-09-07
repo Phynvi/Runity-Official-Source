@@ -1,8 +1,11 @@
 package plugin.click.button;
 
-import io.battlerune.Config;
 import io.battlerune.content.activity.impl.cerberus.CerberusActivity;
+import io.battlerune.content.activity.impl.corp.CorporealBeastActivity;
+import io.battlerune.content.activity.impl.giantmole.GiantMoleActivity;
+import io.battlerune.content.activity.impl.graador.GraadorActivity;
 import io.battlerune.content.activity.impl.kraken.KrakenActivity;
+import io.battlerune.content.activity.impl.lizardmanshaman.LizardManActivity;
 import io.battlerune.content.activity.impl.vorkath.VorkathActivity;
 import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
 import io.battlerune.content.dialogue.DialogueFactory;
@@ -11,7 +14,6 @@ import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendFadeScreen;
@@ -34,8 +36,15 @@ public class BossInformationButtonPlugin extends PluginContext {
 			player.send(new SendMessage("You have teleported to King Black Dragon!"));
 		}
 		if (button == -14320) {
-			Teleportation.teleport(player, new Position(1761, 5186, 0));
-			player.send(new SendMessage("You have teleported to Giant Mole!"));
+			DialogueFactory factory = player.dialogueFactory;
+			factory.sendOption("Pay 75,000 coins for instanced Giant Mole?",
+					() -> GiantMoleActivity.CreatePaidInstance(player),
+					"avoid paying, and head over to the non-instanced version?",
+					() -> GiantMoleActivity.CreateUnPaidInstance(player), "Nevermind", factory::clear);
+			factory.execute();
+			
+			//Teleportation.teleport(player, new Position(1761, 5186, 0));
+			//player.send(new SendMessage("You have teleported to Giant Mole!"));
 		}
 		if (button == -14305) {
 			Teleportation.teleport(player, new Position(3195, 3865, 0));
@@ -46,12 +55,25 @@ public class BossInformationButtonPlugin extends PluginContext {
 			player.send(new SendMessage("You have teleported to Dagganoth Lair!"));
 		}
 		if (button == -14275) {
-			Teleportation.teleport(player, new Position(2967, 4383, 2));
-			player.send(new SendMessage("You have teleported to Corperal Beast!"));
+			DialogueFactory factory = player.dialogueFactory;
+			factory.sendOption("Pay 75,000 coins for instanced Corp?",
+					() -> CorporealBeastActivity.CreatePaidInstance(player),
+					"avoid paying, and head over to the non-instanced version?",
+					() -> CorporealBeastActivity.CreateUnPaidInstance(player), "Nevermind", factory::clear);
+			factory.execute();
+			//Teleportation.teleport(player, new Position(2967, 4383, 2));
+			//player.send(new SendMessage("You have teleported to Corperal Beast!"));
 		}
 		if (button == -14260) {
-			Teleportation.teleport(player, new Position(1454, 3690, 0));
-			player.send(new SendMessage("You have teleported to Lizard Shamen!"));
+			DialogueFactory factory = player.dialogueFactory;
+			factory.sendOption("Pay 75,000 coins for instanced Lizardman Shaman?",
+					() -> LizardManActivity.CreatePaidInstance(player),
+					"avoid paying, and head over to the non-instanced version?",
+					() -> LizardManActivity.CreateUnPaidInstance(player), "Nevermind", factory::clear);
+			factory.execute();
+			
+		//	Teleportation.teleport(player, new Position(1454, 3690, 0));
+		//	player.send(new SendMessage("You have teleported to Lizard Shamen!"));
 		}
 		if (button == -14245) {
 			Teleportation.teleport(player, new Position(3217, 3781, 0));
@@ -91,7 +113,11 @@ public class BossInformationButtonPlugin extends PluginContext {
 			DialogueFactory factory = player.dialogueFactory;
 
 			factory.sendOption("General Graardor", () -> {
-				Teleportation.teleport(player, new Position(2860, 5355, 2));
+				factory.sendOption("Pay 75,000 coins for instanced General Graador?",
+						() -> GraadorActivity.CreatePaidInstance(player),
+						"avoid paying, and head over to the non-instanced version?",
+						() -> GraadorActivity.CreateUnPaidInstance(player), "Nevermind", factory::clear);
+			//	factory.execute();
 				player.send(new SendMessage("You have teleported to the General Graardor boss."));
 			}, "Commander Zilyana", () -> {
 				Teleportation.teleport(player, new Position(2911, 5265, 0));

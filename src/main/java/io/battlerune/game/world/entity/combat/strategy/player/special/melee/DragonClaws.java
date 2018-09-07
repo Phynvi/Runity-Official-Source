@@ -64,7 +64,7 @@ public class DragonClaws extends PlayerMeleeStrategy {
 		if (third.getDamage() < 1) {
 			return fourthOption(attacker, defender, inaccurate, inaccurate2);
 		}
-		int maxHit = FormulaFactory.getModifiedMaxHit(attacker, defender, getCombatType()) * 3 / 4;
+		int maxHit = FormulaFactory.getMaxHit(attacker, defender, getCombatType()) * 3 / 4;
 		maxHit = attacker.getCombat().modifyDamage(defender, maxHit);
 		third.setDamage(maxHit);
 		CombatHit fourth = third.copyAndModify(damage -> third.getDamage());

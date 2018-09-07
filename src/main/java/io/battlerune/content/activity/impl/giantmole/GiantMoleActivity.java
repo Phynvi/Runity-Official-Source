@@ -1,10 +1,11 @@
-package io.battlerune.content.activity.impl.corp;
+package io.battlerune.content.activity.impl.giantmole;
 
 import java.util.Optional;
 
 import io.battlerune.Config;
 import io.battlerune.content.ActivityLog;
 import io.battlerune.content.activity.Activity;
+import io.battlerune.content.activity.ActivityDeathType;
 import io.battlerune.content.activity.ActivityType;
 import io.battlerune.content.event.impl.ObjectInteractionEvent;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
@@ -18,31 +19,30 @@ import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
 
+
 /**
  * 
  * @author Adam_#6723
  *
  */
 
-public class CorperalActivity extends Activity {
+public class GiantMoleActivity extends Activity {
 
 	private final Player player;
-	public Npc corp = null;
-	private boolean completed;
-	private final CorperalActivityListener listener = new CorperalActivityListener(this);
+	public Npc mole = null;
+	private final GiantMoleActivityListener listener = new GiantMoleActivityListener(this);
 
-	private static final int CORP = 319;
-	private static final Position CORP_POS = new Position(2987, 4381, 2);
+	private static final int MOLE = 6499;
+	private static final Position MOLE_POS = new Position(1761, 5186, 0);
 
-	private CorperalActivity(Player player, int instance) {
+	private GiantMoleActivity(Player player, int instance) {
 		super(1, instance);
 		this.player = player;
 	}
 
-	public static CorperalActivity create(Player player) {
-		CorperalActivity minigame = new CorperalActivity(player, player.playerAssistant.instance());
+	public static GiantMoleActivity create(Player player) {
+		GiantMoleActivity minigame = new GiantMoleActivity(player, player.playerAssistant.instance());
 		minigame.add(player);
-		// player.gameRecord.start();
 		return minigame;
 	}
 
@@ -51,43 +51,26 @@ public class CorperalActivity extends Activity {
 			player.message("You need to have 75,000 coins inside your bank to pay for the instance!");
 			return;
 		} else {
-			player.bank.remove(995, 75000);
-			Teleportation.teleport(player, new Position(2987, 4381, 2), 20, () -> CorperalActivity.create(player));
-			player.send(new SendMessage("You have teleported to the Instanced Version of Corperal"));
+			player.bank.remove(995, 100000);
+			Teleportation.teleport(player, new Position(1761, 5186, 0), 20, () -> create(player));
+			player.send(new SendMessage("You have teleported to the Instanced Version of Giant Mole"));
 			player.send(new SendMessage("75,000 coins has been taken out of your bank, as a fee."));
+
 		}
 	}
 
 	public static void CreateUnPaidInstance(Player player) {
-		player.send(new SendMessage("You have teleported to the Non-Instanced Version of Corperal"));
-		Teleportation.teleport(player, new Position(2967, 4383, 2));
-	}
-
-	@Override
-	public void onDeath(Mob mob) {
-		if (mob.isPlayer() && mob.equals(player)) {
-			player.send(new SendMessage("Better luck next time!"));
-			cleanup();
-			remove(player);
-			return;
-		}
-		if (mob.isNpc() && mob.getNpc().id == CORP) {
-			World.schedule(new NpcDeath(mob.getNpc(), () -> {
-				completed = true;
-				finish();
-			}));
-			return;
-		}
-		super.onDeath(mob);
+		player.send(new SendMessage("You have teleported to the Non-Instanced Version of Giant Mole"));
+		Teleportation.teleport(player, new Position(1761, 5186, 0));
 	}
 
 	@Override
 	public void add(Mob mob) {
 		super.add(mob);
 		if (mob.isNpc()) {
-			if (mob.getNpc().id == CORP) {
-				corp = mob.getNpc();
-			} 
+			if (mob.getNpc().id == MOLE) {
+				mole = mob.getNpc();
+			}
 			mob.locking.lock();
 		}
 	}
@@ -99,37 +82,23 @@ public class CorperalActivity extends Activity {
 			return;
 		}
 		int id = mob.getNpc().id;
-		if (id == CORP) {
-			corp = null;
+		if (id == MOLE) {
+			mole = null;
 			Teleportation.teleport(player, Config.DEFAULT_POSITION, 20, () -> {
+				player.send(new SendMessage("Get yo ass back home boi, " + player.getName() + "!"));
 			});
-		} 
+		}
 		super.remove(mob);
 	}
 
 	@Override
 	protected void start() {
-		Npc npc = new Npc(CORP, CORP_POS);
+		Npc npc = new Npc(MOLE, MOLE_POS);
 		npc.face(player);
 		npc.owner = player;
 		add(npc);
-		player.face(corp.getPosition());
+		player.face(mole.getPosition());
 		pause();
-	}
-
-	@Override
-	public void onLogout(Player player) {
-		player.move(Config.DEFAULT_POSITION);
-		cleanup();
-		finish();
-	}
-
-	@Override
-	public void onRegionChange(Player player) {
-		if (!Area.inCorp(player)) {
-			cleanup();
-			finish();
-		}
 	}
 
 	@Override
@@ -137,17 +106,16 @@ public class CorperalActivity extends Activity {
 		return true;
 	}
 
-	// new method = good code.
 	@Override
 	public void finish() {
-		boolean successfull = corp.isDead();
+		boolean successfull = mole.isDead();
 		cleanup();
 		remove(player);
 		if (successfull) {
-			player.activityLogger.add(ActivityLog.CORPOREAL_BEAST);
-			player.message("Congratulations, you have killed the Corporal. ");
-			restart(10, () -> {
-				if (Area.inCorp(player)) {
+			player.activityLogger.add(ActivityLog.GIANT_MOLE);
+			player.message("Congratulations, you have killed the Giant Mole.");
+			restart(1, () -> {
+				if (Area.inMole(player)) {
 					create(player);
 				} else {
 					remove(player);
@@ -176,22 +144,10 @@ public class CorperalActivity extends Activity {
 		}
 	}
 
-	/*
-	 * @Override public void finish() { //old method, shit code cleanup();
-	 * 
-	 * if (completed) { player.send(new
-	 * SendMessage("Congratulations, you have killed the Cerberus.")); //+
-	 * Utility.getTime(player.gameRecord.end(ActivityType.CERBERUS)) + "</col>."));
-	 * } else { player.gameRecord.end(ActivityType.CERBERUS, false); }
-	 * 
-	 * remove(player);
-	 * player.message("Please teleport back to Cerberus to fight him again!"); }
-	 */
-
 	@Override
 	public void cleanup() {
-		if (corp != null && corp.isRegistered())
-			corp.unregister();
+		if (mole != null && mole.isRegistered())
+			mole.unregister();
 	}
 
 	@Override
@@ -200,12 +156,40 @@ public class CorperalActivity extends Activity {
 	}
 
 	@Override
-	public ActivityType getType() {
-		return ActivityType.CORP_INSTANCE;
+	protected Optional<GiantMoleActivityListener> getListener() {
+		return Optional.of(listener);
 	}
 
 	@Override
-	protected Optional<CorperalActivityListener> getListener() {
-		return Optional.of(listener);
+	public void onLogout(Player player) {
+		cleanup();
+		remove(player);
+	}
+
+	@Override
+	public void onDeath(Mob mob) {
+		if (mob.isNpc() && mob.getNpc().equals(mole)) {
+			World.schedule(new NpcDeath(mob.getNpc(), this::finish));
+			return;
+		}
+		super.onDeath(mob);
+	}
+
+	@Override
+	public void onRegionChange(Player player) {
+		if (!Area.inMole(player)) {
+			cleanup();
+			remove(player);
+		}
+	}
+
+	@Override
+	public ActivityDeathType deathType() {
+		return ActivityDeathType.PURCHASE;
+	}
+
+	@Override
+	public ActivityType getType() {
+		return ActivityType.MOLE_INSTANCE;
 	}
 }

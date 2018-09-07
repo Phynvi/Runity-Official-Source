@@ -402,7 +402,7 @@ public class Player extends Mob {
 	public Skulling skulling = new Skulling(this);
 	public QuestManager quest = new QuestManager(this);
 	public SpellCasting spellCasting = new SpellCasting(this);
-	private final Combat<Player> combat = new Combat<>(this);
+	public Combat<Player> combat = new Combat<>(this);
 	public final ActivityLogger activityLogger = new ActivityLogger(this);
 	private final MutableNumber poisonImmunity = new MutableNumber();
 	private final MutableNumber venomImmunity = new MutableNumber();
@@ -648,6 +648,8 @@ public class Player extends Mob {
 		getFarming().load();
 		getFarming().doConfig();
 	}
+	
+	//logout
 
 	@Override
 	public void unregister() {

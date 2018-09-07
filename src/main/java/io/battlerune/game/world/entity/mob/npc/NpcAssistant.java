@@ -66,8 +66,7 @@ public class NpcAssistant {
 
 	public final int[] BOSSES = { 239, /* King Black Dragon */
 			7039, /* Blurite Dragon */
-			6618, /* Crazy Archeologist */
-			319, /* Corporeal Beast */
+			6618, /* Crazy Archeologist */ /* Corporeal Beast */
 			6619, /* Chaos Fanatic */
 			2042, /* Zulrah */
 			2043, /* Zulrah */

@@ -67,10 +67,17 @@ public final class Equipment extends ItemContainer {
 			/* - */
 			/* 10 */ "Strength", /* 11 */ "Ranged Strength", /* 12 */ "Magic Strength", /* 13 */ "Prayer" };
 
+	//this method below. what bout it
+	//im pretty sure something related to that is causing the issue for the getmaxhit to double
+	
 	private void updateBonus() {
+		for (int index = 0; index < player.getBonuses().length; index++) 
+			 player.setIndexBonus(index, 0);
+		
 		for (Item equipment : toArray()) {
-			if (equipment != null)
+			if (equipment != null) {
 				addBonus(equipment);
+			}
 		}
 	}
 
@@ -107,7 +114,9 @@ public final class Equipment extends ItemContainer {
 	 */
 
 	public void login() {
-		Arrays.fill(player.getBonuses(), 0);
+		//something do with this here this still the old method?
+		//let me think, i found the fix for this somewhere on r-s im pretty sure
+	//	Arrays.fill(player.getBonuses(), 0);
 		for (int index = 0; index < getItems().length; index++) {
 			set(index, get(index), false);
 		}
@@ -136,6 +145,7 @@ public final class Equipment extends ItemContainer {
 				"Range Maxhit: <col=ff7000>" + player.playerAssistant.getMaxHit(player, CombatType.RANGED) + "</col>",
 				15117));
 		player.send(new SendString(Utility.formatDigits(player.playerAssistant.weight()) + " kg", 15145));
+		updateBonus();
 		writeBonuses();
 		player.interfaceManager.open(15106);
 	}
@@ -352,13 +362,13 @@ public final class Equipment extends ItemContainer {
 
 	private void addBonus(Item item) {
 		for (int index = 0; index < item.getBonuses().length; index++) {
-			player.appendBonus(index, item.getBonus(index));
+			player.appendBonus(index, item.getBonus(index), true);
 		}
 	}
 
 	private void removeBonus(Item item) {
 		for (int index = 0; index < item.getBonuses().length; index++) {
-			player.appendBonus(index, -item.getBonus(index));
+			player.appendBonus(index, item.getBonus(index), false);
 		}
 	}
 
@@ -367,11 +377,13 @@ public final class Equipment extends ItemContainer {
 		for (int i = 0; i < player.getBonuses().length; i++) {
 			String bonus = BONUS_NAMES[i] + ": ";
 
+			
+			
 			if (player.getBonus(i) >= 0)
 				bonus += "+";
 
 			bonus += player.getBonus(i);
-
+			
 			if (i == 12)
 				bonus += "%";
 

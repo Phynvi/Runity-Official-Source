@@ -131,8 +131,6 @@ public class FightCaves extends Activity {
 
 	@Override
 	public void finish() {
-		Equipment equip = new Equipment(player);
-        equip.fightcavesrefresh();
 		cleanup();
 		remove(player);
 		player.move(new Position(2438, 5169, 0));
