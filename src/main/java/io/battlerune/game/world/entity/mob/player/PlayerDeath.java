@@ -19,6 +19,7 @@ import io.battlerune.content.writer.impl.InformationWriter;
 import io.battlerune.game.Animation;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.World;
+import io.battlerune.game.world.entity.combat.Combat;
 import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.attack.listener.CombatListenerManager;
 import io.battlerune.game.world.entity.combat.effect.CombatEffectType;
@@ -117,7 +118,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 		if (killer == null)
 			return;
 
-		switch (killer.getType()) {
+		switch (killer.getType()) {//show commands class
 		case PLAYER:
 			Player playerKiller = killer.getPlayer();
 
@@ -189,14 +190,15 @@ public final class PlayerDeath extends MobDeath<Player> {
 		mob.equipment.updateAnimation();
 		mob.resetAnimation();
 		// mob.equipment.refresh();
-		mob.equipment.login();
 
+		System.out.println("running here 0");//update
 		// IF YOU'RE HAVING AN ISSUE WITH ITEM LISTENERS AFTER DEATH, IT'S THIS FUNCTION
 		// RIGHT HERE
 		// This function was implementing because dying with a full set of barrows let
 		// you keep the effect.
 		CombatListenerManager.removeAllPlayerListeners(mob);
 
+		//alright continue
 		if (mob.inActivity()) {
 			Activity.forActivity(mob, it -> it.onDeath(mob));
 //            return;
@@ -217,6 +219,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 		mob.animate(new Animation(-1, UpdatePriority.VERY_HIGH));
 
 		if (!safe) {
+			mob.equipment.login();
 			if (killer != null && killer.isPlayer() && !mob.equals(killer)) {
 				new Killstreak(killer.getPlayer(), mob).end();
 			}
@@ -231,7 +234,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 		}
 
 		InterfaceWriter.write(new InformationWriter(mob));
-
+		
 		mob.animate(new Animation(-1, UpdatePriority.VERY_HIGH));
 
 	}

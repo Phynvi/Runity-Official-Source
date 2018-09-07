@@ -11,7 +11,7 @@ import io.battlerune.util.Utility;
 
 /**
  * 
- * @author Adam_#6723
+ * @author Adam_#6723 d
  *
  */
 

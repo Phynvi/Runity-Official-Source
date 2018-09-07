@@ -31,6 +31,8 @@ import io.battlerune.net.packet.out.SendMessage;
 
 public class CorporealBeastActivity extends Activity {
 
+
+
 	private final Player player;
 	public Npc corp = null;
 	private final CorporealBeastActivityListener listener = new CorporealBeastActivityListener(this);
@@ -117,7 +119,7 @@ public class CorporealBeastActivity extends Activity {
 		if (successfull) {
 			player.activityLogger.add(ActivityLog.CORPOREAL_BEAST);
 			player.message("Congratulations, you have killed the Corporeal Beast.");
-			restart(1, () -> {
+			restart(-1, () -> {
 				if (Area.inCorp(player)) {
 					create(player);
 				} else {

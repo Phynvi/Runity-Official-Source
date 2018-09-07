@@ -116,7 +116,7 @@ public final class Equipment extends ItemContainer {
 	public void login() {
 		//something do with this here this still the old method?
 		//let me think, i found the fix for this somewhere on r-s im pretty sure
-	//	Arrays.fill(player.getBonuses(), 0);
+		//Arrays.fill(player.getBonuses(), 0);
 		for (int index = 0; index < getItems().length; index++) {
 			set(index, get(index), false);
 		}

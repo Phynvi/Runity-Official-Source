@@ -543,6 +543,7 @@ public abstract class Mob extends Entity {
 	public void setBonuses(int[] bonuses) {
 		this.bonuses = bonuses;
 	}
+
 	
 	public void setIndexBonus(int i, int number) {
 		this.bonuses[i] = number;

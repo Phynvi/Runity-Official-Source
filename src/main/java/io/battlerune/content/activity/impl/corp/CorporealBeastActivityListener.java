@@ -8,14 +8,6 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.util.Utility;
 
-
-/**
- * 
- * @author Adam_#6723
- *
- */
-
-
 public class CorporealBeastActivityListener extends ActivityListener<CorporealBeastActivity> {
 
 	CorporealBeastActivityListener(CorporealBeastActivity corpActivity) {
