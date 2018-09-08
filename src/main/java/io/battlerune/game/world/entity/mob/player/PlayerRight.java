@@ -73,10 +73,16 @@ public enum PlayerRight {
 	public static boolean isManagement(Player player) {
 		return isPriviledged(player) || player.right.equals(MODERATOR) || player.right.equals(HELPER);
 	}
+	
+	/** Checks if the player is a Youtuber member. */
+	public static boolean isYoutuber(Player player) {
+		return player.right.equals(YOUTUBER);
+	}
+
 
 	/** Checks if the player has donator status. */
 	public static boolean isDonator(Player player) {
-		return isManagement(player) || player.donation.getSpent() >= DONATOR.getMoneyRequired();
+		return isManagement(player)  || isYoutuber(player) || player.donation.getSpent() >= DONATOR.getMoneyRequired();
 	}
 
 	/** Checks if the player has super donator status. */

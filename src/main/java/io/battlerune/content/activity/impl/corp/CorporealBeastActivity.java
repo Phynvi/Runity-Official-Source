@@ -57,16 +57,16 @@ public class CorporealBeastActivity extends Activity {
 			return;
 		} else {
 			player.bank.remove(995, 100000);
-			Teleportation.teleport(player, new Position(2986, 4381, 2), 20, () -> create(player));
+			Teleportation.teleport(player, new Position(2974, 4385, 2), 20, () -> create(player));
 			player.send(new SendMessage("You have teleported to the Instanced Version of Corp"));
 			player.send(new SendMessage("100,000 coins has been taken out of your bank, as a fee."));
 
 		}
-	}
+	}//my computer doesnt take 40 secs to load l0l0l
 
 	public static void CreateUnPaidInstance(Player player) {
 		player.send(new SendMessage("You have teleported to the Non-Instanced Version of Corp"));
-		Teleportation.teleport(player, new Position(2986, 4381, 2));
+		Teleportation.teleport(player, new Position(2974, 4385, 2));
 	}
 
 	@Override
@@ -103,6 +103,7 @@ public class CorporealBeastActivity extends Activity {
 		npc.owner = player;
 		add(npc);
 		player.face(corp.getPosition());
+		npc.locking.unlock();
 		pause();
 	}
 

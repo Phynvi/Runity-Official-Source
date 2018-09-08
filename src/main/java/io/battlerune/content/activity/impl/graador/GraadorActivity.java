@@ -98,6 +98,7 @@ public class GraadorActivity extends Activity {
 		npc.owner = player;
 		add(npc);
 		player.face(graador.getPosition());
+		npc.locking.unlock();
 		pause();
 	}
 

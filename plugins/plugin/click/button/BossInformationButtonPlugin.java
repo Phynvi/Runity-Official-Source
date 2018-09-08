@@ -56,7 +56,7 @@ public class BossInformationButtonPlugin extends PluginContext {
 		}
 		if (button == -14275) {
 			DialogueFactory factory = player.dialogueFactory;
-			factory.sendOption("Pay 75,000 coins for instanced Corp?",
+			factory.sendOption("Pay 100,00 coins for instanced Corp?",
 					() -> CorporealBeastActivity.CreatePaidInstance(player),
 					"avoid paying, and head over to the non-instanced version?",
 					() -> CorporealBeastActivity.CreateUnPaidInstance(player), "Nevermind", factory::clear);

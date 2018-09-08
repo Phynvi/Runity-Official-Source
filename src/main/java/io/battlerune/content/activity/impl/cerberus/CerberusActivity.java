@@ -123,6 +123,7 @@ public class CerberusActivity extends Activity {
 		npc.owner = player;
 		add(npc);
 		player.face(cerberus.getPosition());
+		npc.locking.unlock();
 		pause();
 	}
 

@@ -53,14 +53,14 @@ public class LizardManActivity extends Activity {
 		} else {
 			player.bank.remove(995, 100000);
 			Teleportation.teleport(player, new Position(1436, 3709, 0), 20, () -> create(player));
-			player.send(new SendMessage("You have teleported to the Instanced Version of Giant Mole"));
+			player.send(new SendMessage("You have teleported to the Instanced Version of Lizard man"));
 			player.send(new SendMessage("75,000 coins has been taken out of your bank, as a fee."));
 
 		}
 	}
 
 	public static void CreateUnPaidInstance(Player player) {
-		player.send(new SendMessage("You have teleported to the Non-Instanced Version of Giant Mole"));
+		player.send(new SendMessage("You have teleported to the Non-Instanced Version of Lizard man Shaman"));
 		Teleportation.teleport(player, new Position(1436, 3709, 0));
 	}
 
@@ -98,6 +98,7 @@ public class LizardManActivity extends Activity {
 		npc.owner = player;
 		add(npc);
 		player.face(shaman.getPosition());
+		npc.locking.unlock();
 		pause();
 	}
 
@@ -113,7 +114,7 @@ public class LizardManActivity extends Activity {
 		remove(player);
 		if (successfull) {
 			player.activityLogger.add(ActivityLog.LIZARD_SHAMAN);
-			player.message("Congratulations, you have killed the Giant Mole.");
+			player.message("Congratulations, you have killed the Lizardman Shaman.");
 			restart(1, () -> {
 				if (Area.inShaman(player)) {
 					create(player);

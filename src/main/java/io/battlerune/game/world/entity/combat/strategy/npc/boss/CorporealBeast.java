@@ -86,7 +86,7 @@ public class CorporealBeast extends MultiStrategy {
 			return new CombatHit[] { nextMeleeHit(attacker, defender) };
 		}
 	}
-
+//no it reloads it on unban or on any punishment command 
 	private static class MagicAttack extends NpcMagicStrategy {
 		private static final Animation ANIMATION = new Animation(1679, UpdatePriority.HIGH);
 

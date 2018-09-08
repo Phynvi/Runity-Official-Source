@@ -125154,6 +125154,85 @@
   
   
   {
+																		
+"id": 21277, //ITEM ID
+"name": "Runity helm", 
+"low-alch": 25000000, 
+		    "high-alch": 30000000,
+			    "base-value": 42000000,
+"street-value": 18403, 
+"equipment-slot": "HELM",
+"weight": 4.0,
+"attack-stab": 0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-magic": 0,
+"attack-ranged": 45,
+"defence-stab": 54,
+"defence-slash": 48,
+"defence-crush": 60,
+"defence-magic": 20,
+"defence-ranged": 45,
+"bonus-strength": 0,  
+"bonus-prayer": 3,
+"bonus-ranged": 35,
+"bonus-magic": 0
+ 
+																	  },
+
+{
+"id": 21274, //ITEM ID
+"name": "Runity Body", 
+"low-alch": 25000000, 
+		    "high-alch": 30000000,
+			    "base-value": 42000000,
+"street-value": 18403, 
+"equipment-slot": "BODY",
+"weight": 4.0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-magic": 0,
+"attack-ranged": 65,
+"defence-stab": 64,
+"defence-slash": 68,
+"defence-crush": 60,
+"defence-magic": -10,
+"defence-ranged": 65,
+"bonus-strength": 0,  
+"bonus-prayer": 3,
+"bonus-ranged": 35,
+"bonus-magic": 0
+ 
+
+																		  },
+
+{
+													"id": 21272, //ITEM ID
+"name": "Runity chaps", 
+"low-alch": 25000000, 
+		    "high-alch": 30000000,
+			    "base-value": 42000000,
+"street-value": 18403, 
+"equipment-slot": "LEGS",
+"weight": 4.0,
+"attack-slash": 0,
+"attack-crush": 0,
+"attack-magic": 0,
+"attack-ranged": 65,
+"defence-stab": 44,
+"defence-slash": 48,
+"defence-crush": 40,
+"defence-magic": -10,
+"defence-ranged": 45,
+"bonus-strength": 0,  
+"bonus-prayer": 3,
+"bonus-ranged": 35,
+"bonus-magic": 0
+
+																			  },
+  
+  
+  {
 	    "id": 13738, //ITEM ID
 	    "name": "Lava virtus mask", 
 	    "low-alch": 2, 

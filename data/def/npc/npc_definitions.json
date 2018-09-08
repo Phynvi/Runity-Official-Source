@@ -1101,6 +1101,39 @@
     "magic-level": 70
   },
   {
+    "id": 1207,
+    "name": "Rock Crab",
+    "combat-level": 13,
+    "stand": 1310,
+    "walk": 1311,
+    "attack-animation": 1312,
+    "block-animation": 1313,
+    "death-animation": 1314,
+    "attackable": true,
+    "aggressive": true,
+    "attack-style": "Melee",
+    "weakness": "Crush",
+    "attack-cooldown": 6,
+    "hitpoints-level": 50
+  },
+   {
+    "id": 759,
+    "name": "Rock Crab",
+    "combat-level": 13,
+    "stand": 1310,
+    "walk": 1311,
+    "attack-animation": 1312,
+    "block-animation": 1313,
+    "death-animation": 1314,
+    "attackable": true,
+    "aggressive": true,
+    "attack-style": "Melee",
+    "weakness": "Crush",
+    "attack-cooldown": 6,
+    "hitpoints-level": 50
+  },
+  
+  {
     "id": 100,
     "name": "Rock Crab",
     "combat-level": 13,

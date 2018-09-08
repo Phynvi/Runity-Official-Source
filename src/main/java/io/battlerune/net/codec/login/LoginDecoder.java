@@ -111,12 +111,12 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 
 			final int gameVersion = in.readUnsignedShort();
 
-			if (gameVersion != Config.GAME_VERSION) {
+		/*	if (gameVersion != Config.GAME_VERSION) { //RENABLE THIS WHEN LAUNCHER IS READY.
 				logger.warn(String.format("[%s] outdated client: %d should be: %d", host, gameVersion,
 						Config.GAME_VERSION));
 				sendResponseCode(ctx, LoginResponse.GAME_UPDATED);
 				return;
-			}
+			} */
 
 			final int memoryVersion = in.readUnsignedByte();
 

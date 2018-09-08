@@ -51,8 +51,8 @@ public class GiantMoleActivity extends Activity {
 			player.message("You need to have 75,000 coins inside your bank to pay for the instance!");
 			return;
 		} else {
-			player.bank.remove(995, 100000);
-			Teleportation.teleport(player, new Position(1761, 5186, 0), 20, () -> create(player));
+			player.bank.remove(995, 75000);
+			Teleportation.teleport(player, new Position(1765, 5185, 0), 20, () -> create(player));
 			player.send(new SendMessage("You have teleported to the Instanced Version of Giant Mole"));
 			player.send(new SendMessage("75,000 coins has been taken out of your bank, as a fee."));
 
@@ -61,7 +61,7 @@ public class GiantMoleActivity extends Activity {
 
 	public static void CreateUnPaidInstance(Player player) {
 		player.send(new SendMessage("You have teleported to the Non-Instanced Version of Giant Mole"));
-		Teleportation.teleport(player, new Position(1761, 5186, 0));
+		Teleportation.teleport(player, new Position(1765, 5185, 0));
 	}
 
 	@Override
@@ -98,6 +98,7 @@ public class GiantMoleActivity extends Activity {
 		npc.owner = player;
 		add(npc);
 		player.face(mole.getPosition());
+		npc.locking.unlock(); //this caused it ye, this is what i did for lizard shaman
 		pause();
 	}
 

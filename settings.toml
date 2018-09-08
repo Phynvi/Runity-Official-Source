@@ -11,7 +11,6 @@ parallel_game_engine = false
 highscores_enabled = true
 
 [client]
-client_version = 3
 cache_version = 2
 
 [game]
