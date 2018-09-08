@@ -1,7 +1,5 @@
 package plugin.command.impl.moderator;
 
-import java.util.Optional;
-
 import io.battlerune.content.command.Command;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -15,19 +13,15 @@ public class BanCommand implements Command {
 	public void execute(Player player, String command, String[] parts) {
 		final String playerToBan = String.format(parts[1].replaceAll("_", " "));
 
-		Optional<Player> toBan = World.search(playerToBan.toString());
-		
-		if(toBan.isPresent()) {
-			if (PunishmentExecuter.banned(toBan.get().getUsername())) {
-				player.send(new SendMessage("Player " + toBan.get().getUsername() + " already has an active ban."));
+		World.search(playerToBan.toString()).ifPresent(toBan -> {
+			if (PunishmentExecuter.banned(toBan.getUsername())) {
+				player.send(new SendMessage("Player " + toBan.getUsername() + " already has an active ban."));
 				return;
 			}
-			PunishmentExecuter.ban(toBan.get().getUsername());
-			player.send(new SendMessage("Player " + toBan.get().getUsername() + " was successfully banned"));
-			World.kickPlayer(toBan.get().getUsername());
-		} else {
-			
-		}
+			PunishmentExecuter.ban(toBan.getUsername());
+			player.send(new SendMessage("Player " + toBan.getUsername() + " was successfully banned"));
+			World.kickPlayer(toBan.getUsername());
+		});
 	}
 
 	@Override

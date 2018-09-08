@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.game.world.entity.mob.player.punishments.PunishmentExecuter;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.Utility;
 
@@ -23,6 +24,12 @@ public class Yell {
 
 	/** Yells a message to the server. */
 	public static void yell(Player player, String message) {
+
+		if (PunishmentExecuter.muted(player.getUsername()) || PunishmentExecuter.IPMuted(player.lastHost)) {
+			player.send(new SendMessage("You are muted and cannot chat."));
+			return;
+		}
+
 		if (!PlayerRight.isDonator(player)) {
 			player.send(new SendMessage("You must be a donator to use this command!"));
 			return;
