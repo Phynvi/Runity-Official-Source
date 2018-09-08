@@ -37,7 +37,7 @@ import io.battlerune.game.world.entity.combat.strategy.npc.boss.magearena.Porazd
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoEvent;
 import io.battlerune.game.world.entity.mob.npc.definition.NpcDefinition;
 import io.battlerune.game.world.entity.mob.player.profile.ProfileRepository;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
+import io.battlerune.game.world.entity.mob.player.punishments.PunishmentExecuter;
 import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.io.PacketListenerLoader;
 import io.battlerune.util.GameSaver;
@@ -100,8 +100,7 @@ public final class BattleRune {
 		new NpcForceChatParser().run();
 		new StoreParser().run();
 		new GlobalObjectParser().run();
-		//ItemStatsDumper.printStats();
-		// MySqlLogHandler.run(MySqlCommands.INSERT, "Harryl has used ::commands");
+		PunishmentExecuter.init();
 	}
 
 	/**
@@ -120,7 +119,6 @@ public final class BattleRune {
 		startupService.submit(ProfileRepository::load);
 		startupService.submit(ItemActionRepository::declare);
 		startupService.submit(ClueScrollPlugin::declare);
-		startupService.submit(PlayerPunishment::init);
 		startupService.submit(GameSaver::load);
 		startupService.shutdown();
 	}

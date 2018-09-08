@@ -35,7 +35,6 @@ import io.battlerune.game.world.entity.mob.npc.NpcAssistant;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;

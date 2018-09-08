@@ -5,8 +5,6 @@ import io.battlerune.content.command.Command;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishementData;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
 
 /**
  * 
@@ -19,7 +17,7 @@ public class JailCommand implements Command {
 	@Override
 	public void execute(Player player, String command, String[] parts) {
 		final String name = String.format(parts[1].replaceAll("_", " "));
-
+		
 		World.search(name.toString()).ifPresent(other -> {
 			JailActivity.create(other);
 		});
