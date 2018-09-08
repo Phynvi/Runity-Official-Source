@@ -14,7 +14,7 @@ import io.battlerune.util.Utility;
 /**
  * Handles the Torag's armor effects to the assigned npc and item ids.
  *
- * @author Daniel
+ * @author Adam_#6723
  */
 @NpcCombatListenerSignature(npcs = { 1676 })
 @ItemCombatListenerSignature(requireAll = true, items = { 4745, 4747, 4749, 4751 })
