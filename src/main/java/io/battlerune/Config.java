@@ -121,7 +121,6 @@ public final class Config {
 	public static final int FAILED_LOGIN_ATTEMPTS;
 	public static final int FAILED_LOGIN_TIMEOUT;
 
-	public static final int CLIENT_VERSION;
 	public static final int CACHE_VERSION;
 	public static final int GAME_VERSION;
 
@@ -430,7 +429,7 @@ public final class Config {
 			new Item(15308), new Item(15309), new Item(15310), new Item(13703), new Item(13704), new Item(13705),
 			new Item(13695), new Item(13692), new Item(13693), new Item(13696), new Item(13697), new Item(13698),
 			new Item(13699), new Item(13700), new Item(13701), new Item(13702), new Item(22317), new Item(22280),
-			new Item(21225, 1), new Item(20035), new Item(20047), new Item(20044), new Item(20035)};
+			new Item(21225, 1), new Item(20035), new Item(20047), new Item(20044), new Item(20035), new Item(20038)};
 	
 	
 	
@@ -555,10 +554,9 @@ public final class Config {
 			POSTGRE_USER = parser.getString("postgre.postgre_user");
 			POSTGRE_PASS = parser.getString("postgre.postgre_pass");
 
-			CLIENT_VERSION = Math.toIntExact(parser.getLong("client.client_version"));
 			CACHE_VERSION = Math.toIntExact(parser.getLong("client.cache_version"));
 
-			GAME_VERSION = CLIENT_VERSION + CACHE_VERSION;
+			GAME_VERSION = CACHE_VERSION;
 
 			TEST_WORLD = parser.getBoolean("server.test_world");
 			highscoresEnabled = parser.getBoolean("services.highscores_enabled");

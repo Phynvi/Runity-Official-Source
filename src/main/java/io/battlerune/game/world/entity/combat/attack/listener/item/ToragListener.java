@@ -22,6 +22,7 @@ public class ToragListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public void hit(Mob attacker, Mob defender, Hit hit) {
+		if(Utility.random(1, 10) == 1) {
 		if (defender.isPlayer() && hit.getDamage() > 1) {
 			boolean success = Utility.random(100) <= 25;
 
@@ -48,5 +49,6 @@ public class ToragListener extends SimplifiedListener<Mob> {
 		}
 
 		super.hit(attacker, defender, hit);
+	   }
 	}
 }

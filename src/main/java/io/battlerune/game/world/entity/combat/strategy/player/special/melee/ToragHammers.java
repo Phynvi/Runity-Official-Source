@@ -23,8 +23,8 @@ public class ToragHammers extends PlayerMeleeStrategy {
 
 	@Override
 	public CombatHit[] getHits(Player attacker, Mob defender) {
-		return new CombatHit[] { new CombatHit(nextMeleeHit(attacker, defender), 0, 1),
-				new CombatHit(nextMeleeHit(attacker, defender), 0, 0) };
+		return new CombatHit[] { new CombatHit(nextMeleeHit(attacker, defender), 0, 1)
+				};
 	}
 
 	@Override

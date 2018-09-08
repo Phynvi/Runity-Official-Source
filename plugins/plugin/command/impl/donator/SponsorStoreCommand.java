@@ -14,7 +14,7 @@ public class SponsorStoreCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		if (Area.inWilderness(player) && (!PlayerRight.isDeveloper(player)) || player.getCombat().inCombat()) {
+		if (Area.inWilderness(player) || player.getCombat().inCombat()) {
 			player.message("You cannot open the store in the wilderness.");
 		} else {
 			Store.STORES.get("Sponsor Store").open(player);
