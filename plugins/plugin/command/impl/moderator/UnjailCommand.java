@@ -17,7 +17,6 @@ public class UnjailCommand implements Command {
 	public void execute(Player player, String command, String[] parts) {
 		final String name = String.format(parts[1].replaceAll("_", " "));
 		World.search(name.toString()).ifPresent(other -> {
-			//other.punishment.unJail();
 			other.dialogueFactory.sendStatement("@or2@You have been unjailed!").execute();
 			player.message("@or2@unjail was complete");
 		});

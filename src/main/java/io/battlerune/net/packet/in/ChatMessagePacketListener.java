@@ -6,11 +6,10 @@ import io.battlerune.game.event.impl.log.ChatLogEvent;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.data.PacketType;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.punishments.PunishmentExecuter;
 import io.battlerune.game.world.entity.mob.player.relations.ChatColor;
 import io.battlerune.game.world.entity.mob.player.relations.ChatEffect;
 import io.battlerune.game.world.entity.mob.player.relations.ChatMessage;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishementData;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
 import io.battlerune.net.codec.ByteModification;
 import io.battlerune.net.packet.ClientPackets;
 import io.battlerune.net.packet.GamePacket;
@@ -33,14 +32,13 @@ public class ChatMessagePacketListener implements PacketListener {
 		final int color = packet.readByte(false, ByteModification.SUB);
 		final int size = packet.getSize() - 2;
 
-		if (effect < 0 || effect >= ChatEffect.values().length || color < 0 || color >= ChatColor.values().length
-				|| size <= 0) {
+		if(PunishmentExecuter.muted(player.getUsername()) || PunishmentExecuter.IPMuted(player.lastHost)) {
+			player.send(new SendMessage("You are muted and cannot chat."));
 			return;
 		}
-
-
-		if (PlayerPunishment.muted(player.getUsername()) || PlayerPunishment.IPMuted(player.lastHost)) {
-			player.send(new SendMessage("You are muted and cannot chat."));
+		
+		if (effect < 0 || effect >= ChatEffect.values().length || color < 0 || color >= ChatColor.values().length
+				|| size <= 0) {
 			return;
 		}
 		

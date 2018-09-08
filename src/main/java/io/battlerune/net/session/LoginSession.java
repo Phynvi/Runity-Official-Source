@@ -17,7 +17,7 @@ import io.battlerune.game.service.ForumService;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
+import io.battlerune.game.world.entity.mob.player.punishments.PunishmentExecuter;
 import io.battlerune.net.codec.game.GamePacketDecoder;
 import io.battlerune.net.codec.game.GamePacketEncoder;
 import io.battlerune.net.codec.login.LoginDetailsPacket;
@@ -108,19 +108,18 @@ public final class LoginSession extends Session {
 		final String password = player.getPassword();
 		final boolean isEmail = username.contains("@");
 
-		// prevents users from logging in before the server is ready to accept
-		// connections
+		if (PunishmentExecuter.banned(player.getUsername())) {
+			return LoginResponse.ACCOUNT_DISABLED;
+		}
+
+		if (PunishmentExecuter.IPBanned(host)) {
+			return LoginResponse.ACCOUNT_DISABLED;
+		}
+		
 		if (!BattleRune.serverStarted.get()) {
 			return LoginResponse.SERVER_BEING_UPDATED;
 		}
 
-		if (PlayerPunishment.banned(player.getUsername()) || PlayerPunishment.IPBanned(player.lastHost)) {
-			return LoginResponse.ACCOUNT_DISABLED;
-		}
-
-//        if (Config.TEST_WORLD && !AccountSecurity.AccountData.forName(username).isPresent()) {
-//            return LoginResponse.INSUFFICIENT_PERMSSION;
-//        }
 
 		// the world is currently full
 		if (World.getPlayerCount() == Config.MAX_PLAYERS) {

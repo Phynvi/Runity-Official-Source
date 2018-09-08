@@ -86,7 +86,6 @@ import io.battlerune.game.world.entity.mob.player.appearance.Appearance;
 import io.battlerune.game.world.entity.mob.player.exchange.ExchangeSessionManager;
 import io.battlerune.game.world.entity.mob.player.relations.ChatMessage;
 import io.battlerune.game.world.entity.mob.player.relations.PlayerRelation;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
 import io.battlerune.game.world.entity.mob.player.requests.RequestManager;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.game.world.entity.mob.prayer.PrayerBook;

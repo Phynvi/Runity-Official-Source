@@ -88,6 +88,7 @@ public final class PersonalStore extends Store {
 	}
 
 	public static void openMenu(Player player) {
+		
 		if (player == null) {
 			return;
 		}

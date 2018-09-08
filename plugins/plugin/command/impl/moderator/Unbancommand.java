@@ -4,18 +4,21 @@ import io.battlerune.content.command.Command;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.game.world.entity.mob.player.punishments.PunishmentExecuter;
+import io.battlerune.net.packet.out.SendMessage;
 
 public class Unbancommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		StringBuilder name = new StringBuilder(parts[0].replaceAll("_", " "));
+		final String other = String.format(parts[0].replaceAll("_", " "));
 
-
-		World.search(name.toString()).ifPresent(other -> {
-			//other.punishment.unBan();
-			player.message("@red@Player has been unbanned");
-		});
+		if (!PunishmentExecuter.banned(other)) {
+			player.send(new SendMessage("Player " + other + " is not banned!"));
+			return;
+		}
+		PunishmentExecuter.unban(other);
+		player.send(new SendMessage("Player " + other + " was successfully unbanned. Command logs written."));
 
 	}
 

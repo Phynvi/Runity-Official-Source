@@ -6,8 +6,7 @@ import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.content.command.Command;
 import io.battlerune.content.command.CommandManager;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishementData;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
+import io.battlerune.game.world.entity.mob.player.punishments.PunishmentExecuter;
 import io.battlerune.net.packet.ClientPackets;
 import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.packet.PacketListener;
@@ -31,8 +30,8 @@ public final class CommandPacketListener implements PacketListener {
 		parts[0] = parts[0].toLowerCase();
 
 		if (input.startsWith("/")) {
-			
-			if (PlayerPunishment.muted(player.getUsername()) || PlayerPunishment.IPMuted(player.lastHost)) {
+
+			if (PunishmentExecuter.muted(player.getUsername()) || PunishmentExecuter.IPMuted(player.lastHost)) {
 				player.send(new SendMessage("You are muted and cannot chat."));
 				return;
 			}

@@ -8,8 +8,6 @@ import java.util.Map.Entry;
 import io.battlerune.game.event.impl.log.PrivateMessageChatLogEvent;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishementData;
-import io.battlerune.game.world.entity.mob.player.requests.PlayerPunishment;
 import io.battlerune.net.packet.out.SendAddFriend;
 import io.battlerune.net.packet.out.SendAddIgnore;
 import io.battlerune.net.packet.out.SendChatOption;
