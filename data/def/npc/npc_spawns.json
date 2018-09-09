@@ -30896,6 +30896,132 @@
     "facing": "NORTH",
     "radius": 5
   },
+  
+  //REVENANT CAVES.
+  
+  {
+    "id": 7936,
+    "position": {
+      "x": 3248,
+      "y": 10180,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+  {
+    "id": 7936,
+    "position": {
+      "x": 3238,
+      "y": 10161,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+  {
+    "id": 7940,
+    "position": {
+      "x": 3239,
+      "y": 10178,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+  {
+    "id": 7931,
+    "position": {
+      "x": 3232,
+      "y": 10181,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+  {
+    "id": 7932,
+    "position": {
+      "x": 3234,
+      "y": 10171,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+  {
+    "id": 7937,
+    "position": {
+      "x": 3237,
+      "y": 10169,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+  {
+    "id": 7939,
+    "position": {
+      "x": 3246,
+      "y": 10170,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+  {
+    "id": 7935,
+    "position": {
+      "x": 3253,
+      "y": 10168,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+  {
+    "id": 7932,
+    "position": {
+      "x": 3246,
+      "y": 10163,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+   {
+    "id": 7934,
+    "position": {
+      "x": 3248,
+      "y": 10157,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+  {
+    "id": 7933,
+    "position": {
+      "x": 3252,
+      "y": 10157,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+  {
+    "id": 7938,
+    "position": {
+      "x": 3251,
+      "y": 10142,
+      "height": 0
+    },
+    "facing": "EAST",
+    "radius": 5
+  },
+
+  //end of rev caves.
+  
   {
     "id": 2531,
     "position": {

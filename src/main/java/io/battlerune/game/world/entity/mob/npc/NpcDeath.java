@@ -275,7 +275,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				}
 				return;
 
-			case "CERB":
+			case "CERBERUS":
 				playerKiller.activityLogger.add(ActivityLog.CERBERUS);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {

@@ -16,6 +16,11 @@ public class TeletabPlugin extends PluginContext {
 		if (!TeleportTablet.forId(event.getItem().getId()).isPresent()) {
 			return false;
 		}
+		
+		if(player.wilderness >= 36) {
+			player.send(new SendMessage("You can't teleport above 35 wilderness with a tablet."));
+			return false;
+		}
 
 		final TeleportTablet tablet = TeleportTablet.forId(event.getItem().getId()).get();
 

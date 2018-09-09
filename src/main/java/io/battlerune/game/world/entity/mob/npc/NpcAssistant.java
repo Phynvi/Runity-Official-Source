@@ -79,8 +79,9 @@ public class NpcAssistant {
 			6615, /* Scorpia */
 			6611, /* Vet'ion */
 			7286, /* Skotizo */
-			1207, 6504, /* Venenatis */
+			6504, /* Venenatis */
 			3162, /* Kree'arra */
+			1207,
 	};
 
 	public static final Map<Integer, Supplier<CombatStrategy<Npc>>> STRATEGIES = new HashMap<Integer, Supplier<CombatStrategy<Npc>>>() {
@@ -105,14 +106,13 @@ public class NpcAssistant {
 			put(6617, ScorpiaGuardian::new);
 			put(6611, Vetion::new);
 			put(7286, Skotizo::new);
-			put(1207, Arena::new);
 			put(5129, Arena::new);
 			put(763, GiantRoc::new);
 			put(6504, Venenatis::new);
 			put(3130, Tstanon::new);
 			put(5862, Cerberus::new);
 			put(3131, Zakln::new);
-			put(6477, MutantTarn::new);
+		//	put(6477, MutantTarn::new);
 			put(3132, Balfrug::new);
 			put(3162, KreeArra::new);
 			put(8060, Vorkath::new);

@@ -40,6 +40,7 @@ import io.battlerune.game.world.entity.combat.strategy.player.custom.DeathKatana
 import io.battlerune.game.world.entity.combat.strategy.player.custom.DragonHunterCrossbowStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.FireyBowStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.IceKatanaStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.KarilsStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LeafbladeSword;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LimeWhipStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LongbowStrategy;
@@ -227,6 +228,9 @@ public class PlayerAssistant {
 			}
 			if (item.getId() == 21012) {
 				return DragonHunterCrossbowStrategy.get();
+			}
+			if (item.getId() == 4734) {
+				return KarilsStrategy.get();
 			}
 			if(item.getId() == 3273) {
 				return IceKatanaStrategy.get();

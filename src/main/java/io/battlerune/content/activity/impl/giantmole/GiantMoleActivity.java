@@ -138,7 +138,6 @@ public class GiantMoleActivity extends Activity {
 					} else {
 						player.setBossPoints(player.getBossPoints() + 1);
 						player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
-
 					}
 				}
 			});

@@ -273,8 +273,8 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			});
 			break;
 
-		case 31556: // REV CAVE REVANANT CAVE. REV CAVE OSRS
-			// pos = 3124, 3830, 0 = REV CAVE POSITION
+		case 31556: 
+			player.move(new Position(3223, 10184, 0));
 			break;
 
 		case 24064:

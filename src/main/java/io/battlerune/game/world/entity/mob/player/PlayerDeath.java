@@ -128,7 +128,6 @@ public final class PlayerDeath extends MobDeath<Player> {
 			}
 
 			if (mob.isBot) {
-
 				playerKiller.message("<col=295EFF>You were rewarded with 1 point for that bot kill. You now have: "
 						+ Utility.formatDigits(playerKiller.pkPoints) + 1 + ".");
 				return;

@@ -60,6 +60,7 @@ import plugin.command.impl.owner.posCommand;
 import plugin.command.impl.player.AnswerTriviaCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
+import plugin.command.impl.player.BarrowsFix;
 import plugin.command.impl.player.CashOutCommand;
 import plugin.command.impl.player.ChangePassword;
 import plugin.command.impl.player.ClaimDonationCommand;
@@ -85,6 +86,7 @@ import plugin.command.impl.player.MageBankCommand;
 import plugin.command.impl.player.MaxStatusCommand;
 import plugin.command.impl.player.PlayerCountCommand;
 import plugin.command.impl.player.PouchCommand;
+import plugin.command.impl.player.RevenantCaveCommand;
 import plugin.command.impl.player.ShopCommand;
 import plugin.command.impl.player.SkillAreaCommand;
 import plugin.command.impl.player.SkullCommand;
@@ -151,6 +153,9 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "key", "security" }, new KeyCommand());
 		PLUGIN.putIfAbsent(new String[] { "galvek", "Galvek" }, new GalvekCommands());
 		PLUGIN.putIfAbsent(new String[] { "es", "ed" }, new EZCommandZone());
+		PLUGIN.putIfAbsent(new String[] { "barrowsfix", "bugfix" }, new BarrowsFix());
+		PLUGIN.putIfAbsent(new String[] { "revs", "revcave" }, new RevenantCaveCommand());
+
 
 
 

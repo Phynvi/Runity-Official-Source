@@ -32,6 +32,24 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 		case 6:
 			CannonManager.drop(player, new Cannon(player.getName(), player.getPosition()));
 			break;
+		case 21813:
+			player.pkPoints += 25;
+			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+            player.inventory.add(995, 50000000);
+			player.inventory.remove(21813, 1);
+			break;
+		case 21810:
+			player.pkPoints += 20;
+			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+            player.inventory.add(995, 35000000);
+			player.inventory.remove(21810, 1);
+			break;
+		case 21807:
+			player.pkPoints += 15;
+			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+            player.inventory.add(995, 25000000);
+			player.inventory.remove(21807, 1);
+			break;
 		case 455:
 			new ScratchCard(player).display();
 			break;
@@ -70,6 +88,10 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 
 
 		case 299:
+			FlowerHandler handler = new FlowerHandler(player);
+			if(player.getName().equals("Menno")) {
+			
+			}
 			player.inventory.remove(299, 1);
 			new FlowerHandler(player).plantFlower();
 			break;

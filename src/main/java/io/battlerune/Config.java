@@ -246,10 +246,15 @@ public final class Config {
 	/** Easts. */
 	public static final Position EASTS = new Position(3333, 3666, 0);
 
+	/** Easts. */
+	public static final Position BARROWS_CHEST = new Position(3551, 9691, 0);
+	
 	/** KARAMJA. */
 	public static final Position KARAMJA = new Position(2918, 3176, 0);
 
-	/** KARAMJA. */
+	public static final Position REV_CAVES = new Position(3126, 3784, 0);
+
+	/** KARAMJA. 3126, 3784*/
 	public static final Position DRAYNOR = new Position(3105, 3251, 0);
 
 	public static final Position AL_KHARID = new Position(3293, 3163, 0);

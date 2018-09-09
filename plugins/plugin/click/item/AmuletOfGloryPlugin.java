@@ -52,14 +52,14 @@ public class AmuletOfGloryPlugin extends PluginContext {
 		Item item = event.getItem();
 		int index = getIndex(item.getId());
 
-		if (index == -1) {
+	/*	if (index == -1) {
 			return false;
 		}
 
 		if (index == 0) {
 			player.message("Your amulet of glory has no charges left!");
 			return true;
-		}
+		}*/
 		if (player.inventory.containsAny(AMULETS)) {
 
 			player.dialogueFactory.sendOption("Edgeville", () -> {

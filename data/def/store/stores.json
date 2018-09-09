@@ -2194,6 +2194,10 @@
     "sellType": "NONE",
     "items": [
       {
+        "id": 8007,
+        "amount": 100
+      },
+      {
         "id": 19707,
         "amount": 100
       },

@@ -88,8 +88,8 @@ public class ItemCreation {
 			new Item(12932, 1)),
 	AMULET_OF_TORTURE(new Item(19553), null, new Skill[] { new Skill(Skill.CRAFTING, 59, 0) }, new Item(6581, 1),
 			new Item(19529, 1)),
-	TRIDENT_OF_THE_SWAMP(new Item(12899), null, new Skill[] { new Skill(Skill.CRAFTING, 59, 0) }, new Item(12932, 1),
-			new Item(11907, 1)),
+	TRIDENT_OF_SWAMP(new Item(12899), null, null, new Item(12932, 1), new Item(11907, 1)),
+
 	DRAGON_PICKAXE(new Item(12797), null, null, new Item(11920, 1), new Item(12800, 1)),
 	MAGIC_SHORTBOW_INFUSED(new Item(12788), new Item(861), null, new Item(12786, 1), new Item(861, 1)),
 	ABYSSAL_TENTACLE_WHIP(new Item(12006, 1), new Item(12004, 1), null, new Item(12004, 1), new Item(4151, 1)),
@@ -111,6 +111,7 @@ public class ItemCreation {
 	AMULET_OF_TORTURE_KIT(new Item(20366), null, null, new Item(20062, 1), new Item(19553, 1)),
 	AMULET_OF_OCCULT_KIT(new Item(19720), null, null, new Item(20065, 1), new Item(12002, 1)),
 
+	
 	ARMADYLGOD_OR(new Item(20368), null, null, new Item(20068, 1), new Item(11802, 1)),
 	BANDOSGOD_OR(new Item(20370), null, null, new Item(20071, 1), new Item(11804, 1)),
 	ZAMORAKGOD_OR(new Item(20372), null, null, new Item(20074, 1), new Item(11806, 1)),
