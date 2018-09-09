@@ -27,6 +27,7 @@ import io.battlerune.game.world.region.RegionManager;
  */
 public class FlowerHandler {
 
+	
 	private Player player;
 	private Random random = new Random();
 	private FlowerData[] flower = FlowerData.values();

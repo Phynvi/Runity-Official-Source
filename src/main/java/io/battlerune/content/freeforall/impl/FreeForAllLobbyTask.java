@@ -9,6 +9,7 @@ import io.battlerune.net.packet.out.SendMessage;
 
 public class FreeForAllLobbyTask {
 
+	
 	protected Player player;
 
 	public FreeForAllLobbyTask(Player player) {

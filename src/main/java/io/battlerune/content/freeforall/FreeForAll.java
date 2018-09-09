@@ -23,6 +23,7 @@ public class FreeForAll extends Task {
 		super(1);
 		this.tick = 0;
 	}
+	
 
 	@Override
 	protected void execute() {

@@ -26,6 +26,7 @@ import io.battlerune.util.Utility;
 
 public class ItemFirstClickPlugin extends PluginContext { // etest
 
+	
 	@Override
 	protected boolean firstClickItem(Player player, ItemClickEvent event) {
 		switch (event.getItem().getId()) {

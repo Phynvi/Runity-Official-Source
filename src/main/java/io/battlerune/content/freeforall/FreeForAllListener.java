@@ -10,6 +10,7 @@ import io.battlerune.game.world.items.Item;
  */
 public interface FreeForAllListener {
 
+	
 	/**
 	 * Returns the name of the free for all type
 	 * @return

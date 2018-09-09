@@ -5,6 +5,7 @@ import io.battlerune.net.packet.out.SendMessage;
 
 public class FreeForAllStartTask implements FreeForAllTask {
 
+	
 	@Override
 	public void execute(Player player) {
 		player.send(new SendMessage("Yo works nerik!!!!!!"));

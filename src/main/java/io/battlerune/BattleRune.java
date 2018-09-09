@@ -60,6 +60,7 @@ public final class BattleRune {
 
 	public static final AtomicBoolean serverStarted = new AtomicBoolean(false);
 
+	
 	public static final Stopwatch UPTIME = Stopwatch.start();
 
 	// services

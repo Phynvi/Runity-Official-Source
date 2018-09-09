@@ -6,6 +6,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 public class FreeForAllEndTask implements FreeForAllTask {
 
+	
 	@Override
 	public void execute(Player player) {
 		if (FreeForAll.getCount(FreeForAllType.GAME) <= 1) {

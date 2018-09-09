@@ -11,6 +11,7 @@ import io.battlerune.net.packet.out.SendMessage;
 
 public class FreeForAllLeaveTask {
 
+	
 	private Player player;
 	private String type;
 
