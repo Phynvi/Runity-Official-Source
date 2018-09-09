@@ -156,7 +156,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "es", "ed" }, new EZCommandZone());
 		PLUGIN.putIfAbsent(new String[] { "barrowsfix", "bugfix" }, new BarrowsFix());
 		PLUGIN.putIfAbsent(new String[] { "revs", "revcave" }, new RevenantCaveCommand());
-		PLUGIN.putIfAbsent(new String[] { "giveaway", "giveaways", "youtube", "moneymaking" }, new YouTubeCommand());
+		PLUGIN.putIfAbsent(new String[] { "giveaways", "giveaway"}, new YouTubeCommand());
 
 
 
