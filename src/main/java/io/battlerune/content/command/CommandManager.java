@@ -97,6 +97,7 @@ import plugin.command.impl.player.TrainZone;
 import plugin.command.impl.player.VaultCommand;
 import plugin.command.impl.player.VoteCommand;
 import plugin.command.impl.player.Wests;
+import plugin.command.impl.player.YouTubeCommand;
 
 /**
  * Stores Commands
@@ -155,6 +156,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "es", "ed" }, new EZCommandZone());
 		PLUGIN.putIfAbsent(new String[] { "barrowsfix", "bugfix" }, new BarrowsFix());
 		PLUGIN.putIfAbsent(new String[] { "revs", "revcave" }, new RevenantCaveCommand());
+		PLUGIN.putIfAbsent(new String[] { "giveaway", "giveaways", "youtube", "moneymaking" }, new YouTubeCommand());
 
 
 

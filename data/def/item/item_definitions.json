@@ -58250,10 +58250,10 @@
     "weight": 1.8,
     "equipment-slot": "WEAPON",
     "attack-stab": 94,
-    "attack-slash": 78,
+    "attack-slash": 55,
     "attack-crush": -2,
     "defence-slash": 2,
-    "bonus-strength": 101
+    "bonus-strength": 85
   },
   {
     "id": 7142,
@@ -98871,12 +98871,12 @@
     "weapon-interface": "LONGSWORD",
     "weight": 1.8,
     "req-defence": 45,
-    "attack-stab": 107,
-    "attack-slash": 124,
+    "attack-stab": 94,
+    "attack-slash": 95,
     "attack-crush": -2,
     "defence-slash": 3,
     "defence-crush": 2,
-    "bonus-strength": 120
+    "bonus-strength": 85
   },
   {
     "id": 8800,
@@ -111598,7 +111598,7 @@
   },
   {
     "id": 19687,
-    "name": "Helm of raedwald",
+    "name": "Vesta's Helm",
     "destroy-message": "You will have to discover it again.",
     "weight": 1.0,
     "equipment-slot": "HELM",
@@ -117892,9 +117892,9 @@
     "run-animation": 7519,
     "equipment-slot": "WEAPON",
     "weapon-interface": "ELDER_MAUL",
-    "attack-crush": 167,
+    "attack-crush": 137,
     "attack-magic": -4,
-    "bonus-strength": 155
+    "bonus-strength": 142
   },
   {
     "id": 20602,
