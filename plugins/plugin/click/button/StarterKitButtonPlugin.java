@@ -110,6 +110,8 @@ public class StarterKitButtonPlugin extends PluginContext {
 		player.send(new SendMessage(
 				"@red@Tutorial Tip@bla@ You can train your combat ::train, or make money thieving or ::barrows"));
 		player.send(new SendMessage("@red@Tutorial Tip@bla@ Pking is also a very good method to make money."));
+		player.send(new SendMessage("@red@Tutorial Tip@bla@ Do ::giveaway to enter 250$ & 100Mill OSRS Giveaway"));
+
 		player.runEnergy = +100;
 		player.buttonDelay.reset();
 		//ClanChannelHandler.connect(player, "help");

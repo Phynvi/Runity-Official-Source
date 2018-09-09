@@ -22,8 +22,8 @@ public enum PlayerRight {
 	CLASSIC("Classic", "B1800A", 18, -1, 4115), YOUTUBER("Youtuber", "91111A", 11, -1, 4112),
 	IRONMAN("Ironman", "7A6F74", 12, -1, 4112), ULTIMATE_IRONMAN("Ultimate Ironman", "7A6F74", 13, -1, 4113),
 	HARDCORE_IRONMAN("Hardcore Ironman", "7A6F74", 14, -1, 4114), HELPER("Helper", "5C5858", 16, -1, 4115),
-	GRAPHIC("Graphic", "CE795A", 17, -1, 4112)
-	// TRUSTED_DICER("Trusted Dicer", "CE795A", 18, -1, 4115),
+	GRAPHIC("Graphic", "CE795A", 17, -1, 4112),
+	TRUSTED_DICER("Trusted Dicer", "CE795A", 19, -1, 4115),
 	// GAMBLE_MANAGER("Gamble Dicer", "7A6F74", 18, -1, 4115)
 
 	;

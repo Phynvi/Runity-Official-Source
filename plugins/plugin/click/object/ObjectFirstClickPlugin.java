@@ -282,6 +282,19 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			player.message("Welcome to Runity's Gambling zone!");
 			break;
 
+		case 4151:
+			if(player.getCombat().inCombat()) {
+				return true; 
+			}
+			if (!player.revstele.elapsed(10, TimeUnit.SECONDS)) {
+				player.dialogueFactory.sendNpcChat(1152, "You can only do this once every " + "10 Seconds!",
+						"Time Passed: " + Utility.getTime(player.revstele.elapsedTime())).execute();
+
+				return true;
+			}
+			player.revstele.reset();
+            player.move(new Position(3086, 3501, 0));
+			break;
 		case 3399:
 			if (player.inventory.getFreeSlots() <= 2) {
 				player.dialogueFactory.sendNpcChat(1152, "You need atleast 2 free slots to take the free supplies.")
