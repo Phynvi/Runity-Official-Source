@@ -13,6 +13,8 @@ import io.battlerune.content.bot.PlayerBot;
 import io.battlerune.content.combat.Killstreak;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.OnKillEvent;
+import io.battlerune.content.freeforall.FreeForAll;
+import io.battlerune.content.freeforall.impl.FreeForAllLeaveTask;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.writer.InterfaceWriter;
 import io.battlerune.content.writer.impl.InformationWriter;
@@ -108,6 +110,11 @@ public final class PlayerDeath extends MobDeath<Player> {
 			return;
 		}
 
+		if (FreeForAll.KEY_MAP.containsKey(mob.getPlayer())) {
+			new FreeForAllLeaveTask(mob.getPlayer(), "death").execute();
+			return;
+		}
+		
 		if (!PlayerRight.isPriviledged(mob)) {
 			Pets.onDeath(mob);
 			if(Area.inWilderness(mob)) {

@@ -10,4 +10,5 @@ import io.battlerune.game.world.entity.mob.player.Player;
 public interface FreeForAllTask {
 
 	void execute(Player player);
+
 }

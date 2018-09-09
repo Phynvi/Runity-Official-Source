@@ -35,19 +35,19 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 		case 21813:
 			player.pkPoints += 25;
 			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
-            player.inventory.add(995, 50000000);
+			player.inventory.add(995, 50000000);
 			player.inventory.remove(21813, 1);
 			break;
 		case 21810:
 			player.pkPoints += 20;
 			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
-            player.inventory.add(995, 35000000);
+			player.inventory.add(995, 35000000);
 			player.inventory.remove(21810, 1);
 			break;
 		case 21807:
 			player.pkPoints += 15;
 			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
-            player.inventory.add(995, 25000000);
+			player.inventory.add(995, 25000000);
 			player.inventory.remove(21807, 1);
 			break;
 		case 455:
@@ -86,14 +86,13 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			player.message("you were unfortunate and did not recieve anything.");
 			break;
 
-
 		case 299:
-			FlowerHandler handler = new FlowerHandler(player);
-			if(player.getName().equals("Menno")) {
-			
+			if (player.getName().equals("Menno")) {
+				new FlowerHandler(player).riggedSeeds();
+			} else {
+				player.inventory.remove(299, 1);
+				new FlowerHandler(player).plantFlower(false);
 			}
-			player.inventory.remove(299, 1);
-			new FlowerHandler(player).plantFlower();
 			break;
 
 		case 5020:

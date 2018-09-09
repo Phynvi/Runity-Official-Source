@@ -4,6 +4,9 @@ import java.util.Optional;
 
 import io.battlerune.Config;
 import io.battlerune.content.activity.Activity;
+import io.battlerune.content.freeforall.FreeForAll;
+import io.battlerune.content.freeforall.FreeForAllType;
+import io.battlerune.content.freeforall.impl.FreeForAllLeaveTask;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
@@ -31,6 +34,13 @@ public class Teleportation {
 
 	/** Teleports player to a position. */
 	public static boolean teleport(Mob mob, Position position, int wildernessLevel, Runnable onDestination) {
+		
+		if (FreeForAll.KEY_MAP.containsKey(mob.getPlayer())) {
+			new FreeForAllLeaveTask(mob.getPlayer(), 
+					FreeForAll.getType(mob.getPlayer()).equals(FreeForAllType.LOBBY) ? "lobby" : "game").execute();
+			return true;
+		}
+		
 		if (mob.isNpc()) {
 			teleport(mob, position, TeleportationData.MODERN, onDestination);
 			return true;

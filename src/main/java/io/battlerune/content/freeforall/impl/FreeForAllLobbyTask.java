@@ -1,6 +1,10 @@
 package io.battlerune.content.freeforall.impl;
 
+import io.battlerune.content.freeforall.FreeForAll;
+import io.battlerune.content.freeforall.FreeForAllType;
+import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
 
 public class FreeForAllLobbyTask {
@@ -12,9 +16,13 @@ public class FreeForAllLobbyTask {
 	}
 
 	public void execute() {
-		if(getRestrictions()) {
+		if(!getRestrictions()) {
 			return;
 		}
+		
+		Teleportation.teleport(player, new Position(1, 1, 1));
+		player.send(new SendMessage("Welcome to the Free For All lobby!"));
+		FreeForAll.KEY_MAP.putIfAbsent(player, FreeForAllType.LOBBY);
 	}
 
 	private boolean getRestrictions() {
