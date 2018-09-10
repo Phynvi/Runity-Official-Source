@@ -334,6 +334,7 @@ public final class Config {
 			"Did you know you can change your combat level by clicking on the skill?",
 			"You can do ::commands for a list of commands!",
              "Do ::store to purchase bonds to make purchases",
+             "Do ::store for 25% Sale on bonds!",
 	"Saying you don't need privacy because you have nothing to hide is like saying you don't need free speech because you have nothing to say." };
 
 	/**
