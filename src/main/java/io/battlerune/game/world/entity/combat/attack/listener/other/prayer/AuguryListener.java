@@ -7,12 +7,12 @@ public class AuguryListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public int modifyMagicLevel(Mob attacker, Mob defender, int level) {
-		return level * 5 / 4;
+		return level * 6 / 5;
 	}
 
 	@Override
 	public int modifyDefenceLevel(Mob attacker, Mob defender, int damage) {
-		return damage * 5 / 4;
+		return damage * 6 / 5;
 	}
 
 }

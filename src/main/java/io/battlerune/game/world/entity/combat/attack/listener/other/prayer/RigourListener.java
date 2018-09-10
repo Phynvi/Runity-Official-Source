@@ -8,7 +8,7 @@ public class RigourListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public int modifyRangedLevel(Mob attacker, Mob defender, int level) {
-		return level * 6 / 5;
+		return level * 7 / 6;
 	}
 
 	@Override
@@ -20,7 +20,7 @@ public class RigourListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public int modifyDefenceLevel(Mob attacker, Mob defender, int level) {
-		return level * 5 / 4;
+		return level * 6 / 5;
 	}
 
 }

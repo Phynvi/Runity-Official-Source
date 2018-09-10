@@ -7,7 +7,7 @@ public class PietyListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public int modifyAttackLevel(Mob attacker, Mob defender, int level) {
-		return level * 6 / 5;
+		return level * 7 / 6;
 	}
 
 	@Override
@@ -17,7 +17,7 @@ public class PietyListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public int modifyDefenceLevel(Mob attacker, Mob defender, int level) {
-		return level * 5 / 4;
+		return level * 6 / 5;
 	}
 
 }
