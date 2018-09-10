@@ -20,6 +20,7 @@ import io.battlerune.content.activity.record.GlobalRecords;
 import io.battlerune.content.bot.PlayerBot;
 import io.battlerune.content.clanchannel.ClanRepository;
 import io.battlerune.content.eventboss.EventBossHandler;
+import io.battlerune.content.freeforall.FreeForAll;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.Projectile;
 import io.battlerune.game.event.bus.DataBus;

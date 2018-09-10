@@ -123,6 +123,7 @@ import io.battlerune.util.Utility;
  * This class represents a character controlled by a player.
  *
  * @author Daniel
+ * 
  * @author Michael | Chex
  */
 public class Player extends Mob {

@@ -9,6 +9,7 @@ import io.battlerune.content.WellOfGoodwill;
 import io.battlerune.content.activity.annoucements.Announcement;
 import io.battlerune.content.activity.record.GlobalRecords;
 import io.battlerune.content.clanchannel.ClanRepository;
+import io.battlerune.content.freeforall.FreeForAll;
 import io.battlerune.content.itemaction.ItemActionRepository;
 import io.battlerune.content.skill.SkillRepository;
 import io.battlerune.content.store.PersonalStoreSaver;
@@ -59,6 +60,7 @@ public final class BattleRune {
 
 	public static final AtomicBoolean serverStarted = new AtomicBoolean(false);
 
+	
 	public static final Stopwatch UPTIME = Stopwatch.start();
 
 	// services
@@ -137,15 +139,11 @@ public final class BattleRune {
 		World.schedule(new ClanUpdateEvent());
 		World.schedule(new PlayerSaveEvent());
 		World.schedule(new BotStartupEvent());
-		// World.schedule(new DiscordEvent());
 		World.schedule(new SkotizoEvent());
 		World.schedule(new ArenaEvent());
-		// World.schedule(new GanoEvent());
 		World.schedule(new GalvekEvent());
-		//World.schedule(new JusticarEvent());
-		//World.schedule(new PorazdirEvent());
-		//World.schedule(new DerwenEvent());
 		World.schedule(new RoyaltyEvent());
+	//	World.schedule(new FreeForAll());
 		Logger.log("Events have been scheduled");
 		Logger.log("World Schdule Events have loaded adam.");
 	}

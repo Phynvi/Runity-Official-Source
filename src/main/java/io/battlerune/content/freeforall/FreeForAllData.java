@@ -10,6 +10,7 @@ import io.battlerune.game.world.items.Item;
  */
 public enum FreeForAllData implements FreeForAllListener {
 
+	
 	DHAROK() {
 
 		@Override

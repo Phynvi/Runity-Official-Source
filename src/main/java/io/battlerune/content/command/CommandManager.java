@@ -106,6 +106,7 @@ import plugin.command.impl.player.YouTubeCommand;
  *
  */
 public class CommandManager {
+	
 
 	public static final Map<String[], Command> PLUGIN = new HashMap<>();
 	public static final Map<String, Command> PLUGIN_INPUT = new HashMap<>();

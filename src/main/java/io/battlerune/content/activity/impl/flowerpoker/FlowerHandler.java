@@ -2,6 +2,7 @@ package io.battlerune.content.activity.impl.flowerpoker;
 
 import java.util.Random;
 
+import io.battlerune.content.clanchannel.content.ClanViewer;
 import io.battlerune.game.Animation;
 import io.battlerune.game.task.Task;
 import io.battlerune.game.task.TaskManager;
@@ -26,6 +27,7 @@ import io.battlerune.game.world.region.RegionManager;
  */
 public class FlowerHandler {
 
+	
 	private Player player;
 	private Random random = new Random();
 	private FlowerData[] flower = FlowerData.values();
@@ -35,6 +37,11 @@ public class FlowerHandler {
 		this.player = player;
 	}
 
+	public FlowerHandler(Player player, FlowerData data) {
+		this.player = player;
+		this.tempFlower = data;
+	}
+	
 	public FlowerData getTempFlower() {
 		return tempFlower;
 	}
@@ -43,9 +50,10 @@ public class FlowerHandler {
 		this.tempFlower = tempFlower;
 	}
 
-	public void plantFlower() {
+	public void plantFlower(boolean skip) {
+		if(!skip) {
 		setTempFlower(getFlower());
-
+		}
 		if (onFlower(player)) {
 			player.message("You can't plant a flower on another flower!");
 			return;
@@ -74,6 +82,28 @@ public class FlowerHandler {
 				tick++;
 			}
 		});
+	}
+
+	public void riggedSeeds() {
+		player.dialogueFactory.sendOption("BLUE_FLOWERS", () -> {
+			new FlowerHandler(player, FlowerData.BLUE_FLOWERS).plantFlower(true);
+		}, "RED_FLOWERS", () -> {
+			new FlowerHandler(player, FlowerData.RED_FLOWERS).plantFlower(true);
+		}, "ORANGE_FLOWERS", () -> {
+			new FlowerHandler(player, FlowerData.ORANGE_FLOWERS).plantFlower(true);
+		}, "YELLOW_FLOWERS", () -> {
+			new FlowerHandler(player, FlowerData.YELLOW_FLOWERS).plantFlower(true);
+		}, "More", () -> {
+			player.dialogueFactory.sendOption("PASTEL_FLOWERS", () -> {
+				new FlowerHandler(player, FlowerData.PASTEL_FLOWERS).plantFlower(true);
+			}, "RAINBOW_FLOWERS", () -> {
+				new FlowerHandler(player, FlowerData.RAINBOW_FLOWERS).plantFlower(true);
+			}, "PURPLE_FLOWERS", () -> {
+				new FlowerHandler(player, FlowerData.PURPLE_FLOWERS).plantFlower(true);
+			}, "Cancel", () -> {
+				player.dialogueFactory.clear();
+			});
+		}).execute();
 	}
 
 	private boolean onFlower(Mob mob) {
