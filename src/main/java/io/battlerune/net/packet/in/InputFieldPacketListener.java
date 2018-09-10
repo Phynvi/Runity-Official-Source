@@ -5,7 +5,6 @@ import io.battlerune.content.DropDisplay.DropType;
 import io.battlerune.content.DropSimulator;
 import io.battlerune.content.ProfileViewer;
 import io.battlerune.content.staff.StaffPanel;
-import io.battlerune.content.store.impl.PersonalStore;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
@@ -70,14 +69,6 @@ public class InputFieldPacketListener implements PacketListener {
 			});
 			break;
 		}
-
-		/* Personal Store */
-		case 38307:
-			PersonalStore.changeName(player, context, false);
-			break;
-		case 38309:
-			PersonalStore.changeName(player, context, true);
-			break;
 
 		/* Drop simulator */
 		case 26810:

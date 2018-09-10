@@ -59,7 +59,6 @@ import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.spell.SpellCasting;
 import io.battlerune.content.skill.impl.runecrafting.RunecraftPouch;
 import io.battlerune.content.skill.impl.slayer.Slayer;
-import io.battlerune.content.store.impl.PersonalStore;
 import io.battlerune.content.teleport.Teleport;
 import io.battlerune.content.tittle.PlayerTitle;
 import io.battlerune.game.event.impl.MovementEvent;
@@ -381,7 +380,6 @@ public class Player extends Mob {
 	public final ClanViewer clanViewer = new ClanViewer(this);
 	public final PlayerRecord gameRecord = new PlayerRecord(this);
 	public final ExchangeSessionManager exchangeSession = new ExchangeSessionManager(this);
-	public final Map<Integer, PersonalStore> viewing_shops = new HashMap<>();
 	public final PlayerAssistant playerAssistant = new PlayerAssistant(this);
 	public final InterfaceManager interfaceManager = new InterfaceManager(this);
 	public final RequestManager requestManager = new RequestManager(this);

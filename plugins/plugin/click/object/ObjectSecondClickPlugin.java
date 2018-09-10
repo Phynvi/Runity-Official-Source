@@ -6,7 +6,6 @@ import io.battlerune.content.WellOfGoodwill;
 import io.battlerune.content.combat.cannon.CannonManager;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.skill.impl.magic.Spellbook;
-import io.battlerune.content.store.impl.PersonalStore;
 import io.battlerune.game.Animation;
 import io.battlerune.game.action.impl.FlaxPickingAction;
 import io.battlerune.game.event.impl.ObjectClickEvent;
@@ -79,25 +78,6 @@ public class ObjectSecondClickPlugin extends PluginContext {
 				break;
 			}
 			player.action.execute(new FlaxPickingAction(player, object), true);
-			break;
-
-		/* Grand exchange. */
-		case 26044: {
-			if (PlayerRight.isIronman(player)) {
-				player.send(new SendMessage("As an iron man you may not access player owned stores!"));
-				break;
-			}
-			DialogueFactory f = player.dialogueFactory;
-			f.sendOption("Browse all stores", () -> f.onAction(() -> {
-				PersonalStore.openPanel(player);
-			}), "Open my shop", () -> f.onAction(() -> {
-				PersonalStore.myShop(player);
-			}), "Edit my shop", () -> f.onAction(() -> {
-				PersonalStore.edit(player);
-			}), "Collect coins", () -> f.onAction(() -> {
-				// TODO
-			})).execute();
-		}
 			break;
 
 		default:

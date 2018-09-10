@@ -16,7 +16,6 @@ import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.staff.PanelType;
 import io.battlerune.content.staff.StaffPanel;
-import io.battlerune.content.store.impl.PersonalStore;
 import io.battlerune.content.teleport.TeleportHandler;
 import io.battlerune.game.Animation;
 import io.battlerune.game.UpdatePriority;
@@ -69,6 +68,9 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 		switch (id) {
 
+		case 26043:
+			player.send(new SendMessage("@red@ The player owned shop has been disabled!"));
+			break;
 		case 27215: {
 			if (!player.itemDelay.elapsed(2, TimeUnit.SECONDS)) {
 				return true;
@@ -1137,17 +1139,6 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			player.dialogueFactory.sendDialogue(new WellOfGoodwillDialogue());
 			break;
 
-		/* Player owned shops. */
-		case 3029:
-//                player.message("Personal stores are currently disabled!");
-			if (PlayerRight.isIronman(player)) {
-				player.send(new SendMessage("As an iron man you may not access player owned stores!"));
-				return true;
-			}
-			PersonalStore.openMenu(player);
-
-			break;
-
 		/* Management machine */
 		case 11546:
 			if (PlayerRight.isManagement(player)) {
@@ -1397,17 +1388,6 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			player.interfaceManager.setSidebar(Config.MAGIC_TAB, book.getInterfaceId());
 			player.send(new SendMessage("You are now using the " + book.name().toLowerCase() + " spellbook."));
 		}
-			break;
-
-		/* Grand exchange. */
-		case 26044:
-			player.message("Personal stores are currently undergoing testing!" + "You've been warned.");
-			if (PlayerRight.isIronman(player)) {
-				player.send(new SendMessage("As an iron man you may not access player owned stores!"));
-				return true;
-			}
-			PersonalStore.openMenu(player);
-
 			break;
 
 		/* AFK Tree */

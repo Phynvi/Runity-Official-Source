@@ -12,7 +12,6 @@ import io.battlerune.content.clanchannel.ClanRepository;
 import io.battlerune.content.freeforall.FreeForAll;
 import io.battlerune.content.itemaction.ItemActionRepository;
 import io.battlerune.content.skill.SkillRepository;
-import io.battlerune.content.store.PersonalStoreSaver;
 import io.battlerune.content.triviabot.TriviaBot;
 import io.battlerune.fs.cache.FileSystem;
 import io.battlerune.fs.cache.decoder.MapDefinitionDecoder;
@@ -114,7 +113,6 @@ public final class BattleRune {
 		startupService.submit(new PacketSizeParser());
 		startupService.submit(new PacketListenerLoader());
 		startupService.submit(TriviaBot::declare);
-		startupService.submit(PersonalStoreSaver::loadPayments);
 		startupService.submit(ClanRepository::loadChannels);
 		startupService.submit(GlobalRecords::load);
 		startupService.submit(SkillRepository::load);

@@ -9,7 +9,6 @@ import java.util.Optional;
 import java.util.Set;
 
 import io.battlerune.content.store.currency.CurrencyType;
-import io.battlerune.content.store.impl.PersonalStore;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.ItemContainer;
@@ -85,20 +84,6 @@ public abstract class Store {
 		}
 
 		store.itemContainerAction(player, id, slot, action, purchase);
-	}
-
-	protected static List<PersonalStore> getPersonalShops() {
-		List<PersonalStore> personal_shops = new ArrayList<>();
-		STORES.values().stream().filter(s -> s.type().equals(StoreType.PERSONAL))
-				.forEach(s -> personal_shops.add((PersonalStore) s));
-		return personal_shops;
-	}
-
-	protected static List<PersonalStore> getFeaturedShops() {
-		List<PersonalStore> featured_shops = new ArrayList<>();
-		STORES.values().stream().filter(s -> s.type().equals(StoreType.PERSONAL) && ((PersonalStore) s).rank > 0)
-				.forEach(s -> featured_shops.add((PersonalStore) s));
-		return featured_shops;
 	}
 
 	public abstract void itemContainerAction(Player player, int id, int slot, int action, boolean purchase);
