@@ -8,14 +8,14 @@ public class RigourListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public int modifyRangedLevel(Mob attacker, Mob defender, int level) {
-		return level * 7 / 6;
+		return level * 8 / 7;
 	}
 
 	@Override
 	public int modifyDamage(Mob attacker, Mob defender, int damage) {
 		if (attacker.getStrategy().getCombatType() != CombatType.RANGED)
 			return damage;
-		return damage * 103 / 100;
+		return damage * 120 / 117;
 	}
 
 	@Override

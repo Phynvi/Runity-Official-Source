@@ -53,7 +53,11 @@ public class DiceBag {
 
 		player.animate(ANIMATION);
 		World.sendGraphic(GRAPHIC, position);
+		boolean hasClan = player.clanChannel != null;
 
+		if (hasClan) {
+			player.clanChannel.message("@blu@You have rolled @red@" + random + "@blu@ on the percentile dice!");
+		}
 //        if (clan) {
 //            Clan channel = ClanRepository.get(player.clan);
 //            if (channel == null)

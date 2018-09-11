@@ -162,10 +162,10 @@ public class SettingsButtonPlugin extends PluginContext {
 			return true;
 		case 29417:
 			player.attributes.set("OBELISK", -1);
-			player.send(new SendString("Server Settings", 51002));
-			player.send(new SendString("Click on the setting you would like to toggle", 51003));
+			player.send(new SendString("Server Settings", 57312));
+			player.send(new SendString("Click on the setting you would like to toggle", 57313));
 			InterfaceWriter.write(new SettingWriter(player));
-			player.interfaceManager.open(51000);
+			player.interfaceManager.open(57310);
 			return true;
 		case -29517:
 			player.send(new SendMessage(":settingupdate:"));

@@ -34,6 +34,7 @@ public class SendInputAmount extends OutgoingPacket {
 	@Override
 	public boolean encode(Player player) {
 		player.enterInputListener = Optional.of(action);
+		System.out.println(inputMessage + " : " + inputLength + " : " + player.enterInputListener.toString());
 		builder.writeString(inputMessage).writeShort(inputLength, ByteModification.ADD);
 		return true;
 	}

@@ -67,7 +67,8 @@ public final class StakeSession extends ExchangeSession {
 			IntStream.range(631, 644).forEach(i -> p.send(new SendConfig(i, 0)));
 			p.send(new SendToggle(286, 0));
 		});
-		updateMainComponents("FIRST_SCREEN");
+		//updateMainComponents("FIRST_SCREEN");
+		player.message("Duel arena is disabled");
 		return true;
 	}
 

@@ -203,6 +203,11 @@ public abstract class ExchangeSession {
 		if (!canRemoveItem(player, containerItem, slot)) {
 			return false;
 		}
+		if (amount <= 0) {
+			World.sendStaffMessage(player.getName() + " is abooosing, jail his ass and tell the devs.");
+//yeah he said tomorrow, he's busy atm or going to bed
+			return false;
+		}
 		Item item = new Item(containerItem.getId(),
 				amount == -1 ? this.item_containers.get(player).computeAmountForId(containerItem.getId()) : amount);
 		int count = item_containers.get(player).computeAmountForId(item.getId());

@@ -29,7 +29,7 @@ public class SendInputMessage extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		player.enterInputListener = Optional.of(action);
+		player.enterInputListener = Optional.of(action);//sec lookin onto it on my side
 		builder.writeString(inputMessage).writeShort(inputLength, ByteModification.ADD);
 		return true;
 	}

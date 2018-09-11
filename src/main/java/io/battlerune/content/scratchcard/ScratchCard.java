@@ -70,6 +70,7 @@ public class ScratchCard {
 			} else {
 				player.send(new SendString("Bad luck, you have lost!", 20014));
 			}
+			getBonus();
 		}
 	}
 
@@ -124,17 +125,13 @@ public class ScratchCard {
 	private void miscButton(int button) {
 		switch (button) {
 
-		case 20033:
-			if (COMBINATION_COUNT.size() < 3) {
-				player.send(new SendMessage("Please reveal the 3 main cards!"));
-				return;
-			}
+	/*	case 20033:
 			if (BONUS) {
 				player.send(new SendMessage("You have revealed your bonus prize already!"));
 				return;
 			}
 			getBonus();
-			break;
+			break; */
 		case 20037:
 			if (COMBINATION_COUNT.size() < 3 || !BONUS) {
 				player.send(new SendMessage("Please finish your scratch session!"));

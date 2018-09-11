@@ -4,7 +4,9 @@ import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.ItemContainerInteractionEvent;
 import io.battlerune.game.event.impl.ItemContainerContextMenuEvent;
 import io.battlerune.game.plugin.PluginManager;
+import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.items.containers.inventory.Inventory;
 import io.battlerune.net.codec.ByteModification;
 import io.battlerune.net.codec.ByteOrder;
 import io.battlerune.net.packet.GamePacket;
@@ -188,13 +190,32 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int interfaceId = player.attributes.get("XREMOVE_INTERFACE", Integer.class);
 		final int removeSlot = player.attributes.get("XREMOVE_SLOT", Integer.class);
 		final int removeId = player.attributes.get("XREMOVE_REMOVE", Integer.class);
+		
+		/**
+		 * I just added null checks
+		 * 
+		 */
 
+		Inventory inv = player.inventory;
+		
+		if (inv.get(removeSlot) == null)
+			return;
+		if(inv.get(removeId) == null || removeId == -1) {
+			World.sendStaffMessage("Staff Notice: "+player.getName() + " is exploiting opcode 208");
+			return;
+		}
+		
+		if (inv.get(removeSlot).getId() != removeId) {
+			World.sendStaffMessage("Staff Notice: "+player.getName() + " is exploiting opcode 208");
+			return;
+		}
+		
+		//if (player.getPlayer().inventory.get(removeSlot) != null &&
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(6, interfaceId, removeSlot, removeId))) {
 			return;
 		}
 
-		PluginManager.getDataBus().publish(player,
-				new ItemContainerContextMenuEvent(6, interfaceId, removeSlot, removeId));
+		PluginManager.getDataBus().publish(player, new ItemContainerContextMenuEvent(6, interfaceId, removeSlot, removeId));
 	}
 
 	/**

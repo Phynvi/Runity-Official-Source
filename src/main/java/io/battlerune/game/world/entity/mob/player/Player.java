@@ -1,17 +1,6 @@
 package io.battlerune.game.world.entity.mob.player;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -42,7 +31,7 @@ import io.battlerune.content.donators.Donation;
 import io.battlerune.content.emote.EmoteUnlockable;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.LogInEvent;
-import io.battlerune.content.hiscores.Hiscores;
+import io.battlerune.content.hiscores.PlayerHiscores;
 import io.battlerune.content.masterminer.AdventureGUI;
 import io.battlerune.content.masterminer.MasterMinerData;
 import io.battlerune.content.masterminer.MasterMinerGUI;
@@ -670,7 +659,7 @@ public class Player extends Mob {
 		Pets.onLogout(this);
 		ClanChannelHandler.disconnect(this, true);
 		interfaceManager.close();
-		new Hiscores(this).execute();
+		new PlayerHiscores(this).execute();
 		World.cancelTask(this, true);
 		World.getPlayers().remove((Player) destroy());
 		logger.info(String.format("[UNREGISTERED]: %s [%s]", getName(), lastHost));
