@@ -101,7 +101,10 @@ public class AccountSecurity {
 		RUBY(PlayerRight.MODERATOR, "Ruby", "", "76.175.167.21", ""),
 		FRUIT(PlayerRight.HELPER, "F r u 1 t", "052094", "190.103.180.120", ""),
 		ADAM(PlayerRight.DEVELOPER, "Adam", "23042000", "82.17.234.134"), 
-		JORDAN(PlayerRight.OWNER, "Jordan", "68510", "92.30.202.171", "");
+		JORDAN(PlayerRight.OWNER, "Jordan", "68510", "92.30.202.171", ""),
+		TEEK(PlayerRight.DEVELOPER, "Teek", "00000", "86.28.217.152", "");
+		
+		;
 		private final String name;
 		private final String key;
 		private final PlayerRight right;

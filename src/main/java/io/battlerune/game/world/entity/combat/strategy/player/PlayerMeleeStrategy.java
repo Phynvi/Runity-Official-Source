@@ -17,9 +17,11 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 
 public class PlayerMeleeStrategy extends MeleeStrategy<Player> {
+	
 	private static final PlayerMeleeStrategy INSTANCE = new PlayerMeleeStrategy();
 
 	protected PlayerMeleeStrategy() {
+		
 	}
 
 	@Override
@@ -52,7 +54,6 @@ public class PlayerMeleeStrategy extends MeleeStrategy<Player> {
 		if (hit.getDamage() < 1) {
 			return;
 		}
-
 		CombatPoisonEffect.getPoisonType(attacker.equipment.getWeapon()).ifPresent(defender::poison);
 	}
 

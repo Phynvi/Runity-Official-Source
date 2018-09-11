@@ -27,6 +27,8 @@ import io.battlerune.content.dialogue.ChatBoxItemDialogue;
 import io.battlerune.content.dialogue.Dialogue;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.dialogue.OptionDialogue;
+import io.battlerune.content.dialogue.impl.GloryTeleport;
+import io.battlerune.content.dialogue.impl.SailorKingDialouge;
 import io.battlerune.content.donators.Donation;
 import io.battlerune.content.emote.EmoteUnlockable;
 import io.battlerune.content.event.EventDispatcher;
@@ -971,6 +973,20 @@ public class Player extends Mob {
 
 	public Farming getFarming() {
 		return farming;
+	}
+	
+	public void sendMessage(String string) {
+		this.send(new SendMessage(string));
+	}
+	
+	public void handleGloryTeleport(Player p, int itemId) {
+		
+			if (itemId == 1704) {
+				this.sendMessage("You have ran out of charges!");
+				return;
+			}
+			this.dialogueFactory.sendDialogue(new GloryTeleport(p, itemId, false));
+			return;
 	}
 
 }

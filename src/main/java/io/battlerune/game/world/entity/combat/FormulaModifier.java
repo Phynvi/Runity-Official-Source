@@ -1,6 +1,7 @@
 package io.battlerune.game.world.entity.combat;
 
 import io.battlerune.game.world.entity.mob.Mob;
+import io.battlerune.game.world.entity.mob.prayer.Prayer;
 
 public interface FormulaModifier<T extends Mob> {
 
@@ -36,6 +37,13 @@ public interface FormulaModifier<T extends Mob> {
 		return roll;
 	}
 
+	/****
+	 * Override player hits
+	 * @param attacker
+	 * @param defender
+	 * @param damage
+	 * @return
+	 */
 	default int modifyDamage(T attacker, Mob defender, int damage) {
 		return damage;
 	}

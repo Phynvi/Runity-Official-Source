@@ -63,5 +63,6 @@ public final class ClientPackets {
 	public static final int TRADE_ANSWER = 153;
 	public static final int TYPING_ONTO_INTERFACE = 60;
 	public static final int WALK_ON_COMMAND = 98;
+	public static final int INTERFACE_ON_GROUNDITEM = 181;
 
 }

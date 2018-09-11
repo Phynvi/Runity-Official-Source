@@ -32,6 +32,7 @@ public final class PacketRepository {
 
 	public static void sendToListener(Player player, GamePacket packet) {
 		Optional<PacketListener> listener = Optional.ofNullable(packetListeners[packet.getOpcode()]);
+		
 		try {
 			listener.ifPresent(msg -> msg.handlePacket(player, packet));
 		} catch (Exception ex) {

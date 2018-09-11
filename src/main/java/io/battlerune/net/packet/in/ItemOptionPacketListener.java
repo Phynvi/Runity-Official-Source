@@ -16,12 +16,14 @@ import io.battlerune.game.plugin.PluginManager;
 import io.battlerune.game.world.InterfaceConstants;
 import io.battlerune.game.world.entity.mob.data.PacketType;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.net.codec.ByteModification;
 import io.battlerune.net.codec.ByteOrder;
 import io.battlerune.net.packet.GamePacket;
 import io.battlerune.net.packet.PacketListener;
 import io.battlerune.net.packet.PacketListenerMeta;
+import io.battlerune.net.packet.out.SendMessage;
 
 /**
  * The {@code GamePacket} responsible for clicking the actions of an {@code
@@ -37,6 +39,7 @@ public class ItemOptionPacketListener implements PacketListener {
 		checkState(player != null, "Player does not exist.");
 
 		if (player.locking.locked(PacketType.CLICK_ITEM)) {
+			
 			return;
 		}
 
@@ -125,11 +128,19 @@ public class ItemOptionPacketListener implements PacketListener {
 		final int slot = packet.readShort(ByteOrder.LE);
 		final int itemId = packet.readShort(ByteModification.ADD);
 
+		if (PlayerRight.isDeveloper(player))
+			player.send(new SendMessage("InterfaceId="+interfaceId+" Slot="+slot+" ItemId="+itemId));
+		
 		switch (interfaceId) {
 		case InterfaceConstants.INVENTORY_INTERFACE:
 			Item item = player.inventory.get(slot);
 
 			if (item == null || item.getId() != itemId) {
+				return;
+			}
+			
+			if (item.getName().toLowerCase().contains("glory")) {
+				player.handleGloryTeleport(player, item.getId());
 				return;
 			}
 

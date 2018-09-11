@@ -27,6 +27,7 @@ public class ButtonClickPacketListener implements PacketListener {
 		final int button = packet.readShort();
 
 		if (player.right.isDeveloper(player)) {
+			
 		}
 		if (player.isDead()) {
 			return;

@@ -7,6 +7,7 @@ import io.battlerune.game.world.entity.combat.FormulaModifier;
 import io.battlerune.game.world.entity.mob.Mob;
 
 public class CombatFormula<T extends Mob> implements FormulaModifier<T> {
+	
 	private final Deque<FormulaModifier<? super T>> modifiers = new LinkedList<>();
 
 	public void addFirst(FormulaModifier<? super T> modifier) {

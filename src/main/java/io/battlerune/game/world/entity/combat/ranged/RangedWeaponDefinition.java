@@ -22,9 +22,8 @@ public class RangedWeaponDefinition {
 		if (ammunition == null)
 			return false;
 		for (RangedAmmunition ammo : allowed) {
-			if (ammo == ammunition) {
+			if (ammo == ammunition) 
 				return true;
-			}
 		}
 		return false;
 	}

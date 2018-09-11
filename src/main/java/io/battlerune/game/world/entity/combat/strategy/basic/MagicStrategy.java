@@ -25,11 +25,11 @@ public abstract class MagicStrategy<T extends Mob> extends CombatStrategy<T> {
 
 	@Override
 	public int modifyDamage(T attacker, Mob defender, int damage) {
-		if (defender.prayer.isActive(Prayer.PROTECT_FROM_MAGIC)) {
+		if (defender.prayer.isActive(Prayer.PROTECT_FROM_MAGIC)) 
 			damage *= (attacker.isNpc() && attacker.id != 319) || defender.isNpc() ? 0.1 : 0.6;
-		}
+		
 		return damage;
-		}
+	}
 
 	protected static void addCombatExperience(Player player, double base, Hit... hits) {
 		int exp = 0;

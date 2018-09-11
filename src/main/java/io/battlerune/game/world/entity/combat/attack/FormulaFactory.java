@@ -43,17 +43,19 @@ public final class FormulaFactory {
 		CombatType type = attacker.getStrategy().getCombatType();
 
 		if (isAccurate(attacker, defender, type)) {
+			
 			if (max > 0) {
-				max = type.getFormula().modifyDamage(attacker, defender, max);
+				
+				max = attacker.getStrategy().modifyDamage(attacker, defender, max);
+				
+				
 				int verdict = RandomUtils.inclusive(0, max);
-
-				if (verdict > defender.getCurrentHealth()) {
+				
+				if (verdict > defender.getCurrentHealth()) 
 					verdict = defender.getCurrentHealth();
-				}
 
 				hit.setDamage(verdict);
 			}
-
 			hit.setAccurate(true);
 		}
 
@@ -80,6 +82,7 @@ public final class FormulaFactory {
 
 	public static int getMaxHit(Mob attacker, Mob defender, CombatType type) {
 		FormulaModifier<Mob> formula = type.getFormula();
+		
 		int level = formula.modifyAggressive(attacker, defender, 0);
 		int bonus = formula.modifyAggressiveBonus(attacker, defender, 0);
 		return maxHit(level, bonus);

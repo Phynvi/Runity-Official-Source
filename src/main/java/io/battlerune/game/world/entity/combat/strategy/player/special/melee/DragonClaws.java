@@ -16,6 +16,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
  * @author Michael | Chex
  */
 public class DragonClaws extends PlayerMeleeStrategy {
+	
 	private static final Animation ANIMATION = new Animation(7527, UpdatePriority.HIGH);
 	private static final Graphic GRAPHIC = new Graphic(1171, 50);
 

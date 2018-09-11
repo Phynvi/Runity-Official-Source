@@ -39,13 +39,14 @@ public class SuperHeat implements Spell {
 	public void execute(Player player, Item item) {
 		if (player.spellbook != Spellbook.MODERN)
 			return;
+		
 		if (!player.spellCasting.castingDelay.elapsed(599))
 			return;
 
 		Optional<SmeltingData> data = SmeltingData.getDefinitionByItem(item.getId());
-
+		
 		if (!data.isPresent()) {
-			player.message("You can not super heat this item!");
+			player.message("You can not superheat this item!");
 			return;
 		}
 

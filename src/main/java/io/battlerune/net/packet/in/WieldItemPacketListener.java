@@ -44,6 +44,9 @@ public class WieldItemPacketListener implements PacketListener {
 			if (item == null || item.getId() != wearId) {
 				return;
 			}
+			
+			if (PlayerRight.isDeveloper(player))
+				player.send(new SendMessage("ItemId="+wearId+" Slot="+wearSlot+" InterfaceId="+interfaceId));
 
 			if (!item.isEquipable()) {
 				return;

@@ -2,6 +2,9 @@ package io.battlerune.content;
 
 import java.util.concurrent.TimeUnit;
 
+import io.battlerune.content.clanchannel.ClanRepository;
+import io.battlerune.content.clanchannel.channel.ClanChannel;
+import io.battlerune.content.clanchannel.channel.ClanManagement;
 import io.battlerune.game.Animation;
 import io.battlerune.game.Graphic;
 import io.battlerune.game.world.World;
@@ -27,8 +30,10 @@ public class DiceBag {
 	/**
 	 * Handles rolling the dice bag.
 	 *
-	 * @param player The player rolling the dice bag.
-	 * @param clan   The flag if it's a clan roll.
+	 * @param player
+	 *            The player rolling the dice bag.
+	 * @param clan
+	 *            The flag if it's a clan roll.
 	 */
 	public static void roll(Player player, boolean clan) {
 		if (player.getCombat().inCombat()) {
@@ -48,11 +53,28 @@ public class DiceBag {
 			return;
 		}
 
-		int random = Utility.random(100);
-		Position position = player.getPosition().transform(player.movement.lastDirection.getFaceLocation());
+		int random = Utility.random(1, 100);
 
+		if (clan) {
+			if (player.clanChannel != null) {
+				rollDice(player, clan, random);
+				return;
+			}
+			player.send(new SendMessage("@blu@You need to be in a Clan Chat channel in order to roll the percentile dice!"));
+			return;
+		}
+		rollDice(player, clan, random);
+		return;
+	}
+
+	private static void rollDice(Player player, boolean clan, int random) {
+		if (clan)
+			player.clanChannel
+					.message(player.getName() + " has rolled <col=ff0000>" + random + "</col> on the percentile dice!");
+		else
+			player.send(new SendMessage("@blu@You have rolled @red@" + random + "@blu@ on the percentile dice!"));
 		player.animate(ANIMATION);
-		World.sendGraphic(GRAPHIC, position);
+		player.graphic(GRAPHIC);
 		boolean hasClan = player.clanChannel != null;
 
 		if (hasClan) {
@@ -65,9 +87,6 @@ public class DiceBag {
 //            ClanManager.communicate(channel, player.getName() + " has rolled <col=ff0000>" + random + "</col> on the percentile dice!");
 //            return;
 //        }
-
 		player.diceDelay.reset();
-		player.send(new SendMessage("@blu@You have rolled @red@" + random + "@blu@ on the percentile dice!"));
-		// player.joinclan("dice");
 	}
 }
