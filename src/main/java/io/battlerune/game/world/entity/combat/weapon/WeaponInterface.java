@@ -1,5 +1,7 @@
 package io.battlerune.game.world.entity.combat.weapon;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import io.battlerune.Config;
@@ -218,7 +220,7 @@ public enum WeaponInterface {
 			return false;
 		}
 	}
-
+	
 	/**
 	 * The method executed when weapon {@code item} is equipped or unequipped that
 	 * assigns a weapon itemcontainer to {@code player}.

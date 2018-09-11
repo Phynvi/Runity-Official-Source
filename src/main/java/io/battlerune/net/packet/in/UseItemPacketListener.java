@@ -96,19 +96,16 @@ public class UseItemPacketListener implements PacketListener {
 		final Item with = player.inventory.get(usedWithSlot);
 
 		if (used != null && with != null) {
-			if (EventDispatcher.execute(player,
-					new ItemOnItemInteractionEvent(used, with, usedWithSlot, itemUsedSlot))) {
+			/** events need re-write.. quick fix.. **/
+			if (used.getId() != 11941 && EventDispatcher.execute(player, new ItemOnItemInteractionEvent(used, with, usedWithSlot, itemUsedSlot))) 
 				return;
-			}
-			if (ItemActionRepository.itemOnItem(player, used, with)) {
+			
+			if (PluginManager.getDataBus().publish(player, new ItemOnItemEvent(used, usedWithSlot, with, usedWithSlot))) 
 				return;
-			}
-
-			if (PluginManager.getDataBus().publish(player,
-					new ItemOnItemEvent(used, usedWithSlot, with, usedWithSlot))) {
+			
+			if (ItemActionRepository.itemOnItem(player, used, with)) 
 				return;
-			}
-
+			
 			player.send(new SendMessage("Nothing interesting happens."));
 
 		}

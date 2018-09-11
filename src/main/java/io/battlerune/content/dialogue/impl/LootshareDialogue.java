@@ -2,24 +2,38 @@ package io.battlerune.content.dialogue.impl;
 
 import io.battlerune.content.dialogue.Dialogue;
 import io.battlerune.content.dialogue.DialogueFactory;
+import io.battlerune.content.dialogue.Expression;
+import io.battlerune.content.store.Store;
 
 /**
- * Handles the lootshare dialogue.
+ * 
+ * @author Teek
+ * 
+ * 9/11/2018 - 08:38am
  *
- * @author Daniel
  */
 public class LootshareDialogue extends Dialogue {
 
+	public LootshareDialogue(int index) {
+	}
+
 	@Override
 	public void sendDialogues(DialogueFactory factory) {
-		factory.sendStatement("")
-				.sendStatement("When active, all clan gameMembers within a 32 tile radius will receive",
-						"an equal split of any item dropped by a npc that has a value of",
-						"2,500,000 or more. Untradeable items will not be split or given to each.",
-						"Clan member. Be advised that the item value will not always be 100%")
-				.sendStatement("correct and 25% of the item value will be removed due to the item",
-						"automatically converting into coins. Only gameMembers with a certain clan",
-						"rank may toggle the lootshare.")
-				.execute();
+
+		factory.getPlayer();
+		factory.sendNpcChat(5608, Expression.HAPPY, "Hello adventurer, how may I help you?");
+		factory.sendOption("Open Store", () -> store(factory), "Nevermind", factory::clear);
+		factory.execute();
+	}
+
+	/*
+	 * private void claim(DialogueFactory factory) { //factory.onAction(() ->
+	 * DonationService.claimDonation(factory.getPlayer())); }
+	 */
+
+	private void store(DialogueFactory factory) {
+		factory.sendOption("Open Boss Point Store",
+				() -> Store.STORES.get("Boss Point Store").open(factory.getPlayer()), "Open Trivia Point Store",
+				() -> Store.STORES.get("Trivia Point Store").open(factory.getPlayer()), "Nevermind", factory::clear);
 	}
 }

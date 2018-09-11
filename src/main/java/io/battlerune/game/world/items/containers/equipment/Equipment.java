@@ -22,6 +22,7 @@ import io.battlerune.game.world.entity.combat.weapon.WeaponInterface;
 import io.battlerune.game.world.entity.mob.UpdateFlag;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
+import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.game.world.items.containers.ItemContainer;
 import io.battlerune.game.world.items.containers.ItemContainerAdapter;
 import io.battlerune.game.world.items.containers.inventory.Inventory;
@@ -67,13 +68,14 @@ public final class Equipment extends ItemContainer {
 			/* - */
 			/* 10 */ "Strength", /* 11 */ "Ranged Strength", /* 12 */ "Magic Strength", /* 13 */ "Prayer" };
 
-	//this method below. what bout it
-	//im pretty sure something related to that is causing the issue for the getmaxhit to double
-	
+	// this method below. what bout it
+	// im pretty sure something related to that is causing the issue for the
+	// getmaxhit to double
+
 	private void updateBonus() {
-		for (int index = 0; index < player.getBonuses().length; index++) 
-			 player.setIndexBonus(index, 0);
-		
+		for (int index = 0; index < player.getBonuses().length; index++)
+			player.setIndexBonus(index, 0);
+
 		for (Item equipment : toArray()) {
 			if (equipment != null) {
 				addBonus(equipment);
@@ -102,7 +104,7 @@ public final class Equipment extends ItemContainer {
 		this.player = player;
 		addListener(new EquipmentListener());
 	}
-	
+
 	public void fightcavesrefresh() {
 		updateBonus();
 		updateWeight();
@@ -114,9 +116,9 @@ public final class Equipment extends ItemContainer {
 	 */
 
 	public void login() {
-		//something do with this here this still the old method?
-		//let me think, i found the fix for this somewhere on r-s im pretty sure
-		//Arrays.fill(player.getBonuses(), 0);
+		// something do with this here this still the old method?
+		// let me think, i found the fix for this somewhere on r-s im pretty sure
+		// Arrays.fill(player.getBonuses(), 0);
 		for (int index = 0; index < getItems().length; index++) {
 			set(index, get(index), false);
 		}
@@ -133,10 +135,15 @@ public final class Equipment extends ItemContainer {
 		 * 
 		 */
 		refresh();
+
 	}
 
 	/** Handles opening the equipment screen itemcontainer. */
 	public void openInterface() {
+
+		updateBonus();
+		writeBonuses();
+		player.interfaceManager.open(15106);
 		player.send(new SendString(Utility.formatDigits(updateWeight()) + " kg", 15145));
 		player.send(new SendString(
 				"Melee Maxhit: <col=ff7000>" + player.playerAssistant.getMaxHit(player, CombatType.MELEE) + "</col>",
@@ -145,17 +152,17 @@ public final class Equipment extends ItemContainer {
 				"Range Maxhit: <col=ff7000>" + player.playerAssistant.getMaxHit(player, CombatType.RANGED) + "</col>",
 				15117));
 		player.send(new SendString(Utility.formatDigits(player.playerAssistant.weight()) + " kg", 15145));
-		updateBonus();
-		writeBonuses();
-		player.interfaceManager.open(15106);
 	}
 
 	/**
 	 * Adds an item to the equipment container.
 	 *
-	 * @param item           The {@link Item} to deposit.
-	 * @param preferredIndex The preferable index to deposit {@code item} to.
-	 * @param refresh        The condition if we will be refreshing our container.
+	 * @param item
+	 *            The {@link Item} to deposit.
+	 * @param preferredIndex
+	 *            The preferable index to deposit {@code item} to.
+	 * @param refresh
+	 *            The condition if we will be refreshing our container.
 	 */
 	@Override
 	public boolean add(Item item, int preferredIndex, boolean refresh) {
@@ -165,9 +172,12 @@ public final class Equipment extends ItemContainer {
 	/**
 	 * Removes an item from the equipment container.
 	 *
-	 * @param item           The {@link Item} to withdraw.
-	 * @param preferredIndex The preferable index to withdraw {@code item} from.
-	 * @param refresh        The condition if we will be refreshing our container.
+	 * @param item
+	 *            The {@link Item} to withdraw.
+	 * @param preferredIndex
+	 *            The preferable index to withdraw {@code item} from.
+	 * @param refresh
+	 *            The condition if we will be refreshing our container.
 	 */
 	@Override
 	public boolean remove(Item item, int preferredIndex, boolean refresh) {
@@ -197,7 +207,8 @@ public final class Equipment extends ItemContainer {
 	/**
 	 * Manually wears multiple items (does not have any restrictions).
 	 *
-	 * @param items The items to wear.
+	 * @param items
+	 *            The items to wear.
 	 */
 	public void manualWearAll(Item[] items) {
 		for (Item item : items) {
@@ -208,7 +219,8 @@ public final class Equipment extends ItemContainer {
 	/**
 	 * Manually wears an item (does not have any restrictions).
 	 *
-	 * @param item The item to wear.
+	 * @param item
+	 *            The item to wear.
 	 */
 	public void manualWear(Item item) {
 		if (item == null)
@@ -306,7 +318,8 @@ public final class Equipment extends ItemContainer {
 	/**
 	 * Unequips an {@link Item} from the underlying player's {@code Equipment}.
 	 *
-	 * @param equipmentIndex The {@code Equipment} index to unequip the {@code
+	 * @param equipmentIndex
+	 *            The {@code Equipment} index to unequip the {@code
 	 *                       Item} from.
 	 * @return {@code true} if the item was unequipped, {@code false} otherwise.
 	 */
@@ -317,10 +330,13 @@ public final class Equipment extends ItemContainer {
 	/**
 	 * Unequips an {@link Item} from the underlying player's {@code Equipment}.
 	 *
-	 * @param equipmentIndex The {@code Equipment} index to unequip the {@code
+	 * @param equipmentIndex
+	 *            The {@code Equipment} index to unequip the {@code
 	 *                       Item} from.
-	 * @param preferredIndex The preferred inventory slot.
-	 * @param container      The container to which we are putting the items on.
+	 * @param preferredIndex
+	 *            The preferred inventory slot.
+	 * @param container
+	 *            The container to which we are putting the items on.
 	 * @return {@code true} if the item was unequipped, {@code false} otherwise.
 	 */
 	private boolean unequip(int equipmentIndex, int preferredIndex, ItemContainer container) {
@@ -361,14 +377,15 @@ public final class Equipment extends ItemContainer {
 	}
 
 	private void addBonus(Item item) {
-		for (int index = 0; index < item.getBonuses().length; index++) {
-			player.appendBonus(index, item.getBonus(index), true);
-		}
+
+		for (int index = 0; index < item.getBonuses().length; index++) 
+			player.appendBonus(index, item.getBonus(index), true, item);
+		
 	}
 
 	private void removeBonus(Item item) {
 		for (int index = 0; index < item.getBonuses().length; index++) {
-			player.appendBonus(index, item.getBonus(index), false);
+			player.appendBonus(index, item.getBonus(index), false, item);
 		}
 	}
 
@@ -377,13 +394,11 @@ public final class Equipment extends ItemContainer {
 		for (int i = 0; i < player.getBonuses().length; i++) {
 			String bonus = BONUS_NAMES[i] + ": ";
 
-			
-			
 			if (player.getBonus(i) >= 0)
 				bonus += "+";
 
 			bonus += player.getBonus(i);
-			
+
 			if (i == 12)
 				bonus += "%";
 

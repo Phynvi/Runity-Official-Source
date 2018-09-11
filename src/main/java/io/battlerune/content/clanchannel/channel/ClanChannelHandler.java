@@ -51,9 +51,9 @@ public class ClanChannelHandler {
 	public static void onLogin(Player player) {
 		clean(player);
 		if (player.clanChannel != null) {
-			String owner = player.clanChannel.getOwner();
 			player.clanChannel = null;
-			connect(player, owner);
+			if (player.clanChannel.getOwner() != null)
+			    connect(player, player.clanChannel.getOwner());
 		}
 	}
 

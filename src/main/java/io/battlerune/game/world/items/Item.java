@@ -10,6 +10,7 @@ import com.google.common.collect.Iterables;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.ranged.RangedWeaponDefinition;
 import io.battlerune.game.world.entity.combat.weapon.WeaponInterface;
+import io.battlerune.game.world.items.containers.equipment.Equipment;
 import io.battlerune.game.world.items.containers.equipment.EquipmentType;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
 
@@ -460,6 +461,10 @@ public class Item implements Cloneable {
 			return other.id == id && other.amount == amount;
 		}
 		return false;
+	}
+	
+	public boolean isRangedEquipment() {
+		return this.getEquipmentType().getSlot() == Equipment.ARROWS_SLOT ||this.getWeaponInterface() == WeaponInterface.DART || this.getWeaponInterface() == WeaponInterface.THROWNAXE || this.getWeaponInterface() == WeaponInterface.KNIFE;
 	}
 
 	@Override

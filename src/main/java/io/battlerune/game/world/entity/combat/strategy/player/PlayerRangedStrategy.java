@@ -63,13 +63,11 @@ public class PlayerRangedStrategy extends RangedStrategy<Player> {
 
 		Item ammo = attacker.equipment.get(attacker.rangedDefinition.getSlot());
 		if (ammo != null && attacker.rangedAmmo != null && ammo.getAmount() >= attacker.rangedAmmo.getRemoval()) {
-			if (attacker.rangedDefinition.isValid(attacker.rangedAmmo)) {
+			if (attacker.rangedDefinition.isValid(attacker.rangedAmmo)) 
 				return true;
-			}
 			attacker.send(new SendMessage("You can't use this ammunition with this weapon."));
-		} else {
+		} else 
 			attacker.send(new SendMessage("You need some ammunition to use this weapon!"));
-		}
 
 		attacker.getCombat().reset();
 		return false;

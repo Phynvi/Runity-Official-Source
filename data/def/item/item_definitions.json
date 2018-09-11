@@ -6644,7 +6644,7 @@
     "ranged-strength": 7,
     "ranged-type": "THROWN",
     "allowed": [
-      "MITHRIl_DART"
+      "MITHRIL_DART"
     ]
   },
   {

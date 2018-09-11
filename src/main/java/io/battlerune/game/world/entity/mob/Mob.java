@@ -42,6 +42,7 @@ import io.battlerune.game.world.entity.mob.prayer.PrayerBook;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.entity.skill.SkillManager;
 import io.battlerune.game.world.items.Item;
+import io.battlerune.game.world.items.containers.equipment.Equipment;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendPoison;
@@ -549,10 +550,16 @@ public abstract class Mob extends Entity {
 		this.bonuses[i] = number;
 	}
 
-	public void appendBonus(int index, int amount, boolean add) {
+	public void appendBonus(int index, int amount, boolean add, Item item) { 
+		
+		if (item.isRangedEquipment() && add) {
+			if (this.getPlayer().equipment.get(Equipment.ARROWS_SLOT) != null && item.getEquipmentType().getSlot() == Equipment.WEAPON_SLOT || this.getPlayer().equipment.get(Equipment.WEAPON_SLOT) != null && this.getPlayer().equipment.get(Equipment.WEAPON_SLOT).isRangedEquipment() && item.getEquipmentType().getSlot() == Equipment.ARROWS_SLOT) 
+				return;
+		}
+		
 		if (bonuses == EMPTY_BONUSES)
 			bonuses = new int[EMPTY_BONUSES.length];
-
+		
 		if (amount == 0)
 			return;
 		
