@@ -3,6 +3,7 @@ package io.battlerune.game.world.entity.combat.formula;
 import io.battlerune.game.world.entity.combat.FormulaModifier;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.mob.Mob;
+import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.containers.equipment.Equipment;
 
@@ -19,6 +20,12 @@ public final class MeleeFormula implements FormulaModifier<Mob> {
 		int effectiveAccuracy = attacker.getCombat().modifyAttackLevel(defender, level);
 		return 10 + effectiveAccuracy + fightType.getStyle().getAccuracyIncrease();
 	}
+	
+	@Override
+	public int modifyDamage(Mob attacker, Mob defender, int damage) {
+		return damage;
+	}
+	
 
 	@Override
 	public int modifyAggressive(Mob attacker, Mob defender, int roll) {

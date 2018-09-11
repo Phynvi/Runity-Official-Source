@@ -43,17 +43,19 @@ public final class FormulaFactory {
 		CombatType type = attacker.getStrategy().getCombatType();
 
 		if (isAccurate(attacker, defender, type)) {
+			
 			if (max > 0) {
-				max = type.getFormula().modifyDamage(attacker, defender, max);
+				
+				max = attacker.getStrategy().modifyDamage(attacker, defender, max);
+				
+				
 				int verdict = RandomUtils.inclusive(0, max);
-
-				if (verdict > defender.getCurrentHealth()) {
+				
+				if (verdict > defender.getCurrentHealth()) 
 					verdict = defender.getCurrentHealth();
-				}
 
 				hit.setDamage(verdict);
 			}
-
 			hit.setAccurate(true);
 		}
 

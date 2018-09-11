@@ -39,7 +39,7 @@ public class Combat<T extends Mob> {
 	private FightType fightType;
 	private FightStyle fightStyle;
 
-	private final CombatFormula<T> formula = new CombatFormula<>();
+	public final CombatFormula<T> formula = new CombatFormula<>();
 	private final List<CombatListener<? super T>> listeners = new LinkedList<>();
 	private final Deque<CombatListener<? super T>> pendingAddition = new LinkedList<>();
 	private final Deque<CombatListener<? super T>> pendingRemoval = new LinkedList<>();
