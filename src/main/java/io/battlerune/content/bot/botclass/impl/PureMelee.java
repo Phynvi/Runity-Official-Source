@@ -61,7 +61,7 @@ public class PureMelee extends SimplifiedListener<Player> implements BotClass {
 		}
 
 		if (bot.isSpecialActivated() && target.prayer.isActive(Prayer.PROTECT_FROM_MELEE)) {
-			bot.speak("That's such bullshit...");
+			bot.speak("That's such bullshit...stop praying and maybe il fight back");
 			bot.getCombatSpecial().disable(bot, false);
 			bot.endFight();
 		}

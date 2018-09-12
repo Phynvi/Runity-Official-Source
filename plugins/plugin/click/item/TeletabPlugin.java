@@ -17,7 +17,7 @@ public class TeletabPlugin extends PluginContext {
 			return false;
 		}
 		
-		if(player.wilderness >= 36) {
+		if(player.wilderness >= 35) {
 			player.send(new SendMessage("You can't teleport above 35 wilderness with a tablet."));
 			return false;
 		}

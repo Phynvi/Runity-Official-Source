@@ -12,10 +12,7 @@ import io.battlerune.util.Utility;
 public class PlayerKilling {
 
 	public static void handle(Player killer, Player victim) {
-		if (victim.isBot) {
-			killer.message("Because the victim was a bot, you do not get any Pk Points.");
-			return;
-		}
+		
 
 		// TODO FIXED.
 

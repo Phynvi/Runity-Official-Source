@@ -755,8 +755,8 @@
       },
       {
         "item": 9194,
-        "minimum": 90,
-        "maximum": 150,
+        "minimum": 10,
+        "maximum": 15,
 
         "type": "UNCOMMON"
       },

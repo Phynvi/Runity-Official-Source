@@ -27,6 +27,7 @@ import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.task.impl.ChopVineTask;
 import io.battlerune.game.task.impl.ObjectReplacementEvent;
 import io.battlerune.game.task.impl.SteppingStoneTask;
+import io.battlerune.game.task.impl.SuperAntipoisonTask;
 import io.battlerune.game.world.InterfaceConstants;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
@@ -1145,6 +1146,14 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				StaffPanel.open(player, PanelType.INFORMATION_PANEL);
 			}
 			break;
+			
+		case 31561:
+			if (player.getPosition().getX() < object.getPosition().getX()) {
+				player.move(new Position(player.getX() + 2, player.getY(), player.getHeight()));
+			} else if (player.getPosition().getX() > object.getPosition().getX()) {
+				player.move(new Position(player.getX() - 2, player.getY(), player.getHeight()));
+			}
+			break;
 
 		case 29241:
 			for (int skill = 0; skill < Skill.SKILL_COUNT; skill++) {
@@ -1165,6 +1174,9 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			CombatUtil.cancelEffect(player, CombatEffectType.VENOM);
 			player.movement.reset();
 			player.teleblockTimer.set(0);
+			player.unvenom();
+			player.unpoison();
+			World.schedule(new SuperAntipoisonTask(player).attach(player));
 			player.equipment.updateAnimation();
 			player.animate(1327);
 			player.send(

@@ -211,6 +211,14 @@ public class Player extends Mob {
 	public final LostUntradeables lostUntradeables = new LostUntradeables(this);
 	public BrotherData hiddenBrother;
 	public int barrowsKillCount;
+	
+	public int getbarrowsKillCount() {
+		return barrowsKillCount;
+	}
+	
+	public void setbarrowsKillCount(int barrowsKillCount) {
+		this.barrowsKillCount = barrowsKillCount;
+	}
 	public int sequence;
 	public int playTime;
 	public int sessionPlayTime;

@@ -22,7 +22,7 @@ public class Barrows extends Activity {
 
 	private Npc brotherNpc;
 
-	private Barrows(Player player) {
+	public Barrows(Player player) {
 		super(10, Mob.DEFAULT_INSTANCE_HEIGHT);
 		this.player = player;
 	}
@@ -33,6 +33,14 @@ public class Barrows extends Activity {
 		return minigame;
 	}
 
+	public static boolean ResetBarrows(Player player) {
+		if(player.getbarrowsKillCount() >= 1) {
+		  player.setbarrowsKillCount(0);
+		}
+	    player.barrowKills = new boolean[BrotherData.values().length];
+        return false;
+	}
+	
 	private void summon(BrotherData brother) {
 		if (player.barrowKills[brother.ordinal()]) {
 			player.dialogueFactory.sendPlayerChat("I have already killed this brother.").execute();

@@ -12,8 +12,8 @@ public class PetMysteryBox implements MysteryBoxListener {
 
 	@Override
 	public Item[] getCommon() {
-		return new Item[] { new Item(995, Utility.random(1000000, 2500000)), new Item(12696, 10), // Super combat potion
-				new Item(13322 ,1),
+		return new Item[] { new Item(995, Utility.random(1000000, 2500000)), // Super combat potion
+				new Item(13322, 1),
 				new Item( 20665,1),
 				new Item(20663 ,1),
 				new Item(20661 ,1),

@@ -100,13 +100,18 @@ public class ToxicBlowpipeStrategy extends RangedStrategy<Player> {
 
 	@Override
 	public int getAttackDelay(Player attacker, Mob defender, FightType fightType) {
-/*		int delay = attacker.getCombat().getFightType().getDelay();
+		if(!Area.inWilderness(attacker)) {
+		return 2;
+		} else {
+			return 3;
+		}
+		/*		int delay = attacker.getCombat().getFightType().getDelay();
 		if (defender.isNpc())
 			return delay - 1;
 		return delay;
 		*/
-		return 2;
 	}
+	
 
 	@Override
 	public int getAttackDistance(Player attacker, FightType fightType) {
