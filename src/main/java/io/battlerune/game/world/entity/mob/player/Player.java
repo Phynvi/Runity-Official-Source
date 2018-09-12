@@ -362,6 +362,8 @@ public class Player extends Mob {
 	public Stopwatch buttonDelay = Stopwatch.start();
 	public Stopwatch itemDelay = Stopwatch.start();
 	public Stopwatch foodDelay = Stopwatch.start();
+	public Stopwatch RejuvDelay = Stopwatch.start();
+
 	public Stopwatch takeobj = Stopwatch.start();
 	public Stopwatch revstele = Stopwatch.start();
 	public Stopwatch takeAntiFireshieldDelay = Stopwatch.start();

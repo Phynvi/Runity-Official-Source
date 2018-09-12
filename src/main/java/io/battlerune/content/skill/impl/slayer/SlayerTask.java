@@ -158,6 +158,18 @@ public enum SlayerTask implements TaskInterface<Player> {
 			return true;
 		}
 	},
+	REV_CAVES("Revenant Monsters", 5, 200, TaskDifficulty.MEDIUM, new Position(1, 1), "Revenant Cave", 7936,  7940,
+		      7932, 7937, 7939, 7935, 7934, 7933, 7931, 7938) {
+		@Override
+		public boolean canAssign(Player player) {
+			return true;
+		}
+
+		@Override
+		public boolean canAttack(Player player) {
+			return true;
+		}
+	},
 	ANKOU("Ankou", 1, 300, TaskDifficulty.HARD, new Position(1, 1), "Stronghold of Security", 2514, 2515, 2516, 2517,
 			2518, 2519) {
 		@Override

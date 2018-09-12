@@ -1156,9 +1156,21 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 
 		case 29241:
+			if (!player.RejuvDelay.elapsed(2, TimeUnit.SECONDS)) {
+				return true;
+			}
+			
+			if (!player.RejuvDelay.elapsed(2, TimeUnit.MINUTES)) {
+				player.dialogueFactory.sendNpcChat(7481, "You can only do this once every 2" + " minutes!",
+						"Time Passed: " + Utility.getTime(player.RejuvDelay.elapsedTime())).execute();
+
+				return true;
+			}
+			
 			for (int skill = 0; skill < Skill.SKILL_COUNT; skill++) {
 				player.skills.setLevel(skill, player.skills.getMaxLevel(skill));
 			}
+			player.RejuvDelay.reset();
 			player.runEnergy = 100;
 			player.skulling.unskull();
 			player.skills.restoreAll();

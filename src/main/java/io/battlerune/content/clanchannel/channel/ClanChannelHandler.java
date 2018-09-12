@@ -48,14 +48,35 @@ public class ClanChannelHandler {
 	}
 
 	/** Handles logging into the server. */
-	public static void onLogin(Player player) {
+	/*public static void onLogin(Player player) {
 		clean(player);
 		if (player.clanChannel != null) {
 			player.clanChannel = null;
 			if (player.clanChannel.getOwner() != null)
 			    connect(player, player.clanChannel.getOwner());
 		}
+	}*/
+	
+	/** Handles logging into the server. */
+	public static void onLogin(Player player) {
+		clean(player);
+		try {
+		if(player.clanChannel == null) {
+		player.clanChannel.disconnect(player.getName(), true);
+			return;
+		 }
+		} catch(NullPointerException e) {
+			for(int i = 1 ; i < 10; i++) {
+				System.err.println("Clan chats null you fuck face.");
+			}
+		}
+		if (player.clanChannel != null) {
+			String owner = player.clanChannel.getOwner();
+			player.clanChannel = null;
+			connect(player, owner);
+		}
 	}
+
 
 	/** Handles player joining a clan channel. */
 	public static void connect(Player player, String owner) {

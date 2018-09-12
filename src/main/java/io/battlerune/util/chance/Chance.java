@@ -14,7 +14,7 @@ import io.battlerune.game.world.items.Item;
 public class Chance<T> {
 
 	public enum ChanceType {
-		ALWAYS(100), COMMON(100), UNCOMMON(75), RARE(.6), VERY_RARE(.2);
+		ALWAYS(100), COMMON(100), UNCOMMON(75), RARE(.6), VERY_RARE(.2), ULTRA_RARE(.1);
 
 		private final double weight;
 
