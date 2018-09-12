@@ -26,7 +26,7 @@ public class ArenaEvent extends Task {
 		}
 
 		if (initial) {
-			if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 180) {
+			if (stopwatch.elapsedTime(TimeUnit.MINUTES) == 60) {
 				arena = ArenaUtility.generateSpawn();
 				initial = false;
 				stopwatch.reset();

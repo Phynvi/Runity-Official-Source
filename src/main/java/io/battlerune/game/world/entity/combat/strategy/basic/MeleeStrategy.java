@@ -36,13 +36,15 @@ public abstract class MeleeStrategy<T extends Mob> extends CombatStrategy<T> {
 
 	@Override
 	public int modifyDamage(T attacker, Mob defender, int damage) {
+		System.out.println("modified damage.. 1 "+new Throwable().getStackTrace()[1].toString()); 
 		if (defender.prayer.isActive(Prayer.PROTECT_FROM_MELEE)) {
-			if (defender.attributes.has("VERACS-EFFECT")) 
+			if (defender.attributes.has("VERACS-EFFECT")) {
 				return damage;
-			damage *= defender.isNpc() ? 0.1 : 0.6;
+			}
+			damage *= !attacker.isPlayer() || defender.isNpc() ? 0.1 : 0.6;
+			return damage / 2;
 		}
-			System.out.print("User's Damage : "+ damage);
-		return damage / 2;
+		return damage;
 	}
 
 	protected static void addCombatExperience(Player player, Hit... hits) {
