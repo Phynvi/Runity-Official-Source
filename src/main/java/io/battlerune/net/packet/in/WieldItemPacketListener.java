@@ -60,7 +60,7 @@ public class WieldItemPacketListener implements PacketListener {
 				player.interfaceManager.close(false);
 			}
 
-			if (player.right.equals(PlayerRight.OWNER) && player.debug) {
+			if (player.right.equals(PlayerRight.DEVELOPER) && player.debug) {
 				player.send(new SendMessage("[WearItem] - [id= " + wearId + "] [slot= " + wearSlot + "] [itemcontainer "
 						+ interfaceId + "]", MessageColor.DEVELOPER));
 			}

@@ -464,7 +464,7 @@ public class Item implements Cloneable {
 	}
 	
 	public boolean isRangedEquipment() {
-		return this.getEquipmentType().getSlot() == Equipment.ARROWS_SLOT ||this.getWeaponInterface() == WeaponInterface.DART || this.getWeaponInterface() == WeaponInterface.THROWNAXE || this.getWeaponInterface() == WeaponInterface.KNIFE;
+		return this.getEquipmentType().getSlot() == Equipment.ARROWS_SLOT ||this.getWeaponInterface() == WeaponInterface.DART || this.getWeaponInterface() == WeaponInterface.THROWNAXE || this.getWeaponInterface() == WeaponInterface.KNIFE || this.getWeaponInterface() == WeaponInterface.CHINCHOMPA;
 	}
 
 	@Override

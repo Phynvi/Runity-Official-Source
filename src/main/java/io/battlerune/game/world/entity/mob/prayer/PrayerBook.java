@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
 
+import io.battlerune.game.world.entity.mob.player.Player;
+
 /**
  * A {@code PrayerBook} which stores prayers. Prayers in a {@code PrayerBook}
  * can be activated and deactivated.
@@ -35,6 +37,8 @@ public class PrayerBook {
 
 	/** The drain counter. */
 	public transient int drainCounter;
+	
+	private static final double[] drainRates = { 3, 3, 3, 3, 3, 6, 6, 6, 1, 2, 2, 6, 6, 12, 12, 12, 12, 12, 12, 12, 12, 3, 6, 18, 2, 24, 24, 24, 24 };
 
 	/**
 	 * Checks if all given prayers are active.
@@ -205,11 +209,12 @@ public class PrayerBook {
 	 * @param bonus The current prayer bonus.
 	 * @return The amount of prayer points to drain.
 	 */
-	public int drainAmount(int bonus) {
-		if (active.isEmpty())
+	public int drainAmount(Player player, int bonus) {
+		if (active.isEmpty()) 
 			return 0;
-
+		
 		int effect = 0, amount = 0;
+		
 		int resistance = 60 + 2 * bonus;
 
 		for (Prayer prayer : active) {
@@ -219,7 +224,7 @@ public class PrayerBook {
 		drainCounter += effect;
 
 		if (drainCounter > resistance) {
-			amount = drainCounter / resistance;
+			amount = resistance / drainCounter;
 			drainCounter -= amount * resistance;
 		}
 

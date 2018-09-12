@@ -70,8 +70,7 @@ public enum Prayer {
 	RETRIBUTION("Retribution", 46, 3, 98, 651, 683, Type.OVERHEAD),
 	REDEMPTION("Redemption", 49, 6, 99, 652, 684, Type.OVERHEAD), SMITE("Smite", 52, 18, 100, 653, 685, Type.OVERHEAD),
 	PRESERVE("Preserve", 55, 3, 708, 654, 28001, Type.NORMAL),
-	CHIVALRY("Chivalry", 60, 24, 706, 655, 19825, new ChivalryListener(), Type.OFFENSIVE, Type.AGGRESSIVE,
-			Type.DEFENSIVE),
+	CHIVALRY("Chivalry", 60, 24, 706, 655, 19825, new ChivalryListener(), Type.OFFENSIVE, Type.AGGRESSIVE, Type.DEFENSIVE),
 	PIETY("Piety", 70, 24, 707, 656, 19827, new PietyListener(), Type.OFFENSIVE, Type.AGGRESSIVE, Type.DEFENSIVE),
 	RIGOUR("Rigour", 74, 24, 710, 657, 28004, new RigourListener(), Type.OFFENSIVE, Type.DEFENSIVE, Type.AGGRESSIVE),
 	AUGURY("Augury", 77, 24, 712, 658, 28007, new AuguryListener(), Type.OFFENSIVE, Type.DEFENSIVE, Type.AGGRESSIVE);

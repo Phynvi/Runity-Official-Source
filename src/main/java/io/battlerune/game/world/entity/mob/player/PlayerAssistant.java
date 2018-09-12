@@ -501,12 +501,10 @@ public class PlayerAssistant {
 
 	/** Handles draining prayer. */
 	private void prayerDrain() {
-		if (!player.prayer.isActive()) {
+		if (!player.prayer.isActive()) 
 			return;
-		}
-		int bonus = player.getBonus(Equipment.PRAYER_BONUS);
-		int rate = player.prayer.drainAmount(bonus);
-		drainPrayer(rate);
+		
+		drainPrayer(player.prayer.drainAmount(player, player.getBonuses()[13]));
 	}
 
 	public void drainPrayer(int amount) {
@@ -514,7 +512,7 @@ public class PlayerAssistant {
 			Skill skill = player.skills.get(Skill.PRAYER);
 			skill.modifyLevel(level -> level - amount, 0, skill.getLevel());
 			player.skills.refresh(Skill.PRAYER);
-
+            System.out.println("draining prayer..");
 			if (skill.getLevel() == 0) {
 				player.send(new SendMessage("You have run out of prayer points; you must recharge at an altar."));
 				player.prayer.reset();

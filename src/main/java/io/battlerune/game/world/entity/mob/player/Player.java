@@ -874,6 +874,8 @@ public class Player extends Mob {
 	}
 
 	public final AtomicInteger teleblockTimer = new AtomicInteger(0);
+	
+	public double storedPrayerPoints; 
 
 	public void teleblock(int time) {
 		if (time <= 0 || (teleblockTimer.get() > 0)) {
