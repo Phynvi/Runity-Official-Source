@@ -41,13 +41,18 @@ public final class FormulaFactory {
 		 * ranged-based melee attacks, etc.
 		 */
 		CombatType type = attacker.getStrategy().getCombatType();
-
+		
+		int baseDamage = max;
+		
 		if (isAccurate(attacker, defender, type)) {
+			
+			max = attacker.getStrategy().modifyDamage(attacker, defender, baseDamage);
 			
 			if (max > 0) {
 				
-				max = attacker.getStrategy().modifyDamage(attacker, defender, max);
 				
+				
+				System.err.println(max+" possible max hit..");
 				
 				int verdict = RandomUtils.inclusive(0, max);
 				
@@ -64,7 +69,8 @@ public final class FormulaFactory {
 
 	private static boolean isAccurate(Mob attacker, Mob defender, CombatType type) {
 		double attackRoll = rollOffensive(attacker, defender, type.getFormula());
-		double defenceRoll = rollDefensive(attacker, defender, type.getFormula());
+		double defenceRoll = rollDefensive(attacker, defender, type.getFormula()); 
+		System.out.println("Chance... "+attackRoll+" - "+defenceRoll+" Sucessful="+RandomUtils.success(attackRoll / (attackRoll + defenceRoll)));
 		return RandomUtils.success(attackRoll / (attackRoll + defenceRoll));
 	}
 

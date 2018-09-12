@@ -61,18 +61,17 @@ public class NpcMagicStrategy extends MagicStrategy<Npc> {
 	}
 
 	@Override
-    public void hit(Npc attacker, Mob defender, Hit hit) {
-        if(defender != null && !defender.isNpc() && defender.getPlayer() != null)
-            if(defender.getPlayer().prayer.isActive(Prayer.PROTECT_FROM_MAGIC))
-                hit.setDamage(attacker.isNpc() ? 0:hit.getDamage()/2);
-        if(!hit.isAccurate()) {
-            defender.graphic(SPLASH);
-        } else {
-            combatProjectile.getEnd().ifPresent(defender::graphic);
-        }
-    }
-
-
+	public void hit(Npc attacker, Mob defender, Hit hit) {
+		if (defender != null && !defender.isNpc() && defender.getPlayer() != null) {
+			if (defender.getPlayer().prayer.isActive(Prayer.PROTECT_FROM_MAGIC)) 
+				hit.setDamage(attacker.isNpc() ? 0 : hit.getDamage() / 2);
+		}
+		if (!hit.isAccurate()) {
+			defender.graphic(SPLASH);
+		} else {
+			combatProjectile.getEnd().ifPresent(defender::graphic);
+		}
+	}
 
 	@Override
 	public CombatHit[] getHits(Npc attacker, Mob defender) {

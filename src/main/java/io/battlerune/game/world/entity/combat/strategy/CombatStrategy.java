@@ -90,6 +90,7 @@ public abstract class CombatStrategy<T extends Mob> implements CombatListener<T>
 		return nextRangedHit(attacker, defender, max);
 	}
 
+	/** For NPCs **/
 	protected final CombatHit nextMagicHit(T attacker, Mob defender) {
 		int max = getMaxHit(attacker, defender, CombatType.MAGIC);
 		return nextMagicHit(attacker, defender, max);

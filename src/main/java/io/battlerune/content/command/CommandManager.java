@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import io.battlerune.Config;
+import io.battlerune.content.skill.impl.magic.Spellbook;
 import plugin.command.impl.donator.DZoneCommand;
 import plugin.command.impl.donator.DonatorBankCommand;
 import plugin.command.impl.donator.DonatorYellCommand;
@@ -57,6 +59,7 @@ import plugin.command.impl.owner.TeleCommand1;
 import plugin.command.impl.owner.UpCommand;
 import plugin.command.impl.owner.UpdateCommand;
 import plugin.command.impl.owner.posCommand;
+import plugin.command.impl.player.AncientsCommand;
 import plugin.command.impl.player.AnswerTriviaCommand;
 import plugin.command.impl.player.ArenaZoneCommand;
 import plugin.command.impl.player.BarrowsCommand;
@@ -116,6 +119,8 @@ public class CommandManager {
 		/*
 		 * @Player Commands
 		 */
+		
+		PLUGIN.putIfAbsent(new String[] { "ancients" }, new AncientsCommand());
 		PLUGIN.putIfAbsent(new String[] { "maxhit" }, new MaxStatusCommand());
 		PLUGIN.putIfAbsent(new String[] { "changepassword" }, new ChangePassword());
 		PLUGIN.putIfAbsent(new String[] { "easts" }, new Easts());
