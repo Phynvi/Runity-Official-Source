@@ -42,9 +42,9 @@ public class ItemOptionPacketListener implements PacketListener {
 			return;
 		}
 
-		if (player.isDead()) {
+		if (player.isDead())
 			return;
-		}
+		
 
 		switch (packet.getOpcode()) {
 
@@ -75,7 +75,7 @@ public class ItemOptionPacketListener implements PacketListener {
 		case InterfaceConstants.INVENTORY_INTERFACE:
 			final Item item = player.inventory.get(slot);
 
-			if (item == null || item.getId() != id) {
+			if (item == null || item.getId() != id) {//
 				System.out.println("exploit appeared in firstoption itemsoption packet..");
 				return;
 			}

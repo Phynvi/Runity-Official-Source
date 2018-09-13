@@ -125,7 +125,7 @@ public class UseItemPacketListener implements PacketListener {
 		final int slot = packet.readShort(ByteOrder.LE);
 		final Item used = player.inventory.get(slot);
 
-		if (used == null)
+		if (used == null || used.getId() != itemId)
 			return;
 		World.getNpcBySlot(index).ifPresent(npc -> {
 			Position position = npc.getPosition();

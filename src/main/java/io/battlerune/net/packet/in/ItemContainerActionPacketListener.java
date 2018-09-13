@@ -82,7 +82,6 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int removeId = packet.readShort(ByteModification.ADD);
 		
 		if (player.inventory.get(removeSlot) == null) {
-			System.out.println(removeSlot);
 			System.out.println("more bug abuse... first action item container..");
 			return;
 		}

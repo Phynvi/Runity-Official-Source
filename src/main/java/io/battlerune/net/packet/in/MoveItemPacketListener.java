@@ -29,7 +29,7 @@ public class MoveItemPacketListener implements PacketListener {
 		if (inv.get(fromSlot) == null || inv.get(toSlot) == null) {
 			System.out.println("move item packet exploit?");
 			return;
-		}
+		}//
 		if (player.idle) {
 			player.idle = false;
 		}

@@ -451,6 +451,9 @@ public class ItemContainerActionPlugin extends PluginContext {
 		final int interfaceId = event.getInterfaceId();
 		final int removeSlot = event.getRemoveSlot();
 		final int removeId = event.getRemoveId();
+		
+		if (player.inventory.get(removeSlot) == null || player.inventory.get(removeSlot).getId() != removeId)
+			return false;
 
 		switch (interfaceId) {
 
@@ -472,9 +475,9 @@ public class ItemContainerActionPlugin extends PluginContext {
 
 		/* Spawn container */
 		case 37521:
-//                if (PlayerRight.isPriviledged(player)) {
+                if (PlayerRight.isPriviledged(player)) {
 			player.inventory.add(new Item(removeId, Integer.MAX_VALUE));
-//                }
+               }
 			break;
 
 		/* Store */
