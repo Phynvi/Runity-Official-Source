@@ -40949,6 +40949,25 @@
     "defence-magic": 65,
     "defence-ranged": 57
   },
+   {
+    "id": 4738,
+    "name": "Morrigan's leather legs",
+    "destroy-message": "Drop (If you drop this item it will break. Are you sure you want to drop it?)",
+    "low-alch": 18800,
+    "high-alch": 28200,
+    "base-value": 47000,
+    "weight": 4.0,
+    "equipment-slot": "LEGS",
+    "req-defence": 70,
+    "req-ranged": 70,
+    "attack-magic": -10,
+    "attack-ranged": 21,
+    "defence-stab": 27,
+    "defence-slash": 22,
+    "defence-crush": 32,
+    "defence-magic": 37,
+    "defence-ranged": 35
+  },
   {
     "id": 4737,
     "name": "Karil's leathertop",

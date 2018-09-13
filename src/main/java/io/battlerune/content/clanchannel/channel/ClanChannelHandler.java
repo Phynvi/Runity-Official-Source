@@ -66,9 +66,7 @@ public class ClanChannelHandler {
 			return;
 		 }
 		} catch(NullPointerException e) {
-			for(int i = 1 ; i < 10; i++) {
 				System.err.println("Clan chats null you fuck face.");
-			}
 		}
 		if (player.clanChannel != null) {
 			String owner = player.clanChannel.getOwner();
