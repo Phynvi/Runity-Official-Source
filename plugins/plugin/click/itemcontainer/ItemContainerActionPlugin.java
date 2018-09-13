@@ -497,6 +497,8 @@ public class ItemContainerActionPlugin extends PluginContext {
 		case InterfaceConstants.WITHDRAW_BANK:
 			player.send(new SendInputAmount("Enter an amount to withdraw:", 10,
 					amount -> player.bank.withdraw(removeId, removeSlot, Integer.parseInt(amount))));
+			System.out.println(player.getName() + "EXECUTED THE AMONT TO WITHDRAW " + removeId+ " " + " "+removeSlot);
+
 			break;
 
 		/* Donator deposit */
@@ -504,6 +506,7 @@ public class ItemContainerActionPlugin extends PluginContext {
 			if (player.attributes.get("DONATOR_DEPOSIT_KEY", Boolean.class)) {
 				player.send(new SendInputAmount("Enter an amount to withdraw:", 10,
 						amount -> player.donatorDeposit.withdraw(removeId, removeSlot, Integer.parseInt(amount))));
+				System.out.println(player.getName() + "EXECUTED THE AMONT TO WITHDRAW " + removeId+ " " + " "+removeSlot);
 			}
 			break;
 
