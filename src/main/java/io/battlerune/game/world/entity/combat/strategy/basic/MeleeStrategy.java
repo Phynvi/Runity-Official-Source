@@ -13,7 +13,8 @@ import io.battlerune.game.world.pathfinding.path.SimplePathChecker;
 import io.battlerune.util.Utility;
 
 /**
- * @author Michael | Chex
+ * @author Michael | Chex <-- they did a pooop job with it.
+ * @edited by Adam_#6723 && Teek
  */
 public abstract class MeleeStrategy<T extends Mob> extends CombatStrategy<T> {
 
