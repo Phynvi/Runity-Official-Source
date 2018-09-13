@@ -48,16 +48,11 @@ public class Teleportation {
 
 		Player player = mob.getPlayer();
 
-		if (!player.interfaceManager.isClear()) {
+		if (!player.interfaceManager.isClear()) 
 			player.interfaceManager.close(false);
-		}
-		if (mob.getPlayer().playerAssistant.busy()) {
-			return false;
-		}
 
-		if (Activity.evaluate(player, it -> !it.canTeleport(player))) {
+		if (Activity.evaluate(player, it -> !it.canTeleport(player))) 
 			return false;
-		}
 
 		if (player.wilderness > wildernessLevel && !PlayerRight.isPriviledged(player)) {
 			player.send(new SendMessage("You can't teleport past " + wildernessLevel + " wilderness!"));
@@ -69,9 +64,7 @@ public class Teleportation {
 			return false;
 		}
 
-		boolean wilderness = Area.inWilderness(position);
-
-		if (wilderness && player.pet != null) {
+		if (Area.inWilderness(position) && player.pet != null) {
 			player.dialogueFactory
 					.sendNpcChat(player.pet.id, "I'm sorry #name,", "but I can not enter the wilderness with you!")
 					.execute();

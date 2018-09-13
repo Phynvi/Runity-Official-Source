@@ -25,6 +25,9 @@ public final class CommandPacketListener implements PacketListener {
 		String input = packet.getRS2String();
 		String[] parts = input.split(" ");
 		parts[0] = parts[0].toLowerCase();
+		
+		if (player.isTeleporting() || player.isDead())
+			return;
 
 		if (input.startsWith("/")) {
 

@@ -255,6 +255,10 @@ public abstract class Mob extends Entity {
 		interactingWith = null;
 		this.updateFlags.add(UpdateFlag.INTERACT);
 	}
+	
+	public boolean isTeleporting() {
+		return teleportRegion;
+	}
 
 	/** Moves the mob to a set position. */
 	public void move(Position position) {

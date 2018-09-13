@@ -29,7 +29,7 @@ public class WieldItemPacketListener implements PacketListener {
 
 	@Override
 	public void handlePacket(Player player, GamePacket packet) {
-		if (player.locking.locked(PacketType.WIELD_ITEM))
+		if (player.isTeleporting() || player.isDead() || player.locking.locked(PacketType.WIELD_ITEM))
 			return;
 
 		final int wearId = packet.readShort();

@@ -38,7 +38,7 @@ public class ItemOptionPacketListener implements PacketListener {
 	public void handlePacket(Player player, GamePacket packet) {
 		checkState(player != null, "Player does not exist.");
 
-		if (player.locking.locked(PacketType.CLICK_ITEM)) {
+		if (player.isTeleporting() || player.isDead() || player.locking.locked(PacketType.CLICK_ITEM)) {
 			
 			return;
 		}

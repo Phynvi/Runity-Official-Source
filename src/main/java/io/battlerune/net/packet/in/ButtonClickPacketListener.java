@@ -29,7 +29,7 @@ public class ButtonClickPacketListener implements PacketListener {
 		if (player.right.isDeveloper(player)) {
 			
 		}
-		if (player.isDead()) {
+		if (player.isDead() || player.isTeleporting()) {
 			return;
 		}
 

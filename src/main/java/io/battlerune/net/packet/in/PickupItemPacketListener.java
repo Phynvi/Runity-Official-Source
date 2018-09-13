@@ -24,7 +24,7 @@ public class PickupItemPacketListener implements PacketListener {
 
 	@Override
 	public void handlePacket(final Player player, GamePacket packet) {
-		if (player.locking.locked(PacketType.PICKUP_ITEM)) {
+		if (player.isTeleporting() || player.isDead() || player.locking.locked(PacketType.PICKUP_ITEM)) {
 			return;
 		}
 

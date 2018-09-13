@@ -32,7 +32,7 @@ public class NpcInteractionPacketListener implements PacketListener {
 
 	@Override
 	public void handlePacket(final Player player, GamePacket packet) {
-		if (player.locking.locked(PacketType.CLICK_NPC))
+		if (player.isTeleporting() || player.isDead() ||  player.locking.locked(PacketType.CLICK_NPC))
 			return;
 
 		switch (packet.getOpcode()) {

@@ -29,6 +29,10 @@ public class WalkingPacketListener implements PacketListener {
 
 	@Override
 	public void handlePacket(Player player, GamePacket packet) {
+		
+		if (player.isDead() || player.isTeleporting())
+			return;
+		
 		if (player.locking.locked(PacketType.WALKING)) {
 			if (player.locking.locked(LockType.STUN)) {
 				player.send(new SendMessage("You are currently stunned."));

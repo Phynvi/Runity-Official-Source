@@ -36,7 +36,8 @@ public class ObjectInteractionPacketListener implements PacketListener {
 	@Override
 	public void handlePacket(final Player player, GamePacket packet) {
 		checkState(player != null, "[@ObjectInteraction] Player is null");
-		if (player.locking.locked(PacketType.CLICK_OBJECT))
+		
+		if (player.isTeleporting() || player.isDead() ||  player.locking.locked(PacketType.CLICK_OBJECT))
 			return;
 
 		switch (packet.getOpcode()) {

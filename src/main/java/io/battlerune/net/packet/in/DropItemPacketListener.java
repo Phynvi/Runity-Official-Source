@@ -28,7 +28,7 @@ public class DropItemPacketListener implements PacketListener {
 
 	@Override
 	public void handlePacket(Player player, GamePacket packet) {
-		if (player.isDead() || player.locking.locked(PacketType.DROP_ITEM)) {
+		if (player.isTeleporting() || player.isDead() || player.locking.locked(PacketType.DROP_ITEM)) {
 			return;
 		}
 

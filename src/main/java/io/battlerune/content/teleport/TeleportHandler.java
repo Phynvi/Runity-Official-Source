@@ -268,6 +268,8 @@ public class TeleportHandler {
 		case BARROWS:
 			Teleportation.teleport(player, new Position(3565, 3315, 0), 20, () -> Barrows.create(player));
 			break;
+		default:
+			break;
 
 		}
 	}

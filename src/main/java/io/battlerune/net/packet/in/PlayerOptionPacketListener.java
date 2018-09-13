@@ -32,7 +32,7 @@ public final class PlayerOptionPacketListener implements PacketListener {
 		checkState(player != null, "Player is null");
 
 		/* Death block. */
-		if (player.isDead()) {
+		if (player.isTeleporting() || player.isDead()) {
 			return;
 		}
 
