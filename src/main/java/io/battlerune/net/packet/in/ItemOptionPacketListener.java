@@ -39,7 +39,6 @@ public class ItemOptionPacketListener implements PacketListener {
 		checkState(player != null, "Player does not exist.");
 
 		if (player.isTeleporting() || player.isDead() || player.locking.locked(PacketType.CLICK_ITEM)) {
-			
 			return;
 		}
 
@@ -68,7 +67,7 @@ public class ItemOptionPacketListener implements PacketListener {
 		final int interfaceId = packet.readShort(ByteOrder.LE, ByteModification.ADD);
 		final int slot = packet.readShort(false, ByteModification.ADD);
 		final int id = packet.readShort(ByteOrder.LE);
-
+		
 		switch (interfaceId) {
 		case 57716:
 			player.forClan(channel -> channel.getShowcase().select(player, id, slot));
@@ -77,6 +76,7 @@ public class ItemOptionPacketListener implements PacketListener {
 			final Item item = player.inventory.get(slot);
 
 			if (item == null || item.getId() != id) {
+				System.out.println("exploit appeared in firstoption itemsoption packet..");
 				return;
 			}
 
@@ -107,6 +107,7 @@ public class ItemOptionPacketListener implements PacketListener {
 			final Item item = player.inventory.get(slot);
 
 			if (item == null || item.getId() != itemId) {
+				System.out.println("appeared in item option 2... packetlisten exploit..");
 				return;
 			}
 
@@ -136,6 +137,7 @@ public class ItemOptionPacketListener implements PacketListener {
 			Item item = player.inventory.get(slot);
 
 			if (item == null || item.getId() != itemId) {
+				System.out.println("appeared in items option 3... exploit");
 				return;
 			}
 			

@@ -71,8 +71,8 @@ public abstract class Activity implements InteractionEventListener {
 
 	/** Constructs a new {@code SequencedMinigame} object. */
 	public Activity(int cooldown, int instance) {
-		this.instance = instance;
 		this.cooldown = cooldown;
+		this.instance = instance;
 	}
 
 	public static <T extends Activity> Optional<T> search(Player player, Class<T> clazz) {

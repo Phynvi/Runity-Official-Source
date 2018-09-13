@@ -99,8 +99,7 @@ public class RunePouchPlugin extends PluginContext {
 	protected boolean fifthClickItemContainer(Player player, ItemContainerContextMenuEvent event) {
 		if (event.getInterfaceId() == 41710) {
 			Item item = new Item(event.getRemoveId());
-			player.send(
-					new SendInputAmount(amount -> player.runePouch.withdraw(item.getId(), Integer.parseInt(amount))));
+			player.send(new SendInputAmount(amount -> player.runePouch.withdraw(item.getId(), Integer.parseInt(amount))));
 			return true;
 		}
 

@@ -80,6 +80,12 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int interfaceId = packet.readShort(ByteModification.ADD);
 		final int removeSlot = packet.readShort(ByteModification.ADD);
 		final int removeId = packet.readShort(ByteModification.ADD);
+		
+		if (player.inventory.get(removeSlot) == null) {
+			System.out.println(removeSlot);
+			System.out.println("more bug abuse... first action item container..");
+			return;
+		}
 
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(1, interfaceId, removeSlot, removeId))) {
 			return;
@@ -101,6 +107,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int removeId = packet.readShort(ByteOrder.LE, ByteModification.ADD);
 		final int removeSlot = packet.readShort(ByteOrder.LE);
 
+		if (player.inventory.get(removeSlot) == null) {
+			System.out.println("more bug abuse... 2nd action item container..");
+			return;
+		}
+		
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(2, interfaceId, removeSlot, removeId))) {
 			return;
 		}
@@ -121,6 +132,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int removeId = packet.readShort(ByteModification.ADD);
 		final int removeSlot = packet.readShort(ByteModification.ADD);
 
+		if (player.inventory.get(removeSlot) == null) {
+			System.out.println("more bug abuse... 3rd action item container..");
+			return;
+		}
+		
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(3, interfaceId, removeSlot, removeId))) {
 			return;
 		}
@@ -140,6 +156,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int removeId = packet.readShort(ByteModification.ADD);
 		final int removeSlot = packet.readShort(ByteModification.ADD);
 
+		if (player.inventory.get(removeSlot) == null) {
+			System.out.println("more bug abuse... 4th action item container..");
+			return;
+		}
+		
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(4, interfaceId, removeSlot, removeId))) {
 			return;
 		}
@@ -164,6 +185,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		player.attributes.set("XREMOVE_INTERFACE", interfaceId);
 		player.attributes.set("XREMOVE_REMOVE", removeId);
 
+		if (player.inventory.get(removeSlot) == null) {
+			System.out.println("more bug abuse... 5th action item container..");
+			return;
+		}
+		
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(5, interfaceId, removeSlot, removeId))) {
 			return;
 		}
@@ -200,12 +226,8 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		
 		if (inv.get(removeSlot) == null)
 			return;
-		if(inv.get(removeId) == null || removeId == -1) {
-			World.sendStaffMessage("Staff Notice: "+player.getName() + " is exploiting opcode 208");
-			return;
-		}
 		
-		if (inv.get(removeSlot).getId() != removeId) {
+		if (inv.get(removeSlot).getId() != removeId || inv.get(removeId) == null || removeId == -1) {
 			World.sendStaffMessage("Staff Notice: "+player.getName() + " is exploiting opcode 208");
 			return;
 		}

@@ -70,7 +70,7 @@ public final class FormulaFactory {
 	private static boolean isAccurate(Mob attacker, Mob defender, CombatType type) {
 		double attackRoll = rollOffensive(attacker, defender, type.getFormula());
 		double defenceRoll = rollDefensive(attacker, defender, type.getFormula()); 
-		System.out.println("Chance... "+attackRoll+" - "+defenceRoll+" Sucessful="+RandomUtils.success(attackRoll / (attackRoll + defenceRoll)));
+		//System.out.println("Chance... "+attackRoll+" - "+defenceRoll+" Sucessful="+RandomUtils.success(attackRoll / (attackRoll + defenceRoll)));
 		return RandomUtils.success(attackRoll / (attackRoll + defenceRoll));
 	}
 

@@ -8,6 +8,7 @@ import io.battlerune.game.event.impl.ItemContainerContextMenuEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.InterfaceConstants;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendInputAmount;
 import io.battlerune.net.packet.out.SendMessage;
@@ -19,6 +20,7 @@ public class ItemContainerActionPlugin extends PluginContext {
 		final int interfaceId = event.getInterfaceId();
 		final int removeSlot = event.getRemoveSlot();
 		final int removeId = event.getRemoveId();
+		
 		switch (interfaceId) {
 
 		case 57307:
@@ -43,9 +45,9 @@ public class ItemContainerActionPlugin extends PluginContext {
 		}
 		/* Spawn container */
 		case 37521:
-//                if (PlayerRight.isPriviledged(player)) {
+                if (PlayerRight.isPriviledged(player)) {
 			player.inventory.add(new Item(removeId));
-//                }
+                }
 			break;
 
 		/* Equipment */

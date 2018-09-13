@@ -11,7 +11,7 @@ public class JailActivity extends Activity {
 	private final Player player;
 
 	private JailActivity(Player player) {
-		super(30, Mob.DEFAULT_INSTANCE_HEIGHT);
+		super(Integer.MAX_VALUE, Mob.DEFAULT_INSTANCE_HEIGHT);
 		this.player = player;
 	}
 

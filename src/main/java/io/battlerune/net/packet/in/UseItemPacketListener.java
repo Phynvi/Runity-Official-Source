@@ -94,8 +94,12 @@ public class UseItemPacketListener implements PacketListener {
 		final int itemUsedSlot = packet.readShort(ByteModification.ADD);
 		final Item used = player.inventory.get(itemUsedSlot);
 		final Item with = player.inventory.get(usedWithSlot);
+		
+		
 
 		if (used != null && with != null) {
+			
+			
 			/** events need re-write.. quick fix.. **/
 			if (used.getId() != 11941 && EventDispatcher.execute(player, new ItemOnItemInteractionEvent(used, with, usedWithSlot, itemUsedSlot))) 
 				return;

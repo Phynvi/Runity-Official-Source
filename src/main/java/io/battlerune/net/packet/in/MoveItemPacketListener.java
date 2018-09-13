@@ -3,6 +3,7 @@ package io.battlerune.net.packet.in;
 import io.battlerune.game.world.InterfaceConstants;
 import io.battlerune.game.world.entity.mob.data.PacketType;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.items.containers.inventory.Inventory;
 import io.battlerune.net.codec.ByteModification;
 import io.battlerune.net.codec.ByteOrder;
 import io.battlerune.net.packet.ClientPackets;
@@ -22,7 +23,13 @@ public class MoveItemPacketListener implements PacketListener {
 		final int inserting = packet.readByte(ByteModification.NEG);
 		final int fromSlot = packet.readShort(ByteOrder.LE, ByteModification.ADD);
 		final int toSlot = packet.readShort(ByteOrder.LE);
-
+		
+		Inventory inv = player.inventory;
+		
+		if (inv.get(fromSlot) == null || inv.get(toSlot) == null) {
+			System.out.println("move item packet exploit?");
+			return;
+		}
 		if (player.idle) {
 			player.idle = false;
 		}

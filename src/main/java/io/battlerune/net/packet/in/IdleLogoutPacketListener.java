@@ -22,8 +22,7 @@ public class IdleLogoutPacketListener implements PacketListener {
 			return;
 
 		player.idle = true;
-		player.send(
-				new SendMessage("There has not been any detection from your account. You have now been listed as idle.",
+		player.send(new SendMessage("There has not been any detection from your account. You have now been listed as idle.",
 						MessageColor.DEVELOPER));
 		player.send(
 				new SendMessage("You will not receive royalty points until you are active.", MessageColor.DEVELOPER));

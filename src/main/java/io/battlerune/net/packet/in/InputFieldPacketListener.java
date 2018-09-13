@@ -22,9 +22,9 @@ public class InputFieldPacketListener implements PacketListener {
 		final int component = packet.readInt();
 		final String context = packet.getRS2String();
 
-		if (component < 0) {
+		if (component < 0) 
 			return;
-		}
+		
 		if (PlayerRight.isDeveloper(player)) {
 			player.send(new SendMessage("[InputField] - Text: " + context + " Component: " + component,
 					MessageColor.DEVELOPER));
@@ -111,7 +111,6 @@ public class InputFieldPacketListener implements PacketListener {
 					StaffPanel.search(player, context);
 					return;
 				}
-
 				player.send(new SendMessage("You can not manage " + context + " as they are currently offline."));
 			}
 			break;

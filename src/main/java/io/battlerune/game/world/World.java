@@ -151,10 +151,8 @@ public final class World {
 
 	/** Handles queueing the player logouts. */
 	public static void queueLogout(Player player) {
-		if (player == null || get().logouts.contains(player)) {
+		if (player == null || get().logouts.contains(player)) 
 			return;
-		}
-
 		get().logouts.add(player);
 	}
 
@@ -587,7 +585,6 @@ public final class World {
 			if (player != null && (PlayerRight.isManagement(player) || player.right == PlayerRight.HELPER))
 				staff.add(player);
 		}
-
 		return staff;
 	}
 
