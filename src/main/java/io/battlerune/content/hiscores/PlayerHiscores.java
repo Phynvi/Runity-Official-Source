@@ -15,7 +15,7 @@ public class PlayerHiscores {
 		this.player = player;
 	}
 
-	public void execute() {//test
+	public void execute() {//test2
 		switch (player.right) {
 		case ULTIMATE_IRONMAN:
 			Hiscores.update("it0nzms11avukb49jofyr2j4iyeigg9m99i3uqugiaspds4ibwg9wfjv364piqs8tbb0yynwmi",  
