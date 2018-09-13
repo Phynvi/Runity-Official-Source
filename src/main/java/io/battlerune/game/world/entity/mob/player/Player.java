@@ -114,7 +114,7 @@ import io.battlerune.util.Utility;
  *
  * @author Daniel
  * 
- * @author Michael | Chex
+ * @author Michael | Chex Adam_#6723
  */
 public class Player extends Mob {
 
