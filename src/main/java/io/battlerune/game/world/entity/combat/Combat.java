@@ -498,6 +498,7 @@ public class Combat<T extends Mob> {
 	}
 
 	public FightType getFightType() {
+		
 		return fightType;
 	}
 

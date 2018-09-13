@@ -22,6 +22,7 @@ public final class MagicFormula implements FormulaModifier<Mob> {
 
 	@Override
 	public int modifyDefensive(Mob attacker, Mob defender, int roll) {
+		/** Needs debug and redo.. **/
 		FightType fightType = defender.getCombat().getFightType();
 
 		int magic = defender.skills.getLevel(Skill.MAGIC);
@@ -31,7 +32,7 @@ public final class MagicFormula implements FormulaModifier<Mob> {
 		defence = defender.getCombat().modifyDefenceLevel(attacker, defence);
 
 		int effectiveLevel = 11 + fightType.getStyle().getDefensiveIncrease();
-		effectiveLevel += 0.50 * magic + 0.20 * defence;
+		effectiveLevel += 0.25 * magic + 0.20 * defence;
 
 		return effectiveLevel;
 	}

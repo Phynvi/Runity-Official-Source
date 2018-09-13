@@ -91,7 +91,6 @@ public class Teleportation {
 		if (player.action.getCurrentAction() != null) {
 			player.action.getCurrentAction().cancel();
 		}
-
 		teleport(player, position, type, onDestination);
 		return true;
 	}

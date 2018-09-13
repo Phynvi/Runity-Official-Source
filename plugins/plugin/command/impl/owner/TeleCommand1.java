@@ -11,6 +11,7 @@ public class TeleCommand1 implements Command {
 	@Override
 	public void execute(Player player, String command, String[] parts) {
 
+		System.out.println("here..");
 		Teleportation.teleport(player, new Position(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]),
 				Integer.parseInt(parts[3])));
 
