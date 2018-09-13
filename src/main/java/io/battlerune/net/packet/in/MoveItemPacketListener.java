@@ -26,10 +26,9 @@ public class MoveItemPacketListener implements PacketListener {
 		
 		Inventory inv = player.inventory;
 		
-		if (inv.get(fromSlot) == null || inv.get(toSlot) == null) {
-			System.out.println("move item packet exploit?");
+		if (inv.get(fromSlot) == null) 
 			return;
-		}//
+		
 		if (player.idle) {
 			player.idle = false;
 		}
