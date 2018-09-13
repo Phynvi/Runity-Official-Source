@@ -13,8 +13,9 @@ public class ThreadCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
+		System.out.println(command+" "+parts[0]);
 		try {
-			String url = "http://runity.io/forums/index.php?showtopic=" + String.valueOf(parts[0]);
+			String url = "http://runity.io/forums/index.php?showtopic=" + String.valueOf(parts[1]);
 			player.send(new SendURL(url));
 			player.sendMessage("Opening URL: <col=0000ff>"+url);
 		} catch (Exception e) {
