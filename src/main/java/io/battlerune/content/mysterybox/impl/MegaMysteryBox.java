@@ -10,136 +10,192 @@ import io.battlerune.util.Utility;
 
 public class MegaMysteryBox implements MysteryBoxListener {
 
+	
 	@Override
-	public Item[] getCommon() {
-		return new Item[] { new Item(995, Utility.random(1000000, 2500000)), new Item(12696, 10), // Super combat potion
-				new Item(10034, 100), // red chins
-				new Item(6257, 1), // Broodoo shield
-				new Item(6235, 1), // Broodoo shield
-				new Item(13385, 1), // xerician hat
-				new Item(13387, 1), // xerician top
-				new Item(6279, 1), // brodoodon shield
-				new Item(13389, 1), // xerician robe
-				new Item(3095, 1), // bronze claws
-				new Item(3096, 1), // iron claws
-				new Item(3097, 1), // steel claws
-				new Item(3098, 1), // black claws
-				new Item(3099, 1), // mithril claws
-				new Item(3100, 1), // adamant claws
-				new Item(3101, 1), // rune claws
-				new Item(6587, 1), // white claws
-				new Item(7537, 1), // crab claw
+		public Item[] getCommon() {
+			return new Item[] {
+					new Item(975, 20000000), // 20m cash
+	new Item(12646, 1), // pet mole
+	new Item(23940, 1), // pet snakeling blue
+	new Item(12939, 1), // pet snakeling red
 
-				new Item(12245, 1), // beanie
-				new Item(10039, 1), // kyatt hat
-				new Item(10037, 1), // kyatt top
-				new Item(10035, 1), // kyatt legs
-				new Item(6377, 1), // villager sandals
-				new Item(6349, 1), // villager sandals
-				new Item(6357, 1), // villager sandals
-				new Item(6367, 1), // villager sandals
+	new Item(12921, 1), // pet snakeling yellow
+	new Item(12816, 1), // pet dark core
 
-				new Item(7668, 1), // Gadderhammer
-				new Item(811, 300), // rune dart
-				new Item(2890, 1), // elemental shield
-				new Item(299, 1), // mithril seed
-				new Item(6137, 1), // skeletal helm
-				new Item(6139, 1), // skeletal top
-				new Item(6141, 1), // skeletal bottom
-				new Item(6147, 1), // skeletal boots
-				new Item(2581, 1), // robin hood hat
-				new Item(19707, 1), // amulet of eternal glory
-				new Item(6153, 1) // skeleton gloves
+	new Item(12655, 1), // pet kraken
+	new Item(12652, 1), // pet k’rill
 
-		};
-	}
+	new Item(12651, 1), // 10m cash // pet zilyana
+	new Item(12650, 1), // 10m cash // pet general graardor
+	new Item(12649, 1), // 10m cash // pet kree’arra
+	new Item(12648, 1), // 10m cash // pet smoke devil
+	new Item(12645, 1), // 10m cash // pet rex
+	new Item(12644, 1), // 10m cash // pet prime
+	new Item(12643, 1), // 10m cash // pet supreme
+	new Item(11995, 1), // 10m cash // pet chaos elemental
 
-	@Override
-	public Item[] getUncommon() {
-		return new Item[] { new Item(995, Utility.random(2500000, 3500000)), new Item(11959, 300), // black chinchompa
-				new Item(1959, 1), // pumpkin
-				new Item(1961, 1), // easter egg
-				new Item(10507, 1), // reindeer hat
+	new Item(7505, 1), // 10m cash // pirate pete
+	new Item(21633, 1), // 10m cash // ancient wyvern shield
+	new Item(20665, 1), // 10m cash // rift guardian
+	new Item(13225, 1), // 10m cash // tzrek-jad
+	new Item(13247, 1), // 10m cash // hellpuppy
+	new Item(13181, 1), // 10m cash // scorpia’s offspring
+	new Item(13178, 1), // 10m cash // callisto cub
+	new Item(13178, 1), // 10m cash // rock golem
+	new Item(21187, 1), // 10m cash // 
 
-				new Item(9925, 1), // Skeleton mask
-				new Item(9922, 1), // skeleton gloves
+	new Item(20663, 1), // rocky
+	new Item(12939, 1), // pet general graador
+	new Item(12939, 1), // pet k’rill tsutsaroth
 
-				new Item(9924, 1), // skeleton shirt
-				new Item(9921, 1), // skeleton boots
+	new Item(126006, 1), // abyssal whip (p+)
+	new Item(2577, 1), // ranger boots
+	new Item(6920, 1), //  infinity boots
+	new Item(11840, 1), // dragon boots
+	new Item(19553, 1), // amulet of torture
+	new Item(19547, 1), // necklace of anguish
+	new Item(13263, 1), // abyssal bludgeon
+	new Item(13265, 1), // abyssal dagger
+	new Item(11235, 1), // dark bow
+	new Item(12926, 1), // blowpipe
+	new Item(4151, 1), // abyssal whip
 
-				new Item(21021, 1), // ancestral top
-				new Item(21018, 1), // ancestral hat
-				new Item(12002, 1), // occult necklace
-				new Item(21024, 1), // ancestral robe bottom
-				new Item(20035, 1), // Samurai kasa
-				new Item(20038, 1), // Samurai shirt
-				new Item(20044, 1), // Samurai greaves
-				new Item(20041, 1), // Samurai gloves
-				new Item(20047, 1), // Samurai boots
-				new Item(20086, 1), // Mummy's hand
-				new Item(20092, 1), // Mummy's feet
-				new Item(20080, 1), // Mummy's head
-				new Item(20083, 1), // Mummy's top
-				new Item(20089, 1) // Mummy's leg
-		};
-	}
-
-	@Override
-	public Item[] getRare() {
-		return new Item[] { new Item(995, Utility.random(3500000, 5000000)), new Item(12889, 1), // santa pantaloons
-				new Item(13576, 1), // Dragon warhammer
-				new Item(9923, 1), // skeleton leggings
-				new Item(1050, 1), // Santa hat
-				new Item(12890, 1), // santa gloves
-				new Item(13652, 1), // dragon claws
-				new Item(12888, 1), // Santa jacket
-				new Item(12891, 1), // Santa boots
-                new Item(11802, 1),
-                new Item(4151, 1),
-                new Item(7158, 1),
-                new Item(13652, 1),
-                new Item(13576, 1),
-                new Item(11283, 1),
-                new Item(6585, 1),
-                new Item(11832, 1),
-                new Item(11834, 1),
-
-				new Item(4084, 1), // sled
-				new Item(21079, 1), // arcane prayer scroll
-				new Item(21034, 1), // dexterous prayer scroll
-				new Item(1055, 1) // blue h'ween
-		};
-	}
-
-	@Override
-	public Item[] getUltra() {
-		return new Item[] { new Item(995, Utility.random(5000000, 50000000)), new Item(13173, 11), // phat set
-				new Item(13175, 1), // h'ween set
-				new Item(21000, 1), // twisted buckler
-				new Item(21006, 1), // kodai wand
-				new Item(21003, 1), // elder maul
-				new Item(21015, 1), // Dinh bulwark
-				new Item(20997, 1), // twisted bow
-				new Item(12817, 1), // ely ss
-				new Item(12821, 1), // spectral ss
-				new Item(12825, 1), // arcane ss
-				new Item(12819, 1), // ely sigil
-				new Item(12823, 1), // spectral sigil
-				new Item(12827, 1), // arcane sigil
-				new Item(21225, 1),
-				new Item(16650, 1),
-				new Item(16651, 1),
-				new Item(16653, 1),
-				new Item(15307, 1),
-				new Item(3273, 1),
-				new Item(11847, 1), // black h'ween mask
-				new Item(10556, 1), // attacker icon
-				new Item(10557, 1), // collector icon
-				new Item(10558, 1), // defender icon
-				new Item(10559, 1), // healer icon
-				new Item(13343, 1), // black santa hat
+	new Item(21892, 1), // 
+	new Item(21895, 1), // abyssal whip
+	new Item(12414, 1), //
+	new Item(12415, 1), //
+	new Item(20000, 1), // 
+	new Item(19722, 1), //
+	new Item(21902, 1), // 
+	new Item(11283, 1), //
+	new Item(11335, 1), //
+	new Item(12418, 1) //
+					};
+		}
 
 
+		@Override
+		public Item[] getUncommon() {
+			return new Item[] { 
+	new Item(13576, 1), // 
+	new Item(13652, 1), // 
+	new Item(11824, 1), // 
+	new Item(11832, 1), // 
+	new Item(11834, 1), //
+	new Item(13237, 1), // 
+	new Item(13235, 1), // 
+	new Item(7142, 1), // 
+	new Item(13239, 1), // 
+
+	new Item(12904, 1), // 
+	new Item(11791, 1), // 
+
+	new Item(21018, 1), // 
+	new Item(21021, 1), // 
+	new Item(21024, 1), // 
+	new Item(19481, 1), // 
+	new Item(11802, 1), // 
+	new Item(11806, 1), // 
+	new Item(19553, 1), // 
+	new Item(19547, 1), // 
+
+	new Item(11826, 1), // 
+	new Item(11828, 1), // 
+	new Item(11830, 1), // 
+	new Item(12002, 1), // 
+	new Item(11832, 1), // 
+	new Item(11834, 1) // 
+	};
+		}
+		@Override
+		public Item[] getRare() {
+			return new Item[] { 
+	new Item(11063, 1), // master wand
+	new Item(20838, 1), // 
+	new Item(20840, 1), // 
+	new Item(20842, 1), // 
+	new Item(20846, 1), // 
+	new Item(13749, 1), // 
+	new Item(13739, 1), // 
+	new Item(13739, 1), // 
+	new Item(16650, 1), // 
+
+	new Item(16651, 1), // 
+	new Item(16653, 1), // 
+	new Item(16654, 1), // 
+	new Item(16655, 1), // 
+	new Item(16656, 1), // 
+	new Item(16648, 1), // 
+	new Item(16647, 1), // 
+	new Item(16649, 1), // 
+
+	new Item(6199, 1), // 
+	new Item(12955, 1), // 
+	new Item(11739, 1), // 
+	new Item(455, 1) // 
+
+
+	 };
+		}
+		@Override
+		public Item[] getUltra() {
+			return new Item[] {
+					new Item(13175, 1), // 
+	new Item(13173, 1), // 
+	new Item(20997, 1), // 
+	new Item(21003, 1), // 
+	new Item(21006, 1), // 
+	new Item(21015, 1), // 
+	new Item(21000, 1), // 
+	new Item(13723, 1), // 
+
+	new Item(17163, 1), // 
+	new Item(17164, 1), // 
+	new Item(17165, 1), // 
+	new Item(17166, 1), // 
+	new Item(17167, 1), // 
+	new Item(17168, 1), // 
+	new Item(20035, 1), // 
+	new Item(20038, 1), // 
+	new Item(13726, 1), // 
+
+	new Item(20041, 1), // 
+	new Item(20044, 1), // 
+	new Item(20047, 1), // 
+	new Item(13693, 1), // 
+	new Item(13695, 1), // 
+	new Item(13696, 1), // 
+	new Item(13692, 1), // 
+	new Item(17160, 1), // 
+
+	new Item(19687, 1), // 
+	new Item(8798, 1), // 
+	new Item(8798, 1), // 
+	new Item(8799, 1), // 
+	new Item(8802, 1), // 
+	new Item(8803, 1), // 
+	new Item(8804, 1), // 
+	new Item(8805, 1), // 
+	new Item(8806, 1), // 
+	new Item(8807, 1), // 
+	new Item(8808, 1), // 
+	new Item(8809, 1), // 
+	new Item(8810, 1), // 
+	new Item(8811, 1), // 
+
+	new Item(3273, 1), // 
+	new Item(11642, 1), // 
+	new Item(13687, 1), // 
+	new Item(13686, 1), // 
+	new Item(13738, 1), // 
+	new Item(13738, 1), // 
+	new Item(13747, 1), // 
+	new Item(13748, 1), // 
+	new Item(17154, 1), // 
+
+	new Item(17153, 1), // 
+	new Item(17155, 1), // 
+	new Item(22325, 1) 
 		};
 	}
 

@@ -30,8 +30,9 @@ public abstract class RangedStrategy<T extends Mob> extends CombatStrategy<T> {
 
 	@Override
 	public int modifyDamage(T attacker, Mob defender, int damage) {
-		if (defender.prayer.isActive(Prayer.PROTECT_FROM_RANGE)) 
+		if (defender.prayer.isActive(Prayer.PROTECT_FROM_RANGE)) {
 			return damage *= defender.isNpc() ? 0.1 : 0.6;
+		}
 		return damage;
 	}
 
