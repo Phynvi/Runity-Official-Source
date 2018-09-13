@@ -452,9 +452,6 @@ public class ItemContainerActionPlugin extends PluginContext {
 		final int removeSlot = event.getRemoveSlot();
 		final int removeId = event.getRemoveId();
 		
-		if (player.inventory.get(removeSlot) == null || player.inventory.get(removeSlot).getId() != removeId)
-			return false;
-
 		switch (interfaceId) {
 
 		case InterfaceConstants.PLAYER_STAKE_CONTAINER:

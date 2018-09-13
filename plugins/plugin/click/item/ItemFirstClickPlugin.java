@@ -191,10 +191,7 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 
 		case 995:
-
-			player.send(new SendInputAmount("Enter the amount of coins you want to deposit:", 10,
-					input -> player.bankVault.deposit(Integer.parseInt(input))));
-
+			player.send(new SendInputAmount("Enter the amount of coins you want to deposit:", 10, input -> player.bankVault.deposit(Integer.parseInt(input))));
 			break;
 
 		case 405: {

@@ -2,6 +2,7 @@ package io.battlerune.net.packet.in;
 
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.ItemContainerInteractionEvent;
+import io.battlerune.content.logger.LoggerExecuter;
 import io.battlerune.game.event.impl.ItemContainerContextMenuEvent;
 import io.battlerune.game.plugin.PluginManager;
 import io.battlerune.game.world.World;
@@ -184,10 +185,12 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		player.attributes.set("XREMOVE_INTERFACE", interfaceId);
 		player.attributes.set("XREMOVE_REMOVE", removeId);
 
-		if (player.inventory.get(removeSlot) == null) {
-			System.out.println("more bug abuse... 5th action item container..");
+		System.out.println(removeSlot+" "+interfaceId+" "+removeId);
+		
+		if (player.interfaceManager.isInterfaceOpen(interfaceId))
 			return;
-		}
+		
+		
 		
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(5, interfaceId, removeSlot, removeId))) {
 			return;
@@ -207,15 +210,16 @@ public class ItemContainerActionPacketListener implements PacketListener {
 	private void sixthAction(Player player, GamePacket packet) {
 		final int amount = packet.readInt();
 
-		if (player.enterInputListener.isPresent()) {
-			player.enterInputListener.get().accept(Integer.toString(amount));
-			return;
-		}
-
 		final int interfaceId = player.attributes.get("XREMOVE_INTERFACE", Integer.class);
 		final int removeSlot = player.attributes.get("XREMOVE_SLOT", Integer.class);
 		final int removeId = player.attributes.get("XREMOVE_REMOVE", Integer.class);
 		
+		new LoggerExecuter("itemContainerPacket", player, player, "Name="+player.getUsername()+" Amount="+amount+" InterfaceId="+interfaceId+" Slot="+removeSlot+" ItemId="+removeId).execute();
+		
+		if (player.enterInputListener.isPresent()) {
+			player.enterInputListener.get().accept(Integer.toString(amount));
+			return;
+		}
 		/**
 		 * I just added null checks
 		 * 

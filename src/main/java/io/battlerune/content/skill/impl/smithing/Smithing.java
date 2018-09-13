@@ -12,6 +12,7 @@ import io.battlerune.game.world.entity.skill.Skill;
  * @since 11-2-2017.
  */
 public final class Smithing extends Skill {
+	
 	public Smithing(int level, double experience) {
 		super(Skill.SMITHING, level, experience);
 	}

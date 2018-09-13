@@ -16,6 +16,13 @@ public class LoggerExecuter {
 		this.log = log;
 	}
 	
+	public LoggerExecuter(String type, Player player, String log) {
+		this.type = type;
+		this.player = player;
+		this.other = player;
+		this.log = log;
+	}
+	
 	public void execute() {
 		LoggerListener listener = LoggerEvent.LISTENER.get(type.toLowerCase());
 		if(listener != null) {
