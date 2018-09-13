@@ -1,5 +1,6 @@
 package io.battlerune.net.session;
 
+import java.net.InetAddress;
 import java.time.Instant;
 import java.util.Date;
 import java.util.concurrent.ConcurrentHashMap;

@@ -1,5 +1,11 @@
 package io.battlerune.net.packet.in;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.CompletableFuture;
+
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.ItemContainerInteractionEvent;
 import io.battlerune.content.logger.LoggerExecuter;
@@ -82,11 +88,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int removeSlot = packet.readShort(ByteModification.ADD);
 		final int removeId = packet.readShort(ByteModification.ADD);
 		
-		if (player.inventory.get(removeSlot) == null) {
-			System.out.println("more bug abuse... first action item container..");
+		if (player.interfaceManager.isInterfaceOpen(interfaceId))
 			return;
-		}
-
+		
+		
+		logAction(player, "firstAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(1, interfaceId, removeSlot, removeId))) {
 			return;
 		}
@@ -106,11 +112,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int interfaceId = packet.readShort(ByteOrder.LE, ByteModification.ADD);
 		final int removeId = packet.readShort(ByteOrder.LE, ByteModification.ADD);
 		final int removeSlot = packet.readShort(ByteOrder.LE);
-
-		if (player.inventory.get(removeSlot) == null) {
-			System.out.println("more bug abuse... 2nd action item container..");
+		
+		if (player.interfaceManager.isInterfaceOpen(interfaceId))
 			return;
-		}
+		
+		logAction(player, "secondAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
 		
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(2, interfaceId, removeSlot, removeId))) {
 			return;
@@ -131,12 +137,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int interfaceId = packet.readShort(ByteOrder.LE);
 		final int removeId = packet.readShort(ByteModification.ADD);
 		final int removeSlot = packet.readShort(ByteModification.ADD);
-
-		if (player.inventory.get(removeSlot) == null) {
-			System.out.println("more bug abuse... 3rd action item container..");
-			return;
-		}
 		
+		if (player.interfaceManager.isInterfaceOpen(interfaceId))
+			return;
+		
+		logAction(player, "thirdAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(3, interfaceId, removeSlot, removeId))) {
 			return;
 		}
@@ -155,11 +160,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int interfaceId = packet.readShort(ByteOrder.LE);
 		final int removeId = packet.readShort(ByteModification.ADD);
 		final int removeSlot = packet.readShort(ByteModification.ADD);
-
-		if (player.inventory.get(removeSlot) == null) {
-			System.out.println("more bug abuse... 4th action item container..");
+		
+		if (player.interfaceManager.isInterfaceOpen(interfaceId))
 			return;
-		}
+		
+		logAction(player, "fourthAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
 		
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(4, interfaceId, removeSlot, removeId))) {
 			return;
@@ -184,13 +189,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		player.attributes.set("XREMOVE_SLOT", removeSlot);
 		player.attributes.set("XREMOVE_INTERFACE", interfaceId);
 		player.attributes.set("XREMOVE_REMOVE", removeId);
-
-		System.out.println(removeSlot+" "+interfaceId+" "+removeId);
+		
+		logAction(player, "fifthAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
 		
 		if (player.interfaceManager.isInterfaceOpen(interfaceId))
 			return;
-		
-		
 		
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(5, interfaceId, removeSlot, removeId))) {
 			return;
@@ -214,7 +217,10 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int removeSlot = player.attributes.get("XREMOVE_SLOT", Integer.class);
 		final int removeId = player.attributes.get("XREMOVE_REMOVE", Integer.class);
 		
-		new LoggerExecuter("itemContainerPacket", player, player, "Name="+player.getUsername()+" Amount="+amount+" InterfaceId="+interfaceId+" Slot="+removeSlot+" ItemId="+removeId).execute();
+logAction(player, "sixthAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
+		
+		if (player.interfaceManager.isInterfaceOpen(interfaceId))
+			return;
 		
 		if (player.enterInputListener.isPresent()) {
 			player.enterInputListener.get().accept(Integer.toString(amount));
@@ -272,8 +278,28 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int removeId = packet.readShort(ByteModification.ADD);
 		final int amount = packet.readInt();
 
+        logAction(player, "modifiableXAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId+" amount="+amount);
+		
+		if (player.interfaceManager.isInterfaceOpen(interfaceId))
+			return;
 		PluginManager.getDataBus().publish(player,
 				new ItemContainerContextMenuEvent(8, interfaceId, removeSlot, removeId, amount));
+	}
+	
+	
+	public static void logAction(Player player, String message) {
+		
+		CompletableFuture.runAsync(() -> {
+			
+			String fileName = "./data/ItemContainerLog.txt";
+			
+			try (BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true))) {
+				out.write(""+new SimpleDateFormat().format(new Date())+" IP="+player.lastHost+" "+message);
+				out.newLine();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
 	}
 
 }
