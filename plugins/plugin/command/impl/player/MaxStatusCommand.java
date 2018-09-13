@@ -6,13 +6,13 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendMessage;
 
 public class MaxStatusCommand implements Command {
-
-	private enum TYPE { RANGE, MELEE };
 	
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		player.send(new SendMessage("Adam got hit, Melee: " + getHit(player, TYPE.MELEE)));
-		player.send(new SendMessage("Adam got hit, Range: " + getHit(player, TYPE.RANGE)));
+		player.sendMessage("Your Max Hits below...");
+		player.send(new SendMessage("Melee: " + getHit(player, CombatType.MELEE)));
+		player.send(new SendMessage("Range: " + getHit(player, CombatType.RANGED)));
+		player.send(new SendMessage("Magic: " + getHit(player, CombatType.MAGIC)));
 	}
 
 	@Override
@@ -20,13 +20,7 @@ public class MaxStatusCommand implements Command {
 		return true;
 	}
 	
-	private int getHit(Player player, TYPE type) {
-		switch(type) {
-		case MELEE:
-			return player.playerAssistant.getMaxHit(player, CombatType.MELEE);
-		case RANGE:
-			return player.playerAssistant.getMaxHit(player, CombatType.RANGED);	
-		}
-		return 0;
+	private int getHit(Player player, CombatType type) {
+		return player.playerAssistant.getMaxHit(player, type);	
 	}
 }

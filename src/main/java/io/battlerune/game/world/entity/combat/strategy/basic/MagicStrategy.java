@@ -35,7 +35,6 @@ public abstract class MagicStrategy<T extends Mob> extends CombatStrategy<T> {
 		for (Hit hit : hits) {
 			exp += hit.getDamage();
 		}
-
 		exp *= Config.COMBAT_MODIFICATION;
 		exp += base;
 		player.skills.addExperience(Skill.MAGIC, exp);

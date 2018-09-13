@@ -88,7 +88,6 @@ public final class FormulaFactory {
 
 	public static int getMaxHit(Mob attacker, Mob defender, CombatType type) {
 		FormulaModifier<Mob> formula = type.getFormula();
-		
 		int level = formula.modifyAggressive(attacker, defender, 0);
 		int bonus = formula.modifyAggressiveBonus(attacker, defender, 0);
 		return maxHit(level, bonus);
