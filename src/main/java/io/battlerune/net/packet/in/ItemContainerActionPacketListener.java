@@ -294,7 +294,7 @@ logAction(player, "sixthAction - InterfaceId="+interfaceId+" SlotId="+removeSlot
 			String fileName = "./data/ItemContainerLog.txt";
 			
 			try (BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true))) {
-				out.write(""+new SimpleDateFormat().format(new Date())+" IP="+player.lastHost+" "+message);
+				out.write(""+new SimpleDateFormat().format(new Date())+ "NAME[" + player.getName() + "]" + " IP="+player.lastHost+" "+message);
 				out.newLine();
 			} catch (Exception e) {
 				e.printStackTrace();

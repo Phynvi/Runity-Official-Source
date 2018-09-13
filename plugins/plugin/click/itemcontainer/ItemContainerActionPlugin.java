@@ -7,6 +7,7 @@ import io.battlerune.content.store.Store;
 import io.battlerune.game.event.impl.ItemContainerContextMenuEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.InterfaceConstants;
+import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
@@ -47,6 +48,7 @@ public class ItemContainerActionPlugin extends PluginContext {
 		case 37521:
                 if (PlayerRight.isPriviledged(player)) {
 			player.inventory.add(new Item(removeId));
+			World.sendStaffMessage(player.getName() +  " is attempting to spawn items forcefully, report this to a developer!");
                 }
 			break;
 
@@ -158,9 +160,10 @@ public class ItemContainerActionPlugin extends PluginContext {
 
 		/* Spawn container */
 		case 37521:
-//                if (PlayerRight.isPriviledged(player)) {
+                if (PlayerRight.isPriviledged(player)) {
 			player.inventory.add(new Item(removeId, 10));
-//                }
+			World.sendStaffMessage(player.getName() +  " is attempting to spawn items forcefully, report this to a developer!");
+                }
 			return true;
 
 		/* Inventory */
@@ -272,9 +275,10 @@ public class ItemContainerActionPlugin extends PluginContext {
 
 		/* Spawn container */
 		case 37521:
-//                if (PlayerRight.isPriviledged(player)) {
+                if (PlayerRight.isPriviledged(player)) {
 			player.inventory.add(new Item(removeId, 100));
-//                }
+			World.sendStaffMessage(player.getName() +  " is attempting to spawn items forcefully, report this to a developer!");
+                }
 			break;
 
 		/* Inventory */
@@ -376,9 +380,10 @@ public class ItemContainerActionPlugin extends PluginContext {
 
 		/* Spawn container */
 		case 37521:
-//                if (PlayerRight.isPriviledged(player)) {
+               if (PlayerRight.isPriviledged(player)) {
 			player.inventory.add(new Item(removeId, 500));
-//                }
+			World.sendStaffMessage(player.getName() +  " is attempting to spawn items forcefully, report this to a developer!");
+			}
 			break;
 
 		/* Inventory */
@@ -474,6 +479,7 @@ public class ItemContainerActionPlugin extends PluginContext {
 		case 37521:
                 if (PlayerRight.isPriviledged(player)) {
 			player.inventory.add(new Item(removeId, Integer.MAX_VALUE));
+			World.sendStaffMessage(player.getName() +  " is attempting to spawn items forcefully, report this to a developer!");
                }
 			break;
 

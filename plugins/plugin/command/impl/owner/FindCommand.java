@@ -19,6 +19,10 @@ public class FindCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
+		if(!PlayerRight.isDeveloper(player)) {
+			return;
+		}
+		
 		final String name = String.format(parts[1]);
 
 		ItemContainer container = new ItemContainer(400, ItemContainer.StackPolicy.ALWAYS);
