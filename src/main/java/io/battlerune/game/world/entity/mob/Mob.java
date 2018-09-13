@@ -278,6 +278,22 @@ public abstract class Mob extends Entity {
 		locking.lock(599, TimeUnit.MILLISECONDS, LockType.MASTER);
 		onStep();
 	}
+	
+	public void forceMove(Position position) {
+		
+		setPosition(position);
+		
+		if (Utility.isRegionChange(position, lastPosition)) {
+			regionChange = true;
+		} else {
+			positionChange = true;
+		}
+		teleportRegion = true;
+		getCombat().reset();
+		resetFace();
+		locking.lock(599, TimeUnit.MILLISECONDS, LockType.MASTER);
+		onStep();
+	}
 
 	public void walk(Position position) {
 		walk(position, false);
