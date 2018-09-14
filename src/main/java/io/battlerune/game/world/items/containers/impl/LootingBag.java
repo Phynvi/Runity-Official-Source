@@ -9,6 +9,7 @@ import io.battlerune.game.world.items.containers.ItemContainer;
 import io.battlerune.game.world.items.containers.ItemContainerAdapter;
 import io.battlerune.game.world.items.containers.inventory.Inventory;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.net.packet.out.SendForceTab;
 import io.battlerune.net.packet.out.SendInputMessage;
 import io.battlerune.net.packet.out.SendItemOnInterface;
@@ -35,11 +36,11 @@ public class LootingBag extends ItemContainer {
 	}
 
 	public void open() {
-		if(PlayerRight.isIronman(player)) {
+		if (PlayerRight.isIronman(player)) {
 			player.message("Looting bag isn't avaliable for ironman accounts.");
 			return;
 		}
-			
+
 		onRefresh();
 		player.interfaceManager.setSidebar(Config.INVENTORY_TAB, 26700);
 		player.send(new SendForceTab(Config.INVENTORY_TAB));
@@ -65,15 +66,17 @@ public class LootingBag extends ItemContainer {
 
 	/** Checks if the player is allowed to deposit items into the looting bag. */
 	private boolean allowed(Item item) {
-		/*
-		 * if (!Area.inWilderness(player)) { player.send(new
-		 * SendMessage("You can't put items in the bag unless you're in the Wilderness."
-		 * )); return false; }
-		 */
+
+		if (!Area.inWilderness(player)) {
+			player.send(new SendMessage("You can't put items in the bag unless you're in the Wilderness."));
+			return false;
+		}
+
 		if (!item.isTradeable()) {
 			player.send(new SendMessage("You can't deposit un-tradeable items into the looting bag."));
 			return false;
 		}
+		
 		if (!player.inventory.contains(item)) {
 			player.send(new SendMessage("You can not deposit an item that you do not have!"));
 			return false;

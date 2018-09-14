@@ -181,6 +181,7 @@ public class Player extends Mob {
 	private CombatSpell singleCast;
 	private Preset[] presets = new Preset[8];
 	public Appearance appearance = Config.DEFAULT_APPEARANCE;
+	public Stopwatch rejuvenation = Stopwatch.start();
 	
 	public PlayerRight right = PlayerRight.PLAYER;
 	

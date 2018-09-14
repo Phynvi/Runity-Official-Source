@@ -1063,7 +1063,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 			if (!hasKnife && !weapon.getName().contains("claw") && !weapon.getName().contains("whip")
 					&& !weapon.getName().contains("sword") && !weapon.getName().contains("dagger")
-					&& !weapon.getName().contains("scimitar")) {
+					&& !weapon.getName().contains("scimitar") && !weapon.getName().contains("axe")) {
 				player.message("You need a sharp weapon or knife to cut this web!");
 				return true;
 			}

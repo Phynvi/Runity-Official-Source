@@ -40950,6 +40950,25 @@
     "defence-ranged": 57
   },
   {
+    "id": 8807,
+    "name": "Morrigan's leather chaps",
+    "destroy-message": "Drop (If you drop this item it will break. Are you sure you want to drop it?)",
+    "low-alch": 20000,
+    "high-alch": 30000,
+    "base-value": 50000,
+    "weight": 6.8,
+    "equipment-slot": "LEGS",
+    "req-defence": 60,
+    "req-ranged": 65,
+    "attack-magic": -15,
+    "attack-ranged": 25,
+    "defence-stab": 37,
+    "defence-slash": 41,
+    "defence-crush": 40,
+    "defence-magic": 60,
+    "defence-ranged": 50
+  },
+  {
     "id": 4737,
     "name": "Karil's leathertop",
     "destroy-message": "Drop (If you drop this item it will break. Are you sure you want to drop it?)",

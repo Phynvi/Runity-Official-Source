@@ -27,7 +27,6 @@ import io.battlerune.game.world.region.RegionManager;
  */
 public class FlowerHandler {
 
-	
 	private Player player;
 	private Random random = new Random();
 	private FlowerData[] flower = FlowerData.values();
@@ -41,7 +40,7 @@ public class FlowerHandler {
 		this.player = player;
 		this.tempFlower = data;
 	}
-	
+
 	public FlowerData getTempFlower() {
 		return tempFlower;
 	}
@@ -51,8 +50,8 @@ public class FlowerHandler {
 	}
 
 	public void plantFlower(boolean skip) {
-		if(!skip) {
-		setTempFlower(getFlower());
+		if (!skip) {
+			setTempFlower(getFlower());
 		}
 		if (onFlower(player)) {
 			player.message("You can't plant a flower on another flower!");
@@ -118,6 +117,10 @@ public class FlowerHandler {
 	}
 
 	private FlowerData getFlower() {
-		return flower[random.nextInt(flower.length)];
+		if (random.nextInt(100) < 3) {
+			return random.nextInt(2) == 1 ? FlowerData.BLACK_FLOWERS : FlowerData.WHITE_FLOWERS;
+		} else {
+			return flower[random.nextInt(7)];
+		}
 	}
 }

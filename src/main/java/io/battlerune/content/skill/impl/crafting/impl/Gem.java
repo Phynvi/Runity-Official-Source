@@ -6,6 +6,7 @@ import io.battlerune.content.skill.impl.crafting.Crafting;
 import io.battlerune.game.world.items.Item;
 
 public enum Gem implements Craftable {
+	
 	OPAL(new Item(1755), new Item(1625), new CraftableItem(new Item(1609), new Item(1625), 1, 15.0)),
 	JADE(new Item(1755), new Item(1627), new CraftableItem(new Item(1611), new Item(1627), 13, 20.0)),
 	RED_TOPAZ(new Item(1755), new Item(1629), new CraftableItem(new Item(1613), new Item(1629), 16, 25.0)),

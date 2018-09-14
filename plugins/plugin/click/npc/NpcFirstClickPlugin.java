@@ -17,6 +17,7 @@ import io.battlerune.content.dialogue.impl.RoyalKingDialogue;
 import io.battlerune.content.dialogue.impl.SailorKingDialouge;
 import io.battlerune.content.dialogue.impl.VoteDialogue;
 import io.battlerune.content.pet.Pets;
+import io.battlerune.content.rejuvenation.RejuvenationFountain;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.skill.impl.thieving.Thieving;
 import io.battlerune.content.store.Store;
@@ -172,21 +173,7 @@ public class NpcFirstClickPlugin extends PluginContext {
 
 		/* Nurse sarah */
 		case 1152:
-			int length = PlayerRight.isDonator(player) ? 1 : 2;
-			if (!player.restoreDelay.elapsed(length, TimeUnit.MINUTES)) {
-				player.dialogueFactory.sendNpcChat(id, "You can only do this once every " + length + " minutes!",
-						"Time Passed: " + Utility.getTime(player.restoreDelay.elapsedTime())).execute();
-				return true;
-			}
-			player.runEnergy = 100;
-			player.send(new SendRunEnergy());
-			player.skills.restoreAll();
-			CombatSpecial.restore(player, 100);
-			player.dialogueFactory.sendNpcChat(id, "Your health & special attack have been restored!").execute();
-			player.restoreDelay.reset();
-			player.unpoison();
-			CombatUtil.cancelEffect(player, CombatEffectType.POISON);
-			CombatUtil.cancelEffect(player, CombatEffectType.VENOM);
+			new RejuvenationFountain(player).execute();
 			break;
 
 		case 506:

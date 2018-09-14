@@ -81,7 +81,6 @@ public final class NpcDropManager {
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + starterbox.getName()));
 		}
 
-
 		// drop table
 		for (NpcDrop drop : npc_drops) {
 			Item item = drop.toItem(gen);
@@ -91,34 +90,36 @@ public final class NpcDropManager {
 			 */
 			if (killer.equipment.contains(10557)) {
 				killer.message("@or2@[AUTO LOOT] Your Loot has been added to your inventory.");
-				killer.inventory.add(new Item(item.getId()));
-				killer.message("@or2@[AUTO LOOT] Your Loot Was: " + ItemDefinition.get(item.getId()).getName());
-				return;
+				killer.inventory.add(new Item(item.getId(), item.getAmount()));
+				if (drop.type.equals(NpcDropChance.RARE) || drop.type.equals(NpcDropChance.ULTRA_RARE)) {
+					killer.message("@or2@[AUTO LOOT] ["+drop.type+"] Your Loot Was: " + ItemDefinition.get(item.getId()).getName());
+				}
+				continue;
 			}
 
 			if (item.getId() == 11941 && killer.playerAssistant.contains(item)) { // looting bag
 				killer.message("You have missed out on " + Utility.getAOrAn(item.getName()) + " " + item.getName()
-						+ " since you already have on on your account.");
+						+ " since you already have on your account.");
 				continue;
 			}
 			if (item.getId() == 2677 && killer.playerAssistant.contains(item)) { // easy clue
 				killer.message("You have missed out on " + Utility.getAOrAn(item.getName()) + " " + item.getName()
-						+ " since you already have on on your account.");
+						+ " since you already have on your account.");
 				continue;
 			}
 			if (item.getId() == 2801 && killer.playerAssistant.contains(item)) { // medium clue
 				killer.message("You have missed out on " + Utility.getAOrAn(item.getName()) + " " + item.getName()
-						+ " since you already have on on your account.");
+						+ " since you already have on your account.");
 				continue;
 			}
 			if (item.getId() == 2722 && killer.playerAssistant.contains(item)) {// hard clue
 				killer.message("You have missed out on " + Utility.getAOrAn(item.getName()) + " " + item.getName()
-						+ " since you already have on on your account.");
+						+ " since you already have on your account.");
 				continue;
 			}
 			if (item.getId() == 12073 && killer.playerAssistant.contains(item)) {// elite clue
 				killer.message("You have missed out on " + Utility.getAOrAn(item.getName()) + " " + item.getName()
-						+ " since you already have on on your account.");
+						+ " since you already have on your account.");
 				continue;
 			}
 //
