@@ -49,11 +49,7 @@ public final class FormulaFactory {
 			max = attacker.getStrategy().modifyDamage(attacker, defender, baseDamage);
 			
 			if (max > 0) {
-				
-				
-				
-				System.err.println(max+" possible max hit..");
-				
+							
 				int verdict = RandomUtils.inclusive(0, max);
 				
 				if (verdict > defender.getCurrentHealth()) 

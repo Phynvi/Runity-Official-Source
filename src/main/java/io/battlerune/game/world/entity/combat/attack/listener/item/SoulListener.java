@@ -15,7 +15,7 @@ import io.battlerune.game.world.entity.mob.prayer.Prayer;
  *
  * @author Adam_#6723
  */
-@ItemCombatListenerSignature(requireAll = false, items = { 13693, 13696, 13695, 17158, 13692 })
+@ItemCombatListenerSignature(requireAll = true, items = { 13693, 13696, 13695, 17158, 13692 })
 public class SoulListener extends SimplifiedListener<Mob> {
 
 	public int healingGraphic = 1296;

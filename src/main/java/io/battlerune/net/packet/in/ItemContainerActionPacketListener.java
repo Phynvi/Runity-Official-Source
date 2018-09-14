@@ -88,8 +88,6 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int removeSlot = packet.readShort(ByteModification.ADD);
 		final int removeId = packet.readShort(ByteModification.ADD);
 		
-		if (player.interfaceManager.isInterfaceOpen(interfaceId))
-			return;
 		
 		
 		logAction(player, "firstAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
@@ -113,8 +111,6 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int removeId = packet.readShort(ByteOrder.LE, ByteModification.ADD);
 		final int removeSlot = packet.readShort(ByteOrder.LE);
 		
-		if (player.interfaceManager.isInterfaceOpen(interfaceId))
-			return;
 		
 		logAction(player, "secondAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
 		
@@ -138,8 +134,6 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int removeId = packet.readShort(ByteModification.ADD);
 		final int removeSlot = packet.readShort(ByteModification.ADD);
 		
-		if (player.interfaceManager.isInterfaceOpen(interfaceId))
-			return;
 		
 		logAction(player, "thirdAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(3, interfaceId, removeSlot, removeId))) {
@@ -160,9 +154,6 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int interfaceId = packet.readShort(ByteOrder.LE);
 		final int removeId = packet.readShort(ByteModification.ADD);
 		final int removeSlot = packet.readShort(ByteModification.ADD);
-		
-		if (player.interfaceManager.isInterfaceOpen(interfaceId))
-			return;
 		
 		logAction(player, "fourthAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
 		
@@ -192,9 +183,6 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		
 		logAction(player, "fifthAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
 		
-		if (player.interfaceManager.isInterfaceOpen(interfaceId))
-			return;
-		
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(5, interfaceId, removeSlot, removeId))) {
 			return;
 		}
@@ -212,15 +200,16 @@ public class ItemContainerActionPacketListener implements PacketListener {
 	 */
 	private void sixthAction(Player player, GamePacket packet) {
 		final int amount = packet.readInt();
-
+		if (player.attributes.get("XREMOVE_INTERFACE", Integer.class) == null
+				|| player.attributes.get("XREMOVE_SLOT", Integer.class) == null
+				|| player.attributes.get("XREMOVE_REMOVE", Integer.class) == null) {
+            return;
+        }
 		final int interfaceId = player.attributes.get("XREMOVE_INTERFACE", Integer.class);
 		final int removeSlot = player.attributes.get("XREMOVE_SLOT", Integer.class);
 		final int removeId = player.attributes.get("XREMOVE_REMOVE", Integer.class);
 		
 logAction(player, "sixthAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
-		
-		if (player.interfaceManager.isInterfaceOpen(interfaceId))
-			return;
 		
 		if (player.enterInputListener.isPresent()) {
 			player.enterInputListener.get().accept(Integer.toString(amount));
@@ -280,8 +269,6 @@ logAction(player, "sixthAction - InterfaceId="+interfaceId+" SlotId="+removeSlot
 
         logAction(player, "modifiableXAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId+" amount="+amount);
 		
-		if (player.interfaceManager.isInterfaceOpen(interfaceId))
-			return;
 		PluginManager.getDataBus().publish(player,
 				new ItemContainerContextMenuEvent(8, interfaceId, removeSlot, removeId, amount));
 	}

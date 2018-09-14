@@ -31,10 +31,11 @@ public final class NpcDropTable {
 	private final NpcDrop[] uncommon;
 	private final NpcDrop[] rare;
 	private final NpcDrop[] veryRare;
+	private final NpcDrop[] ultra;
 
 	/** Constructs a new {@link NpcDropTable}. */
 	public NpcDropTable(int[] npcIds, boolean rareDropTable, NpcDrop[] npcDrops, NpcDrop[] always, NpcDrop[] common,
-			NpcDrop[] uncommon, NpcDrop[] rare, NpcDrop[] veryRare) {
+			NpcDrop[] uncommon, NpcDrop[] rare, NpcDrop[] veryRare, NpcDrop[] ultra) {
 		this.npcIds = npcIds;
 		this.rareDropTable = rareDropTable;
 		this.always = always;
@@ -43,6 +44,7 @@ public final class NpcDropTable {
 		this.rare = rare;
 		this.veryRare = veryRare;
 		this.drops = npcDrops;
+		this.ultra = ultra;
 	}
 
 	public List<NpcDrop> generate(Player player) {
@@ -52,7 +54,10 @@ public final class NpcDropTable {
 
 		if (veryRare.length > 0 && roll < 2) {
 			items.addFirst(RandomUtils.random(veryRare));
-		} else if (rare.length > 0 && roll < 45) {
+		} else if (ultra.length > 0 && roll < 1) {
+			items.addFirst(RandomUtils.random(ultra));
+		}
+		else if (rare.length > 0 && roll < 45) {
 			items.addFirst(RandomUtils.random(rare));
 		} else {
 			if (common.length > 0 && roll < 850) {

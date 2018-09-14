@@ -34,6 +34,8 @@ public class NpcDropParser extends GsonParser {
 		List<NpcDrop> uncommon = new LinkedList<>();
 		List<NpcDrop> rare = new LinkedList<>();
 		List<NpcDrop> veryRare = new LinkedList<>();
+		List<NpcDrop> ultra = new LinkedList<>();
+
 
 		for (NpcDrop drop : npcDrops) {
 			ItemDefinition definition = ItemDefinition.get(drop.item);
@@ -88,7 +90,7 @@ public class NpcDropParser extends GsonParser {
 			NpcDropManager.NPC_DROPS.put(id,
 					new NpcDropTable(npcIds, rareDropTable, npcDrops, always.toArray(new NpcDrop[always.size()]),
 							common.toArray(new NpcDrop[common.size()]), uncommon.toArray(new NpcDrop[uncommon.size()]),
-							rare.toArray(new NpcDrop[rare.size()]), veryRare.toArray(new NpcDrop[veryRare.size()])));
+							rare.toArray(new NpcDrop[rare.size()]), ultra.toArray(new NpcDrop[ultra.size()]),  veryRare.toArray(new NpcDrop[veryRare.size()])));
 		}
 	}
 }

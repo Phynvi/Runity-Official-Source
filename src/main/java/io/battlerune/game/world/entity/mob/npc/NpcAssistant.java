@@ -82,6 +82,16 @@ public class NpcAssistant {
 			6504, /* Venenatis */
 			3162, /* Kree'arra */
 			1207,
+		      7936,
+		      7940,
+		      7932,
+		      7937,
+		      7939,
+		      7935,
+		      7934,
+		      7933,
+		      7931,
+		      7938,
 	};
 
 	public static final Map<Integer, Supplier<CombatStrategy<Npc>>> STRATEGIES = new HashMap<Integer, Supplier<CombatStrategy<Npc>>>() {

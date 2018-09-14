@@ -95,7 +95,6 @@ public class UseItemPacketListener implements PacketListener {
 		final Item used = player.inventory.get(itemUsedSlot);
 		final Item with = player.inventory.get(usedWithSlot);
 		
-		
 
 		if (used != null && with != null) {
 			

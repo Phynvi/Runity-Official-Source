@@ -51,7 +51,7 @@ public class ArmadylGodsword extends PlayerMeleeStrategy {
 
 	@Override
 	public int modifyDamage(Player attacker, Mob defender, int damage) {
-		return (int) (damage * 1.625);
+		return (int) (damage * 1.585);
 	}
 
 	public static ArmadylGodsword get() {
