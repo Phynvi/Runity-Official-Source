@@ -4,6 +4,12 @@ import io.battlerune.content.freeforall.FreeForAll;
 import io.battlerune.content.freeforall.FreeForAllType;
 import io.battlerune.game.world.entity.mob.player.Player;
 
+/**
+ * Free For All End Task
+ * @author Nerik#8690
+ *
+ */
+
 public class FreeForAllEndTask implements FreeForAllTask {
 
 	@Override
