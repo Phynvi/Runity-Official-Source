@@ -121,7 +121,7 @@ public class GraadorActivity extends Activity {
 				} else {
 					remove(player);
 					
-						player.setBossPoints(player.getBossPoints() + 1);
+						player.setBossPoints(player.getBossPoints() + player.getAwardedBossPoints());
 						player.message("<img=14>You now have @red@" + player.getBossPoints() + " Boss Points!");
 
 					
