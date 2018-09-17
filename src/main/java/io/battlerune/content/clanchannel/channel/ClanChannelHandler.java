@@ -48,40 +48,22 @@ public class ClanChannelHandler {
 	}
 
 	/** Handles logging into the server. */
-	/*public static void onLogin(Player player) {
-		clean(player);
-		if (player.clanChannel != null) {
-			player.clanChannel = null;
-			if (player.clanChannel.getOwner() != null)
-			    connect(player, player.clanChannel.getOwner());
-		}
-	}*/
-	
-	/** Handles logging into the server. */
 	public static void onLogin(Player player) {
 		clean(player);
-		try {
-		if(player.clanChannel == null) {
-		player.clanChannel.disconnect(player.getName(), true);
-			return;
-		 }
-		} catch(NullPointerException e) {
-			for(int i = 1 ; i < 10; i++) {
-				System.err.println("Clan chats null you fuck face.");
-			}
-		}
-		if (player.clanChannel != null) {
-			String owner = player.clanChannel.getOwner();
-			player.clanChannel = null;
-			connect(player, owner);
-		}
+		connect(player, player.clanChannel.getOwner(), true);
 	}
 
-
 	/** Handles player joining a clan channel. */
-	public static void connect(Player player, String owner) {
+	public static void connect(Player player, String owner, boolean fromLogin) {
+		
 		player.send(new SendMessage("Attempting to connect to clan..."));
+		
+		if (fromLogin)
+			player.clanChannel = null;
+		
 		ClanChannel channel = ClanRepository.getChannel(owner);
+		
+		System.out.println("clan="+channel);
 		if (channel == null) {
 			boolean loaded = true;
 			Path path = Paths.get("./data/content/clan/");
@@ -141,8 +123,7 @@ public class ClanChannelHandler {
 	public static boolean disconnect(Player player, boolean logout) {
 		if (player == null || player.clanChannel == null)
 			return false;
-		ClanChannel channel = player.clanChannel;
-		channel.disconnect(player.getName(), logout);
+		player.clanChannel.disconnect(player.getName(), logout);
 		return true;
 	}
 
@@ -265,8 +246,12 @@ public class ClanChannelHandler {
 	/** Handles updating the clan channel member list. */
 	public void updateMemberList(ClanMember member) {
 		Player player = member.player.orElse(null);
-		if (player == null)
-			return;
+		
+		if (player == null) {
+			System.out.println("player is null..");
+			return; 
+		}
+		
 		int size = channel.size() < 10 ? 10 : channel.size();
 		player.send(new SendString("Talking in: <col=F7DC6F>" + Utility.formatName(channel.getName()), 33502));
 		player.send(new SendConfig(393, channel.lootshareEnabled() ? 1 : 0));

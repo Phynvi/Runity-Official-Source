@@ -27,9 +27,8 @@ public class ClanUpdateEvent extends TickableTask {
 		}
 
 		for (ClanChannel channel : ClanRepository.ACTIVE_CHANNELS) {
-			if (channel.activeSize() <= 0) {
+			if (channel.activeSize() <= 0) 
 				continue;
-			}
 
 			channel.forEach(clanMember -> channel.getHandler().updateMemberList(clanMember));
 

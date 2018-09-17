@@ -19,7 +19,7 @@ public class GambleCommand implements Command {
 		player.send(new SendMessage("@or2@Welcome to Gamble, " + player.getName() + "!"));
 		player.send(new SendMessage("@red@Make sure you record at ALL times"));
 		player.send(new SendMessage("@red@No refunds will be given out without any kind of video proof"));
-		ClanChannelHandler.connect(player, "Dice");
+		ClanChannelHandler.connect(player, "Dice", false);
 		player.message("You've attempted to join Dice clan chat.");
 	}
 

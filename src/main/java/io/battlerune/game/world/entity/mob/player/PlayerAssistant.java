@@ -115,10 +115,15 @@ public class PlayerAssistant {
 		setEffects();
 		Pets.onLogin(player);
 		EmoteHandler.refresh(player);
-		ClanChannelHandler.onLogin(player);
+		joinClanChannel(player);
 		player.getFarming().doConfig();
 		player.experienceRate = new ExperienceModifier(player).getModifier();
 
+	}
+
+	private void joinClanChannel(Player p) {
+		if (p.clanChannel != null)
+		    ClanChannelHandler.onLogin(p);
 	}
 
 	/** Sets the effects for the player. */

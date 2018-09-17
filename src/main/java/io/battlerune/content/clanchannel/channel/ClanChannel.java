@@ -30,6 +30,7 @@ import io.battlerune.content.clanchannel.content.ClanTaskKey;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.UpdateFlag;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
 import io.battlerune.game.world.region.RegionManager;
@@ -98,30 +99,19 @@ public class ClanChannel implements Comparable<ClanChannel> {
 
 	/** Handles a player connecting to the clan channel. */
 	void connect(Player player) {
-		ClanMember member = new ClanMember(player);
-
-		if (!player.lastClan.isEmpty()) {
-			if (player.lastClan.equals(details.owner)) {
-				player.lastClan = "";
-				return;
-			}
-		} // fixed arlo
-
-		add(player, member);
+		add(player, new ClanMember(player));
 	}
 
 	void add(Player player, ClanMember member) {
-		if (member.name.equalsIgnoreCase(details.owner)) {
-			member.rank = ClanRank.LEADER;
-		}
-
-		if (!handler.attemptConnection(player, member)) {
+		if (member.name.equalsIgnoreCase(details.owner)) 
+			member.rank = PlayerRight.isDeveloper(player) ? ClanRank.SYSTEM : ClanRank.LEADER;
+		
+		if (!handler.attemptConnection(player, member)) 
 			return;
-		}
-
-		if (handler.testPassword(player, member)) {
+		
+		if (handler.testPassword(player, member)) 
 			return;
-		}
+		
 
 		int count = getMembers().size();
 
@@ -134,6 +124,13 @@ public class ClanChannel implements Comparable<ClanChannel> {
 		}
 	}
 
+	public void refresh() {
+		for (ClanMember member : members) {
+			 if (member != null && handler != null) 
+				 handler.updateMemberList(member); 
+		}
+	}
+	
 	void establish(Player player, ClanMember member) {
 		player.clanChannel = this;
 		player.clanTag = getTag();
@@ -150,6 +147,7 @@ public class ClanChannel implements Comparable<ClanChannel> {
 		if (addMember(member)) {
 			member.joined = Utility.getSimpleDate();
 		}
+		refresh();
 		handler.connected(member);
 		ClanRepository.setActive(this);
 	}
@@ -179,10 +177,12 @@ public class ClanChannel implements Comparable<ClanChannel> {
 						player.lastClan = details.owner;
 					}
 					member.player = Optional.empty();
+					refresh();
 					if (--active == 0) {
 						ClanRepository.setInactive(this);
 					}
 				});
+				
 				return;
 			}
 		}
@@ -207,7 +207,7 @@ public class ClanChannel implements Comparable<ClanChannel> {
 					player.updateFlags.add(UpdateFlag.APPEARANCE);
 					player.send(new SendMessage("You have been banned from the clan chat channel."));
 					member.player = Optional.empty();
-
+					refresh();
 					if (--active == 0) {
 						ClanRepository.setInactive(this);
 					}
@@ -250,8 +250,7 @@ public class ClanChannel implements Comparable<ClanChannel> {
 				player.clanTagColor = level.getColor();
 				player.updateFlags.add(UpdateFlag.APPEARANCE);
 			});
-			message(true,
-					"Woot! Our clan has leveled up to <col=255>" + Utility.formatEnum(level.name())
+			message("Woot! Our clan has leveled up to <col=255>" + Utility.formatEnum(level.name())
 							+ "</col>! Total Experience: <col=255>" + Utility.formatDigits(details.experience),
 					"We have earned <col=255>" + level.getPoints() + "</col> CP, which puts us at <col=255>"
 							+ Utility.formatDigits(details.points) + "</col> CP.");
@@ -415,12 +414,16 @@ public class ClanChannel implements Comparable<ClanChannel> {
 		members.forEach(member);
 	}
 
-	/** Handles messaging all the members in the clan channel. */
-	public void message(Object... messages) {
-		forEach(member -> member.message(messages));
+	/** Handles messaging all the members in the clan channel. 
+	 * @param string */
+	public void message(String... message) {
+		for (ClanMember member : members) {
+			if (member != null)
+			    member.message(message);
+		}
 	}
 
-	public void chat(String name, Object message) {
+	public void chat(String name, String message) {
 		getMember(name).ifPresent(member -> {
 			if (management.canTalk(member)) {
 				forEach(other -> other.chat(member, message));

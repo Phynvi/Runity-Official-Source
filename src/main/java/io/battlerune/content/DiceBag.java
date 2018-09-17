@@ -69,24 +69,12 @@ public class DiceBag {
 
 	private static void rollDice(Player player, boolean clan, int random) {
 		if (clan)
-			player.clanChannel
-					.message(player.getName() + " has rolled <col=ff0000>" + random + "</col> on the percentile dice!");
+			player.clanChannel.message(player.getName() + " has rolled <col=ff0000>" + random + "</col> on the percentile dice!");
 		else
 			player.send(new SendMessage("@blu@You have rolled @red@" + random + "@blu@ on the percentile dice!"));
+		
 		player.animate(ANIMATION);
 		player.graphic(GRAPHIC);
-		boolean hasClan = player.clanChannel != null;
-
-		if (hasClan) {
-			player.clanChannel.message("@blu@You have rolled @red@" + random + "@blu@ on the percentile dice!");
-		}
-//        if (clan) {
-//            Clan channel = ClanRepository.get(player.clan);
-//            if (channel == null)
-//                return;
-//            ClanManager.communicate(channel, player.getName() + " has rolled <col=ff0000>" + random + "</col> on the percentile dice!");
-//            return;
-//        }
 		player.diceDelay.reset();
 	}
 }

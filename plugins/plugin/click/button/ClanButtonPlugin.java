@@ -133,7 +133,7 @@ public class ClanButtonPlugin extends PluginContext {
 		case -22521:
 			if (player.clanChannel == null) {
 				player.send(new SendInputMessage("Enter the channel owner's name you would like to join:", 12,
-						input -> ClanChannelHandler.connect(player, input)));
+						input -> ClanChannelHandler.connect(player, input, false)));
 				return true;
 			}
 

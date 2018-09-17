@@ -88,9 +88,8 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		final int removeSlot = packet.readShort(ByteModification.ADD);
 		final int removeId = packet.readShort(ByteModification.ADD);
 		
-		
-		
 		logAction(player, "firstAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
+		
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(1, interfaceId, removeSlot, removeId))) {
 			return;
 		}
@@ -200,6 +199,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 	 */
 	private void sixthAction(Player player, GamePacket packet) {
 		final int amount = packet.readInt();
+		
 		if (player.attributes.get("XREMOVE_INTERFACE", Integer.class) == null
 				|| player.attributes.get("XREMOVE_SLOT", Integer.class) == null
 				|| player.attributes.get("XREMOVE_REMOVE", Integer.class) == null) {
