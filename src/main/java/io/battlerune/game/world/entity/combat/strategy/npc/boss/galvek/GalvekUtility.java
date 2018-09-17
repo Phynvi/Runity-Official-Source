@@ -6,6 +6,7 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.ground.GroundItem;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.MessageColor;
@@ -44,6 +45,11 @@ public class GalvekUtility {
 	public static int[] ULTRA = {22280, 13702, 22317, 13701, 13700,13699, 13698, 13697, 10860,};
 
 	public static void defeated(Npc Galvek, Player player) {
+		
+		if(Area.inAllVsOne(player) || Area.inAllVsOne(Galvek)) {
+			System.out.println("DIDN'T EXECUTE BECAUSE.. 1 " + player.getName() + " is in an instanced minigame.... 1");
+			return;
+		}
 
 		boolean hasClan = player.clanChannel != null;
 

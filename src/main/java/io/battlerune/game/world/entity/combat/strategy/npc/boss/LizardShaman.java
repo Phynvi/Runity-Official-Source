@@ -21,6 +21,7 @@ import io.battlerune.game.world.entity.combat.strategy.npc.NpcMagicStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.NpcMeleeStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.util.Utility;
 
@@ -127,8 +128,14 @@ public class LizardShaman extends MultiStrategy {
 
 		@Override
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
+			if(Area.inAllVsOne(attacker) || Area.inAllArea(defender)) {
+				return;
+			}
 			attacker.attributes.set("LIZARD_SPAWNED", Boolean.TRUE);
 			for (int index = 0; index < 3; index++) {
+				if(Area.inAllVsOne(attacker) || Area.inAllArea(defender)) {
+					return;
+				}
 				Npc minion = new Npc(6768, Utility.randomElement(attacker.boundaries));
 				minion.register();
 				minion.follow(defender);

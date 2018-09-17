@@ -63508,6 +63508,7 @@
   {
     "id": 7775,
     "name": "Reward token",
+        "stackable": true,
     "destroy-message": "Warning! If you destroy this item, you will lose ALL rewards that it relates to and you will have to make another trek in order to get another one."
   },
   {
@@ -119788,9 +119789,9 @@
 	    "equipment-slot": "WEAPON",
 	    "weapon-interface": "LONGBOW",
 	    "req-ranged": 75,
-	    "attack-ranged": 75,
-	    "ranged-strength": 25,
-	    "bonus-prayer": 4,
+	    "attack-ranged": 95,
+	    "ranged-strength": 35,
+	    "bonus-prayer": 6,
 	    "ranged-type": "SHOT",
 	    "allowed": [
 	      "BRONZE_ARROW",
@@ -127446,7 +127447,7 @@
 "defence-magic": 30,
 "defence-ranged": 30,
 "bonus-strength": 10,  
-"bonus-ranged": 30,  
+"bonus-ranged": 50,  
 "bonus-prayer": 2,
 "bonus-magic": 2
 
@@ -127471,7 +127472,7 @@
 "defence-crush": 176,
 "defence-magic": 50,
 "defence-ranged": 50,
-"bonus-strength": 20,  
+"bonus-strength": 50,  
 "bonus-prayer": 2,
 "bonus-magic": 0 
 
@@ -127496,7 +127497,7 @@
 "defence-crush": 155,
 "defence-magic": 30,
 "defence-ranged": 30,
-"bonus-strength": 10,  
+"bonus-strength": 75,  
 "bonus-prayer": 3,
 "bonus-magic": 0 
 

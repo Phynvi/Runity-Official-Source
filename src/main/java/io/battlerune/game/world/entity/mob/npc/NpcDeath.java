@@ -24,6 +24,7 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.ground.GroundItem;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.util.Utility;
 
 /**
@@ -141,6 +142,10 @@ public final class NpcDeath extends MobDeath<Npc> {
 				return;
 
 			case "GALVEK":
+				if(Area.inAllVsOne(playerKiller) || Area.inAllVsOne(mob)) {
+					System.out.println("DIDN'T EXECUTE BECAUSE " + playerKiller.getName() + " is in an instanced minigame.");
+					return;
+				}
 				GalvekUtility.defeated(mob, playerKiller);
 				playerKiller.activityLogger.add(ActivityLog.GALVEK);
 

@@ -249,6 +249,16 @@ public class Player extends Mob {
 	public int skillingPoints;
 	public int bossPoints;
 	public int triviaPoints;
+	
+	public int allvsonepoint;
+
+	public int getAllVsOnePoints() {
+		return allvsonepoint;
+	}
+
+	public void setAllVsOnePoints(int allvsonepoint) {
+		this.allvsonepoint = allvsonepoint;
+	}
 
 	/**
 	 * generates a random location for the player within the last man standing

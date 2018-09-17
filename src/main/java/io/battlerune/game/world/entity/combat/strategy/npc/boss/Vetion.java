@@ -20,6 +20,7 @@ import io.battlerune.game.world.entity.combat.strategy.npc.NpcMagicStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.NpcMeleeStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.RegionManager;
 import io.battlerune.net.packet.out.SendMessage;
@@ -57,7 +58,7 @@ public class Vetion extends MultiStrategy {
 	@Override
 	public boolean canOtherAttack(Mob attacker, Npc defender) {
 		if (pet1 != null || pet2 != null) {
-			if (attacker.isPlayer()) {
+			if (attacker.isPlayer() && !Area.inAllVsOne(attacker)) {
 				attacker.getPlayer().message("You must kill his hellhounds before dealing damage!");
 			}
 			return false;

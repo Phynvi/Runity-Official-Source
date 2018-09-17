@@ -113,7 +113,7 @@ public class GraadorActivity extends Activity {
 		cleanup();
 		remove(player);
 		if (successfull) {
-			player.activityLogger.add(ActivityLog.GENERAL_GRAARDOR);
+			//player.activityLogger.add(ActivityLog.GENERAL_GRAARDOR);
 			player.message("Congratulations, you have killed the General Graador.");
 			restart(1, () -> {
 				if (Area.inGraador(player)) {

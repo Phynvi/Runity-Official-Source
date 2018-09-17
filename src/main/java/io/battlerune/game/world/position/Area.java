@@ -111,6 +111,7 @@ public abstract class Area {
 			new SquareArea("Pest control", 2624, 2550, 2690, 2619),
 			new SquareArea("Fight caves", 2371, 5062, 2422, 5117),
 			new SquareArea("Fight arena", 2896, 3595, 2927, 3630),
+			new SquareArea("All vs One", 3129, 4991, 3201, 4923),
 			new SquareArea("Scorpia lair", 3218, 10329, 3248, 10353),
 			new SquareArea("Corporeal Beast lair", 2964, 4360, 3001, 4399),
 			new SquareArea("Vorkath", 2261, 4054, 2289, 4048),
@@ -285,6 +286,10 @@ public abstract class Area {
 	public static boolean inWildernessCourse(Interactable entity) {
 		return inArea(entity, new Position(2989, 3933, entity.getHeight()),
 				new Position(3006, 3964, entity.getHeight()));
+	}
+	
+	public static boolean inAllVsOne(Interactable entity) {
+		return inArea(entity, new Position(3129, 4991, 0), new Position(3201, 4923, 0));
 	}
 
 	public static boolean inWildernessResource(Interactable entity) {

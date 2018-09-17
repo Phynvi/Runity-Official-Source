@@ -27,7 +27,7 @@ public class IpmuteCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		return PlayerRight.isManagement(player);
+		return PlayerRight.isDeveloper(player) || PlayerRight.isPriviledged(player);
 	}
 
 }

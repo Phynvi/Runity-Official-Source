@@ -225,10 +225,12 @@ logAction(player, "sixthAction - InterfaceId="+interfaceId+" SlotId="+removeSlot
 		if (inv.get(removeSlot) == null)
 			return;
 		
+		/*
 		if (inv.get(removeSlot).getId() != removeId || inv.get(removeId) == null || removeId == -1) {
 			World.sendStaffMessage("Staff Notice: "+player.getName() + " is exploiting opcode 208");
+			World.sendStaffMessage(player.getName() + " [ABUSE] Possibly duping, check him out." );
 			return;
-		}
+		}*/
 		
 		//if (player.getPlayer().inventory.get(removeSlot) != null &&
 		if (EventDispatcher.execute(player, new ItemContainerInteractionEvent(6, interfaceId, removeSlot, removeId))) {

@@ -17,6 +17,7 @@ import io.battlerune.content.store.currency.impl.SkillingPointCurrency;
 import io.battlerune.content.store.currency.impl.SlayerPointCurrency;
 import io.battlerune.content.store.currency.impl.TriviaPointCurrency;
 import io.battlerune.content.store.currency.impl.VotePointCurrency;
+import io.battlerune.content.store.currency.impl.AllVsOnePointCurrency;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.util.Utility;
 
@@ -28,7 +29,9 @@ import io.battlerune.util.Utility;
  */
 public enum CurrencyType {
 
-	COINS(0, new ItemCurrency(995)), TOKKUL(1, new ItemCurrency(6529)), DONATOR_POINTS(2, new DonatorPointCurrency()),
+	COINS(0, new ItemCurrency(995)), TOKKUL(1, new ItemCurrency(6529)),
+	ALLVSONE(15, new AllVsOnePointCurrency()),
+	DONATOR_POINTS(2, new DonatorPointCurrency()),
 	PVP_POINTS(3, new PlayerKillingPointCurrency()), SLAYER_POINTS(4, new SlayerPointCurrency()),
 	PEST_POINTS(5, new PestPointCurrency()), CLAN_POINTS(6, new ClanPointCurrency()),
 	VOTE_POINTS(7, new VotePointCurrency()), PRESTIGE_POINTS(8, new PrestigePointCurrency()),
@@ -75,6 +78,9 @@ public enum CurrencyType {
 		case TOKKUL:
 			value = Utility
 					.formatDigits(player.inventory.contains(6529) ? player.inventory.computeAmountForId(6529) : 0);
+			break;
+		case ALLVSONE:
+			value = Utility.formatDigits(player.allvsonepoint);
 			break;
 		case GRACEFUL_TOKEN:
 			value = Utility

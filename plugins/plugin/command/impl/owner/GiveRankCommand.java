@@ -40,15 +40,6 @@ public class GiveRankCommand implements Command {
 				}, "Moderator", () -> {
 					other.setRight(PlayerRight.MODERATOR);
 					other.send(new SendMessage("@red@Your rank has been updated, please relog!"));
-				}, "Administrator", () -> {
-					other.setRight(PlayerRight.ADMINISTRATOR);
-					other.send(new SendMessage("@red@Your rank has been updated, please relog!"));
-				}, "Owner", () -> {
-					other.setRight(PlayerRight.OWNER);
-					other.send(new SendMessage("@red@Your rank has been updated, please relog!"));
-				}, "Developer", () -> {
-					other.setRight(PlayerRight.DEVELOPER);
-					other.send(new SendMessage("@red@Your rank has been updated, please relog!"));
 				});
 				player.send(new SendMessage("The rank of "+other.getUsername()+ " has been updated!"));
 			}, "Misc", () -> {
@@ -77,7 +68,7 @@ public class GiveRankCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		return PlayerRight.isDeveloper(player);
+		return PlayerRight.isDeveloper(player) || PlayerRight.isPriviledged(player);
 	}
 
 }

@@ -3,6 +3,7 @@ package io.battlerune.content.mysterybox;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.battlerune.content.mysterybox.impl.AllVsOneBox;
 import io.battlerune.content.mysterybox.impl.GoldMysteryBox;
 import io.battlerune.content.mysterybox.impl.MegaMysteryBox;
 import io.battlerune.content.mysterybox.impl.MysteryBox;
@@ -26,6 +27,7 @@ public class MysteryBoxEvent {
 		MYSTERY_BOX.putIfAbsent(MysteryBoxType.GOLD_MBOX, new GoldMysteryBox());
 		MYSTERY_BOX.putIfAbsent(MysteryBoxType.MEGA_MBOX, new MegaMysteryBox());
 		MYSTERY_BOX.putIfAbsent(MysteryBoxType.PETMBOX, new PetMysteryBox());
+		MYSTERY_BOX.putIfAbsent(MysteryBoxType.ALLVSONEBOX, new AllVsOneBox());
 
 	}
 }

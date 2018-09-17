@@ -45,6 +45,7 @@ public class InformationWriter extends InterfaceWriter {
 			"     - Trivia Points: <col=FFB83F>" + Utility.formatDigits(player.triviaPoints),
 			"     - Vote Points: <col=FFB83F>" + Utility.formatDigits(player.votePoints),
 			"     - Total Vote: <col=FFB83F>" + Utility.formatDigits(player.totalVotes),
+			"     - All Vs One Points: <col=FFB83F>" + Utility.formatDigits(player.allvsonepoint),
 			"     - Drop Rate: <col=FFB83F>" + new DropChanceHandler(player).getRate() + " %",
 			"     - Kills: <col=FFB83F>" + player.killCount, "     - Deaths: <col=FFB83F> " + player.deathCount,
 			"     - KDR: <col=FFB83F>" + player.playerAssistant.getKdr(),

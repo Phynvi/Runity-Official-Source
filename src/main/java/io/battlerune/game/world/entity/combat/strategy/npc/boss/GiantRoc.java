@@ -34,7 +34,6 @@ import io.battlerune.util.Utility;
  */
 public class GiantRoc extends MultiStrategy {
 	private static Magic MAGIC = new Magic();
-	private static Range RANGE = new Range();
 	private static LightingRain LIGHTNING_RAIN = new LightingRain();
 	private static TeleGrab TELE_GRAB = new TeleGrab();
 
@@ -42,7 +41,7 @@ public class GiantRoc extends MultiStrategy {
 			TELE_GRAB, LIGHTNING_RAIN);
 	private static final CombatStrategy<Npc>[] MAGIC_STRATEGIES = createStrategyArray(MAGIC, MAGIC, MAGIC, TELE_GRAB,
 			LIGHTNING_RAIN);
-	private static final CombatStrategy<Npc>[] NON_MELEE = createStrategyArray(MAGIC, RANGE, MAGIC, MAGIC, MAGIC,
+	private static final CombatStrategy<Npc>[] NON_MELEE = createStrategyArray(MAGIC, MAGIC, MAGIC, MAGIC,
 			TELE_GRAB, LIGHTNING_RAIN);
 
 	private static final String[] SHOUTS = { "The Cold Winds are Rising!", "Darkness and death marches upon gilenor!" };
@@ -50,7 +49,6 @@ public class GiantRoc extends MultiStrategy {
 	/** Constructs a new <code>Giant Roc</code>. */
 	public GiantRoc() {
 		currentStrategy = MAGIC;
-		currentStrategy = RANGE;
 	}
 
 	@Override
@@ -102,49 +100,6 @@ public class GiantRoc extends MultiStrategy {
 		return attacker.definition.getAttackDelay();
 	}
 
-	private static class Range extends NpcRangedStrategy {
-
-		public Range() {
-			super(CombatProjectile.getDefinition("EMPTY"));
-		}
-
-		@Override
-		public void hit(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void attack(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void start(Npc attacker, Mob defender, Hit[] hits) {
-			Projectile projectile = new Projectile(1242, 50, 80, 85, 25);
-			attacker.animate(new Animation(5023, UpdatePriority.VERY_HIGH));
-
-			CombatHit hit = nextRangedHit(attacker, defender, 21);
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				projectile.send(attacker, other);
-				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
-			});
-
-			if (Utility.random(0, 3) == 2)
-				attacker.speak(Utility.randomElement(SHOUTS));
-		}
-
-		@Override
-		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			CombatHit hit = nextRangedHit(attacker, defender, 38);
-			hit.setAccurate(false);
-			return new CombatHit[] { hit };
-		}
-
-		@Override
-		public int modifyAccuracy(Npc attacker, Mob defender, int roll) {
-			return roll + 50_000;
-		}
-
-	}
-
 	/** Skotizo's magic strategy. */
 	private static class Magic extends NpcMagicStrategy {
 		public Magic() {
@@ -164,14 +119,11 @@ public class GiantRoc extends MultiStrategy {
 			Projectile projectile = new Projectile(1198, 50, 80, 85, 25);
 			attacker.animate(new Animation(5023, UpdatePriority.VERY_HIGH));
 			RegionManager.forNearbyPlayer(attacker, 16, other -> {
+				if (Utility.random(0, 3) == 2)
+					attacker.speak(Utility.randomElement(SHOUTS));
 				projectile.send(attacker, other);
 				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
 			});
-
-			if (Utility.random(0, 10) <= 1)
-				attacker.speak(Utility.randomElement(SHOUTS));
-			defender.prayer.deactivate(Prayer.PROTECT_FROM_MAGIC, Prayer.PROTECT_FROM_MELEE, Prayer.PROTECT_FROM_RANGE);
-			defender.getPlayer().send(new SendMessage("Your overhead prayers have been disabled!"));
 		}
 
 		@Override
@@ -202,17 +154,16 @@ public class GiantRoc extends MultiStrategy {
 
 		@Override
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
+			Projectile projectile = new Projectile(1198, 50, 80, 85, 25);
 			attacker.animate(new Animation(5023, UpdatePriority.VERY_HIGH));
-			attacker.graphic(481);
-			attacker.speak("ARHHHH! TIME TO SWITCH IT UP!!");
-
-			RegionManager.forNearbyPlayer(attacker, 16, other -> World.schedule(1, () -> {
-				Position destination = Utility.randomElement(attacker.boundaries);
-				World.sendGraphic(new Graphic(481), destination);
-				other.move(destination);
-				other.message("Giant Roc has moved you around!");
-			}));
+			RegionManager.forNearbyPlayer(attacker, 16, other -> {
+				if (Utility.random(0, 3) == 2)
+					attacker.speak(Utility.randomElement(SHOUTS));
+				projectile.send(attacker, other);
+				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
+			});
 		}
+		
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
@@ -241,6 +192,8 @@ public class GiantRoc extends MultiStrategy {
 			attacker.speak("YOU WILL NOW FEEL THE TRUE WRATH OF Giant Roc!");
 
 			RegionManager.forNearbyPlayer(attacker, 16, other -> {
+				if (Utility.random(0, 3) == 2)
+					attacker.speak(Utility.randomElement(SHOUTS));
 				Position position = other.getPosition();
 				combatProjectile.getProjectile()
 						.ifPresent(projectile -> World.sendProjectile(attacker, position, projectile));

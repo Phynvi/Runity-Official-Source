@@ -19,6 +19,7 @@ import io.battlerune.game.world.entity.combat.strategy.npc.NpcMeleeStrategy;
 import io.battlerune.game.world.entity.combat.strategy.npc.NpcRangedStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.game.world.position.Area;
 
 public class KreeArra extends MultiStrategy {
 	private static final Ranged RANGED = new Ranged();
@@ -33,14 +34,14 @@ public class KreeArra extends MultiStrategy {
 		currentStrategy = MELEE;
 	}
 
-	@Override
+	/*	@Override
 	public boolean canOtherAttack(Mob attacker, Npc defender) {
 		if (attacker.isPlayer() && attacker.getStrategy().getCombatType().equals(CombatType.MELEE)) {
 			attacker.getPlayer().message("You can't attack Armadyl with melee!");
 			return false;
 		}
 		return super.canOtherAttack(attacker, defender);
-	}
+	}*/
 
 	@Override
 	public boolean canAttack(Npc attacker, Mob defender) {

@@ -8,7 +8,7 @@ package io.battlerune.content.mysterybox;
  */
 public enum MysteryBoxType {
 
-	MYSTERY_BOX(6199), SILVER_MBOX(12955), GOLD_MBOX(11739), MEGA_MBOX(6508), PETMBOX(8038);
+	MYSTERY_BOX(6199), SILVER_MBOX(12955), GOLD_MBOX(11739), ALLVSONEBOX(290), MEGA_MBOX(6508), PETMBOX(8038);
 
 	private int id;
 

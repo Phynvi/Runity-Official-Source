@@ -14,14 +14,14 @@ public class FlightKilisa extends MultiStrategy {
 		currentStrategy = new Melee();
 	}
 
-	@Override
+/*	@Override
 	public boolean canOtherAttack(Mob attacker, Npc defender) {
 		if (attacker.isPlayer() && attacker.getStrategy().getCombatType().equals(CombatType.MELEE)) {
 			attacker.getPlayer().message("You can't attack Armadyl with melee!");
 			return false;
 		}
 		return super.canOtherAttack(attacker, defender);
-	}
+	}*/
 
 	@Override
 	public int getAttackDelay(Npc attacker, Mob defender, FightType fightType) {

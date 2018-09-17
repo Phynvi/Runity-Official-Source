@@ -71,7 +71,7 @@ public enum PlayerRight {
 
 	/** Checks if the player is a management member. */
 	public static boolean isManagement(Player player) {
-		return isPriviledged(player) || player.right.equals(MODERATOR) || player.right.equals(HELPER);
+		return isPriviledged(player) || player.right.equals(MODERATOR);
 	}
 	
 	/** Checks if the player is a Youtuber member. */

@@ -95,18 +95,6 @@ public class TriviaBot {
 			return;
 		}
 
-		if (PlayerRight.isDonator(player) || PlayerRight.isSuper(player)) {
-			player.SetTriviaPoints(player.getTriviaPoints() + 5);
-			player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
-			if(PlayerRight.isSupreme(player) || PlayerRight.isKing(player)) {
-				player.SetTriviaPoints(player.getTriviaPoints() + 6);
-				player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
-			}
-		} else {
-			player.SetTriviaPoints(player.getTriviaPoints() + 2);
-			player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
-		}
-
 		if (player.triviaPoints >= 100) {
 			AchievementHandler.activate(player, AchievementKey.TRIVIABOT_II, 1);
 		}
@@ -116,7 +104,8 @@ public class TriviaBot {
 
 		if (answeredAt == Long.MAX_VALUE) {
 			World.sendMessage(COLOR + "TriviaBot: <col=" + color + ">" + player.getName()
-					+ "</col> has answered the question correctly! Trivia will go on for another 10 seconds.");
+					+ "</col> has answered the question correctly! Trivia will go on");
+			World.sendMessage("for another 10 seconds.");
 //        World.sendMessage(COLOR + "TriviaBot: <col=" + color + ">" + player.getName() + "</col> Time is up! Answer: " + COLOR + Utility.capitalizeSentence(answer) + "</col>.");
 			answeredAt = System.currentTimeMillis();
 		}
@@ -129,6 +118,17 @@ public class TriviaBot {
 			player.bankVault.add(reward);
 			AchievementHandler.activate(player, AchievementKey.TRIVIABOT, 1);
 			player.send(new SendMessage(Utility.formatDigits(reward) + " coins were added into your bank vault."));
+			if (PlayerRight.isDonator(player) || PlayerRight.isSuper(player)) {
+				player.SetTriviaPoints(player.getTriviaPoints() + 5);
+				player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
+				if(PlayerRight.isSupreme(player) || PlayerRight.isKing(player)) {
+					player.SetTriviaPoints(player.getTriviaPoints() + 6);
+					player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
+				}
+			} else {
+				player.SetTriviaPoints(player.getTriviaPoints() + 2);
+				player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
+			}
 		}
 
 		answeredPlayers.add(player.getName());
