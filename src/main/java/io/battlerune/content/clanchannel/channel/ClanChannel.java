@@ -31,6 +31,7 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.UpdateFlag;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.game.world.entity.mob.player.punishments.PunishmentExecuter;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
 import io.battlerune.game.world.region.RegionManager;
@@ -695,5 +696,19 @@ public class ClanChannel implements Comparable<ClanChannel> {
 			return Objects.equals(details, other.details) && Objects.equals(management, other.management);
 		}
 		return super.equals(obj);
+	}
+
+	public static void handleMessage(Player player, String msg) {
+		
+		if (player.clanChannel == null) {
+			player.sendMessage("You need to be connected to a Clan Channel to talk in one");
+			return;
+		}
+		if (PunishmentExecuter.muted(player.getUsername()) || PunishmentExecuter.IPMuted(player.lastHost)) {
+			player.send(new SendMessage("You are muted and cannot chat."));
+			return;
+		}
+		player.clanChannel.chat(player.getName(), Utility.capitalizeSentence(msg));
+		return;
 	}
 }
