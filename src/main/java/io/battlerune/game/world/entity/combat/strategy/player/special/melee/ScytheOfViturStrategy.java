@@ -10,6 +10,7 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
 
 public class ScytheOfViturStrategy extends PlayerMeleeStrategy {
+	
 	private static final ScytheOfViturStrategy INSTANCE = new ScytheOfViturStrategy();
 	private static final Animation ANIMATION = new Animation(1203, UpdatePriority.HIGH);
 	private static final Graphic GRAPHIC = new Graphic(1172, true, UpdatePriority.HIGH);

@@ -1,5 +1,6 @@
 package io.battlerune.net.packet.in;
 
+import io.battlerune.content.clanchannel.channel.ClanChannel;
 import io.battlerune.content.command.Command;
 import io.battlerune.content.command.CommandManager;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -30,17 +31,7 @@ public final class CommandPacketListener implements PacketListener {
 			return;
 
 		if (input.startsWith("/")) {
-
-			if (PunishmentExecuter.muted(player.getUsername()) || PunishmentExecuter.IPMuted(player.lastHost)) {
-				player.send(new SendMessage("You are muted and cannot chat."));
-				return;
-			}
-
-			player.forClan(channel -> {
-				final String line = input.replaceAll("/", "");
-				channel.chat(player.getName(), Utility.capitalizeSentence(line));
-
-			});
+			ClanChannel.handleMessage(player, input.replaceAll("/", ""));
 			return;
 		}
 		Command plugin = CommandManager.PLUGIN_INPUT.get(parts[0]);

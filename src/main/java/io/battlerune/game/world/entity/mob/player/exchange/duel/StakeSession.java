@@ -130,7 +130,7 @@ public final class StakeSession extends ExchangeSession {
 	@Override
 	public boolean onButtonClick(Player player, int button) {
 
-		final Optional<DuelRule> rule = DuelRule.forButton(button);
+		/*final Optional<DuelRule> rule = DuelRule.forButton(button);
 		rule.ifPresent(r -> r.set(player, true));
 
 		switch (button) {
@@ -173,6 +173,7 @@ public final class StakeSession extends ExchangeSession {
 			return true;
 
 		}
+		return false;*/
 		return false;
 	}
 

@@ -78,14 +78,14 @@ public final class PlayerOptionPacketListener implements PacketListener {
 	private void handleDuelRequest(Player player, GamePacket packet) {
 		final int index = packet.readShort();
 
-		World.getPlayerBySlot(index).ifPresent(other -> {
+		/*World.getPlayerBySlot(index).ifPresent(other -> {
 
 			if (!isValid(other)) {
 				return;
 			}
 
 			player.walkTo(other, () -> player.exchangeSession.request(new StakeSession(player, other)));
-		});
+		});*/
 	}
 
 	private void handleAttackPlayer(Player player, GamePacket packet) {

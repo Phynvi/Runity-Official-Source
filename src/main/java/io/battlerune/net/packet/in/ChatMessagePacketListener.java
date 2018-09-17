@@ -37,18 +37,15 @@ public class ChatMessagePacketListener implements PacketListener {
 			return;
 		}
 		
-		if (effect < 0 || effect >= ChatEffect.values().length || color < 0 || color >= ChatColor.values().length
-				|| size <= 0) {
+		if (effect < 0 || effect >= ChatEffect.values().length || color < 0 || color >= ChatColor.values().length || size <= 0)
 			return;
-		}
 		
-		if (player.locking.locked(PacketType.CHAT)) {
+		
+		if (player.locking.locked(PacketType.CHAT)) 
 			return;
-		}
-
-		if (player.idle) {
+		
+		if (player.idle) 
 			player.idle = false;
-		}
 
 		final String decoded = ChatCodec.decode(packet.readBytesReverse(size, ByteModification.ADD));
 
