@@ -1002,5 +1002,16 @@ public class Player extends Mob {
 			this.dialogueFactory.sendDialogue(new GloryTeleport(p, itemId, false));
 			return;
 	}
+	
+	
+	public int getAwardedBossPoints() {
+		if (PlayerRight.isKing(this)) 
+			return 4;
+		else if (PlayerRight.isExtreme(this) || PlayerRight.isElite(this)) 
+			return 3;
+		else if (PlayerRight.isDonator(this) || PlayerRight.isSuper(this))
+			return 2;
+         return 1;
+	}
 
 }
