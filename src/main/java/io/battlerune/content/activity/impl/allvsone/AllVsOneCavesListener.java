@@ -8,9 +8,9 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.util.Utility;
 
 /**
- * The {@link FightCaves} combat listener for all mobs in the activity.
+ * The {@link Adam_#6723} combat listener for all mobs in the activity.
  *
- * @author Michael | Chex
+ * @author Adam_#6723
  */
 public class AllVsOneCavesListener extends ActivityListener<AllVsOne> {
 

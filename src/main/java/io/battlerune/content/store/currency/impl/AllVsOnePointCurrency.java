@@ -4,6 +4,13 @@ import io.battlerune.content.store.currency.Currency;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendMessage;
 
+/**
+ * 
+ * @author Adam_#6723
+ * Handles point currency for All Vs One Points.
+ *
+ */
+
 public final class AllVsOnePointCurrency implements Currency {
 
 	@Override

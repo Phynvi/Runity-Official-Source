@@ -7,6 +7,10 @@ import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.util.Utility;
+/** @author Adam_#6723 
+ *  Handles the All Vs One Rewards
+ *  TODO ADD 40 More Waves.
+ */
 
 public class AllVsOneBox implements MysteryBoxListener {
 

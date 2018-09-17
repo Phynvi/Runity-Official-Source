@@ -5,7 +5,7 @@ public final class AllVsOneData {
 	/**
 	 * 
 	 * @author Adam_#6723
-	 *
+	 * Stores the NPC Data for All Vs One
 	 */
 	public enum WaveData {
 		WAVE_1(8095), WAVE_2(763), WAVE_3(6593), WAVE_4(6499), WAVE_5(2265), WAVE_6(2267), WAVE_7(2266, 5947),
