@@ -15,7 +15,6 @@ public class BroadcastCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-
 		try {
 			final String input = String.format(parts[1]);
 			World.sendBroadcast(1, input, true);

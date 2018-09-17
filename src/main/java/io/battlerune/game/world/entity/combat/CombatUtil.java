@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import io.battlerune.content.activity.ActivityType;
+import io.battlerune.content.freeforall.FreeForAll;
+import io.battlerune.content.freeforall.FreeForAllType;
 import io.battlerune.content.skill.impl.slayer.SlayerTask;
 import io.battlerune.game.Animation;
 import io.battlerune.game.Projectile;
@@ -261,6 +263,11 @@ public final class CombatUtil {
 				return false;
 			}
 
+			if (FreeForAll.KEY_MAP.get(attacker).equals(FreeForAllType.GAME) &&
+					FreeForAll.KEY_MAP.get(defender).equals(FreeForAllType.GAME)) {
+				return true;
+			}
+			
 			if (attacker.inActivity(ActivityType.DUEL_ARENA) && defender.inActivity(ActivityType.DUEL_ARENA)) {
 				return true;
 			}

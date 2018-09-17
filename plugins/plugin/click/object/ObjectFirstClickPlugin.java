@@ -9,6 +9,7 @@ import io.battlerune.content.activity.impl.pestcontrol.PestControl;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
 import io.battlerune.content.combat.cannon.CannonManager;
 import io.battlerune.content.dialogue.impl.WellOfGoodwillDialogue;
+import io.battlerune.content.freeforall.impl.FreeForAllLobbyTask;
 import io.battlerune.content.masterminer.Util;
 import io.battlerune.content.quest.QuestManager;
 import io.battlerune.content.skill.impl.crafting.impl.Tanning;
@@ -62,13 +63,11 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		final int id = object.getId();
 		// final int ANIM = 0;
 
-		// hello meradj
-		// how u do todeh
-		// are u good my fr3nd?
-		// how's loife
-
 		switch (id) {
 
+		  case 26727: 
+			new FreeForAllLobbyTask(player).execute();
+			break; 
 		case 26043:
 			player.send(new SendMessage("@red@ The player owned shop has been disabled!"));
 			break;

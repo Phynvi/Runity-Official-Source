@@ -4,12 +4,17 @@ import io.battlerune.game.world.entity.mob.player.Player;
 
 /**
  * Free For All Task Appending
+ * 
  * @author Nerik#8690
  *
  */
 public interface FreeForAllTask {
 
-	
-	void execute(Player player);
+	/**
+	 * Executes the given task
+	 * 
+	 * @param player
+	 */
+	void execute(Player player, String content);
 
 }

@@ -9,6 +9,7 @@ import io.battlerune.net.packet.out.SendProgressBar;
 import io.battlerune.net.packet.out.SendString;
 
 public abstract class Activity_Panel {
+	
 	private final Player player;
 	private final String header;
 	private final String[] text = new String[7];

@@ -2,13 +2,11 @@ package io.battlerune.content.freeforall.impl;
 
 import io.battlerune.game.world.entity.mob.player.Player;
 
-public class FreeForAllGearTask implements FreeForAllTask {
+public class FreeForAllStats implements FreeForAllTask {
 
-	
 	@Override
 	public void execute(Player player, String content) {
-		
+		//player.achievedExp
 	}
-
 
 }

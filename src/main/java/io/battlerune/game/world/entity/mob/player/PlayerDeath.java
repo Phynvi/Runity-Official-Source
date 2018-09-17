@@ -10,7 +10,6 @@ import io.battlerune.content.achievement.AchievementKey;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.bot.BotUtility;
 import io.battlerune.content.bot.PlayerBot;
-import io.battlerune.content.combat.Killstreak;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.OnKillEvent;
 import io.battlerune.content.freeforall.FreeForAll;
@@ -113,7 +112,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 		if (FreeForAll.KEY_MAP.containsKey(mob.getPlayer())) {
 			new FreeForAllLeaveTask(mob.getPlayer(), "death").execute();
 			return;
-		}
+		} 
 		
 		if (!PlayerRight.isPriviledged(mob)) {
 			Pets.onDeath(mob);
@@ -228,7 +227,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 		if (!safe) {
 			mob.equipment.login();
 			if (killer != null && killer.isPlayer() && !mob.equals(killer)) {
-				new Killstreak(killer.getPlayer(), mob).end();
+				//new Killstreak(killer.getPlayer(), mob).end();
 			}
 			if (mob.right == PlayerRight.HARDCORE_IRONMAN) {
 				mob.right = PlayerRight.IRONMAN;

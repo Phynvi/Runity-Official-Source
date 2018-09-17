@@ -44,6 +44,8 @@ public class InterfaceManager {
 	public void open(int identification) {
 		open(identification, true);
 	}
+	
+
 
 	/** Opens an interface for the player. */
 	public void openNonDuplicate(int identification) {
@@ -51,6 +53,9 @@ public class InterfaceManager {
 			open(identification, true);
 		}
 	}
+	
+	
+
 
 	/** Opens an itemcontainer for the player. */
 	public void open(int identification, boolean secure) {
@@ -77,11 +82,11 @@ public class InterfaceManager {
 	}
 
 	/** Opens a walkable-itemcontainer for the player. */
-	void openWalkable(int identification) {
+	public void openWalkable(int identification) {
 		if (walkable == identification) {
 			return;
 		}
-		walkable = identification;
+		setWalkable(identification);
 		player.send(new SendWalkableInterface(identification));
 	}
 
@@ -134,9 +139,7 @@ public class InterfaceManager {
 			player.donatorDeposit.close();
 		}
 
-		if (walkable) {
-			openWalkable(-1);
-		}
+
 
 		clean(walkable);
 		player.dialogueFactory.clear();

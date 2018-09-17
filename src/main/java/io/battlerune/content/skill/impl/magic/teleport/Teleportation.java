@@ -35,11 +35,11 @@ public class Teleportation {
 	/** Teleports player to a position. */
 	public static boolean teleport(Mob mob, Position position, int wildernessLevel, Runnable onDestination) {
 		
-		if (FreeForAll.KEY_MAP.containsKey(mob.getPlayer())) {
+		 if (FreeForAll.KEY_MAP.containsKey(mob.getPlayer())) {
 			new FreeForAllLeaveTask(mob.getPlayer(), 
 					FreeForAll.getType(mob.getPlayer()).equals(FreeForAllType.LOBBY) ? "lobby" : "game").execute();
 			return true;
-		}
+		} 
 		
 		if (mob.isNpc()) {
 			teleport(mob, position, TeleportationData.MODERN, onDestination);
