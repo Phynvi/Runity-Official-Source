@@ -46,7 +46,7 @@ import io.battlerune.game.world.entity.mob.prayer.Prayer;
 public class DefaultCustomListener extends SimplifiedListener<Mob> {	
 	
 	
-public int healingGraphic = 1296;
+public int healingGraphic = 398; //1296
 
 public void method(Mob attacker) {
 	for (Prayer prayer : Prayer.values()) {

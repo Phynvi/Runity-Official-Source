@@ -51,6 +51,8 @@ public class InformationTabButtonPlugin extends PluginContext {
 		case 29410:
 			player.dialogueFactory.sendOption("Royalty program", () -> {
 				player.dialogueFactory.onAction(() -> RoyaltyProgram.open(player));
+			},  "Drop Simulator", () -> {
+				player.dialogueFactory.onAction(() -> DropSimulator.open(player));
 			}, "Activity Logger", () -> {
 				player.dialogueFactory.onAction(player.activityLogger::open);
 			}, "Title Manager", () -> {
@@ -99,19 +101,17 @@ public class InformationTabButtonPlugin extends PluginContext {
 		case 29414:
 		case -30525:
 		case -30125:
-			player.dialogueFactory.sendOption("Drop display", () -> {
-				player.dialogueFactory.onAction(() -> DropDisplay.open(player));
-			},
-
-					"Drop Simulator", () -> {
-						player.dialogueFactory.onAction(() -> DropSimulator.open(player));
-					}, "Activity Logger", () -> {
-						player.dialogueFactory.onAction(player.activityLogger::open);
-					}, "Game Records", () -> {
-						player.dialogueFactory.onAction(() -> player.gameRecord.display(ActivityType.getFirst()));
-					}, "Title Manager", () -> {
-						player.dialogueFactory.onAction(() -> TitleManager.open(player));
-					}).execute();
+			player.dialogueFactory.sendOption("Royalty program", () -> {
+				player.dialogueFactory.onAction(() -> RoyaltyProgram.open(player));
+			},  "Drop Simulator", () -> {
+				player.dialogueFactory.onAction(() -> DropSimulator.open(player));
+			}, "Activity Logger", () -> {
+				player.dialogueFactory.onAction(player.activityLogger::open);
+			}, "Title Manager", () -> {
+				player.dialogueFactory.onAction(() -> TitleManager.open(player));
+			}, "Slayer Interface", () -> {
+				player.dialogueFactory.onAction(() -> player.slayer.open(SlayerTab.MAIN));
+			}).execute();
 			return true;
 		}
 		return false;

@@ -455,6 +455,31 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				}
 				return;
+				
+				
+			case "PORAZDIR":
+				playerKiller.activityLogger.add(ActivityLog.PORAZDIR);
+
+				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+
+				}
+
+				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+
+				}
+				if (PlayerRight.isKing(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 5);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+
+				} else {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+				}
+				return;
 
 			case "CORPOREAL_BEAST":
 				playerKiller.activityLogger.add(ActivityLog.CORPOREAL_BEAST);

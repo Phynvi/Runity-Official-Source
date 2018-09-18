@@ -27,7 +27,7 @@ import io.battlerune.util.Utility;
 public class Bank extends ItemContainer {
 
 	/** The size of all equipment instances. */
-	public static final int SIZE = 800;
+	public static final int SIZE = 360;
 
 	/** The tab amount array. */
 	public int[] tabAmounts = new int[10];

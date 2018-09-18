@@ -128,7 +128,7 @@ public final class NpcDropManager {
 //                return;
 //            }
 
-			if (killer.settings.dropNotification && item.getValue() > 1_000_000) {
+			if (killer.settings.dropNotification && item.getValue() > 1_000_000 || drop.type.equals(NpcDropChance.RARE) || drop.type.equals(NpcDropChance.ULTRA_RARE)) {
 				String name = item.getName();
 				killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + name + " ("
 						+ Utility.formatDigits(item.getValue()) + " coins)"));
