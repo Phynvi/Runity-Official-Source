@@ -134,7 +134,7 @@ public class Arena extends MultiStrategy {
 					return;
 				player.equipment.unEquip(disarm);
 				player.send(new SendMessage("Glod has removed your "
-						+ Utility.formatName(disarm.getEquipmentType().name().toLowerCase()) + "."));
+						+ Utility.formatName(disarm.getEquipmentType().name().toLowerCase()) + " check your inventory or floor."));
 				player.graphic(new Graphic(785, true, UpdatePriority.HIGH));
 
 			}

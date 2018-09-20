@@ -46,9 +46,9 @@ public class Obelisks {
 		}
 		player.attributes.set("OBELISK", obj);
 		InterfaceWriter.write(new ObeliskWriter(player));
-		player.send(new SendString("Wilderness Obelisk", 57312));
-		player.send(new SendString("Click on the obelisk you would like to teleport too", 57313));
-		player.interfaceManager.open(57310);
+		player.send(new SendString("Wilderness Obelisk", 51002));
+		player.send(new SendString("Click on the obelisk you would like to teleport too", 51003));
+		player.interfaceManager.open(51000);
 	}
 
 	public boolean activate(Player player, int objectId) {

@@ -70,7 +70,7 @@ public class Justicar extends MultiStrategy {
 		defender.getCombat().attack(attacker);
 
 		if (!defender.getCombat().isAttacking()) {
-			defender.animate(new Animation(7962, UpdatePriority.VERY_HIGH));
+			defender.animate(new Animation(7853, UpdatePriority.VERY_HIGH));
 			defender.graphic(1196);
 			defender.graphic(481);
 			defender.speak("Night King, Lend me your powers for i am your faithful servant!");

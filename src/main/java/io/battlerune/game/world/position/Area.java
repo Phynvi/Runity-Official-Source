@@ -244,7 +244,10 @@ public abstract class Area {
 	public static boolean inFightCaves(Interactable entity) {
 		return inArea(entity, new Position(2368, 5057, 0), new Position(2428, 5120, 0));
 	}
-
+	public static boolean inAllVsOne(Interactable entity) {
+		return inArea(entity, new Position(3129, 4991, 0), new Position(3201, 4923, 0));
+	}
+	
 	public static boolean inGodwars(Interactable entity) {
 		return inArea(entity, new Position(2816, 5243, 2), new Position(2960, 5400, 2));
 	}
@@ -288,9 +291,6 @@ public abstract class Area {
 				new Position(3006, 3964, entity.getHeight()));
 	}
 	
-	public static boolean inAllVsOne(Interactable entity) {
-		return inArea(entity, new Position(3129, 4991, 0), new Position(3201, 4923, 0));
-	}
 
 	public static boolean inWildernessResource(Interactable entity) {
 		return inArea(entity, new Position(3714, 3924, entity.getHeight()),

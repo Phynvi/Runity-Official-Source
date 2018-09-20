@@ -86,6 +86,10 @@ public class NpcFirstClickPlugin extends PluginContext {
 				}
 			}, "Nowhere", player.interfaceManager::close).execute();
 			break;
+			
+		case 605:
+			Store.STORES.get("All Vs One Store").open(player);
+			break;
 
 		case 7481:
 			player.dialogueFactory.sendDialogue(new VoteDialogue());

@@ -225,7 +225,7 @@ public class ClanChannel implements Comparable<ClanChannel> {
 			return;
 		String name = bannedMembers.get(index);
 		if (bannedMembers.remove(index) != null) {
-			int string = 51311;
+			int string = 51411;
 			int size = bannedMembers.size() < 10 ? 10 : bannedMembers.size();
 			for (int idx = 0; idx < size; idx++) {
 				boolean valid = idx < bannedMembers.size();
@@ -234,7 +234,7 @@ public class ClanChannel implements Comparable<ClanChannel> {
 				player.send(new SendTooltip(valid ? "Unban " + bannedMembers.get(idx) : "", string));
 				string++;
 			}
-			player.send(new SendScrollbar(51310, size * 23));
+			player.send(new SendScrollbar(51410, size * 23));
 			player.send(new SendMessage("You have unbanned " + name + " from the clan chat channel."));
 		}
 	}

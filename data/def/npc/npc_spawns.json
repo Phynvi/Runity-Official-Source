@@ -23,6 +23,16 @@
 	 }
   },
     {
+	    "id": 605,
+	    "radius": "0",
+	    "facing": "NORTH",
+	    "position": {
+	      "x": 3082,
+	      "y": 3484,
+	      "height": 0
+	 }
+  },
+    {
 	    "id": 6504,
 	    "radius": "2",
 	    "facing": "NORTH",

@@ -93,7 +93,9 @@ public class PackOpeningPlugin extends PluginContext {
 				new Item(16651, 1), new Item(16653, 1), new Item(16654, 1), new Item(16655, 1), new Item(16656, 1)),
 		/* MAGE Arena Rewards */
 		SOUL_SET(13654, new Item(13692, 1), new Item(13693, 1), new Item(13695, 1), new Item(13696, 1),
-				new Item(17160, 1))
+				new Item(17160, 1)),
+		DARK_KARTH(12641, new Item(13832, 1), new Item(13710, 1), new Item(13711, 1), new Item(13712, 1),
+				new Item(13713, 1), new Item(13714, 1), new Item(13715, 1))
 
 		;
 

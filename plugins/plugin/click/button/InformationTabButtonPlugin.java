@@ -14,11 +14,13 @@ import io.battlerune.content.tittle.TitleManager;
 import io.battlerune.content.writer.InterfaceWriter;
 import io.battlerune.content.writer.impl.InformationWriter;
 import io.battlerune.content.writer.impl.QuestWriter;
+import io.battlerune.content.writer.impl.SettingWriter;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.net.packet.out.SendForceTab;
 import io.battlerune.net.packet.out.SendURL;
+import plugin.command.impl.player.HomeCommand;
 
 public class InformationTabButtonPlugin extends PluginContext {
 
@@ -49,8 +51,9 @@ public class InformationTabButtonPlugin extends PluginContext {
 		case 29421:
 		case 29419:
 		case 29410:
-			player.dialogueFactory.sendOption("Royalty program", () -> {
-				player.dialogueFactory.onAction(() -> RoyaltyProgram.open(player));
+			SettingWriter command = new SettingWriter(player);
+			player.dialogueFactory.sendOption("Misc Settings", () -> {
+				player.dialogueFactory.onAction(() -> SettingWriter.open(player));
 			},  "Drop Simulator", () -> {
 				player.dialogueFactory.onAction(() -> DropSimulator.open(player));
 			}, "Activity Logger", () -> {

@@ -197,34 +197,34 @@ public class ItemContainerActionPacketListener implements PacketListener {
 	 * @param player The player clicking the option.
 	 * @param packet The packet for this option.
 	 */
+
 	private void sixthAction(Player player, GamePacket packet) {
 		final int amount = packet.readInt();
-		
-		if (player.attributes.get("XREMOVE_INTERFACE", Integer.class) == null
+		if (player.enterInputListener.isPresent()) {
+			player.enterInputListener.get().accept(Integer.toString(amount));
+			return;
+		}		
+	if (player.attributes.get("XREMOVE_INTERFACE", Integer.class) == null
 				|| player.attributes.get("XREMOVE_SLOT", Integer.class) == null
 				|| player.attributes.get("XREMOVE_REMOVE", Integer.class) == null) {
             return;
-        }
+        } 
 		final int interfaceId = player.attributes.get("XREMOVE_INTERFACE", Integer.class);
 		final int removeSlot = player.attributes.get("XREMOVE_SLOT", Integer.class);
 		final int removeId = player.attributes.get("XREMOVE_REMOVE", Integer.class);
 		
 logAction(player, "sixthAction - InterfaceId="+interfaceId+" SlotId="+removeSlot+" ItemId="+removeId);
 		
-		if (player.enterInputListener.isPresent()) {
-			player.enterInputListener.get().accept(Integer.toString(amount));
-			return;
-		}
 		/**
 		 * I just added null checks
 		 * 
 		 */
 
-		Inventory inv = player.inventory;
+		/*Inventory inv = player.inventory;
 		
 		if (inv.get(removeSlot) == null)
 			return;
-		
+		*/
 		/*
 		if (inv.get(removeSlot).getId() != removeId || inv.get(removeId) == null || removeId == -1) {
 			World.sendStaffMessage("Staff Notice: "+player.getName() + " is exploiting opcode 208");

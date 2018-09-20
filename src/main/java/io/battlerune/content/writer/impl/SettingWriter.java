@@ -2,6 +2,7 @@ package io.battlerune.content.writer.impl;
 
 import io.battlerune.content.writer.InterfaceWriter;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.net.packet.out.SendString;
 
 /**
  * Class handles writing on the server settings itemcontainer.
@@ -18,6 +19,13 @@ public class SettingWriter extends InterfaceWriter {
 
 	public SettingWriter(Player player) {
 		super(player);
+	}
+	
+	public static void open(Player player) {
+		InterfaceWriter.write(new SettingWriter(player));
+		player.send(new SendString("Misc Server Settings", 51002));
+		player.send(new SendString("Click on the settings you'd like to change.", 51003));
+		player.interfaceManager.open(51000);
 	}
 
 	private String format(boolean parameter) {

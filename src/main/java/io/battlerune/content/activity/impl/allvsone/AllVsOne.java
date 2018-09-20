@@ -83,7 +83,7 @@ public class AllVsOne extends Activity {
 				for (int index = 0; index < 2; index++) {
 					Position position = new Position(dead.getX() + (index == 0 ? -1 : +1), dead.getY(),
 							dead.getHeight());
-					Npc roc = new Npc(3163, position);
+					Npc roc = new Npc(763, position);
 					add(roc);
 					npcs.add(roc);
 					roc.getCombat().attack(player);
@@ -157,8 +157,6 @@ public class AllVsOne extends Activity {
 
 		if (rewards <= 0)
 			rewards = 1;
-
-		//player.inventory.addOrDrop(new Item(7775, rewards));
 		player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
 		player.message("<img=12>You now have @red@" + player.getAllVsOnePoints() + " All Vs One Points!");
 		player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();
@@ -190,7 +188,7 @@ public class AllVsOne extends Activity {
 
 	@Override
 	public boolean canTeleport(Player player) {
-		return false;
+		return true;
 	}
 
 	@Override

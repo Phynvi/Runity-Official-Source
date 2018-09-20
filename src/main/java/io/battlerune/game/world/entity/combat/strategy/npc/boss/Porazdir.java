@@ -70,7 +70,7 @@ public class Porazdir extends MultiStrategy {
 		defender.getCombat().attack(attacker);
 
 		if (!defender.getCombat().isAttacking()) {
-			defender.animate(new Animation(7962, UpdatePriority.VERY_HIGH));
+			defender.animate(new Animation(7843, UpdatePriority.VERY_HIGH));
 			defender.graphic(1196);
 			defender.graphic(481);
 			if (Utility.random(1, 7) == 2) {

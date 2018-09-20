@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import io.battlerune.Config;
 import io.battlerune.content.activity.Activity;
+import io.battlerune.content.activity.impl.allvsone.AllVsOne;
 import io.battlerune.content.activity.impl.fightcaves.FightCaves;
 import io.battlerune.content.activity.impl.pestcontrol.PestControl;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
@@ -1116,6 +1117,16 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			player.send(new SendFadeScreen("Welcome to the Fight Caves!", 1, 3));
 			World.schedule(5, () -> {
 				FightCaves.create(player);
+				player.locking.unlock();
+			});
+			break;
+			
+		case 12260:
+			player.locking.lock();
+			player.send(new SendFadeScreen("Welcome to the All Vs One!", 1, 3));
+			World.sendMessage(player.getName() + " Was brave enough to take on All Vs One Minigame!");
+			World.schedule(5, () -> {
+				AllVsOne.create(player);
 				player.locking.unlock();
 			});
 			break;

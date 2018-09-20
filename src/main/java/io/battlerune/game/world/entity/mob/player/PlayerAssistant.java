@@ -231,6 +231,12 @@ public class PlayerAssistant {
 			if (item.getId() == 3274) {
 				return FireyBowStrategy.get();
 			}
+			if (item.getId() == 13713) {
+				return FireyBowStrategy.get();
+			}
+			if (item.getId() == 13831) {
+				return FireyBowStrategy.get();
+			}
 			if (item.getId() == 21012) {
 				return DragonHunterCrossbowStrategy.get();
 			}
@@ -252,6 +258,11 @@ public class PlayerAssistant {
 			if(item.getId() == 13687) {
 				return MagmaAxeStrategy.get();
 			}
+			
+			if(item.getId() == 13833) {
+				return MagmaAxeStrategy.get();
+			}
+
 
 
 

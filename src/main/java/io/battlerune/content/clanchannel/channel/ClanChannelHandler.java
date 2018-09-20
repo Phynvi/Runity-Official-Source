@@ -248,7 +248,7 @@ public class ClanChannelHandler {
 		Player player = member.player.orElse(null);
 		
 		if (player == null) {
-			System.out.println("player is null..");
+		//	System.out.println("player is null..");
 			return; 
 		}
 		

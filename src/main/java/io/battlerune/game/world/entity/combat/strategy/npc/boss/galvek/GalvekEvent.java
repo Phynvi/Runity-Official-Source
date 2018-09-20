@@ -8,6 +8,7 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.util.Stopwatch;
 
 public class GalvekEvent extends Task {
+	
 	private Npc galvek;
 	private boolean initial;
 	private final Stopwatch stopwatch = Stopwatch.start();

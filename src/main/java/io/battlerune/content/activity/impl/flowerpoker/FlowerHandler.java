@@ -83,27 +83,6 @@ public class FlowerHandler {
 		});
 	}
 
-	public void riggedSeeds() {
-		player.dialogueFactory.sendOption("BLUE_FLOWERS", () -> {
-			new FlowerHandler(player, FlowerData.BLUE_FLOWERS).plantFlower(true);
-		}, "RED_FLOWERS", () -> {
-			new FlowerHandler(player, FlowerData.RED_FLOWERS).plantFlower(true);
-		}, "ORANGE_FLOWERS", () -> {
-			new FlowerHandler(player, FlowerData.ORANGE_FLOWERS).plantFlower(true);
-		}, "YELLOW_FLOWERS", () -> {
-			new FlowerHandler(player, FlowerData.YELLOW_FLOWERS).plantFlower(true);
-		}, "More", () -> {
-			player.dialogueFactory.sendOption("PASTEL_FLOWERS", () -> {
-				new FlowerHandler(player, FlowerData.PASTEL_FLOWERS).plantFlower(true);
-			}, "RAINBOW_FLOWERS", () -> {
-				new FlowerHandler(player, FlowerData.RAINBOW_FLOWERS).plantFlower(true);
-			}, "PURPLE_FLOWERS", () -> {
-				new FlowerHandler(player, FlowerData.PURPLE_FLOWERS).plantFlower(true);
-			}, "Cancel", () -> {
-				player.dialogueFactory.clear();
-			});
-		}).execute();
-	}
 
 	private boolean onFlower(Mob mob) {
 		for (Region region : RegionManager.getSurroundingRegions(mob.getPosition())) {

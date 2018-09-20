@@ -120,7 +120,7 @@ public class ClanManagement {
 			player.send(new SendMessage("You have no banned members in your clan."));
 			return;
 		}
-		int string = 51311;
+		int string = 58311;
 		int size = channel.bannedMembers.size() < 10 ? 10 : channel.bannedMembers.size();
 		for (int index = 0; index < size; index++) {
 			boolean valid = index < channel.bannedMembers.size();
@@ -129,8 +129,8 @@ public class ClanManagement {
 			player.send(new SendTooltip(valid ? "Unban " + channel.bannedMembers.get(index) : "", string));
 			string++;
 		}
-		player.send(new SendScrollbar(51310, size * 23));
-		player.interfaceManager.open(51300);
+		player.send(new SendScrollbar(58310, size * 23));
+		player.interfaceManager.open(58300);
 	}
 
 	public void toggleLootshare() {

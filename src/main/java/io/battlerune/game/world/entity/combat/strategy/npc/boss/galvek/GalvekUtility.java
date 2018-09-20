@@ -26,7 +26,8 @@ public class GalvekUtility {
 	public static Npc generateSpawn() {
 		activated = true;
 		spawn = SpawnData1.generate();
-		Npc Galvek = new Npc(8095, spawn.position, 10, Direction.NORTH);
+		Npc Galvek = new Npc(8095, spawn.position, 10, Direction.NORTH);//...
+		System.out.println("spawnX="+spawn.position.getX());//rerun
 		World.sendBroadcast(1, "Galvek has just spawned! He is located at " + spawn.location + "!", true);
 		World.sendGalvekInformation();
 		Galvek.register();
@@ -46,7 +47,11 @@ public class GalvekUtility {
 
 	public static void defeated(Npc Galvek, Player player) {
 		
-		if(Area.inAllVsOne(player) || Area.inAllVsOne(Galvek)) {
+		int deathX = Galvek.getPosition().getX();
+		int deathY = Galvek.getPosition().getY();
+		int deathH = Galvek.getPosition().getHeight();
+		
+		if(spawn == null) {
 			System.out.println("DIDN'T EXECUTE BECAUSE.. 1 " + player.getName() + " is in an instanced minigame.... 1");
 			return;
 		}
@@ -69,39 +74,43 @@ public class GalvekUtility {
 		 **/
 
 		int random = Utility.random(750);
+		
 
 		if (random <= 50) {
 				GroundItem.createGlobal(player, new Item(COMMONLOOT[Utility.random(COMMONLOOT.length)], 1),
-						new Position(spawn.getPosition().getX() + Utility.random(10),
-								spawn.getPosition().getY() + Utility.random(10), 0));
+						new Position(deathX + Utility.random(10), deathY + Utility.random(10), 0));
 		}
 		if (random <= 25) {
 			GroundItem.createGlobal(player, new Item(RARELOOT[Utility.random(RARELOOT.length)], 1),
-						new Position(spawn.getPosition().getX() + Utility.random(10),
-								spawn.getPosition().getY() + Utility.random(10), 0));
+						new Position(deathX + Utility.random(10),
+								deathY + Utility.random(10), 0));
 			
 		}
 		if (random <= 5) {
 			GroundItem.createGlobal(player, new Item(SUPERRARELOOT[Utility.random(SUPERRARELOOT.length)], 1),
-						new Position(spawn.getPosition().getX() + Utility.random(10),
-								spawn.getPosition().getY() + Utility.random(10), 0));
+						new Position(deathX + Utility.random(10),
+								deathY + Utility.random(10), 0));
 				World.sendMessage("<img=10><col=FF0000>Galvek has dropped Bank Loot!");
 			
 		}
 		
 		if (random <= 1 && Utility.random(1, 5) == 4) {
 			GroundItem.createGlobal(player, new Item(ULTRA[Utility.random(ULTRA.length)], 1),
-						new Position(spawn.getPosition().getX() + Utility.random(10),
-								spawn.getPosition().getY() + Utility.random(10), 0));
+						new Position(deathX + Utility.random(10),
+								deathY + Utility.random(10), 0));
 				World.sendMessage("<img=10><col=FF0000>Galvek has dropped Ultra Rare Bank Loot!");
 			
 		}
 
-		for (int i = 0; i < ALWAYSLOOT.length; i++) {
-			GroundItem.createGlobal(player, new Item(ALWAYSLOOT[i], 1),
-					new Position(spawn.getPosition().getX() + Utility.random(10),
-							spawn.getPosition().getY() + Utility.random(10), 0));
-		}
+		for (int i = 0; i < 
+				ALWAYSLOOT.length; i++) {//rerun and try again for debug
+			GroundItem.createGlobal(player, new Item(
+					ALWAYSLOOT[i], 1),
+					new Position(deathX + 
+							Utility.//debug again
+				 			random(10),
+				 			deathY + Utility.random(10), 0));
+		}//test
 
 		player.send(new SendMessage("Galvek drop's lootation all over the map.", MessageColor.RED));
 		Galvek.unregister();

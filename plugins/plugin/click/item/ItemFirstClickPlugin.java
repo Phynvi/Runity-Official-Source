@@ -93,12 +93,8 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 
 		case 299:
-			if (player.getName().equals("Menno")) {
-				new FlowerHandler(player).riggedSeeds();
-			} else {
 				player.inventory.remove(299, 1);
 				new FlowerHandler(player).plantFlower(false);
-			}
 			break;
 
 		case 5020:
