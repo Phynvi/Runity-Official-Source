@@ -197,7 +197,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 		mob.resetAnimation();
 		// mob.equipment.refresh();
 
-		System.out.println("running here 0");//update
+		//System.out.println("running here 0");//update
 		// IF YOU'RE HAVING AN ISSUE WITH ITEM LISTENERS AFTER DEATH, IT'S THIS FUNCTION
 		// RIGHT HERE
 		// This function was implementing because dying with a full set of barrows let

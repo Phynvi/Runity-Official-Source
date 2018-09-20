@@ -76,7 +76,7 @@ public class ItemOptionPacketListener implements PacketListener {
 			final Item item = player.inventory.get(slot);
 
 			if (item == null || item.getId() != id) {//
-				System.out.println("exploit appeared in firstoption itemsoption packet..");
+			//	System.out.println("exploit appeared in firstoption itemsoption packet..");
 				return;
 			}
 
