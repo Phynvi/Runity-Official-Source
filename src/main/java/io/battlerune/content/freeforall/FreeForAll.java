@@ -38,7 +38,7 @@ public class FreeForAll extends Task {
 		case 100:
 			if (!gameStarted) {
 				gear = getGear();
-				World.sendBroadcast(10, "[Free For All] " + gear.getName() + " game will start in 10 Minutes!", true);
+				//World.sendBroadcast(10, "[Free For All] " + gear.getName() + " game will start in 10 Minutes!", true);
 			}
 			break;
 		case 300:

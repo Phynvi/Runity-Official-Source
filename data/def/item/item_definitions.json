@@ -85779,6 +85779,149 @@
   },
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   {
+    "id": 13808,
+    "name": "Tekton Helm",
+    "noted-id": 10843,
+    "low-alch": 20000,
+    "high-alch": 30000,
+    "base-value": 50000,
+    "street-value": 34762,
+    "weight": 2.2,
+    "equipment-slot": "FACE",
+																		    "req-defence": 92,
+																		    "attack-magic": 15,
+																		    "attack-ranged": 12,
+																		    "defence-stab": 91,
+																		    "defence-slash": 92,
+																		    "defence-crush": 74,
+																		    "defence-magic": 75,
+																		    "defence-ranged": 110
+  },
+  {
+    "id": 13809,
+    "name": "Tekton Platebody",
+    "low-alch": 116004,
+    "high-alch": 174006,
+    "base-value": 290010,
+    "street-value": 12337830,
+    "weight": 12.0,
+    "equipment-slot": "BODY",
+    "req-defence": 92,
+    "attack-stab": 5,
+    "attack-slash": 7,
+    "attack-crush": 7,
+    "attack-magic": -5,
+    "attack-ranged": 0,
+    "defence-stab": 189,
+    "defence-slash": 153,
+    "defence-crush": 125,
+    "defence-magic": -3,
+    "defence-ranged": 125,
+    "bonus-strength": 26,
+    "bonus-prayer": 25
+  },
+  
+    {
+    "id": 13810,
+    "name": "Tekton Plateskirt",
+    "low-alch": 116004,
+    "high-alch": 174006,
+    "base-value": 290010,
+    "street-value": 12337830,
+    "weight": 12.0,
+    "equipment-slot": "LEGS",
+    "req-defence": 65,
+"attack-magic": -10,
+																			    "attack-ranged": -2,
+																			    "defence-stab": 130,
+																			    "defence-slash": 145,
+																			    "defence-crush": 125,
+																			    "defence-magic": 0,
+																			    "defence-ranged": 205,
+																			    "bonus-strength": 30,
+																			    "bonus-prayer": 1,
+																			    "req-defence": 92
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+																	    "id": 13811,
+																	    "name": "Tekton Gloves", 
+																 	    "low-alch": 2, 
+																	    "high-alch": 3, 
+																	    "base-value": 5,
+																               "street-value": 18403, 
+																	    "equipment-slot": "GLOVES",
+																	    "weight": 4.0,
+																	    "req-defence": 70,
+																	    "attack-stab": 25,
+																	    "attack-slash": 27,
+																	    "attack-crush": 20,
+																	    "attack-magic": 20,
+																	    "attack-ranged": 8,
+																	    "defence-stab": 40,
+																	    "defence-slash": 36,
+																	    "defence-crush": 37,
+																	    "defence-magic": 39,
+																	    "defence-ranged": 39,
+																	    "bonus-strength": 90
+																	  },
+  
+  
+   {
+    "id": 13812,
+    "name": "Tekton boots",
+    "low-alch": 30000,
+    "high-alch": 45000,
+    "base-value": 75000,
+    "street-value": 22965900,
+    "weight": 1.0,
+    "equipment-slot": "BOOTS",
+    "req-defence": 75,
+    "req-strength": 75,
+    "attack-stab": 4,
+    "attack-slash": 4,
+    "attack-crush": 4,
+    "attack-magic": -2,
+    "attack-ranged": 0,
+    "defence-stab": 24,
+    "defence-slash": 24,
+    "defence-crush": 24,
+    "bonus-strength": 24
+  },
+  
+  
+  
+  
   {
     "id": 13715,
     "name": "Dark Karth Helm",
@@ -92000,6 +92143,17 @@
     "equipment-slot": "RING",
     "defence-crush": 8,
     "bonus-strength": 8
+  },
+   {
+    "id": 13813,
+    "tradeable": true,
+    "name": "Tekton's ring",
+    "low-alch": 4000,
+    "high-alch": 6000,
+    "base-value": 10000,
+    "equipment-slot": "RING",
+    "defence-crush": 16,
+    "bonus-strength": 12
   },
   {
     "id": 11774,

@@ -1338,61 +1338,61 @@
       {
         "id": 12897,
         "amount": 100,
-        "value": 10,
+        "value": 35,
         "type": "CLAN_POINTS"
       },
       {
         "id": 6854,
         "amount": 100,
-        "value": 250,
+        "value": 500,
         "type": "CLAN_POINTS"
       },
       {
         "id": 11188,
         "amount": 100,
-        "value": 25,
+        "value": 75,
         "type": "CLAN_POINTS"
       },
       {
         "id": 11189,
         "amount": 100,
-        "value": 35,
+        "value": 95,
         "type": "CLAN_POINTS"
       },
       {
         "id": 11679,
         "amount": 100,
-        "value": 50,
+        "value": 150,
         "type": "CLAN_POINTS"
       },
       {
         "id": 11187,
         "amount": 100,
-        "value": 50,
+        "value": 250,
         "type": "CLAN_POINTS"
       },
       {
         "id": 4447,
         "amount": 100,
-        "value": 90,
+        "value": 180,
         "type": "CLAN_POINTS"
       },
       {
         "id": 6543,
         "amount": 100,
-        "value": 50,
+        "value": 150,
         "type": "CLAN_POINTS"
       },
       {
         "id": 7498,
         "amount": 100,
-        "value": 75,
+        "value": 150,
         "type": "CLAN_POINTS"
       },
       {
         "id": 11137,
         "amount": 100,
-        "value": 100,
+        "value": 250,
         "type": "CLAN_POINTS"
       },
       {
@@ -1404,91 +1404,91 @@
       {
         "id": 15300,
         "amount": 100,
-        "value": 500,
+        "value": 1800,
         "type": "CLAN_POINTS"
       },
       {
         "id": 13652,
         "amount": 100,
-        "value": 800,
+        "value": 1800,
         "type": "CLAN_POINTS"
       },
       {
         "id": 11802,
         "amount": 100,
-        "value": 800,
+        "value": 1800,
         "type": "CLAN_POINTS"
       },
       {
         "id": 13576,
         "amount": 100,
-        "value": 650,
+        "value": 1800,
         "type": "CLAN_POINTS"
       },
       {
         "id": 11283,
         "amount": 100,
-        "value": 600,
+        "value": 1200,
         "type": "CLAN_POINTS"
       },
       {
         "id": 11840,
         "amount": 100,
-        "value": 300,
+        "value": 900,
         "type": "CLAN_POINTS"
       },
       {
         "id": 6585,
         "amount": 100,
-        "value": 300,
+        "value": 900,
         "type": "CLAN_POINTS"
       },
       {
         "id": 11834,
         "amount": 100,
-        "value": 950,
+        "value": 2500,
         "type": "CLAN_POINTS"
       },
       {
         "id": 11832,
         "amount": 100,
-        "value": 950,
+        "value": 2500,
         "type": "CLAN_POINTS"
       },
       {
         "id": 21015,
         "amount": 100,
-        "value": 975,
+        "value": 2500,
         "type": "CLAN_POINTS"
       },
       {
         "id": 13239,
         "amount": 100,
-        "value": 1000,
+        "value": 3000,
         "type": "CLAN_POINTS"
       },
       {
         "id": 22301,
         "amount": 100,
-        "value": 1000,
+        "value": 3000,
         "type": "CLAN_POINTS"
       },
       {
         "id": 22304,
         "amount": 100,
-        "value": 1000,
+        "value": 3000,
         "type": "CLAN_POINTS"
       },
       {
         "id": 22307,
         "amount": 100,
-        "value": 1000,
+        "value": 3000,
         "type": "CLAN_POINTS"
       },
       {
         "id": 21225,
         "amount": 100,
-        "value": 2500,
+        "value": 3500,
         "type": "CLAN_POINTS"
       }
     ]
@@ -4619,6 +4619,36 @@
                 "id": 13826,
                 "amount": 1000,
                 "value": 175000
+              },
+              {
+                "id": 13808,
+                "amount": 1000,
+                "value": 350000
+              },
+              {
+                "id": 13809,
+                "amount": 1000,
+                "value": 350000
+              },
+              {
+                "id": 13810,
+                "amount": 1000,
+                "value": 350000
+              },
+              {
+                "id": 13811,
+                "amount": 1000,
+                "value": 350000
+              },
+              {
+                "id": 13812,
+                "amount": 1000,
+                "value": 350000
+              },
+              {
+                "id": 13813,
+                "amount": 1000,
+                "value": 350000
               }
               ]
             },

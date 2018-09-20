@@ -32,7 +32,7 @@ public class SkotizoUtility {
 
 	public static void defeated(Npc skotizo, Player player) {
 		boolean hasClan = player.clanChannel != null;
-
+        
 		if (hasClan) {
 			player.clanChannel.getDetails().points += 5;
 			player.clanChannel.addExperience(10000);

@@ -1121,14 +1121,18 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			});
 			break;
 			
-		case 12260:
+		case 13619:
 			player.locking.lock();
 			player.send(new SendFadeScreen("Welcome to the All Vs One!", 1, 3));
-			World.sendMessage(player.getName() + " Was brave enough to take on All Vs One Minigame!");
+			World.sendMessage(player.getName() + " Was brave enough to take on All Vs One!");
 			World.schedule(5, () -> {
 				AllVsOne.create(player);
 				player.locking.unlock();
 			});
+			break;
+			
+		case 12260:
+				player.move(new Position(3169, 4958, 0));			
 			break;
 
 		/* Regular Bank */

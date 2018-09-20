@@ -9,6 +9,7 @@ import io.battlerune.game.Projectile;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
+import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;
 import io.battlerune.game.world.entity.combat.hit.Hit;
@@ -34,15 +35,13 @@ import io.battlerune.util.Utility;
  */
 public class GiantRoc extends MultiStrategy {
 	private static Magic MAGIC = new Magic();
-	private static LightingRain LIGHTNING_RAIN = new LightingRain();
 	private static TeleGrab TELE_GRAB = new TeleGrab();
 
 	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(NpcMeleeStrategy.get(), MAGIC,
-			TELE_GRAB, LIGHTNING_RAIN);
-	private static final CombatStrategy<Npc>[] MAGIC_STRATEGIES = createStrategyArray(MAGIC, MAGIC, MAGIC, TELE_GRAB,
-			LIGHTNING_RAIN);
+			TELE_GRAB);
+	private static final CombatStrategy<Npc>[] MAGIC_STRATEGIES = createStrategyArray(MAGIC, MAGIC, MAGIC, TELE_GRAB);
 	private static final CombatStrategy<Npc>[] NON_MELEE = createStrategyArray(MAGIC, MAGIC, MAGIC, MAGIC,
-			TELE_GRAB, LIGHTNING_RAIN);
+			TELE_GRAB);
 
 	private static final String[] SHOUTS = { "The Cold Winds are Rising!", "Darkness and death marches upon gilenor!" };
 
@@ -60,30 +59,6 @@ public class GiantRoc extends MultiStrategy {
 		return currentStrategy.canAttack(attacker, defender);
 	}
 
-	@Override
-	public void block(Mob attacker, Npc defender, Hit hit, CombatType combatType) {
-		currentStrategy.block(attacker, defender, hit, combatType);
-		defender.getCombat().attack(attacker);
-
-		if (!defender.getCombat().isAttacking()) {
-			defender.animate(new Animation(5023, UpdatePriority.VERY_HIGH));
-			defender.graphic(1196);
-			defender.graphic(481);
-
-			RegionManager.forNearbyPlayer(attacker, 20, other -> {
-				if (RandomUtils.success(.65))
-					return;
-
-				World.schedule(2, () -> {
-					Position destination = Utility.randomElement(defender.boundaries);
-					World.sendGraphic(new Graphic(481), destination);
-					other.move(destination);
-					other.message("Giant Roc has moved you around!");
-
-				});
-			});
-		}
-	}
 
 	@Override
 	public void finishOutgoing(Npc attacker, Mob defender) {
@@ -118,11 +93,11 @@ public class GiantRoc extends MultiStrategy {
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
 			Projectile projectile = new Projectile(1198, 50, 80, 85, 25);
 			attacker.animate(new Animation(5023, UpdatePriority.VERY_HIGH));
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
 				if (Utility.random(0, 3) == 2)
 					attacker.speak(Utility.randomElement(SHOUTS));
-				projectile.send(attacker, other);
-				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
+				projectile.send(attacker, defender);
+				mob.damage(nextMagicHit(attacker, defender, 35));
 			});
 		}
 
@@ -156,58 +131,14 @@ public class GiantRoc extends MultiStrategy {
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
 			Projectile projectile = new Projectile(1198, 50, 80, 85, 25);
 			attacker.animate(new Animation(5023, UpdatePriority.VERY_HIGH));
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
 				if (Utility.random(0, 3) == 2)
 					attacker.speak(Utility.randomElement(SHOUTS));
-				projectile.send(attacker, other);
-				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
+				projectile.send(attacker, defender);
+				mob.damage(nextMagicHit(attacker, defender, 35));
 			});
 		}
 		
-
-		@Override
-		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			CombatHit hit = nextMagicHit(attacker, defender, 38);
-			hit.setAccurate(false);
-			return new CombatHit[] { hit };
-		}
-	}
-
-	private static class LightingRain extends NpcMagicStrategy {
-		LightingRain() {
-			super(CombatProjectile.getDefinition("Vet'ion"));
-		}
-
-		@Override
-		public void hit(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void attack(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void start(Npc attacker, Mob defender, Hit[] hits) {
-			attacker.animate(new Animation(5023, UpdatePriority.VERY_HIGH));
-			attacker.speak("YOU WILL NOW FEEL THE TRUE WRATH OF Giant Roc!");
-
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				if (Utility.random(0, 3) == 2)
-					attacker.speak(Utility.randomElement(SHOUTS));
-				Position position = other.getPosition();
-				combatProjectile.getProjectile()
-						.ifPresent(projectile -> World.sendProjectile(attacker, position, projectile));
-
-				World.schedule(2, () -> {
-					World.sendGraphic(new Graphic(775), position);
-					if (other.getPosition().equals(position)) {
-						other.damage(new Hit(Utility.random(20, 50)));
-						other.speak("OUCH!");
-						other.message("Giant Roc has just electrocuted your entire body! Don't stay in one spot!");
-					}
-				});
-			});
-		}
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {

@@ -40,9 +40,7 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			player.inventory.remove(21813, 1);
 			break;
 		case 7775:
-			player.setAllVsOnePoints(player.getAllVsOnePoints() + 1);
-			player.message("<img=12>You now have @red@" + player.getAllVsOnePoints() + " All Vs One Points!");
-			player.inventory.remove(7775, 1);
+			player.message("To use these points, speak to Davey the thot");
 			break;
 		case 21810:
 			player.pkPoints += 20;

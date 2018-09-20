@@ -184,14 +184,14 @@ public class Vetion extends MultiStrategy {
 
 		@Override
 		public void hit(Npc attacker, Mob defender, Hit hit) {
-			RegionManager.forNearbyPlayer(defender, 11, player -> {
-				player.send(new SendMessage(
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
+				attacker.getPlayer().send(new SendMessage(
 						"Vet'ion pummels the ground sending a shattering earthquake shockwave through you."));
-				if (player.equals(defender)) {
+				if (attacker.equals(defender)) {
 					hit.setDamage(25 + RandomUtils.inclusive(20));
 					return;
 				}
-				player.damage(new Hit(25 + RandomUtils.inclusive(20), HitIcon.MELEE));
+				attacker.damage(new Hit(25 + RandomUtils.inclusive(20), HitIcon.MELEE));
 			});
 		}
 

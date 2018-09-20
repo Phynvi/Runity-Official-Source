@@ -10,6 +10,7 @@ import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.task.impl.ForceMovementTask;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
+import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;
 import io.battlerune.game.world.entity.combat.hit.Hit;
@@ -77,14 +78,14 @@ public class Justiciar extends MultiStrategy {
 			defender.prayer.deactivate(Prayer.PROTECT_FROM_MAGIC, Prayer.PROTECT_FROM_MELEE, Prayer.PROTECT_FROM_RANGE);
 			defender.getPlayer().send(new SendMessage("Your overhead prayers have been disabled!"));
 
-			RegionManager.forNearbyPlayer(attacker, 20, other -> {
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
 				if (RandomUtils.success(.65))
 					return;
 
 				World.schedule(2, () -> {
 					Position destination = Utility.randomElement(defender.boundaries);
 					World.sendGraphic(new Graphic(481), destination);
-					other.move(destination);
+					attacker.move(destination);
 
 				});
 			});
@@ -127,9 +128,9 @@ public class Justiciar extends MultiStrategy {
 			Projectile projectile = new Projectile(162, 50, 80, 85, 25);
 			CombatHit hit = nextMeleeHit(attacker, defender, 21);
 			defender.graphic(163);
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				projectile.send(attacker, other);
-				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
+				projectile.send(attacker, defender);
+				mob.damage(nextMagicHit(attacker, defender, 35));
 			});
 
 			/*
@@ -175,10 +176,10 @@ public class Justiciar extends MultiStrategy {
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
 			Projectile projectile = new Projectile(393, 50, 80, 85, 25);
 			attacker.animate(new Animation(7853, UpdatePriority.VERY_HIGH));
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				projectile.send(attacker, other);
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
+				projectile.send(attacker, defender);
 				defender.graphic(157);
-				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
+				mob.damage(nextMagicHit(attacker, defender, 35));
 
 			});
 
@@ -235,12 +236,12 @@ public class Justiciar extends MultiStrategy {
 			int scheduleMove = 1;
 			int moveplayers = Utility.random(scheduleMove, 7);
 			if (scheduleMove == moveplayers) {
-				RegionManager.forNearbyPlayer(attacker, 16, other -> World.schedule(1, () -> {
+				CombatUtil.areaAction(attacker, 64, 18, mob -> {
 					Position destination = Utility.randomElement(attacker.boundaries);
 					World.sendGraphic(new Graphic(190), destination);
-					other.move(destination);
-					other.message("Justiciar Moved you!.");
-				}));
+					attacker.move(destination);
+					attacker.getPlayer().message("Justiciar Moved you!.");
+				});
 			}
 		}
 

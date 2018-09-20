@@ -10,6 +10,7 @@ import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.task.impl.ForceMovementTask;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
+import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;
 import io.battlerune.game.world.entity.combat.hit.Hit;
@@ -64,33 +65,6 @@ public class Derwen extends MultiStrategy {
 		return currentStrategy.canAttack(attacker, defender);
 	}
 
-	@Override
-	public void block(Mob attacker, Npc defender, Hit hit, CombatType combatType) {
-		currentStrategy.block(attacker, defender, hit, combatType);
-		defender.getCombat().attack(attacker);
-
-		if (!defender.getCombat().isAttacking()) {
-			defender.animate(new Animation(7848, UpdatePriority.VERY_HIGH));
-			defender.graphic(1196);
-			defender.graphic(481);
-			if (Utility.random(1, 7) == 2) {
-				defender.prayer.deactivate(Prayer.PROTECT_FROM_MAGIC, Prayer.PROTECT_FROM_MELEE,
-						Prayer.PROTECT_FROM_RANGE);
-				defender.getPlayer().send(new SendMessage("Your overhead prayers have been disabled!"));
-			}
-			RegionManager.forNearbyPlayer(attacker, 20, other -> {
-				if (RandomUtils.success(.65))
-					return;
-
-				World.schedule(2, () -> {
-					Position destination = Utility.randomElement(defender.boundaries);
-					World.sendGraphic(new Graphic(481), destination);
-					other.move(destination);
-
-				});
-			});
-		}
-	}
 
 	@Override
 	public void finishOutgoing(Npc attacker, Mob defender) {
@@ -127,8 +101,8 @@ public class Derwen extends MultiStrategy {
 			attacker.animate(new Animation(7848, UpdatePriority.VERY_HIGH));
 			CombatHit hit = nextMeleeHit(attacker, defender, 21);
 			defender.graphic(1176);
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
+				mob.damage(nextMagicHit(attacker, defender, 38));
 			});
 
 		}
@@ -165,10 +139,10 @@ public class Derwen extends MultiStrategy {
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
 			attacker.animate(new Animation(7849, UpdatePriority.VERY_HIGH));
 			Projectile projectile = new Projectile(1379, 50, 80, 85, 25);
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				projectile.send(attacker, other);
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
+				projectile.send(attacker, defender);
 				defender.graphic(157);
-				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
+				mob.damage(nextMagicHit(attacker, defender, 35));
 
 			});
 
@@ -209,31 +183,6 @@ public class Derwen extends MultiStrategy {
 
 		@Override
 		public void attack(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void start(Npc attacker, Mob defender, Hit[] hits) {
-
-			int disarmattack = 1;
-			int disaramattackrandom = Utility.random(disarmattack, 5);
-			if (disaramattackrandom == disarmattack) {
-				attacker.animate(new Animation(7849, UpdatePriority.VERY_HIGH));
-				Projectile projectile = new Projectile(551, 50, 80, 85, 25);
-				projectile.send(attacker, defender);
-				attacker.graphic(971);
-				defender.damage(new Hit(Utility.random(20, 50)));
-				attacker.speak("I AM ZAMORAKS SERVANT!!");
-			}
-			int scheduleMove = 1;
-			int moveplayers = Utility.random(scheduleMove, 7);
-			if (scheduleMove == moveplayers) {
-				RegionManager.forNearbyPlayer(attacker, 16, other -> World.schedule(1, () -> {
-					Position destination = Utility.randomElement(attacker.boundaries);
-					World.sendGraphic(new Graphic(481), destination);
-					other.move(destination);
-					other.message("Derwen Moved you!.");
-				}));
-			}
 		}
 
 		@Override

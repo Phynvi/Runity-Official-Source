@@ -25,7 +25,7 @@ public class GodCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		return true;
+		return PlayerRight.isDeveloper(player);
 	}
 
 }

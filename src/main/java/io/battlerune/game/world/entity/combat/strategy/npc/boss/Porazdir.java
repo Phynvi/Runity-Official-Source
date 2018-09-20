@@ -10,6 +10,7 @@ import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.task.impl.ForceMovementTask;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
+import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;
 import io.battlerune.game.world.entity.combat.hit.Hit;
@@ -78,14 +79,14 @@ public class Porazdir extends MultiStrategy {
 						Prayer.PROTECT_FROM_RANGE);
 				defender.getPlayer().send(new SendMessage("Your overhead prayers have been disabled!"));
 			}
-			RegionManager.forNearbyPlayer(attacker, 20, other -> {
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
 				if (RandomUtils.success(.65))
 					return;
 
 				World.schedule(2, () -> {
 					Position destination = Utility.randomElement(defender.boundaries);
 					World.sendGraphic(new Graphic(481), destination);
-					other.move(destination);
+					attacker.move(destination);
 
 				});
 			});
@@ -127,8 +128,8 @@ public class Porazdir extends MultiStrategy {
 			attacker.animate(new Animation(7840, UpdatePriority.VERY_HIGH));
 			CombatHit hit = nextMeleeHit(attacker, defender, 21);
 			defender.graphic(1176);
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
+				mob.damage(nextMagicHit(attacker, defender, 38));
 			});
 
 		}
@@ -165,10 +166,10 @@ public class Porazdir extends MultiStrategy {
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
 			Projectile projectile = new Projectile(1378, 50, 80, 85, 25);
 			attacker.animate(new Animation(7841, UpdatePriority.VERY_HIGH));
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				projectile.send(attacker, other);
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
+				projectile.send(attacker, defender);
 				defender.graphic(157);
-				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
+				mob.damage(nextMagicHit(attacker, defender, 35));
 
 			});
 
@@ -209,30 +210,6 @@ public class Porazdir extends MultiStrategy {
 
 		@Override
 		public void attack(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void start(Npc attacker, Mob defender, Hit[] hits) {
-
-			int disarmattack = 1;
-			int disaramattackrandom = Utility.random(disarmattack, 5);
-			if (disaramattackrandom == disarmattack) {
-				attacker.animate(new Animation(7842, UpdatePriority.VERY_HIGH));
-				Projectile projectile = new Projectile(1380, 50, 80, 85, 25);
-				projectile.send(attacker, defender);
-				defender.damage(new Hit(Utility.random(20, 50)));
-				attacker.speak("I AM ZAMORAKS SERVANT!!");
-			}
-			int scheduleMove = 1;
-			int moveplayers = Utility.random(scheduleMove, 7);
-			if (scheduleMove == moveplayers) {
-				RegionManager.forNearbyPlayer(attacker, 16, other -> World.schedule(1, () -> {
-					Position destination = Utility.randomElement(attacker.boundaries);
-					World.sendGraphic(new Graphic(481), destination);
-					other.move(destination);
-					other.message("Porazdir Moved you!.");
-				}));
-			}
 		}
 
 		@Override

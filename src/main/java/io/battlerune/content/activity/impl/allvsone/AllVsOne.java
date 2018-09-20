@@ -142,8 +142,8 @@ public class AllVsOne extends Activity {
 					"Please accept this gift, young thug.").execute();
 			rewards += 10000;
 			//player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
-			player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
-			player.message("<img=12>You now have @red@" + player.getAllVsOnePoints() + " All Vs One Points!");
+            player.inventory.addOrDrop(new Item(7775, rewards));
+    		player.message("<img=9>You now have @red@" + rewards + " All Vs One Tickets!");
 			if(Utility.random(1, 3) == 3) {
 			player.inventory.addOrDrop(new Item(20211));
 			}
@@ -157,8 +157,8 @@ public class AllVsOne extends Activity {
 
 		if (rewards <= 0)
 			rewards = 1;
-		player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
-		player.message("<img=12>You now have @red@" + player.getAllVsOnePoints() + " All Vs One Points!");
+        player.inventory.addOrDrop(new Item(7775, rewards));
+		player.message("<img=9>You now have @red@" + rewards + " All Vs One Tickets!");
 		player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();
 	}
 

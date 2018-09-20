@@ -25,8 +25,8 @@ public enum Teleport {
 			true, "A level of 130 (strength + attack) is needed", ""),
 	KOLODIONS_ARENA("Kolodion's Arena", TeleportType.MINIGAMES, new Position(2540, 4717, 0), false,
 			new int[] { 6918, 6916, 6924 }, true, "You will be teleported in a safe area", ""),
-	FREE_FOR_ALL("Free For All", TeleportType.MINIGAMES, new Position(3296, 5004, 0), false,
-			new int[] { -1, -1, -1 }, false, "You will be teleported to FFA", ""),
+/*	FREE_FOR_ALL("Free For All", TeleportType.MINIGAMES, new Position(3296, 5004, 0), false,
+			new int[] { -1, -1, -1 }, false, "You will be teleported to FFA", ""),*/
 
 	/* Skilling */
 	AGILITY("Agility", TeleportType.SKILLING, new Position(3293, 3182, 0), true, new int[] { 9773, 9771, 9772 }, true,

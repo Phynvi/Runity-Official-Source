@@ -9,6 +9,7 @@ import io.battlerune.game.Projectile;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.CombatType;
+import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;
 import io.battlerune.game.world.entity.combat.hit.Hit;
@@ -34,13 +35,9 @@ import io.battlerune.util.Utility;
  */
 public class Arena extends MultiStrategy {
 	private static Magic MAGIC = new Magic();
-	private static LightingRain LIGHTNING_RAIN = new LightingRain();
-	private static TeleGrab TELE_GRAB = new TeleGrab();
 
-	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(NpcMeleeStrategy.get(), MAGIC,
-			TELE_GRAB, LIGHTNING_RAIN);
-	private static final CombatStrategy<Npc>[] MAGIC_STRATEGIES = createStrategyArray(MAGIC, MAGIC, MAGIC, TELE_GRAB,
-			LIGHTNING_RAIN);
+	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(NpcMeleeStrategy.get(), MAGIC);
+	private static final CombatStrategy<Npc>[] MAGIC_STRATEGIES = createStrategyArray(MAGIC, MAGIC, MAGIC);
 
 	private static final String[] SHOUTS = { "Feel the wrath of Glod!", "The dark times have come for you all!" };
 
@@ -57,29 +54,6 @@ public class Arena extends MultiStrategy {
 		return currentStrategy.canAttack(attacker, defender);
 	}
 
-	@Override
-	public void block(Mob attacker, Npc defender, Hit hit, CombatType combatType) {
-		currentStrategy.block(attacker, defender, hit, combatType);
-		defender.getCombat().attack(attacker);
-
-		if (!defender.getCombat().isAttacking()) {
-			defender.animate(new Animation(6501, UpdatePriority.VERY_HIGH));
-			defender.graphic(481);
-			defender.speak("ARHHHH! TIME TO SWITCH IT UP!!");
-
-			RegionManager.forNearbyPlayer(attacker, 20, other -> {
-				if (RandomUtils.success(.65))
-					return;
-
-				World.schedule(2, () -> {
-					Position destination = Utility.randomElement(defender.boundaries);
-					World.sendGraphic(new Graphic(481), destination);
-					other.move(destination);
-					other.message("Glod has moved you around!");
-				});
-			});
-		}
-	}
 
 	@Override
 	public void finishOutgoing(Npc attacker, Mob defender) {
@@ -117,27 +91,13 @@ public class Arena extends MultiStrategy {
 
 			Projectile projectile = new Projectile(1028, 50, 80, 85, 25);
 			attacker.animate(new Animation(6501, UpdatePriority.VERY_HIGH));
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				projectile.send(attacker, other);
-				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
+			CombatUtil.areaAction(attacker, 64, 18, mob -> {
+				projectile.send(attacker, defender);
+				mob.damage(nextMagicHit(attacker, defender, Utility.random(15, 38)));
 			});
 
 			if (Utility.random(0, 2) == 1)
 				attacker.speak(Utility.randomElement(SHOUTS));
-			if (defender.isPlayer() && disaramattackrandom == disarmattack) {
-				Player player = defender.getPlayer();
-				Item[] equipment = player.equipment.toNonNullArray();
-				if (equipment.length == 0)
-					return;
-				Item disarm = Utility.randomElement(equipment);
-				if (disarm == null)
-					return;
-				player.equipment.unEquip(disarm);
-				player.send(new SendMessage("Glod has removed your "
-						+ Utility.formatName(disarm.getEquipmentType().name().toLowerCase()) + " check your inventory or floor."));
-				player.graphic(new Graphic(785, true, UpdatePriority.HIGH));
-
-			}
 		}
 
 		@Override
@@ -153,32 +113,6 @@ public class Arena extends MultiStrategy {
 		}
 	}
 
-	private static class TeleGrab extends NpcMagicStrategy {
-		TeleGrab() {
-			super(CombatProjectile.getDefinition("EMPTY"));
-		}
-
-		@Override
-		public void hit(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void attack(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void start(Npc attacker, Mob defender, Hit[] hits) {
-			attacker.animate(new Animation(6501, UpdatePriority.VERY_HIGH));
-			attacker.graphic(481);
-			attacker.speak("ARHHHH! TIME TO SWITCH IT UP!!");
-
-			RegionManager.forNearbyPlayer(attacker, 16, other -> World.schedule(1, () -> {
-				Position destination = Utility.randomElement(attacker.boundaries);
-				World.sendGraphic(new Graphic(481), destination);
-				other.move(destination);
-				other.message("Glod has moved you around!");
-			}));
-		}
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
@@ -188,45 +122,3 @@ public class Arena extends MultiStrategy {
 		}
 	}
 
-	private static class LightingRain extends NpcMagicStrategy {
-		LightingRain() {
-			super(CombatProjectile.getDefinition("Vet'ion"));
-		}
-
-		@Override
-		public void hit(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void attack(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void start(Npc attacker, Mob defender, Hit[] hits) {
-			attacker.animate(new Animation(6501, UpdatePriority.VERY_HIGH));
-			attacker.speak("YOU WILL NOW FEEL THE TRUE WRATH OF Arena!");
-
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				Position position = other.getPosition();
-				combatProjectile.getProjectile()
-						.ifPresent(projectile -> World.sendProjectile(attacker, position, projectile));
-
-				World.schedule(2, () -> {
-					World.sendGraphic(new Graphic(775), position);
-					if (other.getPosition().equals(position)) {
-						other.damage(new Hit(Utility.random(20, 50)));
-						other.speak("OUCH!");
-						other.message("Glod has just electrocuted your entire body! Don't stay in one spot!");
-					}
-				});
-			});
-		}
-
-		@Override
-		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			CombatHit hit = nextMagicHit(attacker, defender, 38);
-			hit.setAccurate(false);
-			return new CombatHit[] { hit };
-		}
-	}
-}
