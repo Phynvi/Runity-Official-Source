@@ -74,7 +74,7 @@ public class Porazdir extends MultiStrategy {
 			defender.animate(new Animation(7843, UpdatePriority.VERY_HIGH));
 			defender.graphic(1196);
 			defender.graphic(481);
-			if (Utility.random(1, 7) == 2) {
+			if (Utility.random(1, 25) == 2) {
 				defender.prayer.deactivate(Prayer.PROTECT_FROM_MAGIC, Prayer.PROTECT_FROM_MELEE,
 						Prayer.PROTECT_FROM_RANGE);
 				defender.getPlayer().send(new SendMessage("Your overhead prayers have been disabled!"));
@@ -173,8 +173,6 @@ public class Porazdir extends MultiStrategy {
 
 			});
 
-			defender.prayer.deactivate(Prayer.PROTECT_FROM_MAGIC, Prayer.PROTECT_FROM_MELEE, Prayer.PROTECT_FROM_RANGE);
-			defender.getPlayer().send(new SendMessage("Your overhead prayers have been disabled!"));
 			if (Utility.random(0, 10) == 1) {
 				attacker.animate(new Animation(7849, UpdatePriority.VERY_HIGH));
 				attacker.graphic(new Graphic(1296, UpdatePriority.VERY_HIGH));

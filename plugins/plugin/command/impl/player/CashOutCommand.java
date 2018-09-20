@@ -14,7 +14,9 @@ public class CashOutCommand implements Command {
 	@Override
 	public void execute(Player player, String command, String[] parts) {
 		
-		AllVsOne.create(player);
+		player.message("You can now use the portal in edgeville, it will take to you the...");
+		player.message("All vs one minigame, then enter the ardogune portal to initiate it!");
+		//AllVsOne.create(player);
 	/*	World.sendStaffMessage(
 				"[CASHOUT] " + player.getName() + "Would Like to Cash out! If you're a moderator+ Teleport to him!");
 		World.sendStaffMessage("[CASHOUT] " + "They are only allowed to Cash out Pins, and NOTHING ELSE!");

@@ -9,7 +9,6 @@ import io.battlerune.game.Projectile;
 import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.task.impl.ForceMovementTask;
 import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.combat.CombatType;
 import io.battlerune.game.world.entity.combat.CombatUtil;
 import io.battlerune.game.world.entity.combat.attack.FightType;
 import io.battlerune.game.world.entity.combat.hit.CombatHit;
@@ -24,12 +23,9 @@ import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.ForceMovement;
-import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.game.world.pathfinding.path.SimplePathChecker;
 import io.battlerune.game.world.position.Position;
-import io.battlerune.game.world.region.RegionManager;
 import io.battlerune.net.packet.out.SendMessage;
-import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 /**
@@ -146,9 +142,7 @@ public class Derwen extends MultiStrategy {
 
 			});
 
-			defender.prayer.deactivate(Prayer.PROTECT_FROM_MAGIC, Prayer.PROTECT_FROM_MELEE, Prayer.PROTECT_FROM_RANGE);
-			defender.getPlayer().send(new SendMessage("Your overhead prayers have been disabled!"));
-			if (Utility.random(0, 10) == 1) {
+			if (Utility.random(0, 25) == 1) {
 				attacker.animate(new Animation(7849, UpdatePriority.VERY_HIGH));
 				attacker.graphic(new Graphic(1296, UpdatePriority.VERY_HIGH));
 				attacker.heal(130);
