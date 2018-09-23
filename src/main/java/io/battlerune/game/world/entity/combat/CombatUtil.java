@@ -39,7 +39,6 @@ import io.battlerune.util.Utility;
  *
  * @author lare96 <http://github.com/lare96>
  */
-
 public final class CombatUtil {
 
 	/**
