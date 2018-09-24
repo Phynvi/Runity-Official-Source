@@ -8,6 +8,7 @@ import io.battlerune.game.world.entity.combat.attack.listener.SimplifiedListener
 import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
+import io.battlerune.util.Utility;
 
 /**
  * Handles the Default armour effects, which if steals 10% of the mob's life for
@@ -48,22 +49,13 @@ public class DefaultCustomListener extends SimplifiedListener<Mob> {
 	
 public int healingGraphic = 398; //1296
 
-public void method(Mob attacker) {
-	for (Prayer prayer : Prayer.values()) {
-		prayer.setdrainRate(prayer.getDrainRate() / 2);
-	}
-}
 
 @Override
 public void hit(Mob attacker, Mob defender, Hit hit) {
-	if (Math.random() > 0.25) {
-		attacker.heal(hit.getDamage() / 5);
+	if (Utility.random(1, 10) <= 2) {
+		attacker.heal(hit.getDamage() / 10);
 		attacker.graphic(new Graphic(healingGraphic, UpdatePriority.HIGH));
 	}
 }
 
-@Override
-public void block(Mob attacker, Mob defender, Hit hit, CombatType combatType) {
-	method(attacker);
-}
 }

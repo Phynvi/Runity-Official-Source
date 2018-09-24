@@ -59865,6 +59865,7 @@
 	    "defence-slash": 19,
 	    "defence-crush": 18,
 	    "defence-magic": -1,
+	    																				    "bonus-strength": 23,
 	    "defence-ranged": 18
 	  },
   {
@@ -79753,6 +79754,7 @@
 	    "defence-slash": 32,
 	    "defence-crush": 27,
 	    "defence-magic": -1,
+	    "bonus-strength": 22,
 	    "defence-ranged": 30
 	  },
   {
@@ -85361,15 +85363,18 @@
 			    "base-value": 43000000,
 	    "street-value": 43487,
 	    "weight": 9.9,
-	    "equipment-slot": "BODY",
-	    "req-defence": 40,
-	    "attack-magic": -30,
-	    "attack-ranged": -10,
-	    "defence-stab": 82,
-	    "defence-slash": 80,
-	    "defence-crush": 72,
-	    "defence-magic": -6,
-	    "defence-ranged": 80
+																				    "equipment-slot": "BODY",
+																				    "weight": 4.0,
+																				    "attack-magic": -5,
+																				    "attack-ranged": -5,
+																				    "defence-stab": 158,
+																				    "defence-slash": 163,
+																				    "defence-crush": 155,
+																				    "defence-magic": 0,
+																				    "defence-ranged": 203,
+																				    "bonus-strength": 22,
+																				    "bonus-prayer": 35,
+																				    "req-defence": 92
 	  },
   {
     "id": 10798,
@@ -85817,6 +85822,8 @@
 																		    "defence-slash": 92,
 																		    "defence-crush": 74,
 																		    "defence-magic": 75,
+																		        "bonus-strength": 35,
+																		    
 																		    "defence-ranged": 110
   },
   {
@@ -85839,7 +85846,7 @@
     "defence-crush": 125,
     "defence-magic": -3,
     "defence-ranged": 125,
-    "bonus-strength": 26,
+    "bonus-strength": 40,
     "bonus-prayer": 25
   },
   
@@ -85860,7 +85867,7 @@
 																			    "defence-crush": 125,
 																			    "defence-magic": 0,
 																			    "defence-ranged": 205,
-																			    "bonus-strength": 30,
+																			    "bonus-strength": 36,
 																			    "bonus-prayer": 1,
 																			    "req-defence": 92
   },
@@ -85893,7 +85900,7 @@
 																	    "defence-crush": 37,
 																	    "defence-magic": 39,
 																	    "defence-ranged": 39,
-																	    "bonus-strength": 90
+																	    "bonus-strength": 6
 																	  },
   
   
@@ -85916,7 +85923,7 @@
     "defence-stab": 24,
     "defence-slash": 24,
     "defence-crush": 24,
-    "bonus-strength": 24
+    "bonus-strength": 8
   },
   
   
@@ -85939,6 +85946,8 @@
 																		    "defence-slash": 89,
 																		    "defence-crush": 72,
 																		    "defence-magic": 70,
+																		        "bonus-strength": 40,
+																		    
 																		    "defence-ranged": 105
   },
   {
@@ -85961,7 +85970,7 @@
     "defence-crush": 177,
     "defence-magic": -3,
     "defence-ranged": 250,
-    "bonus-strength": 43,
+    "bonus-strength": 50,
     "bonus-prayer": 25
   },
   {
@@ -86032,7 +86041,7 @@
     "defence-crush": 102,
     "defence-magic": 15,
     "defence-ranged": 92,
-    "bonus-strength": 7
+    "bonus-strength": 30
   },
   {
     "id": 13710,
@@ -86051,7 +86060,7 @@
 																			    "defence-crush": 130,
 																			    "defence-magic": 0,
 																			    "defence-ranged": 306,
-																			    "bonus-strength": 56,
+																			    "bonus-strength": 55,
 																			    "bonus-prayer": 1,
 																			    "req-defence": 92
   },
@@ -92153,7 +92162,7 @@
     "base-value": 10000,
     "equipment-slot": "RING",
     "defence-crush": 16,
-    "bonus-strength": 12
+    "bonus-strength": 24
   },
   {
     "id": 11774,
@@ -92515,7 +92524,7 @@
 	  "defence-crush": 146,
 	  "defence-magic": 30,
 	  "defence-ranged": 0,
-	  "bonus-strength": 140,  
+	  "bonus-strength": 38,  
 	  "bonus-ranged": 30,  
 	  "bonus-prayer": 0,
 	  "bonus-magic": 2
@@ -92540,7 +92549,7 @@
 	  "defence-crush": 168,
 	  "defence-magic": -6,
 	  "defence-ranged": -10,
-	  "bonus-strength": 160,  
+	  "bonus-strength": 65,  
 	  "bonus-prayer": 0,
 	  "bonus-magic": 2 
 
@@ -92565,7 +92574,7 @@
 	  "defence-crush": 96,
 	  "defence-magic": -5,
 	  "defence-ranged": 40,
-	  "bonus-strength": 160,  
+	  "bonus-strength": 55,  
 	  "bonus-prayer": 0,
 	  "bonus-magic": 0 
 	    },
@@ -92900,7 +92909,7 @@
     "low-alch": 40002,
     "high-alch": 60003,
     "base-value": 100005,
-    "street-value": 7735471,
+    "street-value": 3735471,
     "weight": 3.0,
     "stand-animation": 1662,
     "walk-animation": 1663,
@@ -92926,7 +92935,7 @@
     "low-alch": 40002,
     "high-alch": 60003,
     "base-value": 100005,
-    "street-value": 7735471,
+    "street-value": 3735471,
     "weight": 3.0
   },
   {
@@ -92936,7 +92945,7 @@
     "low-alch": 115600,
     "high-alch": 173400,
     "base-value": 289000,
-    "street-value": 1711262,
+    "street-value": 1211262,
     "weight": 1.0,
     "equipment-slot": "HELM",
     "req-defence": 70,
@@ -102653,7 +102662,7 @@
   },
   {
     "id": 12789,
-    "name": "Clue box",
+    "name": "Stater box V2",
     "noted-id": 12790,
     "low-alch": 4,
     "high-alch": 6,
@@ -114458,7 +114467,7 @@
 "defence-crush": 130,
 "defence-magic": 20,
 "defence-ranged": 0,
-"bonus-strength": 130,  
+"bonus-strength": 15,  
 "bonus-prayer": 0,
 "bonus-magic": 2 
 },
@@ -114482,7 +114491,7 @@
 "defence-crush": 162,
 "defence-magic": -6,
 "defence-ranged": -10,
-"bonus-strength": 155,  
+"bonus-strength": 25,  
 "bonus-prayer": 8,
 "bonus-magic": 1 
   },
@@ -114506,7 +114515,7 @@
 "defence-crush": 45,
 "defence-magic": -14,
 "defence-ranged": 52,
-"bonus-strength": 20,
+"bonus-strength": 27,
 "bonus-prayer": 10,
 "bonus-magic": 0 
   },
@@ -114532,7 +114541,7 @@
 "defence-crush": 12,
 "defence-magic": 12,
 "defence-ranged": 14,
-"bonus-strength": 10,  
+"bonus-strength": 15,  
 "bonus-prayer": 6,
 "bonus-magic": 0 
 
@@ -114569,9 +114578,64 @@
 "defence-crush": 20,
 "defence-magic": 20,
 "defence-ranged": 20,
-"bonus-strength": 5,
+"bonus-strength": 30,
 "bonus-prayer": 10,
 "bonus-magic": 0 
+  },
+    {
+    "id": 20048,
+    "name": "Samurai boots",
+    "stackable": true,
+    "unnoted-id": 20047,
+    "low-alch": 1800,
+    "high-alch": 2700,
+    "base-value": 4500,
+    "street-value": 1094864,
+    "weight": 0.9
+  },
+    {
+    "id": 20045,
+    "name": "Samurai greaves",
+    "stackable": true,
+    "unnoted-id": 20044,
+    "low-alch": 1280,
+    "high-alch": 1920,
+    "base-value": 3200,
+    "street-value": 1799118,
+    "weight": 1.5
+  },
+    {
+    "id": 20042,
+    "name": "Samurai gloves",
+    "stackable": true,
+    "unnoted-id": 20041,
+    "low-alch": 1280,
+    "high-alch": 1920,
+    "base-value": 3200,
+    "street-value": 1154485,
+    "weight": 0.4
+  },
+    {
+    "id": 20039,
+    "name": "Samurai shirt",
+    "stackable": true,
+    "unnoted-id": 20038,
+    "low-alch": 2800,
+    "high-alch": 4200,
+    "base-value": 7000,
+    "street-value": 1701512,
+    "weight": 2.0
+  },
+    {
+    "id": 20036,
+    "name": "Samurai kasa",
+    "stackable": true,
+    "unnoted-id": 20035,
+    "low-alch": 1600,
+    "high-alch": 2400,
+    "base-value": 4000,
+    "street-value": 1380858,
+    "weight": 0.6
   },
 
   {
@@ -117012,14 +117076,17 @@
 			    "base-value": 43000000,
 	    "street-value": 41181,
 	    "weight": 9.0,
-	    "equipment-slot": "LEGS",
-	    "attack-magic": -21,
-	    "attack-ranged": -7,
-	    "defence-stab": 51,
-	    "defence-slash": 49,
-	    "defence-crush": 47,
-	    "defence-magic": -4,
-	    "defence-ranged": 49
+																		    "equipment-slot": "LEGS",
+																			    "attack-magic": -10,
+																			    "attack-ranged": -2,
+																			    "defence-stab": 150,
+																			    "defence-slash": 145,
+																			    "defence-crush": 80,
+																			    "defence-magic": 0,
+																			    "defence-ranged": 256,
+																			    "bonus-strength": 25,
+																			    "bonus-prayer": 1,
+																			    "req-defence": 92
 	  },
   {
     "id": 20422,
@@ -117166,7 +117233,18 @@
 			    "base-value": 43000000,
 	    "street-value": 578320,
 	    "weight": 0.25,
-	    "equipment-slot": "BOOTS"
+	    "equipment-slot": "BOOTS",
+	        "req-defence": 75,
+    "req-strength": 75,
+    "attack-stab": 4,
+    "attack-slash": 4,
+    "attack-crush": 4,
+    "attack-magic": -2,
+    "attack-ranged": 0,
+    "defence-stab": 24,
+    "defence-slash": 24,
+    "defence-crush": 24,
+    "bonus-strength": 23
 	  },
   {
     "id": 20434,
@@ -121363,7 +121441,19 @@
 "low-alch": 25000000, 
 		    "high-alch": 31000000,
 			    "base-value": 43000000,
-	    "equipment-slot": "GLOVES"
+	    "equipment-slot": "GLOVES",
+	    																	    "req-defence": 70,
+																	    "attack-stab": 25,
+																	    "attack-slash": 27,
+																	    "attack-crush": 20,
+																	    "attack-magic": 20,
+																	    "attack-ranged": 8,
+																	    "defence-stab": 40,
+																	    "defence-slash": 36,
+																	    "defence-crush": 37,
+																	    "defence-magic": 39,
+																	    "defence-ranged": 39,
+																	    "bonus-strength": 17
 	  },
   {
     "id": 21180,
@@ -121409,17 +121499,17 @@
 		    "high-alch": 31000000,
 			    "base-value": 43000000,
 	    "equipment-slot": "CAPE",
-	    "attack-stab": 1,
-	    "attack-slash": 1,
-	    "attack-crush": 1,
-	    "attack-magic": 1,
-	    "attack-ranged": 1,
-	    "defence-stab": 11,
-	    "defence-slash": 11,
-	    "defence-crush": 11,
-	    "defence-magic": 11,
-	    "defence-ranged": 11,
-	    "bonus-strength": 4,
+	    "attack-stab": 17,
+	    "attack-slash": 17,
+	    "attack-crush": 17,
+	    "attack-magic": 7,
+	    "attack-ranged": 17,
+	    "defence-stab": 17,
+	    "defence-slash": 17,
+	    "defence-crush": 17,
+	    "defence-magic": 17,
+	    "defence-ranged": 15,
+	    "bonus-strength": 17,
 	    "bonus-prayer": 2
 	  },
   {
@@ -121793,7 +121883,24 @@
     "weapon-interface": "WHIP",
     "req-attack": 70,
     "attack-slash": 94,
-    "bonus-strength": 90
+    "bonus-strength": 65
+  },
+   {
+    "id": 21292,
+     "name": "Lime whip (u)",
+    "noted-id": 21225,
+    "low-alch": 48000,
+    "high-alch": 720000,
+    "base-value": 120001,
+    "street-value": 1727509,
+    "weight": 0.45,
+    "walk-animation": 1660,
+    "run-animation": 1661,
+    "equipment-slot": "WEAPON",
+    "weapon-interface": "WHIP",
+    "req-attack": 70,
+    "attack-slash": 94,
+    "bonus-strength": 75
   },
   {
     "id": 21226,
@@ -123556,7 +123663,7 @@
 	    "attack-crush": -2,
 	    "defence-slash": 3,
 	    "defence-crush": 2,
-	    "bonus-strength": 62
+	    "bonus-strength": 30
 	  },
   {
     "id": 21646,
@@ -126187,7 +126294,7 @@
 "defence-crush": 140,
 "defence-magic": -6,
 "defence-ranged": -10,
-"bonus-strength": 25,  
+"bonus-strength": 55,  
 "bonus-prayer": 0,
 "bonus-magic": 0 
   
@@ -126242,7 +126349,7 @@
 "defence-crush": 86,
 "defence-magic": -4,
 "defence-ranged": 20,
-"bonus-strength": 35,  
+"bonus-strength": 60,  
 "bonus-prayer": 0,
 "bonus-magic": 0 
   
@@ -126873,7 +126980,7 @@
 				"bonus-strength": 15,  
 				"bonus-prayer": 0,
 				"bonus-magic": 0,
-				"bonus-strength": 20,  
+				"bonus-strength": 35,  
 				"bonus-prayer": 0,
 				"bonus-magic": 0 
 				 
@@ -126899,7 +127006,7 @@
 				"defence-crush": 88,
 				"defence-magic": 110,
 				"defence-ranged": -6,
-				"bonus-strength": 20,  
+				"bonus-strength": 60,  
 				"bonus-prayer": 0,
 				"bonus-magic": 0 
 
@@ -126924,7 +127031,7 @@
 				"defence-crush": 66,
 				"defence-magic": -4,
 				"defence-ranged": 93,
-				"bonus-strength": 20,  
+				"bonus-strength": 55,  
 				"bonus-prayer": 0,
 				"bonus-magic": 0 
 				  
@@ -126951,7 +127058,7 @@
 						"defence-crush": 105,
 						"defence-magic": -6,
 						"defence-ranged": 133,
-						"bonus-strength": 15,  
+						"bonus-strength": 25,  
 						"bonus-prayer": 0,
 						"bonus-magic": 0 
 
@@ -126976,7 +127083,7 @@
 						"defence-crush": 120,
 						"defence-magic": -6,
 						"defence-ranged": 163,
-						"bonus-strength": 15,  
+						"bonus-strength": 25,  
 						"bonus-prayer": 0,
 						"bonus-magic": 0 
 
@@ -127004,7 +127111,7 @@
 						"bonus-strength": 15,  
 						"bonus-prayer": 0,
 						"bonus-magic": 0,
-						"bonus-strength": 15,  
+						"bonus-strength": 25,  
 						"bonus-prayer": 0,
 						"bonus-magic": 0 
 						 
@@ -127358,7 +127465,31 @@
 "defence-crush": 0,
 "defence-magic": 0,
 "defence-ranged": 0,
-"bonus-strength": 120,  
+"bonus-strength": 45,  
+"bonus-prayer": 3,
+"bonus-magic": 16
+  },
+  
+  {
+								    "id": 21294,
+								    "name": "Ice katana",
+			    "high-alch": 34000000,
+			    "base-value": 45000000,
+           "street-value": 42000000, 
+    "equipment-slot": "WEAPON",
+    "weapon-interface": "SWORD",
+    "weight": 4.0,
+"attack-stab": 70,
+"attack-slash": 96,
+"attack-crush":  80,
+"attack-magic": -6,
+"attack-ranged": 0,
+"defence-stab": 0,
+"defence-slash": 6,
+"defence-crush": 0,
+"defence-magic": 0,
+"defence-ranged": 0,
+"bonus-strength": 65,  
 "bonus-prayer": 3,
 "bonus-magic": 16
   },
@@ -127551,7 +127682,8 @@
 																		    "defence-stab": 79,
 																		    "defence-slash": 79,
 																		    "defence-crush": 62,
-																		    "defence-magic": 60,
+																		    "bonus-strength": 30,
+																		    "defence-magic": 40,
 																		    "defence-ranged": 75
 																		  },
                                                  {
@@ -127570,7 +127702,7 @@
 																			    "defence-crush": 120,
 																			    "defence-magic": 0,
 																			    "defence-ranged": 296,
-																			    "bonus-strength": 40,
+																			    "bonus-strength": 60,
 																			    "bonus-prayer": 1,
 																			    "req-defence": 92
                                                  },   
@@ -127591,7 +127723,7 @@
 																				    "defence-crush": 165,
 																				    "defence-magic": 0,
 																				    "defence-ranged": 213,
-																				    "bonus-strength": 33,
+																				    "bonus-strength": 43,
 																				    "bonus-prayer": 25,
 																				    "req-defence": 92
 																				  },    
@@ -127637,7 +127769,7 @@
 																	    "defence-crush": 37,
 																	    "defence-magic": 39,
 																	    "defence-ranged": 39,
-																	    "bonus-strength": 90
+																	    "bonus-strength": 10
 																	  },
                                                  {
 																		    "id": 13693,
@@ -127655,7 +127787,9 @@
 																		    "defence-slash": 79,
 																		    "defence-crush": 62,
 																		    "defence-magic": 60,
-																		    "defence-ranged": 75
+																		    "defence-ranged": 75,
+																		    "bonus-strength": 55
+																		    
 																		  },
                                                  {
 																			    "id": 13695,
@@ -127673,7 +127807,7 @@
 																			    "defence-crush": 190,
 																			    "defence-magic": 0,
 																			    "defence-ranged": 286,
-																			    "bonus-strength": 120,
+																			    "bonus-strength": 65,
 																			    "bonus-prayer": 1,
 																			    "req-defence": 92
                                                  },   
@@ -127694,7 +127828,7 @@
 																				    "defence-crush": 175,
 																				    "defence-magic": 0,
 																				    "defence-ranged": 223,
-																				    "bonus-strength": 150,
+																				    "bonus-strength": 80,
 																				    "bonus-prayer": 35,
 																				    "req-defence": 92
 																				  },    
@@ -127708,20 +127842,16 @@
 "street-value": 18403, 
 "equipment-slot": "HELM",
 "weight": 4.0,
-"attack-stab": 0,
-"attack-slash": 0,
-"attack-crush": 0,
-"attack-magic": -15,
-"attack-ranged": -10,
-"defence-stab": 154,
-"defence-slash": 142,
-"defence-crush": 156,
-"defence-magic": 30,
-"defence-ranged": 30,
-"bonus-strength": 10,  
-"bonus-ranged": 50,  
-"bonus-prayer": 2,
-"bonus-magic": 2
+"req-defence": 92,
+																		    "attack-magic": 9,
+																		    "attack-ranged": 9,
+																		    "defence-stab": 69,
+																		    "defence-slash": 69,
+																		    "defence-crush": 82,
+																		    "defence-magic": 80,
+																		    "bonus-strength": 40,  
+																		   
+																		    "defence-ranged": 90
 
 
 },
@@ -127744,7 +127874,7 @@
 "defence-crush": 176,
 "defence-magic": 50,
 "defence-ranged": 50,
-"bonus-strength": 50,  
+"bonus-strength": 65,  
 "bonus-prayer": 2,
 "bonus-magic": 0 
 
@@ -127769,7 +127899,7 @@
 "defence-crush": 155,
 "defence-magic": 30,
 "defence-ranged": 30,
-"bonus-strength": 75,  
+"bonus-strength": 55,  
 "bonus-prayer": 3,
 "bonus-magic": 0 
 
@@ -127795,7 +127925,7 @@
 "defence-crush": 0,
 "defence-magic": 0,
 "defence-ranged": 0,
-"bonus-strength": 181,  
+"bonus-strength": 120,  
 "bonus-prayer": 3,
 "bonus-magic": 16
   },

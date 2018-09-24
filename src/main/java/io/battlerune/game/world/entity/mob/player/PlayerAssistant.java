@@ -264,8 +264,15 @@ public class PlayerAssistant {
 			}
 
 
-
-
+			if(item.getId() == 21294) {
+				return IceKatanaStrategy.get();
+			}
+			if (item.getId() == 21292) {
+				return LimeWhipStrategy.get();
+			}
+			
+			
+			
 			if (item.getId() == 21225) {
 				return LimeWhipStrategy.get();
 			}

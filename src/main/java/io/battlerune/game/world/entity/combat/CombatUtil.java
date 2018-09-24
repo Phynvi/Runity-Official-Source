@@ -263,8 +263,8 @@ public final class CombatUtil {
 				return false;
 			}
 
-			if (FreeForAll.KEY_MAP.get(attacker).equals(FreeForAllType.GAME) &&
-					FreeForAll.KEY_MAP.get(defender).equals(FreeForAllType.GAME)) {
+			if (Area.inFreeForAll(attacker) && FreeForAll.KEY_MAP.get(attacker).equals(FreeForAllType.GAME) &&
+					FreeForAll.KEY_MAP.get(defender).equals(FreeForAllType.GAME) && Area.inFreeForAll(defender)) {
 				return true;
 			}
 			

@@ -80,6 +80,13 @@ public final class NpcDropManager {
 			GroundItem.create(killer, starterbox, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + starterbox.getName()));
 		}
+		
+		// starter box drop
+		if (npc.getMaximumHealth() > 5 && Utility.random(1, 1500) <= 5) {
+			Item raptor = new Item(12789);
+			GroundItem.create(killer, raptor, dropPosition);
+			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + raptor.getName()));
+		}
 
 		// drop table
 		for (NpcDrop drop : npc_drops) {
@@ -128,7 +135,7 @@ public final class NpcDropManager {
 //                return;
 //            }
 
-			if (killer.settings.dropNotification && item.getValue() > 1_000_000 || drop.type.equals(NpcDropChance.RARE) || drop.type.equals(NpcDropChance.ULTRA_RARE)) {
+			if (killer.settings.dropNotification && item.getValue() > 500000) {
 				String name = item.getName();
 				killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + name + " ("
 						+ Utility.formatDigits(item.getValue()) + " coins)"));
