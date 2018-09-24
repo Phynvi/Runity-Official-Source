@@ -44,7 +44,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "skill", "skillingarea" }, new SkillAreaCommand());
 		PLUGIN.putIfAbsent(new String[] { "claim", "donated" }, new ClaimDonationCommand());
 		PLUGIN.putIfAbsent(new String[] { "donate", "store", "Store" }, new DonateCommand());
-		PLUGIN.putIfAbsent(new String[] { "voted", "claimvote" }, new ClaimVote());
+		PLUGIN.putIfAbsent(new String[] { "voted", "claimvote", "reward" }, new ClaimVote());
 		PLUGIN.putIfAbsent(new String[] { "vault", "vaultamount" }, new VaultCommand());
 		PLUGIN.putIfAbsent(new String[] { "drops", "drop" }, new DropInterfaceCommand());
 		PLUGIN.putIfAbsent(new String[] { "gamble", "gamblezone" }, new GambleCommand());

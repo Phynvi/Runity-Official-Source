@@ -6,11 +6,13 @@ import io.battlerune.content.dialogue.impl.RoyalKingDialogue;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.skill.impl.runecrafting.RunecraftTeleport;
 import io.battlerune.content.skill.impl.slayer.SlayerOfferings;
+import io.battlerune.content.upgrading.Upgrading;
 import io.battlerune.game.event.impl.NpcClickEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.net.packet.out.SendURL;
 import io.battlerune.util.Utility;
 
 public class NpcThirdClickPlugin extends PluginContext {
@@ -28,21 +30,13 @@ public class NpcThirdClickPlugin extends PluginContext {
 			player.playerAssistant.claimIronmanArmour();
 			break;
 		case 6797:
-			player.dialogueFactory.sendOption("Upgrade Ice Katana", () -> {
-				if(!player.inventory.contains(3273)) {
-					player.dialogueFactory.sendNpcChat(6797, "You don't have Ice Katana's to offer!");
-				}
-				if (player.inventory.contains(3273, 1)) {
-	                 if(Utility.random(1, 5000) == 1) {
-	                	 player.inventory.add(21294, 1);
-	                	 player.message("You have been lucky and recieved a Ice Katana (u)!");
-	                 } else {
-	                 player.message("You have been unlucky in this situation.");
-	                 player.inventory.remove(3273, 1);
-	                 }
-	                 player.message("More upgrading option's will be added soon! this is just a test version.");
-					}
-			}, "Nowhere", player.interfaceManager::close).execute();
+			player.dialogueFactory.sendOption("What Item's can I Upgrade?", () -> {
+				player.send(new SendURL("https://www.runity.io/forums/upgradingURL"));
+                player.message("Opening upgrading information thread.");
+					}, "Upgrade an Item", () -> {
+					     Upgrading.Upgrade(player);
+		                 player.message("More upgrading option's will be added soon! this is just a test version.");						
+						},"Nowhere", player.interfaceManager::close).execute();
 			
 			
 			
