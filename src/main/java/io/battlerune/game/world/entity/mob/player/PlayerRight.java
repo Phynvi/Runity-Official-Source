@@ -1,7 +1,10 @@
 package io.battlerune.game.world.entity.mob.player;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
+
+import com.google.common.collect.ImmutableList;
 
 /**
  * Holds all the player right data.
@@ -124,6 +127,8 @@ public enum PlayerRight {
 	public String getCrownText() {
 		return this == PLAYER ? "" : "<img=" + (crown - 1) + ">";
 	}
+	
+	private static ImmutableList<PlayerRight> VALUES = ImmutableList.of(DONATOR);
 
 	public static int getForumGroupId(PlayerRight right) {
 		switch (right) {
