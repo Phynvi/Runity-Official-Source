@@ -102,6 +102,9 @@ public final class BattleRune {
 		new StoreParser().run();
 		new GlobalObjectParser().run();
 		PunishmentExecuter.init();
+		//5 seconds of work, stfu shit amazon i get paid by 3 different servers 4ner
+		
+		//ItemStatsDumper.printStats();
 	}
 
 	/**

@@ -78,6 +78,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "donatorzone", "dzone" }, new DZoneCommand());
 		PLUGIN.putIfAbsent(new String[] { "portals", "portalzone" }, new PortalsZoneCommand());
 		PLUGIN.putIfAbsent(new String[] { "yell", "shout" }, new DonatorYellCommand());
+		PLUGIN.putIfAbsent(new String[] { "ez", "extremezone","ezone" }, new ExtremeDonatorZone());
 
 		/**
 		 * @Moderator/Helper Commands

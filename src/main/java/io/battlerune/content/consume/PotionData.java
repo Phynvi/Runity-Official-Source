@@ -542,7 +542,7 @@ public enum PotionData {
 			}
 
 			int formula = sanfewRestore ? (int) Math.floor(9 + (realLevel * 0.25))
-					: (int) Math.floor(10 + (realLevel * 0.30));
+					: (int) Math.floor(9 + (realLevel * 0.30));
 			player.skills.get(index).modifyLevel(level -> level + formula);
 			player.skills.refresh(index);
 		}

@@ -621,14 +621,22 @@
   {
 	    "id": 17157,
 	    "name": "Death full helm",
-	    "low-alch": 4,
-	    "high-alch": 6,
-	    "base-value": 10,
-	    "weight": 2.0,
-	    "equipment-slot": "HELM",
-	    "defence-stab": 4,
-	    "defence-slash": 5,
-	    "defence-crush": 3
+    "low-alch": 20000,
+    "high-alch": 30000,
+    "base-value": 50000,
+    "street-value": 34762,
+    "weight": 2.2,
+    "equipment-slot": "FACE",
+"weight": 4.0,
+																		    "req-defence": 92,
+																		    "attack-magic": 7,
+																		    "attack-ranged": 7,
+																		    "defence-stab": 59,
+																		    "defence-slash": 59,
+																		    "defence-crush": 52,
+																		    "defence-magic": 50,
+																		    "defence-ranged": 75,
+																		    "bonus-strength": 36
 	  },
   {
     "id": 75,
@@ -719,9 +727,11 @@
 	    "base-value": 6,
 	    "weight": -4.5,
 	    "equipment-slot": "BOOTS",
-	    "defence-stab": 1,
-	    "defence-slash": 1,
-	    "defence-crush": 1
+	    "defence-stab": 15,
+	    "defence-slash": 10,
+	    																		    "bonus-strength": 31,
+	    
+	    "defence-crush": 4
 	  },
   {
     "id": 89,
@@ -8861,14 +8871,16 @@
 	    "street-value": 117,
 	    "weight": 9.0,
 	    "equipment-slot": "LEGS",
-	    "req-defence": 1,
-	    "attack-magic": -21,
-	    "attack-ranged": -7,
-	    "defence-stab": 11,
-	    "defence-slash": 10,
-	    "defence-crush": 10,
-	    "defence-magic": -4,
-	    "defence-ranged": 10
+"attack-magic": -10,
+																			    "attack-ranged": -2,
+																			    "defence-stab": 170,
+																			    "defence-slash": 165,
+																			    "defence-crush": 120,
+																			    "defence-magic": 0,
+																			    "defence-ranged": 296,
+																			    "bonus-strength": 42,
+																			    "bonus-prayer": 1,
+																			    "req-defence": 92
 	  },
   {
     "id": 1068,
@@ -23925,14 +23937,16 @@
 	    "street-value": 3421,
 	    "weight": 9.0,
 	    "equipment-slot": "BODY",
-	    "req-defence": 10,
-	    "attack-magic": -30,
-	    "attack-ranged": -10,
-	    "defence-stab": 41,
-	    "defence-slash": 40,
-	    "defence-crush": 30,
-	    "defence-magic": -6,
-	    "defence-ranged": 40
+																				    "attack-magic": -5,
+																				    "attack-ranged": -5,
+																				    "defence-stab": 158,
+																				    "defence-slash": 133,
+																				    "defence-crush": 135,
+																				    "defence-magic": 0,
+																				    "defence-ranged": 193,
+																				    "bonus-strength": 32,
+																				    "bonus-prayer": 45,
+																				    "req-defence": 92
 	  },
   {
     "id": 2583,
@@ -40571,7 +40585,7 @@
 		    "attack-crush": 100,
 		    "attack-magic": -4,
 		    "defence-ranged": -1,
-		    "bonus-strength": 125
+		    "bonus-strength": 40
 		  },
   {
     "id": 4718,
@@ -85926,6 +85940,27 @@
     "bonus-strength": 8
   },
   
+     {
+    "id": 13816,
+    "name": "Dartk Karth boots",
+    "low-alch": 30000,
+    "high-alch": 45000,
+    "base-value": 75000,
+    "street-value": 22965900,
+    "weight": 1.0,
+    "equipment-slot": "BOOTS",
+    "req-defence": 75,
+    "req-strength": 75,
+    "attack-stab": 6,
+    "attack-slash": 6,
+    "attack-crush": 6,
+    "attack-magic": -2,
+    "attack-ranged": 0,
+    "defence-stab": 26,
+    "defence-slash": 26,
+    "defence-crush": 26,
+    "bonus-strength": 10
+  },
   
   
   
@@ -92163,6 +92198,17 @@
     "equipment-slot": "RING",
     "defence-crush": 16,
     "bonus-strength": 24
+  },
+  {
+    "id": 13814,
+    "tradeable": true,
+    "name": "Dark Karth's ring",
+    "low-alch": 4000,
+    "high-alch": 6000,
+    "base-value": 10000,
+    "equipment-slot": "RING",
+    "defence-crush": 16,
+    "bonus-strength": 27
   },
   {
     "id": 11774,
@@ -99283,6 +99329,32 @@
     "defence-slash": 3,
     "defence-crush": 2,
     "bonus-strength": 85
+  },
+  {
+    "id": 13832,
+    "name": "Dark Karth longsword",
+    "low-alch": 60000,
+    "high-alch": 90000,
+    "base-value": 150000,
+    "street-value": 150000,
+    "stand-animation": 808,
+    "walk-animation": 819,
+    "equipment-slot": "WEAPON",
+    "weapon-interface": "LONGSWORD",
+    "weight": 4.0,
+"attack-stab": 70,
+"attack-slash": 105,
+"attack-crush":  80,
+"attack-magic": -6,
+"attack-ranged": 0,
+"defence-stab": 0,
+"defence-slash": 6,
+"defence-crush": 0,
+"defence-magic": 0,
+"defence-ranged": 0,
+"bonus-strength": 115,  
+"bonus-prayer": 3,
+"bonus-magic": 16
   },
   {
     "id": 8800,
@@ -122271,6 +122343,30 @@
     "bonus-prayer": 2
   },
   {
+    "id": 13805,
+    "name": "Dark Karth cape",
+    "destroy-message": "Destroy",
+    "tradeable": false,
+    "destroyable": true,
+    "low-alch": 39600,
+    "high-alch": 59400,
+    "base-value": 99000,
+    "weight": 0.4,
+    "equipment-slot": "CAPE",
+    "attack-stab": 4,
+    "attack-slash": 4,
+    "attack-crush": 4,
+    "attack-magic": 1,
+    "attack-ranged": 1,
+    "defence-stab": 14,
+    "defence-slash": 14,
+    "defence-crush": 14,
+    "defence-magic": 14,
+    "defence-ranged": 14,
+    "bonus-strength": 10,
+    "bonus-prayer": 2
+  },
+  {
     "id": 21287,
     "name": "Infernal cape (broken)",
     "destroy-message": "Destroy",
@@ -127915,19 +128011,19 @@
     "equipment-slot": "WEAPON",
     "weapon-interface": "SWORD",
     "weight": 4.0,
-"attack-stab": 70,
-"attack-slash": 105,
-"attack-crush":  80,
+"attack-stab": 110,
+"attack-slash": 120,
+"attack-crush": 140,
 "attack-magic": -6,
 "attack-ranged": 0,
 "defence-stab": 0,
-"defence-slash": 6,
+"defence-slash": 15,
 "defence-crush": 0,
 "defence-magic": 0,
 "defence-ranged": 0,
-"bonus-strength": 120,  
-"bonus-prayer": 3,
-"bonus-magic": 16
+"bonus-strength": 130,  
+"bonus-prayer": 10,
+"bonus-magic": 26
   },
 {
     "id": 22296,

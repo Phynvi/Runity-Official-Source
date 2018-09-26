@@ -2,6 +2,8 @@ package plugin.click.npc;
 
 import io.battlerune.content.dialogue.impl.RealmLordDialogue;
 import io.battlerune.content.dialogue.impl.RoyalKingDialogue;
+import io.battlerune.content.masterminer.MasterMinerData;
+import io.battlerune.content.masterminer.MasterMinerGUI;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.skill.impl.runecrafting.RunecraftTeleport;
 import io.battlerune.content.skill.impl.slayer.SlayerTab;
@@ -21,6 +23,9 @@ public class NpcSecondClickPlugin extends PluginContext {
 		/* King Royal dialogue */
 		case 5523:
 			player.dialogueFactory.sendDialogue(new RoyalKingDialogue(2));
+			break;
+		case 3893:
+			new MasterMinerGUI(player).open();
 			break;
 
 		case 394:

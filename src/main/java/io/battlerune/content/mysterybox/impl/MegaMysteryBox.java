@@ -167,7 +167,8 @@ public class MegaMysteryBox implements MysteryBoxListener {
 		} else {
 			player.inventory.add(getCommon()[random.nextInt(getCommon().length)]);
 		}
-		player.setBossPoints(player.getBossPoints() + 50);
+		player.inventory.add(2528, 5);
+		player.setBossPoints(player.getBossPoints() + 150);
         player.message("You have recieved 50 Boss points!" + " <img=14>You now have @red@ " + player.getBossPoints() + " boss points");
 	}
 

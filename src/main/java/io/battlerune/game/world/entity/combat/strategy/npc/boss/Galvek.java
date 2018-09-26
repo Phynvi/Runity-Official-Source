@@ -32,6 +32,7 @@ import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.object.CustomGameObject;
 import io.battlerune.game.world.pathfinding.TraversalMap;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
@@ -254,17 +255,37 @@ public class Galvek extends MultiStrategy {
 			PROJECTILE.send(attacker, new Position(2277, 4057));
 
 			SpawnData1 data = GalvekUtility.spawn;
+			if(Area.inAllArea(attacker)) {
+				System.out.println("DIDN'T EXECUTE BECAUSE PLAYERS IS IN ALLVSONE! 0");
+				return;
+			}
+			if(Area.inAllArea(defender)) {
+				System.out.println("DIDN'T EXECUTE BECAUSE PLAYERS IS IN ALLVSONE! 1");
+				return;
+			}
 			World.schedule(4, () -> {
 				Npc tsunami = new Npc(8099, data.getTsunami()) {
 
+					
+					
 					@Override
 					public void appendDeath() {
 						super.appendDeath();
 
 					}
 				};
+				
+				if(Area.inAllArea(defender)) {
+					System.out.println("DIDN'T EXECUTE BECAUSE PLAYERS IS IN ALLVSONE! 2");
+					return;
+				}
 				tsunami.register();
 				tsunami.walkTo(defender, () -> {
+					
+					if(Area.inAllArea(defender)) {
+						System.out.println("DIDN'T EXECUTE BECAUSE PLAYERS IS IN ALLVSONE! 3");
+						return;
+					}
 					World.sendGraphic(new Graphic(1460, true), tsunami.getPosition());
 					defender.damage(new Hit(60 * tsunami.getCurrentHealth() / tsunami.getMaximumHealth()));
 					World.schedule(new CeillingCollapseTask(defender.getPlayer()));

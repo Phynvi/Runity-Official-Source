@@ -150,6 +150,7 @@ public class SilverMysteryBox implements MysteryBoxListener {
 		} else {
 			player.inventory.add(getCommon()[random.nextInt(getCommon().length)]);
 		}
+		player.inventory.add(2528, 1);
 		player.setBossPoints(player.getBossPoints() + 25);
         player.message("You have recieved 25 Boss points!" + " <img=14>You now have @red@ " + player.getBossPoints() + " boss points");
 	}

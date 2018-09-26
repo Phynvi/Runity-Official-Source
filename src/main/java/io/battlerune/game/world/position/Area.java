@@ -368,6 +368,7 @@ public abstract class Area {
 		}
 		return false;
 	}
+	
 
 	public static boolean inChimeraZone(Entity entity) {
 		for (Area zone : CHIMERA_ARENA) {

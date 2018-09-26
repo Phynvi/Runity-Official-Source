@@ -17,9 +17,9 @@ public class MasterMinerGUI {
 	private boolean isPrestigeShowing = false;
 	public Achievements achievements;
 
-	public MasterMinerGUI(Player player, MasterMinerData data) {
+	public MasterMinerGUI(Player player) {
 		this.player = player;
-		this.data = data;
+		//this.data = data;
 		this.achievements = new Achievements(player);
 	}
 

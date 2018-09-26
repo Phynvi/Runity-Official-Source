@@ -426,7 +426,7 @@ public class Player extends Mob {
 	public final Set<String> hostList = new HashSet<>();
 	public MasterMinerData masterMinerData = new MasterMinerData();
 	public MasterMinerTaskHandler masterMinerTask = new MasterMinerTaskHandler();
-	public final MasterMinerGUI masterMiner = new MasterMinerGUI(this, masterMinerData);
+	public final MasterMinerGUI masterMiner = new MasterMinerGUI(this);
 	public AdventureGUI adventure = new AdventureGUI(this);
 	private Farming farming = new Farming(this);
 	public Toolkit toolkit = new Toolkit(this);

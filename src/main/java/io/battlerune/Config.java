@@ -22,25 +22,25 @@ import io.netty.util.ResourceLeakDetector;
 public final class Config {
 
 	/** The latest announcement thread link. */
-	public static final String LATEST_ANNOUNCEMENT_THREAD = "http://runity.io/forums/index.php?/topic/5-rebirth-of-near-reality/&tab=comments#comment-11";
+	public static final String LATEST_ANNOUNCEMENT_THREAD = "https://runity.io/forums/topic/145-the-future-of-runity/?tab=comments#comment-555";
 
 	/** The latest update thread link. */
-	public static final String LATEST_UPDATE_THREAD = "http://runity.io/forums/index.php?/topic/3-updates-of-04012018/&tab=comments#comment-7";
+	public static final String LATEST_UPDATE_THREAD = "https://runity.io/forums/topic/141-patch-2-bug-fixes-instance-bossing-revenant-cave/?tab=comments#comment-533";
 
 	/** The welcome marquee. */
 	public static final String[] WELCOME_MARQUEE = { "There are currently #players players online!",
 			"Make sure to vote daily for great rewards!", "Donating really helps us with keeping the server alive" };
 
 	/** The welcome dialogue. */
-	public static final String[] WELCOME_DIALOGUE = { "Update threads are released every tuesday",
+	public static final String[] WELCOME_DIALOGUE = { "Update threads are released every friday",
 			"The Owners are Jordan & Adam", "The Developers are Adam & Nerik", "The Manager is Herb" };
 
 	/** The welcome announcement. */
-	public static final String[] WELCOME_ANNOUNCEMENT = { "Major closed-beta updates", "[ March 30th ]",
-			"Hello Runity community. On", "4/10/18, we will be pushing", "major updates that include..." };
+	public static final String[] WELCOME_ANNOUNCEMENT = { "Major #BUG Fixes", "[ Sept. 24th ]",
+			"Hello Runity community. On", "07/10/18, we will be pushing", "major bug fixes" };
 
-	public static final String[] WELCOME_UPDATE = { "Game Updates", "[ March 7th 2018 ]", "Pk bot, new player saving,",
-			"teleport interface improvements", "& much more!" };
+	public static final String[] WELCOME_UPDATE = { "Game Updates", "[ Sept 24th 2018 ]", "Pk bot, All Vs One & Instances,",
+			"Combat improvements", "& much more!" };
 
 	/** The amount of client packets that can be handled by the server each tick. */
 	public static final int CLIENT_PACKET_THRESHOLD;
@@ -229,6 +229,8 @@ public final class Config {
 	/** The donator zone. */
 	public static final Position PORTAL_ZONE = new Position(3363, 3318, 0);
 	
+	public static final Position EXTREME_ZONE = new Position(3329, 4797, 0);
+	
 	public static final Position EZ_ZONE = new Position(2905, 2727, 0);
 
 
@@ -334,7 +336,12 @@ public final class Config {
 			"Did you know you can change your combat level by clicking on the skill?",
 			"You can do ::commands for a list of commands!",
              "Do ::store to purchase bonds to make purchases",
-             "Do ::store for 25% Sale on bonds!",
+             "Do ::store for 25% Sale on ALL Items!",
+             "Did you know you can do CTRL + DRAG to re-arrange player slots?",
+             "Did you know we have duo Slayer!!",
+             "Did you know we have fully functional pest control!",
+             "Did you know can play Runity in HD! Go to settings -> Advanced Settings!",
+             "We have more settings you can change by going to extra settings",
 	"Saying you don't need privacy because you have nothing to hide is like saying you don't need free speech because you have nothing to say." };
 
 	/**

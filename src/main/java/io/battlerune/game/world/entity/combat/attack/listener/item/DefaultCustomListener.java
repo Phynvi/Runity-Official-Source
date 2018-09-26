@@ -52,9 +52,8 @@ public int healingGraphic = 398; //1296
 
 @Override
 public void hit(Mob attacker, Mob defender, Hit hit) {
-	if (Utility.random(1, 10) <= 2) {
-		attacker.heal(hit.getDamage() / 10);
-		attacker.graphic(new Graphic(healingGraphic, UpdatePriority.HIGH));
+	if (Utility.random(1, 10) <= 1) {
+		attacker.heal(hit.getDamage() / 20);
 	}
 }
 

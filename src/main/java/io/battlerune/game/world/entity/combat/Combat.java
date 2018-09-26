@@ -20,6 +20,7 @@ import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.strategy.CombatStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
 import io.battlerune.net.packet.out.SendEntityFeed;
@@ -61,7 +62,11 @@ public class Combat<T extends Mob> {
 
 		if (attacker.isPlayer()) {
 			if (defender.isPlayer()) {
+				if(Area.inEventArena(defender) || Area.inEventArena(attacker)) {
+					return true;
+				}
 				if (attacker.getPlayer().equipment.containsAny(Config.NOT_ALLOWED)
+						&& Area.inEventArena(defender) || Area.inEventArena(attacker)
 						|| attacker.getPlayer().inventory.containsAny(Config.NOT_ALLOWED)) {
 					attacker.getPlayer().send(new SendMessage("You can't attack anyone with customs."));
 					return false;
