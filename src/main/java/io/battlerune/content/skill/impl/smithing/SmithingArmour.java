@@ -218,7 +218,7 @@ public final class SmithingArmour extends ProducingSkillAction {
 
 	@Override
 	public double experience() {
-		return definition.getExperience() * Config.SMITHING_MODIFICATION;
+		return definition.getExperience() * Config.SMITHING_MODIFICATION * 1.10;
 	}
 
 	@Override

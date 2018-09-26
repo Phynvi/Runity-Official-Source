@@ -117,7 +117,7 @@ public final class Smelting extends Action<Player> {
 //        System.out.println(amount);
 		getMob().inventory.removeAll(definition.required);
 		getMob().inventory.addAll(definition.produced);
-		getMob().skills.addExperience(Skill.SMITHING, (definition.experience * Config.SMITHING_MODIFICATION)
+		getMob().skills.addExperience(Skill.SMITHING, (definition.experience * Config.SMITHING_MODIFICATION * 1.05)
 				* new ExperienceModifier(getMob()).getModifier());
 		amount--;
 
