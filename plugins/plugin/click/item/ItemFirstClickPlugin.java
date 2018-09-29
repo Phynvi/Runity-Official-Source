@@ -74,9 +74,9 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				player.inventory.add(17165, 1);
 				player.message("@gre@You were lucky and received 10 Million GP! & Raptor Set!");
 			}
-			if (Utility.random(1, 100) <= 2) {
+			if (Utility.random(1, 25) <= 2) {
 				player.inventory.add(995, 15000000);
-				player.inventory.add(15309, 1);
+				player.inventory.add(3273, 1);
 				player.message("@blu@You were lucky and received 15 Million GP!");
 			}
 			if (Utility.random(1, 500) <= 2) {

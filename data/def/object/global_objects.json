@@ -40,6 +40,26 @@
     }
   },
   {
+    "id": 13620,
+    "name": "Portal",
+    "type": 10,
+    "rotation": "WEST",
+    "position": {
+      "x": 3169,
+      "y": 4951
+    }
+  },
+  {
+    "id": 14894,
+    "name": "Portal",
+    "type": 10,
+    "rotation": "WEST",
+    "position": {
+      "x": 2915,
+      "y": 4397
+    }
+  },
+  {
 	    "id": 3399,
 	    "name": "Crates",
 	    "type": 10,

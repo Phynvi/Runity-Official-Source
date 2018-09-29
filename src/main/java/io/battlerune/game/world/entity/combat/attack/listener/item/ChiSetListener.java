@@ -15,7 +15,7 @@ import io.battlerune.game.world.entity.mob.prayer.Prayer;
  *
  * @author Adam_#6723
  */
-@ItemCombatListenerSignature(requireAll = false, items = { 13703, 13704, 13705 })
+@ItemCombatListenerSignature(requireAll = true, items = { 13703, 13704, 13705 })
 public class ChiSetListener extends SimplifiedListener<Mob> {
 
 	public void method(Mob attacker) {

@@ -14130,15 +14130,20 @@
 		    "id": 17160,
 		    "name": "Soulflare",
 		    "destroy-message": "You can get a replacement from Diango or Thessalia.",
-		    "weight": 3.0,
-		    "equipment-slot": "WEAPON",
-		    "weapon-interface": "SCYTHE",
-		    "attack-stab": 3,
-		    "attack-slash": 8,
-		    "attack-crush": 3,
-		    "defence-slash": 3,
-		    "defence-crush": 1,
-		    "bonus-strength": 10
+	    "stackable": false,
+	    "low-alch": 83200,
+	    "high-alch": 124800,
+	    "base-value": 208000,
+	    "weight": 1.8,
+	    "equipment-slot": "WEAPON",
+	    "weapon-interface": "LONGSWORD",
+	    "req-attack": 60,
+	    "attack-stab": 58,
+	    "attack-slash": 69,
+	    "attack-crush": -2,
+	    "defence-slash": 3,
+	    "defence-crush": 2,
+	    "bonus-strength": 75
 		  },
   {
 			    "id": 22325,
@@ -85749,7 +85754,9 @@
 																		    "defence-slash": 89,
 																		    "defence-crush": 72,
 																		    "defence-magic": 70,
-																		    "defence-ranged": 105
+																		    "defence-ranged": 105,
+																		        "bonus-strength": 46
+																		    
   },
   {
     "id": 13825,
@@ -85771,8 +85778,8 @@
     "defence-crush": 125,
     "defence-magic": -3,
     "defence-ranged": 125,
-    "bonus-strength": 23,
-    "bonus-prayer": 25
+    "bonus-strength": 37,
+    "bonus-prayer": 50
   },
   
     {
@@ -85792,7 +85799,7 @@
 																			    "defence-crush": 125,
 																			    "defence-magic": 0,
 																			    "defence-ranged": 205,
-																			    "bonus-strength": 25,
+																			    "bonus-strength": 39,
 																			    "bonus-prayer": 1,
 																			    "req-defence": 92
   },
@@ -85959,7 +85966,7 @@
     "defence-stab": 26,
     "defence-slash": 26,
     "defence-crush": 26,
-    "bonus-strength": 10
+    "bonus-strength": 22
   },
   
   
@@ -86012,7 +86019,6 @@
     "id": 13713,
     "name": "Dark Karth Twisted bow",
     "two-handed": true,
-    "noted-id": 20998,
     "low-alch": 36000,
     "high-alch": 54000,
     "base-value": 90000,
@@ -117156,7 +117162,7 @@
 																			    "defence-crush": 80,
 																			    "defence-magic": 0,
 																			    "defence-ranged": 256,
-																			    "bonus-strength": 25,
+																			    "bonus-strength": 23,
 																			    "bonus-prayer": 1,
 																			    "req-defence": 92
 	  },
@@ -117316,7 +117322,7 @@
     "defence-stab": 24,
     "defence-slash": 24,
     "defence-crush": 24,
-    "bonus-strength": 23
+    "bonus-strength": 21
 	  },
   {
     "id": 20434,
@@ -120147,7 +120153,6 @@
     "id": 13831,
     "name": "Saradomin bow",
     "two-handed": true,
-    "noted-id": 20998,
     "low-alch": 36000,
     "high-alch": 54000,
     "base-value": 90000,
@@ -121525,7 +121530,7 @@
 																	    "defence-crush": 37,
 																	    "defence-magic": 39,
 																	    "defence-ranged": 39,
-																	    "bonus-strength": 17
+																	    "bonus-strength": 15
 	  },
   {
     "id": 21180,
@@ -121581,7 +121586,7 @@
 	    "defence-crush": 17,
 	    "defence-magic": 17,
 	    "defence-ranged": 15,
-	    "bonus-strength": 17,
+	    "bonus-strength": 15,
 	    "bonus-prayer": 2
 	  },
   {
@@ -121955,7 +121960,7 @@
     "weapon-interface": "WHIP",
     "req-attack": 70,
     "attack-slash": 94,
-    "bonus-strength": 65
+    "bonus-strength": 95
   },
    {
     "id": 21292,
@@ -121972,7 +121977,7 @@
     "weapon-interface": "WHIP",
     "req-attack": 70,
     "attack-slash": 94,
-    "bonus-strength": 75
+    "bonus-strength": 135
   },
   {
     "id": 21226,
@@ -127568,7 +127573,7 @@
   
   {
 								    "id": 21294,
-								    "name": "Ice katana",
+								    "name": "Ice katana (u)",
 			    "high-alch": 34000000,
 			    "base-value": 45000000,
            "street-value": 42000000, 

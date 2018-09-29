@@ -35,7 +35,7 @@ public class ToxicGlaiveStrategy extends PlayerMeleeStrategy {
 
 	@Override
 	public int getAttackDelay(Player attacker, Mob defender, FightType fightType) {
-		return 3;
+		return 2;
 	}
 
 	/** Instane's the class to be called upon,and applied to an item. **/

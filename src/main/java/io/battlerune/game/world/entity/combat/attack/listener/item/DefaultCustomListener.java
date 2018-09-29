@@ -7,6 +7,7 @@ import io.battlerune.game.world.entity.combat.attack.listener.ItemCombatListener
 import io.battlerune.game.world.entity.combat.attack.listener.SimplifiedListener;
 import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.mob.Mob;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.util.Utility;
 
@@ -52,8 +53,12 @@ public int healingGraphic = 398; //1296
 
 @Override
 public void hit(Mob attacker, Mob defender, Hit hit) {
-	if (Utility.random(1, 10) <= 1) {
-		attacker.heal(hit.getDamage() / 20);
+	if (Utility.random(1, 4) <= 1) {
+		attacker.heal(hit.getDamage() / 5);
+		attacker.graphic(healingGraphic);
+		if(PlayerRight.isDeveloper(attacker.getPlayer())) {
+			attacker.getPlayer().message("You've healed " + hit.getDamage() / 5 + "!");
+		}
 	}
 }
 

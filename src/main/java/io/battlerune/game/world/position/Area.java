@@ -248,6 +248,10 @@ public abstract class Area {
 		return inArea(entity, new Position(3129, 4991, 0), new Position(3201, 4923, 0));
 	}
 	
+	public static boolean inAllVsOne2(Interactable entity) {
+		return inArea(entity, new Position(2888, 4412, 0), new Position(2939, 4359, 0));
+	}
+	
 	public static boolean inGodwars(Interactable entity) {
 		return inArea(entity, new Position(2816, 5243, 2), new Position(2960, 5400, 2));
 	}

@@ -18,6 +18,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.util.Utility;
 
 
 /**
@@ -33,7 +34,7 @@ public class GraadorActivity extends Activity {
 	private final GraadorActivityListener listener = new GraadorActivityListener(this);
 
 	private static final int BOSS = 2215;
-	private static final Position BOSS_POS = new Position(2870, 5358, 2);
+	private static final Position BOSS_POS = new Position(2870 + Utility.random(1, 4), 5358 + Utility.random(1, 5), 2);
 
 	private GraadorActivity(Player player, int instance) {
 		super(1, instance);

@@ -337,7 +337,7 @@ public final class Config {
 			"You can do ::commands for a list of commands!",
              "Do ::store to purchase bonds to make purchases",
              "Do ::store for 25% Sale on ALL Items!",
-             "Did you know you can do CTRL + DRAG to re-arrange player slots?",
+             "Did you know you can do CTRL + DRAG to re-arrange prayer slots?",
              "Did you know we have duo Slayer!!",
              "Did you know we have fully functional pest control!",
              "Did you know can play Runity in HD! Go to settings -> Advanced Settings!",

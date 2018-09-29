@@ -97402,9 +97402,10 @@
     },
   {
     "id": [
-      6611
+      6611,
+      6612
     ],
-    "rare_table": false,
+    "rare_table": true,
     "drops": [
       {
         "item": 532,

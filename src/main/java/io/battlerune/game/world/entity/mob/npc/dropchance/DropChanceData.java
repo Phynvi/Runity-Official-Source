@@ -20,6 +20,9 @@ public enum DropChanceData {
 	dark4(13805, 5),
 	dark5(13816, 5),
 	dark6(13711, 5),
+	CHI_HELM(13703, 5),
+	CHI_BODY(13704, 5),
+	CHI_LEGS(13705, 5),
 
 	
 	;

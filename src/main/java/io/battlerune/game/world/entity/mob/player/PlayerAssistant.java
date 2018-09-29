@@ -288,6 +288,9 @@ public class PlayerAssistant {
 			if (item.getId() == 11063) {
 				return ToxicGlaiveStrategy.get();
 			}
+			if (item.getId() == 17160) {
+				return ToxicGlaiveStrategy.get();
+			}
 
 			if (item.getId() == 11907) {
 				return TridentOfTheSeasStrategy.get();

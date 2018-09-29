@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import io.battlerune.Config;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.impl.allvsone.AllVsOne;
+import io.battlerune.content.activity.impl.allvsone2.AllVsOne2;
 import io.battlerune.content.activity.impl.fightcaves.FightCaves;
 import io.battlerune.content.activity.impl.pestcontrol.PestControl;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
@@ -1129,6 +1130,19 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				AllVsOne.create(player);
 				player.locking.unlock();
 			});
+			break;
+		case 14894:
+			player.locking.lock();
+			player.send(new SendFadeScreen("Welcome to the All Vs One V2!", 1, 3));
+			World.sendMessage(player.getName() + " Was poggers enough to take on All Vs One V2!");
+			World.schedule(5, () -> {
+				AllVsOne2.create(player);
+				player.locking.unlock();
+			});
+			break;
+		case 13620:
+				player.move(new Position(2915, 4397, 0));	
+				player.message("Enter the portal to activate the minigame!");
 			break;
 			
 		case 12260:

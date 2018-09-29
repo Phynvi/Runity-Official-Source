@@ -10,7 +10,7 @@ import java.util.List;
  */
 public enum ActivityType {
 	
-	SCHOOL_GAME(false), BATTLE_REALM(false), FIGHT_CAVES(true), ALLVSONE(true), KOLODION_ARENA(true), RECIPE_FOR_DISASTER(true),
+	SCHOOL_GAME(false), BATTLE_REALM(false), FIGHT_CAVES(true),ALLVSONE2(true), ALLVSONE(true), KOLODION_ARENA(true), RECIPE_FOR_DISASTER(true),
 	BARROWS(true), ZULRAH(true), KRAKEN(true), DUEL_ARENA(false), TUTORIAL(false), PEST_CONTROL(false), CERBERUS(true),
 	LMS(true), JAIL(false), WARRIOR_GUILD(false), CORP_INSTANCE(true), RANDOM_EVENT(false), VORKATH(false),
 	MOLE_INSTANCE(true), LIZARD_INSTANCE(true), GENERAL_GRAADOR_INSTANCE(true), FREE_FOR_ALL(false);

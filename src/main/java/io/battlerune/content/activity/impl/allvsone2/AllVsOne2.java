@@ -1,4 +1,4 @@
-package io.battlerune.content.activity.impl.allvsone;
+package io.battlerune.content.activity.impl.allvsone2;
 
 import java.util.HashSet;
 import java.util.Optional;
@@ -22,12 +22,12 @@ import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 /** @author Adam_#6723 
- *  Handles the All Vs One Minigame.
+ *  Handles the All Vs One v2 Minigame.
  *  TODO ADD 40 More Waves.
  */
-public class AllVsOne extends Activity {
+public class AllVsOne2 extends Activity {
 
-	/** The player in the All Vs One. */
+	/** The player in the All Vs One. v2 */
 	private final Player player;
 
 	/** The activity completed flag. */
@@ -43,26 +43,26 @@ public class AllVsOne extends Activity {
 	public final Set<Npc> npcs = new HashSet<>();
 
 	/** The current wave of this activity. */
-	private AllVsOneData.WaveData wave = AllVsOneData.WaveData.WAVE_1;
+	private AllVsOneData2.WaveData wave = AllVsOneData2.WaveData.WAVE_1;
 
 	/** The combat listener to add for all mobs. */
-	private final AllVsOneCavesListener listener = new AllVsOneCavesListener(this);
+	private final AllVsOneCavesListener2 listener = new AllVsOneCavesListener2(this);
 
 	/**
 	 * Constructs a new {@code AllVsOne} object for a {@code player} and an
 	 * {@code instance}.
 	 */
-	private AllVsOne(Player player, int instance) {
+	private AllVsOne2(Player player, int instance) {
 		super(10, instance);
 		this.player = player;
 	}
 
-	public static AllVsOne create(Player player) {
-		AllVsOne minigame = new AllVsOne(player, player.playerAssistant.instance());
-		player.move(new Position(3169, 4958, player.getHeight()));
-		ActivityPanel.update(player, -1, "All vs One", "Activity Completion:", "Good Luck, " + player.getName() + "!");
-		player.dialogueFactory.sendNpcChat(5567, "Welcome to the All Vs One, #name.",
-				"There are a total of 29 waves, Galvek & Glod being the last.",
+	public static AllVsOne2 create(Player player) {
+		AllVsOne2 minigame = new AllVsOne2(player, player.playerAssistant.instance());
+		player.move(new Position(2914, 4384, player.getHeight()));
+		ActivityPanel.update(player, -1, "All vs One V2", "Activity Completion:", "Good Luck, " + player.getName() + "!");
+		player.dialogueFactory.sendNpcChat(5567, "Welcome to the All Vs One V2, #name.",
+				"There are a total of 5 waves, 10x Harder then v1.",
 				"Use your activity panel (bottom left tab) for wave information.", "Good luck!").execute();
 		minigame.time = System.currentTimeMillis();
 		minigame.add(player);
@@ -93,9 +93,9 @@ public class AllVsOne extends Activity {
 
 			npcs.remove(dead);
 			remove(dead);
-			rewards += Utility.random(500, 1250);
+			rewards += Utility.random(2500, 3250);
 			if (npcs.isEmpty()) {
-				wave = AllVsOneData.WaveData.getNext(wave.ordinal());
+				wave = AllVsOneData2.WaveData.getNext(wave.ordinal());
 				if (wave == null) {
 					completed = true;
 					player.send(new SendMessage("You have finished the activity!"));
@@ -118,8 +118,8 @@ public class AllVsOne extends Activity {
 			return;
 		}
 
-		Position spawn = new Position(3169, 4958, player.getHeight());
-		Position[] boundaries = Utility.getInnerBoundaries(spawn, 8, 8);
+		Position spawn = new Position(2914, 4384, player.getHeight());
+		Position[] boundaries = Utility.getInnerBoundaries(spawn, Utility.random(4, 6), Utility.random(4, 6));
 
 		for (int id : wave.getMonster()) {
 			Npc npc = new Npc(id, RandomUtils.random(boundaries));
@@ -138,27 +138,27 @@ public class AllVsOne extends Activity {
 		player.move(new Position(3086, 3501, 0));
 
 		if (completed) {
-			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One, I am most impressed!",
+			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One V2, I am most impressed!",
 					"Please accept this gift, young thug.").execute();
-			rewards += 25000;
+			rewards += 30000;
 			//player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
             player.inventory.addOrDrop(new Item(7775, rewards));
-    		player.message("<img=9>You now have @red@" + rewards + " All Vs One Tickets!");
-			if(Utility.random(1, 3) == 3) {
-			player.inventory.addOrDrop(new Item(20211));
+    		player.message("<img=8>You now have @red@" + rewards + " All Vs One V2 Tickets!");
+			if(Utility.random(1, 3) == 2) {
+			player.inventory.addOrDrop(new Item(20050));
 			}
-			player.inventory.addOrDrop(new Item(290));
-			Pets.onReward(player, PetData.PIRATE_PETE);
-			player.send(new SendMessage("You have completed the All Vs One activity. Final time: @red@"
+			player.inventory.addOrDrop(new Item(290, 2));
+			Pets.onReward(player, PetData.PHOENIX);
+			player.send(new SendMessage("You have completed the All Vs One V2 activity. Final time: @red@"
 					+ Utility.getTime(time) + "</col>."));
-			player.activityLogger.add(ActivityLog.ALLVSONE);
+			player.activityLogger.add(ActivityLog.ALLVSONE2);
 			return;
 		}
 
 		if (rewards <= 0)
 			rewards = 1;
         player.inventory.addOrDrop(new Item(7775, rewards));
-		player.message("<img=9>You now have @red@" + rewards + " All Vs One Tickets!");
+		player.message("<img=7>You now have @red@" + rewards + " All Vs One V2 Tickets!");
 		player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();
 	}
 
@@ -172,15 +172,15 @@ public class AllVsOne extends Activity {
 	@Override
 	public void update() {
 		if (wave == null) {
-			ActivityPanel.update(player, 100, "All Vs One", new Item(22325), "Congratulations, you have",
-					"completed the All Vs One", "activity!");
+			ActivityPanel.update(player, 100, "All Vs One V2", new Item(11642), "Congratulations, you have",
+					"completed the All Vs One V2", "activity!");
 			return;
 		}
-		int progress = (int) Utility.getPercentageAmount(wave.ordinal() + 1, AllVsOneData.WaveData.values().length);
+		int progress = (int) Utility.getPercentageAmount(wave.ordinal() + 1, AllVsOneData2.WaveData.values().length);
 		if (progress >= 100 && !completed)
 			progress = 99;
-		ActivityPanel.update(player, progress, "All Vs One", new Item(22325),
-				"</col>Wave: <col=FF5500>" + (wave.ordinal() + 1) + "/" + (AllVsOneData.WaveData.values().length),
+		ActivityPanel.update(player, progress, "All Vs One V2", new Item(11642),
+				"</col>Wave: <col=FF5500>" + (wave.ordinal() + 1) + "/" + (AllVsOneData2.WaveData.values().length),
 				"</col>Monsters Left: <col=FF5500>" + npcs.size(),
 				"</col>Points Gained: <col=FF5500>" + Utility.formatDigits(rewards),
 				"</col>Time: <col=FF5500>" + Utility.getTime());
@@ -193,7 +193,7 @@ public class AllVsOne extends Activity {
 
 	@Override
 	public void onRegionChange(Player player) {
-		if (!Area.inAllVsOne(player)) {
+		if (!Area.inAllVsOne2(player)) {
 			cleanup();
 			remove(player);
 			player.send(new SendMessage("You have lost your current progress as you have teleported."));
@@ -208,7 +208,7 @@ public class AllVsOne extends Activity {
 
 	@Override
 	public ActivityType getType() {
-		return ActivityType.ALLVSONE;
+		return ActivityType.ALLVSONE2;
 	}
 
 	@Override
