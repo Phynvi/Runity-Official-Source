@@ -114,7 +114,7 @@ public class StarterKitButtonPlugin extends PluginContext {
 
 		player.runEnergy = +100;
 		player.buttonDelay.reset();
-		//ClanChannelHandler.connect(player, "help");
+		ClanChannelHandler.connect(player, "help", false);
 
 		// this is needed for logs so players are entered into the db upon first account
 		// creation
