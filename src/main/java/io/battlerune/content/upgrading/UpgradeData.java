@@ -9,7 +9,10 @@ import io.battlerune.game.world.items.Item;
  */
 public enum UpgradeData {
 
-	LIME_WHIP(new Item(21225, 1), new Item(21292, 1), new Item(21820, 500), 0.25);
+	LIME_WHIP(new Item(21225, 1), new Item(21292, 1), new Item(21820, 1500), 0.05),
+	ICE_KATANA(new Item(3273, 1), new Item(21294, 1), new Item(21820, 1000), 0.20),
+	;
+
 	
 	private Item item_input, item_reward, etharRequirement;
 	private double chance;
@@ -37,6 +40,6 @@ public enum UpgradeData {
 		return chance;
 	}
 	
-	public static Item[] ITEMS = new Item[] {LIME_WHIP.getItemReward()};
+	public static Item[] ITEMS = new Item[] {LIME_WHIP.getItemReward(), ICE_KATANA.getItemReward()};
 
 }
