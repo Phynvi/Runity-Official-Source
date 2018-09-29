@@ -1,49 +1,81 @@
 package io.battlerune.content.upgrading;
 
+import io.battlerune.game.task.Task;
+import io.battlerune.game.task.TaskManager;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
-import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.Utility;
 
+/**
+ * System Execution
+ * 
+ * @author Nerik#8690
+ *
+ */
 public class UpgradeListener {
 
 	private Player player;
-	private Item item;
 
-	public UpgradeListener(Player player, Item item) {
+	public UpgradeListener(Player player) {
 		this.player = player;
-		this.item = item;
 	}
 
 	public void execute() {
-		for (Upgrade upgrade : Upgrade.values()) {
-			if (upgrade.getReward()[0].equalIds(item)) {
-				if (player.inventory.contains(upgrade.getReward()[0])
-						&& player.inventory.contains(upgrade.getEtharRequirement())) {
-					player.inventory.remove(upgrade.getReward()[0]);
-					player.inventory.remove(upgrade.getEtharRequirement());
-					player.send(new SendMessage("STATUS: " + setExecution(upgrade)));
+		if (player.getUpgradeSelected() != null) {
+			if (player.inventory.contains(player.getUpgradeSelected().getItemInput())
+					&& player.inventory.contains(player.getUpgradeSelected().getEtharRequirement())) {
+				if (!player.getUpgradeSession()) {
+					player.setUpgradeInSesson(true);
+					setItems(player.getUpgradeSelected());
+					setExecution(player.getUpgradeSelected());
 				} else {
-					player.send(new SendMessage("@red@You do not have the requirements for this item!"));
-					player.send(new SendMessage("@red@Requirements: [" + upgrade.getReward()[0].getName() + ", "
-							+ upgrade.getReward()[0].getAmount() + "] : [" + upgrade.getEtharRequirement().getName()
-							+ ", " + upgrade.getEtharRequirement().getAmount() + "]"));
+					player.send(new SendMessage("@red@You are already in a upgrading session!"));
 				}
+			} else {
+				player.send(new SendMessage("@red@You don't have the required items!"));
 			}
 		}
 	}
 
-	private int random = Utility.random(100);
-	
-	private UpgradeStatus setExecution(Upgrade upgrade) {
-		if (random < (100 * upgrade.getChance())) {
-			player.inventory.add(upgrade.getReward()[1]);
-			World.sendMessage("[UPGRADE] " + player.getUsername() + " have succesfully upgraded "
-					+ String.format(ItemDefinition.get(upgrade.getReward()[1].getId()).getName()));
+	private void setItems(UpgradeData data) {
+		player.inventory.removeAll(new Item[] { data.getItemInput(), data.getEtharRequirement() });
+
+	}
+
+	private void setExecution(UpgradeData data) {
+		TaskManager.schedule(new Task(1) {
+			int tick = 0;
+
+			@Override
+			protected void execute() {
+				switch (tick) {
+				case 0:
+					player.send(new SendMessage("Upgrading item..."));
+					break;
+				case 1:
+					start(data);
+					player.setUpgradeInSesson(false);
+					cancel();
+					break;
+				}
+				tick++;
+			}
+
+		});
+	}
+
+	private UpgradeStatus start(UpgradeData data) {
+		if (Utility.random(100) < (100 * data.getChance())) {
+			player.send(new SendMessage("@red@You have succesfully upgraded your item"));
+			World.sendMessage(
+					"[Upgrade] " + String.format(player.getUsername() + " " + "has succesfully upgraded an item!"));
+			player.inventory.add(data.getItemReward());
 			return UpgradeStatus.SUCCES;
 		}
+		player.send(new SendMessage("@red@You failed to upgrade!"));
 		return UpgradeStatus.FAILED;
 	}
+
 }

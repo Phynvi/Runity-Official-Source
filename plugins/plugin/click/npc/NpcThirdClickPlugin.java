@@ -6,7 +6,7 @@ import io.battlerune.content.dialogue.impl.RoyalKingDialogue;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.skill.impl.runecrafting.RunecraftTeleport;
 import io.battlerune.content.skill.impl.slayer.SlayerOfferings;
-import io.battlerune.content.upgrading.UpgradeListener;
+import io.battlerune.content.upgrading.UpgradeDisplay;
 import io.battlerune.game.event.impl.NpcClickEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -35,8 +35,8 @@ public class NpcThirdClickPlugin extends PluginContext {
 				player.send(new SendURL("https://www.runity.io/forums/upgradingURL"));
 				player.message("Opening upgrading information thread.");
 			}, "Upgrade an Item", () -> {
-				new UpgradeListener(player, new Item(21225, 1)).execute();
-				player.message("More upgrading option's will be added soon! this is just a test version.");
+				new UpgradeDisplay(player).execute();
+				player.message("@red@More upgrading option's will be added soon!");
 			}, "Nowhere", player.interfaceManager::close).execute();
 
 			break;

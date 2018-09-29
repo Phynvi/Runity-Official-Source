@@ -54,6 +54,7 @@ import io.battlerune.content.skill.impl.runecrafting.RunecraftPouch;
 import io.battlerune.content.skill.impl.slayer.Slayer;
 import io.battlerune.content.teleport.Teleport;
 import io.battlerune.content.tittle.PlayerTitle;
+import io.battlerune.content.upgrading.UpgradeData;
 import io.battlerune.game.event.impl.MovementEvent;
 import io.battlerune.game.plugin.PluginManager;
 import io.battlerune.game.task.impl.TeleblockTask;
@@ -173,6 +174,27 @@ public class Player extends Mob {
 	public int getKillStreak() {
 		return killStreak;
 	}
+
+	private boolean upgradeSession;
+	
+	public boolean getUpgradeSession() {
+		return upgradeSession;
+	}
+	
+	public void setUpgradeInSesson(boolean upgradeSession) {
+		this.upgradeSession = upgradeSession;
+	}
+	
+	private UpgradeData upgradeSelected;
+	
+	public UpgradeData getUpgradeSelected() {
+		return upgradeSelected;
+	}
+
+	public void setUpgradeSelected(UpgradeData upgradeSelected) {
+		this.upgradeSelected = upgradeSelected;
+	}
+
 
 	private static final Logger logger = LogManager.getLogger();
 	private int memberId = -1;
@@ -574,6 +596,11 @@ public class Player extends Mob {
 	}
 
 	private final boolean canLogout() {
+		if (getUpgradeSession()) {
+			send(new SendMessage("You can not logout whilst in upgrade session"));
+			return false;
+		}
+		
 		if (getCombat().inCombat()) {
 			send(new SendMessage("You can not logout whilst in combat!"));
 			return false;
@@ -676,6 +703,10 @@ public class Player extends Mob {
 			return;
 		}
 
+		if (getUpgradeSession()) {
+			return;
+		}
+		
 		send(new SendLogout());
 		Activity.forActivity(this, minigame -> minigame.onLogout(this));
 		relations.updateLists(false);
