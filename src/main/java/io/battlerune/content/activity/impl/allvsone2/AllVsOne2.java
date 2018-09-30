@@ -93,7 +93,7 @@ public class AllVsOne2 extends Activity {
 
 			npcs.remove(dead);
 			remove(dead);
-			rewards += Utility.random(2500, 3250);
+			rewards += Utility.random(5000, 7500);
 			if (npcs.isEmpty()) {
 				wave = AllVsOneData2.WaveData.getNext(wave.ordinal());
 				if (wave == null) {
