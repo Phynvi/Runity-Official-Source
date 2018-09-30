@@ -29,6 +29,9 @@ public class ClaimDonationCommand implements Command {
 						player.send(new SendMessage(donations[0].message));
 						return;
 					}
+					if (player.inventory.getFreeSlots() <= 5) {
+						player.message("You need more inventory space to claim your donation!");
+					}
 					for (com.everythingrs.donate.Donation donate : donations) {
 						player.inventory.add(new Item(donate.product_id, donate.product_amount));
 					}

@@ -288,7 +288,12 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 		case 4151:
 			if(player.getCombat().inCombat()) {
+				player.message("You cannot teleport via the portal whilst in combat.");
 				return true; 
+			}
+			if(player.isTeleblocked()) {
+				player.message("You are currently teleblocked.");
+				return true;
 			}
 			if (!player.revstele.elapsed(10, TimeUnit.SECONDS)) {
 				player.dialogueFactory.sendNpcChat(1152, "You can only do this once every " + "10 Seconds!",

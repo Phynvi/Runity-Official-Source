@@ -329,11 +329,9 @@ public enum PotionData {
 
 			if (player.getVenomImmunity().get() <= 0) {
 				player.send(new SendMessage("You have been granted immunity against venom."));
-				World.schedule(new AntiVenomTask(player).attach(player));
 			} else if (player.getVenomImmunity().get() > 0) {
 				player.send(new SendMessage("Your immunity against venom has been restored!"));
 			}
-			player.getVenomImmunity().set(300);
 		}
 	};
 
@@ -584,11 +582,6 @@ public enum PotionData {
 
 		if (damage <= 0) {
 			player.message("You better not eat that!");
-			return;
-		}
-
-		if (player.getCombat().inCombat()) {
-			player.message("You can not eat this while in combat!");
 			return;
 		}
 		hasOverloadEffect = true;

@@ -27,6 +27,10 @@ public class NpcSecondClickPlugin extends PluginContext {
 		case 3893:
 			new MasterMinerGUI(player).open();
 			break;
+			
+		case 1143:
+			Store.STORES.get("The Clanmaster's Store").open(player);
+			break;
 
 		case 394:
 			player.bank.open();

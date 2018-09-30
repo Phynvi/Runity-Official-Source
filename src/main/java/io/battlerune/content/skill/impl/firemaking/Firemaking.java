@@ -45,6 +45,8 @@ public class Firemaking extends Skill {
 		}
 		if (firemaking == null)
 			return false;
+		//player.inventory.add(995, firemaking.getMoney());
+		System.out.println("0" + firemaking.getMoney());
 		player.action.execute(new FiremakingAction(player, item, firemaking), true);
 		return true;
 	}
@@ -78,7 +80,7 @@ public class Firemaking extends Skill {
 			player.message("You need a firemaking level of " + firemaking.getLevel() + " to light this log!");
 			return true;
 		}
-
+	//	System.out.println("HERE " + firemaking.getMoney());
 		player.action.execute(bonfireAction(player, event.getObject(), firemaking,
 				player.inventory.computeAmountForId(firemaking.getLog())));
 		return true;
@@ -113,6 +115,7 @@ public class Firemaking extends Skill {
 					cancel();
 					return;
 				}
+				player.inventory.add(995, firemaking.getMoney());
 				player.inventory.remove(firemaking.getLog(), 1);
 				player.animate(733);
 				player.skills.addExperience(Skill.FIREMAKING,
@@ -156,14 +159,12 @@ public class Firemaking extends Skill {
 				}
 				if (firemaking == FiremakingData.YEW_LOG) {
 					AchievementHandler.activate(getMob(), AchievementKey.BURN100YEW, 1);
-					player.message("@red@You have completed an achievement");
 				}
 
 				if (firemaking == FiremakingData.NORMAL_LOG || firemaking == FiremakingData.OAK_LOG
 						|| firemaking == FiremakingData.WILLOW_LOG || firemaking == FiremakingData.MAPLE_LOG
 						|| firemaking == FiremakingData.MAGIC_LOG || firemaking == FiremakingData.ARCTIC_PINE_LOG) {
 					AchievementHandler.activate(getMob(), AchievementKey.BURN100ANY, 1);
-					player.message("@red@You have completed an achievement");
 				}
 
 				if (player.prestige.hasPerk(PrestigePerk.FLAME_ON) && RandomUtils.success(.25)) {

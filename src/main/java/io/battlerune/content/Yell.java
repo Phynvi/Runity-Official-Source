@@ -40,7 +40,7 @@ public class Yell {
 			return;
 		}
 
-		if (!player.yellDelay.elapsed(20, TimeUnit.SECONDS) && !PlayerRight.isManagement(player)) {
+		if (!player.yellDelay.elapsed(20, TimeUnit.SECONDS) && !PlayerRight.isManagement(player) || !PlayerRight.isSupreme(player)) {
 			player.message("You can only yell every 20 seconds!");
 			return;
 		}

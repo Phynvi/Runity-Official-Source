@@ -79,29 +79,21 @@ public class ArenaUtility {
 		if (random <= 2) {
 			GroundItem.createGlobal(player, new Item(SUPERRARELOOT[Utility.random(SUPERRARELOOT.length)], 1),
 						new Position(2273 + Utility.random(12), 5341 + Utility.random(15), 0));
-				World.sendMessage("<img=10><col=FF0000>[GALVEK EVENT] Arena has dropped Bank Loot!");
+				World.sendMessage("<img=10><col=FF0000>[ARENA EVENT] Arena has dropped Bank Loot!");
 			
 		}
 		
 		if (random <= 11 && Utility.random(1, 10) <= 2) {
 			GroundItem.createGlobal(player, new Item(ULTRA[Utility.random(ULTRA.length)], 1),
 						new Position(2273 + Utility.random(7), 5341 + Utility.random(8), 0));
-				World.sendMessage("<img=10><col=FF0000>[GALVEK EVENT] Arena has dropped Ultra Rare Loot!");
+				World.sendMessage("<img=10><col=FF0000>[ARENA EVENT] Arena has dropped Ultra Rare Loot!");
 			
 		}
 		for (int i = 0; i < ALWAYSLOOT.length; i++) {
 			GroundItem.createGlobal(player, new Item(ALWAYSLOOT[i], 1),
 					new Position(2273 + Utility.random(1, 7), 5341 + Utility.random(13), 0));
 		}
-		for (Player players : World.getPlayers()) {
-			if (Area.inGlodArena(players)) {
-				int randomAmount = Utility.random(1000000, 2000000);
-				players.inventory.add(995, randomAmount);
-				players.message("<col=8714E6>[ARENA EVENT] You have recieved " + randomAmount
-						+ " coins for completing the arena event.");
-			}
-		}
-
+		
 		player.send(new SendMessage("[ARENA EVENT] Arena drop's lootation all over the map.", MessageColor.RED));
 		Arena.unregister();
 		activated = false;

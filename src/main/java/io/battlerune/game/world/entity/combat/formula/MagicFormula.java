@@ -11,7 +11,7 @@ public final class MagicFormula implements FormulaModifier<Mob> {
 	@Override
 	public int modifyAccuracy(Mob attacker, Mob defender, int roll) {
 		int level = attacker.skills.getLevel(Skill.MAGIC);
-		return 15 + attacker.getCombat().modifyMagicLevel(defender, level);
+		return 16 + attacker.getCombat().modifyMagicLevel(defender, level);
 	}
 
 	@Override

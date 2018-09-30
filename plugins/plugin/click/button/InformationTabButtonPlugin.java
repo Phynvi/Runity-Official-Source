@@ -32,6 +32,7 @@ public class InformationTabButtonPlugin extends PluginContext {
 	@Override
 	protected boolean onClick(Player player, int button) {
 		switch (button) {
+		
 		case 29404:
 			// if (PlayerRight.isManagement(player)) {
 			if (PlayerRight.isDeveloper(player)) {
@@ -40,7 +41,9 @@ public class InformationTabButtonPlugin extends PluginContext {
 			}
 			player.send(new SendURL("http://www.runity.io"));
 			return true;
-
+		case 29429:
+			player.message("nerik is currently working on presets!");
+			break;
 		case 29440:
 			InterfaceWriter.write(new InformationWriter(player));
 			return true;

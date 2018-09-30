@@ -22,7 +22,7 @@ import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 /** @author Adam_#6723 
- *  Handles the All Vs One Minigame.
+ *  Handles the All Vs One 2 Minigame.
  *  TODO ADD 40 More Waves.
  */
 public class AllVsOne extends Activity {
