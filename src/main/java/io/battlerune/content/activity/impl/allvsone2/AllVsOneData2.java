@@ -3,10 +3,10 @@ package io.battlerune.content.activity.impl.allvsone2;
 public final class AllVsOneData2 {
 
 	/**
-	 * 
 	 * @author Adam_#6723
 	 * Stores the NPC Data for All Vs One
 	 */
+	
 	public enum WaveData {
 		WAVE_1(3162), WAVE_2(3127), WAVE_3(7585), WAVE_4(8060), WAVE_5(7858), WAVE_6(5129), WAVE_7(8095), WAVE_8(3127, 5129, 8095)
 		;
