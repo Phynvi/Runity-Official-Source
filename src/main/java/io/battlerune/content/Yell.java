@@ -40,10 +40,10 @@ public class Yell {
 			return;
 		}
 
-		if (!player.yellDelay.elapsed(20, TimeUnit.SECONDS) && !PlayerRight.isManagement(player) || !PlayerRight.isSupreme(player)) {
+/*		if (!player.yellDelay.elapsed(20, TimeUnit.SECONDS)) {
 			player.message("You can only yell every 20 seconds!");
 			return;
-		}
+		} */
 
 		if (Arrays.stream(INVALID).anyMatch(message::contains)) {
 			player.send(new SendMessage("Your message contains invalid characters."));
