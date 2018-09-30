@@ -62,7 +62,7 @@ public class AllVsOne2 extends Activity {
 		player.move(new Position(2914, 4384, player.getHeight()));
 		ActivityPanel.update(player, -1, "All vs One V2", "Activity Completion:", "Good Luck, " + player.getName() + "!");
 		player.dialogueFactory.sendNpcChat(5567, "Welcome to the All Vs One V2, #name.",
-				"There are a total of 8 waves, 10x Harder then v1.",
+				"There are a total of 5 waves, 10x Harder then v1.",
 				"Use your activity panel (bottom left tab) for wave information.", "Good luck!").execute();
 		minigame.time = System.currentTimeMillis();
 		minigame.add(player);
@@ -140,7 +140,7 @@ public class AllVsOne2 extends Activity {
 		if (completed) {
 			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One V2, I am most impressed!",
 					"Please accept this gift, young thug.").execute();
-			rewards += 30000;
+			rewards += 10000;
 			//player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
             player.inventory.addOrDrop(new Item(7775, rewards));
     		player.message("<img=8>You now have @red@" + rewards + " All Vs One V2 Tickets!");
@@ -157,7 +157,6 @@ public class AllVsOne2 extends Activity {
 
 		if (rewards <= 0)
 			rewards = 1;
-		rewards += 10000;
         player.inventory.addOrDrop(new Item(7775, rewards));
 		player.message("<img=7>You now have @red@" + rewards + " All Vs One V2 Tickets!");
 		player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();

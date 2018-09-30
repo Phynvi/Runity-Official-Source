@@ -22,7 +22,7 @@ import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 /** @author Adam_#6723 
- *  Handles the All Vs One 2 Minigame.
+ *  Handles the All Vs One Minigame.
  *  TODO ADD 40 More Waves.
  */
 public class AllVsOne extends Activity {
@@ -140,7 +140,7 @@ public class AllVsOne extends Activity {
 		if (completed) {
 			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One, I am most impressed!",
 					"Please accept this gift, young thug.").execute();
-			rewards += 25000;
+			rewards += 10000;
 			//player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
             player.inventory.addOrDrop(new Item(7775, rewards));
     		player.message("<img=9>You now have @red@" + rewards + " All Vs One Tickets!");
