@@ -20,7 +20,7 @@ public enum PlayerRight {
 
 	DONATOR("Donator", "9C4B2F", 5, 10, 4112), SUPER_DONATOR("Super Donator", "2F809C", 6, 35, 4112),
 	EXTREME_DONATOR("Extreme Donator", "158A76", 7, 100, 4113), ELITE_DONATOR("Elite Donator", "2CA395", 8, 250, 4114),
-	KING_DONATOR("King Donator", "E32973", 9, 500, 4115), SUPREME_DONATOR("Supreme Donator", "E30b1A", 10, 1000, 4115),
+	KING_DONATOR("King Donator", "E32973", 9, 500, 4115), SUPREME_DONATOR("Supreme Donator", "E30b1A", 10, 750, 4115),
 
 	CLASSIC("Classic", "B1800A", 18, -1, 4115), YOUTUBER("Youtuber", "91111A", 11, -1, 4112),
 	IRONMAN("Ironman", "7A6F74", 12, -1, 4112), ULTIMATE_IRONMAN("Ultimate Ironman", "7A6F74", 13, -1, 4113),
