@@ -31,12 +31,8 @@ public class NpcThirdClickPlugin extends PluginContext {
 			player.playerAssistant.claimIronmanArmour();
 			break;
 		case 6797:
-			player.dialogueFactory.sendOption("What Item's can I Upgrade?", () -> {
-				player.send(new SendURL("https://www.runity.io/forums/upgradingURL"));
-				player.message("Opening upgrading information thread.");
-			}, "Upgrade an Item", () -> {
+			player.dialogueFactory.sendOption("Upgrade an Item", () -> {
 				new UpgradeDisplay(player).execute();
-				player.message("@red@More upgrading option's will be added soon!");
 			}, "Nowhere", player.interfaceManager::close).execute();
 
 			break;

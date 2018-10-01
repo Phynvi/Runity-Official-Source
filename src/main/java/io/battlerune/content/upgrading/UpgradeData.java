@@ -5,6 +5,7 @@ import io.battlerune.game.world.items.Item;
 /**
  * Upgrade Data Storage
  * @author Nerik#8690
+ * @edited Adam_#6723
  *
  */
 public enum UpgradeData {
@@ -13,11 +14,14 @@ public enum UpgradeData {
 	ICE_KATANA(new Item(3273, 1), new Item(21294, 1), new Item(21820, 200), 0.50),
 	SAMURAI_HELM(new Item(20035, 1), new Item(20049, 1), new Item(21820, 250), 0.50),
 	SAMURAI_PLATE(new Item(20038, 1), new Item(13284, 1), new Item(21820, 250), 0.50),
-	SAMURAI_LEGS(new Item(20041, 1), new Item(20058, 1), new Item(21820, 250), 0.50),
-	SAMURAI_BOOTS(new Item(20044, 1), new Item(20061, 1), new Item(21820, 250), 0.50),
-	SAMURAI_GLOVES(new Item(20047, 1), new Item(20055, 1), new Item(21820, 250), 0.50),
+	SAMURAI_LEGS(new Item(20044, 1), new Item(20058, 1), new Item(21820, 250), 0.50),
+	SAMURAI_BOOTS(new Item(20047, 1), new Item(20061, 1), new Item(21820, 250), 0.50),
+	SAMURAI_GLOVES(new Item(20041, 1), new Item(20055, 1), new Item(21820, 250), 0.50),
+	ELITE_SS(new Item(13719, 1), new Item(13722, 1), new Item(21820, 250), 0.50),
 	MAGMA_AXE(new Item(13687, 1), new Item(13833, 1), new Item(21820, 300), 0.25),
 	GLAIVE(new Item(11063, 1), new Item(17160, 1), new Item(21820, 500), 0.25),
+	PHOENIX_BOW(new Item(3274, 1), new Item(13831, 1), new Item(21820, 500), 0.25),
+	LAVABOW(new Item(13831, 1), new Item(13749, 1), new Item(21820, 500), 0.10),
 
 	;
 
@@ -48,7 +52,9 @@ public enum UpgradeData {
 		return chance;
 	}
 	
-	public static Item[] ITEMS = new Item[] {LIME_WHIP.getItemReward(), ICE_KATANA.getItemReward(),
+	public static Item[] ITEMS = new Item[] {
+			LIME_WHIP.getItemReward(), 
+			ICE_KATANA.getItemReward(),
 			SAMURAI_HELM.getItemReward(),
 			SAMURAI_PLATE.getItemReward(),
 			SAMURAI_LEGS.getItemReward(),
@@ -56,8 +62,9 @@ public enum UpgradeData {
 			SAMURAI_GLOVES.getItemReward(),
 			MAGMA_AXE.getItemReward(),
 			GLAIVE.getItemReward(),
-
-	
+			ELITE_SS.getItemReward(),
+			PHOENIX_BOW.getItemReward(),
+			LAVABOW.getItemReward(),
 	};
 
 }

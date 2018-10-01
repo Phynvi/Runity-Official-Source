@@ -25,7 +25,7 @@ public final class Config {
 	public static final String LATEST_ANNOUNCEMENT_THREAD = "https://runity.io/forums/topic/145-the-future-of-runity/?tab=comments#comment-555";
 
 	/** The latest update thread link. */
-	public static final String LATEST_UPDATE_THREAD = "https://runity.io/forums/topic/141-patch-2-bug-fixes-instance-bossing-revenant-cave/?tab=comments#comment-533";
+	public static final String LATEST_UPDATE_THREAD = "https://runity.io/forums/topic/152-patch-3-all-vs-one-upgrading-system-new-afk-able-skills";
 
 	/** The welcome marquee. */
 	public static final String[] WELCOME_MARQUEE = { "There are currently #players players online!",
@@ -36,11 +36,11 @@ public final class Config {
 			"The Owners are Jordan & Adam", "The Developers are Adam & Nerik", "The Manager is Herb" };
 
 	/** The welcome announcement. */
-	public static final String[] WELCOME_ANNOUNCEMENT = { "Major #BUG Fixes", "[ Sept. 24th ]",
-			"Hello Runity community. On", "07/10/18, we will be pushing", "major bug fixes" };
+	public static final String[] WELCOME_ANNOUNCEMENT = { "Major Bug Fixes", "[ Oct 1st 2018 ]",
+			"Hello Runity community. On", "07/10/18, we will be pushing", "more bug fixes" };
 
-	public static final String[] WELCOME_UPDATE = { "Game Updates", "[ Sept 24th 2018 ]", "Pk bot, All Vs One & Instances,",
-			"Combat improvements", "& much more!" };
+	public static final String[] WELCOME_UPDATE = { "Game Updates", "[ Oct 1st 2018 ]", "Upgrading System & All Vs One V2,",
+			"Numerous bug fixes", "& much more!" };
 
 	/** The amount of client packets that can be handled by the server each tick. */
 	public static final int CLIENT_PACKET_THRESHOLD;
@@ -339,9 +339,14 @@ public final class Config {
              "Do ::store for 25% Sale on ALL Items!",
              "Did you know you can do CTRL + DRAG to re-arrange prayer slots?",
              "Did you know we have duo Slayer!!",
+             "The vote store has been updated! make sure to ::vote",
+             "Top voter will get LOADS of Bonds as rewards! do ::thread 147 for more information!",
+             "Top 5 votes competition is active! 400$ In bonds to be won! ::thread 147",
+             "Did you know we added dark karth to the vote store!",
              "Did you know we have fully functional pest control!",
              "Did you know can play Runity in HD! Go to settings -> Advanced Settings!",
              "We have more settings you can change by going to extra settings",
+             "do ::moneyguide or ::guide ",
 	"Saying you don't need privacy because you have nothing to hide is like saying you don't need free speech because you have nothing to say." };
 
 	/**

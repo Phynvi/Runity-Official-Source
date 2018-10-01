@@ -28,7 +28,7 @@ public class SoulListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public void hit(Mob attacker, Mob defender, Hit hit) {
-		if (Math.random() > 0.25) {
+		if (Math.random() > 0.50) {
 			attacker.heal(hit.getDamage() / 2);
 			attacker.graphic(new Graphic(healingGraphic, UpdatePriority.HIGH));
 		}

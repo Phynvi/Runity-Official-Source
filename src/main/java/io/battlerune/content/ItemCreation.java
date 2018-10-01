@@ -119,6 +119,8 @@ public class ItemCreation {
 	TRIDENT_OF_SWAMPS(new Item(12899), null, null, new Item(11907, 1), new Item(12932, 1)),
 	INFERNAL_MAXCAPE(new Item[] { new Item(21285), new Item(21282) }, null, null, new Item(21295), new Item(13280),
 			new Item(13281)),
+	ZENYTE_NECK(new Item(19535), null, null, new Item(6577, 1), new Item(19529, 1)),
+
 	CAP_AND_GOGGLES(new Item(9946), null, null, new Item(9945, 1), new Item(9472, 1));
 
 		/** The product of the creation. */

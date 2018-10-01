@@ -55,6 +55,13 @@ import io.battlerune.util.sql.MySqlConnector;
 import io.battlerune.util.tools.ItemStatsDumper;
 import plugin.click.item.ClueScrollPlugin;
 
+
+/**
+ * 
+ * @author Adam_#6723
+ *
+ */
+
 public final class BattleRune {
 
 	public static final AtomicBoolean serverStarted = new AtomicBoolean(false);

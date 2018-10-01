@@ -237,6 +237,9 @@ public class PlayerAssistant {
 			if (item.getId() == 13831) {
 				return FireyBowStrategy.get();
 			}
+			if (item.getId() == 13749) {
+				return FireyBowStrategy.get();
+			}
 			if (item.getId() == 21012) {
 				return DragonHunterCrossbowStrategy.get();
 			}

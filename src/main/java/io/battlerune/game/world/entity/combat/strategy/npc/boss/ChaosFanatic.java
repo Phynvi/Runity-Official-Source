@@ -88,7 +88,7 @@ public class ChaosFanatic extends MultiStrategy {
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
 
 			int disarmattack = 1;
-			int disaramattackrandom = Utility.random(disarmattack, 5);
+			int disaramattackrandom = Utility.random(disarmattack, 20);
 
 			attacker.animate(new Animation(1162, UpdatePriority.VERY_HIGH));
 			for (int i = 0; i < 3; i++) {

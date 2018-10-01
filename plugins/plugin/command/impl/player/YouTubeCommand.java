@@ -12,7 +12,7 @@ public class YouTubeCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		player.send(new SendURL("https://www.youtube.com/watch?v=RamxlwBPe8s"));
+		player.send(new SendURL("https://www.youtube.com/watch?v=UXV5wRXxkCE&t=9s"));
 		player.message("Be sure to check the description for the giveaway!");
 	}
 

@@ -129,18 +129,19 @@ public class ToxicBlowpipeStrategy extends RangedStrategy<Player> {
 	}
 
 	private void removeAmmunition(Player attacker, Mob defender) {
+		
 		Item darts = attacker.blowpipeDarts;
 		darts.decrementAmount();
 		attacker.blowpipeScales -= 1.5f;
-
+		
+		if (Equipment.hasAva(attacker)) {
+			return;
+		}
+		
 		if (RandomUtils.success(0.75)) {
-			if (Equipment.hasAva(attacker) && RandomUtils.success(0.96)) {
-				return;
-			}
-
 			Position dropPoisition = defender.getPosition();
 
-			if (Area.inKraken(attacker) || Area.inZulrah(attacker)) {
+			if (Area.inKraken(attacker) || Area.inZulrah(attacker) || Area.inVorkath(attacker)) {
 				dropPoisition = attacker.getPosition();
 			}
 

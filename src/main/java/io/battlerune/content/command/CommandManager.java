@@ -28,7 +28,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "thread" }, new ThreadCommand());
 		PLUGIN.putIfAbsent(new String[] { "ancients" }, new AncientsCommand());
 		PLUGIN.putIfAbsent(new String[] { "maxhit" }, new MaxStatusCommand());
-		PLUGIN.putIfAbsent(new String[] { "changepassword" }, new ChangePassword());
+		PLUGIN.putIfAbsent(new String[] { "changepassword", "changepass" }, new ChangePassword());
 		PLUGIN.putIfAbsent(new String[] { "easts" }, new Easts());
 		PLUGIN.putIfAbsent(new String[] { "commands", "command" }, new Commands());
 		PLUGIN.putIfAbsent(new String[] { "home", "hom" }, new HomeCommand());
@@ -68,7 +68,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "es", "ed" }, new EZCommandZone());
 		PLUGIN.putIfAbsent(new String[] { "barrowsfix", "bugfix" }, new BarrowsFix());
 		PLUGIN.putIfAbsent(new String[] { "revs", "revcave" }, new RevenantCaveCommand());
-		PLUGIN.putIfAbsent(new String[] { "giveaways", "giveaway"}, new YouTubeCommand());
+		PLUGIN.putIfAbsent(new String[] { "moneyguide", "guide", "giveaway"}, new YouTubeCommand());
 
 		/*
 		 * @Donator Command
@@ -118,7 +118,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "god", "beast" }, new GodCommand());
 		PLUGIN.putIfAbsent(new String[] { "interface", "int" }, new InterfaceCommand());
 		PLUGIN.putIfAbsent(new String[] { "npc", "spawnnpc" }, new NpcCommand());
-		PLUGIN.putIfAbsent(new String[] { "guide", "openguide" }, new PlayerGuideCommand());
+		PLUGIN.putIfAbsent(new String[] { "openguide" }, new PlayerGuideCommand());
 		PLUGIN.putIfAbsent(new String[] { "obj", "object" }, new ObjectCommand());
 		PLUGIN.putIfAbsent(new String[] { "arenas", "spawnarena" }, new ArenaSpawnCommand());
 		PLUGIN.putIfAbsent(new String[] { "galveks", "spawngalvek" }, new GalvekSpawnCommand());

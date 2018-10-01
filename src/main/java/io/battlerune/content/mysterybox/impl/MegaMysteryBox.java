@@ -13,32 +13,6 @@ public class MegaMysteryBox implements MysteryBoxListener {
 	@Override
 	public Item[] getCommon() {
 		return new Item[] { new Item(995, Utility.random(1000000, 2500000)), new Item(12696, 10), // Super combat potion
-				new Item(10034, 100), // red chins
-				new Item(6257, 1), // Broodoo shield
-				new Item(6235, 1), // Broodoo shield
-				new Item(13385, 1), // xerician hat
-				new Item(13387, 1), // xerician top
-				new Item(6279, 1), // brodoodon shield
-				new Item(13389, 1), // xerician robe
-				new Item(3095, 1), // bronze claws
-				new Item(3096, 1), // iron claws
-				new Item(3097, 1), // steel claws
-				new Item(3098, 1), // black claws
-				new Item(3099, 1), // mithril claws
-				new Item(3100, 1), // adamant claws
-				new Item(3101, 1), // rune claws
-				new Item(6587, 1), // white claws
-				new Item(7537, 1), // crab claw
-
-				new Item(12245, 1), // beanie
-				new Item(10039, 1), // kyatt hat
-				new Item(10037, 1), // kyatt top
-				new Item(10035, 1), // kyatt legs
-				new Item(6377, 1), // villager sandals
-				new Item(6349, 1), // villager sandals
-				new Item(6357, 1), // villager sandals
-				new Item(6367, 1), // villager sandals
-
 				new Item(7668, 1), // Gadderhammer
 				new Item(811, 300), // rune dart
 				new Item(2890, 1), // elemental shield
@@ -49,8 +23,18 @@ public class MegaMysteryBox implements MysteryBoxListener {
 				new Item(6147, 1), // skeletal boots
 				new Item(2581, 1), // robin hood hat
 				new Item(19707, 1), // amulet of eternal glory
-				new Item(6153, 1) // skeleton gloves
-
+				new Item(6153, 1), // skeleton gloves
+				new Item(21021, 1), // ancestral top
+				new Item(21018, 1), // ancestral hat
+				new Item(12002, 1), // occult necklace
+				new Item(21024, 1), // ancestral robe bottom
+				new Item(20035, 1), // Samurai kasa
+				new Item(20038, 1), // Samurai shirt
+				new Item(20044, 1), // Samurai greaves
+				new Item(20041, 1), // Samurai gloves
+				new Item(20047, 1), // Samurai boots
+				new Item(6199, 1),
+				
 		};
 	}
 
@@ -61,26 +45,10 @@ public class MegaMysteryBox implements MysteryBoxListener {
 				new Item(1961, 1), // easter egg
 				new Item(10507, 1), // reindeer hat
 
-				new Item(9925, 1), // Skeleton mask
-				new Item(9922, 1), // skeleton gloves
-
-				new Item(9924, 1), // skeleton shirt
-				new Item(9921, 1), // skeleton boots
-
-				new Item(21021, 1), // ancestral top
-				new Item(21018, 1), // ancestral hat
-				new Item(12002, 1), // occult necklace
-				new Item(21024, 1), // ancestral robe bottom
-				new Item(20035, 1), // Samurai kasa
-				new Item(20038, 1), // Samurai shirt
-				new Item(20044, 1), // Samurai greaves
-				new Item(20041, 1), // Samurai gloves
-				new Item(20047, 1), // Samurai boots
-				new Item(20086, 1), // Mummy's hand
-				new Item(20092, 1), // Mummy's feet
-				new Item(20080, 1), // Mummy's head
-				new Item(20083, 1), // Mummy's top
-				new Item(20089, 1) // Mummy's leg
+				new Item(16648, 1), new Item(16647, 1), new Item(16649, 1), new Item(16650, 1),
+				new Item(16651, 1), new Item(16653, 1), new Item(16654, 1), new Item(16655, 1), new Item(16656, 1),
+				new Item(13703, 1), new Item(13704, 1), new Item(13705, 1), new Item(13687, 1),
+				new Item(13686, 1)
 		};
 	}
 
@@ -138,6 +106,9 @@ public class MegaMysteryBox implements MysteryBoxListener {
 				new Item(10558, 1), // defender icon
 				new Item(10559, 1), // healer icon
 				new Item(13343, 1), // black santa hat
+				new Item(13832, 1), new Item(13710, 1), new Item(13711, 1), new Item(13712, 1),
+				new Item(13713, 1), new Item(13714, 1), new Item(13715, 1), new Item(13805, 1), new Item(13832, 1), new Item(13816, 1),
+				new Item(13814, 1), new Item(10075, 1)
 
 
 		};
@@ -152,15 +123,15 @@ public class MegaMysteryBox implements MysteryBoxListener {
 		 * Utility.random(1, 250) <= 10 <---- This generates a RANDOM NUMBER between 1
 		 * and 150 and if the RANDOM NUMBER is equal to 10 then it will execute.
 		 */
-		if (Utility.random(1, 200) <= 7) {
+		if (Utility.random(1, 50) <= 7) {
 			player.inventory.add(getUncommon()[random.nextInt(getUncommon().length)]);
 			player.message("You have recieved a Uncommon loot!");
 		}
-		if (Utility.random(1, 400) <= 5) {
+		if (Utility.random(1, 100) <= 5) {
 			player.inventory.add(getRare()[random.nextInt(getRare().length)]);
 			player.message("@gre@You have recieved a Rare loot!");
 		}
-		if (Utility.random(1, 500) <= 2) {
+		if (Utility.random(1, 150) <= 2) {
 			player.inventory.add(getUltra()[random.nextInt(getUltra().length)]);
 			player.message("You have recieved a ULTRA RARE LOOT!");
 			World.sendMessage(player.getName() + " @red@Has received ULTRA RARE LOOT!");
@@ -168,8 +139,9 @@ public class MegaMysteryBox implements MysteryBoxListener {
 			player.inventory.add(getCommon()[random.nextInt(getCommon().length)]);
 		}
 		player.inventory.add(2528, 5);
+		player.graphic(1516);
 		player.setBossPoints(player.getBossPoints() + 150);
-        player.message("You have recieved 50 Boss points!" + " <img=14>You now have @red@ " + player.getBossPoints() + " boss points");
+        player.message("You have recieved 150 Boss points!" + " <img=14>You now have @red@ " + player.getBossPoints() + " boss points");
 	}
 
 }

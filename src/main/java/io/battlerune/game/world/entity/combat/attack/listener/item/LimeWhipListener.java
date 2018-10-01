@@ -15,7 +15,7 @@ import io.battlerune.game.world.entity.mob.prayer.Prayer;
  *
  * @author Adam_#6723
  */
-@ItemCombatListenerSignature(requireAll = false, items = {21225})
+@ItemCombatListenerSignature(requireAll = false, items = {21225, 13749})
 public class LimeWhipListener extends SimplifiedListener<Mob> {
 
 	public int healingGraphic = 1296;
@@ -28,7 +28,7 @@ public class LimeWhipListener extends SimplifiedListener<Mob> {
 
 	@Override
 	public void hit(Mob attacker, Mob defender, Hit hit) {
-		if (Math.random() > 0.25) {
+		if (Math.random() > 0.35) {
 			attacker.heal(hit.getDamage() / 3);
 			attacker.graphic(new Graphic(healingGraphic, UpdatePriority.HIGH));
 		}

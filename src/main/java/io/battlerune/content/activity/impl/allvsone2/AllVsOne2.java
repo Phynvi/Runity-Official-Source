@@ -127,6 +127,9 @@ public class AllVsOne2 extends Activity {
 			add(npc);
 			npcs.add(npc);
 			npc.getCombat().attack(player);
+			npc.face(player);
+			player.face(npc.getPosition());
+			npc.locking.unlock();
 		}
 		pause();
 	}

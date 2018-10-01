@@ -582,7 +582,8 @@ public class Player extends Mob {
 		send(new SendExpCounter(skills.getExpCounter()));
 		message(String.format("Welcome to %s. ", Config.SERVER_NAME + ""));
 		message(String.format("There are currently %s players online.", World.getPlayerCount()));
-		message(String.format("Do ::giveaways for a 250$ Bond Giveaway!"));
+		message(String.format("@red@Player Tip -@bla@ Do ::guide for an awesome money making guide! Get rich quick!!"));
+
 
 
 		if (Config.DOUBLE_EXPERIENCE) {

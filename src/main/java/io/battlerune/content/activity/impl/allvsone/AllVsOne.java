@@ -119,7 +119,7 @@ public class AllVsOne extends Activity {
 		}
 
 		Position spawn = new Position(3169, 4958, player.getHeight());
-		Position[] boundaries = Utility.getInnerBoundaries(spawn, 8, 8);
+		Position[] boundaries = Utility.getInnerBoundaries(spawn, Utility.random(1, 8), Utility.random(1, 8));
 
 		for (int id : wave.getMonster()) {
 			Npc npc = new Npc(id, RandomUtils.random(boundaries));
@@ -127,6 +127,10 @@ public class AllVsOne extends Activity {
 			add(npc);
 			npcs.add(npc);
 			npc.getCombat().attack(player);
+			npc.face(player);
+			player.face(npc.getPosition());
+			npc.locking.unlock();
+			//pause();
 		}
 		pause();
 	}
