@@ -43,7 +43,7 @@ fishing_modifier = 5.0
 farming_modifier = 5.0
 
 [network]
-connection_limit = 2
+connection_limit = 5
 failed_login_attempts = 5
 failed_login_timeout = 1
 login_threshold = 20

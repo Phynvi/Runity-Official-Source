@@ -1,5 +1,7 @@
 package plugin.click.item;
 
+import java.util.concurrent.TimeUnit;
+
 import io.battlerune.content.DiceBag;
 import io.battlerune.content.activity.impl.flowerpoker.FlowerHandler;
 import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
@@ -16,6 +18,7 @@ import io.battlerune.game.event.impl.ItemClickEvent;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendFadeScreen;
@@ -124,6 +127,14 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 
 		case 299:
+			int length = PlayerRight.isDonator(player) ? 3 : 4;
+
+			if (!player.flowerDelay.elapsed(length, TimeUnit.SECONDS)) {
+				player.dialogueFactory.sendStatement("You can only do this once every " + length + " Seconds!",
+						"Time Passed: " + Utility.getTime(player.flowerDelay.elapsedTime())).execute();
+				return true;
+			}
+			    player.flowerDelay.reset();
 				player.inventory.remove(299, 1);
 				new FlowerHandler(player).plantFlower(false);
 			break;

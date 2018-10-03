@@ -17,7 +17,7 @@ public class NpcDefParser extends WikiTableParser {
 
 	private static LinkedList<WikiTable> generateTables() {
 		LinkedList<WikiTable> tables = new LinkedList<>();
-		tables.add(new WikiTable("http://oldschoolrunescape.wikia.com/wiki/King_Black_Dragon") {
+		tables.add(new WikiTable("http://oldschoolrunescape.wikia.com/wiki/Jal-Nib") {
 			@Override
 			protected void parseDocument(Document document) {
 				Elements infobox = document.select(".wikitable.infobox");

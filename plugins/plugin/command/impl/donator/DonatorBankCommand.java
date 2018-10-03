@@ -15,9 +15,13 @@ public class DonatorBankCommand implements Command {
 	public void execute(Player player, String command, String[] parts) {
 		if (Area.inWilderness(player) && (!PlayerRight.isDeveloper(player))) {
 			player.message("You cannot open the bank in the wilderness.");
-		} else {
-			player.bank.open();
+			return;
+		} 
+		if(player.interfaceManager.isClear()) {
+			player.message("You cannot open your bank whilst an interface is open!");
+			return;
 		}
+			player.bank.open();
 	}
 
 	@Override

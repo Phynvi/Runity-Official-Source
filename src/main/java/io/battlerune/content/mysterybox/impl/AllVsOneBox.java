@@ -148,17 +148,17 @@ public class AllVsOneBox implements MysteryBoxListener {
 		 * Utility.random(1, 250) <= 10 <---- This generates a RANDOM NUMBER between 1
 		 * and 150 and if the RANDOM NUMBER is equal to 10 then it will execute.
 		 */
-		if (Utility.random(1, 50) <= 12) {
+		if (Utility.random(1, 75) <= 12) {
 			player.inventory.add(getUncommon()[random.nextInt(getUncommon().length)]);
 			player.message("You have recieved a Uncommon loot!");
 		}
-		if (Utility.random(1, 175) <= 2) {
+		if (Utility.random(1, 250) <= 2) {
 			player.inventory.add(getRare()[random.nextInt(getRare().length)]);
 			player.message("@gre@You have recieved a Rare loot!");
 			World.sendMessage(player.getName() + " @red@Has received RARE LOOT!");
 
 		}
-		if (Utility.random(1, 250) <= 2) {
+		if (Utility.random(1, 350) <= 2) {
 			player.inventory.add(getUltra()[random.nextInt(getUltra().length)]);
 			player.message("You have recieved a ULTRA RARE LOOT!");
 			World.sendMessage(player.getName() + " @red@Has received ULTRA RARE LOOT!");
@@ -166,7 +166,7 @@ public class AllVsOneBox implements MysteryBoxListener {
 			player.inventory.add(getCommon()[random.nextInt(getCommon().length)]);
 		}
 		player.setBossPoints(player.getBossPoints() + 50);
-        player.message("You have recieved 50 Boss points!" + " <img=14>You now have @red@ " + player.getBossPoints() + " boss points");
+        player.message("You have recieved 50 Boss points!" + " <img=2>You now have @red@ " + player.getBossPoints() + " boss points");
 	}
 
 }

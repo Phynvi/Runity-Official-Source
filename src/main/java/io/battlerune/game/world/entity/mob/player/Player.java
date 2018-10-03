@@ -394,6 +394,7 @@ public class Player extends Mob {
 	public final AtomicBoolean saved = new AtomicBoolean(false);
 	public Stopwatch yellDelay = Stopwatch.start();
 	public Stopwatch godwarsDelay = Stopwatch.start();
+	public Stopwatch flowerDelay = Stopwatch.start();
 	public Stopwatch buttonDelay = Stopwatch.start();
 	public Stopwatch itemDelay = Stopwatch.start();
 	public Stopwatch foodDelay = Stopwatch.start();

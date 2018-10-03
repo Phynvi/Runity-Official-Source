@@ -669,6 +669,31 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.DARK_BEAST);
 
 				return;
+				
+			case "ICE_DEMON":
+				playerKiller.activityLogger.add(ActivityLog.ICE_DEMON);
+
+				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+                return;
+				}
+
+				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+	                return;
+				}
+				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSuper(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+	                return;
+				} else {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
+					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+
+				}
+				return;
 
 			case "MAN":
 				playerKiller.activityLogger.add(ActivityLog.MAN);

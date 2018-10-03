@@ -206,7 +206,7 @@ public class BotUtility {
 			"Tawdry", "Ratty", "Unable", "Overt", "Second", "Smooth", "Smoggy", "Roomy", "Tart", "Opposite", "Elite",
 			"Black-and-white", "Teeny", "Boring", "Dapper", "Funny", "Subsequent", "Sedate", "Massive", "Extra-small",
 			"Accurate", "Itchy", "Fast", "Fluttering", "Plausible", "Super", "Robust", "Awful", "Gaping", "Large",
-			"Sore", "Dazzling", "Purple", "Grouchy", "Worthless", "Dispensable", "Unarmed", "Ordinary", "Delicate",
+			"Sore", "Dazzling", "Grouchy", "Worthless", "Dispensable", "Unarmed", "Ordinary", "Delicate",
 			"Acoustic", "Assorted", "Loutish", "Belligerent", "Gainful", "High", "Shivering", "Jumpy", "Amused",
 			"Didactic", "Detailed", "Harmonious", "Blue", "Fascinated", "Judicious", "Physical", "Miniature", "Nice",
 			"Measly", "Awake", "Cute", "Tangible", "Amuck", "Numberless", "Upbeat", "Ignorant", "Wholesale", "Tacit",

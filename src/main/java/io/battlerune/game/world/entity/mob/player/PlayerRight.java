@@ -15,19 +15,22 @@ import com.google.common.collect.ImmutableList;
 public enum PlayerRight {
 
 	PLAYER("Player", "000000", 0, -1, 4111), MODERATOR("Moderator", "245EFF", 1, -1, 4116),
-	ADMINISTRATOR("Administrator", "D17417", 2, -1, 4116), OWNER("Owner", "ED0C0C", 3, -1, 4117),
+	ADMINISTRATOR("Administrator", "D17417", 2, -1, 4116), 
+	OWNER("Owner", "ED0C0C", 4, -1, 4117),
 	DEVELOPER("Developer", "7D0CED", 4, -1, 4117),
 
 	DONATOR("Donator", "9C4B2F", 5, 10, 4112), SUPER_DONATOR("Super Donator", "2F809C", 6, 35, 4112),
 	EXTREME_DONATOR("Extreme Donator", "158A76", 7, 100, 4113), ELITE_DONATOR("Elite Donator", "2CA395", 8, 250, 4114),
 	KING_DONATOR("King Donator", "E32973", 9, 500, 4115), SUPREME_DONATOR("Supreme Donator", "E30b1A", 10, 750, 4115),
 
-	CLASSIC("Classic", "B1800A", 18, -1, 4115), YOUTUBER("Youtuber", "91111A", 11, -1, 4112),
+	CLASSIC("Classic", "B1800A", -1, -1, 4115), 
+	YOUTUBER("Youtuber", "91111A", 11, -1, 4112),
 	IRONMAN("Ironman", "7A6F74", 12, -1, 4112), ULTIMATE_IRONMAN("Ultimate Ironman", "7A6F74", 13, -1, 4113),
 	HARDCORE_IRONMAN("Hardcore Ironman", "7A6F74", 14, -1, 4114), HELPER("Helper", "5C5858", 16, -1, 4115),
-	GRAPHIC("Graphic", "CE795A", 17, -1, 4112),
-	TRUSTED_DICER("Trusted Dicer", "CE795A", 19, -1, 4115),
-	// GAMBLE_MANAGER("Gamble Dicer", "7A6F74", 18, -1, 4115)
+//GRAPHIC("Graphic", "CE795A", 17, -1, 4112),
+	BUG_TESTER("Bug Tester", "E30b1A", 3, -1, 4117),
+	GAMBLE_MANAGER("Gambling Manager", "7A6F74", 17, -1, 4117),
+	DONATION_MANAGER("Donation Manager", "FFE7AB", 15, -1, 4114),
 
 	;
 
@@ -67,6 +70,18 @@ public enum PlayerRight {
 		return player.right.equals(OWNER) || player.right.equals(DEVELOPER);
 	}
 	
+	/** Checks if the player has developer status. */
+	public static boolean isGambleManager(Player player) {
+		return player.right.equals(GAMBLE_MANAGER) || player.right.equals(GAMBLE_MANAGER);
+	}
+	
+	public static boolean isDonationManager(Player player) {
+		return player.right.equals(DONATION_MANAGER) || player.right.equals(DONATION_MANAGER);
+	}
+	
+	public static boolean isBugTester(Player player) {
+		return player.right.equals(BUG_TESTER) || player.right.equals(BUG_TESTER);
+	}
 	/** Checks if the player is a privileged member. */
 	public static boolean isPriviledged(Player player) {
 		return isDeveloper(player) || player.right.equals(ADMINISTRATOR);
@@ -74,7 +89,7 @@ public enum PlayerRight {
 
 	/** Checks if the player is a management member. */
 	public static boolean isManagement(Player player) {
-		return isPriviledged(player) || player.right.equals(MODERATOR) || player.right.equals(HELPER);
+		return isPriviledged(player) || player.right.equals(MODERATOR) || player.right.equals(HELPER) || player.right.equals(GAMBLE_MANAGER);
 	}
 	
 	/** Checks if the player is a Youtuber member. */

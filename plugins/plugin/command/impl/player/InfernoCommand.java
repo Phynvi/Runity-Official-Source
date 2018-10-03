@@ -10,11 +10,10 @@ import io.battlerune.game.world.entity.mob.player.Player;
  * @author Adam_#6723
  */
 
-public class ArenaZoneCommand implements Command {
+public class InfernoCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		Teleportation.teleport(player, Config.ARENA_ZONE);
         Inferno.create(player);
 	}
 

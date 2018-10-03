@@ -451,7 +451,7 @@ public final class Config {
 			, new Item(13826), new Item(13808), new Item(13809), new Item(13810), new Item(13811), new Item(13812),
 			new Item(13832, 1), new Item(13710, 1), new Item(13711, 1), new Item(13712, 1),
 			new Item(13713, 1), new Item(13714, 1), new Item(13715, 1), new Item(13805, 1), new Item(13832, 1), new Item(13816, 1),
-			new Item(13814, 1), new Item(10075, 1)
+			new Item(13814, 1), new Item(10075, 1), new Item(13749, 1), new Item(13831, 1), new Item(13833, 1),
 			
 			
 			

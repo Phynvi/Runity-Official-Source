@@ -34,7 +34,7 @@ public class PrayerButtonPlugin extends PluginContext {
 				return true;
 			}
 			if (!PlayerRight.isPriviledged(player) && player.unlockedPrayers.contains(prayer)) {
-				player.send(new SendMessage("You do not have this prayer unlocked!"));
+				player.send(new SendMessage("You do not have this prayer unlocked! 1"));
 				return true;
 			}
 			if (prayer == Prayer.CHIVALRY && player.skills.getMaxLevel(Skill.DEFENCE) < 60) {
@@ -52,8 +52,9 @@ public class PrayerButtonPlugin extends PluginContext {
 			if (!PlayerRight.isPriviledged(player)
 					&& (prayer == Prayer.RIGOUR || prayer == Prayer.AUGURY || prayer == Prayer.PRESERVE)
 					&& !player.unlockedPrayers.contains(prayer)) {
-				player.message("You do not have this prayer unlocked!");
-				return true;
+			//	player.message("You do not have this prayer unlocked! 2");
+			//	return true;
+				System.out.println("1 1 1");
 			}
 			player.quickPrayers.toggle(prayer);
 			return true;
@@ -140,7 +141,7 @@ public class PrayerButtonPlugin extends PluginContext {
 			if (!PlayerRight.isPriviledged(player)
 					&& (prayer == Prayer.RIGOUR || prayer == Prayer.AUGURY || prayer == Prayer.PRESERVE)
 					&& !player.unlockedPrayers.contains(prayer)) {
-				String message = "You do not have this prayer unlocked!";
+				String message = "You do not have this prayer unlocked! 3";
 				prayer.reset(player, message);
 				player.dialogueFactory.sendStatement(message).execute();
 				return true;

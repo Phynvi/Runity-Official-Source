@@ -64,6 +64,9 @@ public abstract class Area {
 
 	public static final ImmutableList<Area> BOSS_ARENA = ImmutableList
 			.of(new SquareArea("Arena Zone", 2257, 5309, 2285, 5370));
+	
+	public static final ImmutableList<Area> INFERNO = ImmutableList
+			.of(new SquareArea("Arena Zone", 2243, 5372, 2300, 5314));
 
 	public static final ImmutableList<Area> CHIMERA_ARENA = ImmutableList
 			.of(new SquareArea("Chimera Zone", 2363, 4738, 2433, 4667));
@@ -116,6 +119,7 @@ public abstract class Area {
 			new SquareArea("Corporeal Beast lair", 2964, 4360, 3001, 4399),
 			new SquareArea("Vorkath", 2261, 4054, 2289, 4048),
 			new SquareArea("Revenant Cave", 3124, 10240, 3270, 10046),
+			new SquareArea("Inferno", 2243, 5372, 2300, 5314),
 			new SquareArea("Dagannoth lair", 2890, 4425, 2942, 4466));
 
 	private static final ImmutableList<SquareArea> DUEL_ARENAS = ImmutableList
@@ -367,6 +371,16 @@ public abstract class Area {
 	public static boolean inGlodArena(Entity entity) {
 		for (Area zone : BOSS_ARENA) {
 			if (zone.inArea(entity.getPosition())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	public static boolean inInferno(Entity entity) {
+		for (Area zone1 : INFERNO) {
+			if (zone1.inArea(entity.getPosition())) {
 				return true;
 			}
 		}

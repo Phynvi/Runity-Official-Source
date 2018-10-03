@@ -51,8 +51,10 @@ import io.battlerune.util.parser.impl.NpcSpawnParser;
 import io.battlerune.util.parser.impl.ObjectRemovalParser;
 import io.battlerune.util.parser.impl.PacketSizeParser;
 import io.battlerune.util.parser.impl.StoreParser;
+import io.battlerune.util.parser.old.NpcDefinitionParser;
 import io.battlerune.util.sql.MySqlConnector;
 import io.battlerune.util.tools.ItemStatsDumper;
+import io.battlerune.util.tools.wiki.impl.NpcDefParser;
 import plugin.click.item.ClueScrollPlugin;
 
 
@@ -109,6 +111,8 @@ public final class BattleRune {
 		new StoreParser().run();
 		new GlobalObjectParser().run();
 		PunishmentExecuter.init();
+	//	new NpcDefinitionParser().run();
+	//	new NpcDefParser().run();
 		//5 seconds of work, stfu shit amazon i get paid by 3 different servers 4ner
 		
 		//ItemStatsDumper.printStats();
