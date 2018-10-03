@@ -27,7 +27,7 @@ import io.battlerune.util.Utility;
 /**
  * Handles Skotizo's stategy.
  *
- * @author Daniel
+ * @author Ad
  */
 public class Skotizo extends MultiStrategy {
 	private static Magic MAGIC = new Magic();
@@ -67,6 +67,9 @@ public class Skotizo extends MultiStrategy {
 			RegionManager.forNearbyPlayer(attacker, 20, other -> {
 				if (RandomUtils.success(.65))
 					return;
+				if(Utility.random(1, 15) <= 14) {
+					return;
+				}
 
 				World.schedule(2, () -> {
 					Position destination = Utility.randomElement(defender.boundaries);
@@ -151,13 +154,14 @@ public class Skotizo extends MultiStrategy {
 			attacker.animate(new Animation(69, UpdatePriority.VERY_HIGH));
 			attacker.graphic(481);
 			attacker.speak("ARHHHH! TIME TO SWITCH IT UP!!");
-
+if(Utility.random(1, 25) == 1) {
 			RegionManager.forNearbyPlayer(attacker, 16, other -> World.schedule(1, () -> {
 				Position destination = Utility.randomElement(attacker.boundaries);
 				World.sendGraphic(new Graphic(481), destination);
 				other.move(destination);
 				other.message("Skotizo has moved you around!");
 			}));
+}
 		}
 
 		@Override

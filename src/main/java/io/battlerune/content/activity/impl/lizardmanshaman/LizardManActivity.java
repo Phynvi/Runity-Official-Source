@@ -113,7 +113,7 @@ public class LizardManActivity extends Activity {
 		cleanup();
 		remove(player);
 		if (successfull) {
-			player.activityLogger.add(ActivityLog.LIZARD_SHAMAN);
+			player.activityLogger.add(ActivityLog.LIZARDMAN_SHAMAN);
 			player.message("Congratulations, you have killed the Lizardman Shaman.");
 			restart(1, () -> {
 				if (Area.inShaman(player)) {

@@ -32530,6 +32530,7 @@
     "defence-level": 8,
     "strength-level": 8,
     "ranged-level": 8,
+    "hitpoints-level": 35,
     "magic-level": 8
   },
   {
@@ -32547,6 +32548,7 @@
     "attack-level": 8,
     "defence-level": 8,
     "strength-level": 8,
+    "hitpoints-level": 35,
     "ranged-level": 8,
     "magic-level": 8
   },
@@ -32565,6 +32567,7 @@
     "attack-level": 8,
     "defence-level": 8,
     "strength-level": 8,
+    "hitpoints-level": 35,
     "ranged-level": 8,
     "magic-level": 8
   },
@@ -33839,6 +33842,7 @@
     "attackable": true,
     "aggressive": true,
     "poisonous": true,
+    "hitpoints-level": 35,
     "attack-style": "Unknown (edit)",
     "weakness": "Unknown (edit)",
     "attack-cooldown": 6
@@ -39679,6 +39683,7 @@
     "attack-level": 8,
     "defence-level": 8,
     "strength-level": 8,
+    "hitpoints-level": 35,
     "ranged-level": 8,
     "magic-level": 8
   },
@@ -39697,6 +39702,7 @@
     "attack-level": 8,
     "defence-level": 8,
     "strength-level": 8,
+    "hitpoints-level": 35,
     "ranged-level": 8,
     "magic-level": 8
   },
@@ -39715,6 +39721,7 @@
     "attack-level": 8,
     "defence-level": 8,
     "strength-level": 8,
+    "hitpoints-level": 35,
     "ranged-level": 8,
     "magic-level": 8
   },
@@ -59025,6 +59032,7 @@
     "walk": 5325,
     "attackable": true,
     "aggressive": true,
+    "hitpoints-level": 35,
     "poisonous": true,
     "attack-style": "Unknown (edit)",
     "weakness": "Unknown (edit)",

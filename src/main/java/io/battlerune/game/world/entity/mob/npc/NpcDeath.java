@@ -636,8 +636,8 @@ public final class NpcDeath extends MobDeath<Npc> {
 				return;
 
 
-			case "LIZARD_SHAMAN":
-				playerKiller.activityLogger.add(ActivityLog.LIZARD_SHAMAN);
+			case "LIZARDMAN_SHAMAN":
+				playerKiller.activityLogger.add(ActivityLog.LIZARDMAN_SHAMAN);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);

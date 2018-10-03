@@ -66,6 +66,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		// final int ANIM = 0;
 
 		switch (id) {
+		
+		case 16539:
+			player.move(new Position(2730, 10008, player.getHeight()));
+			break;
 
 		  case 26727: 
 			new FreeForAllLobbyTask(player).execute();

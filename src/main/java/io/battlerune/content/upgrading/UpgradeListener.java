@@ -70,7 +70,7 @@ public class UpgradeListener {
 		if (Utility.random(100) < (100 * data.getChance())) {
 			player.send(new SendMessage("@red@You have succesfully upgraded your item"));
 			World.sendMessage(
-					"[Upgrade] " + String.format(player.getUsername() + " " + "has succesfully upgraded an item!"));
+					"@red@[Upgrade] " + String.format(player.getUsername() + " " + "has succesfully upgraded a " + data.getItemReward().getName()));
 			player.inventory.add(data.getItemReward());
 			return UpgradeStatus.SUCCES;
 		}

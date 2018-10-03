@@ -58327,6 +58327,7 @@
     "base-value": 25600,
     "weight": 1.8,
     "equipment-slot": "WEAPON",
+        "weapon-interface": "LONGSWORD",
     "attack-stab": 94,
     "attack-slash": 55,
     "attack-crush": -2,
@@ -102187,6 +102188,7 @@
   {
     "id": 12728,
     "name": "Air rune pack",
+    "stackable": true,
     "noted-id": 12729,
     "low-alch": 172,
     "high-alch": 258,
@@ -102204,6 +102206,7 @@
   {
     "id": 12730,
     "name": "Water rune pack",
+    "stackable": true,
     "noted-id": 12731,
     "low-alch": 172,
     "high-alch": 258,
@@ -102221,6 +102224,7 @@
   {
     "id": 12732,
     "name": "Earth rune pack",
+    "stackable": true,
     "noted-id": 12733,
     "low-alch": 172,
     "high-alch": 258,
@@ -102239,6 +102243,7 @@
     "id": 12734,
     "name": "Fire rune pack",
     "noted-id": 12735,
+    "stackable": true,
     "low-alch": 172,
     "high-alch": 258,
     "base-value": 430
@@ -102256,6 +102261,7 @@
     "id": 12736,
     "name": "Mind rune pack",
     "noted-id": 12737,
+    "stackable": true,
     "low-alch": 132,
     "high-alch": 198,
     "base-value": 330
@@ -124754,7 +124760,9 @@
     "noted-id": 21811,
     "low-alch": 400000,
     "high-alch": 600000,
-    "base-value": 1000000
+    "base-value": 1000000,
+    "street-value": 1000000
+    
   },
   {
     "id": 21811,
@@ -124763,24 +124771,27 @@
     "unnoted-id": 21810,
     "low-alch": 400000,
     "high-alch": 600000,
-    "base-value": 1000000
+    "base-value": 1000000,
+    "street-value": 1000000
   },
   {
     "id": 21813,
     "name": "Ancient statuette",
     "noted-id": 21814,
-    "low-alch": 800000,
-    "high-alch": 1200000,
-    "base-value": 2000000
+    "low-alch": 400000,
+    "high-alch": 600000,
+    "base-value": 1000000,
+    "street-value": 1000000
   },
   {
     "id": 21814,
     "name": "Ancient statuette",
     "stackable": true,
     "unnoted-id": 21813,
-    "low-alch": 800000,
-    "high-alch": 1200000,
-    "base-value": 2000000
+    "low-alch": 400000,
+    "high-alch": 600000,
+    "base-value": 1000000,
+    "street-value": 1000000
   },
   {
     "id": 21816,
@@ -128226,6 +128237,7 @@
 		    "street-value": 5000000,
     "weight": 1.8,
     "equipment-slot": "WEAPON",
+        "weapon-interface": "LONGSWORD",
     "attack-stab": 94,
     "attack-slash": 55,
     "attack-crush": -2,

@@ -66,6 +66,7 @@ public class DemonicGorillas extends MultiStrategy {
 
 			if (form == 7147 && !defender.prayer.isActive(Prayer.PROTECT_FROM_MELEE)) {
 				defender.prayer.toggle(Prayer.PROTECT_FROM_MELEE);
+				
 			} else if (form == 7148 && !defender.prayer.isActive(Prayer.PROTECT_FROM_RANGE)) {
 				defender.prayer.toggle(Prayer.PROTECT_FROM_RANGE);
 			} else if (form == 7149 && !defender.prayer.isActive(Prayer.PROTECT_FROM_MAGIC)) {
