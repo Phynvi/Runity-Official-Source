@@ -2945,6 +2945,16 @@
       "endHeight": 31
     }
   },
+    {
+    "name": "jal jad Magic",
+    "projectile": {
+      "id": 449,
+      "delay": 70,
+      "duration": 125,
+      "startHeight": 75,
+      "endHeight": 31
+    }
+  },
   {
     "name": "Kril Tsutsaroth",
     "start": {

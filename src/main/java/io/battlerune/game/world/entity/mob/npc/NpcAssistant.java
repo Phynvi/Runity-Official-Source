@@ -47,6 +47,7 @@ import io.battlerune.game.world.entity.combat.strategy.npc.boss.dagannoths.Dagan
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.dagannoths.DagannothRex;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.dagannoths.DagannothSupreme;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.dagannoths.Spinolyp;
+import io.battlerune.game.world.entity.combat.strategy.npc.boss.inferno.JalTokJad;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.kril.Balfrug;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.kril.Tstanon;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.kril.Zakln;
@@ -104,6 +105,7 @@ public class NpcAssistant {
 			put(2042, Zulrah::new);
 			put(3127, TzTokJad::new);
 			put(6609, Callisto::new);
+			put(7700, JalTokJad::new);
 			put(7147, DemonicGorillas::new);
 			put(7148, DemonicGorillas::new);
 			put(7149, DemonicGorillas::new);
