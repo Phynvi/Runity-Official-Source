@@ -8,7 +8,6 @@ public final class InfernoWaveData {
 	 * Stores the NPC Data for Inferno
 	 */
 	public static final int 
-	JAL_NIB = 7691, 
 	JAL_MEJRAH = 7692, 
 	JAL_AK = 7693, 
 	JAL_AKREK_MEJ = 7694,
@@ -22,6 +21,9 @@ public final class InfernoWaveData {
 	TZKAL_ZUK = 7706, //last NPC.
 	ANCESTRAL_GLYPH = 7707,
 	JAL_MEJJAK = 7708;
+
+	public static final int JAL_NIB = 7691;
+
 	
 	public enum WaveData {
 		

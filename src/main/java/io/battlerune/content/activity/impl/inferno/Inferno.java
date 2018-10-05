@@ -8,6 +8,7 @@ import io.battlerune.content.ActivityLog;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityListener;
 import io.battlerune.content.activity.ActivityType;
+import io.battlerune.content.activity.impl.inferno.InfernoWaveData.WaveData;
 import io.battlerune.content.activity.panel.ActivityPanel;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
@@ -117,7 +118,7 @@ public class Inferno extends Activity {
 			return;
 		}
 
-		Position spawn = new Position(2273, 5341, player.getHeight());
+		Position spawn = new Position(2273, 5337, player.getHeight());
 		Position[] boundaries = Utility.getInnerBoundaries(spawn, Utility.random(1, 8), Utility.random(1, 8));
 
 		for (int id : wave.getMonster()) {
@@ -127,11 +128,21 @@ public class Inferno extends Activity {
 			npcs.add(npc);
 			npc.getCombat().attack(player);
 			npc.face(player);
+			npc.attack(player);
 			player.face(npc.getPosition());
 			npc.locking.unlock();
 			//pause();
+
+		}
+		if(wave == WaveData.WAVE_2 || wave == WaveData.WAVE_1) {
+			player.message("WAVE 69!! HURAHH");
 		}
 		pause();
+	}
+	
+	public static void finalWave() {
+		final int BOSS_ID; 
+		WaveData wavee = WaveData.WAVE_69;
 	}
 
 	@Override
