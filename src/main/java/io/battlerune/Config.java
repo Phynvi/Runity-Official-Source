@@ -256,6 +256,9 @@ public final class Config {
 
 	public static final Position REV_CAVES = new Position(3126, 3784, 0);
 
+	public static final Position PORAZDIR = new Position(3230, 10198, 0);
+
+	
 	/** KARAMJA. 3126, 3784*/
 	public static final Position DRAYNOR = new Position(3105, 3251, 0);
 

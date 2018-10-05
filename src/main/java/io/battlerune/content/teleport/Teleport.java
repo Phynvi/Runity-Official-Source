@@ -25,6 +25,12 @@ public enum Teleport {
 			true, "A level of 130 (strength + attack) is needed", ""),
 	KOLODIONS_ARENA("Kolodion's Arena", TeleportType.MINIGAMES, new Position(2540, 4717, 0), false,
 			new int[] { 6918, 6916, 6924 }, true, "You will be teleported in a safe area", ""),
+	All_Vs_One("All vs One", TeleportType.MINIGAMES, new Position(3169, 4958, 0), false,
+			new int[] { 13833, 13713, 7775 }, true, "All Vs One! Taking on every boss ingame!", ""),
+	ALL_VS_ONEV2("All vs One V2", TeleportType.MINIGAMES, new Position(2915, 4397, 0), false,
+			new int[] { 21292, 13729, 7775 }, true, "All Vs One V2! Harder version of AllVOne", ""),
+	INFERO("Inferno", TeleportType.MINIGAMES, new Position(2540, 4717, 0), false,
+			new int[] { 6918, 6916, 6924 }, true, "Take on 69 Waves of pure hardship!", ""),
 /*	FREE_FOR_ALL("Free For All", TeleportType.MINIGAMES, new Position(3296, 5004, 0), false,
 			new int[] { -1, -1, -1 }, false, "You will be teleported to FFA", ""),*/
 

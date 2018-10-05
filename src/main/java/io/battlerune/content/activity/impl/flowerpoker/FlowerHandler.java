@@ -96,7 +96,7 @@ public class FlowerHandler {
 	}
 
 	private FlowerData getFlower() {
-		if (random.nextInt(100) < 3) {
+		if (random.nextInt(1001) < 2) {
 			return random.nextInt(2) == 1 ? FlowerData.BLACK_FLOWERS : FlowerData.WHITE_FLOWERS;
 		} else {
 			return flower[random.nextInt(7)];

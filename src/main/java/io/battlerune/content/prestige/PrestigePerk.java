@@ -14,7 +14,8 @@ public enum PrestigePerk {
 	DOUBLE_WOOD("Double wood", "15% chance to receive an additional log.", 6800),
 	LITTLE_BIRDY("Little Birdy", "Increase the woodcutting rate of bird nest drops by 15%.", 6801),
 	THE_ROCK("The Rock", "10% chance to receive an additional ore.", 6802),
-	FLAME_ON("Flame On", "25% chance of burning an extra log.", 6803),;
+	FLAME_ON("Flame On", "25% chance of burning an extra log.", 6803),
+	EXTRA_DROP("10% Drop Rate bonus", "You recieve a 10% drop rate bonus.", 6804);
 
 	/** The name of the perk. */
 	public final String name;

@@ -23476,7 +23476,7 @@
   },
   {
     "id": 2528,
-	"tradeable": false,
+	"tradeable": true,
     "name": "Genie lamp"
   },
   {
@@ -93118,7 +93118,7 @@
     "low-alch": 116004,
     "high-alch": 174006,
     "base-value": 290010,
-    "street-value": 12337830,
+    "street-value": 6337830,
     "weight": 12.0,
     "equipment-slot": "BODY",
     "req-defence": 65,
@@ -93257,7 +93257,7 @@
     "low-alch": 116004,
     "high-alch": 174006,
     "base-value": 290010,
-    "street-value": 12337830,
+    "street-value": 6337830,
     "weight": 12.0
   },
   {
@@ -93267,7 +93267,7 @@
     "low-alch": 115964,
     "high-alch": 173946,
     "base-value": 289910,
-    "street-value": 25700301,
+    "street-value": 6337830,
     "weight": 8.0,
     "equipment-slot": "LEGS",
     "req-defence": 65,
@@ -93289,7 +93289,7 @@
     "low-alch": 115964,
     "high-alch": 173946,
     "base-value": 289910,
-    "street-value": 25700301,
+    "street-value": 6337830,
     "weight": 8.0
   },
   {
@@ -121001,6 +121001,7 @@
     "id": 21081,
     "name": "Opal ring",
     "noted-id": 21082,
+    "tradeable": false,
     "low-alch": 420,
     "high-alch": 630,
     "base-value": 1050,
@@ -121389,6 +121390,7 @@
     "id": 21143,
     "name": "Dodgy necklace",
     "noted-id": 21144,
+    "tradeable": false,
     "low-alch": 420,
     "high-alch": 630,
     "base-value": 1050,
@@ -127473,84 +127475,6 @@
 						    "equipment-slot": "CAPE",
 						    "weight": 4.0 
 						  },
-
-{
-	    "id": 20250,
-	    "name": "@red@Amer@whi@ican @blu@Whip", 
-	    "low-alch": 2, 
-	    "high-alch": 3, 
-	    "base-value": 5,
-           "street-value": 18403, 
-	    "equipment-slot": "WEAPON",
-	    "weight": 4.0 
-	  },
-
-{
-		    "id": 20251,
-		    "name": "@red@American @whi@Torva @blu@platelegs", 
-		    "low-alch": 2, 
-		    "high-alch": 3, 
-		    "base-value": 5,
-	               "street-value": 18403, 
-		    "equipment-slot": "LEGS",
-		    "weight": 4.0 
-		  },
-
-{
-			    "id": 20252,
-			    "name": "@red@American @whi@Torva @blu@Fullhelm", 
-			    "low-alch": 2, 
-			    "high-alch": 3, 
-			    "base-value": 5,
-		               "street-value": 18403, 
-			    "equipment-slot": "HELM",
-			    "weight": 4.0 
-			  },
-
-{
-				    "id": 20253,
-				    "name": "@red@American @whi@Torva @blu@Platebody", 
-				    "low-alch": 2, 
-				    "high-alch": 3, 
-				    "base-value": 5,
-			               "street-value": 18403, 
-				    "equipment-slot": "BODY",
-				    "weight": 4.0 
-				  },
-
-{
-					    "id": 14556,
-					    "name": "@red@Amer@whi@ican @blu@Gloves", 
-					    "low-alch": 2, 
-					    "high-alch": 3, 
-					    "base-value": 5,
-				               "street-value": 18403, 
-					    "equipment-slot": "GLOVES",
-					    "weight": 4.0 
-					  },
-
-{
-						    "id": 14557,
-						    "name": "@red@Amer@whi@ican @blu@Boots", 
-						    "low-alch": 2, 
-						    "high-alch": 3, 
-						    "base-value": 5,
-					               "street-value": 18403, 
-						    "equipment-slot": "BOOTS",
-						    "weight": 4.0 
-						  },
-
-{
-							    "id": 14558,
-							    "name": "@red@Amer@whi@ican @blu@Wings", 
-							    "low-alch": 2, 
-							    "high-alch": 3, 
-							    "base-value": 5,
-						               "street-value": 18403, 
-							    "equipment-slot": "CAPE",
-							    "weight": 4.0 
-							  },
-
 {
 								    "id": 13689,
 								    "name": "Silver Chain", 

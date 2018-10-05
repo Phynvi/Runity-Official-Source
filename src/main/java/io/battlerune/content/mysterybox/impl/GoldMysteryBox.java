@@ -5,6 +5,7 @@ import java.util.Random;
 import io.battlerune.content.mysterybox.MysteryBoxListener;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.util.Utility;
 
@@ -177,6 +178,7 @@ public class GoldMysteryBox implements MysteryBoxListener {
 			player.message("@gre@You have recieved a Rare loot!");
 			World.sendMessage(player.getName() + " @red@Has received RARE LOOT!");
 		}
+		//TODO Make Supreme rank have beenfits
 		if (Utility.random(1, 400) <= 2) {
 			player.inventory.add(getUltra()[random.nextInt(getUltra().length)]);
 			player.message("You have recieved a ULTRA RARE LOOT!");

@@ -74,7 +74,33 @@ public enum PlayerGuideData {
 	Help_me(-9473, PlayerGuideDifficulty.EASY, "Help me",
 			new String[] { "- Contact a staff member on ::staff", "- Ask a question in the Runity clan chat for",
 					"other veteran players to answer you.", "- Contat a staff member on ::discord",
-					"- Ask for help on the ::forums", "", "", "", "", "", "", "", "", "" }),;
+					"- Ask for help on the ::forums", "", "", "", "", "", "", "", "", "" }),
+	Prayer_Guide(-9472, PlayerGuideDifficulty.EASY, "Prayer Guide",
+			new String[] { "We have opened ", "the Prayer Guide",
+					"", "",
+					"", "", "", "", "", "", "", "", "", "" }),
+   Fishing_Guide(-9471, PlayerGuideDifficulty.EASY, "Fishing Guide",
+			new String[] { "We have opened ", "the Fishing guide",
+					"", "",
+					"", "", "", "", "", "", "", "", "", "" }),
+	Runecrafting_Guide(-9470, PlayerGuideDifficulty.EASY, "Runecrafting Guide",
+			new String[] { "We have opened ", "the Runecrafting guide",
+					"", "",
+					"", "", "", "", "", "", "", "", "", "" }),
+	Mining_Guide(-9469, PlayerGuideDifficulty.EASY, "Mining Guide",
+			new String[] { "We have opened ", "the mining guide",
+					"", "",
+					"", "", "", "", "", "", "", "", "", "" }),
+	AllVsOne(-9468, PlayerGuideDifficulty.EASY, "Prayer Guide",
+			new String[] { "We have opened ", "the all vs one Guide!",
+					"", "",
+					"", "", "", "", "", "", "", "", "", "" }),
+	AllVsOne_V2(-9467, PlayerGuideDifficulty.EASY, "AllVsOneV2",
+			new String[] { "We have opened ", "the all vs one v2 Guide!",
+					"", "",
+					"", "", "", "", "", "", "", "", "", "" }),
+	;
+	//TODO ADD MASON'S GUIDE ON TO THE INTERFACE
 
 	private int buttonId;
 	private PlayerGuideDifficulty difficulty;

@@ -9,6 +9,7 @@ import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.util.Utility;
 
 /**
@@ -53,6 +54,11 @@ public int healingGraphic = 398; //1296
 
 @Override
 public void hit(Mob attacker, Mob defender, Hit hit) {
+	if(Area.inWilderness(attacker) && Utility.random(1, 2) <= 1) {
+		attacker.heal(hit.getDamage() / 4);
+		attacker.graphic(healingGraphic);
+		return;
+	}
 	if (Utility.random(1, 4) <= 1) {
 		attacker.heal(hit.getDamage() / 5);
 		attacker.graphic(healingGraphic);

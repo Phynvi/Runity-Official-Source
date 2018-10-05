@@ -76,8 +76,7 @@ public enum AxeData {
 			}
 		}
 		return VALUES.stream()
-				.filter(def -> player.inventory.contains(def.id)
-						|| player.toolkit.contains(def.id) && player.skills.getLevel(Skill.WOODCUTTING) >= def.level)
+				.filter(def -> player.inventory.contains(def.id) && player.skills.getLevel(Skill.WOODCUTTING) >= def.level)
 				.findAny();
 	}
 }

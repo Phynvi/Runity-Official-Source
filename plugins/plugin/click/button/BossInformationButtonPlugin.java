@@ -1,5 +1,6 @@
 package plugin.click.button;
 
+import io.battlerune.Config;
 import io.battlerune.content.activity.impl.cerberus.CerberusActivity;
 import io.battlerune.content.activity.impl.corp.CorporealBeastActivity;
 import io.battlerune.content.activity.impl.giantmole.GiantMoleActivity;
@@ -160,6 +161,17 @@ public class BossInformationButtonPlugin extends PluginContext {
 						() -> CerberusActivity.CreateUnPaidInstance(player), "Nevermind", factory::clear);
 				factory.execute();
 			} 
+		if(button == -14050) {
+			player.dialogueFactory.sendOption("@red@Teleport me [Wilderness]", () -> {
+
+				Teleportation.teleport(player, Config.PORAZDIR);
+				player.message("You have teleported to Porazdir");
+
+		}, "Cancel", () -> {
+
+			player.dialogueFactory.clear();
+		}).execute();
+		}
 		if (button == -14080) {
 			DialogueFactory factory = player.dialogueFactory;
 			factory.sendOption("Pay 100,000 coins for instanced vorkath?",

@@ -18,6 +18,8 @@ import plugin.command.impl.moderator.JailCommand;
 import plugin.command.impl.moderator.KickCommand;
 import plugin.command.impl.moderator.MuteCommand;
 import plugin.command.impl.moderator.PrivateZoneCommand;
+import plugin.command.impl.moderator.QuickHelpCommand;
+import plugin.command.impl.moderator.RemindVote;
 import plugin.command.impl.moderator.TeletoCommand;
 import plugin.command.impl.moderator.TeletomeCommand;
 import plugin.command.impl.moderator.Unbancommand;
@@ -192,7 +194,9 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "kick", "kickk" }, new KickCommand());
 		PLUGIN.putIfAbsent(new String[] { "ipban", "ip" }, new IpbanCommand());
 		PLUGIN.putIfAbsent(new String[] { "ipmute", "imute" }, new IpmuteCommand());
-		
+		PLUGIN.putIfAbsent(new String[] { "remindvote", "allvote" }, new RemindVote());
+		PLUGIN.putIfAbsent(new String[] { "quickhelp", "offerhelp" }, new QuickHelpCommand());
+
 
 
 		/*

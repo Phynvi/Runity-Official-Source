@@ -75,21 +75,20 @@ public enum PlayerRight {
 		return player.right.equals(GAMBLE_MANAGER) || player.right.equals(GAMBLE_MANAGER);
 	}
 	
-	public static boolean isDonationManager(Player player) {
-		return player.right.equals(DONATION_MANAGER) || player.right.equals(DONATION_MANAGER);
-	}
+
 	
 	public static boolean isBugTester(Player player) {
 		return player.right.equals(BUG_TESTER) || player.right.equals(BUG_TESTER);
 	}
 	/** Checks if the player is a privileged member. */
 	public static boolean isPriviledged(Player player) {
-		return isDeveloper(player) || player.right.equals(ADMINISTRATOR);
+		return isDeveloper(player) || player.right.equals(ADMINISTRATOR) || player.right.equals(DONATION_MANAGER);
 	}
 
 	/** Checks if the player is a management member. */
 	public static boolean isManagement(Player player) {
-		return isPriviledged(player) || player.right.equals(MODERATOR) || player.right.equals(HELPER) || player.right.equals(GAMBLE_MANAGER);
+		return isPriviledged(player) || player.right.equals(MODERATOR) || player.right.equals(HELPER) 
+				|| player.right.equals(GAMBLE_MANAGER);
 	}
 	
 	/** Checks if the player is a Youtuber member. */

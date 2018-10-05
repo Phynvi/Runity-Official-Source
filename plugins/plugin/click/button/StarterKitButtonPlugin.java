@@ -111,13 +111,12 @@ public class StarterKitButtonPlugin extends PluginContext {
 				"@red@Tutorial Tip@bla@ You can train your combat ::train, or make money thieving or ::barrows"));
 		player.send(new SendMessage("@red@Tutorial Tip@bla@ Pking is also a very good method to make money."));
 		player.send(new SendMessage("@red@Tutorial Tip@bla@ Do ::guide for an awesome money making guide!"));
+		World.sendStaffMessage(player.getName() + " Has just joined the server, all staff members make him feel welcomed.");
+		World.sendStaffMessage("As a staff member you are instructed to approach this player and help him out!");
 
 		player.runEnergy = +100;
 		player.buttonDelay.reset();
 		ClanChannelHandler.connect(player, "help", false);
-
-		// this is needed for logs so players are entered into the db upon first account
-		// creation
 		PlayerSerializer.save(player);
 	}
 }

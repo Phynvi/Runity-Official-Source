@@ -21,6 +21,9 @@ public enum DropChanceData {
 	MAGMA_AXE(13687, 10),
 	RING_50(21752, 50),
 	RING_25(20005, 25),
+	KARTH_RING_15(13814, 15),
+	NECK_14(21143, 15),
+	RING_14(21081, 15),
 	Dark1(13710, 7),
 	dark2(13714, 7), 
 	dark3(13715, 5),
@@ -54,6 +57,10 @@ public enum DropChanceData {
 
 	public int getModifier() {
 		return modifier;
+	}
+	
+	public void SetMofidier(int modifier) {
+		this.modifier = modifier;
 	}
 
 }

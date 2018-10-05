@@ -17,8 +17,8 @@ public class DonatorBankCommand implements Command {
 			player.message("You cannot open the bank in the wilderness.");
 			return;
 		} 
-		if(player.interfaceManager.isClear()) {
-			player.message("You cannot open your bank whilst an interface is open!");
+		if(player.getCombat().inCombat()) {
+			player.message("You cannot open the bank whilst in combat.");
 			return;
 		}
 			player.bank.open();

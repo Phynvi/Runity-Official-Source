@@ -92,17 +92,16 @@ public class AccountSecurity {
 	public enum AccountData {
 
 		YVEZ(PlayerRight.MODERATOR, "Yvez", "963262", "24.207.242.241"),
-		KAYJAY(PlayerRight.HELPER, "Kayjay", "131199","185.19.132.66"),
 		MERADJ(PlayerRight.ADMINISTRATOR, "Mister", "763249234", "213.127.121.229", "", ""),
 		NERIK(PlayerRight.DEVELOPER, "Nerik", "090909", "24.132.26.80", ""),
-		ILLUSION(PlayerRight.MODERATOR, "Illusion", "82.40.215.3", ""),
-		DRIPZ(PlayerRight.ADMINISTRATOR, "Dripz", "213.127.121.229", ""),
 		YURDLE(PlayerRight.MODERATOR, "Yurdle", "76.175.167.21", "", ""),
-		RUBY(PlayerRight.MODERATOR, "Ruby", "", "76.175.167.21", ""),
 		FRUIT(PlayerRight.HELPER, "F r u 1 t", "052094", "190.103.180.120", ""),
 		ADAM(PlayerRight.DEVELOPER, "Adam", "23042000", "82.17.234.134"), 
 		JORDAN(PlayerRight.OWNER, "Jordan", "68510", "92.30.202.171", ""),
-		TEEK(PlayerRight.DEVELOPER, "Teek", "00000", "86.28.217.152", "");
+		MASON(PlayerRight.MODERATOR, "Mason", "802111", "108.168.97.8"),
+		SAGE(PlayerRight.GAMBLE_MANAGER, "Sage", "", "74.76.104.21"),
+		MELON(PlayerRight.DONATION_MANAGER, "Melon", "", "115.249.154.50")
+
 		
 		;
 		private final String name;

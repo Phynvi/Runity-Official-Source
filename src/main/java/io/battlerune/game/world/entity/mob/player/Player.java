@@ -75,6 +75,8 @@ import io.battlerune.game.world.entity.mob.Viewport;
 import io.battlerune.game.world.entity.mob.movement.waypoint.PickupWaypoint;
 import io.battlerune.game.world.entity.mob.movement.waypoint.Waypoint;
 import io.battlerune.game.world.entity.mob.npc.Npc;
+import io.battlerune.game.world.entity.mob.npc.dropchance.DropChanceData;
+import io.battlerune.game.world.entity.mob.npc.dropchance.DropChanceHandler;
 import io.battlerune.game.world.entity.mob.player.appearance.Appearance;
 import io.battlerune.game.world.entity.mob.player.exchange.ExchangeSessionManager;
 import io.battlerune.game.world.entity.mob.player.relations.ChatMessage;
@@ -430,6 +432,7 @@ public class Player extends Mob {
 	public final LootingBag lootingBag = new LootingBag(this);
 	public final Equipment equipment = new Equipment(this);
 	public final Prestige prestige = new Prestige(this);
+	public final DropChanceHandler data = new DropChanceHandler(this);
 	public final PriceChecker priceChecker = new PriceChecker(this);
 	public final DonatorDeposit donatorDeposit = new DonatorDeposit(this);
 	public DialogueFactory dialogueFactory = new DialogueFactory(this);

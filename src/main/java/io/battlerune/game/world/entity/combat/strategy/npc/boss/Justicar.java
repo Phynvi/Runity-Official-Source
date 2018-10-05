@@ -85,7 +85,6 @@ public class Justicar extends MultiStrategy {
 				World.schedule(2, () -> {
 					Position destination = Utility.randomElement(defender.boundaries);
 					World.sendGraphic(new Graphic(481), destination);
-					attacker.move(destination);
 
 				});
 			});
@@ -238,8 +237,6 @@ public class Justicar extends MultiStrategy {
 				CombatUtil.areaAction(attacker, 64, 18, mob -> {
 					Position destination = Utility.randomElement(attacker.boundaries);
 					World.sendGraphic(new Graphic(190), destination);
-					attacker.move(destination);
-					attacker.getPlayer().message("Justiciar Moved you!.");
 				});
 			}
 		}
