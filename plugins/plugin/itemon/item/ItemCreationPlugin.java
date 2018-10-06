@@ -36,6 +36,17 @@ public class ItemCreationPlugin extends PluginContext {
 			player.message("@red@You have distmantled a Dragon Skirt (OR)");
 			return true;
 		}
+		
+		/** AFK Logs message**/
+		if ((used.getId() == 2862 || with.getId() == 2862) && (with.getId() == 590 || with.getId() == 590)) {
+			player.message("@red@Use the log on the bonfire at ::skill to burn this log!");
+			return true;
+		}
+		/** AFK Logs message**/
+		if ((used.getId() == 590 || with.getId() == 590) && (with.getId() == 2862 || with.getId() == 2862)) {
+			player.message("@red@Use the log on the bonfire at ::skill to burn this log!");
+			return true;
+		}
 
 		/** Dragon Defender (OR) Kit Dismantle **/
 		if ((used.getId() == 1755 || with.getId() == 1755) && (with.getId() == 19722 || with.getId() == 19722)) {

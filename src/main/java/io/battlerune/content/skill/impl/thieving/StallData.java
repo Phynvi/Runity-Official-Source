@@ -15,7 +15,7 @@ public enum StallData {
 	FOOD1(11730, new Item(3162), 1, 25, 275), GENERAL1(11732, new Item(1887), 40, 50, 760),
 	CRAFTING1(11734, new Item(1635), 50, 80, 1453), MAGIC1(4877, new Item(8788), 75, 125, 2546),
 	// HERB1(8012, new Item(199), 1, 10, 100),//guam
-	SCIMITAR1(11731, new Item(1603), 85, 250, 3860),
+	SCIMITAR1(11731, new Item(1617), 85, 250, 3860),
     FOOD(4875, new Item(3162), 1, 25, 275),
     GENERAL(4876, new Item(1887), 25, 50, 760),
     CRAFTING(4874, new Item(1635), 50, 80, 1453),

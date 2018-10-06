@@ -124760,10 +124760,10 @@
     "id": 21810,
     "name": "Ancient totem",
     "noted-id": 21811,
-    "low-alch": 400000,
-    "high-alch": 600000,
-    "base-value": 1000000,
-    "street-value": 1000000
+    "low-alch": 1000000,
+    "high-alch": 1250000,
+    "base-value": 1500000,
+    "street-value": 1500000
     
   },
   {
@@ -124771,29 +124771,29 @@
     "name": "Ancient totem",
     "stackable": true,
     "unnoted-id": 21810,
-    "low-alch": 400000,
-    "high-alch": 600000,
-    "base-value": 1000000,
-    "street-value": 1000000
+    "low-alch": 1000000,
+    "high-alch": 1250000,
+    "base-value": 1500000,
+    "street-value": 1500000
   },
   {
     "id": 21813,
     "name": "Ancient statuette",
     "noted-id": 21814,
-    "low-alch": 400000,
-    "high-alch": 600000,
-    "base-value": 1000000,
-    "street-value": 1000000
+    "low-alch": 1000000,
+    "high-alch": 1250000,
+    "base-value": 1500000,
+    "street-value": 1500000
   },
   {
     "id": 21814,
     "name": "Ancient statuette",
     "stackable": true,
     "unnoted-id": 21813,
-    "low-alch": 400000,
-    "high-alch": 600000,
-    "base-value": 1000000,
-    "street-value": 1000000
+    "low-alch": 1000000,
+    "high-alch": 1250000,
+    "base-value": 1500000,
+    "street-value": 1500000
   },
   {
     "id": 21816,
@@ -128155,18 +128155,18 @@
 {
     "id": 22324,
     "name": "Ghrazi Rapier",
-		    "low-alch": 3000000,
-		    "high-alch": 4000000,
-		    "base-value": 5000000,
-		    "street-value": 5000000,
+    "low-alch": 3000000,
+    "high-alch": 4000000,
+    "base-value": 5000000,
+	"street-value": 5000000,
     "weight": 1.8,
     "equipment-slot": "WEAPON",
-        "weapon-interface": "LONGSWORD",
-    "attack-stab": 94,
-    "attack-slash": 55,
-    "attack-crush": -2,
-    "defence-slash": 2,
-    "bonus-strength": 85
+    "weapon-interface": "LONGSWORD",
+    "attack-stab": 104,
+    "attack-slash": 65,
+    "attack-crush": -1,
+    "defence-slash": 4,
+    "bonus-strength": 99
   },
 {
 "id": 22326,

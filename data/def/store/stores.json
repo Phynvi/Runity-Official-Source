@@ -584,33 +584,33 @@
 	},
 	        {
 	"id": 21847, // Snow imp costume head
-	"value": 180,
+	"value": 500,
 	"amount": 10000
 	},
 	        {
 	"id": 21849, // Snow imp costume body
-	"value": 180,
+	"value": 500,
 	"amount": 10000
 	},
 	        {
 	"id": 21851, // Snow imp costume legs
-	"value": 180,
+	"value": 500,
 	"amount": 10000
 	},
 	        {
 	"id": 21855, // Snow imp costume gloves
-	"value": 180,
+	"value": 500,
 	"amount": 10000
 	},
 	        {
 	"id": 21857, // Snow imp costume feet
-	"value": 180,
+	"value": 500,
 	"amount": 10000
 	},
 
 	        {
 	          "id": 21853, // Snow imp costume tail
-	          "value": 180,
+	          "value": 500,
 	          "amount": 100
 	        },
 	        {
@@ -4644,7 +4644,7 @@
               {
                 "id": 13833,
                 "amount": 1000,
-                "value": 75000
+                "value": 350000
               },
                {
                 "id": 13831,

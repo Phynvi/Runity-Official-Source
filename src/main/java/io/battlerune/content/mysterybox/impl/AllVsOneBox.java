@@ -135,7 +135,7 @@ public class AllVsOneBox implements MysteryBoxListener {
 				new Item(20044, 1), // Samurai greaves
 				new Item(20041, 1), // Samurai gloves
 				new Item(20047, 1), // Samurai boots
-
+                new Item(22324, 1),
 		};
 	}
 

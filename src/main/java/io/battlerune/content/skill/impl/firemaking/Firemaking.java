@@ -46,7 +46,6 @@ public class Firemaking extends Skill {
 		if (firemaking == null)
 			return false;
 		//player.inventory.add(995, firemaking.getMoney());
-		System.out.println("0" + firemaking.getMoney());
 		player.action.execute(new FiremakingAction(player, item, firemaking), true);
 		return true;
 	}
