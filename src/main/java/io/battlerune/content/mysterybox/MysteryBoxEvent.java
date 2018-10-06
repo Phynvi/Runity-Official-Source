@@ -7,7 +7,6 @@ import io.battlerune.content.mysterybox.impl.AllVsOneBox;
 import io.battlerune.content.mysterybox.impl.GoldMysteryBox;
 import io.battlerune.content.mysterybox.impl.MegaMysteryBox;
 import io.battlerune.content.mysterybox.impl.MysteryBox;
-import io.battlerune.content.mysterybox.impl.PetMysteryBox;
 import io.battlerune.content.mysterybox.impl.SilverMysteryBox;
 
 /**
@@ -26,7 +25,6 @@ public class MysteryBoxEvent {
 		MYSTERY_BOX.putIfAbsent(MysteryBoxType.SILVER_MBOX, new SilverMysteryBox());
 		MYSTERY_BOX.putIfAbsent(MysteryBoxType.GOLD_MBOX, new GoldMysteryBox());
 		MYSTERY_BOX.putIfAbsent(MysteryBoxType.MEGA_MBOX, new MegaMysteryBox());
-		MYSTERY_BOX.putIfAbsent(MysteryBoxType.PETMBOX, new PetMysteryBox());
 		MYSTERY_BOX.putIfAbsent(MysteryBoxType.ALLVSONEBOX, new AllVsOneBox());
 
 	}

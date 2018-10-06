@@ -91,6 +91,9 @@ public class ItemOptionPacketListener implements PacketListener {
 			if (MysteryBoxExecuter.execute(player, item.getId())) {
 				return;
 			}
+			 if (player.mysteryBox.click(item)) {
+                 return;
+             }
 
 			PluginManager.getDataBus().publish(player, new ItemClickEvent(1, item, slot));
 			break;

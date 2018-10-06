@@ -11,6 +11,7 @@ import io.battlerune.content.activity.record.GlobalRecords;
 import io.battlerune.content.clanchannel.ClanRepository;
 import io.battlerune.content.freeforall.FreeForAll;
 import io.battlerune.content.itemaction.ItemActionRepository;
+import io.battlerune.content.mysterybox2.MysteryBox;
 import io.battlerune.content.skill.SkillRepository;
 import io.battlerune.content.triviabot.TriviaBot;
 import io.battlerune.fs.cache.FileSystem;
@@ -31,9 +32,6 @@ import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.attack.listener.CombatListenerManager;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.arena.ArenaEvent;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekEvent;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.justicar.JusticarEvent;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.magearena.DerwenEvent;
-import io.battlerune.game.world.entity.combat.strategy.npc.boss.magearena.PorazdirEvent;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.skotizo.SkotizoEvent;
 import io.battlerune.game.world.entity.mob.npc.definition.NpcDefinition;
 import io.battlerune.game.world.entity.mob.player.profile.ProfileRepository;
@@ -51,10 +49,7 @@ import io.battlerune.util.parser.impl.NpcSpawnParser;
 import io.battlerune.util.parser.impl.ObjectRemovalParser;
 import io.battlerune.util.parser.impl.PacketSizeParser;
 import io.battlerune.util.parser.impl.StoreParser;
-import io.battlerune.util.parser.old.NpcDefinitionParser;
 import io.battlerune.util.sql.MySqlConnector;
-import io.battlerune.util.tools.ItemStatsDumper;
-import io.battlerune.util.tools.wiki.impl.NpcDefParser;
 import plugin.click.item.ClueScrollPlugin;
 
 
@@ -131,6 +126,7 @@ public final class BattleRune {
 		startupService.submit(GlobalRecords::load);
 		startupService.submit(SkillRepository::load);
 		startupService.submit(ProfileRepository::load);
+        startupService.submit(MysteryBox::load);
 		startupService.submit(ItemActionRepository::declare);
 		startupService.submit(ClueScrollPlugin::declare);
 		startupService.submit(GameSaver::load);

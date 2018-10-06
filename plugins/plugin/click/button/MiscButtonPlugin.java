@@ -53,6 +53,9 @@ public class MiscButtonPlugin extends PluginContext {
 			}
 			return true;
 
+        case -6027:
+            player.mysteryBox.spin();
+            return true;
 		case 13390:
 			player.interfaceManager.close();
 			return true;

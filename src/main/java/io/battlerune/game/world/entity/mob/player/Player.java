@@ -1,6 +1,16 @@
 package io.battlerune.game.world.entity.mob.player;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -28,18 +38,16 @@ import io.battlerune.content.dialogue.Dialogue;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.dialogue.OptionDialogue;
 import io.battlerune.content.dialogue.impl.GloryTeleport;
-import io.battlerune.content.dialogue.impl.SailorKingDialouge;
 import io.battlerune.content.donators.Donation;
 import io.battlerune.content.emote.EmoteUnlockable;
 import io.battlerune.content.event.EventDispatcher;
 import io.battlerune.content.event.impl.LogInEvent;
-import io.battlerune.content.freeforall.FreeForAll;
-import io.battlerune.content.freeforall.FreeForAllType;
 import io.battlerune.content.hiscores.PlayerHiscores;
 import io.battlerune.content.masterminer.AdventureGUI;
 import io.battlerune.content.masterminer.MasterMinerData;
 import io.battlerune.content.masterminer.MasterMinerGUI;
 import io.battlerune.content.masterminer.MasterMinerTaskHandler;
+import io.battlerune.content.mysterybox2.MysteryBoxManager;
 import io.battlerune.content.pet.PetData;
 import io.battlerune.content.pet.Pets;
 import io.battlerune.content.presets.Preset;
@@ -75,7 +83,6 @@ import io.battlerune.game.world.entity.mob.Viewport;
 import io.battlerune.game.world.entity.mob.movement.waypoint.PickupWaypoint;
 import io.battlerune.game.world.entity.mob.movement.waypoint.Waypoint;
 import io.battlerune.game.world.entity.mob.npc.Npc;
-import io.battlerune.game.world.entity.mob.npc.dropchance.DropChanceData;
 import io.battlerune.game.world.entity.mob.npc.dropchance.DropChanceHandler;
 import io.battlerune.game.world.entity.mob.player.appearance.Appearance;
 import io.battlerune.game.world.entity.mob.player.exchange.ExchangeSessionManager;
@@ -117,9 +124,8 @@ import io.battlerune.util.Utility;
 /**
  * This class represents a character controlled by a player.
  *
- * @author Daniel
  * 
- * @author Michael | Chex Adam_#6723
+ * @author Michael | Chex | Adam_#6723
  */
 public class Player extends Mob {
 
@@ -231,6 +237,7 @@ public class Player extends Mob {
 	public double[] achievedExp = new double[7];
 	public Optional<Dialogue> dialogue = Optional.empty();
 	public Optional<OptionDialogue> optionDialogue = Optional.empty();
+    public final MysteryBoxManager mysteryBox = new MysteryBoxManager(this);
 	public Optional<Consumer<String>> enterInputListener = Optional.empty();
 	public boolean[] barrowKills = new boolean[BrotherData.values().length];
 	public final PlayerRelation relations = new PlayerRelation(this);
