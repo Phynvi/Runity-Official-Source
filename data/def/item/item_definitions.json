@@ -92646,6 +92646,86 @@
 	  "bonus-prayer": 0,
 	  "bonus-magic": 0 
 	    },
+	    
+	    
+	    
+	    
+	    
+	     {
+	  "id": 21777,
+	  "name": "Slayer Helmet",
+	    "low-alch": 500000,
+	    "high-alch": 750000,
+	    "base-value": 1250000,
+	    "street-value": 31770372,
+	  "equipment-slot": "HELM",
+	  "weight": 4.0,
+	  "attack-stab": 0,
+	  "attack-slash": 0,
+	  "attack-crush": 0,
+	  "attack-magic": -15,
+	  "attack-ranged": -10,
+	  "defence-stab": 148,
+	  "defence-slash": 132,
+	  "defence-crush": 146,
+	  "defence-magic": 30,
+	  "defence-ranged": 0,
+	  "bonus-strength": 33,  
+	  "bonus-ranged": 30,  
+	  "bonus-prayer": 0,
+	  "bonus-magic": 2
+	  },
+
+	  {
+	  "id": 22123,
+	  "name": "Slayer Platebody", 
+	    "low-alch": 500000,
+	    "high-alch": 750000,
+	    "base-value": 1250000,
+	    "street-value": 31770372,
+	  "equipment-slot": "BODY",
+	  "weight": 4.0,
+	  "attack-stab": 0,
+	  "attack-slash": 0,
+	  "attack-crush": 0,
+	  "attack-magic": -15,
+	  "attack-ranged": -10,
+	  "defence-stab": 180,
+	  "defence-slash": 170,
+	  "defence-crush": 168,
+	  "defence-magic": -6,
+	  "defence-ranged": -10,
+	  "bonus-strength": 60,  
+	  "bonus-prayer": 0,
+	  "bonus-magic": 2 
+
+	  },
+
+	    {
+	  "id": 21954,
+	  "name": "Zaros Platelegs", 
+	    "low-alch": 500000,
+	    "high-alch": 750000,
+	    "base-value": 1250000,
+	    "street-value": 31770372,
+	  "equipment-slot": "LEGS",
+	  "weight": 4.0,
+	  "attack-stab": 0,
+	  "attack-slash": 0,
+	  "attack-crush": 0,
+	  "attack-magic": -15,
+	  "attack-ranged": -14,
+	  "defence-stab": 137,
+	  "defence-slash": 114,
+	  "defence-crush": 96,
+	  "defence-magic": -5,
+	  "defence-ranged": 40,
+	  "bonus-strength": 50,  
+	  "bonus-prayer": 0,
+	  "bonus-magic": 0 
+	    },
+	    
+	    
 	    {
 		    "id": 15011,
 		    "name": "Zaros Scythe",
@@ -125155,13 +125235,20 @@
     "base-value": 1600000,
     "weight": 6.8,
     "equipment-slot": "SHIELD",
-    "attack-magic": -8,
-    "attack-ranged": -2,
-    "defence-stab": 56,
-    "defence-slash": 60,
-    "defence-crush": 58,
-    "defence-magic": -1,
-    "defence-ranged": 58
+	  "attack-stab": 0,
+	  "attack-slash": 0,
+	  "attack-crush": 0,
+	  "attack-magic": -15,
+	  "attack-ranged": -10,
+	  "defence-stab": 148,
+	  "defence-slash": 132,
+	  "defence-crush": 146,
+	  "defence-magic": 30,
+	  "defence-ranged": 0,
+	  "bonus-strength": 33,  
+	  "bonus-ranged": 30,  
+	  "bonus-prayer": 0,
+	  "bonus-magic": 2
   },
   {
     "id": 21896,
