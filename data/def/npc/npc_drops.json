@@ -37924,13 +37924,6 @@
         "type": "RARE"
       },
       {
-        "item": 11642,
-        "minimum": 1,
-        "maximum": 1,
-        "chance": 60000.0,
-        "type": "ULTRA_RARE"
-      },
-      {
         "item": 12650,
         "minimum": 1,
         "maximum": 1,

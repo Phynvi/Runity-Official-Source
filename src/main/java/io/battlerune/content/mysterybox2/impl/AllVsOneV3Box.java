@@ -160,7 +160,6 @@ public class AllVsOneV3Box extends MysteryBox {
 				new Item(13831, 1),
 				new Item(13833, 1),
 				new Item(13207, 1),
-				new Item(13207, 1),
 				new Item(22125, 1),
 
         };
