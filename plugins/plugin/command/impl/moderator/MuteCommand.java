@@ -26,6 +26,7 @@ public class MuteCommand implements Command {
 			}
 			PunishmentExecuter.mute(other.getUsername());
 			player.send(new SendMessage("Player " + other.getUsername() + " was successfully muted."));
+			player.message("You have muted! " +player.getName());
 			World.kickPlayer(other.getUsername());
 			player.send(new SendMessage("You have been muted by " + player.getUsername() + "."));
 		});

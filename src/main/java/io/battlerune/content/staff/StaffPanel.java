@@ -22,7 +22,7 @@ import io.battlerune.util.Utility;
  */
 public class StaffPanel {
 	public static void open(Player player, PanelType panel) {
-		if (!PlayerRight.isDeveloper(player) && panel == PanelType.DEVELOPER_PANEL) {
+		if (!PlayerRight.isDeveloper(player) || !PlayerRight.isManagement(player) && panel == PanelType.DEVELOPER_PANEL) {
 			panel = PanelType.INFORMATION_PANEL;
 			player.send(new SendMessage("You do not have permission to access this panel."));
 		}
