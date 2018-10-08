@@ -101,7 +101,7 @@ public class AllVsOneV3 extends Activity {
 
 			npcs.remove(dead);
 			remove(dead);
-			rewards += Utility.random(3500, 5000);
+			rewards += Utility.random(2500, 3750);
 			if (npcs.isEmpty()) {
 				wave = AllVsOneData3.WaveData.getNext(wave.ordinal());
 				if (wave == null) {
@@ -139,7 +139,7 @@ public class AllVsOneV3 extends Activity {
 			player.face(npc.getPosition());
 			npc.locking.unlock();
 		}
-		if(wave == WaveData.WAVE_10 || wave == WaveData.WAVE_17 || wave == WaveData.WAVE_23 || 
+		if(wave == WaveData.WAVE_5 || wave == WaveData.WAVE_10 || wave == WaveData.WAVE_17 || wave == WaveData.WAVE_23 || 
 				wave == WaveData.WAVE_25 || wave == WaveData.WAVE_32 
 				|| wave == WaveData.WAVE_40 || wave == WaveData.WAVE_48 || wave == WaveData.WAVE_56
 				|| wave == WaveData.WAVE_59 || wave == WaveData.WAVE_64 || wave == WaveData.WAVE_67
@@ -206,7 +206,7 @@ public class AllVsOneV3 extends Activity {
 
 	
 	public static void createRandomGroundItems(Player player) {
-			if(Utility.random(1, 3) <= 1) {
+			if(Utility.random(1, 2) <= 1) {
 			GroundItem.createGlobal(player, new Item(GENERATED_LOOT[Utility.random(GENERATED_LOOT.length)], 1),
 					new Position(2558 + Utility.random(1, 15), 4960 +  Utility.random(1, 15)));
 			player.message("@red@ A Dragon piece key has been dropped in a random location!");

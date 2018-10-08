@@ -30,7 +30,7 @@ public enum Teleport {
 	ALL_VS_ONEV2("All vs One V2", TeleportType.MINIGAMES, new Position(2915, 4397, 0), false,
 			new int[] { 21292, 13729, 7775 }, true, "All Vs One V2! Harder version of AllVOne", ""),
 	ALL_VS_ONEV3("All vs One V3", TeleportType.MINIGAMES, new Position(2557, 4960, 0), false,
-			new int[] { 21292, 13729, 7775 }, true, "All Vs One V2! Harder version of AllVOne", ""),
+			new int[] { 21292, 13729, 7775 }, true, "All Vs One V3!", ""),
 	INFERO("Inferno", TeleportType.MINIGAMES, new Position(2540, 4717, 0), false,
 			new int[] { 6918, 6916, 6924 }, true, "STILL UNDER CONSTRUCTION!", ""),
 /*	FREE_FOR_ALL("Free For All", TeleportType.MINIGAMES, new Position(3296, 5004, 0), false,

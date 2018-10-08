@@ -41,6 +41,42 @@ public class GuideClickingPlugin extends PluginContext {
 			player.send(new SendURL("https://runity.io/forums/topic/155-all-vs-one-v2-waves/"));
 			player.message("@red@ Opening All Vs One V2! credits to : Mason");
 		break;
+		case -9466:
+			player.send(new SendURL("https://runity.io/forums/topic/173-most-efficient-crafting-guide/"));
+			player.message("@red@ Opening All Vs One V2! credits to : Mason");
+		break;
+		case -9465:
+			player.send(new SendURL("https://runity.io/forums/topic/172-most-efficient-smithing-guide/"));
+			player.message("@red@ Opening All Vs One V2! credits to : Mason");
+		break;
+		case -9464:
+			player.send(new SendURL("https://runity.io/forums/topic/171-most-efficient-fletching-guide/"));
+			player.message("@red@ Opening All Vs One V2! credits to : Mason");
+		break;
+		case -9463:
+			player.send(new SendURL("https://runity.io/forums/topic/170-most-efficient-firemaking-guide/"));
+			player.message("@red@ Opening All Vs One V2! credits to : Mason");
+		break;
+		case -9462:
+			player.send(new SendURL("https://runity.io/forums/topic/169-most-efficient-herblore-guide/"));
+			player.message("@red@ Opening All Vs One V2! credits to : Mason");
+		break;
+		case -9461:
+			player.send(new SendURL("https://runity.io/forums/topic/168-most-efficient-thieving-guide/"));
+			player.message("@red@ Opening All Vs One V2! credits to : Mason");
+		break;
+		case -9460:
+			player.send(new SendURL("https://runity.io/forums/topic/167-most-efficient-cooking-guide/"));
+			player.message("@red@ Opening All Vs One V2! credits to : Mason");
+		break;
+		case -9459:
+			player.send(new SendURL("https://runity.io/forums/topic/166-most-efficient-woodcutting-guide/"));
+			player.message("@red@ Opening All Vs One V2! credits to : Mason");
+		break;
+		case -9458:
+			player.send(new SendURL("https://runity.io/forums/topic/165-most-efficient-agility-guide/"));
+			player.message("@red@ Opening All Vs One V2! credits to : Mason");
+		break;
 		}
 		return false;
 	}
