@@ -133,10 +133,9 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 
 		case 299:
-			int length = PlayerRight.isDonator(player) ? 3 : 4;
 
-			if (!player.flowerDelay.elapsed(length, TimeUnit.SECONDS)) {
-				player.dialogueFactory.sendStatement("You can only do this once every " + length + " Seconds!",
+			if (!player.flowerDelay.elapsed(2, TimeUnit.SECONDS)) {
+				player.dialogueFactory.sendStatement("You can only do this once every 2 Seconds!",
 						"Time Passed: " + Utility.getTime(player.flowerDelay.elapsedTime())).execute();
 				return true;
 			}

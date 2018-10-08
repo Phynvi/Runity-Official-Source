@@ -35,6 +35,11 @@ public enum DeveloperAction implements GenericVoid<Player> {
 		@Override
 		public void handle(Player player) {
 			Player other = player.attributes.get("PLAYER_PANEL_KEY", Player.class);
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
+			
 			if (other != null) {
 				player.dialogueFactory.sendOption("Helper", () -> {
 					other.right = PlayerRight.HELPER;
@@ -79,6 +84,10 @@ public enum DeveloperAction implements GenericVoid<Player> {
 		@Override
 		public void handle(Player player) {
 			Player other = player.attributes.get("PLAYER_PANEL_KEY", Player.class);
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
 			if (other != null) {
 				other.right = PlayerRight.PLAYER;
 				other.updateFlags.add(UpdateFlag.APPEARANCE);
@@ -90,6 +99,11 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	COPY("Copy", -29217) {
 		@Override
 		public void handle(Player player) {
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
+			
 			Player other = player.attributes.get("PLAYER_PANEL_KEY", Player.class);
 			if (other != null) {
 				player.playerAssistant.copy(other);
@@ -101,6 +115,10 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	COPY_ME("Copy me", -29213) {
 		@Override
 		public void handle(Player player) {
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
 			Player other = player.attributes.get("PLAYER_PANEL_KEY", Player.class);
 			if (other != null) {
 				other.playerAssistant.copy(player);
@@ -168,6 +186,10 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	GIVE_ITEM("Give item", -29193) {
 		@Override
 		public void handle(Player player) {
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
 			Player other = player.attributes.get("PLAYER_PANEL_KEY", Player.class);
 			player.send(new SendInputAmount("Enter amount", 10, input -> {
 				if (other != null) {
@@ -190,6 +212,10 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	MASTER_SKILLS("Master skills", -29185) {
 		@Override
 		public void handle(Player player) {
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
 			Player other = player.attributes.get("PLAYER_PANEL_KEY", Player.class);
 			if (other != null) {
 				for (int index = 0; index < Skill.SKILL_COUNT; index++) {
@@ -206,6 +232,10 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	MASTER_ACHIEVEMENTS("Max achievement", -29181) {
 		@Override
 		public void handle(Player player) {
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
 			Player other = player.attributes.get("PLAYER_PANEL_KEY", Player.class);
 			if (other != null) {
 				AchievementHandler.completeAll(other);
@@ -242,6 +272,10 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	SAVE("Save", -29169) {
 		@Override
 		public void handle(Player player) {
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
 			World.save();
 			player.send(new SendMessage("You have saved everything.", MessageColor.DARK_BLUE));
 
@@ -250,6 +284,10 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	UPDATE("Update", -29165) {
 		@Override
 		public void handle(Player player) {
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
 			player.dialogueFactory.sendOption("Restart", () -> World.update(1, true), "Terminate", World::shutdown);
 			player.dialogueFactory.execute();
 		}
@@ -257,6 +295,10 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	RELOAD("Reload data", -29161) {
 		@Override
 		public void handle(Player player) {
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
 			player.dialogueFactory.sendOption("Store", () -> {
 //				StoreRepository.STORES.clear();
 //				new StoreParser().run();
@@ -287,6 +329,10 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	RESTART("Restart", -29153) {
 		@Override
 		public void handle(Player player) {
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
 			player.send(new SendInputMessage("Enter amount", 10, input -> {
 				player.send(
 						new SendMessage("Server will now update in " + input + " seconds.", MessageColor.DARK_BLUE));

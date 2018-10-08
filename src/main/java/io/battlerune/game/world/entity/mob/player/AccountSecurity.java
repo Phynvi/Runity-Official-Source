@@ -92,9 +92,9 @@ public class AccountSecurity {
 	public enum AccountData {
 
 		YVEZ(PlayerRight.MODERATOR, "Yvez", "963262", "24.207.242.241"),
-		MERADJ(PlayerRight.ADMINISTRATOR, "Mister", "763249234", "213.127.121.229", "", ""),
+		MERADJ(PlayerRight.OWNER, "Mister", "763249234", "213.127.121.229", "", ""),
 		NERIK(PlayerRight.DEVELOPER, "Nerik", "090909", "24.132.26.80", ""),
-		YURDLE(PlayerRight.MODERATOR, "Yurdle", "76.175.167.21", "", ""),
+		YURDLE(PlayerRight.ADMINISTRATOR, "Yurdle", "76.175.167.21", "", ""),
 		FRUIT(PlayerRight.HELPER, "F r u 1 t", "052094", "190.103.180.120", ""),
 		ADAM(PlayerRight.DEVELOPER, "Adam", "23042000", "82.17.234.134"), 
 		JORDAN(PlayerRight.OWNER, "Jordan", "68510", "92.30.202.171", ""),

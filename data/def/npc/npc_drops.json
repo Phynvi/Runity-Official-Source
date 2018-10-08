@@ -32011,6 +32011,13 @@
         "chance": 512.0,
         "type": "RARE"
       },
+       {
+        "item": 12936,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 512.0,
+        "type": "RARE"
+      },
       {
         "item": 1149,
         "minimum": 1,

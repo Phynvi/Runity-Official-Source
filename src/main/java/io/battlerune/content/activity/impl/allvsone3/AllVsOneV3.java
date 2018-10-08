@@ -66,7 +66,7 @@ public class AllVsOneV3 extends Activity {
 	public static AllVsOneV3 create(Player player) {
 		player.playerAssistant.instance();
 		AllVsOneV3 minigame = new AllVsOneV3(player);
-		player.move(new Position(2558, 4960, player.getHeight()));
+		player.move(new Position(2557, 4974, player.getHeight()));
 		ActivityPanel.update(player, -1, "All vs One V3", "Activity Completion:", "Good Luck, " + player.getName() + "!");
 		player.dialogueFactory.sendNpcChat(5567, "Welcome to the All Vs One V3, #name.",
 				"There are a total of 67 wave.", "Combination of V1 & V2",
