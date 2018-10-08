@@ -3,17 +3,14 @@ package io.battlerune.content.activity.impl.allvsone3;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 
 import io.battlerune.content.ActivityLog;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityListener;
 import io.battlerune.content.activity.ActivityType;
+import io.battlerune.content.activity.impl.allvsone2.AllVsOne2;
 import io.battlerune.content.activity.impl.allvsone3.AllVsOneData3.WaveData;
 import io.battlerune.content.activity.panel.ActivityPanel;
-import io.battlerune.content.pet.PetData;
-import io.battlerune.content.pet.Pets;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
@@ -65,15 +62,15 @@ public class AllVsOneV3 extends Activity {
 	 * {@code instance}.
 	 * @param player 
 	 */
-	public AllVsOneV3(Player player) {
-		super(10, player.playerAssistant.instance());
+	private AllVsOneV3(Player player, int instance) {
+		super(10, instance);
 		this.player = player;
 	}
 	
 
 	public static AllVsOneV3 create(Player player) {
 		player.playerAssistant.instance();
-		AllVsOneV3 minigame = new AllVsOneV3(player);
+		AllVsOneV3 minigame = new AllVsOneV3(player, player.playerAssistant.instance());
 		player.move(new Position(2557, 4974, player.getHeight()));
 		ActivityPanel.update(player, -1, "All vs One V3", "Activity Completion:", "Good Luck, " + player.getName() + "!");
 		player.dialogueFactory.sendNpcChat(5567, "Welcome to the All Vs One V3, #name.",
