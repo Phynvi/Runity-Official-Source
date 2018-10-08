@@ -41,7 +41,7 @@ public class AllVsOneV3 extends Activity {
 	private long time;
 
 	/** The amount of tokkuls the player has acquired. */
-	private int rewards;
+	public static int rewards;
 
 	/** A set of npcs in this activity. */
 	public final Set<Npc> npcs = new HashSet<>();
@@ -162,9 +162,7 @@ public class AllVsOneV3 extends Activity {
 			rewards += 10000;
             player.inventory.addOrDrop(new Item(7775, rewards));
     		player.message("<img=8>You now have @red@" + rewards + " All Vs One V3 Tickets!");
-			if(Utility.random(1, 3) == 2) {
-			player.inventory.addOrDrop(new Item(6833));
-			}
+			player.inventory.addOrDrop(new Item(6833, 1));
 			player.inventory.addOrDrop(new Item(290, 2));
 			Pets.onReward(player, PetData.PHOENIX);
 			player.send(new SendMessage("You have completed the All Vs One V3 activity. Final time: @red@"
@@ -184,24 +182,15 @@ public class AllVsOneV3 extends Activity {
 		cleanup();
 		remove(player);
 		player.move(new Position(3086, 3501, 0));
-
 			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One V3, I am most impressed!",
 					"Please accept this gift, young thug.").execute();
-			rewards += 10000;
-            player.inventory.addOrDrop(new Item(7775, rewards));
-    		//player.message("<img=8>You now have @red@" + rewards + " All Vs One V3 Tickets!");
-			if(Utility.random(1, 3) == 2) {
-			player.inventory.addOrDrop(new Item(20050));
-			}
-			player.inventory.addOrDrop(new Item(290, 2));
-			Pets.onReward(player, PetData.PHOENIX);
 			player.send(new SendMessage("You have completed the All Vs One V3 activity. Final time: @red@"
 					+ Utility.getTime(time) + "</col>."));
+			player.inventory.addOrDrop(new Item(6833, 2));
+			player.message("You've recieved x2 All Vs One Box V3 For using the dragon key!");
+			player.inventory.addOrDrop(new Item(290, 2));
+			player.message("@red@You have recieved a all vs one box V3");
 			player.activityLogger.add(ActivityLog.ALLVSONE3);
-			if (rewards <= 0)
-				rewards = 1;
-	        player.inventory.addOrDrop(new Item(7775, rewards));
-			player.message("<img=7>You now have @red@" + rewards + " All Vs One V3 Tickets!");
 			player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();
 	}
 	

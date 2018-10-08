@@ -40,7 +40,7 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 		case 22092:
 			new AllVsOneV3(player).finish();
-			player.inventory.add(7775, 25000);
+			player.inventory.add(7775, AllVsOneV3.rewards);
 			player.message("@red@You've recieved 25,000 Tickets Extra for using the dragon key!");
 			player.inventory.remove(22092, 1);
 			break;

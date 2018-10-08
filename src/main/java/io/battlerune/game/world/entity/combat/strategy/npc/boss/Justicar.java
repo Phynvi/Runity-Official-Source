@@ -73,9 +73,6 @@ public class Justicar extends MultiStrategy {
 			defender.graphic(1196);
 			defender.graphic(481);
 			defender.speak("Night King, Lend me your powers for i am your faithful servant!");
-			defender.prayer.deactivate(Prayer.PROTECT_FROM_MAGIC, Prayer.PROTECT_FROM_MELEE, Prayer.PROTECT_FROM_RANGE);
-			defender.getPlayer().send(new SendMessage("Your overhead prayers have been disabled!"));
-
 			CombatUtil.areaAction(attacker, 64, 18, mob -> {
 				if (RandomUtils.success(.65))
 					return;
