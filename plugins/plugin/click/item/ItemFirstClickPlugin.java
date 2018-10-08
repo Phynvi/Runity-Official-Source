@@ -44,13 +44,11 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				player.message("You need more inventory space!");
 				return false;
 			}
-			new AllVsOneV3(player).ForceFinish();
-			player.inventory.add(7775, AllVsOneV3.rewards);
-			player.inventory.add(7775, 25000);
+			player.inventory.add(7775, 125000);
 			player.message("@red@You've recieved 25,000 Tickets Extra for using the dragon key!");
-			player.inventory.addOrDrop(new Item(6833, 2));
+			player.inventory.addOrDrop(new Item(6833, 1));
 			player.message("You've recieved x2 All Vs One Box V3 For using the dragon key!");
-			player.inventory.addOrDrop(new Item(290, 2));
+			player.inventory.addOrDrop(new Item(290, 1));
 			player.inventory.remove(22092, 1);
 			break;
 		case 21813:

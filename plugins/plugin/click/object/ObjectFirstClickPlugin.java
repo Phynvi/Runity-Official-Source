@@ -1165,6 +1165,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			World.sendMessage(player.getName() + " Was Dank enough to take on All Vs One V3!");
 			World.schedule(5, () -> {
 				AllVsOneV3.create(player);
+				AllVsOneV3.rewards = 0;
 				player.locking.unlock();
 			});
 			break;

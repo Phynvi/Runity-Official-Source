@@ -42,6 +42,14 @@ public class AllVsOneV3 extends Activity {
 
 	/** The amount of tokkuls the player has acquired. */
 	public static int rewards;
+	
+	public static int getRewards() {
+		return rewards;
+	}
+	public  void setRewards(int rewards) {
+		AllVsOneV3.rewards = rewards;
+	}
+	
 
 	/** A set of npcs in this activity. */
 	public final Set<Npc> npcs = new HashSet<>();
@@ -160,11 +168,11 @@ public class AllVsOneV3 extends Activity {
 			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One V3, I am most impressed!",
 					"Please accept this gift, young thug.").execute();
 			rewards += 10000;
+			//player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
             player.inventory.addOrDrop(new Item(7775, rewards));
     		player.message("<img=8>You now have @red@" + rewards + " All Vs One V3 Tickets!");
-			player.inventory.addOrDrop(new Item(6833, 1));
+			player.inventory.addOrDrop(new Item(6833, 2));
 			player.inventory.addOrDrop(new Item(290, 2));
-			Pets.onReward(player, PetData.PHOENIX);
 			player.send(new SendMessage("You have completed the All Vs One V3 activity. Final time: @red@"
 					+ Utility.getTime(time) + "</col>."));
 			player.activityLogger.add(ActivityLog.ALLVSONE3);
@@ -174,21 +182,8 @@ public class AllVsOneV3 extends Activity {
 		if (rewards <= 0)
 			rewards = 1;
         player.inventory.addOrDrop(new Item(7775, rewards));
-		player.message("<img=7>You now have @red@" + rewards + " All Vs One V3 Tickets!");
+		player.message("<img=7>You now have @red@" + rewards + " All Vs One V2 Tickets!");
 		player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();
-	}
-	
-	public void ForceFinish() {
-		cleanup();
-		remove(player);
-		player.move(new Position(3086, 3501, 0));
-			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One V3, I am most impressed!",
-					"Please accept this gift, young thug.").execute();
-			player.send(new SendMessage("You have completed the All Vs One V3 activity. Final time: @red@"
-					+ Utility.getTime(time) + "</col>."));
-			player.message("@red@You have recieved a all vs one box V3");
-			player.activityLogger.add(ActivityLog.ALLVSONE3);
-			player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();
 	}
 	
 	public static int[] GENERATED_LOOT = {22090, 22089, 22088, 22091};
