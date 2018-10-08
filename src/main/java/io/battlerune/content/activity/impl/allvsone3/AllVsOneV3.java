@@ -156,7 +156,7 @@ public class AllVsOneV3 extends Activity {
 		remove(player);
 		player.move(new Position(3086, 3501, 0));
 
-		if (completed || player.inventory.contains(22092, 1)) {
+		if (completed) {
 			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One V3, I am most impressed!",
 					"Please accept this gift, young thug.").execute();
 			rewards += 10000;
@@ -189,7 +189,7 @@ public class AllVsOneV3 extends Activity {
 					"Please accept this gift, young thug.").execute();
 			rewards += 10000;
             player.inventory.addOrDrop(new Item(7775, rewards));
-    		player.message("<img=8>You now have @red@" + rewards + " All Vs One V3 Tickets!");
+    		//player.message("<img=8>You now have @red@" + rewards + " All Vs One V3 Tickets!");
 			if(Utility.random(1, 3) == 2) {
 			player.inventory.addOrDrop(new Item(20050));
 			}
@@ -198,8 +198,11 @@ public class AllVsOneV3 extends Activity {
 			player.send(new SendMessage("You have completed the All Vs One V3 activity. Final time: @red@"
 					+ Utility.getTime(time) + "</col>."));
 			player.activityLogger.add(ActivityLog.ALLVSONE3);
-			return;
-
+			if (rewards <= 0)
+				rewards = 1;
+	        player.inventory.addOrDrop(new Item(7775, rewards));
+			player.message("<img=7>You now have @red@" + rewards + " All Vs One V3 Tickets!");
+			player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();
 	}
 	
 	public static int[] GENERATED_LOOT = {22090, 22089, 22088, 22091};

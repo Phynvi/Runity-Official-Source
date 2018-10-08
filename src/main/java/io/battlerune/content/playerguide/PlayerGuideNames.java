@@ -10,5 +10,14 @@ public enum PlayerGuideNames {
 	Mining_Guide,
 	AllVsOne,
 	AllVsOne_V2,
+	Crafting_Guide,
+	Smithing_Guide,
+	Fletching_Guide,
+	Firemaking_Guide,
+	Herblore_Guide,
+	Thieving_Guide,
+	Cooking_Guide,
+	Woodcutting_Guide,
+	Agility_Guide,
 	;
 }
