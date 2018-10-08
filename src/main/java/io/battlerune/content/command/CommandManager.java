@@ -17,6 +17,7 @@ import plugin.command.impl.moderator.IpbanCommand;
 import plugin.command.impl.moderator.IpmuteCommand;
 import plugin.command.impl.moderator.JailCommand;
 import plugin.command.impl.moderator.KickCommand;
+import plugin.command.impl.moderator.ManagementCommand;
 import plugin.command.impl.moderator.MuteCommand;
 import plugin.command.impl.moderator.PrivateZoneCommand;
 import plugin.command.impl.moderator.QuickHelpCommand;
@@ -198,6 +199,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "remindvote", "allvote" }, new RemindVote());
 		PLUGIN.putIfAbsent(new String[] { "quickhelp", "offerhelp" }, new QuickHelpCommand());
 		PLUGIN.putIfAbsent(new String[] { "invis", "hide" }, new InvisibleCommand());
+		PLUGIN.putIfAbsent(new String[] { "panel1", "panel2" }, new ManagementCommand());
 
 
 

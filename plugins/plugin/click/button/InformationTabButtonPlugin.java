@@ -35,7 +35,6 @@ public class InformationTabButtonPlugin extends PluginContext {
 		
 		case 29404:
 		   if (PlayerRight.isManagement(player)) {
-			//if (PlayerRight.isDeveloper(player)) {
 				StaffPanel.open(player, PanelType.INFORMATION_PANEL);
 				return true;
 			}
