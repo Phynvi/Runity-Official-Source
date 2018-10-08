@@ -120,7 +120,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				AchievementHandler.activate(playerKiller, AchievementKey.KILL_SKOTIZO, 1);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -152,7 +152,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				AchievementHandler.activate(playerKiller, AchievementKey.KILL_GALVEK, 1);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -186,7 +186,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				AchievementHandler.activate(playerKiller, AchievementKey.KILL_GLOD, 1);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -264,7 +264,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.VORKATH);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -290,7 +290,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.CERBERUS);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -316,7 +316,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.GENERAL_GRAARDOR);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -394,7 +394,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 			case "COMMANDER_ZILYANA":
 				playerKiller.activityLogger.add(ActivityLog.COMMANDER_ZILYANA);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -420,7 +420,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.KREE_ARRA);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -446,7 +446,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.KRIL_TSUTSAROTH);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -473,7 +473,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.PORAZDIR);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -499,7 +499,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.CORPOREAL_BEAST);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -525,7 +525,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.GIANT_ROC);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -552,7 +552,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.DAGGANOTH_SUPREME);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -578,7 +578,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.DAGGANOTH_PRIME);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -604,7 +604,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.DAGGANOTH_REX);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -629,27 +629,31 @@ public final class NpcDeath extends MobDeath<Npc> {
 				
 				
 			case "GIANT_MOLE":
-				playerKiller.activityLogger.add(ActivityLog.GIANT_ROC);
+				playerKiller.activityLogger.add(ActivityLog.GIANT_MOLE);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					System.out.println("Here.... 1");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					System.out.println("Here.... 2");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					System.out.println("Here.... 3");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					System.out.println("Here.... 4");
 
 				}
 				return;
@@ -659,7 +663,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.LIZARDMAN_SHAMAN);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -693,7 +697,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.ICE_DEMON);
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -799,7 +803,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 						.forClan(channel -> channel.activateTask(ClanTaskKey.CHAOS_ELEMENTAL, playerKiller.getName()));
 				playerKiller.activityLogger.add(ActivityLog.CHAOS_ELEMENTAL);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
@@ -982,7 +986,7 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.forClan(channel -> channel.activateTask(ClanTaskKey.VENNANTIS, playerKiller.getName()));
 				playerKiller.activityLogger.add(ActivityLog.VENANTIS);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
-					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
 					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
