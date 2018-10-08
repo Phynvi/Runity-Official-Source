@@ -85,7 +85,7 @@ public enum DeveloperAction implements GenericVoid<Player> {
 		public void handle(Player player) {
 			Player other = player.attributes.get("PLAYER_PANEL_KEY", Player.class);
 			if(!PlayerRight.isDeveloper(player)) {
-				player.message("You must be a Developer or Owner to access this.");
+				player.message("You must be a Developer or owner to access this.");
 				return;
 			}
 			if (other != null) {
@@ -318,6 +318,10 @@ public enum DeveloperAction implements GenericVoid<Player> {
 	SPAWN_OBJECT("Spawn object", -29157) {
 		@Override
 		public void handle(Player player) {
+			if(!PlayerRight.isDeveloper(player)) {
+				player.message("You must be a Developer or Owner to access this.");
+				return;
+			}
 			player.send(new SendInputMessage("Enter amount", 10, input -> {
 				CustomGameObject gameObject = new CustomGameObject(Integer.parseInt(input),
 						player.getPosition().copy());
