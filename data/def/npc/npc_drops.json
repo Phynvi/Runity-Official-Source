@@ -32320,6 +32320,13 @@
         "type": "VERY_RARE"
       },
       {
+        "item": 11642,
+        "minimum": 1,
+        "maximum": 1,
+        "chance": 90000,
+        "type": "ULTRA_RARE"
+      },
+      {
         "item": 13201,
         "minimum": 1,
         "maximum": 1,

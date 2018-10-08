@@ -1162,7 +1162,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		case 4389:
 			player.locking.lock();
 			player.send(new SendFadeScreen("Welcome to the All Vs One V3!", 1, 3));
-			World.sendMessage(player.getName() + " Was Dank enough to take on All Vs One V2!");
+			World.sendMessage(player.getName() + " Was Dank enough to take on All Vs One V3!");
 			World.schedule(5, () -> {
 				AllVsOneV3.create(player);
 				player.locking.unlock();

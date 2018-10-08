@@ -25,7 +25,7 @@ public final class AllVsOneData3 {
 		WAVE_39(6609),
 		WAVE_40(2265, 2266, 2267),
 		WAVE_41(6615),
-		WAVE_42(6611),
+		WAVE_42(7860),
 		WAVE_43(7286),
 		WAVE_44(6504),
 		WAVE_45(3162),
