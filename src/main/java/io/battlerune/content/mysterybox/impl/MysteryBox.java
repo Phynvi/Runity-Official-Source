@@ -153,7 +153,7 @@ public class MysteryBox implements MysteryBoxListener {
 		} else {
 			player.inventory.add(getCommon()[random.nextInt(getCommon().length)]);
 			player.setBossPoints(player.getBossPoints() + 10);
-	        player.message("You have recieved 10 Boss points!" + " <img=14>You now have @red@ " + player.getBossPoints() + " boss points");
+	        player.message("You have recieved 10 Boss points!" + " <img=2>You now have @red@ " + player.getBossPoints() + " boss points");
 		}
 
 	}

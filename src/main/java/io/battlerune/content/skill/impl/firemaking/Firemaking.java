@@ -139,17 +139,17 @@ public class Firemaking extends Skill {
 					 * if(PlayerRight.isDonator(player) || PlayerRight.isSuper(player) ||
 					 * PlayerRight.isDeveloper(player)) {
 					 * player.setskillingPoints(player.getskillingPoints() + 2);
-					 * player.message("<img=14>You now have @red@" + player.getskillingPoints() +
+					 * player.message("<img=2>You now have @red@" + player.getskillingPoints() +
 					 * " Skilling Points!"); } if(PlayerRight.isExtreme(player) ||
 					 * PlayerRight.isElite(player)) {
 					 * player.setskillingPoints(player.getskillingPoints() + 3);
-					 * player.message("<img=14>You now have @red@" + player.getskillingPoints() +
+					 * player.message("<img=2>You now have @red@" + player.getskillingPoints() +
 					 * " Boss Points!"); } if(PlayerRight.isKing(player)) {
 					 * player.setskillingPoints(player.getskillingPoints() + 4);
-					 * player.message("<img=14>You now have @red@" + player.getskillingPoints() +
+					 * player.message("<img=2>You now have @red@" + player.getskillingPoints() +
 					 * " Boss Points!"); } else {
 					 * player.setskillingPoints(player.getskillingPoints() + 1);
-					 * player.message("<img=14>You now have @red@" + player.getskillingPoints() +
+					 * player.message("<img=2>You now have @red@" + player.getskillingPoints() +
 					 * " Boss Points!");
 					 * 
 					 * }

@@ -121,23 +121,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -153,23 +153,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 				AchievementHandler.activate(playerKiller, AchievementKey.KILL_GALVEK, 1);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -187,23 +187,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 				AchievementHandler.activate(playerKiller, AchievementKey.KILL_GLOD, 1);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -213,23 +213,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -240,23 +240,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -265,23 +265,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -291,23 +291,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -317,23 +317,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -344,23 +344,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -370,23 +370,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 				AchievementHandler.activate(playerKiller, AchievementKey.KILL_KRAKEN, 1);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -395,23 +395,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.COMMANDER_ZILYANA);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -421,23 +421,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -447,23 +447,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -474,23 +474,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -500,23 +500,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -526,23 +526,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -553,23 +553,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -579,23 +579,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -605,23 +605,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -633,26 +633,26 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 					System.out.println("Here.... 1");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 					System.out.println("Here.... 2");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 					System.out.println("Here.... 3");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 					System.out.println("Here.... 4");
 
 				}
@@ -664,23 +664,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -698,23 +698,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -778,23 +778,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -804,23 +804,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.CHAOS_ELEMENTAL);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -831,23 +831,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.CHAOS_FANATIC);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -858,23 +858,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.CRAZY_ARCHAEOLOGIST);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -884,23 +884,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.CALLISTO);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -909,23 +909,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.SCORPIA);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -935,23 +935,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -961,23 +961,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 2);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;
@@ -987,23 +987,23 @@ public final class NpcDeath extends MobDeath<Npc> {
 				playerKiller.activityLogger.add(ActivityLog.VENANTIS);
 				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
                 return;
 				}
 
 				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 	                return;
 				}
 				else {
 					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
-					playerKiller.message("<img=14>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
 
 				}
 				return;

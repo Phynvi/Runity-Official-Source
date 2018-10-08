@@ -120,14 +120,14 @@ public class TriviaBot {
 			player.send(new SendMessage(Utility.formatDigits(reward) + " coins were added into your bank vault."));
 			if (PlayerRight.isDonator(player) || PlayerRight.isSuper(player)) {
 				player.SetTriviaPoints(player.getTriviaPoints() + 5);
-				player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
+				player.message("<img=2>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
 				if(PlayerRight.isSupreme(player) || PlayerRight.isKing(player)) {
 					player.SetTriviaPoints(player.getTriviaPoints() + 6);
-					player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
+					player.message("<img=2>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
 				}
 			} else {
 				player.SetTriviaPoints(player.getTriviaPoints() + 2);
-				player.message("<img=14>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
+				player.message("<img=2>You now have @red@" + player.getTriviaPoints() + " Trivia Points!");
 			}
 		}
 

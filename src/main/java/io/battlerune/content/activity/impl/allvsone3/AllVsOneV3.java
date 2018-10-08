@@ -178,7 +178,7 @@ public class AllVsOneV3 extends Activity {
 		player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();
 	}
 	
-	public void ForceFinish(Player player) {
+	public void ForceFinish() {
 		cleanup();
 		remove(player);
 		player.move(new Position(3086, 3501, 0));
@@ -186,9 +186,6 @@ public class AllVsOneV3 extends Activity {
 					"Please accept this gift, young thug.").execute();
 			player.send(new SendMessage("You have completed the All Vs One V3 activity. Final time: @red@"
 					+ Utility.getTime(time) + "</col>."));
-			player.inventory.addOrDrop(new Item(6833, 2));
-			player.message("You've recieved x2 All Vs One Box V3 For using the dragon key!");
-			player.inventory.addOrDrop(new Item(290, 2));
 			player.message("@red@You have recieved a all vs one box V3");
 			player.activityLogger.add(ActivityLog.ALLVSONE3);
 			player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();

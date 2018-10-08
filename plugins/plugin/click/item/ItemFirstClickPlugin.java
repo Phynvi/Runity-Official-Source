@@ -21,6 +21,7 @@ import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
+import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendFadeScreen;
@@ -39,14 +40,22 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			CannonManager.drop(player, new Cannon(player.getName(), player.getPosition()));
 			break;
 		case 22092:
-			new AllVsOneV3(player).finish();
+			if(player.inventory.getFreeSlots() <= 5) {
+				player.message("You need more inventory space!");
+				return false;
+			}
+			new AllVsOneV3(player).ForceFinish();
 			player.inventory.add(7775, AllVsOneV3.rewards);
+			player.inventory.add(7775, 25000);
 			player.message("@red@You've recieved 25,000 Tickets Extra for using the dragon key!");
+			player.inventory.addOrDrop(new Item(6833, 2));
+			player.message("You've recieved x2 All Vs One Box V3 For using the dragon key!");
+			player.inventory.addOrDrop(new Item(290, 2));
 			player.inventory.remove(22092, 1);
 			break;
 		case 21813:
 			player.pkPoints += 25;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.add(995, 50000000);
 			player.inventory.remove(21813, 1);
 			break;
@@ -55,13 +64,13 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 		case 21810:
 			player.pkPoints += 20;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.add(995, 35000000);
 			player.inventory.remove(21810, 1);
 			break;
 		case 21807:
 			player.pkPoints += 15;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.add(995, 25000000);
 			player.inventory.remove(21807, 1);
 			break;
@@ -70,7 +79,7 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 		case 12746:
 			player.pkPoints += 3;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.remove(12746, 1);
 			break;
 		case 10028:
@@ -169,7 +178,7 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 		case 12748:
 			player.pkPoints += 5;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.remove(12748, 1);
 			break;
 		case 4079:
@@ -181,42 +190,42 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 		case 12749:
 			player.pkPoints += 7;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.remove(12749, 1);
 			break;
 		case 12750:
 			player.pkPoints += 9;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.remove(12750, 1);
 			break;
 		case 12751:
 			player.pkPoints += 11;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.remove(12751, 1);
 			break;
 		case 12752:
 			player.pkPoints += 15;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.remove(12752, 1);
 			break;
 		case 12753:
 			player.pkPoints += 18;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.remove(12753, 1);
 			break;
 		case 12754:
 			player.pkPoints += 21;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.remove(12754, 1);
 			break;
 		case 12755:
 			player.pkPoints += 23;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.remove(12755, 1);
 			break;
 		case 12756:
 			player.pkPoints += 25;
-			player.message("<img=14>You now have @red@" + player.getpkPoints() + " PVP Points!");
+			player.message("<img=2>You now have @red@" + player.getpkPoints() + " PVP Points!");
 			player.inventory.remove(12756, 1);
 			break;
 
