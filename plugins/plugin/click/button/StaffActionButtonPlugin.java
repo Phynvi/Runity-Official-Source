@@ -85,11 +85,16 @@ public class StaffActionButtonPlugin extends PluginContext {
 					player, action.getName()));
 			return true;
 		}
-
-		if (Arrays.stream(action.getRights()).noneMatch(it -> player.right.equals(it))) {
-			player.send(new SendMessage("You do not have sufficient permission to use this.", MessageColor.DARK_BLUE));
+		
+		if(!PlayerRight.isManagement(player)) {
+			player.message("You do not have ");
 			return true;
 		}
+
+	/*	if (Arrays.stream(action.getRights()).noneMatch(it -> player.right.equals(it))) {
+			player.send(new SendMessage("You do not have sufficient permission to use this.", MessageColor.DARK_BLUE));
+			return true;
+		}*/
 
 		Player other = player.attributes.get("PLAYER_PANEL_KEY", Player.class);
 

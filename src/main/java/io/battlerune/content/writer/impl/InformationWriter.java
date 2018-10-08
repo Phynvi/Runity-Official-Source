@@ -46,7 +46,7 @@ public class InformationWriter extends InterfaceWriter {
 			"     - Vote Points: <col=FFB83F>" + Utility.formatDigits(player.votePoints),
 			"     - Total Vote: <col=FFB83F>" + Utility.formatDigits(player.totalVotes),
 			"     - All Vs One Points: <col=FFB83F>" + Utility.formatDigits(player.allvsonepoint),
-			"     - Drop Rate: <col=FFB83F>" + new DropChanceHandler(player).getRate() + " %",
+			"     - Drop Rate: <col=FFB83F>" + new DropChanceHandler(player).getfakerate() + " %",
 			"     - Kills: <col=FFB83F>" + player.killCount, "     - Deaths: <col=FFB83F> " + player.deathCount,
 			"     - KDR: <col=FFB83F>" + player.playerAssistant.getKdr(),
 			"     - Killstreak: <col=FFB83F>" + player.killStreak };
