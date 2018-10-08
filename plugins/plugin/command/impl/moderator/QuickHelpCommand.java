@@ -15,7 +15,7 @@ public class QuickHelpCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-        World.sendMessage(player.getName() +" <img=2> @blu@is avaliable for any questions! feel free to PM Him!");
+        World.sendMessage("@red@" + player.getName() +" @blu@is avaliable for any questions! feel free to PM Him!");
 	}
 
 	@Override

@@ -80781,11 +80781,20 @@
 		 "walk": 7572,
 		 "attack-animation": 7574,
 		 "death-animation": 7575,
-		  "hitpoints-level": 10,
 		 "block-animation": -1,
 		 "combat-level": 392,
 		 "attackable": true,
-		 "aggressive": true
+		 "aggressive": true,
+		 "attack-style": "Magic",
+		 "weakness": "Magic",
+		 "attack-cooldown": 4,
+		 "attack-level": 30,
+		 "defence-level": 30,
+		 "strength-level": 20,
+		 "hitpoints-level": 10,
+		    "ranged-level": 0,
+		    "magic-level": 10,
+		    "defence-magic": -10
 	  },
 	  {
 			 "id": 7692,

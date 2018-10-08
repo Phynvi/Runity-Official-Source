@@ -8,11 +8,11 @@ public final class InfernoWaveData {
 	 * Stores the NPC Data for Inferno
 	 */
 	public static final int 
-	JAL_MEJRAH = 7692, 
-	JAL_AK = 7693, 
-	JAL_AKREK_MEJ = 7694,
-	JAL_AKREK_XIL = 7695,
-	JAL_AKREK_KET = 7696,
+	JAL_MEJRAH = 7692,  //ez
+	JAL_AK = 7693,  //ez
+	JAL_AKREK_MEJ = 7694, //ez
+	JAL_AKREK_XIL = 7695, //ez
+	JAL_AKREK_KET = 7696, //ez
     JAL_IMKOT = 7697,
     JAL_XIL = 7698,
 	JAL_ZEK = 7699, 
@@ -26,8 +26,8 @@ public final class InfernoWaveData {
 
 	
 	public enum WaveData {
-		
-		WAVE_1(JAL_NIB, JAL_NIB, JAL_NIB, JAL_MEJRAH), WAVE_2(JAL_NIB, JAL_NIB, JAL_NIB, JAL_MEJRAH, JAL_MEJRAH), 
+		WAVE_1(JAL_NIB, JAL_NIB, JAL_NIB, JAL_MEJRAH),
+		WAVE_2(JAL_NIB, JAL_NIB, JAL_NIB, JAL_MEJRAH, JAL_MEJRAH), 
 		WAVE_3(JAL_NIB, JAL_NIB, JAL_NIB, JAL_NIB, JAL_NIB, JAL_NIB), 
 		WAVE_4(JAL_NIB, JAL_NIB, JAL_NIB, JAL_AK), 
 		WAVE_5(JAL_NIB, JAL_NIB, JAL_NIB, JAL_AK, JAL_MEJRAH), 

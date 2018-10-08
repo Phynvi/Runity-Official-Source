@@ -44,8 +44,8 @@ import io.battlerune.util.Utility;
 		13695, 13692, 13693, 13696, 13697, 13698,
 		13699, 13700, 13701, 13702, 22317, 22280,
 		21225, 1, 20035, 20047, 20044, 20035, 20038
-				  }) // TODO UNCOMMENT THIS ON RELEASE, ITS COMMENTED DUE TO THE STAARTUP TIME BEING
-						// INCREASED DRASTICALLY.
+				  }) 
+
 public class DefaultCustomListener extends SimplifiedListener<Mob> {	
 	
 	
@@ -54,7 +54,7 @@ public int healingGraphic = 398; //1296
 
 @Override
 public void hit(Mob attacker, Mob defender, Hit hit) {
-	if(Area.inWilderness(attacker) && Utility.random(1, 2) <= 1) {
+	if(Area.inWilderness(attacker) && Utility.random(1, 20) <= 1) {
 		attacker.heal(hit.getDamage() / 4);
 		attacker.graphic(healingGraphic);
 		return;

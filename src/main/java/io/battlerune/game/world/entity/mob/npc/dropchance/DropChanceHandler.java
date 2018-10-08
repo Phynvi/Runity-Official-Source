@@ -11,7 +11,8 @@ public class DropChanceHandler {
 	}
 
 	public int droprate = 0;
-
+    public int fakerate = 0;
+	
 	public int getRate() {
 		for (int i = 0; i < player.equipment.getEquipment().length; i++) {
 			if (player.equipment.getEquipment()[i] != null) {
@@ -26,5 +27,21 @@ public class DropChanceHandler {
 			}
 		}
 		return droprate;
+	}
+	
+	public int getfakerate() {
+		for (int i = 0; i < player.equipment.getEquipment().length; i++) {
+			if (player.equipment.getEquipment()[i] != null) {
+				for (DropChanceData data : DropChanceData.values()) {
+					if (data.getItemId() == player.equipment.getEquipment()[i].getId()) {
+						if (fakerate >= 100) {
+							return 100;
+						}
+						fakerate += data.getlyingModifier();
+					}
+				}
+			}
+		}
+		return fakerate;
 	}
 }

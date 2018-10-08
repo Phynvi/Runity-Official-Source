@@ -120,6 +120,7 @@ public abstract class Area {
 			new SquareArea("Vorkath", 2261, 4054, 2289, 4048),
 			new SquareArea("Revenant Cave", 3124, 10240, 3270, 10046),
 			new SquareArea("Inferno", 2243, 5372, 2300, 5314),
+			new SquareArea("All Vs One V3", 2496, 4990, 2623, 4919),
 			new SquareArea("Dagannoth lair", 2890, 4425, 2942, 4466));
 
 	private static final ImmutableList<SquareArea> DUEL_ARENAS = ImmutableList
@@ -254,6 +255,9 @@ public abstract class Area {
 	
 	public static boolean inAllVsOne2(Interactable entity) {
 		return inArea(entity, new Position(2888, 4412, 0), new Position(2939, 4359, 0));
+	}
+	public static boolean inAllVsOne3(Interactable entity) {
+		return inArea(entity, new Position(2496, 4990, 0), new Position(2623, 4919, 0));
 	}
 	
 	public static boolean inGodwars(Interactable entity) {

@@ -4,19 +4,18 @@ import io.battlerune.content.mysterybox2.MysteryBox;
 import io.battlerune.game.world.items.Item;
 
 /**
- * The inferno box!
- *
+ *  All Vs One Box
  * @author Adam_#6723
  */
-public class InfernoBox extends MysteryBox {
+public class AllVsOneV3Box extends MysteryBox {
     @Override
     protected String name() {
-        return "Inferno Box";
+        return "All Vs One V3 Box";
     }
 
     @Override
     protected int item() {
-        return 6830;
+        return 6833;
     }
 
     @Override
@@ -53,7 +52,6 @@ public class InfernoBox extends MysteryBox {
                 new Item(13832, 1),
                 new Item(13805, 1),
                 new Item(13816, 1),
-				new Item(13175, 1), // h'ween set
 				new Item(21000, 1), // twisted buckler
 				new Item(21006, 1), // kodai wand
 				new Item(21003, 1), // elder maul
@@ -90,18 +88,6 @@ public class InfernoBox extends MysteryBox {
 				new Item(10557, 1), // collector icon
 				new Item(10558, 1), // defender icon
 				new Item(10559, 1), // healer icon
-				new Item(11847, 1), // black h'ween mask
-				new Item(1048, 1), // white phat
-				new Item(1040, 1), // yellow phat
-				new Item(1042, 1), // blue phat
-				new Item(1044, 1), // green phat
-				new Item(1046, 1), // purple phat
-				new Item(1038, 1), // red phat
-				new Item(11862, 1), // black phat
-				new Item(11863, 1), // rainbow phat
-				new Item(12399, 1), // phat and specs
-				new Item(1057, 1), // red h'ween
-				new Item(1053, 1), // green h'ween
 				new Item(11810, 1), // Arma hilt
 				new Item(11812, 1), // Bandos hilt
 				new Item(11814, 1), // Sara hilt
@@ -171,15 +157,12 @@ public class InfernoBox extends MysteryBox {
 				new Item(19484, 500), // 500 Dragon Jav
 				new Item(11212, 500), // 500 Dragon Arrows
 				new Item(12875, 1), // Verac set
-                new Item(13702, 1),
-                new Item(21777, 1),
-                new Item(22123, 1),
-                new Item(21954, 1),
-                new Item(22078, 1),
-                new Item(21003 ,1),
-                new Item(21015 ,1),
-                new Item(21000 ,1),
-                new Item(22324 ,1),
+				new Item(13831, 1),
+				new Item(13833, 1),
+				new Item(13207, 1),
+				new Item(13207, 1),
+				new Item(22125, 1),
+
         };
     }
 }

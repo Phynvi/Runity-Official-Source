@@ -33,7 +33,7 @@ package io.battlerune.net.codec;
  * available at <a href="http://www.burtleburtle.net/bob/java/rand/Rand.java">
  * http://www.burtleburtle.net/bob/java/rand/Rand.java</a>.
  *
- * @author Graham Edgecombe
+ * @author Adam_#6723
  */
 public final class IsaacCipher {
 

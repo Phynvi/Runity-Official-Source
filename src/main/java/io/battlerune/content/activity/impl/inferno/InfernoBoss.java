@@ -38,7 +38,8 @@ public class InfernoBoss extends Task {
 
 		@Override
 		protected void execute() {
-		
+		//when does the 
+			//my code for it is broken aswell feelsbad
 	 switch(tick) {
 	 case 0:
 		     Glyph.register();

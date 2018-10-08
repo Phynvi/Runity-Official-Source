@@ -120,6 +120,7 @@ public class ItemCreation {
 	INFERNAL_MAXCAPE(new Item[] { new Item(21285), new Item(21282) }, null, null, new Item(21295), new Item(13280),
 			new Item(13281)),
 	ZENYTE_NECK(new Item(19535), null, null, new Item(6577, 1), new Item(19529, 1)),
+	DRAGON_KEY(new Item(22092), null, new Skill[] { new Skill(Skill.CRAFTING, 59, 0) }, new Item(22090, 1), new Item(22091, 1), new Item(22089, 1), new Item(22088, 1)),
 
 	CAP_AND_GOGGLES(new Item(9946), null, null, new Item(9945, 1), new Item(9472, 1));
 

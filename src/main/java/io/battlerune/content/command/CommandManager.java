@@ -227,7 +227,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "justicars", "spawnjusticar" }, new JusticarSpawnCommand());
 		PLUGIN.putIfAbsent(new String[] { "skotizos", "spanwskotizo" }, new SkotizoSpawnCommand());
 		PLUGIN.putIfAbsent(new String[] { "show", "showboss" }, new EventBossInterfaceShow());
-		PLUGIN.putIfAbsent(new String[] { "hide", "hideboss" }, new EventBossInterfaceHide());
+		PLUGIN.putIfAbsent(new String[] { "hidebosses", "hideboss" }, new EventBossInterfaceHide());
 		PLUGIN.putIfAbsent(new String[] { "giveall", "give" }, new GiveAllCommand());
 		PLUGIN.putIfAbsent(new String[] { "update", "udpateserver" }, new UpdateCommand());
 		PLUGIN.putIfAbsent(new String[] { "removetask", "slayer" }, new RemovePlayerTask());

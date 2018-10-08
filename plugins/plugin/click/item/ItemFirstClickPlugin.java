@@ -3,6 +3,7 @@ package plugin.click.item;
 import java.util.concurrent.TimeUnit;
 
 import io.battlerune.content.DiceBag;
+import io.battlerune.content.activity.impl.allvsone3.AllVsOneV3;
 import io.battlerune.content.activity.impl.flowerpoker.FlowerHandler;
 import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
 import io.battlerune.content.combat.cannon.Cannon;
@@ -20,6 +21,7 @@ import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
+import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendFadeScreen;
 import io.battlerune.net.packet.out.SendInputAmount;
@@ -35,6 +37,10 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 		switch (event.getItem().getId()) {
 		case 6:
 			CannonManager.drop(player, new Cannon(player.getName(), player.getPosition()));
+			break;
+		case 22092:
+			new AllVsOneV3(player).finish();
+			player.inventory.remove(22092, 1);
 			break;
 		case 21813:
 			player.pkPoints += 25;
@@ -66,32 +72,34 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			player.inventory.remove(12746, 1);
 			break;
 		case 10028:
-			if (player.inventory.getFreeSlots() <= 3) {
-				player.message("You do not have enough inventory space to open this box!");
-				return false;
-			}
-			if (Utility.random(1, 5) == 4) {
-				player.inventory.add(17163, 1);
-				player.inventory.add(17164, 1);
-				player.inventory.add(17165, 1);
-				player.message("@gre@You've recieved Raptor Set!");
-			}
-			if (Utility.random(1, 25) <= 2) {
-				player.inventory.add(3273, 1);
-				player.message("@blu@You were lucky and received an Ice Katana");
-			}
-			if (Utility.random(1, 500) <= 2) {
-				player.inventory.add(995, 20000000);
-				player.inventory.add(17160, 1);
-				player.inventory.add(15300, 1);
-				player.inventory.add(13686, 1);
-				player.inventory.add(15308, 1);
-				player.inventory.add(15301, 1);
-				player.message("@red@You were lucky and received 20 Million GP!");
-			}
-			player.inventory.remove(10028, 1);
-			player.message("you were unfortunate and did not recieve anything.");
-			break;
+				if (player.inventory.getFreeSlots() <= 3) {
+					player.message("You do not have enough inventory space to open this box!");
+					return false;
+				}
+				if (Utility.random(1, 5) == 4) {
+					player.inventory.add(995, 10000000);
+					player.inventory.add(17163, 1);
+					player.inventory.add(17164, 1);
+					player.inventory.add(17165, 1);
+					player.message("@gre@You were lucky and received 10 Million GP! & Raptor Set!");
+				}
+				if (Utility.random(1, 100) <= 2) {
+					player.inventory.add(995, 15000000);
+					player.inventory.add(15309, 1);
+					player.message("@blu@You were lucky and received 15 Million GP!");
+				}
+				if (Utility.random(1, 500) <= 2) {
+					player.inventory.add(995, 20000000);
+					player.inventory.add(17160, 1);
+					player.inventory.add(15300, 1);
+					player.inventory.add(13686, 1);
+					player.inventory.add(15308, 1);
+					player.inventory.add(15301, 1);
+					player.message("@red@You were lucky and received 20 Million GP!");
+				}
+				player.inventory.remove(10028, 1);
+				player.message("you were unfortunate and did not recieve anything.");
+				break;
 			
 			
 		case 12789:

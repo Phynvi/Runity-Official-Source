@@ -580,8 +580,13 @@ public final class World {
 	/** Gets the staff players currently online. */
 	public static List<Player> getStaff() {
 		List<Player> staff = new ArrayList<>();
-
+      
+		
 		for (Player player : getPlayers()) {
+			if(!player.isVisible()) {
+				return staff;
+			}
+			
 			if (player != null && (PlayerRight.isManagement(player) || player.right == PlayerRight.HELPER))
 				staff.add(player);
 		}

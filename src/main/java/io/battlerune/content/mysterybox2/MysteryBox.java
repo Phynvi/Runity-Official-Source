@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+import io.battlerune.content.mysterybox2.impl.AllVsOneV3Box;
 import io.battlerune.content.mysterybox2.impl.InfernoBox;
 import io.battlerune.content.mysterybox2.impl.PetMysteryBox;
 import io.battlerune.game.world.items.Item;
@@ -22,9 +23,11 @@ public abstract class MysteryBox {
     public static void load() {
         MysteryBox INFERNO_BOX = new InfernoBox();
         MysteryBox PET_BOX = new PetMysteryBox();
+        MysteryBox ALL_VS_V3 = new AllVsOneV3Box();
 
         MYSTERY_BOXES.put(INFERNO_BOX.item(), INFERNO_BOX);
         MYSTERY_BOXES.put(PET_BOX.item(), PET_BOX);
+        MYSTERY_BOXES.put(ALL_VS_V3.item(), ALL_VS_V3);
 
     }
 
