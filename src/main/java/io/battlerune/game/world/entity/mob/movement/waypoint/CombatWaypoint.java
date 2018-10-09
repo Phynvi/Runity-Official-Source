@@ -40,7 +40,7 @@ public class CombatWaypoint extends Waypoint {
 			
 			int radius = mob.getStrategy().getAttackDistance(mob, fightType);
 
-			if (mob.isPlayer() && mob.getPlayer().getCombat().getDefender() == target && mob.getPlayer().getCombat().getDefender().getNpc().definition.getSize() > 1)
+			if (mob.isNpc() && mob.getNpc().definition.getSize() > 1 || mob.isPlayer() && mob.getPlayer().getCombat().getDefender() == target && mob.getPlayer().getCombat().getDefender().getNpc().definition.getSize() > 1)
 				radius++;
 			
 			if (movement.needsPlacement() && !mob.locking.locked()) {
