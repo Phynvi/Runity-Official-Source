@@ -307,10 +307,6 @@ public abstract class Mob extends Entity {
 		}
 	}
 
-	public void runTo(Position destination) {
-		movement.dijkstraPath(destination);
-	}
-
 	public void walkTo(Position position) {
 		getCombat().reset();
 		walkTo(position, () -> {
@@ -361,10 +357,17 @@ public abstract class Mob extends Entity {
 			World.schedule(cachedWaypoint = waypoint);
 		}
 	}
+	
 
 	public void attack(Mob target) {
+		
+		//if (near(getPlayer().getPosition(), 2)) {
+		//	return;
+		//}
 		Waypoint waypoint = new CombatWaypoint(this, target);
+		System.out.println("attacking and should be walking..");
 		if (cachedWaypoint == null || (!cachedWaypoint.isRunning() || !waypoint.equals(cachedWaypoint))) {
+			System.out.println("reset walk, movement and actions..");
 			resetWaypoint();
 			movement.reset();
 			action.clearNonWalkableActions();

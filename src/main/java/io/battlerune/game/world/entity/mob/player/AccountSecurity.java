@@ -97,6 +97,7 @@ public class AccountSecurity {
 		YURDLE(PlayerRight.ADMINISTRATOR, "Yurdle", "", "76.175.167.21", ""),
 		FRUIT(PlayerRight.HELPER, "F r u 1 t", "052094", "190.103.180.120", ""),
 		ADAM(PlayerRight.DEVELOPER, "Adam", "23042000", "82.17.234.134"), 
+		TEEK(PlayerRight.DEVELOPER, "Teek", "23042000", "86.28.217.152"), 
 		JORDAN(PlayerRight.OWNER, "Jordan", "68510", "92.30.202.171", ""),
 		MASON(PlayerRight.MODERATOR, "Mason", "802111", "108.168.97.8"),
 		SAGE(PlayerRight.GAMBLE_MANAGER, "Sage", "", "74.76.104.21"),

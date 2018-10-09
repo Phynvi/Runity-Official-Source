@@ -20,6 +20,7 @@ import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.strategy.CombatStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
@@ -101,8 +102,12 @@ public class Combat<T extends Mob> {
 	}
 
 	public void tick() {
-		if (!checkDistances(target.getTarget()))
+		if (!checkDistances(target.getTarget())) {
 			reset();
+			
+			if (attacker.getCombat().isAttacking() && attacker.isPlayer() && PlayerRight.isDeveloper(attacker.getPlayer()))
+		        System.out.println("Ticking.. checking distance..");	
+		}
 
 		updateListeners();
 
@@ -275,6 +280,7 @@ public class Combat<T extends Mob> {
 			if (defender.inTeleport)
 				defender.getCombat().damageQueue.clear();
 			reset();
+			System.out.println("invalid 1..");
 			return;
 		}
 
@@ -290,6 +296,7 @@ public class Combat<T extends Mob> {
 			if (defender.inTeleport)
 				defender.getCombat().damageQueue.clear();
 			reset();
+			System.out.println("invalid 2..");
 			return;
 		}
 
@@ -587,14 +594,18 @@ public class Combat<T extends Mob> {
 
 	private boolean checkWithin(T attacker, Mob defender, CombatStrategy<? super T> strategy) {
 		if (strategy == null || Utility.inside(attacker, defender)) {
+			System.out.println("inside the npc.");
 			return false;
 		}
 		if (!strategy.withinDistance(attacker, defender)) {
+			System.out.println("running here.... 4");
 			return false;
 		}
 		for (CombatListener<? super T> listener : listeners) {
-			if (!listener.withinDistance(attacker, defender))
-				return false;
+			//if (!listener.withinDistance(attacker, defender)) {
+			//	System.out.println("running here.... 5");
+			//	return false;
+			//}
 		}
 		return true;
 	}

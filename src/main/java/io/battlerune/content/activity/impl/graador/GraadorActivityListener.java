@@ -29,8 +29,7 @@ public class GraadorActivityListener extends ActivityListener<GraadorActivity> {
 		FightType fightType = attacker.getCombat().getFightType();
 		int distance = attacker.getStrategy().getAttackDistance(attacker, fightType);
 		Interactable graador = Interactable.create(new Position(2870, 5358, attacker.getHeight()), 4, 4);
-		return Utility.getDistance(attacker, graador) <= distance
-				&& attacker.getStrategy().withinDistance(attacker, activity.graador);
+		return Utility.getDistance(attacker, graador) <= distance && attacker.getStrategy().withinDistance(attacker, activity.graador);
 	}
 
 	@Override

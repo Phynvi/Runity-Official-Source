@@ -24,12 +24,10 @@ public class CombatWaypoint extends Waypoint {
 			return mob.isPlayer() && Activity.evaluate(mob.getPlayer(), it -> {
 				if (it instanceof KrakenActivity) {
 					Mob kraken = ((KrakenActivity) it).kraken;
-					return Utility.getDistance(mob, kraken) <= getRadius()
-							&& mob.getStrategy().withinDistance(mob, kraken);
+					return Utility.getDistance(mob, kraken) <= getRadius() && mob.getStrategy().withinDistance(mob, kraken);
 				}
 				return false;
-			}) || Utility.getDistance(mob, target) <= getRadius()
-					&& mob.getStrategy().withinDistance(mob, (Mob) target);
+			}) || Utility.getDistance(mob, target) <= getRadius() && mob.getStrategy().withinDistance(mob, (Mob) target);
 		}
 		return super.withinDistance();
 	}
@@ -39,12 +37,18 @@ public class CombatWaypoint extends Waypoint {
 		if (target.equals(mob.getCombat().getDefender())) {
 			FightType fightType = mob.getCombat().getFightType();
 			Movement movement = mob.movement;
+			
 			int radius = mob.getStrategy().getAttackDistance(mob, fightType);
 
+			if (mob.isPlayer() && mob.getPlayer().getCombat().getDefender() == target && mob.getPlayer().getCombat().getDefender().getNpc().definition.getSize() > 1)
+				radius++;
+			
 			if (movement.needsPlacement() && !mob.locking.locked()) {
 				radius++;
+				
 				if (movement.isRunning())
 					radius++;
+				
 			}
 			return radius;
 		}

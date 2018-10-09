@@ -27,10 +27,10 @@ public abstract class MeleeStrategy<T extends Mob> extends CombatStrategy<T> {
 			if (defender.movement.isRunning())
 				distance++;
 		}
-
-		if (defender.id == 1739 || defender.id == 1740 || defender.id == 1741 || defender.id == 1742) {
+		if (defender.isNpc() && defender.getNpc().definition.getSize() > 1) 
+		    distance++;
+		if (defender.id == 1739 || defender.id == 1740 || defender.id == 1741 || defender.id == 1742) 
 			return Utility.withinDistance(attacker, defender, distance);
-		}
 		return Utility.withinDistance(attacker, defender, distance) && SimplePathChecker.checkLine(attacker, defender);
 	}
 
