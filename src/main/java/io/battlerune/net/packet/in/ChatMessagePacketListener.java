@@ -41,7 +41,7 @@ public class ChatMessagePacketListener implements PacketListener {
 			return;
 		
 		
-		if (player.locking.locked(PacketType.CHAT)) 
+		if (player.locking.locked()) 
 			return;
 		
 		if (player.idle) 

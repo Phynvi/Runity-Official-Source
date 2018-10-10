@@ -14,6 +14,10 @@ import io.battlerune.util.Utility;
 
 /**
  * @author Michael | Chex
+ * 
+ * @author Teek
+ * 
+ * For entity
  */
 public abstract class MeleeStrategy<T extends Mob> extends CombatStrategy<T> {
 

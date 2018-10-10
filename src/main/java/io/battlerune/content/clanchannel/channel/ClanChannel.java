@@ -704,6 +704,10 @@ public class ClanChannel implements Comparable<ClanChannel> {
 			player.sendMessage("You need to be connected to a Clan Channel to talk in one");
 			return;
 		}
+		
+		if (player.locking.locked())
+			return;
+		
 		if (PunishmentExecuter.muted(player.getUsername()) || PunishmentExecuter.IPMuted(player.lastHost)) {
 			player.send(new SendMessage("You are muted and cannot chat."));
 			return;
