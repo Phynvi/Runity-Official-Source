@@ -26,6 +26,7 @@ import io.battlerune.game.world.entity.mob.prayer.Prayer;
  * @author Daniel
  */
 public class TzTokJad extends MultiStrategy {
+	
 	private static RangedAttack RANGED = new RangedAttack();
 	private static MagicAttack MAGIC = new MagicAttack();
 	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(RANGED, MAGIC,
@@ -86,6 +87,7 @@ public class TzTokJad extends MultiStrategy {
 	}
 
 	private static class RangedAttack extends NpcRangedStrategy {
+		
 		private final Animation ANIMATION = new Animation(2652, UpdatePriority.HIGH);
 
 		RangedAttack() {
@@ -108,7 +110,7 @@ public class TzTokJad extends MultiStrategy {
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			return new CombatHit[] { nextRangedHit(attacker, defender, 97, 2, 2) };
+			return new CombatHit[] { nextRangedHit(attacker, defender, 97, 3, 3) };
 		}
 
 		@Override
@@ -126,7 +128,7 @@ public class TzTokJad extends MultiStrategy {
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			CombatHit hit = nextMagicHit(attacker, defender, 97, 5, 2);
+			CombatHit hit = nextMagicHit(attacker, defender, 97, 5, 5);
 			hit.setAccurate(true);
 			return new CombatHit[] { hit };
 		}
