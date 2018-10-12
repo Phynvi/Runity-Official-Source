@@ -104450,6 +104450,7 @@
     "id": 12926,
     "name": "Toxic blowpipe",
     "two-handed": true,
+    "tradeable": false,
     "low-alch": 48000,
     "high-alch": 72000,
     "base-value": 120000,

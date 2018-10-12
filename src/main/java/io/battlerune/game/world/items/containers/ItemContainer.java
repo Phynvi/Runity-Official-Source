@@ -21,6 +21,7 @@ import com.google.common.base.Preconditions;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.ItemDefinition;
+import io.battlerune.game.world.items.containers.bank.Bank;
 import io.battlerune.game.world.items.containers.pricechecker.PriceType;
 import io.battlerune.net.packet.out.SendItemOnInterface;
 
@@ -948,6 +949,18 @@ public class ItemContainer implements Iterable<Item> {
 
 	public final void set(Item[] toSet) {
 		items = toSet;
+	}
+	
+	public void setBank(Item[] to) {
+		items = new Item[Bank.MAXIMUM_CAPACITY];
+		for (int i = 0; i < to.length; i++) {
+			if (to != null) {
+				items[i] = to[i];
+				if (items[i] != null)
+				System.err.println("Item="+items[i].getName());
+			}
+		}
+		System.err.println("current length="+items.length);
 	}
 
 	/**

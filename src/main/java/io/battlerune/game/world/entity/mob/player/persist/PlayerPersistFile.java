@@ -1670,7 +1670,7 @@ public final class PlayerPersistFile implements PlayerPersistable {
 			new PlayerJSONProperty("bank") {
 				@Override
 				void read(Player player, JsonElement property) {
-					player.bank.set(GSON.fromJson(property, Item[].class));
+					player.bank.setBank(GSON.fromJson(property, Item[].class));
 				}
 
 				@Override
