@@ -228,7 +228,7 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 
 		case 13441:
-			Anglerfish.onAnglerEffect(player);
+			Anglerfish.onAnglerEffect(player, event.getSlot());
 			break;
 
 		case 12791:

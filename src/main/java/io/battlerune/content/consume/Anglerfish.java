@@ -5,6 +5,7 @@ import io.battlerune.game.UpdatePriority;
 import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.skill.Skill;
+import io.battlerune.game.world.items.Item;
 import io.battlerune.net.packet.out.SendMessage;
 
 /**
@@ -22,15 +23,16 @@ public class Anglerfish {
 	 *
 	 * @param player the player to do this action for. This method only executes
 	 *               after they've elapsed the food delay tier.
+	 * @param slot 
 	 */
-	public static void onAnglerEffect(Player player) {
+	public static void onAnglerEffect(Player player, int slot) {
 		if (player.foodDelay.elapsed(1300)) {
 			modifySkill(player, Skill.HITPOINTS, 0.21, 2);
 			player.animate(new Animation(829, UpdatePriority.LOW));
 			player.getCombat().reset();
 			player.getCombat().cooldown(2);
 			player.foodDelay.reset();
-			player.inventory.remove(13441, 1);
+			player.inventory.remove(new Item(13441, 1), slot);
 			player.skills.refresh(Skill.HITPOINTS);
 			player.send(new SendMessage("You eat the " + "Anglerfish" + "."));
 		}

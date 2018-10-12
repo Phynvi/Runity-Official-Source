@@ -295,6 +295,8 @@ public class SkillManager {
 	public void addExperience(int id, double experience, boolean levelUp, boolean counter) {
 		if (!mob.isPlayer() || mob.getPlayer().settings.lockExperience)
 			return;
+		
+		
 		Player player = (Player) mob;
 		Skill skill = get(id);
 		double old = skill.getExperience();

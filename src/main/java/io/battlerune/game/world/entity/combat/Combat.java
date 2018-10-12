@@ -598,7 +598,7 @@ public class Combat<T extends Mob> {
 			return false;
 		}
 		if (!strategy.withinDistance(attacker, defender)) {
-			System.out.println("running here.... 4");
+			//System.out.println("running here.... 4");
 			return false;
 		}
 		for (CombatListener<? super T> listener : listeners) {
