@@ -2,7 +2,6 @@ package io.battlerune.content.activity.impl.battlerealm;
 
 import static io.battlerune.content.activity.impl.battlerealm.Constants.GAME_AREA;
 import static io.battlerune.content.activity.impl.battlerealm.Constants.LOBBY_AREA;
-import static io.battlerune.content.activity.impl.battlerealm.Constants.PRE_LOBBY;
 
 import com.google.common.collect.ImmutableList;
 
@@ -13,7 +12,7 @@ import io.battlerune.game.world.position.impl.SquareArea;
 
 public class BattleRealmCallers {
 	public static ImmutableList<SquareArea> getAreas() {
-		return ImmutableList.of(GAME_AREA, LOBBY_AREA, PRE_LOBBY);
+		return ImmutableList.of(GAME_AREA, LOBBY_AREA);
 	}
 
 	public static boolean canFight(Player attacker, Mob defender) {
