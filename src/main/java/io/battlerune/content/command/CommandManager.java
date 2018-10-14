@@ -12,6 +12,7 @@ import plugin.command.impl.donator.ExtremeDonatorZone;
 import plugin.command.impl.donator.PortalsZoneCommand;
 import plugin.command.impl.donator.SponsorStoreCommand;
 import plugin.command.impl.moderator.BanCommand;
+import plugin.command.impl.moderator.HpEventCommand;
 import plugin.command.impl.moderator.InvisibleCommand;
 import plugin.command.impl.moderator.IpbanCommand;
 import plugin.command.impl.moderator.IpmuteCommand;
@@ -200,6 +201,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "quickhelp", "offerhelp" }, new QuickHelpCommand());
 		PLUGIN.putIfAbsent(new String[] { "invis", "hide" }, new InvisibleCommand());
 		PLUGIN.putIfAbsent(new String[] { "panel1", "panel2" }, new ManagementCommand());
+		PLUGIN.putIfAbsent(new String[] { "hp", "hp1" }, new HpEventCommand());
 
 
 

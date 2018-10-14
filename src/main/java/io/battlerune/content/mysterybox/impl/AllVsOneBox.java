@@ -31,8 +31,6 @@ public class AllVsOneBox implements MysteryBoxListener {
 				new Item(4151, 1), // Abyssal Whip
 				new Item(6585, 1), // Fury
 				new Item(11840, 1), // Dragon boots
-				new Item(13190, 1),
-
 			};
 		}
 

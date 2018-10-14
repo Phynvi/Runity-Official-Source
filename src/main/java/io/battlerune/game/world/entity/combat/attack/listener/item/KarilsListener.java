@@ -9,7 +9,7 @@ import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 /**
- * @author red
+ * @author Adam_#6723
  */
 @NpcCombatListenerSignature(npcs = { 1674 })
 @ItemCombatListenerSignature(requireAll = true, items = { 4732, 4734, 4736, 4738 })

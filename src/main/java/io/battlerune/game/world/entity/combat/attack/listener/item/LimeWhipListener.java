@@ -8,6 +8,8 @@ import io.battlerune.game.world.entity.combat.attack.listener.SimplifiedListener
 import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
+import io.battlerune.util.RandomUtils;
+import io.battlerune.util.Utility;
 
 /**
  * Handles the Lime whip effect, which if equipped reduces drain rate by 25%
@@ -31,6 +33,11 @@ public class LimeWhipListener extends SimplifiedListener<Mob> {
 		if (Math.random() > 0.35) {
 			attacker.heal(hit.getDamage() / 3);
 			attacker.graphic(new Graphic(healingGraphic, UpdatePriority.HIGH));
+		}
+		if(Utility.random(1, 3) < 1) {
+		if (hit.getDamage() <= 0) {
+			hit.setDamage(RandomUtils.inclusive(5, 40));
+	     	}
 		}
 	}
 

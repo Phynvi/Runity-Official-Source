@@ -66,7 +66,7 @@ public class LimeWhipStrategy extends PlayerMeleeStrategy {
 
 	@Override
 	public int modifyAccuracy(Player attacker, Mob defender, int roll) {
-		return roll * 5 / 3;
+		return roll * 5 / 2;
 	}
 
 }

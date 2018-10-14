@@ -25,7 +25,6 @@ public class MasterCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		return PlayerRight.isDeveloper(player);
-
+return true;
 	}
 }

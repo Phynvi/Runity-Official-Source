@@ -42,7 +42,7 @@ public class GalvekUtility {
 	public static int[] ALWAYSLOOT = {  6889, 4675, 11770, 6585, 1305,  4587, 5698, 1434, 1704, 3751, 10828, 4153, 2550 };
 	public static int[] COMMONLOOT = { 989, 3140, 4087, 11732, 989, 4675, 11840, 11836,12877 };
 	public static int[] RARELOOT = { 4153, 7158, 1305, 4587, 11840,  6585, 12875, 12873, 11771, 11772, 4151};
-	public static int[] SUPERRARELOOT = { 6199, 11802, 11283, 13652, 12904, 11791, 12691, 12692, 12877, 13190};
+	public static int[] SUPERRARELOOT = { 6199, 11802, 11283, 13652, 12904, 11791, 12691, 12692, 12877};
 	public static int[] ULTRA = {22280, 13702, 22317, 13701, 13700,13699, 13698, 13697, 10860,};
 
 	public static void defeated(Npc Galvek, Player player) {

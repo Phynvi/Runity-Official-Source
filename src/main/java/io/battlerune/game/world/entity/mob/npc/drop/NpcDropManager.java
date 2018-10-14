@@ -75,14 +75,14 @@ public final class NpcDropManager {
 		}
 
 		// starter box drop
-		if (npc.getMaximumHealth() > 10 && Utility.random(1, 900) <= 5) {
+		if (npc.getMaximumHealth() > 10 && Utility.random(1, 750) <= 5) {
 			Item starterbox = new Item(10028);
 			GroundItem.create(killer, starterbox, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + starterbox.getName()));
 		}
 		
 		// starter box drop
-		if (npc.getMaximumHealth() > 5 && Utility.random(1, 1500) <= 5) {
+		if (npc.getMaximumHealth() > 5 && Utility.random(1, 900) <= 5) {
 			Item raptor = new Item(12789);
 			GroundItem.create(killer, raptor, dropPosition);
 			killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + raptor.getName()));
