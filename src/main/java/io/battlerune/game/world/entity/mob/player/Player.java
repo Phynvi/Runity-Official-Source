@@ -780,11 +780,6 @@ public class Player extends Mob {
 				send(new SendPlayerOption(PlayerOption.ATTACK, true));
 				send(new SendPlayerOption(PlayerOption.DUEL_REQUEST, false, true));
 			}
-
-			// ffa
-		} else if (Area.inFreeForAll(this)) {
-			send(new SendPlayerOption(PlayerOption.ATTACK, true));
-			
 			// duel arena lobby
 		} else if (Area.inDuelArenaLobby(this)) {
 			send(new SendPlayerOption(PlayerOption.DUEL_REQUEST, false));

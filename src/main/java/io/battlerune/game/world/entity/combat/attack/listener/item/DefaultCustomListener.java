@@ -54,11 +54,14 @@ public int healingGraphic = 398; //1296
 
 @Override
 public void hit(Mob attacker, Mob defender, Hit hit) {
-	if(Area.inWilderness(attacker) && Utility.random(1, 20) <= 1) {
-		attacker.heal(hit.getDamage() / 4);
-		attacker.graphic(healingGraphic);
+
+	if(Area.inWilderness(attacker)) {
+		if(PlayerRight.isDeveloper(attacker.getPlayer())) {
+			attacker.getPlayer().message("[Blocked Amount] " + hit.getDamage() / 5 + "!");
+		}
 		return;
 	}
+	
 	if (Utility.random(1, 4) <= 1) {
 		attacker.heal(hit.getDamage() / 5);
 		attacker.graphic(healingGraphic);

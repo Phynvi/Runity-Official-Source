@@ -8,7 +8,6 @@ import io.battlerune.content.ActivityLog;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityListener;
 import io.battlerune.content.activity.ActivityType;
-import io.battlerune.content.activity.impl.allvsone2.AllVsOne2;
 import io.battlerune.content.activity.impl.allvsone3.AllVsOneData3.WaveData;
 import io.battlerune.content.activity.panel.ActivityPanel;
 import io.battlerune.game.world.entity.mob.Mob;
@@ -22,9 +21,9 @@ import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
-/**
- * @author Adam_#6723 Handles the All Vs One V3 Minigame. TODO ADD 40 More
- *         Waves.
+/** @author Adam_#6723 
+ *  Handles the All Vs One V3 Minigame.
+ *  TODO ADD 40 More Waves.
  */
 public class AllVsOneV3 extends Activity {
 
@@ -37,16 +36,8 @@ public class AllVsOneV3 extends Activity {
 	/** The time it took to complete the activity. */
 	private long time;
 
-	/** The amount of tokkuls the player has acquired. */
-	public static int rewards;
-
-	public static int getRewards() {
-		return rewards;
-	}
-
-	public void setRewards(int rewards) {
-		AllVsOneV3.rewards = rewards;
-	}
+	/** The amount of reward the player has acquired. */
+	private int rewards;
 
 	/** A set of npcs in this activity. */
 	public final Set<Npc> npcs = new HashSet<>();
@@ -60,8 +51,6 @@ public class AllVsOneV3 extends Activity {
 	/**
 	 * Constructs a new {@code AllVsOne} object for a {@code player} and an
 	 * {@code instance}.
-	 * 
-	 * @param player
 	 */
 	private AllVsOneV3(Player player, int instance) {
 		super(10, instance);
@@ -69,13 +58,11 @@ public class AllVsOneV3 extends Activity {
 	}
 
 	public static AllVsOneV3 create(Player player) {
-		player.playerAssistant.instance();
 		AllVsOneV3 minigame = new AllVsOneV3(player, player.playerAssistant.instance());
 		player.move(new Position(2557, 4974, player.getHeight()));
-		ActivityPanel.update(player, -1, "All vs One V3", "Activity Completion:",
-				"Good Luck, " + player.getName() + "!");
+		ActivityPanel.update(player, -1, "All vs One V3", "Activity Completion:", "Good Luck, " + player.getName() + "!");
 		player.dialogueFactory.sendNpcChat(5567, "Welcome to the All Vs One V3, #name.",
-				"There are a total of 67 wave.", "Combination of V1 & V2", "Find all four dragon pieces to win!",
+				"There are a total of 5 waves, 10x Harder then v1.",
 				"Use your activity panel (bottom left tab) for wave information.", "Good luck!").execute();
 		minigame.time = System.currentTimeMillis();
 		minigame.add(player);
@@ -106,7 +93,7 @@ public class AllVsOneV3 extends Activity {
 
 			npcs.remove(dead);
 			remove(dead);
-			rewards += Utility.random(2500, 3750);
+			rewards += Utility.random(3200, 4500);
 			if (npcs.isEmpty()) {
 				wave = AllVsOneData3.WaveData.getNext(wave.ordinal());
 				if (wave == null) {
@@ -144,10 +131,10 @@ public class AllVsOneV3 extends Activity {
 			player.face(npc.getPosition());
 			npc.locking.unlock();
 		}
-		if (wave == WaveData.WAVE_5 || wave == WaveData.WAVE_10 || wave == WaveData.WAVE_17 || wave == WaveData.WAVE_23
+		if (wave == WaveData.WAVE_7 || wave == WaveData.WAVE_11 || wave == WaveData.WAVE_15 || wave == WaveData.WAVE_23
 				|| wave == WaveData.WAVE_25 || wave == WaveData.WAVE_32 || wave == WaveData.WAVE_40
-				|| wave == WaveData.WAVE_48 || wave == WaveData.WAVE_56 || wave == WaveData.WAVE_59
-				|| wave == WaveData.WAVE_64 || wave == WaveData.WAVE_67) {
+				|| wave == WaveData.WAVE_45 || wave == WaveData.WAVE_50 || wave == WaveData.WAVE_55
+				|| wave == WaveData.WAVE_60 || wave == WaveData.WAVE_67) {
 			createRandomGroundItems(player);
 		}
 		pause();
@@ -163,9 +150,9 @@ public class AllVsOneV3 extends Activity {
 			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One V3, I am most impressed!",
 					"Please accept this gift, young thug.").execute();
 			rewards += 10000;
-			// player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
-			player.inventory.addOrDrop(new Item(7775, rewards));
-			player.message("<img=8>You now have @red@" + rewards + " All Vs One V3 Tickets!");
+			//player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
+            player.inventory.addOrDrop(new Item(7775, rewards));
+    		player.message("<img=8>You now have @red@" + rewards + " All Vs One V3 Tickets!");
 			player.inventory.addOrDrop(new Item(6833, 2));
 			player.inventory.addOrDrop(new Item(290, 2));
 			player.send(new SendMessage("You have completed the All Vs One V3 activity. Final time: @red@"
@@ -176,20 +163,9 @@ public class AllVsOneV3 extends Activity {
 
 		if (rewards <= 0)
 			rewards = 1;
-		player.inventory.addOrDrop(new Item(7775, rewards));
-		player.message("<img=7>You now have @red@" + rewards + " All Vs One V2 Tickets!");
+        player.inventory.addOrDrop(new Item(7775, rewards));
+		player.message("<img=7>You now have @red@" + rewards + " All Vs One V3 Tickets!");
 		player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();
-	}
-
-	public static int[] GENERATED_LOOT = { 22090, 22089, 22088, 22091 };
-
-	public static void createRandomGroundItems(Player player) {
-		if (Utility.random(1, 2) <= 1) {
-			GroundItem.createGlobal(player, new Item(GENERATED_LOOT[Utility.random(GENERATED_LOOT.length)], 1),
-					new Position(2558 + Utility.random(1, 15), 4960 + Utility.random(1, 15), player.getPosition().getHeight()));
-			player.message("@red@ A Dragon piece key has been dropped in a random location!");
-			player.message("@red@ Find all four pieces to make the key to complete this minigame!");
-		}
 	}
 
 	@Override
@@ -214,6 +190,17 @@ public class AllVsOneV3 extends Activity {
 				"</col>Monsters Left: <col=FF5500>" + npcs.size(),
 				"</col>Points Gained: <col=FF5500>" + Utility.formatDigits(rewards),
 				"</col>Time: <col=FF5500>" + Utility.getTime());
+	}
+	
+	public static int[] GENERATED_LOOT = { 22090, 22089, 22088, 22091 };
+
+	public static void createRandomGroundItems(Player player) {
+		if (Utility.random(1, 2) <= 1) {
+			GroundItem.createGlobal(player, new Item(GENERATED_LOOT[Utility.random(GENERATED_LOOT.length)], 1),
+					new Position(2558 + Utility.random(1, 15), 4960 + Utility.random(1, 15), player.getPosition().getHeight()));
+			player.message("@red@ A Dragon piece key has been dropped in a random location!");
+			player.message("@red@ Find all four pieces to make the key to complete this minigame!");
+		}
 	}
 
 	@Override

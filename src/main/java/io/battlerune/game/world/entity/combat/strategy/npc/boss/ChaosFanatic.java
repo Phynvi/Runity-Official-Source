@@ -87,8 +87,6 @@ public class ChaosFanatic extends MultiStrategy {
 		@Override
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
 
-			int disarmattack = 1;
-			int disaramattackrandom = Utility.random(disarmattack, 20);
 
 			attacker.animate(new Animation(1162, UpdatePriority.VERY_HIGH));
 			for (int i = 0; i < 3; i++) {
@@ -105,19 +103,6 @@ public class ChaosFanatic extends MultiStrategy {
 					World.sendGraphic(new Graphic(131, UpdatePriority.HIGH), end);
 					if (defender.getPosition().equals(end)) {
 						defender.damage(nextMagicHit(attacker, defender, 31));
-						if (defender.isPlayer() && disaramattackrandom == disarmattack) {
-							Player player = defender.getPlayer();
-							Item[] equipment = player.equipment.toNonNullArray();
-							if (equipment.length == 0)
-								return;
-							Item disarm = Utility.randomElement(equipment);
-							if (disarm == null)
-								return;
-							player.equipment.unEquip(disarm);
-							player.send(new SendMessage("Chaos fanatic has removed your "
-									+ Utility.formatName(disarm.getEquipmentType().name().toLowerCase()) + "."));
-							player.graphic(new Graphic(557, true, UpdatePriority.HIGH));
-						}
 					}
 				});
 			}

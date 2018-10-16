@@ -262,11 +262,6 @@ public final class CombatUtil {
 			if (attacker.locking.locked(PacketType.COMBAT)) {
 				return false;
 			}
-
-			if (Area.inFreeForAll(attacker) && FreeForAll.KEY_MAP.get(attacker).equals(FreeForAllType.GAME) &&
-					FreeForAll.KEY_MAP.get(defender).equals(FreeForAllType.GAME) && Area.inFreeForAll(defender)) {
-				return true;
-			}
 			
 			if (attacker.inActivity(ActivityType.DUEL_ARENA) && defender.inActivity(ActivityType.DUEL_ARENA)) {
 				return true;

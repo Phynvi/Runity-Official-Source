@@ -86,8 +86,7 @@ public class Arena extends MultiStrategy {
 
 		@Override
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
-			int disarmattack = 1;
-			int disaramattackrandom = Utility.random(disarmattack, 3);
+
 
 			Projectile projectile = new Projectile(1028, 50, 80, 85, 25);
 			attacker.animate(new Animation(6501, UpdatePriority.VERY_HIGH));

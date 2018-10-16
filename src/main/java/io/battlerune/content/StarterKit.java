@@ -70,7 +70,7 @@ public class StarterKit {
 				new Item[] { new Item(995, 10000), new Item(1351, 1), new Item(590, 1), new Item(303, 1),
 						new Item(315, 1), new Item(1925, 1), new Item(1931, 1), new Item(2309, 1), new Item(1265, 1),
 						new Item(1205, 1), new Item(1277, 1), new Item(1171, 1), new Item(841, 1), new Item(882, 25),
-						new Item(556, 25), new Item(558, 15), new Item(555, 6), new Item(557, 4), new Item(559, 2) }),
+						new Item(556, 25), new Item(558, 15), new Item(555, 6), new Item(557, 4), new Item(559, 2), new Item(16662, 1) }),
 
 		ULTIMATE_IRONMAN(PlayerRight.ULTIMATE_IRONMAN,
 				new String[] { "In addition to all the regular ironman rules the following conditions apply as well:",

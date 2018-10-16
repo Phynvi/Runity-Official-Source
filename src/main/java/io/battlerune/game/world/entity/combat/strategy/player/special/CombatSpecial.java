@@ -111,7 +111,7 @@ public enum CombatSpecial {
 
 	/* Ranged **/
 	BLOW_PIPE(new int[] { 12926 }, 50, Blowpipe.get()),
-	DARK_BOW(new int[] { 11235, 12765, 12766, 12767, 12768 }, 55, DarkBow.get()),
+	DARK_BOW(new int[] { 11235, 12765, 12766, 12767, 12768, 13749, 13831, 13713}, 55, DarkBow.get()),
 	MAGIC_SHORTBOW(new int[] { 861, 12788 }, 55, MagicShortbow.get()),
 	BALLISTA(new int[] { 19478, 19481 }, 55, Ballista.get()),
 	ARMADYL_CROSSBOW(new int[] { 11785 }, 40, ArmadylCrossbow.get()),
@@ -223,7 +223,7 @@ public enum CombatSpecial {
 		}
 	},
 
-	DINHS_BULWARK(new int[] { 21015 }, 50, DinhsBulwark.get());
+	DINHS_BULWARK(new int[] {  }, 50, DinhsBulwark.get());
 
 	/**
 	 * The identifiers for the weapons that perform this special.

@@ -126,8 +126,6 @@ public abstract class Area {
 	private static final ImmutableList<SquareArea> DUEL_ARENAS = ImmutableList
 			.of(new SquareArea("Arena", 3327, 3203, 3389, 3290));
 	
-	private static final ImmutableList<SquareArea> FREE_FOR_ALL_GAME = ImmutableList
-			.of(new SquareArea("Free For All", 3266, 4930, 3319, 4989));
 
 	private static final ImmutableList<SquareArea> DUEL_OBSTICLE_ARENAS = ImmutableList.of(
 			new SquareArea("South East Obstacle Arena", 3362, 3205, 3390, 3221),
@@ -199,14 +197,6 @@ public abstract class Area {
 		return false;
 	}
 	
-	public static boolean inFreeForAll(Interactable entity) {
-		for (Area zone : FREE_FOR_ALL_GAME) {
-			if (zone.inArea(entity.getPosition())) {
-				return true;
-			}
-		}
-		return false;
-	}
 	
 
 	public static boolean inZulrah(Interactable entity) {

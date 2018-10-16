@@ -151,7 +151,7 @@ public final class BattleRune {
 		World.schedule(new ArenaEvent());
 		World.schedule(new GalvekEvent());
 		World.schedule(new RoyaltyEvent());
-	    World.schedule(new FreeForAll());
+	   // World.schedule(new FreeForAll());
 		Logger.log("Events have been scheduled");
 		Logger.log("World Schdule Events have loaded adam.");
 	}

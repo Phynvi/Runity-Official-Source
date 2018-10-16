@@ -215,15 +215,12 @@ public class Justicar extends MultiStrategy {
 		@Override
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
 
-			int disarmattack = 1;
-			int disaramattackrandom = Utility.random(disarmattack, 5);
-			if (disaramattackrandom == disarmattack) {
 				attacker.animate(new Animation(7964, UpdatePriority.VERY_HIGH));
 				Projectile projectile = new Projectile(1479, 50, 80, 85, 25);
 				projectile.send(attacker, defender);
 				defender.damage(new Hit(Utility.random(20, 50)));
 				attacker.speak("I AM A DECENDENT OF HELL!");
-			}
+			
 
 	}
 

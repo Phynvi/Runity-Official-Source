@@ -73,7 +73,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 
 		  case 26727: 
-			new FreeForAllLobbyTask(player).execute();
+			//new FreeForAllLobbyTask(player).execute();
 			break; 
 		case 26043:
 			player.send(new SendMessage("@red@ The player owned shop has been disabled!"));
@@ -1165,7 +1165,7 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			World.sendMessage(player.getName() + " Was Dank enough to take on All Vs One V3!");
 			World.schedule(5, () -> {
 				AllVsOneV3.create(player);
-				AllVsOneV3.rewards = 0;
+//				AllVsOneV3.rewards = 0;
 				player.locking.unlock();
 			});
 			break;
