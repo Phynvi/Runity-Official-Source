@@ -77,6 +77,11 @@ public final class PlayerDeath extends MobDeath<Player> {
 	public void death() {
 		Mob killer = mob.getCombat().getDamageCache().calculateProperKiller().orElse(null);
 
+		if (mob.getPlayer().getDynamicRegion() != null && mob.getPlayer().getDynamicRegion().getHandler() != null) {
+			mob.getPlayer().getDynamicRegion().getHandler().onPlayerDeath(mob.getPlayer());
+			return;
+		}
+		
 		if (mob.inActivity() && Activity.evaluate(mob, Activity::safe)) {
 			safe = true;
 			return;

@@ -13,6 +13,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
+import io.battlerune.game.world.region.RegionManager;
 import io.battlerune.net.packet.out.SendGroundItem;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendRemoveGroundItem;
@@ -161,7 +162,7 @@ public final class GroundItem extends Entity {
 			item.incrementAmountBy(groundItem.item.getAmount());
 		}
 
-		Region[] regions = World.getRegions().getSurroundingRegions(getPosition());
+		Region[] regions = RegionManager.getSurroundingRegions(getPosition());
 		for (Region reg : regions) {
 			reg.getPlayers(getHeight()).forEach(player -> {
 				if (canSee(player)) {
@@ -176,7 +177,7 @@ public final class GroundItem extends Entity {
 
 	@Override
 	public void removeFromRegion(Region region) {
-		Region[] regions = World.getRegions().getSurroundingRegions(getPosition());
+		Region[] regions = RegionManager.getSurroundingRegions(getPosition());
 		for (Region reg : regions) {
 			reg.getPlayers(getHeight()).forEach(player -> {
 				if (canSee(player)) {

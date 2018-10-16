@@ -20,6 +20,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -736,6 +737,10 @@ public class Utility {
 		return Stream.of(string.trim().split("\\s")).filter(word -> word.length() > 0)
 				.map(word -> word.substring(0, 1).toUpperCase() + word.substring(1)).collect(Collectors.joining(" "));
 	}
+	
+	public static String formatUsername(String string) {
+        return Character.toUpperCase(string.charAt(0)) + string.substring(1);
+    }
 
 	public static boolean within(Position source, Position target, int distance) {
 		Interactable interactableSource = Interactable.create(source);
@@ -951,4 +956,10 @@ public class Utility {
 		}
 		return true;
 	}
+
+	 public static String convertMsToTime(long ms) {
+    	if (ms >= 600000)
+    		return String.format("%02d:%02d:%02d", TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(ms)), TimeUnit.MILLISECONDS.toMinutes(ms) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(ms)), TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(ms)));
+    	return String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(ms) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(ms)), TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(ms)));
+    }
 }

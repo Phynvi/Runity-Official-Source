@@ -1,7 +1,11 @@
 package io.battlerune.game.world.entity.mob.player.persist;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.codec.login.LoginResponse;
+import io.battlerune.util.Utility;
 
 public final class PlayerSerializer {
 
@@ -21,5 +25,9 @@ public final class PlayerSerializer {
 		}
 
 		return perstable.load(player, expectedPassword);
+	}
+	
+	public static boolean saveExists(String name) {
+		return Files.exists(Paths.get("./data/profile/save/"+Utility.formatUsername(name)+".json"));
 	}
 }

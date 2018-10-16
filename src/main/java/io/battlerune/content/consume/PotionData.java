@@ -95,6 +95,10 @@ public enum PotionData {
 				player.message("You cannot drink overloads in wilderness!");
 				return;
 			}
+			if (player.getCurrentHealth() < 50) {
+				player.sendMessage("You need more than 50 hitpoints to survive the power of overload.");
+				return;
+			}
 			PotionData.onOverloadEffect(player, Skill.ATTACK, BoostType.OVERLOAD, true);
 			PotionData.onOverloadEffect(player, Skill.STRENGTH, BoostType.OVERLOAD, true);
 			PotionData.onOverloadEffect(player, Skill.DEFENCE, BoostType.OVERLOAD, true);
@@ -571,23 +575,17 @@ public enum PotionData {
 	}
 
 	private static void onOverloadEffect(Player player, int skill, BoostType type, boolean hasOverloadEffect) {
-		if (Area.inWilderness(player) && hasOverloadEffect == true) {
+		if (Area.inWilderness(player) && hasOverloadEffect) {
 			Teleportation.teleport(player, Config.DEFAULT_POSITION);
 			player.skills.restoreAll();
 			player.send(new SendMessage("You are not allowed to drink overloads in the wilderness!"));
 			return;
 		}
-		int health = player.getCurrentHealth();
-		int damage = health - 1;
-
-		if (damage <= 0) {
-			player.message("You better not eat that!");
-			return;
-		}
+		
 		hasOverloadEffect = true;
 		modifySkill(player, skill, type.amount, type.base);
 		player.animate(3170);
-		player.damage(new Hit(5));
+		player.damage(new Hit(10));
 		player.speak("OUCH!");
 		player.send(new SendWidget(SendWidget.WidgetType.OVERLOAD, 360));
 	}

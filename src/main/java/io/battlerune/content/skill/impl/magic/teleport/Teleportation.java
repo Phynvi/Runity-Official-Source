@@ -103,8 +103,14 @@ public class Teleportation {
 
 	/** Teleports player using a certain data type. */
 	public static boolean teleport(Mob mob, Position position, TeleportationData type, Runnable onDestination) {
+		
+		if (mob.getPlayer().getDynamicRegion() != null && mob.getPlayer().getDynamicRegion().getHandler() != null) {
+			if (!mob.getPlayer().getDynamicRegion().getHandler().allowTeleportation(mob.getPlayer()))
+				return true;
+		}
 		if (type != TeleportationData.HOME)
 			mob.getCombat().reset();
+		
 		mob.action.execute(new TeleportAction(mob, position, type, onDestination), true);
 		return true;
 	}
