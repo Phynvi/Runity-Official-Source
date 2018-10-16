@@ -2,14 +2,32 @@ package io.battlerune.game.world.region.dynamic.boss.impl;
 
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.region.dynamic.boss.DynamicRegionController;
+import io.battlerune.game.world.region.dynamic.boss.DynamicRegionHandler;
 
 /**
  * 
  * @author Teek
  *
  */
-public class ZulrahRegionController extends DynamicRegionController {
+public class ZulrahRegionController extends DynamicRegionHandler {
+
+	@Override
+	public void onStart(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean requirements(Player player) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void process(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
 	public boolean handleObjectInteraction(int opcode, int objectId) {
@@ -24,12 +42,6 @@ public class ZulrahRegionController extends DynamicRegionController {
 	}
 
 	@Override
-	public void onStart(Player player) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void onNPCDeath(Npc npc) {
 		// TODO Auto-generated method stub
 		
@@ -38,17 +50,10 @@ public class ZulrahRegionController extends DynamicRegionController {
 	@Override
 	public void onPlayerDeath(Player player) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public boolean allowTeleportation(Player player) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean requirements(Player player) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -59,5 +64,5 @@ public class ZulrahRegionController extends DynamicRegionController {
 		
 	}
 
-	
+
 }

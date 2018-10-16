@@ -15,24 +15,26 @@ import io.battlerune.game.world.region.dynamic.boss.impl.ZulrahRegionController;
  * Creation Date: 10/16/2018 - 08:06am
  *
  */
-public abstract class DynamicRegionController {
+public abstract class DynamicRegionHandler {
 	
 	
-	public static Map<RegionType, DynamicRegionController> controllers = new HashMap<RegionType, DynamicRegionController>();
+	public static Map<RegionType, DynamicRegionHandler> controllers = new HashMap<RegionType, DynamicRegionHandler>();
 
+	public abstract void onStart(Player player);
+	
+	public abstract boolean requirements(Player player);
+	
+	public abstract void process(Player player);
+	
 	public abstract boolean handleObjectInteraction(int opcode, int objectId);
 	
 	public abstract boolean handleNpcAttack(Npc npc);
-	
-	public abstract void onStart(Player player);
 	
 	public abstract void onNPCDeath(Npc npc);
 	
 	public abstract void onPlayerDeath(Player player);
 	
 	public abstract boolean allowTeleportation(Player player);
-	
-	public abstract boolean requirements(Player player);
 	
 	public abstract void onExit(Player player);
 	
