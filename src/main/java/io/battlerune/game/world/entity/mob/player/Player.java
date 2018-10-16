@@ -280,6 +280,16 @@ public class Player extends Mob {
 
 	public int skillingPoints;
 	public int bossPoints;
+	public int refferalpoint;
+	
+	public int getReferralPoints() {
+		return refferalpoint;
+	}
+
+	public void setRefferalPoints(int refferalpoint) {
+		this.refferalpoint = refferalpoint;
+	}
+	
 	public int triviaPoints;
 	
 	public int allvsonepoint;
@@ -946,7 +956,6 @@ public class Player extends Mob {
 	
 	public double storedPrayerPoints;
 	public String lastIP;
-	public int referalPoints; 
 
 	public void teleblock(int time) {
 		if (time <= 0 || (teleblockTimer.get() > 0)) {

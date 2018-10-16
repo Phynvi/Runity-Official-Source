@@ -7,6 +7,12 @@ import java.util.Map;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.packet.out.SendString;
 
+
+/**
+ * 
+ * @author Adam_#6723
+ *
+ */
 public class ReferralHandler {
 
 	public static final int[] DEFAULT = { 3080 };

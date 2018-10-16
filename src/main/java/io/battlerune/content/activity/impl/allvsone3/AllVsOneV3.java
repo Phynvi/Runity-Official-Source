@@ -171,12 +171,11 @@ public class AllVsOneV3 extends Activity {
 			player.send(new SendMessage("You have completed the All Vs One V3 activity. Final time: @red@"
 					+ Utility.getTime(time) + "</col>."));
 			player.activityLogger.add(ActivityLog.ALLVSONE3);
-			System.err.println("PRINTING COMPLETION..1");
 			return;
 		}
 
 		if (rewards <= 0)
-			rewards = 1;
+			rewards = 6;
         player.inventory.addOrDrop(new Item(7775, rewards / 2));
 		player.message("<img=9>You now have @red@" + rewards + " All Vs One Tickets!");
 		player.message("bare in mind, your rewards have been halfed since you died whilst in the minigame!");

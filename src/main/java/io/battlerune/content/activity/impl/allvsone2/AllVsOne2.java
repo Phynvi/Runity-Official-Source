@@ -144,14 +144,9 @@ public class AllVsOne2 extends Activity {
 			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One V2, I am most impressed!",
 					"Please accept this gift, young thug.").execute();
 			rewards += 10000;
-			//player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
             player.inventory.addOrDrop(new Item(7775, rewards));
     		player.message("<img=8>You now have @red@" + rewards + " All Vs One V2 Tickets!");
-			if(Utility.random(1, 3) == 2) {
-			player.inventory.addOrDrop(new Item(20050));
-			}
 			player.inventory.addOrDrop(new Item(290, 2));
-			Pets.onReward(player, PetData.PHOENIX);
 			player.send(new SendMessage("You have completed the All Vs One V2 activity. Final time: @red@"
 					+ Utility.getTime(time) + "</col>."));
 			player.activityLogger.add(ActivityLog.ALLVSONE2);
@@ -159,11 +154,14 @@ public class AllVsOne2 extends Activity {
 		}
 
 		if (rewards <= 0)
-			rewards = 1;
-        player.inventory.addOrDrop(new Item(7775, rewards));
+			rewards = 6;
+        player.inventory.addOrDrop(new Item(7775, rewards / 2));
 		player.message("<img=7>You now have @red@" + rewards + " All Vs One V2 Tickets!");
 		player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();
 	}
+	
+	
+	
 
 	@Override
 	public void cleanup() {

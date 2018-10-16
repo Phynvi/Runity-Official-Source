@@ -1130,6 +1130,18 @@ public final class PlayerPersistFile implements PlayerPersistable {
 					return player.bossPoints;
 				}
 			},
+			
+			 new PlayerJSONProperty("refferal-points") {
+				@Override
+				void read(Player player, JsonElement property) {
+					player.refferalpoint = property.getAsInt();
+				}
+
+				@Override
+				Object write(Player player) {
+					return player.refferalpoint;
+				}
+			},
 
 			new PlayerJSONProperty("kolodion-points") {
 				@Override

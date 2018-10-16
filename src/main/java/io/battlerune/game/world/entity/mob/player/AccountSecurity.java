@@ -48,6 +48,7 @@ public class AccountSecurity {
 				player.donation.setCredits(0);
 				player.pestPoints = 0;
 				player.kolodionPoints = 0;
+				player.refferalpoint = 0;
 				player.bank.clear();
 				player.setVisible(true);
 			} else if (PlayerRight.isDonator(player)) {

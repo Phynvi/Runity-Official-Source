@@ -4,6 +4,12 @@ import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.net.packet.out.SendInputMessage;
 
+/**
+ * 
+ * @author Adam_#6723
+ *
+ */
+
 public class ReferralSystem {
 	
 	private Player player;
@@ -40,7 +46,7 @@ public class ReferralSystem {
 			System.out.println("no save for reffered");
 			return;
 		}	
-		reffered.referalPoints += TOTAL_POINTS;
+		reffered.refferalpoint += TOTAL_POINTS;
 		reffered.sendMessage("You have been given "+TOTAL_POINTS+" for refering "+player.getUsername()+".");
 	}
 }

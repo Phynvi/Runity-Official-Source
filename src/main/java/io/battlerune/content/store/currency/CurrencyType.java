@@ -13,11 +13,11 @@ import io.battlerune.content.store.currency.impl.KolodionsPointCurrency;
 import io.battlerune.content.store.currency.impl.PestPointCurrency;
 import io.battlerune.content.store.currency.impl.PlayerKillingPointCurrency;
 import io.battlerune.content.store.currency.impl.PrestigePointCurrency;
+import io.battlerune.content.store.currency.impl.RefferalPointCurrency;
 import io.battlerune.content.store.currency.impl.SkillingPointCurrency;
 import io.battlerune.content.store.currency.impl.SlayerPointCurrency;
 import io.battlerune.content.store.currency.impl.TriviaPointCurrency;
 import io.battlerune.content.store.currency.impl.VotePointCurrency;
-import io.battlerune.content.store.currency.impl.AllVsOnePointCurrency;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.util.Utility;
 
@@ -38,7 +38,8 @@ public enum CurrencyType {
 	KOLODION_POINTS(9, new KolodionsPointCurrency()), GRACEFUL_TOKEN(10, new ItemCurrency(11849)),
 	PET_TOKENS(10, new ItemCurrency(20527)), SKILLING_POINTS(11, new SkillingPointCurrency()),
 	BOSS_POINTS(12, new BossPointCurrency()), TRIVIA_POINTS(13, new TriviaPointCurrency()),
-	BILL_CHECKS(14, new ItemCurrency(5020)),;
+	BILL_CHECKS(14, new ItemCurrency(5020)),
+	REFFERAL_POINTS(12, new RefferalPointCurrency());
 
 	private static final ImmutableSet<CurrencyType> VALUES = ImmutableSet.copyOf(values());
 
@@ -110,6 +111,9 @@ public enum CurrencyType {
 			break;
 		case BOSS_POINTS:
 			value = Utility.formatDigits(player.bossPoints);
+			break;
+		case REFFERAL_POINTS:
+			value = Utility.formatDigits(player.refferalpoint);
 			break;
 		case TRIVIA_POINTS:
 			value = Utility.formatDigits(player.triviaPoints);

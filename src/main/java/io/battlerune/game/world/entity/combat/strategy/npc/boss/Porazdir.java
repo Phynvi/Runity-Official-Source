@@ -58,13 +58,12 @@ public class Porazdir extends MultiStrategy {
 
 	@Override
 	public boolean canAttack(Npc attacker, Mob defender) {
-		if (!currentStrategy.withinDistance(attacker, defender)) {
+		if (!currentStrategy.canAttack(attacker, defender)) {
 			currentStrategy = randomStrategy(MAGIC_STRATEGIES);
 			currentStrategy = randomStrategy(NON_MELEE);
 		}
 		return currentStrategy.canAttack(attacker, defender);
 	}
-
 	@Override
 	public void block(Mob attacker, Npc defender, Hit hit, CombatType combatType) {
 		currentStrategy.block(attacker, defender, hit, combatType);

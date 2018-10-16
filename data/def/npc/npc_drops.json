@@ -912,21 +912,21 @@
         "item": 4103,
         "minimum": 1,
         "maximum": 1,
-        "chance": 7500.0,
+        "chance": 2500.0,
         "type": "VERY_RARE"
       },
       {
         "item": 21807,
         "minimum": 1,
         "maximum": 1,
-        "chance": 7500.0,
+        "chance": 2500.0,
         "type": "VERY_RARE"
       },
       {
         "item": 21810,
         "minimum": 1,
         "maximum": 1,
-        "chance": 7500.0,
+        "chance": 2500.0,
         "type": "VERY_RARE"
       },
       {
