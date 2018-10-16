@@ -4,6 +4,7 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.region.dynamic.boss.DynamicRegionHandler;
+import io.battlerune.util.Utility;
 
 /**
  * 
@@ -11,22 +12,26 @@ import io.battlerune.game.world.region.dynamic.boss.DynamicRegionHandler;
  *
  */
 public class ZulrahRegionController extends DynamicRegionHandler {
+	
+	private long startTime, finishTime;
 
 	@Override
 	public void onStart(Player player) {
-		// TODO Auto-generated method stub
+		System.out.println("here test..");
+		startTime = System.currentTimeMillis();
+		player.sendMessage("<col=ff0000>testing.. - Index="+player.getIndex()+" RegionIndex="+(4 * player.getIndex())+"");
 		
 	}
 
 	@Override
 	public boolean metRequirements(Player player) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public void process(Player player) {
-		// TODO Auto-generated method stub
+		System.out.println("time elapsed="+Utility.convertMsToTime(System.currentTimeMillis() - startTime));
 		
 	}
 
@@ -55,14 +60,14 @@ public class ZulrahRegionController extends DynamicRegionHandler {
 
 	@Override
 	public boolean allowTeleportation(Player player) {
-		// TODO Auto-generated method stub
-		return false;
+		player.getDynamicRegion().destroyInstance(false);
+		return true;
 	}
 
 	@Override
 	public void onExit(Player player) {
-		// TODO Auto-generated method stub
-		
+		finishTime = System.currentTimeMillis();
+		player.sendMessage("Time Elapsed: "+Utility.convertMsToTime(finishTime - startTime));
 	}
 
 

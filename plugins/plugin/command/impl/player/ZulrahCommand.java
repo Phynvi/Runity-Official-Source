@@ -12,7 +12,6 @@ public class ZulrahCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		player.sendMessage("testing.. - Index="+player.getIndex()+" RegionIndex="+(4 * player.getIndex())+"");
 		player.setDynamicRegion(new DynamicRegion(player, RegionType.ZULRAH));
 	}
 

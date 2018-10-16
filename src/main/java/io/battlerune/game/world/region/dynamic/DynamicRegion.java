@@ -83,13 +83,11 @@ public class DynamicRegion {
 		player.move(npcInstance ? getInstanceLocation() : getInstancePosition());
 	}
 	
-	private void destroyInstance(boolean failedRequirements) {
-		
-		if (failedRequirements) {
-			player.setDynamicRegion(null);
-			return;
-		}
-		
+	public void destroyInstance(boolean failedRequirements) {
+		this.getHandler().onExit(player);
+		player.setDynamicRegion(null);
+		this.handler = null;
+			
 	}
 	
 	/***
