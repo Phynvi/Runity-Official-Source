@@ -71,9 +71,25 @@ public class DynamicRegion {
 	 * Creates the instance
 	 */
 	private void createInstance() {
-		if (npcInstance)
+		if (npcInstance) {
 		    this.handler = DynamicRegionHandler.controllers.get(type);
+		    
+		    if (!this.getHandler().metRequirements(player)) {
+		    	destroyInstance(true);
+		    	return;
+		    }
+		    this.getHandler().onStart(player);
+		}
 		player.move(npcInstance ? getInstanceLocation() : getInstancePosition());
+	}
+	
+	private void destroyInstance(boolean failedRequirements) {
+		
+		if (failedRequirements) {
+			player.setDynamicRegion(null);
+			return;
+		}
+		
 	}
 	
 	/***

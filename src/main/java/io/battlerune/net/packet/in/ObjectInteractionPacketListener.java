@@ -131,6 +131,11 @@ public class ObjectInteractionPacketListener implements PacketListener {
 		player.face(object);
 		ObjectInteractionEvent event;
 
+		if (player.getDynamicRegion() != null && player.getDynamicRegion().getHandler() != null) {
+			player.getDynamicRegion().getHandler().handleObjectInteraction(type, object);
+			return;
+		}
+		
 		if (type == 2) {
 			event = new SecondObjectClick(object);
 		} else if (type == 3) {

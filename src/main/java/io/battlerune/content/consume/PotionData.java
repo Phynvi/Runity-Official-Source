@@ -585,8 +585,7 @@ public enum PotionData {
 		hasOverloadEffect = true;
 		modifySkill(player, skill, type.amount, type.base);
 		player.animate(3170);
-		player.damage(new Hit(5));
-		player.damage(new Hit(5));
+		player.damage(new Hit(10));
 		player.speak("OUCH!");
 		player.send(new SendWidget(SendWidget.WidgetType.OVERLOAD, 360));
 	}

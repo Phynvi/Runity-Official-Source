@@ -762,6 +762,10 @@ public class Player extends Mob {
 			playTime++;
 			sessionPlayTime++;
 		}
+		
+		if (this.getDynamicRegion() != null && this.getDynamicRegion().getHandler() != null)
+			this.getDynamicRegion().getHandler().process(this);
+		
 		action.sequence();
 		playerAssistant.sequence();
 		sequence++;

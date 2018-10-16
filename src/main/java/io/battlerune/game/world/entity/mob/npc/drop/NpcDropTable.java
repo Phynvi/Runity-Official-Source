@@ -48,9 +48,10 @@ public final class NpcDropTable {
 	}
 
 	public List<NpcDrop> generate(Player player) {
+		
 		LinkedList<NpcDrop> items = new LinkedList<>();
-		int roll = RandomUtils.inclusive(
-				(int) (1300 - ((1300 / 100) * new DropChanceHandler(player).getRate())));
+		
+		int roll = RandomUtils.inclusive((int) (1300 - ((1300 / 100) * new DropChanceHandler(player).getRate())));
 
 		if (veryRare.length > 0 && roll < 2) {
 			items.addFirst(RandomUtils.random(veryRare));

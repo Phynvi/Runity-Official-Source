@@ -2,6 +2,7 @@ package io.battlerune.game.world.region.dynamic.boss.impl;
 
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.region.dynamic.boss.DynamicRegionHandler;
 
 /**
@@ -18,7 +19,7 @@ public class ZulrahRegionController extends DynamicRegionHandler {
 	}
 
 	@Override
-	public boolean requirements(Player player) {
+	public boolean metRequirements(Player player) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -30,7 +31,7 @@ public class ZulrahRegionController extends DynamicRegionHandler {
 	}
 
 	@Override
-	public boolean handleObjectInteraction(int opcode, int objectId) {
+	public boolean handleObjectInteraction(int objectOption, GameObject object) {
 		// TODO Auto-generated method stub
 		return false;
 	}
