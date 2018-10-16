@@ -12,7 +12,7 @@ import io.battlerune.game.world.position.impl.SquareArea;
 /**
  * Handles checking if mobs are in a certain area.
  *
- * @author Adam_#6723
+ * @author Adam_#6723 
  */
 public abstract class Area {
 
