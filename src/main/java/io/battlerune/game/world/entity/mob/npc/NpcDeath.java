@@ -79,6 +79,9 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 		/* Npc name. */
 		String name = mob.getName().toUpperCase().replace(" ", "_");
+		
+		if (killer.getPlayer().getDynamicRegion() != null)
+			killer.getPlayer().getDynamicRegion().getHandler().onNPCDeath(mob);
 
 		runnable.run();
 
