@@ -25,6 +25,7 @@ import io.battlerune.util.Utility;
  * @author Graham Edgecombe
  */
 public class Region {
+	
 	private static final int CHUNK_SIZE = 8;
 	public static final int SIZE = CHUNK_SIZE * 8;
 	public static final int VIEW_DISTANCE = SIZE / 4 - 1;
@@ -38,7 +39,7 @@ public class Region {
 	private int x, y;
 
 	/** The region blocks that handle different heights. */
-	private final RegionBlock[] blocks = new RegionBlock[HEIGHT_LEVELS];
+	private final RegionBlock[] blocks = new RegionBlock[Short.MAX_VALUE];
 
 	/** The surrounded regions. */
 	private Optional<Region[]> surroundingRegions = Optional.empty();
@@ -194,7 +195,7 @@ public class Region {
 	}
 
 	private RegionBlock getBlock(int height) {
-		if (height > HEIGHT_LEVELS || height < 0) {
+		if (height < 0) {
 			throw new IllegalArgumentException(
 					"Height is out of bounds. Received (" + height + "), expected range [0, " + HEIGHT_LEVELS + "].");
 		}

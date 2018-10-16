@@ -577,6 +577,14 @@ public final class World {
 		return count;
 	}
 
+	public static Player getPlayerByName(String name) {
+		for (Player p : getPlayers()) {
+			 if (name != null && p.getUsername().toLowerCase().equalsIgnoreCase(name.toLowerCase()))
+				 return p;
+		}
+		return null;
+	}
+	
 	/** Gets the staff players currently online. */
 	public static List<Player> getStaff() {
 		List<Player> staff = new ArrayList<>();

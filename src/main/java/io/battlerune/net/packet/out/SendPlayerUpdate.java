@@ -80,8 +80,7 @@ public final class SendPlayerUpdate extends OutgoingPacket {
 
 			for (Player localPlayer : localPlayers) {
 
-				if (player.viewport.getPlayersInViewport().size() >= Viewport.CAPACITY
-						|| added >= Viewport.ADD_THRESHOLD) {
+				if (player.viewport.getPlayersInViewport().size() >= Viewport.CAPACITY || added >= Viewport.ADD_THRESHOLD) {
 					break;
 				}
 
@@ -101,6 +100,8 @@ public final class SendPlayerUpdate extends OutgoingPacket {
 				builder.initializeAccess(AccessType.BYTE);
 			}
 		} catch (Exception ex) {
+			ex.printStackTrace();
+			ex.getMessage();
 			logger.error(String.format("error updating player=%s", player), ex);
 		}
 		return true;

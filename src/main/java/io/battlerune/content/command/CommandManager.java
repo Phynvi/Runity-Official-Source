@@ -107,6 +107,7 @@ import plugin.command.impl.player.VaultCommand;
 import plugin.command.impl.player.VoteCommand;
 import plugin.command.impl.player.Wests;
 import plugin.command.impl.player.YouTubeCommand;
+import plugin.command.impl.player.ZulrahCommand;
 
 /**
  * Stores Commands
@@ -150,6 +151,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "drops", "drop" }, new DropInterfaceCommand());
 		PLUGIN.putIfAbsent(new String[] { "gamble", "gamblezone" }, new GambleCommand());
 		PLUGIN.putIfAbsent(new String[] { "arena", "arenazone" }, new ArenaZoneCommand());
+		PLUGIN.putIfAbsent(new String[] { "zul", "zulrah" }, new ZulrahCommand());
 		PLUGIN.putIfAbsent(new String[] { "testt", "test" }, new CashOutCommand());
 		PLUGIN.putIfAbsent(new String[] { "help" }, new Helpcommand());
 		PLUGIN.putIfAbsent(new String[] { "answer", "trivia" }, new AnswerTriviaCommand());

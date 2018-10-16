@@ -2,7 +2,9 @@ package io.battlerune.game.world.position;
 
 import io.battlerune.game.world.Interactable;
 import io.battlerune.game.world.World;
+import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.region.Region;
+import io.battlerune.game.world.region.dynamic.DynamicRegion.RegionType;
 import io.battlerune.util.Utility;
 
 /**
@@ -44,7 +46,7 @@ public class Position {
 	public Position(int x, int y, int height) {
 		this.x = x;
 		this.y = y;
-		this.height = height < 0 ? 0 : height % 4;
+		this.height = height;
 	}
 
 	/**
@@ -375,6 +377,10 @@ public class Position {
 
 	public static int hash(int x, int y, int z) {
 		return (y << 16) | (x << 8) | z;
+	}
+
+	public int getDynamicHeight(Player player) {
+		return player.getIndex() * 4;
 	}
 
 }

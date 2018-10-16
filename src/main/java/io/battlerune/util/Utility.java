@@ -736,6 +736,10 @@ public class Utility {
 		return Stream.of(string.trim().split("\\s")).filter(word -> word.length() > 0)
 				.map(word -> word.substring(0, 1).toUpperCase() + word.substring(1)).collect(Collectors.joining(" "));
 	}
+	
+	public static String formatUsername(String string) {
+        return Character.toUpperCase(string.charAt(0)) + string.substring(1);
+    }
 
 	public static boolean within(Position source, Position target, int distance) {
 		Interactable interactableSource = Interactable.create(source);

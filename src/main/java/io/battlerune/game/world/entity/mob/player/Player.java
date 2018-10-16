@@ -104,6 +104,7 @@ import io.battlerune.game.world.items.containers.pricechecker.PriceChecker;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
+import io.battlerune.game.world.region.dynamic.DynamicRegion;
 import io.battlerune.net.packet.OutgoingPacket;
 import io.battlerune.net.packet.out.SendCameraReset;
 import io.battlerune.net.packet.out.SendExpCounter;
@@ -464,6 +465,16 @@ public class Player extends Mob {
 	public AdventureGUI adventure = new AdventureGUI(this);
 	private Farming farming = new Farming(this);
 	public Toolkit toolkit = new Toolkit(this);
+	
+	private DynamicRegion dynamicRegion;
+	
+	public DynamicRegion getDynamicRegion() {
+		return dynamicRegion;
+	}
+	
+	public void setDynamicRegion(DynamicRegion dynamicRegion) {
+		this.dynamicRegion = dynamicRegion;
+	}
 
 	public HashMap<ActivityLog, Integer> loggedActivities = new HashMap<ActivityLog, Integer>(
 			ActivityLog.values().length) {
@@ -935,7 +946,8 @@ public class Player extends Mob {
 	public final AtomicInteger teleblockTimer = new AtomicInteger(0);
 	
 	public double storedPrayerPoints;
-	public String lastIP; 
+	public String lastIP;
+	public int referalPoints; 
 
 	public void teleblock(int time) {
 		if (time <= 0 || (teleblockTimer.get() > 0)) {
