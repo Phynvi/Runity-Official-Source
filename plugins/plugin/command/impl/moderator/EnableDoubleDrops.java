@@ -19,7 +19,7 @@ public class EnableDoubleDrops implements Command {
 	@Override
 	public void execute(Player player, String command, String[] parts) {
 		Config.DOUBLE_DROPS = true;
-		World.sendBroadcast(60, "[DAILY SERVER EVENTS] Double Drops Is Now Activated for 24 Hours!", false);
+		World.sendBroadcast(60, "[DAILY SERVER EVENTS] Double Drops Is Now Activated for 1 Hours!", false);
 		
 	}
 

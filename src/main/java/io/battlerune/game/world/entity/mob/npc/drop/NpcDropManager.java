@@ -154,7 +154,9 @@ public final class NpcDropManager {
 			} else {
 				 if(Config.DOUBLE_DROPS == true) {
 				  GroundItem.create(killer, item, dropPosition);
+				  GroundItem.create(killer, item, dropPosition);
 	              killer.message("[DAILY EVENTS] @red@You've recieved double drops.");
+	              return;
 				}
 				GroundItem.create(killer, item, dropPosition);
 			}
