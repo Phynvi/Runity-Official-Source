@@ -1,8 +1,17 @@
 package io.battlerune.game.world.entity.mob.player.persist;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import io.battlerune.game.service.HighscoreService;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.net.codec.login.LoginResponse;
 import io.battlerune.util.Utility;
@@ -25,6 +34,59 @@ public final class PlayerSerializer {
 		}
 
 		return perstable.load(player, expectedPassword);
+	}
+	
+	public static Player loadPlayer(String name) {
+		
+		final Player other = new Player(name);
+
+		try {
+			Path path = PlayerPersistFile.FILE_DIR.resolve(name + ".json");
+
+			if (!Files.exists(path)) 
+				return null;
+			
+
+			try (Reader reader = new FileReader(path.toFile())) {
+				JsonObject jsonReader = (JsonObject) new JsonParser().parse(reader);
+
+				for (PlayerJSONProperty property : PlayerPersistFile.PROPERTIES) {
+					if (jsonReader.has(property.label)) {
+						if (jsonReader.get(property.label).isJsonNull())
+							continue;
+						property.read(other, jsonReader.get(property.label));
+					}
+				}
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return null;
+		}
+		return other;
+	}
+	
+	public static boolean saveOffline(Player player) {
+		
+		new Thread(() -> {
+			try {
+				JsonObject properties = new JsonObject();
+
+				for (PlayerJSONProperty property : PlayerPersistFile.PROPERTIES) {
+					properties.add(property.label, PlayerPersistFile.GSON.toJsonTree(property.write(player)));
+				}
+
+				try {
+					Files.write(PlayerPersistFile.FILE_DIR.resolve(player.getName() + ".json"), PlayerPersistFile.GSON.toJson(properties).getBytes());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} catch (Exception ex) {
+				System.out.println("error savin..");
+			}
+
+			player.saved.set(true);
+		}).start();
+		return true;
 	}
 	
 	public static boolean saveExists(String name) {

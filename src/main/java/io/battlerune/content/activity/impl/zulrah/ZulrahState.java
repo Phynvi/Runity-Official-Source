@@ -21,6 +21,7 @@ import io.battlerune.util.Utility;
  * @author Daniel
  */
 public enum ZulrahState implements ZulrahInterface<ZulrahActivity> {
+	
 	ATTACKING() {
 		@Override
 		public void execute(ZulrahActivity activity) {

@@ -1717,6 +1717,7 @@ public final class PlayerPersistDB implements PlayerPersistable {
 					return player.brutalMode;
 				}
 			} };
+	
 	private static final PlayerDBProperty[] DB_PROPERTIES = {
 
 			new PlayerDBProperty("json_properties") {

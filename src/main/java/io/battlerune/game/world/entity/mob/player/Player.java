@@ -522,6 +522,10 @@ public class Player extends Mob {
 		this.username = username;
 		this.usernameLong = Utility.nameToLong(username);
 	}
+	
+	public Player(String username, int unused) {
+		super(Config.LUMBRIDGE, false);
+	}
 
 	public Player(String username, Position position) {
 		super(Config.DEFAULT_POSITION);

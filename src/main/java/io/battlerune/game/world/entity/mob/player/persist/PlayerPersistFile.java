@@ -60,11 +60,11 @@ import io.battlerune.util.Utility;
 
 public final class PlayerPersistFile implements PlayerPersistable {
 
-	private static final Logger logger = LogManager.getLogger();
+	public static final Logger logger = LogManager.getLogger();
 
-	private static final Path FILE_DIR = Paths.get("data", "profile", "save");
+	public static final Path FILE_DIR = Paths.get("data", "profile", "save");
 
-	private static final Gson GSON = GsonUtils.JSON_PRETTY_ALLOW_NULL;
+	public static final Gson GSON = GsonUtils.JSON_PRETTY_ALLOW_NULL;
 
 	@Override
 	public void save(Player player) {
@@ -136,7 +136,7 @@ public final class PlayerPersistFile implements PlayerPersistable {
 		return LoginResponse.COULD_NOT_COMPLETE_LOGIN;
 	}
 
-	private static final PlayerJSONProperty[] PROPERTIES = {
+	public static final PlayerJSONProperty[] PROPERTIES = {
 
 			new PlayerJSONProperty("username") {
 				@Override
@@ -1873,6 +1873,21 @@ public final class PlayerPersistFile implements PlayerPersistable {
 				Object write(Player player) {
 					return player.toolkit.getItems();
 				}
-			}, };
+			},
+			
+			new PlayerJSONProperty("referalPoints") {
+				@Override
+				void read(Player player, JsonElement property) {
+					player.setRefferalPoints(property.getAsInt());
+				}
+
+				@Override
+				Object write(Player player) {
+					return player.getReferralPoints();
+				}
+			},
+	
+	
+	};
 
 }

@@ -13,6 +13,7 @@ import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.game.world.entity.mob.player.ReferralSystem;
 import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendSpecialAmount;
@@ -118,5 +119,6 @@ public class StarterKitButtonPlugin extends PluginContext {
 		player.buttonDelay.reset();
 		ClanChannelHandler.connect(player, "help", false);
 		PlayerSerializer.save(player);
+		ReferralSystem.handleReferral(player);
 	}
 }

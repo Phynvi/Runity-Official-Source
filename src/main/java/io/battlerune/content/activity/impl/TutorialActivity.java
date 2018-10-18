@@ -18,6 +18,7 @@ import io.battlerune.game.world.entity.mob.Direction;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.ReferralSystem;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendConfig;
 import io.battlerune.net.packet.out.SendForceTab;

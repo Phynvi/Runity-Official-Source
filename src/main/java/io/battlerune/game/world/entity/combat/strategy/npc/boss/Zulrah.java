@@ -22,6 +22,7 @@ import io.battlerune.util.Utility;
 
 /** @author Daniel */
 public class Zulrah extends MultiStrategy {
+	
 	private static final MagicAttack MAGIC = new MagicAttack();
 	private static final RangedAttack RANGED = new RangedAttack();
 	private static final MeleeAttack MELEE = new MeleeAttack();

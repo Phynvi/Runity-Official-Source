@@ -25,6 +25,7 @@ import io.battlerune.util.RandomUtils;
 import io.battlerune.util.Utility;
 
 public class ZulrahActivity extends Activity {
+	
 	public final Player player;
 	public ZulrahState state;
 	boolean attackable;
@@ -53,7 +54,7 @@ public class ZulrahActivity extends Activity {
 		return activity;
 	}
 
-	ZulrahState getNextState() {
+	public ZulrahState getNextState() {
 		if (zulrah.id == 2043)
 			return ZulrahState.ATTACKING;
 		Set<ZulrahState> states = new HashSet<>();
@@ -65,7 +66,7 @@ public class ZulrahActivity extends Activity {
 		return Utility.randomElement(states);
 	}
 
-	Position getSnakelingPosition() {
+	public Position getSnakelingPosition() {
 		Set<Position> positions = new HashSet<>(Arrays.asList(new Position(2263, 3075), new Position(2263, 3071),
 				new Position(2268, 3069), new Position(2273, 3071), new Position(2273, 3077)));
 		snakes.forEach(snake -> {
@@ -76,7 +77,7 @@ public class ZulrahActivity extends Activity {
 		return Utility.randomElement(positions);
 	}
 
-	Position getCloudPosition() {
+	public Position getCloudPosition() {
 		Set<Position> positions = new HashSet<>(Arrays.asList(ZulrahConstants.CLOUD_POSITIONS));
 		clouds.forEach(cloud -> {
 			if (positions.contains(cloud.getPosition())) {
@@ -92,9 +93,6 @@ public class ZulrahActivity extends Activity {
 			for (CustomGameObject cloud : clouds) {
 				Position[] boundaries = Utility.getInnerBoundaries(cloud.getPosition().transform(+1, +1), 2, 2);
 				for (Position position : boundaries) {
-					// System.out.println("Checking if " + player.getName() + "s position(" +
-					// player.getPosition()
-					// + " is in " + position);
 					if (player.getPosition().equals(position))
 						player.damage(new Hit(RandomUtils.inclusive(1, 5), Hitsplat.POISON));
 				}
