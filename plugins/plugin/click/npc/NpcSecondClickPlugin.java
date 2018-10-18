@@ -28,6 +28,10 @@ public class NpcSecondClickPlugin extends PluginContext {
 			new MasterMinerGUI(player).open();
 			break;
 			
+		case 1389:
+			Store.STORES.get("Referral Point Store").open(player);
+			break;
+			
 		case 1143:
 			Store.STORES.get("The Clanmaster's Store").open(player);
 			break;

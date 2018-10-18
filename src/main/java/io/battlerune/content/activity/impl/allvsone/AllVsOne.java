@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+import io.battlerune.Config;
 import io.battlerune.content.ActivityLog;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityListener;
@@ -147,6 +148,10 @@ public class AllVsOne extends Activity {
 					"Please accept this gift, young thug.").execute();
 			rewards += 10000;
 			//player.setAllVsOnePoints(player.getAllVsOnePoints() + rewards);
+			if(Config.DOUBLE_AVO_POINTS == true) {
+	            player.inventory.addOrDrop(new Item(7775, rewards));
+	            player.message("You've recieved double Tickets because of the daily server events!");
+			}
             player.inventory.addOrDrop(new Item(7775, rewards));
     		player.message("<img=9>You now have @red@" + rewards + " All Vs One Tickets!");
 			if(Utility.random(1, 3) == 3) {

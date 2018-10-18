@@ -12,6 +12,16 @@ import plugin.command.impl.donator.ExtremeDonatorZone;
 import plugin.command.impl.donator.PortalsZoneCommand;
 import plugin.command.impl.donator.SponsorStoreCommand;
 import plugin.command.impl.moderator.BanCommand;
+import plugin.command.impl.moderator.Disable15DR;
+import plugin.command.impl.moderator.Disable30DR;
+import plugin.command.impl.moderator.DisableAVO;
+import plugin.command.impl.moderator.DisableDoubleDrops;
+import plugin.command.impl.moderator.DisableDoubleXP;
+import plugin.command.impl.moderator.DoubleAVO;
+import plugin.command.impl.moderator.Enable15DR;
+import plugin.command.impl.moderator.Enable30DR;
+import plugin.command.impl.moderator.EnableDoubleDrops;
+import plugin.command.impl.moderator.EnableDoubleXP;
 import plugin.command.impl.moderator.HpEventCommand;
 import plugin.command.impl.moderator.InvisibleCommand;
 import plugin.command.impl.moderator.IpbanCommand;
@@ -101,6 +111,7 @@ import plugin.command.impl.player.SkullCommand;
 import plugin.command.impl.player.SlayerTaskCommand;
 import plugin.command.impl.player.StaffCommand;
 import plugin.command.impl.player.StuckCommand;
+import plugin.command.impl.player.TarnCommand;
 import plugin.command.impl.player.ThreadCommand;
 import plugin.command.impl.player.TrainZone;
 import plugin.command.impl.player.VaultCommand;
@@ -154,6 +165,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "zul", "zulrah" }, new ZulrahCommand());
 		PLUGIN.putIfAbsent(new String[] { "testt", "test" }, new CashOutCommand());
 		PLUGIN.putIfAbsent(new String[] { "help" }, new Helpcommand());
+		PLUGIN.putIfAbsent(new String[] { "tarn", "mutant", "mutantTarn" }, new TarnCommand());
 		PLUGIN.putIfAbsent(new String[] { "answer", "trivia" }, new AnswerTriviaCommand());
 		PLUGIN.putIfAbsent(new String[] { "staff", "staffonline" }, new StaffCommand());
 		PLUGIN.putIfAbsent(new String[] { "forums", "forum" }, new ForumCommand());
@@ -205,8 +217,20 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "panel1", "panel2" }, new ManagementCommand());
 		PLUGIN.putIfAbsent(new String[] { "hp", "hp1" }, new HpEventCommand());
 
+		PLUGIN.putIfAbsent(new String[] { "enabledp", "drops" }, new EnableDoubleDrops());
+		PLUGIN.putIfAbsent(new String[] { "disabledp", "disabledrop" }, new DisableDoubleDrops());
 
-
+		PLUGIN.putIfAbsent(new String[] { "doublexp", "enabledxp" }, new EnableDoubleXP());
+		PLUGIN.putIfAbsent(new String[] { "disablexp", "disablexp" }, new DisableDoubleXP());
+		
+		PLUGIN.putIfAbsent(new String[] { "enable15dr", "15dr" }, new Enable15DR());
+		PLUGIN.putIfAbsent(new String[] { "disable15dr", "disable15dr" }, new Disable15DR());
+		
+		PLUGIN.putIfAbsent(new String[] { "enable30dr", "30dr" }, new Enable30DR());
+		PLUGIN.putIfAbsent(new String[] { "disable30dr", "disable30dr" }, new Disable30DR());
+		
+		PLUGIN.putIfAbsent(new String[] { "enableavo", "avo" }, new DoubleAVO());
+		PLUGIN.putIfAbsent(new String[] { "disableavo", "avo2" }, new DisableAVO());
 		/*
 		 * @Owner, @Developer Commands
 		 */

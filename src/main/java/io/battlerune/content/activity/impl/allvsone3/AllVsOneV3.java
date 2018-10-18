@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+import io.battlerune.Config;
 import io.battlerune.content.ActivityLog;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityListener;
@@ -106,7 +107,7 @@ public class AllVsOneV3 extends Activity {
 
 			npcs.remove(dead);
 			remove(dead);
-			rewards += Utility.random(500, 1250);
+			rewards += Utility.random(3250, 5500);
 			if (npcs.isEmpty()) {
 				wave = AllVsOneData3.WaveData.getNext(wave.ordinal());
 				if (wave == null) {
@@ -164,6 +165,10 @@ public class AllVsOneV3 extends Activity {
 			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One V3, I am most impressed!",
 					"Please accept this gift, young thug.").execute();
 			rewards += 20000;
+			if(Config.DOUBLE_AVO_POINTS == true) {
+	            player.inventory.addOrDrop(new Item(7775, rewards));
+	            player.message("You've recieved double Tickets because of the daily server events!");
+			}
             player.inventory.addOrDrop(new Item(7775, rewards));
     		player.message("<img=8>You now have @red@" + rewards + " All Vs One V3 Tickets!");
 			player.inventory.addOrDrop(new Item(6833, 2));
@@ -178,7 +183,7 @@ public class AllVsOneV3 extends Activity {
 			rewards = 6;
         player.inventory.addOrDrop(new Item(7775, rewards / 2));
 		player.message("<img=9>You now have @red@" + rewards + " All Vs One Tickets!");
-		player.message("bare in mind, your rewards have been halfed since you died whilst in the minigame!");
+		player.message("bare in mind, your rewards have been halved since you died whilst in the minigame!");
 		player.dialogueFactory.sendNpcChat(5567, "Better luck next time!", "Take these points as a reward.").execute();
 	}
 

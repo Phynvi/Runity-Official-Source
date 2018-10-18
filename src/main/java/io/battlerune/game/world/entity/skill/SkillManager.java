@@ -303,6 +303,8 @@ public class SkillManager {
 		double modified_experience;
 
 		if (Config.DOUBLE_EXPERIENCE) {
+			World.sendMessage("[Double Experience] Has been Activated!");
+			System.out.println("[Double Experience] Has been Activated!");
 			modified_experience = experience * 2;
 			World.sendEXPWidgetforday();
 		} else {

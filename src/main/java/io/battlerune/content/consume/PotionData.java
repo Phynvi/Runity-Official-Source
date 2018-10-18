@@ -269,6 +269,13 @@ public enum PotionData {
 			player.send(new SendWidget(SendWidget.WidgetType.ANTI_FIRE, 360));
 		}
 	},
+	ANTIFIRE_POTIONS_1(21978, 21981, 21984, 21987) {
+		@Override
+		public void onEffect(Player player) {
+			PotionData.onAntiFireEffect(player, false);
+			player.send(new SendWidget(SendWidget.WidgetType.ANTI_FIRE, 360));
+		}
+	},
 	SUPER_ANTIFIRE_POTIONS(15304, 15305, 15306, 15307) {
 		@Override
 		public void onEffect(Player player) {

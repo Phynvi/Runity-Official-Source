@@ -23,11 +23,11 @@ public enum UpgradeData {
 	PHOENIX_BOW(new Item(3274, 1), new Item(13831, 1), new Item(21820, 500), 0.25),
 	LAVABOW(new Item(13831, 1), new Item(13749, 1), new Item(21820, 500), 0.10),
 	
-	BRONZE_MBOX(new Item(6199, 1), new Item(12955, 1), new Item(21820, 250), 0.50),
-	SILVER_MBOX(new Item(12955, 1), new Item(11739, 1), new Item(21820, 350), 0.40),
-	GOLD_MBOX(new Item(11739, 1), new Item(6508, 1), new Item(21820, 450), 0.25),
-	ALLVSONE2(new Item(290, 1), new Item(6833, 1), new Item(21820, 450), 0.25),
-	ALLVSONE3(new Item(6833, 1), new Item(6830, 1), new Item(21820, 750), 0.10),
+	BRONZE_MBOX(new Item(6199, 1), new Item(12955, 1), new Item(21820, 200), 0.50),
+	SILVER_MBOX(new Item(12955, 1), new Item(11739, 1), new Item(21820, 250), 0.40),
+	GOLD_MBOX(new Item(11739, 1), new Item(6508, 1), new Item(21820, 300), 0.25),
+	ALLVSONE2(new Item(290, 1), new Item(6833, 1), new Item(21820, 350), 0.25),
+	ALLVSONE3(new Item(6833, 1), new Item(6830, 1), new Item(21820, 400), 0.10),
 	;
 
 	

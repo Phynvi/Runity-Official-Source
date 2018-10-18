@@ -3,6 +3,7 @@ package io.battlerune.game.world.entity.mob.player;
 import static io.battlerune.content.clanchannel.content.ClanTaskKey.BOT_KILLING;
 import static io.battlerune.content.clanchannel.content.ClanTaskKey.PLAYER_KILLING;
 
+import io.battlerune.Config;
 import io.battlerune.content.clanchannel.content.ClanAchievement;
 import io.battlerune.content.writer.InterfaceWriter;
 import io.battlerune.content.writer.impl.InformationWriter;
@@ -76,6 +77,12 @@ public class PlayerKilling {
 			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
 					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
 		} else {
+			if(Config.DOUBLE_PK_POINTS == true) {
+				killer.setpkPoints(killer.getpkPoints() + 5);
+				killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
+						+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
+				killer.message("Double PK Points because of daily server bonuses!");
+			}
 			killer.setpkPoints(killer.getpkPoints() + 5);
 			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
 					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");

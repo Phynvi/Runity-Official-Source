@@ -951,17 +951,18 @@ public class ItemContainer implements Iterable<Item> {
 		items = toSet;
 	}
 	
-	public void setBank(Item[] to) {
+	/*public void setBank(Item[] to) {
 		items = new Item[Bank.MAXIMUM_CAPACITY];
 		for (int i = 0; i < to.length; i++) {
 			if (to != null) {
 				items[i] = to[i];
-				if (items[i] != null)
-				System.err.println("Item="+items[i].getName());
+				if (items[i] != null) {
+				//System.err.println("Item="+items[i].getName());
+				}
 			}
 		}
 		System.err.println("current length="+items.length);
-	}
+	}*/
 
 	/**
 	 * Returns a <strong>shallow copy</strong> of the backing array. Changes made to

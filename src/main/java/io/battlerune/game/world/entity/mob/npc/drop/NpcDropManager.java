@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.battlerune.Config;
 import io.battlerune.content.CrystalChest;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.npc.Npc;
@@ -151,6 +152,10 @@ public final class NpcDropManager {
 				for (int i = 0; i < item.getAmount(); i++)
 					GroundItem.create(killer, single, dropPosition);
 			} else {
+				 if(Config.DOUBLE_DROPS == true) {
+				  GroundItem.create(killer, item, dropPosition);
+	              killer.message("[DAILY EVENTS] @red@You've recieved double drops.");
+				}
 				GroundItem.create(killer, item, dropPosition);
 			}
 		}

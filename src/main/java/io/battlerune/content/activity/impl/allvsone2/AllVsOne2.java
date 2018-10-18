@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+import io.battlerune.Config;
 import io.battlerune.content.ActivityLog;
 import io.battlerune.content.activity.Activity;
 import io.battlerune.content.activity.ActivityListener;
@@ -144,6 +145,10 @@ public class AllVsOne2 extends Activity {
 			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One V2, I am most impressed!",
 					"Please accept this gift, young thug.").execute();
 			rewards += 10000;
+			if(Config.DOUBLE_AVO_POINTS == true) {
+	            player.inventory.addOrDrop(new Item(7775, rewards));
+	            player.message("<img=8>@red@You've recieved double Tickets because of the daily server events!");
+			}
             player.inventory.addOrDrop(new Item(7775, rewards));
     		player.message("<img=8>You now have @red@" + rewards + " All Vs One V2 Tickets!");
 			player.inventory.addOrDrop(new Item(290, 2));

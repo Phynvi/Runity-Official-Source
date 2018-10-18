@@ -143,6 +143,25 @@
 	      "endHeight": 25
 	    }
 	  },
+	  
+	  
+	  
+	  {
+		    "name": "Mutant Pink Dragonfire",
+		    "end": {
+		      "id": 197,
+		      "delay": 0,
+		      "height": 6553600,
+		      "priority": "HIGH"
+		    },
+		    "projectile": {
+		      "id": 350,
+		      "delay": 5,
+		      "duration": 85,
+		      "startHeight": 90,
+		      "endHeight": 25
+		    }
+		  },
 	  {
 	    "name": "Galvek Ranged",
 	    "end": {
@@ -224,6 +243,24 @@
 	      "endHeight": 25
 	    }
 	  },
+	  
+	  {
+		    "name": "Mutant Frozen Special",
+		    "end": {
+		      "id": 196,
+		      "delay": 0,
+		      "height": 6553600,
+		      "priority": "HIGH"
+		    },
+		    "projectile": {
+		      "id": 195,
+		      "delay": 5,
+		      "duration": 85,
+		      "startHeight": 90,
+		      "endHeight": 25
+		    }
+		  },
+	  
   {
     "name": "Wind Strike",
     "max-hit": 2,

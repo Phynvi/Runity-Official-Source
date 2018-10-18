@@ -86,7 +86,7 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				return false;
 			}
 			if (Utility.random(1, 5) <= 4) {
-				player.inventory.add(995, 50000000);
+				player.inventory.add(995, 5000000);
 				player.inventory.add(17163, 1);
 				player.inventory.add(17164, 1);
 				player.inventory.add(17165, 1);
@@ -117,7 +117,7 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				return false;
 			}
 			if (Utility.random(1, 5) <= 4) {
-				player.inventory.add(995, 50000000);
+				player.inventory.add(995, 5000000);
 				player.inventory.add(17163, 1);
 				player.inventory.add(17164, 1);
 				player.inventory.add(17165, 1);

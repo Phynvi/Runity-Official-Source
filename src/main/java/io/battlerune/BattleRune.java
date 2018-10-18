@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import io.battlerune.content.DailyBonus;
 import io.battlerune.content.WellOfGoodwill;
 import io.battlerune.content.activity.annoucements.Announcement;
 import io.battlerune.content.activity.record.GlobalRecords;
@@ -106,6 +107,7 @@ public final class BattleRune {
 		new StoreParser().run();
 		new GlobalObjectParser().run();
 		PunishmentExecuter.init();
+		new DailyBonus(84600).execute();
 	//	new NpcDefinitionParser().run();
 	//	new NpcDefParser().run();
 		//5 seconds of work, stfu shit amazon i get paid by 3 different servers 4ner
@@ -141,7 +143,7 @@ public final class BattleRune {
 		if (WellOfGoodwill.isActive()) {
 			World.schedule(new DoubleExperienceEvent());
 		}
-
+		
 		World.schedule(new Announcement());
 		World.schedule(new MessageEvent());
 		World.schedule(new ClanUpdateEvent());
@@ -151,6 +153,7 @@ public final class BattleRune {
 		World.schedule(new ArenaEvent());
 		World.schedule(new GalvekEvent());
 		World.schedule(new RoyaltyEvent());
+	   //	World.schedule(new DailyServerBonuses());
 	   // World.schedule(new FreeForAll());
 		Logger.log("Events have been scheduled");
 		Logger.log("World Schdule Events have loaded adam.");

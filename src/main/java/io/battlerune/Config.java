@@ -126,9 +126,19 @@ public final class Config {
 
 	public static boolean highscoresEnabled = false;
 
-	public static boolean DOUBLE_EXPERIENCE = false;
+	public static boolean DOUBLE_EXPERIENCE;
+	
+	public static boolean DOUBLE_DROPS;
+	
+	public static boolean DR_15_BOOST;
+	
+	public static boolean DR_30_BOOST;
+	
+	public static boolean DOUBLE_AVO_POINTS;
+	
+	public static boolean DOUBLE_PK_POINTS;
 
-	public static boolean X4_EXPERIENCE = false;
+	public static boolean X4_EXPERIENCE;
 
 	/** The OS Royale community discord token. */
 	public static final String DISCORD_TOKEN;
@@ -238,6 +248,9 @@ public final class Config {
 
 	public static final Position BLOOD_ZONE = new Position(1732, 3827, 0);
 
+	public static final Position TARN_ZONE = new Position(3037, 5346, 0);
+
+	
 	public static final Position NATURE_ZONE = new Position(2400, 4835, 0);
 
 	public static final Position LAW_ALTAR = new Position(2464, 4818, 0);
@@ -459,7 +472,9 @@ public final class Config {
 			new Item(20043, 1),
 			new Item(20052, 1),
 			new Item(20151, 1),
-
+			new Item(34, 1),
+			new Item(79, 1),
+			new Item(80, 1),
 			
 			};
 	

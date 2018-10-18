@@ -1,5 +1,6 @@
 package io.battlerune.game.world.entity.mob.npc.dropchance;
 
+import io.battlerune.Config;
 import io.battlerune.game.world.entity.mob.player.Player;
 
 public class DropChanceHandler {
@@ -42,6 +43,16 @@ public class DropChanceHandler {
 				}
 			}
 		}
+		if(Config.DR_15_BOOST == true) {
+			return fakerate + 15;	
+		} 
+		if(Config.DR_30_BOOST == true) {
+			return fakerate + 30;	
+		}
+		else {
+			
 		return fakerate;
+		
+		}
 	}
 }

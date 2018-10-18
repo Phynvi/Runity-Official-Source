@@ -16588,7 +16588,7 @@
   },
   {
     "id": 1389,
-    "name": "Bernald",
+    "name": "Referral Manager",
     "combat-level": 1,
     "stand": 808,
     "walk": 819
@@ -69862,7 +69862,7 @@
     "stand": 5616,
     "walk": 5615,
     "attackable": true,
-    "aggressive": true,
+    "aggressive": false,
     "poison-immunity": false,
     "venom-immunity": false,
     "attack-style": "Melee (crush)",

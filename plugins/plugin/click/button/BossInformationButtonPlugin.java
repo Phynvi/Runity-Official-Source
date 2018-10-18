@@ -181,6 +181,11 @@ public class BossInformationButtonPlugin extends PluginContext {
 			factory.execute();
 
 		}
+		
+		if (button == -14015) {
+			Teleportation.teleport(player, Config.TARN_ZONE);
+			player.send(new SendMessage("You have teleported to Mutant Tarn!"));
+		}
 		return false;
 	}
 	// TODO Create a system to teleport to bosses that arent in wildy for donators

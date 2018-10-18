@@ -639,4 +639,9 @@ public final class World {
 		return dataBus;
 	}
 
+	public static void schedule(Object events) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

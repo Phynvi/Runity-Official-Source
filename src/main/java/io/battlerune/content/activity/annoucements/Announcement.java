@@ -12,11 +12,11 @@ public class Announcement extends Task {
 
 	@Override
 	protected void execute() {
-
 		World.sendBroadcast(1, getData().getContent(), false);
 		
 	}
 
+	//**nerik did all this 
 	private AnnouncementData getData() {
 		return AnnouncementData.values()[Utility.random(AnnouncementData.values().length)];
 	}
