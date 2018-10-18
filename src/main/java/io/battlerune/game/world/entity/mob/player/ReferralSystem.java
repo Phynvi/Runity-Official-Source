@@ -16,7 +16,7 @@ public class ReferralSystem {
 
 	public static void handleReferral(Player player) {
 
-		player.send(new SendInputMessage("Who refered you to Runity?", 20, input -> {
+		player.send(new SendInputMessage("Who refered/Invited you to Runity? Mention them for free Donator Rank!", 20, input -> {
 			try {
 				linkReferral(player, input);
 			} catch (Exception e) {
@@ -43,9 +43,25 @@ public class ReferralSystem {
 				return;
 			}
 		} else {
+			if (other.lastHost.equalsIgnoreCase(refer.lastHost) || refer.lastHost.equalsIgnoreCase(other.lastHost)) {
+				other.message("<col=FF0019>You were not rewarded since you share the same IP Address.");
+				refer.message("<col=FF0019>You were not rewarded since you share the same IP Address.");
+				return;
+			}
 			other.refferalpoint += TOTAL_POINTS;
 			other.sendMessage("You have been given " + TOTAL_POINTS + " for refering " + refer.getUsername() + ".");
+			other.donation.setCredits(other.donation.getCredits() + 5);
+			other.donation.setSpent(other.donation.getSpent() + 25);
+			other.inventory.add(6830, 1);
+			other.sendMessage("You have been given 5 Donation credits + 25$ Added to your total spent!");
+			other.sendMessage("You have also been given an Inferno Box for reffering someone!");
 		}
 		refer.sendMessage("Thank you for setting a referal!");
+		refer.refferalpoint += TOTAL_POINTS;
+		refer.setRight(PlayerRight.DONATOR);
+		refer.inventory.add(6830, 1);
+		refer.sendMessage("You have recieved Inferno Box by Joining via an existing member on Runity!");
+		refer.sendMessage("You have been given a referal  & Donator Rank, speak to ref to use these points");
+        refer.sendMessage("Refer your friends over so you and them can both be given a referal point!");
 	}
 }

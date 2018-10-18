@@ -13,7 +13,8 @@ public class Announcement extends Task {
 	@Override
 	protected void execute() {
 
-		World.sendMessage(getData().getContent());
+		World.sendBroadcast(1, getData().getContent(), false);
+		
 	}
 
 	private AnnouncementData getData() {
