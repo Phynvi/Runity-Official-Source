@@ -51,14 +51,14 @@ public class ReferralSystem {
 			other.refferalpoint += TOTAL_POINTS;
 			other.sendMessage("You have been given " + TOTAL_POINTS + " for refering " + refer.getUsername() + ".");
 			other.donation.setCredits(other.donation.getCredits() + 10);
-			other.inventory.add(6830, 1);
+			other.inventory.add(290, 1);
 			other.sendMessage("You have been given 10 Donation Credits!");
 			other.sendMessage("You have also been given an Inferno Box for reffering someone!");
 		}
 		refer.sendMessage("Thank you for setting a referal!");
 		refer.refferalpoint += TOTAL_POINTS;
-		refer.setRight(PlayerRight.DONATOR);
-		refer.inventory.add(6830, 1);
+		refer.inventory.add(290, 1);
+		refer.inventory.add(13190, 1);
 		refer.sendMessage("You have recieved Inferno Box by Joining via an existing member on Runity!");
 		refer.sendMessage("You have been given a referal  & Donator Rank, speak to ref to use these points");
         refer.sendMessage("Refer your friends over so you and them can both be given a referal point!");

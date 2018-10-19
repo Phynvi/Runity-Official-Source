@@ -128485,7 +128485,6 @@
 	    "attack-range": 150,
 	    "req-defence": 0,
 	    "attack-magic": 0,
-	    "attack-ranged": 3,
 	    "stackable": false,
 	    "defence-stab": 0,
 	    "defence-slash": 0,
@@ -128494,7 +128493,9 @@
 	    "defence-ranged": 0,
 	    "bonus-ranged": 75,
         "bonus-prayer": 16,
-	    "bonus-strength": 90
+	    "bonus-strength": 90,
+	    "ranged-strength": 150
+	    
 		},
 
 
