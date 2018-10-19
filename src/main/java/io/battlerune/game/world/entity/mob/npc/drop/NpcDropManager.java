@@ -147,22 +147,31 @@ public final class NpcDropManager {
 				killer.send(new SendMessage("<col=F5424B>Untradeable Drop Notification: </col>" + item.getName()));
 			}
 
+			if(Config.DOUBLE_DROPS == true) {
+				  GroundItem.create(killer, item, dropPosition);
+				  GroundItem.create(killer, item, dropPosition);
+	              killer.getPlayer().message("[DAILY EVENTS] @red@You've recieved double drops.");
+	              return;
+				}
+			
 			if (!item.isStackable()) {
 				Item single = item.createWithAmount(1);
 				for (int i = 0; i < item.getAmount(); i++)
 					GroundItem.create(killer, single, dropPosition);
 			} else {
-				 if(Config.DOUBLE_DROPS == true) {
-				  GroundItem.create(killer, item, dropPosition);
-				  GroundItem.create(killer, item, dropPosition);
-	              killer.message("[DAILY EVENTS] @red@You've recieved double drops.");
-	              return;
-				}
 				GroundItem.create(killer, item, dropPosition);
 			}
 		}
 	}
 
+	/*
+	 *  if(Config.DOUBLE_DROPS == true) {
+				  GroundItem.create(killer, item, dropPosition);
+				  GroundItem.create(killer, item, dropPosition);
+	              killer.getPlayer().message("[DAILY EVENTS] @red@You've recieved double drops.");
+	              return;
+				}
+	 */
 	private static boolean checkAlternativePosition(int npc) {
 		for (int alternative : ALTERNATIVE_POSITION) {
 			if (alternative == npc)
