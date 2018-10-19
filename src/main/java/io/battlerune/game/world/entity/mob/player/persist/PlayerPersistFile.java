@@ -1131,18 +1131,7 @@ public final class PlayerPersistFile implements PlayerPersistable {
 				}
 			},
 			
-			 new PlayerJSONProperty("refferal-points") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.refferalpoint = property.getAsInt();
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.refferalpoint;
-				}
-			},
-
+		
 			new PlayerJSONProperty("kolodion-points") {
 				@Override
 				void read(Player player, JsonElement property) {
@@ -1863,18 +1852,7 @@ public final class PlayerPersistFile implements PlayerPersistable {
 				Object write(Player player) {
 					return player.brutalMode;
 				}
-			}, new PlayerJSONProperty("toolkit") {
-				@Override
-				void read(Player player, JsonElement property) {
-					player.toolkit.set(GSON.fromJson(property, Item[].class));
-				}
-
-				@Override
-				Object write(Player player) {
-					return player.toolkit.getItems();
-				}
 			},
-			
 			new PlayerJSONProperty("referalPoints") {
 				@Override
 				void read(Player player, JsonElement property) {
@@ -1886,8 +1864,16 @@ public final class PlayerPersistFile implements PlayerPersistable {
 					return player.getReferralPoints();
 				}
 			},
-	
-	
-	};
+			
+			new PlayerJSONProperty("toolkit") {
+				@Override
+				void read(Player player, JsonElement property) {
+					player.toolkit.set(GSON.fromJson(property, Item[].class));
+				}
 
+				@Override
+				Object write(Player player) {
+					return player.toolkit.getItems();
+				}
+			}, };	
 }

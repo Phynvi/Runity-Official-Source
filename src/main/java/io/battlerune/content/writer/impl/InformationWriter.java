@@ -37,7 +37,7 @@ public class InformationWriter extends InterfaceWriter {
 			"     - Donator Credits: <col=FFB83F>" + Utility.formatDigits(player.donation.getCredits()),
 			"     - Royalty Points: <col=FFB83F>" + player.royalty,
 			"     - Royalty Level: <col=FFB83F>" + player.royaltyLevel,
-			"     - Refferal Points: <col=FFB83F>" + Utility.formatDigits(player.refferalpoint),
+			"     - Refferal Points: <col=FFB83F>" + Utility.formatDigits(player.getReferralPoints()),
 			"     - Slayer Task: <col=FFB83F>" + (player.slayer.getTask() == null ? "None"
 					: player.slayer.getTask().getName() + "(" + player.slayer.getAmount() + ")"),
 			"     - Slayer Points: <col=FFB83F>" + Utility.formatDigits(player.slayer.getPoints()),
