@@ -27,7 +27,7 @@ import io.battlerune.util.Utility;
 public class Bank extends ItemContainer {
 
 	/** The size of all equipment instances. */
-	public static final int MAXIMUM_CAPACITY = 360;
+	public static final int SIZE = 360;
 
 	/** The tab amount array. */
 	public int[] tabAmounts = new int[10];
@@ -49,7 +49,7 @@ public class Bank extends ItemContainer {
 
 	/** Constructs a new <code>Bank<code>. */
 	public Bank(Player player) {
-		super(MAXIMUM_CAPACITY, StackPolicy.ALWAYS);
+		super(SIZE, StackPolicy.ALWAYS);
 		this.player = player;
 		this.placeHolder = false;
 		addListener(new BankListener());
@@ -67,7 +67,7 @@ public class Bank extends ItemContainer {
 		}
 
 		noting = false;
-		player.send(new SendString("" + MAXIMUM_CAPACITY, 60018));
+		player.send(new SendString("" + SIZE, 60018));
 		player.attributes.set("BANK_KEY", Boolean.TRUE);
 		player.interfaceManager.openInventory(60000, InterfaceConstants.INVENTORY_STORE - 1);
 		refresh();

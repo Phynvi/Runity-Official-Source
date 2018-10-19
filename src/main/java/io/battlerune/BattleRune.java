@@ -51,6 +51,7 @@ import io.battlerune.util.parser.impl.ObjectRemovalParser;
 import io.battlerune.util.parser.impl.PacketSizeParser;
 import io.battlerune.util.parser.impl.StoreParser;
 import io.battlerune.util.sql.MySqlConnector;
+import io.battlerune.util.tools.ItemStatsDumper;
 import plugin.click.item.ClueScrollPlugin;
 
 
@@ -112,7 +113,7 @@ public final class BattleRune {
 	//	new NpcDefParser().run();
 		//5 seconds of work, stfu shit amazon i get paid by 3 different servers 4ner
 		
-		//ItemStatsDumper.printStats();
+		ItemStatsDumper.printStats();
 	}
 
 	/**
