@@ -71,6 +71,16 @@ public enum PetData {
 
 		}
 	},
+	HERBIBORE("Herbibore", 21511, 7785) {
+		@Override
+		public void dialogue(DialogueFactory factory) {
+			factory.sendPlayerChat("Hello");
+			factory.sendNpcChat(5883, "Are you my dad?!");
+			factory.sendPlayerChat("Im not your DAD! Ugly ass suckin noodle head.");
+			factory.execute();
+
+		}
+	},
 	HERBI("Herbi", 21509, 7760) {
 		@Override
 		public void dialogue(DialogueFactory factory) {
