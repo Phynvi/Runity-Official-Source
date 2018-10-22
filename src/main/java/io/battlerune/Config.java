@@ -438,7 +438,7 @@ public final class Config {
 
 	};
 
-	public final static Item[] NOT_ALLOWED = { new Item(13738), new Item(13739), new Item(13740), new Item(13741),
+	public final static Item[] NOT_ALLOWED = { new Item(13738, 2), new Item(13739, 2), new Item(13740, 2), new Item(13741, 2),
 			new Item(13742), new Item(13743), new Item(13744), new Item(13745), new Item(13746), new Item(13747),
 			new Item(13748), new Item(13749), new Item(16628), new Item(16629), new Item(16630), new Item(16631),
 			new Item(16647), new Item(16648), new Item(16649), new Item(16650), new Item(16651), new Item(16653),

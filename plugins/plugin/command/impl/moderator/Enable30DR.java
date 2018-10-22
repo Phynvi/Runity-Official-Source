@@ -21,7 +21,7 @@ public class Enable30DR implements Command {
 	}
 	@Override
 	public boolean canUse(Player player) {
-		return PlayerRight.isManagement(player);
+		return PlayerRight.isPriviledged(player);
 	}
 
 }

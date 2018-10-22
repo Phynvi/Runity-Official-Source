@@ -56,14 +56,14 @@ public class BossInformationButtonPlugin extends PluginContext {
 			player.send(new SendMessage("You have teleported to Dagganoth Lair!"));
 		}
 		if (button == -14275) {
-			DialogueFactory factory = player.dialogueFactory;
+			/*DialogueFactory factory = player.dialogueFactory;
 			factory.sendOption("Pay 100,00 coins for instanced Corp?",
 					() -> CorporealBeastActivity.CreatePaidInstance(player),
 					"avoid paying, and head over to the non-instanced version?",
 					() -> CorporealBeastActivity.CreateUnPaidInstance(player), "Nevermind", factory::clear);
-			factory.execute();
-			//Teleportation.teleport(player, new Position(2967, 4383, 2));
-			//player.send(new SendMessage("You have teleported to Corperal Beast!"));
+			factory.execute();*/
+			Teleportation.teleport(player, new Position(2967, 4383, 2));
+			player.send(new SendMessage("You have teleported to Corperal Beast!"));
 		}
 		if (button == -14260) {
 			DialogueFactory factory = player.dialogueFactory;
@@ -182,7 +182,7 @@ public class BossInformationButtonPlugin extends PluginContext {
 
 		}
 		
-		if (button == -14015) {
+		if (button == -14035) {
 			Teleportation.teleport(player, Config.TARN_ZONE);
 			player.send(new SendMessage("You have teleported to Mutant Tarn!"));
 		}

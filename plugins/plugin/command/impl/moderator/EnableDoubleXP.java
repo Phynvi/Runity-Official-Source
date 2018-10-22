@@ -21,7 +21,7 @@ public class EnableDoubleXP implements Command {
 	}
 	@Override
 	public boolean canUse(Player player) {
-		return PlayerRight.isManagement(player);
+		return PlayerRight.isPriviledged(player);
 	}
 
 }

@@ -288,6 +288,33 @@ public final class NpcDeath extends MobDeath<Npc> {
 
 				}
 				return;
+				
+				
+			case "MUTANT_TARN":
+				playerKiller.activityLogger.add(ActivityLog.MUTANT_TARN);
+
+				if (PlayerRight.isDonator(playerKiller) || PlayerRight.isSuper(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+                return;
+				}
+
+				if (PlayerRight.isExtreme(playerKiller) || PlayerRight.isElite(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 3);
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+	                return;
+				}
+				if (PlayerRight.isKing(playerKiller) || PlayerRight.isSupreme(playerKiller)) {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 4);
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+	                return;
+				}
+				else {
+					playerKiller.setBossPoints(playerKiller.getBossPoints() + 1);
+					playerKiller.message("<img=2>You now have @red@" + playerKiller.getBossPoints() + " Boss Points!");
+
+				}
+				return;
 
 			case "CERBERUS":
 				playerKiller.activityLogger.add(ActivityLog.CERBERUS);

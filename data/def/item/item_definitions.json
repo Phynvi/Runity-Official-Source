@@ -85837,7 +85837,7 @@
 																		    "defence-slash": 102,
 																		    "defence-crush": 82,
 																		    "defence-magic": 80,
-																		        "bonus-strength": 38,
+																		        "bonus-strength": 40,
 																		    
 																		    "defence-ranged": 120
   },
@@ -85861,7 +85861,7 @@
     "defence-crush": 137,
     "defence-magic": -3,
     "defence-ranged": 137,
-    "bonus-strength": 44,
+    "bonus-strength": 46,
     "bonus-prayer": 25
   },
   
@@ -85882,7 +85882,7 @@
 																			    "defence-crush": 137,
 																			    "defence-magic": 0,
 																			    "defence-ranged": 225,
-																			    "bonus-strength": 39,
+																			    "bonus-strength": 42,
 																			    "bonus-prayer": 1,
 																			    "req-defence": 92
   },
@@ -86028,7 +86028,7 @@
   
      {
     "id": 13816,
-    "name": "Dartk Karth boots",
+    "name": "Dark Karth boots",
     "low-alch": 30000,
     "high-alch": 45000,
     "base-value": 75000,
@@ -86037,15 +86037,15 @@
     "equipment-slot": "BOOTS",
     "req-defence": 75,
     "req-strength": 75,
-    "attack-stab": 6,
-    "attack-slash": 6,
-    "attack-crush": 6,
+    "attack-stab": 8,
+    "attack-slash": 8,
+    "attack-crush": 8,
     "attack-magic": -2,
     "attack-ranged": 0,
-    "defence-stab": 26,
-    "defence-slash": 26,
-    "defence-crush": 26,
-    "bonus-strength": 22
+    "defence-stab": 28,
+    "defence-slash": 27,
+    "defence-crush": 27,
+    "bonus-strength": 24
   },
   
   
@@ -120432,7 +120432,7 @@
     "low-alch": 36000,
     "high-alch": 54000,
     "base-value": 90000,
-    "street-value": 28957337,
+    "street-value": 2957337,
     "weight": 1.8,
     "equipment-slot": "WEAPON",
     "weapon-interface": "LONGBOW",
@@ -120485,7 +120485,7 @@
 	    "low-alch": 36000,
 	    "high-alch": 54000,
 	    "base-value": 90000,
-	    "street-value": 28957337,
+	    "street-value": 257337,
 	    "weight": 1.8,
 	    "equipment-slot": "WEAPON",
 	    "weapon-interface": "LONGBOW",
@@ -128472,30 +128472,29 @@
 {
 		 "id": 20151, 
 		 "name": "Animal Bow", 
-		 "low-alch": 30000000, 
-		 "high-alch": 40000000, 
-		 "base-value": 50000000,
-		 "street-value": 50000000, 
-		 "equipment-slot": "WEAPON",
-		"weapon-interface": "LONGBOW",
-		"weight": 4.0,
-	    "attack-stab": 0,
-	    "attack-slash": 0,
-	    "attack-crush": 0,
-	    "attack-range": 150,
-	    "req-defence": 0,
-	    "attack-magic": 0,
-	    "stackable": false,
-	    "defence-stab": 0,
-	    "defence-slash": 0,
-	    "defence-crush": 0,
-	    "defence-magic": 0,
-	    "defence-ranged": 0,
-	    "bonus-ranged": 75,
-        "bonus-prayer": 16,
-	    "bonus-strength": 90,
-	    "ranged-strength": 150
-	    
+		    "two-handed": true,
+		    "low-alch": 36000,
+		    "high-alch": 54000,
+		    "base-value": 90000,
+		    "street-value": 28957337,
+		    "weight": 1.8,
+		    "equipment-slot": "WEAPON",
+		    "weapon-interface": "LONGBOW",
+		    "req-ranged": 99,
+		    "attack-ranged": 175,
+		    "ranged-strength": 105,
+		    "bonus-prayer": 19,
+		    "defence-ranged": 75,
+		    "ranged-type": "SHOT",
+		    "allowed": [
+		      "BRONZE_ARROW",
+		      "IRON_ARROW",
+		      "STEEL_ARROW",
+		      "MITHRIL_ARROW",
+		      "ADAMANT_ARROW",
+		      "RUNE_ARROW",
+		      "DRAGON_ARROW"
+		    ] 
 		},
 
 

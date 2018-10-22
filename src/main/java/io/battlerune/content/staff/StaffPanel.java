@@ -59,7 +59,7 @@ public class StaffPanel {
 
 		player.attributes.set("STAFF_PANEL_KEY", user_list);
 		player.send(new SendScrollbar(36730, size * 16));
-		player.send(new SendString("</col>Players online: <col=FFB83F>" + (user_list.size()), 36713));
+		player.send(new SendString("</col>Players online: <col=FFB83F>" + (World.getPlayerCount()), 36713));
 	}
 
 	/** Handles searching for a player on the staff itemcontainer. */

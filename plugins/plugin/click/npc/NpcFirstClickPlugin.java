@@ -55,8 +55,8 @@ public class NpcFirstClickPlugin extends PluginContext {
 			player.dialogueFactory
 			.sendNpcChat(id, "Hey, im the refferal Manager", "Did you know you can get rewarded by inviting players?")
 			.sendNpcChat(id, "Simply invite your friends", "and tell them to place you as the refferal", "You'll recieve the following.")
-			.sendNpcChat(id, "1x 10$ Donation Credit", "1x Inferno Box", "1x Refferal Point", "Chance at winning a soul set!")
-			.sendNpcChat(id, "Your friend will recieve the following.", "1x Free donator rank", "1x Inferno Box", "1x Refferal Point")
+			.sendNpcChat(id, "1x 10$ Donation Credit", "1x AvO Box", "1x Refferal Point", "Chance at winning a soul set!")
+			.sendNpcChat(id, "Your friend will recieve the following.", "1x 10$ Donation Bond", "1x AvO Box", "1x Refferal Point")
 			.sendNpcChat(id, "Trade me to view my store!")
 			.execute();
 			break;

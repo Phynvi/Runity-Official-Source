@@ -4,13 +4,12 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-
+import io.battlerune.content.store.PersonalStoreSaver;
 import io.battlerune.content.DailyBonus;
 import io.battlerune.content.WellOfGoodwill;
 import io.battlerune.content.activity.annoucements.Announcement;
 import io.battlerune.content.activity.record.GlobalRecords;
 import io.battlerune.content.clanchannel.ClanRepository;
-import io.battlerune.content.freeforall.FreeForAll;
 import io.battlerune.content.itemaction.ItemActionRepository;
 import io.battlerune.content.mysterybox2.MysteryBox;
 import io.battlerune.content.skill.SkillRepository;
@@ -130,6 +129,7 @@ public final class BattleRune {
 		startupService.submit(SkillRepository::load);
 		startupService.submit(ProfileRepository::load);
         startupService.submit(MysteryBox::load);
+		startupService.submit(PersonalStoreSaver::loadPayments);
 		startupService.submit(ItemActionRepository::declare);
 		startupService.submit(ClueScrollPlugin::declare);
 		startupService.submit(GameSaver::load);

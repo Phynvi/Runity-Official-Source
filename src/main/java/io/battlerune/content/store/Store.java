@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-
+import io.battlerune.content.store.impl.PersonalStore;
 import io.battlerune.content.store.currency.CurrencyType;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.items.Item;
@@ -57,6 +57,21 @@ public abstract class Store {
 		this.container = new ItemContainer(capacity, policy, new StoreItem[capacity]);
 		this.itemCache = new HashMap<>(container.capacity());
 	}
+	
+	protected static List<PersonalStore> getPersonalShops() {
+		List<PersonalStore> personal_shops = new ArrayList<>();
+		STORES.values().stream().filter(s -> s.type().equals(StoreType.PERSONAL))
+				.forEach(s -> personal_shops.add((PersonalStore) s));
+		return personal_shops;
+	}
+
+	protected static List<PersonalStore> getFeaturedShops() {
+		List<PersonalStore> featured_shops = new ArrayList<>();
+		STORES.values().stream().filter(s -> s.type().equals(StoreType.PERSONAL) && ((PersonalStore) s).rank > 0)
+				.forEach(s -> featured_shops.add((PersonalStore) s));
+		return featured_shops;
+	}
+
 
 	public static void closeShop(Player player) {
 		if (!player.interfaceManager.isInterfaceOpen(StoreConstant.INTERFACE_ID) || !player.attributes.has("SHOP")) {

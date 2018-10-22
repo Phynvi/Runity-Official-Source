@@ -466,6 +466,17 @@ public enum SlayerTask implements TaskInterface<Player> {
 			return true;
 		}
 	},
+	TARN("Tarn", 1, 10, TaskDifficulty.BOSS, new Position(1, 1), "::tarn", 6477) {
+		@Override
+		public boolean canAssign(Player player) {
+			return player.skills.getMaxLevel(Skill.SLAYER) >= 50;
+		}
+
+		@Override
+		public boolean canAttack(Player player) {
+			return true;
+		}
+	},
 	KING_BLACK_DRAGON("King black dragon", 1, 50, TaskDifficulty.BOSS, new Position(1, 1), "Wilderness", 239) {
 		@Override
 		public boolean canAssign(Player player) {

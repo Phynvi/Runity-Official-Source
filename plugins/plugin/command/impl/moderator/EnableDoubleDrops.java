@@ -20,13 +20,12 @@ public class EnableDoubleDrops implements Command {
 	public void execute(Player player, String command, String[] parts) {
 		Config.DOUBLE_DROPS = true;
 		World.sendBroadcast(60, "[DAILY SERVER EVENTS] Double Drops Is Now Activated for 1 Hours!", false);
-		
 	}
 
 	
 	@Override
 	public boolean canUse(Player player) {
-		return PlayerRight.isDeveloper(player);
+		return PlayerRight.isPriviledged(player);
 	}
 
 }

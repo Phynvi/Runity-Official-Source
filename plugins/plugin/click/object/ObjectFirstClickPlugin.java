@@ -20,6 +20,7 @@ import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.content.staff.PanelType;
 import io.battlerune.content.staff.StaffPanel;
+import io.battlerune.content.store.impl.PersonalStore;
 import io.battlerune.content.teleport.TeleportHandler;
 import io.battlerune.game.Animation;
 import io.battlerune.game.UpdatePriority;
@@ -67,6 +68,28 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		// final int ANIM = 0;
 
 		switch (id) {
+		
+		/* Player owned shops. */
+		case 3029:
+//                player.message("Personal stores are currently disabled!");
+			if (PlayerRight.isIronman(player)) {
+				player.send(new SendMessage("As an iron man you may not access player owned stores!"));
+				return true;
+			}
+			PersonalStore.openMenu(player);
+
+			break;
+			/* Grand exchange. */
+		case 26044:
+			player.message("Personal stores are currently undergoing testing!" + "You've been warned.");
+			if (PlayerRight.isIronman(player)) {
+				player.send(new SendMessage("As an iron man you may not access player owned stores!"));
+				return true;
+			}
+			PersonalStore.openMenu(player);
+
+			break;
+
 		
 		case 16539:
 			player.move(new Position(2730, 10008, player.getHeight()));

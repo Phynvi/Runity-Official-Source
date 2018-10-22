@@ -56,6 +56,7 @@ import plugin.command.impl.owner.GraphicCommand;
 import plugin.command.impl.owner.InterfaceCommand;
 import plugin.command.impl.owner.ItemCommand;
 import plugin.command.impl.owner.JusticarSpawnCommand;
+import plugin.command.impl.owner.KickAllCommand;
 import plugin.command.impl.owner.KillCommand;
 import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.owner.NpcCommand;
@@ -137,6 +138,7 @@ public class CommandManager {
 		/*
 		 * @Player Commands
 		 */
+		
 		PLUGIN.putIfAbsent(new String[] { "thread" }, new ThreadCommand());
 		PLUGIN.putIfAbsent(new String[] { "ancients" }, new AncientsCommand());
 		PLUGIN.putIfAbsent(new String[] { "maxhit" }, new MaxStatusCommand());
@@ -234,6 +236,8 @@ public class CommandManager {
 		/*
 		 * @Owner, @Developer Commands
 		 */
+		
+		PLUGIN.putIfAbsent(new String[] { "kickall", "kickeveryone" }, new KickAllCommand());
 		PLUGIN.putIfAbsent(new String[] { "item" }, new ItemCommand());
 		PLUGIN.putIfAbsent(new String[] { "master" }, new MasterCommand());
 		PLUGIN.putIfAbsent(new String[] { "instance" }, new DeveloperInstanceCommand());

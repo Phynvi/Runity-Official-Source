@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
@@ -60,6 +61,7 @@ import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.spell.SpellCasting;
 import io.battlerune.content.skill.impl.runecrafting.RunecraftPouch;
 import io.battlerune.content.skill.impl.slayer.Slayer;
+import io.battlerune.content.store.impl.PersonalStore;
 import io.battlerune.content.teleport.Teleport;
 import io.battlerune.content.tittle.PlayerTitle;
 import io.battlerune.content.upgrading.UpgradeData;
@@ -454,6 +456,7 @@ public class Player extends Mob {
 	public final DropChanceHandler data = new DropChanceHandler(this);
 	public final PriceChecker priceChecker = new PriceChecker(this);
 	public final DonatorDeposit donatorDeposit = new DonatorDeposit(this);
+	public final Map<Integer, PersonalStore> viewing_shops = new HashMap<>();
 	public DialogueFactory dialogueFactory = new DialogueFactory(this);
 	public final House house = new House(this);
 	public Slayer slayer = new Slayer(this);
@@ -625,6 +628,21 @@ public class Player extends Mob {
 
 		if (Config.DOUBLE_EXPERIENCE) {
 			message("Double experience is currently active!");
+		}
+		if (Config.DOUBLE_DROPS) {
+			message("Double Drops is currently active!");
+		}
+		if(Config.DOUBLE_AVO_POINTS) {
+			message("Double AvO Tickets is currently active!");
+		}
+		if(Config.DR_15_BOOST) {
+			message("15% Drop Rate Boost is currently active!");
+		}
+		if(Config.DR_30_BOOST) {
+			message("30% Drop Rate Boost is currently active!");
+		}
+		if(Config.DOUBLE_PK_POINTS) {
+			message("Double Pk Points is currently active!");
 		}
 		if (Config.X4_EXPERIENCE) {
 			// message("X4 experience is currently active!");

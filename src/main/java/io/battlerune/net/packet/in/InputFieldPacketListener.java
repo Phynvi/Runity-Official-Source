@@ -13,6 +13,7 @@ import io.battlerune.net.packet.PacketListener;
 import io.battlerune.net.packet.PacketListenerMeta;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.MessageColor;
+import io.battlerune.content.store.impl.PersonalStore;
 
 @PacketListenerMeta(142)
 public class InputFieldPacketListener implements PacketListener {
@@ -32,6 +33,15 @@ public class InputFieldPacketListener implements PacketListener {
 
 		switch (component) {
 
+		/* Personal Store */
+		case 38307:
+			PersonalStore.changeName(player, context, false);
+			break;
+		case 38309:
+			PersonalStore.changeName(player, context, true);
+			break;
+
+		
 		/* Clan chat */
 		case 42102:
 			player.forClan(clan -> {
