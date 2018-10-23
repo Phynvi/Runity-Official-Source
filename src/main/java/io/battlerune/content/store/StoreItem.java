@@ -59,8 +59,8 @@ public final class StoreItem extends Item {
 	}
 
 	public void setShopValue(int value) {
-		this.value = OptionalInt.of(value);
 		this.price = value;
+		this.value = OptionalInt.of(value);
 	}
 
 	public int getPrice() {

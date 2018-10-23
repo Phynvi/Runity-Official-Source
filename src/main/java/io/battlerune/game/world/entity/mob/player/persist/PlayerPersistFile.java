@@ -1891,7 +1891,7 @@ public final class PlayerPersistFile implements PlayerPersistable {
 				}
 			},
 			
-			new PlayerJSONProperty("pos-items") {
+			new PlayerJSONProperty("pos-earnings") {
 				@Override
 				void read(Player player, JsonElement property) {
 					player.personalStoreTempEarnings = property.getAsLong();
@@ -1899,6 +1899,7 @@ public final class PlayerPersistFile implements PlayerPersistable {
 
 				@Override
 				Object write(Player player) {
+					System.out.println("saving as "+player.personalStore.earnings);
 					return player.personalStore.earnings;
 				}
 			},
