@@ -123,7 +123,7 @@ public class InterfaceManager {
 			Store.closeShop(player);
 		}
 
-		if (player.attributes.get("BANK_KEY", Boolean.class)) {
+		if (player.attributes.get("BANK_KEY") != null && player.attributes.get("BANK_KEY", Boolean.class)) {
 			player.bank.close();
 		}
 

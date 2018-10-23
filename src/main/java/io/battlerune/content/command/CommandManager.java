@@ -138,7 +138,7 @@ public class CommandManager {
 		/*
 		 * @Player Commands
 		 */
-		
+		PLUGIN.putIfAbsent(new String[] { "plos" }, new PosCommand());
 		PLUGIN.putIfAbsent(new String[] { "thread" }, new ThreadCommand());
 		PLUGIN.putIfAbsent(new String[] { "ancients" }, new AncientsCommand());
 		PLUGIN.putIfAbsent(new String[] { "maxhit" }, new MaxStatusCommand());

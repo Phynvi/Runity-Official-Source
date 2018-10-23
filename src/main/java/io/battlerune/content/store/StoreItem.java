@@ -30,6 +30,8 @@ public final class StoreItem extends Item {
 	 * The time in minutes it takes to restock this store item.
 	 */
 	private int restockTimer = RESTOCK_RATE;
+	
+	public int price;
 
 	/** Creates a new {@link Item}. */
 	public StoreItem(int id, int amount, OptionalInt value, Optional<CurrencyType> currency) {
@@ -41,19 +43,30 @@ public final class StoreItem extends Item {
 	public StoreItem(int id, int amount, int value) {
 		this(id, amount, OptionalInt.of(value), Optional.of(CurrencyType.COINS));
 	}
+	
+	public StoreItem(int id, int amount, int value, boolean yes) {
+		super(id, amount);
+		this.price = value;
+		this.currency = Optional.of(CurrencyType.COINS);
+	}
 
 	public StoreItem(int id, int amount) {
 		this(id, amount, OptionalInt.empty(), Optional.empty());
 	}
 
 	public int getShopValue() {
-		return value.orElse((int) ((double) getValue() * 1.20));
+		return getValue();
 	}
 
 	public void setShopValue(int value) {
 		this.value = OptionalInt.of(value);
+		this.price = value;
 	}
 
+	public int getPrice() {
+		return price;
+	}
+	
 	public CurrencyType getShopCurrency(Store store) {
 		return currency.orElse(store.currencyType);
 	}

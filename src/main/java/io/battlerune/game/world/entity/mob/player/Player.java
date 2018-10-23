@@ -61,6 +61,8 @@ import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.magic.spell.SpellCasting;
 import io.battlerune.content.skill.impl.runecrafting.RunecraftPouch;
 import io.battlerune.content.skill.impl.slayer.Slayer;
+import io.battlerune.content.store.StoreItem;
+import io.battlerune.content.store.currency.CurrencyType;
 import io.battlerune.content.store.impl.PersonalStore;
 import io.battlerune.content.teleport.Teleport;
 import io.battlerune.content.tittle.PlayerTitle;
@@ -140,6 +142,16 @@ public class Player extends Mob {
 	public void sendTeleportButtonNpc(int npcId) {
 		send(new SendString("" + npcId, 45615));
 	}
+	
+	public PersonalStore personalStore;
+	
+	public void setPersonalStore(PersonalStore store) {
+		this.personalStore = store;
+	}
+	
+	public StoreItem[] personalStoreTempItems;
+	
+	public long personalStoreTempEarnings;
 
 	/**
 	 * Will make the floating teleport button appear on the player's screen
@@ -603,6 +615,15 @@ public class Player extends Mob {
 		// sendTeleportButton();
 
 		// joinclan(Player);
+		
+		this.configureStore();
+	}
+
+	public void configureStore() {
+		this.setPersonalStore(new PersonalStore(this.getName(), Optional.empty(), this.right.getCrown(),
+				this.getName() + "'s Store", "No caption set", CurrencyType.COINS));
+		this.personalStore.loadData(this);
+		
 	}
 
 	/*
@@ -616,6 +637,7 @@ public class Player extends Mob {
 	 */
 	private void sendInitialPackets() {
 		playerAssistant.welcomeScreen();
+		
 		send(new SendRunEnergy());
 		send(new SendPlayerDetails());
 		send(new SendCameraReset());
@@ -647,7 +669,11 @@ public class Player extends Mob {
 		if (Config.X4_EXPERIENCE) {
 			// message("X4 experience is currently active!");
 		}
-
+		/***
+		 * personal store
+		 */
+		
+		
 		Toolkit.TOOLS.forEach(t -> toolkit.fill(t.getId()));
 	}
 

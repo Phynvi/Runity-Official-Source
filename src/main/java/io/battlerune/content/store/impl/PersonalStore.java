@@ -16,6 +16,7 @@ import io.battlerune.content.store.StoreType;
 import io.battlerune.content.store.currency.CurrencyType;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.ItemContainer;
 import io.battlerune.net.packet.out.SendInputAmount;
@@ -66,19 +67,29 @@ public final class PersonalStore extends Store {
 	public static void add(Player player, PersonalStore store) {
 		STORES.put(player.getName(), store);
 	}
+	
+	public long earnings;
+	
+	public void loadData(Player player) {
+		if (player.personalStoreTempItems != null)
+		    this.container.set(player.personalStoreTempItems);
+		Store.STORES.put(player.getName(), player.personalStore);
+		this.earnings = player.personalStoreTempEarnings;
+	}
 
 	/** Handles claiming coins from the personal store. */
-	public static void claimCoins(Player player) {
+	public void claimCoins(Player player) {
 		DialogueFactory factory = player.dialogueFactory;
-		if (!SOLD_ITEMS.containsKey(player.getName())) {
+		if (earnings == 0) {
 			factory.sendItem("Personal Store", "There are no coins available for you to collect.", Config.CURRENCY)
-					.execute();
+			.execute();
 			return;
 		}
-		long amount = SOLD_ITEMS.get(player.getName());
-		boolean added = player.bankVault.add(amount);
+		
+		boolean added = player.bankVault.add(earnings);
+		
 		if (added) {
-			SOLD_ITEMS.remove(player.getName());
+			earnings = 0;
 		}
 		String message = added ? "Your collected coins have been sent to your bank vault."
 				: "There was not enough room inside your bank vault to hold your coins.";
@@ -110,12 +121,6 @@ public final class PersonalStore extends Store {
 
 	/** Creates the player's shops if non-existent or will enter. */
 	public static void myShop(Player player) {
-		if (!Store.STORES.containsKey(player.getName())) {
-			PersonalStore shop = new PersonalStore(player.getName(), Optional.empty(), player.right.getCrown(),
-					player.getName() + "'s Store", "No caption set", CurrencyType.COINS);
-			Store.STORES.put(player.getName(), shop);
-		}
-
 		STORES.get(player.getName()).open(player);
 	}
 
@@ -128,6 +133,7 @@ public final class PersonalStore extends Store {
 		}
 
 		String type = caption ? "caption" : "title";
+		
 		if (Arrays.stream(Config.BAD_STRINGS).anyMatch(b -> input.contains(b))) {
 			player.send(new SendMessage("You have entered an invalid shop " + type + "."));
 			player.interfaceManager.close();
@@ -215,6 +221,7 @@ public final class PersonalStore extends Store {
 		}
 
 		Item invItem = player.inventory.get(slot);
+		
 		final StoreItem storeItem = new StoreItem(invItem.getId(), item.getAmount());
 
 		if (!addX) {
@@ -241,6 +248,7 @@ public final class PersonalStore extends Store {
 			return;
 		}
 		storeItem.setShopValue(value);
+		
 		int amount = player.inventory.computeAmountForId(invItem.getId());
 
 		if (storeItem.getAmount() > amount && !storeItem.isStackable()) {
@@ -251,7 +259,7 @@ public final class PersonalStore extends Store {
 
 		player.inventory.remove(storeItem, slot);
 		Optional<Item> contains = container.stream().filter(i -> i != null && storeItem.getId() == i.getId()
-				&& ((StoreItem) i).getShopValue() == storeItem.getShopValue()).findFirst();
+				&& ((StoreItem) i).getPrice() == storeItem.getPrice()).findFirst();
 
 		if (contains.isPresent()) {
 			contains.get().incrementAmountBy(storeItem.getAmount());
@@ -276,6 +284,7 @@ public final class PersonalStore extends Store {
 
 		if (item.getAmount() > storeItem.getAmount())
 			item.setAmount(storeItem.getAmount());
+		
 		if (!player.inventory.hasCapacityFor(item)) {
 			item.setAmount(player.inventory.remaining());
 			if (item.getAmount() == 0) {
@@ -377,14 +386,34 @@ public final class PersonalStore extends Store {
 
 	@Override
 	public void onPurchase(Player player, Item item) {
+		
+		
+		
 		if (!SOLD_ITEMS.containsKey(name))
 			SOLD_ITEMS.put(name, 0L);
+		
+		Player seller = World.getPlayerByName(name);
+		
+		boolean forceSave = false;
+		
+		if (seller != null) {
+			seller.sendMessage("One of your items from your store has been purchased!");
+		} else {
+			seller = PlayerSerializer.loadPlayer(name);
+			seller.configureStore();
+			forceSave = true;
+		}
 
 		long amount = SOLD_ITEMS.get(name);
+		
 		SOLD_ITEMS.replace(name, amount + item.getAmount());
+		
 		GameSaver.ITEMS_SOLD++;
-		GameSaver.PERSONAL_ITEM_WORTH += (item.getValue() * item.getAmount());
-		World.search(name).ifPresent(
+		
+		seller.personalStore.earnings += item.getValue() * item.getAmount();
+		
+		if (!forceSave)
+		   World.search(name).ifPresent(
 				p -> p.send(new SendMessage("You have coins to collect from your shop!", MessageColor.DARK_GREEN)));
 	}
 
@@ -408,7 +437,7 @@ public final class PersonalStore extends Store {
 		int lastItem = 0;
 		if (items.length != 0) {
 			for (int i = 0; i < items.length; i++) {
-				player.send(new SendString(items[i] == null ? "0" : items[i].getShopValue() + "," + 0, 40052 + i));
+				player.send(new SendString(items[i] == null ? "0" : items[i].getPrice() + "," + 0, 40052 + i));
 				lastItem = i;
 			}
 		}

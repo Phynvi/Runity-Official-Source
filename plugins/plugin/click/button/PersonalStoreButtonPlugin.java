@@ -14,7 +14,7 @@ public class PersonalStoreButtonPlugin extends PluginContext {
 			PersonalStore.openPanel(player);
 			return true;
 		case -27318:
-			PersonalStore.claimCoins(player);
+			player.personalStore.claimCoins(player);
 			return true;
 		case -27315:
 			player.interfaceManager.open(38300);

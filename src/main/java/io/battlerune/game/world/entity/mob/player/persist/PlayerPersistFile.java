@@ -40,6 +40,8 @@ import io.battlerune.content.prestige.PrestigePerk;
 import io.battlerune.content.skill.impl.magic.Spellbook;
 import io.battlerune.content.skill.impl.slayer.SlayerTask;
 import io.battlerune.content.skill.impl.slayer.SlayerUnlockable;
+import io.battlerune.content.store.StoreItem;
+import io.battlerune.content.store.impl.PersonalStore;
 import io.battlerune.content.teleport.Teleport;
 import io.battlerune.content.tittle.PlayerTitle;
 import io.battlerune.game.service.HighscoreService;
@@ -1875,5 +1877,33 @@ public final class PlayerPersistFile implements PlayerPersistable {
 				Object write(Player player) {
 					return player.toolkit.getItems();
 				}
-			}, };	
+			}, 
+			
+			new PlayerJSONProperty("pos-items") {
+				@Override
+				void read(Player player, JsonElement property) {
+					player.personalStoreTempItems = (GSON.fromJson(property, StoreItem[].class));
+				}
+
+				@Override
+				Object write(Player player) {
+					return player.personalStore.container.getItems();
+				}
+			},
+			
+			new PlayerJSONProperty("pos-items") {
+				@Override
+				void read(Player player, JsonElement property) {
+					player.personalStoreTempEarnings = property.getAsLong();
+				}
+
+				@Override
+				Object write(Player player) {
+					return player.personalStore.earnings;
+				}
+			},
+			
+			
+	
+	};	
 }

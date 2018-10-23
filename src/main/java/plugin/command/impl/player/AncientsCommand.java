@@ -13,6 +13,7 @@ public class AncientsCommand implements Command {
 		player.spellbook = Spellbook.ANCIENT;
 		player.interfaceManager.setSidebar(Config.MAGIC_TAB, player.spellbook.getInterfaceId());
 		player.sendMessage("You have switched your magics to ancients..");
+		player.sendMessage("points="+player.getReferralPoints());
 
 	}
 

@@ -16,7 +16,7 @@ public class SettingsButtonPlugin extends PluginContext {
 	@SuppressWarnings("static-access")
 	@Override
 	protected boolean onClick(Player player, int button) {
-		int obelisk = player.attributes.get("OBELISK", Integer.class);
+		int obelisk = player.attributes.get("OBELISK") != null ? player.attributes.get("OBELISK", Integer.class) : -1;
 		if (obelisk == -1) {
 			switch (button) {
 			case -14524:
