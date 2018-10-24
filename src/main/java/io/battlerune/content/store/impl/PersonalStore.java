@@ -34,10 +34,10 @@ import io.battlerune.util.Utility;
  * @author <a href="http://www.rune-server.org/members/stand+up/">Stand Up</a>
  * @since 4-1-2017.
  */
-public final class PersonalStore extends Store {
+public class PersonalStore extends Store {
 
 	/** The shops the player is currently viewing. */
-	public static final Map<Integer, PersonalStore> FEATURED_SHOPS = new HashMap<>();
+	public static Map<Integer, PersonalStore> FEATURED_SHOPS = new HashMap<>();
 
 	/** A mapping of a player name with the amount of coins waiting for him. */
 	public static Map<String, Long> SOLD_ITEMS = new HashMap<>();
@@ -222,32 +222,24 @@ public final class PersonalStore extends Store {
 
 		Item invItem = player.inventory.get(slot);
 		
-		final StoreItem storeItem = new StoreItem(invItem.getId(), item.getAmount());
+		StoreItem storeItem = new StoreItem(invItem.getId(), item.getAmount());
+		
+		
 
 		if (!addX) {
 			player.send(new SendInputAmount("What do you want to value your <col=027399>" + item.getName() + "</col>?",
 					10, value -> {
 						setValue(player, invItem, storeItem, Integer.parseInt(value), slot);
-						refresh(player);
+						System.out.println("here 2..... setting price..");
 					}));
 			return;
 		}
-
-		player.send(new SendInputAmount("How much would you like to put in your shop?", 10, amount -> {
-			storeItem.setAmount(Integer.parseInt(amount));
-			player.send(new SendInputAmount("What do you want to value your <col=027399>" + item.getName() + "</col>?",
-					10, value -> {
-						setValue(player, invItem, storeItem, Integer.parseInt(value), slot);
-						refresh(player);
-					}));
-		}));
 	}
 
 	private void setValue(Player player, Item invItem, StoreItem storeItem, int value, int slot) {
-		if (!player.interfaceManager.isInterfaceOpen(StoreConstant.INTERFACE_ID)) {
+		
+		if (!player.interfaceManager.isInterfaceOpen(StoreConstant.INTERFACE_ID)) 
 			return;
-		}
-		storeItem.setShopValue(value);
 		
 		int amount = player.inventory.computeAmountForId(invItem.getId());
 
@@ -258,18 +250,43 @@ public final class PersonalStore extends Store {
 		}
 
 		player.inventory.remove(storeItem, slot);
+		
+		
+		
+		storeItem.setShopValue(value);
+		
 		Optional<Item> contains = container.stream().filter(i -> i != null && storeItem.getId() == i.getId()
 				&& ((StoreItem) i).getPrice() == storeItem.getPrice()).findFirst();
 
+		System.out.println("value from script="+value+" already added?="+contains.isPresent());
+		
 		if (contains.isPresent()) {
 			contains.get().incrementAmountBy(storeItem.getAmount());
 		} else {
 			if (!storeItem.isStackable() && storeItem.getAmount() > 1) {
-				container.add(storeItem, false, true);
+				container.add(storeItem, true, true);
 			} else {
 				container.add(storeItem);
 			}
 		}
+		
+		
+		
+		/****
+		 * Quick fix for the item prices... fml
+		 */
+		int index = 0;
+		
+		for (int i = 0; i < container.size(); i++) {
+			if (container.get(i).getId() == storeItem.getId() && container.get(i).getAmount() == storeItem.getAmount())
+				index = i;
+		}
+		
+		StoreItem item = (StoreItem) container.retrieve(index).orElse(null);
+		
+		item.setShopValue(value);
+		
+		refresh(player);
 	}
 
 	/** Handles adding an item to the player's personal shop. */
@@ -277,7 +294,7 @@ public final class PersonalStore extends Store {
 		if (!player.interfaceManager.isInterfaceOpen(StoreConstant.INTERFACE_ID)) {
 			return;
 		}
-		final StoreItem storeItem = (StoreItem) this.container.retrieve(slot).orElse(null);
+		StoreItem storeItem = (StoreItem) this.container.retrieve(slot).orElse(null);
 
 		if (storeItem == null)
 			return;
@@ -368,11 +385,6 @@ public final class PersonalStore extends Store {
 				if (this.isOwner(player)) {
 					this.remove(player, new Item(id, amount), slot);
 				} else {
-					/*
-					 * if (updating) { player.send( new
-					 * SendMessage("The owner is currently updating the shop, try again in a few seconds."
-					 * , MessageColor.RED)); return; }
-					 */
 					this.purchase(player, new Item(id, amount), slot);
 				}
 			} else {
@@ -386,8 +398,6 @@ public final class PersonalStore extends Store {
 
 	@Override
 	public void onPurchase(Player player, Item item) {
-		
-		
 		
 		if (!SOLD_ITEMS.containsKey(name))
 			SOLD_ITEMS.put(name, 0L);

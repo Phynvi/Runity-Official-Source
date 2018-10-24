@@ -55,7 +55,7 @@ public final class StoreItem extends Item {
 	}
 
 	public int getShopValue() {
-		return getValue();
+		return this.value.getAsInt();
 	}
 
 	public void setShopValue(int value) {

@@ -188,6 +188,7 @@ public abstract class Store {
 	}
 
 	protected final void sell(Player player, Item item, int slot, boolean addX) {
+		
 		if (item == null || !Item.valid(item)) {
 			return;
 		}
@@ -254,6 +255,7 @@ public abstract class Store {
 
 		final StoreItem converted = new StoreItem(item.getId(), item.getAmount());
 
+		
 		container.add(converted);
 
 		refresh(player);

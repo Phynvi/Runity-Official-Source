@@ -111,6 +111,7 @@ public class Item implements Cloneable {
 		}
 		return def.getValue();
 	}
+	
 
 	/**
 	 * Creates a new item with {@code newId} and the same amount as this instance.
