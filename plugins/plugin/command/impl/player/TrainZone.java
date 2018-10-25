@@ -15,7 +15,7 @@ public class TrainZone implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-		Teleportation.teleport(player, Config.STARTER_ZONE);
+		//Teleportation.teleport(player, Config.STARTER_ZONE);
 		player.send(new SendMessage("You have teleported to the training zone!"));
 	}
 
