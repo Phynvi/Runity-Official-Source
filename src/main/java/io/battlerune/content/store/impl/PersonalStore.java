@@ -80,6 +80,7 @@ public class PersonalStore extends Store {
 	/** Handles claiming coins from the personal store. */
 	public void claimCoins(Player player) {
 		DialogueFactory factory = player.dialogueFactory;
+		
 		if (earnings == 0) {
 			factory.sendItem("Personal Store", "There are no coins available for you to collect.", Config.CURRENCY)
 			.execute();
@@ -108,14 +109,13 @@ public class PersonalStore extends Store {
 			return;
 		}
 
-		long collect = SOLD_ITEMS.get(player.getName()) == null ? 0 : SOLD_ITEMS.get(player.getName());
 		player.send(new SendString("<col=d38537>Active stores:</col> " + getPersonalShops().size(), 38210));
 		player.send(new SendString("<col=d38537>Total Items Sold:</col> " + Utility.formatPrice(GameSaver.ITEMS_SOLD),
 				38211));
 		player.send(new SendString(
 				"<col=d38537>Total Sold Worth:</col> " + Utility.formatPrice(GameSaver.PERSONAL_ITEM_WORTH), 38213));
 
-		player.send(new SendString(collect <= 0 ? "None" : Utility.formatDigits(collect), 38207));
+		player.send(new SendString(player.personalStore.earnings < 1 ? "None" : player.personalStore.earnings, 38207));
 		player.interfaceManager.open(38200);
 	}
 
@@ -232,6 +232,7 @@ public class PersonalStore extends Store {
 						setValue(player, invItem, storeItem, Integer.parseInt(value), slot);
 						System.out.println("here 2..... setting price..");
 					}));
+			PlayerSerializer.save(player);
 			return;
 		}
 	}
@@ -295,6 +296,8 @@ public class PersonalStore extends Store {
 			return;
 		}
 		StoreItem storeItem = (StoreItem) this.container.retrieve(slot).orElse(null);
+		
+		
 
 		if (storeItem == null)
 			return;
@@ -397,10 +400,7 @@ public class PersonalStore extends Store {
 	}
 
 	@Override
-	public void onPurchase(Player player, Item item) {
-		
-		if (!SOLD_ITEMS.containsKey(name))
-			SOLD_ITEMS.put(name, 0L);
+	public void onPurchase(Player player, Item item, int slot, int value) {
 		
 		Player seller = World.getPlayerByName(name);
 		
@@ -413,14 +413,13 @@ public class PersonalStore extends Store {
 			seller.configureStore();
 			forceSave = true;
 		}
-
-		long amount = SOLD_ITEMS.get(name);
 		
-		SOLD_ITEMS.replace(name, amount + item.getAmount());
 		
 		GameSaver.ITEMS_SOLD++;
 		
-		seller.personalStore.earnings += item.getValue() * item.getAmount();
+		seller.personalStore.earnings += value * item.getAmount();
+		
+		PlayerSerializer.save(player);
 		
 		if (!forceSave)
 		   World.search(name).ifPresent(
