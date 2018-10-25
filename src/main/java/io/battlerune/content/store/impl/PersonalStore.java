@@ -299,7 +299,7 @@ public class PersonalStore extends Store {
 		if (storeItem == null)
 			return;
 
-		if (item.getAmount() > storeItem.getAmount())
+		if (item.getAmount() > storeItem.getAmount())//.
 			item.setAmount(storeItem.getAmount());
 		
 		if (!player.inventory.hasCapacityFor(item)) {
