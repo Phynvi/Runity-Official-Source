@@ -178,12 +178,12 @@ public abstract class Store {
 			player.send(new SendMessage("You don't have enough space in your inventory."));
 			return false;
 		}
-		onPurchase(player, new Item(item.getId(), item.getAmount() * value));
+		onPurchase(player, new Item(item.getId(), item.getAmount()), slot, value);
 		refresh(player);
 		return true;
 	}
 
-	public void onPurchase(Player player, Item item) {
+	public void onPurchase(Player player, Item item, int slot, int value) {
 
 	}
 
