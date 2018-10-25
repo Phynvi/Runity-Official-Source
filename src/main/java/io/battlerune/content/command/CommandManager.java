@@ -235,6 +235,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "disableavo", "avo2" }, new DisableAVO());
 		/*
 		 * @Owner, @Developer Commands
+		 * Huge Giveaways/HnS/Gambling Events & 30% DR & Double AvO Ticks On 26th & 27th
 		 */
 		
 		PLUGIN.putIfAbsent(new String[] { "kickall", "kickeveryone" }, new KickAllCommand());

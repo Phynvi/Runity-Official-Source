@@ -54,7 +54,7 @@ public class ArenaUtility {
 			player.clanChannel.addExperience(10000);
 			World.sendMessage("<col=8714E6>[ARENA EVENT] Arena Boss has been defeated by " + player.getName() + "!");
 			player.clanChannel
-					.message("[ARENA EVENT] Hell yeah boys! We just killed Galvek!! We earned 10,000 EXP & 5 CP.");
+					.message("[ARENA EVENT] Hell yeah boys! We just killed Glod!! We earned 10,000 EXP & 5 CP.");
 		}
 		World.sendMessage("<col=8714E6>[ARENA EVENT] Arena has been defeated by " + player.getName() + ", the legend.");
 

@@ -100,7 +100,7 @@ public class Pets {
 
 		if (!drop) {
 			player.message("<col=FF0000>You have a funny feeling like you're being followed.");
-			World.sendMessage("<col=FF0000>Runity Reality: <col=" + player.right.getColor() + ">" + player.getName()
+			World.sendMessage("<col=FF0000>Runity: <col=" + player.right.getColor() + ">" + player.getName()
 					+ "</col> has just received a pet " + pet.getName() + "!");
 		}
 		return true;

@@ -254,6 +254,9 @@ public final class Config {
 	public static final Position NATURE_ZONE = new Position(2400, 4835, 0);
 
 	public static final Position LAW_ALTAR = new Position(2464, 4818, 0);
+	
+	public static final Position STARTER_ZONE = new Position(2462, 4769, 0);
+
 
 	/** Wests. */
 	public static final Position WESTS = new Position(2980, 3594, 0);

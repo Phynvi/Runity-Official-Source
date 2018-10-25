@@ -55,8 +55,8 @@ public class PrestigeButtonPlugin extends PluginContext {
 		if (!player.interfaceManager.isInterfaceOpen(52000))
 			return true;
 		PrestigeData data = PrestigeData.forButton(button).get();
-		if (player.prestige.prestige[data.skill] == 5) {
-			player.dialogueFactory.sendNpcChat(345, "You can only prestige a maximum of <col=255>5</col> times!")
+		if (player.prestige.prestige[data.skill] == 20) {
+			player.dialogueFactory.sendNpcChat(345, "You can only prestige each skill a maximum of <col=255>20</col> times!")
 					.execute();
 			return true;
 		}

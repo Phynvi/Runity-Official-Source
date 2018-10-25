@@ -594,7 +594,6 @@ public class Combat<T extends Mob> {
 
 	private boolean checkWithin(T attacker, Mob defender, CombatStrategy<? super T> strategy) {
 		if (strategy == null || Utility.inside(attacker, defender)) {
-			System.out.println("inside the npc.");
 			return false;
 		}
 		if (!strategy.withinDistance(attacker, defender)) {

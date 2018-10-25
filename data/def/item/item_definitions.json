@@ -107599,7 +107599,7 @@
     "low-alch": 104000,
     "high-alch": 156000,
     "base-value": 260000,
-    "street-value": 39648980,
+    "street-value": 10000000,
     "stand-animation": 1662,
     "walk-animation": 1663,
     "run-animation": 1664,
@@ -107618,7 +107618,7 @@
     "low-alch": 104000,
     "high-alch": 156000,
     "base-value": 260000,
-    "street-value": 39648980
+    "street-value": 10000000
   },
   {
     "id": 13265,
@@ -107627,7 +107627,7 @@
     "low-alch": 46000,
     "high-alch": 69000,
     "base-value": 115001,
-    "street-value": 255688952,
+    "street-value": 10000000,
     "equipment-slot": "WEAPON",
     "weapon-interface": "DRAGON_DAGGER",
     "attack-stab": 75,
@@ -107645,7 +107645,7 @@
     "low-alch": 46000,
     "high-alch": 69000,
     "base-value": 115001,
-    "street-value": 255688952
+    "street-value": 10000000
   },
   {
     "id": 13267,
@@ -107654,7 +107654,7 @@
     "low-alch": 46000,
     "high-alch": 69001,
     "base-value": 115002,
-    "street-value": 265688952,
+    "street-value": 10000000,
     "equipment-slot": "WEAPON",
     "weapon-interface": "DRAGON_DAGGER",
     "attack-stab": 75,
@@ -107672,7 +107672,7 @@
     "low-alch": 46000,
     "high-alch": 69001,
     "base-value": 115002,
-    "street-value": 265688952
+    "street-value": 10000000
   },
   {
     "id": 13269,
@@ -107681,7 +107681,7 @@
     "low-alch": 46001,
     "high-alch": 69001,
     "base-value": 115003,
-    "street-value": 275688952,
+    "street-value": 10000000,
     "equipment-slot": "WEAPON",
     "weapon-interface": "DRAGON_DAGGER",
     "attack-stab": 75,
@@ -107699,7 +107699,7 @@
     "low-alch": 46001,
     "high-alch": 69001,
     "base-value": 115003,
-    "street-value": 275688952
+    "street-value": 10000000
   },
   {
     "id": 13271,
@@ -107708,7 +107708,7 @@
     "low-alch": 46001,
     "high-alch": 69002,
     "base-value": 115004,
-    "street-value": 285688952,
+    "street-value": 10000000,
     "equipment-slot": "WEAPON",
     "weapon-interface": "DRAGON_DAGGER",
     "attack-stab": 75,
@@ -107726,7 +107726,7 @@
     "low-alch": 46001,
     "high-alch": 69002,
     "base-value": 115004,
-    "street-value": 285688952
+    "street-value": 10000000
   },
   {
     "id": 13273,

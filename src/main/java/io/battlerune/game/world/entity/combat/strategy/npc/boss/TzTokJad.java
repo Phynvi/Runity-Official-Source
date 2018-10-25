@@ -23,8 +23,9 @@ import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.prayer.Prayer;
 
 /**
- * @author Daniel
+ * @author Adam_#6723
  */
+
 public class TzTokJad extends MultiStrategy {
 	
 	private static RangedAttack RANGED = new RangedAttack();
@@ -110,7 +111,7 @@ public class TzTokJad extends MultiStrategy {
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			return new CombatHit[] { nextRangedHit(attacker, defender, 97, 3, 3) };
+			return new CombatHit[] { nextRangedHit(attacker, defender, 97, 5, 5) };
 		}
 
 		@Override

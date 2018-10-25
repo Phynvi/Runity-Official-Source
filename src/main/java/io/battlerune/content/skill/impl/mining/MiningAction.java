@@ -135,45 +135,55 @@ public class MiningAction extends Action<Player> {
 		return true;
 	}
 
-	private void handleFullRuneEss() {
-		// getMob().getPlayer().masterMiner.open();
-		getMob().interfaceManager.openNonDuplicate(49500);
+	   private void handleFullRuneEss() {
+	        //getMob().getPlayer().masterMiner.open();
+	        getMob().interfaceManager.openNonDuplicate(49500);
 
-		getMob().abortBot = false;
-		World.schedule(new Task(1) {
-			@Override
-			protected void execute() {
-				if (getMob().abortBot) {
-					cancel();
-				}
+	        getMob().abortBot = false;
+	        World.schedule(new Task(1) {
+	            @Override
+	            protected void execute() {
+	                if (getMob().abortBot)
+	                {
+	                    cancel();
+	                }
 
-				if (getMob().inventory.getFreeSlots() == 0) {
-					if (!bankArea.inArea(getMob().getPosition())) {
-						getMob().walk(bankPosition); // Walk to the center
-					} else {
-						// Bank
-						int count = getMob().inventory.computeAmountForId(OreData.RUNE_ESSENCE.ore);
-						Item notedEss = new Item(new Item(OreData.RUNE_ESSENCE.ore).getNotedId(), count);
+	                if (getMob().inventory.getFreeSlots() == 0)
+	                {
+	                    if (!bankArea.inArea(getMob().getPosition()))
+	                    {
+	                        getMob().walk(bankPosition); //Walk to the center
+	                    }
+	                    else
+	                    {
+	                        //Bank
+	                        int count = getMob().inventory.computeAmountForId(OreData.RUNE_ESSENCE.ore);
+	                        Item notedEss = new Item(new Item(OreData.RUNE_ESSENCE.ore).getNotedId(), count);
 
-						getMob().inventory.remove(OreData.RUNE_ESSENCE.ore, count);
-						getMob().inventory.add(notedEss);
-					}
-				} else {
-					if (!getMob().near(preBankPos, 2)) {
-						// Go back to the mines
-						getMob().walkExactlyTo(preBankPos);
-					} else {
-						getMob().action.execute(new MiningAction(getMob(), object, ore, pickaxe));
-						getMob().skills.get(Skill.MINING).setDoingSkill(true);
-						getMob().message("You swing your pick at the rock...");
-						cancel();
-					}
-				}
+	                        getMob().inventory.remove(OreData.RUNE_ESSENCE.ore, count);
+	                        getMob().inventory.add(notedEss);
+	                    }
+	                }
+	                else
+	                {
+	                    if (!getMob().near(preBankPos, 2))
+	                    {
+	                        //Go back to the mines
+	                        getMob().walkExactlyTo(preBankPos);
+	                    }
+	                    else
+	                    {
+	                        getMob().action.execute(new MiningAction(getMob(), object, ore, pickaxe));
+	                        getMob().skills.get(Skill.MINING).setDoingSkill(true);
+	                        getMob().message("You swing your pick at the rock...");
+	                        cancel();
+	                    }
+	                }
 
-			}
+	            }
 
-		});
-	}
+	        });
+	    }
 
 	@Override
 	protected boolean canSchedule() {

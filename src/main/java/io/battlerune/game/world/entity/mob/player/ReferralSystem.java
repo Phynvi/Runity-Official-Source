@@ -13,6 +13,7 @@ import io.battlerune.net.packet.out.SendInputMessage;
 public class ReferralSystem {
 
 	private static final int TOTAL_POINTS = 1;
+	private static final int TOTAL_REFFERALS = 1;
 
 	public static void handleReferral(Player player) {
 
@@ -48,6 +49,7 @@ public class ReferralSystem {
 				refer.message("<col=FF0019>You were not rewarded since you share the same IP Address.");
 				return;
 			}
+		    other.totalRefferals += TOTAL_REFFERALS;
 			other.refferalpoint += TOTAL_POINTS;
 			other.sendMessage("You have been given " + TOTAL_POINTS + " for refering " + refer.getUsername() + ".");
 			other.donation.setCredits(other.donation.getCredits() + 10);

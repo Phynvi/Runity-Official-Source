@@ -59,7 +59,7 @@ public enum Teleport {
 			"YOLO tho, am I right??"),
 
 	/* Monster Killing */
-	GOBLINS("Training Island", TeleportType.MONSTER_KILLING, new Position(2524, 4776, 0), false, new int[] { -1, 288 },
+	GOBLINS("Training Island", TeleportType.MONSTER_KILLING, new Position(2462, 4769, 0), false, new int[] { -1, 288 },
 			true, "", ""),
 	ROCK_CRABS("Rock Crabs", TeleportType.MONSTER_KILLING, new Position(2676, 3711, 0), false, new int[] { -1, 411 },
 			true, "", ""),
@@ -115,23 +115,24 @@ public enum Teleport {
 			new int[] { 11934, 451, 1513 }, false, "This teleport is in the lvl 50+ wilderness!",
 			"YOLO tho, am I right??"),
 
-	/* CITIES */
-	VARROCK("Varrock", TeleportType.CITIES, new Position(3210, 3424, 0), false, new int[] { 8007, 8007, 8007 }, true,
-			"Takes you to the Capital of Runity", "Where the markets are filled with goods"),
-	LUMBRIDGE("Lumbridge", TeleportType.CITIES, new Position(3222, 3218, 0), false, new int[] { 8008, 8008, 8008 },
-			true, "A once dangerous land", " but now home to the king of lumbridge!"),
-	ALKHARID("Al Kharid", TeleportType.CITIES, new Position(3275, 3166, 0), false, new int[] { 1833, 1835, 1837 }, true,
-			"Home to the arabs and their spices!", ""),
-	CAMELOT("Camelot", TeleportType.CITIES, new Position(2757, 3477, 0), false, new int[] { 8010, 8010, 8010 }, true,
-			"Camelot, alot to do, alot to accomplish in this area.", ""),
-	CATHERBY("Catherby", TeleportType.CITIES, new Position(2804, 3435, 0), false, new int[] { -1, 11995 }, true,
-			"Catherby is considered the fishing town of runity", ""),
-	DRAYNOR("Draynor", TeleportType.CITIES, new Position(3104, 3248, 0), false, new int[] { 19615, 19615, 19615 }, true,
-			"Draynor is a town that is extremely useful for you crafters!", ""),
-	PORTSARIM("Port Sarim", TeleportType.CITIES, new Position(3019, 3217, 0), false, new int[] { 272, 307, 10136 },
-			true, "The capital of all fishing villages", " has the largest exports of exotic rare fishes!"),
-	TREEGNOMESTRONGHOLD("Gnome Stronghold", TeleportType.CITIES, new Position(2440, 3403, 0), false,
-			new int[] { 3257, 9470, 13655 }, true, "The gnome's hold these lands", ""),
+    /* Boss Killing */
+    GODWARS("Godwars", TeleportType.BOSS_KILLING, new Position(2860, 5355, 0), true, new int[]{11818, 11820, 11822}, true, "High combat lvl", "Bringing a team is recommended"),
+    KING_BLACK_DRAGON("King Black Dragon", TeleportType.BOSS_KILLING, new Position(2997, 3849, 0), false, new int[]{-1, 12653}, true, "This teleport is in 40+ wilderness", "High combat and advanced gear is recommended"),
+    ZULRAH("Zulrah", TeleportType.BOSS_KILLING, new Position(0, 0, 0), true, new int[]{12921, 12939, 12940}, true, "High range & magic is highly recommended", "Beware of her poisonous venom!"),
+    KRAKEN("Kraken", TeleportType.BOSS_KILLING, new Position(2976, 4384, 0), true, new int[]{12004, 12655, 12004}, true,  "Make sure to have high magic defence", "Kraken is stronger than usual!"),
+    CRAZY_ARCH("Crazy Archaeologist", TeleportType.BOSS_KILLING, new Position(2966, 3698, 0), false, new int[]{}, true, "This teleport is in 23 wilderness", "Be careful, he's crazy!"),
+    CHAOS_FANATIC("Chaos Fanatic", TeleportType.BOSS_KILLING, new Position(2982, 3832, 0), false, new int[]{-1, 11995}, true, "This teleport is in 40 wilderness", "This guy is a fanatic for chaos!"),
+    CALLISTO("Callisto", TeleportType.BOSS_KILLING, new Position(3274, 3847, 0), false, new int[]{-1, 13178}, true, "This teleport is in 41 wilderness & is a multi-zone", "Cautious of his roar and pkers!"),
+    SCORPIA("Scorpia", TeleportType.BOSS_KILLING, new Position(3233, 3944, 0), false, new int[]{-1, 13181}, true, "This teleport is in 53 wilderness & is a multi-zone", "Watch out for pkers!"),
+    VETION("Vet'ion", TeleportType.BOSS_KILLING, new Position(3217, 3781, 0), false, new int[]{13179, 12601, 13180}, true, "This teleport is in 33 wilderness & is a multi-zone", "Watch out for pkers!"),
+    CORPOREAL_BEAST("Corporeal Beast", TeleportType.BOSS_KILLING, new Position(2967, 4383, 2), false, new int[]{}, true, "Having a high combat level is recommended", "Bringing a team is also advisable"),
+    DAGGANOTHS("Dagannoth", TeleportType.BOSS_KILLING, new Position(1912, 4367, 0), false, new int[]{6731, 6737, 6733}, true, "", ""),
+    LIZARD_SHAMAN("Lizard Shaman", TeleportType.BOSS_KILLING, new Position(1454, 3690, 0), false, new int[]{-1, 13576}, true, "Ever wanted to just murder a bunch of lizards?", "Well here is your chance, kill them all!"),
+
+//    CERBERUS("Cerberus", TeleportType.BOSS_KILLING, new Position(2872, 9847, 0), 1500, false, "", ""),
+//    LIZARDMAN_SHAMAN("Lizardman Shaman", TeleportType.BOSS_KILLING, new Position(1495, 3700, 0), 1500, false, "", ""),
+//    GIANT_MOLE("Giant Mole", TeleportType.BOSS_KILLING, new Position(1761, 5186, 0), 1500, false, "", ""),;;
+    ;
 
 //    CERBERUS("Cerberus", TeleportType.CITIES, new Position(2872, 9847, 0), 1500, false, "", ""),
 //    LIZARDMAN_SHAMAN("Lizardman Shaman", TeleportType.CITIES, new Position(1495, 3700, 0), 1500, false, "", ""),

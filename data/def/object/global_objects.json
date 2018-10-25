@@ -19,6 +19,49 @@
       "y": 3822
     }
   },
+  
+  {
+	    "id": 2919,
+	    "name": "Boulder",
+	    "type": 10,
+	    "rotation": "EAST",
+	    "position": {
+	      "x": 2905,
+	      "y": 4825
+	    }
+	  },
+  {
+		    "id": 2919,
+		    "name": "Boulder",
+		    "type": 10,
+		    "rotation": "EAST",
+		    "position": {
+		      "x": 2902,
+		      "y": 4841
+		    }
+		  },
+  
+  {
+			    "id": 2919,
+			    "name": "Boulder",
+			    "type": 10,
+			    "rotation": "EAST",
+			    "position": {
+			      "x": 2913,
+			      "y": 4839
+			    }
+			  },
+  
+  {
+			    "id": 2919,
+			    "name": "Boulder",
+			    "type": 10,
+			    "rotation": "EAST",
+			    "position": {
+			      "x": 2914,
+			      "y": 4837
+			    }
+			  },
   {
     "id": 12260,
     "name": "Portal",

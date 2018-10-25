@@ -132,7 +132,6 @@ public enum TriviaBotData {
 	_144("At what Magic level can you use Vengeance?", "94", "ninety four"),
 	_145("At what Magic level can you use Ice Barrage?", "94", "ninety four"),
 	_146("What is the only skill in Runity you can not train?", "construction"),
-	_147("How many player kills are required to wear the Completionist/Max Cape?", "100", "one hundred"),
 	_148("How many pets are you able to obtain?", "10", "ten"),
 	_150("How many points do you get per game of Pest Control?", "12"),
 	_151("How many marionette colors are there?", "3", "three"),

@@ -85,17 +85,21 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				player.message("You do not have enough inventory space to open this box!");
 				return false;
 			}
+			player.inventory.remove(10028, 1);
+
 			if (Utility.random(1, 5) <= 4) {
 				player.inventory.add(995, 5000000);
 				player.inventory.add(17163, 1);
 				player.inventory.add(17164, 1);
 				player.inventory.add(17165, 1);
 				player.message("@gre@You were lucky and received 5 Million GP! & Raptor Set!");
+				return false;
 			}
 			if (Utility.random(1, 10) <= 2) {
 				player.inventory.add(995, 15000000);
 				player.inventory.add(3273, 1);
 				player.message("@blu@You were lucky and received 15 Million GP! & Ice Katana!");
+				return false;
 			}
 			if (Utility.random(1, 500) <= 2) {
 				player.inventory.add(995, 20000000);
@@ -105,8 +109,8 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				player.inventory.add(15308, 1);
 				player.inventory.add(15301, 1);
 				player.message("@red@You were EXTREMELY lucky and received 20 Million GP!");
+				return false;
 			}
-			player.inventory.remove(10028, 1);
 			player.message("you were unfortunate and did not recieve anything.");
 			break;
 			
@@ -116,17 +120,21 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				player.message("You do not have enough inventory space to open this box!");
 				return false;
 			}
+			player.inventory.remove(12789, 1);
+
 			if (Utility.random(1, 5) <= 4) {
 				player.inventory.add(995, 5000000);
 				player.inventory.add(17163, 1);
 				player.inventory.add(17164, 1);
 				player.inventory.add(17165, 1);
 				player.message("@gre@You were lucky and received 5 Million GP! & Raptor Set!");
+				return false;
 			}
 			if (Utility.random(1, 10) <= 2) {
 				player.inventory.add(995, 15000000);
 				player.inventory.add(3273, 1);
 				player.message("@blu@You were lucky and received 15 Million GP! & Ice Katana!");
+				return false;
 			}
 			if (Utility.random(1, 500) <= 2) {
 				player.inventory.add(995, 20000000);
@@ -136,8 +144,8 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				player.inventory.add(15308, 1);
 				player.inventory.add(15301, 1);
 				player.message("@red@You were EXTREMELY lucky and received 20 Million GP!");
+				return false;
 			}
-			player.inventory.remove(12789, 1);
 			player.message("you were unfortunate and did not recieve anything.");
 			break;
 

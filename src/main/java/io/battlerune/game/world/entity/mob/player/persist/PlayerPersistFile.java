@@ -1867,6 +1867,18 @@ public final class PlayerPersistFile implements PlayerPersistable {
 				}
 			},
 			
+			new PlayerJSONProperty("total-refferals") {
+				@Override
+				void read(Player player, JsonElement property) {
+					player.totalRefferals = property.getAsInt();
+				}
+
+				@Override
+				Object write(Player player) {
+					return player.totalRefferals;
+				}
+			},
+			
 			new PlayerJSONProperty("toolkit") {
 				@Override
 				void read(Player player, JsonElement property) {
@@ -1899,7 +1911,6 @@ public final class PlayerPersistFile implements PlayerPersistable {
 
 				@Override
 				Object write(Player player) {
-					System.out.println("saving as "+player.personalStore.earnings);
 					return player.personalStore.earnings;
 				}
 			},

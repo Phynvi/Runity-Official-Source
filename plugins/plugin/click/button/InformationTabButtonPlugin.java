@@ -18,6 +18,7 @@ import io.battlerune.content.writer.impl.SettingWriter;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.net.packet.out.SendConfig;
 import io.battlerune.net.packet.out.SendForceTab;
 import io.battlerune.net.packet.out.SendURL;
 import plugin.command.impl.player.HomeCommand;
@@ -46,10 +47,20 @@ public class InformationTabButtonPlugin extends PluginContext {
 		case 29440:
 			InterfaceWriter.write(new InformationWriter(player));
 			return true;
-		case 29420:
+		/*case 29420:
 			PlayerGuideHandler guide = new PlayerGuideHandler();
 			guide.open(player);
-			break;
+			break;*/
+			
+		case 29420:
+			player.interfaceManager.setSidebar(Config.CLAN_TAB, 60400);
+			player.send(new SendForceTab(Config.CLAN_TAB));
+			player.send(new SendConfig(980, 4));
+			//player.send(new SendConfig(980, 4));
+			player.message("welcome to the Player Panel");
+			player.message("@red@This contains all the useful panels a player needs!");
+			player.message("@red@Inlcuding the starter zone for New comers!");
+			return true;
 		case 29421:
 		case 29419:
 		case 29410:

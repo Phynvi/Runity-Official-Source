@@ -76,10 +76,10 @@ public class Prestige {
 		player.animate(new Animation(Utility.randomElement(ANIMATIONS)));
 
 		open();
-		player.bankVault.add(1_000_000);
+		boolean random = player.bankVault.add(Utility.random(10000000, 50000000));
 		player.dialogueFactory.sendNpcChat(345,
 				"I have successfully prestiged your <col=255>" + Skill.getName(data.skill) + "</col> skill.",
-				"<col=255>1,000,000</col> coins were added to your vault.", "You now have <col=255>" + prestigePoint
+				"<col=255>" + random + "</col> coins were added to your vault.", "You now have <col=255>" + prestigePoint
 						+ "</col> prestige points and <col=255>" + totalPrestige + "</col> total",
 				"prestiges.").execute();
 	}
@@ -146,6 +146,36 @@ public class Prestige {
 		case 4:
 			return 0xa76ffc;
 		case 5:
+			return 0xf44949;
+		case 6:
+			return 0xf49242;
+		case 7:
+			return 0x42f468;
+		case 8:
+			return 0x42d1f4;
+		case 9:
+			return 0xa76ffc;
+		case 10:
+			return 0xf44949;
+		case 11:
+			return 0xf49242;
+		case 12:
+			return 0x42f468;
+		case 13:
+			return 0x42d1f4;
+		case 14:
+			return 0xa76ffc;
+		case 15:
+			return 0xf44949;
+		case 16:
+			return 0xf49242;
+		case 17:
+			return 0x42f468;
+		case 18:
+			return 0x42d1f4;
+		case 19:
+			return 0xa76ffc;
+		case 20:
 			return 0xf44949;
 		default:
 			return 0xFFFF00;

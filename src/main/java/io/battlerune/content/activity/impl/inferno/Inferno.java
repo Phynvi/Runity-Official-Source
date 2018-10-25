@@ -36,7 +36,7 @@ public class Inferno extends Activity {
 	/** The time it took to complete the activity. */
 	private long time;
 
-	/** The amount of tokkuls the player has acquired. */
+	/** The amount of rewards the player has acquired. */
 	private int rewards;
 
 	/** A set of npcs in this activity. */

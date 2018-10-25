@@ -8,7 +8,14 @@ public enum AnnouncementData {
 	GUIDE("Do ::guide to view a High Quality money making guide! Make Bank!"),
 	UPDATES("Check Runity's Discord #Updates to view our latest Updates!!"),
 	UPDATE_SCHEDULE("Here at Runity we tend to push 2-3 Updates a week!"),
-	
+	EVENTS_MONDAY("Did you know on Mondays, we give all of our players 15% Bonus Drop Rate Boost!"),
+	EVENTS_TUESDAY("Did you know on Tuesdays, we give all of our players Double PK Points!"),
+	EVENTS_WEDNESDAY("Did you know on Wednesdays, we give all of ours players Double AvO Tickets/Rewards!"),
+	EVENTS_THURSDAY("Did you know on Thursdays, we give all of ours players Double AvO Tickets/Rewards!"),
+	EVENTS_FRIDAY("Did you know on Fridays, we give all our players 30% Bonus Drop Rate Boost!"),
+	EVENTS_SATURDAY("Did you know on Saturdays, we give all of our players Double Experience!"),
+	EVENTS_SUNDAY("Did you know on Sundays, we give all of our players Double Experience!"),
+
 
 	
 	

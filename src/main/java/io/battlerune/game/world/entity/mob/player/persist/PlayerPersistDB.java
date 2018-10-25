@@ -143,7 +143,19 @@ public final class PlayerPersistDB implements PlayerPersistable {
 				Object write(Player player) {
 					return player.refferalpoint;
 				}
-			},new PlayerJSONProperty("trivia-points") {
+			},
+			new PlayerJSONProperty("total-refferals") {
+				@Override
+				void read(Player player, JsonElement property) {
+					player.totalRefferals = property.getAsInt();
+				}
+
+				@Override
+				Object write(Player player) {
+					return player.totalRefferals;
+				}
+			},
+			new PlayerJSONProperty("trivia-points") {
 				@Override
 				void read(Player player, JsonElement property) {
 					player.triviaPoints = property.getAsInt();
