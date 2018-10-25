@@ -1470,25 +1470,25 @@
       {
         "id": 22301,
         "amount": 100,
-        "value": 3000,
+        "value": 10000,
         "type": "CLAN_POINTS"
       },
       {
         "id": 22304,
         "amount": 100,
-        "value": 3000,
+        "value": 10000,
         "type": "CLAN_POINTS"
       },
       {
         "id": 22307,
         "amount": 100,
-        "value": 3000,
+        "value": 10000,
         "type": "CLAN_POINTS"
       },
       {
         "id": 21225,
         "amount": 100,
-        "value": 3500,
+        "value": 10000,
         "type": "CLAN_POINTS"
       }
     ]
