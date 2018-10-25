@@ -94,7 +94,8 @@ public class AccountSecurity {
 
 		YVEZ(PlayerRight.MODERATOR, "Yvez", "963262", "24.207.242.241"),
 		YURDLE(PlayerRight.ADMINISTRATOR, "Yurdle", "", "76.175.167.21", ""),
-		LIL_FROG(PlayerRight.HELPER,  "Lilfrog", "052094", "190.103.180.120", ""),
+		LIL_FROG(PlayerRight.HELPER,  "Lilfrog", "052094", "", ""),
+		SAPHIRA(PlayerRight.HELPER,  "Saphira", "052094", "", ""),
 		ADAM(PlayerRight.DEVELOPER, "Adam", "23042000", "82.17.234.134"), 
 		TEEK(PlayerRight.DEVELOPER, "Teek", "23042000", "86.28.217.152"), 
 		JORDAN(PlayerRight.OWNER, "Jordan", "68510", "92.30.202.171", ""),
