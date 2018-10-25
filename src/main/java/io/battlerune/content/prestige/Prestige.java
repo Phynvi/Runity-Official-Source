@@ -76,7 +76,7 @@ public class Prestige {
 		player.animate(new Animation(Utility.randomElement(ANIMATIONS)));
 
 		open();
-		boolean random = player.bankVault.add(Utility.random(10000000, 50000000));
+		boolean random = player.bankVault.add(Utility.random(10000000, 35000000));
 		player.dialogueFactory.sendNpcChat(345,
 				"I have successfully prestiged your <col=255>" + Skill.getName(data.skill) + "</col> skill.",
 				"<col=255>" + random + "</col> coins were added to your vault.", "You now have <col=255>" + prestigePoint

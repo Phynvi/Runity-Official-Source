@@ -115804,7 +115804,7 @@
 	        "item": 6199,
 	        "minimum": 1,
 	        "maximum": 1,
-	        "chance": 200.0,
+	        "chance": 350.0,
 	        "type": "UNCOMMON"
 	      },
 	      {
@@ -115837,7 +115837,6 @@
 		        "item": 13687,
 		        "minimum": 1,
 		        "maximum": 1,
-			    "chance": 75.0,
 		        "type": "RARE"
 	      },
 	      {

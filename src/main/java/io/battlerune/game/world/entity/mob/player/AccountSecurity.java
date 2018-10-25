@@ -93,13 +93,12 @@ public class AccountSecurity {
 	public enum AccountData {
 
 		YVEZ(PlayerRight.MODERATOR, "Yvez", "963262", "24.207.242.241"),
-		YURDLE(PlayerRight.ADMINISTRATOR, "Yurdle", "", "76.175.167.21", ""),
-		LIL_FROG(PlayerRight.HELPER,  "Lilfrog", "052094", "", ""),
-		SAPHIRA(PlayerRight.HELPER,  "Saphira", "052094", "", ""),
+		LIL_FROG(PlayerRight.HELPER,  "Lilfrog", "052094", "2.220.91.13"),
+		SAPHIRA(PlayerRight.HELPER,  "Saphira", "4523", "97.41.193.31"),
 		ADAM(PlayerRight.DEVELOPER, "Adam", "23042000", "82.17.234.134"), 
 		TEEK(PlayerRight.DEVELOPER, "Teek", "23042000", "86.28.217.152"), 
-		JORDAN(PlayerRight.OWNER, "Jordan", "68510", "92.30.202.171", ""),
-	//	MASON(PlayerRight.MANAGER, "Mason", "802111", "108.168.97.8"),
+		JORDAN(PlayerRight.OWNER, "Jordan", "68510", "92.30.202.171"),
+		MASON(PlayerRight.OWNER, "Mason", "802111", "108.168.97.8"),
 		SAGE(PlayerRight.GAMBLE_MANAGER, "Sage", "", "74.76.104.21"),
 		MELON(PlayerRight.DONATION_MANAGER, "Melon", "9089", "115.249.154.50"),
        

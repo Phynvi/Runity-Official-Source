@@ -61,13 +61,11 @@ public class PlayerPanelButtonPlugin extends PluginContext {
 			player.dialogueFactory.sendOption("AFK-Mining", () -> {
 				player.dialogueFactory.onAction(() -> player.move(new Position(2910, 4832, 0)));
 			},  "AFK-Fishing", () -> {
-				player.dialogueFactory.onAction(() -> player.move(new Position(2910, 4832, 0)));
+				player.dialogueFactory.onAction(() -> Teleportation.teleport(player, Config.AFK_FISHING));
 			}, "AFK-Woodcutting", () -> {
-				player.dialogueFactory.onAction(() ->player.move(new Position(2910, 4832, 0)));
+				player.dialogueFactory.onAction(() -> Teleportation.teleport(player, Config.AFK_WOODCUTTING));
 			}, "AFK-Firemaking", () -> {
-				player.dialogueFactory.onAction(() -> player.move(new Position(2910, 4832, 0)));
-			}, "AFK-Thieving", () -> {
-				player.dialogueFactory.onAction(() -> player.move(new Position(2910, 4832, 0)));
+				player.dialogueFactory.onAction(() -> Teleportation.teleport(player, Config.AFK_FIREMAKING));
 			}).execute();
 		}
 		if(button == -5091) {
@@ -81,4 +79,5 @@ public class PlayerPanelButtonPlugin extends PluginContext {
 		}
 		return false;
 	}
+	
 }

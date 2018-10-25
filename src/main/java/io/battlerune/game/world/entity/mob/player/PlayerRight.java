@@ -26,7 +26,7 @@ public enum PlayerRight {
 	CLASSIC("Classic", "B1800A", -1, -1, 4115), 
 	YOUTUBER("Youtuber", "91111A", 11, -1, 4112),
 	IRONMAN("Ironman", "7A6F74", 12, -1, 4112), ULTIMATE_IRONMAN("Ultimate Ironman", "7A6F74", 13, -1, 4113),
-	HARDCORE_IRONMAN("Hardcore Ironman", "7A6F74", 14, -1, 4114), HELPER("Helper", "5C5858", 16, -1, 4115),
+	HARDCORE_IRONMAN("Hardcore Ironman", "7A6F74", 14, -1, 4114), HELPER("Helper", "C900FF", 16, -1, 4115),
 //GRAPHIC("Graphic", "CE795A", 17, -1, 4112),
 	ONYX_RANK("Bug Tester", "E30b1A", 3, -1, 4117),
 	GAMBLE_MANAGER("Gambling Manager", "7A6F74", 15, -1, 4117),

@@ -21,7 +21,7 @@ import io.battlerune.net.packet.out.SendString;
 /**
  * Handles the execution of a quest.
  *
- * @author Daniel
+ * @author Adam_#6723
  */
 public abstract class Quest extends Dialogue implements InteractionEventListener {
 
