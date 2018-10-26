@@ -121,14 +121,12 @@ public class Vorkath extends MultiStrategy {
 						if (attacker == null || attacker.isDead() || !Area.inVorkath(attacker)) {
 							return;
 						}
-						System.out.println("1");
 						Position position = boundaries.get(index);
 						projectile.send(attacker, position);
 						World.schedule(AcidTask(defender, position));
 					}
 
 					final Projectile projectile2 = new Projectile(1482, 15, 95, 26, 25);
-					System.out.println("2");
 
 					World.schedule(2, () -> World.schedule(DragonFire(attacker, defender, projectile2)));
 					if (attacker == null || attacker.isDead() || !Area.inVorkath(attacker)) {
@@ -186,7 +184,7 @@ public class Vorkath extends MultiStrategy {
 					}
 
 					if (defender.getPosition().equals(position) && Area.inVorkath(defender)) {
-						defender.writeDamage(new Hit(Utility.random(1, 10)));
+						defender.writeDamage(new Hit(Utility.random(1, 3)));
 					}
 				}
 			};
@@ -214,7 +212,7 @@ public class Vorkath extends MultiStrategy {
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			return new CombatHit[] { nextRangedHit(attacker, defender, 32) };
+			return new CombatHit[] { nextRangedHit(attacker, defender, 23) };
 		}
 	}
 
@@ -231,7 +229,7 @@ public class Vorkath extends MultiStrategy {
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			return new CombatHit[] { nextRangedHit(attacker, defender, 32) };
+			return new CombatHit[] { nextRangedHit(attacker, defender, 23) };
 		}
 	}
 
@@ -272,14 +270,14 @@ public class Vorkath extends MultiStrategy {
 				zombie.register();
 				zombie.walkTo(defender, () -> {
 					World.sendGraphic(new Graphic(1460, true), zombie.getPosition(), defender.instance);
-					defender.damage(new Hit(60 * zombie.getCurrentHealth() / zombie.getMaximumHealth()));
+					defender.damage(new Hit(30 * zombie.getCurrentHealth() / zombie.getMaximumHealth()));
 					// defender.locking.unlock();
 					// defender.getPlayer().send(new SendWidget(SendWidget.WidgetType.FROZEN, 0));
 					World.schedule(new CeillingCollapseTask(defender.getPlayer()));
 					for (int i = 0; i < 5; i++) {
 						defender.graphic(60);
 						defender.speak("Ouch!");
-						defender.damage(new Hit(Utility.random(5, 8)));
+						defender.damage(new Hit(Utility.random(2, 4)));
 						defender.getPlayer().message("Some rocks fall from the ceiling and hit you.");
 					}
 					zombie.unregister();
@@ -317,7 +315,7 @@ public class Vorkath extends MultiStrategy {
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			return new CombatHit[] { CombatUtil.generateDragonfire(attacker, defender, 85, true) };
+			return new CombatHit[] { CombatUtil.generateDragonfire(attacker, defender, 40, true) };
 		}
 	}
 
@@ -346,7 +344,7 @@ public class Vorkath extends MultiStrategy {
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			CombatHit combatHit = CombatUtil.generateDragonfire(attacker, defender, 75, true);
+			CombatHit combatHit = CombatUtil.generateDragonfire(attacker, defender, 35, true);
 			// combatHit.setHitsplat(Hitsplat.VENOM);
 			return new CombatHit[] { combatHit };
 		}
@@ -378,7 +376,7 @@ public class Vorkath extends MultiStrategy {
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			return new CombatHit[] { CombatUtil.generateDragonfire(attacker, defender, 80, true) };
+			return new CombatHit[] { CombatUtil.generateDragonfire(attacker, defender, 40, true) };
 		}
 	}
 
@@ -416,11 +414,11 @@ public class Vorkath extends MultiStrategy {
 			hit.setAccurate(false);
 
 			if (defender.getPosition().equals(position)) {
-				hit.setAs(CombatUtil.generateDragonfire(attacker, defender, 150, true));
+				hit.setAs(CombatUtil.generateDragonfire(attacker, defender, 60, true));
 				hit.setAccurate(true);
 			} else if (Utility.withinOctal(defender.getPosition(), defender.width(), defender.length(), position, 1, 1,
 					1)) {
-				hit.setAs(CombatUtil.generateDragonfire(attacker, defender, 150, true));
+				hit.setAs(CombatUtil.generateDragonfire(attacker, defender, 50, true));
 				hit.modifyDamage(damage -> damage / 2);
 				hit.setAccurate(true);
 			}

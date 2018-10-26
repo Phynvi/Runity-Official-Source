@@ -195,23 +195,23 @@ public class Slayer {
 								"For this monumental achievement, they have received " + rewardPts + " slayer points.");
 						player.message("Well done.");
 					} else if (totalCompleted % 150 == 0) {
-						rewardPts *= 7;
+						rewardPts *= 9;
 						player.message("Damn dude. 150 in a row. Here's " + rewardPts + " slayer points.");
 					} else if (totalCompleted % 50 == 0) {
-						rewardPts *= 5;
+						rewardPts *= 7;
 						player.message("Congratulations, you have completed 50 tasks in a row! You have earned "
 								+ rewardPts + " slayer points!");
 					} else if (totalCompleted % 15 == 0) {
-						rewardPts *= 3;
+						rewardPts *= 5;
 						player.message("Congratulations, you have completed 15 tasks in a row! You have earned "
 								+ rewardPts + " slayer points!");
 					} else if (totalCompleted % 5 == 0) {
-						rewardPts *= 2;
+						rewardPts *= 4;
 						player.message("Congratulations, you have completed 5 tasks in a row! You have earned "
 								+ rewardPts + " slayer points!");
 					} else {
 						if (PlayerRight.isDonator(player)) {
-							rewardPts *= 2;
+							rewardPts *= 3;
 						}
 						player.message("Congratulations, you have completed your assigned task! You have earned "
 								+ rewardPts + " slayer points!");
@@ -288,9 +288,11 @@ public class Slayer {
 			new StoreItem(10551, 1, 800), new StoreItem(13576, 1, 850),
 
 			new StoreItem(11941, 1, 950), new StoreItem(12821, 1, 1050),
-			new StoreItem(14589, 1, 1500),
-			new StoreItem(21223, 1, 1500),new StoreItem(3273, 1, 7000),
-			new StoreItem(3274, 1, 7500)
+			new StoreItem(13703, 1, 1500),
+			new StoreItem(13704, 1, 1500),
+			new StoreItem(13705, 1, 1500),
+			new StoreItem(21225, 1, 1500),
+			new StoreItem(11642, 1, 4500),
 
 
 	};

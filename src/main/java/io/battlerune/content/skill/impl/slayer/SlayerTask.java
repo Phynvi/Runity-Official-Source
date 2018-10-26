@@ -16,6 +16,31 @@ import io.battlerune.util.Utility;
  * @author Adam_#6723
  */
 public enum SlayerTask implements TaskInterface<Player> {
+	
+	
+	PENG("Penguin", 1, 300, TaskDifficulty.EASY, new Position(1, 1), "::train", 2063) {
+		@Override
+		public boolean canAssign(Player player) {
+			return true;
+		}
+
+		@Override
+		public boolean canAttack(Player player) {
+			return true;
+		}
+	},
+	
+	BIG_PENG("Big Penguin", 1, 300, TaskDifficulty.MEDIUM, new Position(1, 1), "::train", 1203) {
+		@Override
+		public boolean canAssign(Player player) {
+			return true;
+		}
+
+		@Override
+		public boolean canAttack(Player player) {
+			return true;
+		}
+	},
 
 	ROCK_CRAB("Rock crab", 1, 300, TaskDifficulty.EASY, new Position(1, 1), "Camelot", 2261, 5940, 100, 102) {
 		@Override
@@ -621,13 +646,13 @@ public enum SlayerTask implements TaskInterface<Player> {
 	public static int getPoints(TaskDifficulty difficulty) {
 		switch (difficulty) {
 		case EASY:
-			return 15;
-		case MEDIUM:
 			return 20;
-		case HARD:
+		case MEDIUM:
 			return 30;
-		case BOSS:
+		case HARD:
 			return 35;
+		case BOSS:
+			return 45;
 		}
 		return 0;
 	}

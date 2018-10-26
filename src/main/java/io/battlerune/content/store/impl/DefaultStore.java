@@ -180,7 +180,7 @@ public final class DefaultStore extends Store {
 
 			if (item instanceof StoreItem) {
 				StoreItem storeItem = (StoreItem) items[i];
-				System.out.println("refreshing... here");
+				//System.out.println("refreshing... here");
 				player.send(new SendString(storeItem.getShopValue() + "," + storeItem.getShopCurrency(this).getId(),
 						40052 + i));
 				lastItem = i;

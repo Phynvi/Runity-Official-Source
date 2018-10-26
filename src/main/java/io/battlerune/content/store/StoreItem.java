@@ -54,9 +54,9 @@ public final class StoreItem extends Item {
 		this(id, amount, OptionalInt.empty(), Optional.empty());
 	}
 
-	public int getShopValue() {
-		return this.value.getAsInt();
-	}
+    public int getShopValue() {
+        return value.orElse((int)((double)getValue() * 1.20));
+    }
 
 	public void setShopValue(int value) {
 		this.price = value;
