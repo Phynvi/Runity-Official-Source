@@ -81,7 +81,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 			/* Grand exchange. */
 		case 26044:
-			player.message("Personal stores are currently undergoing testing!" + "You've been warned.");
+			player.message("Personal stores are currently undergoing testing!" + " You've been warned.");
+			player.message("There is a slight visual bug (tends to say 'FREE') with purchasing from POS");
+			player.message("just make sure to click on the item to find its actual Price");
+
 			if (PlayerRight.isIronman(player)) {
 				player.send(new SendMessage("As an iron man you may not access player owned stores!"));
 				return true;

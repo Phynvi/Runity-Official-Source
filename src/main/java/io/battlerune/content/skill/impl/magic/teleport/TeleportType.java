@@ -26,5 +26,4 @@ public enum TeleportType {
 
 	/** CITIES TELEPORT **/
 
-	CITIES,
 }

@@ -53,7 +53,7 @@ public class TeleportButtonPlugin extends PluginContext {
 			return true;
 		case 1174:
 		case -7510:
-			TeleportHandler.open(player, TeleportType.CITIES);
+			TeleportHandler.open(player, TeleportType.BOSS_KILLING);
 			return true;
 		case 13061:
 			player.send(new SendForceTab(Config.MUSIC_TAB));
