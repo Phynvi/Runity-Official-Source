@@ -20,7 +20,7 @@ import io.battlerune.util.Utility;
 /**
  * Handles the slayer skill.
  *
- * @author Daniel
+ * @author Adam_#6723
  */
 public class Slayer {
 	/** The player instance. */
@@ -277,22 +277,21 @@ public class Slayer {
 	}
 
 	private final static StoreItem[] STORE_ITEMS = { new StoreItem(4155, 1, 0), new StoreItem(4166, 1, 5),
-			new StoreItem(4168, 1, 5), new StoreItem(4164, 1, 5), new StoreItem(4551, 1, 5),
-			new StoreItem(11738, 1, 25), new StoreItem(11866, 1, 75), new StoreItem(11739, 1, 500),
-			new StoreItem(8901, 1, 500), new StoreItem(13239, 1, 650),
+			new StoreItem(4168, 1, 10), new StoreItem(4164, 1, 10), new StoreItem(4551, 1, 10),
+			new StoreItem(11738, 1, 50), new StoreItem(11866, 1, 150), new StoreItem(11739, 1, 750),
+			new StoreItem(8901, 1, 750), new StoreItem(13239, 1, 700),
 
-			new StoreItem(19647, 1, 750), new StoreItem(19643, 1, 750),
+			new StoreItem(19647, 1, 1000), new StoreItem(19643, 1, 1000),
 
-			new StoreItem(19639, 1, 800),
+			new StoreItem(19639, 1, 1200),
 
-			new StoreItem(10551, 1, 800), new StoreItem(13576, 1, 850),
+			new StoreItem(10551, 1, 1200), new StoreItem(13576, 1, 1300),
 
-			new StoreItem(11941, 1, 950), new StoreItem(12821, 1, 1050),
-			new StoreItem(13703, 1, 1500),
-			new StoreItem(13704, 1, 1500),
-			new StoreItem(13705, 1, 1500),
-			new StoreItem(21225, 1, 1500),
-			new StoreItem(11642, 1, 4500),
+			new StoreItem(11941, 1, 1800), new StoreItem(12821, 1, 2100),
+			new StoreItem(13703, 1, 3500),
+			new StoreItem(13704, 1, 3500),
+			new StoreItem(13705, 1, 3500),
+			new StoreItem(21225, 1, 4000),
 
 
 	};

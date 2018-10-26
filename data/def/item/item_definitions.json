@@ -106993,7 +106993,7 @@
   {
     "id": 13190,
     "name": "$10 Donator Bond",
-    "tradeable": true,
+    "tradeable": false,
     "destroy-message": "This object cannot be dropped or destroyed.",
     "low-alch": 800000,
     "high-alch": 1200000,
