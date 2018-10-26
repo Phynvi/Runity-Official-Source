@@ -158,7 +158,7 @@ public class PlayerAssistant {
 		player.send(
 				new SendString(PlayerRight.isManagement(player) ? "Open management panel" : "www.runity.io", 29404));
 		player.send(new SendTooltip(
-				PlayerRight.isManagement(player) ? "Open management panel" : "Open website www.runity.io", 29404));
+				PlayerRight.isPriviledged(player) ? "Open management panel" : "Open website www.runity.io", 29404));
 		player.send(new SendSpecialAmount());
 		InterfaceWriter.write(new InformationWriter(player));
 	}

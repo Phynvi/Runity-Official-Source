@@ -127365,15 +127365,15 @@
 				"attack-crush": 0,
 				"attack-magic": -15,
 				"attack-ranged": -10,
-				"defence-stab": 88,
-				"defence-slash": 83,
-				"defence-crush": 95,
-				"defence-magic": 90,
+				"defence-stab": 80,
+				"defence-slash": 80,
+				"defence-crush": 90,
+				"defence-magic": 75,
 				"defence-ranged": -6,
-				"bonus-strength": 15,  
+				"bonus-strength": 10,  
 				"bonus-prayer": 0,
 				"bonus-magic": 0,
-				"bonus-strength": 35,  
+				"bonus-strength": 27,  
 				"bonus-prayer": 0,
 				"bonus-magic": 0 
 				 
@@ -127394,12 +127394,12 @@
 				"attack-crush":0,
 				"attack-magic": -3,
 				"attack-ranged": -10,
-				"defence-stab": 85,
-				"defence-slash": 80,
-				"defence-crush": 88,
-				"defence-magic": 110,
+				"defence-stab": 80,
+				"defence-slash": 75,
+				"defence-crush": 80,
+				"defence-magic": 100,
 				"defence-ranged": -6,
-				"bonus-strength": 60,  
+				"bonus-strength": 47,  
 				"bonus-prayer": 0,
 				"bonus-magic": 0 
 
@@ -127424,7 +127424,7 @@
 				"defence-crush": 66,
 				"defence-magic": -4,
 				"defence-ranged": 93,
-				"bonus-strength": 55,  
+				"bonus-strength": 43,  
 				"bonus-prayer": 0,
 				"bonus-magic": 0 
 				  

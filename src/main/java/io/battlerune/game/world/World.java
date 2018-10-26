@@ -545,7 +545,7 @@ public final class World {
 		 * eachother, 10 extra is easy 20 33 35 58 //Slightly larger server, payoff at
 		 * 25+ fake 50 85 80 137 100 173 //Big fakes 150 263 200 361
 		 */
-		int p = getPlayers().size();
+		int p = getPlayers().size() + 5 - getBotCount();
 		return (int) (1.5 * Math.sqrt(p) + Math.pow(p, 1.1));
 	}
 
