@@ -287,12 +287,12 @@ public class Slayer {
 
 			new StoreItem(10551, 1, 1200), new StoreItem(13576, 1, 1300),
 
-			new StoreItem(11941, 1, 1800), new StoreItem(12821, 1, 2100),
+			new StoreItem(11941, 1, 1800), 
+			new StoreItem(12821, 1, 2100),
 			new StoreItem(13703, 1, 3500),
 			new StoreItem(13704, 1, 3500),
 			new StoreItem(13705, 1, 3500),
 			new StoreItem(21225, 1, 4000),
-
 
 	};
 

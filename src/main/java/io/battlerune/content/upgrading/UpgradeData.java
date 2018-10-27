@@ -10,7 +10,7 @@ import io.battlerune.game.world.items.Item;
  */
 public enum UpgradeData {
 
-	LIME_WHIP(new Item(21225, 1), new Item(21292, 1), new Item(21820, 500), 0.10),
+	LIME_WHIP(new Item(21225, 1), new Item(21292, 1), new Item(21820, 500), 0.25),
 	ICE_KATANA(new Item(3273, 1), new Item(21294, 1), new Item(21820, 200), 0.35),
 	SAMURAI_HELM(new Item(17163, 1), new Item(17166, 1), new Item(21820, 150), 0.35),
 	SAMURAI_PLATE(new Item(17164, 1), new Item(17167, 1), new Item(21820, 150), 0.35),

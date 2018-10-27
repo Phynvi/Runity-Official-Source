@@ -6,6 +6,7 @@ import java.util.List;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.game.world.entity.mob.player.exchange.trade.TradeSession;
 import io.battlerune.net.packet.out.SendConfig;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendScrollbar;
@@ -129,11 +130,12 @@ public class StaffPanel {
 					nulled ? ""
 							: "Networth: <col=FFB83F>" + Utility.formatDigits(other.playerAssistant.networth()) + "gp",
 					37005));
-			player.send(new SendString(nulled ? "" : "Empty", 37006));
-			player.send(
-					new SendString(nulled ? "" : "Combat Level: <col=FFB83F>" + other.skills.getCombatLevel(), 37007));
+			player.send(new SendString(nulled ? "" : "Donation Points :" + Utility.formatDigits(other.donation.getCredits()), 37006));
 			player.send(new SendString(
-					nulled ? "" : "Total Level: <col=FFB83F>" + Utility.formatDigits(other.skills.getTotalLevel()),
+					nulled ? "" : "Refferals Points: <col=FFB83F>" + Utility.formatDigits(other.getReferralPoints()),
+					37007));
+			player.send(new SendString(
+					nulled ? "" : "Total Refferals: <col=FFB83F>" + Utility.formatDigits(other.getTotalRefferals()),
 					37008));
 			player.send(new SendString(nulled ? "" : other.created, 36716));
 			return;

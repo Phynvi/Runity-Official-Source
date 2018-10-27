@@ -36,6 +36,7 @@ import io.battlerune.game.world.entity.combat.strategy.player.PlayerMagicStrateg
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerMeleeStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerRangedStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.CrypticSword;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.DarkKarthCrossBow;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.DeathKatanaStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.DragonHunterCrossbowStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.FireyBowStrategy;
@@ -245,6 +246,9 @@ public class PlayerAssistant {
 			}
 			if (item.getId() == 21012) {
 				return DragonHunterCrossbowStrategy.get();
+			}
+			if(item.getId() == 13712) {
+				return DarkKarthCrossBow.get();
 			}
 			if (item.getId() == 4734) {
 				return KarilsStrategy.get();

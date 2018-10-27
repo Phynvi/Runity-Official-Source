@@ -18,6 +18,7 @@ import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendMessage;
+import io.battlerune.util.Utility;
 
 /**
  * Handles a player teleporting.
@@ -70,13 +71,12 @@ public class Teleportation {
 					.execute();
 			return false;
 		}
+        boolean wilderness = Area.inWilderness(position);
 
-		/*
-		 * if (wilderness && player.playTime < 3000) { player.
-		 * message("You cannot enter the wilderness until you have 30 minutes of playtime. "
-		 * + Utility.getTime((3000 - player.playTime) * 3 / 5) + " minutes remaining.");
-		 * return false; }
-		 */
+        if (wilderness && player.playTime < 3000) {
+            player.message("You cannot enter the wilderness until you have 30 minutes of playtime. " + Utility.getTime((3000 - player.playTime) * 3 / 5) + " minutes remaining.");
+            return false;
+        }
 
 		TeleportationData type = TeleportationData.MODERN;
 

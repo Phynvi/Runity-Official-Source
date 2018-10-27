@@ -128481,9 +128481,9 @@
 		    "equipment-slot": "WEAPON",
 		    "weapon-interface": "LONGBOW",
 		    "req-ranged": 99,
-		    "attack-ranged": 175,
-		    "ranged-strength": 105,
-		    "bonus-prayer": 19,
+		    "attack-ranged": 192,
+		    "ranged-strength": 117,
+		    "bonus-prayer": 21,
 		    "defence-ranged": 75,
 		    "ranged-type": "SHOT",
 		    "allowed": [

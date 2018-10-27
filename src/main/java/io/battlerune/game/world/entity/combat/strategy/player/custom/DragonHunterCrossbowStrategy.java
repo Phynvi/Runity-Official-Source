@@ -27,12 +27,7 @@ public class DragonHunterCrossbowStrategy extends PlayerRangedStrategy {
 
 	@Override
 	public int getAttackDelay(Player attacker, Mob defender, FightType fightType) {
-		if (attacker.equipment.contains(10519) || attacker.equipment.contains(10518)) {
-			return 2;
-		} else {
-			return 3;
-
-		}
+			return 4;
 	}
 
 	public static DragonHunterCrossbowStrategy get() {

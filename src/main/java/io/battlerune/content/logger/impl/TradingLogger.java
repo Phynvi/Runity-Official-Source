@@ -37,7 +37,6 @@ public class TradingLogger implements LoggerListener {
 			
 			object.append("["+date+"] - " + log);
 			object.println();
-			
 			object.flush();
 			object.close();
 		} catch (Exception e) {

@@ -1379,12 +1379,13 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 		/* Wilderness ditch. */
 		case 23271: {
-			/*
-			 * if (player.playTime < 3000) { player.
-			 * message("You cannot enter the wilderness until you have 30 minutes of playtime. "
-			 * + Utility.getTime((3000 - player.playTime) * 3 / 5) + " minutes remaining.");
-			 * return true; }
-			 */
+			
+			  if (player.playTime < 3000) { 
+				  player.message("You cannot enter the wilderness until you have 30 minutes of playtime. "
+			  + Utility.getTime((3000 - player.playTime) * 3 / 5) + " minutes remaining.");
+			  return true;
+			  }
+			 
 			if (player.pet != null) {
 				player.dialogueFactory
 						.sendNpcChat(player.pet.id, "I'm sorry #name,", "but I can not enter the wilderness with you!")

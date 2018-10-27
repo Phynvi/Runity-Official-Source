@@ -172,8 +172,7 @@ public final class TradeSession extends ExchangeSession {
 
 				forEach(p -> p.send(new SendMessage("Trade successfully completed with " + this.getOther(p).getName(),
 						MessageColor.RED)));
-				World.sendStaffMessageWithoutHelper("[TRADING] " + player.getName() + " " + 
-						this.getOther(other).getName());
+				World.sendStaffMessage("Trading " + player.getUsername() + " [ITEMS] " + player_items + " Other " + other.getUsername() + " [ITEMS] " + other_items);
 				finalize(ExchangeCompletionType.DISPOSE);
 			}
 			break;

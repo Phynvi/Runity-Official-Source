@@ -40,15 +40,10 @@ import io.battlerune.util.Utility;
 public class Porazdir extends MultiStrategy {
 	private static Magic MAGIC = new Magic();
 	private static Melee MELEE = new Melee();
-	private static LightingRain LIGHTNING_RAIN = new LightingRain();
-	private static TeleGrab TELE_GRAB = new TeleGrab();
 
-	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(NpcMeleeStrategy.get(), MAGIC,
-			TELE_GRAB, LIGHTNING_RAIN);
-	private static final CombatStrategy<Npc>[] MAGIC_STRATEGIES = createStrategyArray(MAGIC, MAGIC, MAGIC, TELE_GRAB,
-			LIGHTNING_RAIN);
-	private static final CombatStrategy<Npc>[] NON_MELEE = createStrategyArray(MAGIC, MELEE, MELEE, MAGIC, MAGIC,
-			TELE_GRAB, LIGHTNING_RAIN);
+	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(NpcMeleeStrategy.get(), MAGIC);
+	private static final CombatStrategy<Npc>[] MAGIC_STRATEGIES = createStrategyArray(MAGIC, MAGIC, MAGIC);
+	private static final CombatStrategy<Npc>[] NON_MELEE = createStrategyArray(MAGIC, MELEE, MELEE, MAGIC, MAGIC);
 
 	/** Constructs a new <code>Porazdir</code>. */
 	public Porazdir() {
@@ -196,92 +191,4 @@ public class Porazdir extends MultiStrategy {
 		}
 	}
 
-	private static class TeleGrab extends NpcMagicStrategy {
-		TeleGrab() {
-			super(CombatProjectile.getDefinition("EMPTY"));
-		}
-
-		@Override
-		public void hit(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void attack(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			CombatHit hit = nextMagicHit(attacker, defender, 38);
-			hit.setAccurate(false);
-			return new CombatHit[] { hit };
-		}
-	}
-
-	private static class LightingRain extends NpcMagicStrategy {
-		LightingRain() {
-			super(CombatProjectile.getDefinition("Vorkath Frozen Special"));
-		}
-
-		@Override
-		public void hit(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void attack(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void start(Npc attacker, Mob defender, Hit[] hits) {
-			attacker.animate(new Animation(7842, UpdatePriority.VERY_HIGH));
-			World.sendProjectile(attacker, defender, new Projectile(1382, 46, 80, 43, 31));
-			World.schedule(1, () -> {
-				if (defender.isPlayer()) {
-					Position current = defender.getPosition();
-					Position best = Utility.findBestInside(defender, attacker);
-					int dx = current.getX() - best.getX();
-					int dy = current.getY() - best.getY();
-
-					Direction opposite = Direction.getFollowDirection(attacker.getPosition(), defender.getPosition());
-//                    for (int x = 1; x <= 2; x++) {
-					int y = dy / (dx == 0 ? dy : dx);
-					Position destination = current.transform(dx, y);
-					if (SimplePathChecker.checkLine(defender, destination))
-						current = destination;
-//                    }
-					defender.damage(new Hit(Utility.random(1, 3)));
-					defender.interact(attacker);
-					defender.getPlayer().send(new SendMessage("Porazdir fury throws you backwards."));
-
-					Position offset = new Position(current.getX() - defender.getX(), current.getY() - defender.getY());
-					ForceMovement movement = new ForceMovement(defender.getPosition(), offset, 33, 60,
-							Direction.getOppositeDirection(opposite));
-
-					int anim = defender.mobAnimation.getWalk();
-					World.schedule(new ForceMovementTask(defender, 3, 0, movement,
-							new Animation(3170, UpdatePriority.VERY_HIGH)) {
-						@Override
-						protected void onSchedule() {
-							super.onSchedule();
-							defender.mobAnimation.setWalk(3170);
-							defender.locking.lock();
-						}
-
-						@Override
-						protected void onCancel(boolean logout) {
-							super.onCancel(logout);
-							defender.mobAnimation.setWalk(anim);
-							defender.locking.unlock();
-						}
-					});
-				}
-			});
-		}
-
-		@Override
-		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			CombatHit hit = nextMagicHit(attacker, defender, 38);
-			hit.setAccurate(false);
-			return new CombatHit[] { hit };
-		}
-	}
 }

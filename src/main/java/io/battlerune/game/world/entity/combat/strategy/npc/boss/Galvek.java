@@ -331,7 +331,7 @@ public class Galvek extends MultiStrategy {
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			return new CombatHit[] { CombatUtil.generateDragonfire(attacker, defender, 85, true) };
+			return new CombatHit[] { CombatUtil.generateDragonfire(attacker, defender, 55, true) };
 		}
 	}
 
@@ -360,7 +360,7 @@ public class Galvek extends MultiStrategy {
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			CombatHit combatHit = CombatUtil.generateDragonfire(attacker, defender, 75, true);
+			CombatHit combatHit = CombatUtil.generateDragonfire(attacker, defender, 65, true);
 			// combatHit.setHitsplat(Hitsplat.VENOM);
 			return new CombatHit[] { combatHit };
 		}
@@ -392,7 +392,7 @@ public class Galvek extends MultiStrategy {
 
 		@Override
 		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			return new CombatHit[] { CombatUtil.generateDragonfire(attacker, defender, 80, true) };
+			return new CombatHit[] { CombatUtil.generateDragonfire(attacker, defender, 50, true) };
 		}
 	}
 
@@ -430,11 +430,11 @@ public class Galvek extends MultiStrategy {
 			hit.setAccurate(false);
 
 			if (defender.getPosition().equals(position)) {
-				hit.setAs(CombatUtil.generateDragonfire(attacker, defender, 150, true));
+				hit.setAs(CombatUtil.generateDragonfire(attacker, defender, 50, true));
 				hit.setAccurate(true);
 			} else if (Utility.withinOctal(defender.getPosition(), defender.width(), defender.length(), position, 1, 1,
 					1)) {
-				hit.setAs(CombatUtil.generateDragonfire(attacker, defender, 150, true));
+				hit.setAs(CombatUtil.generateDragonfire(attacker, defender, 50, true));
 				hit.modifyDamage(damage -> damage / 2);
 				hit.setAccurate(true);
 			}

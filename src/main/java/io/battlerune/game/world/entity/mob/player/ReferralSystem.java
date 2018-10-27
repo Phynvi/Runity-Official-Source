@@ -44,23 +44,15 @@ public class ReferralSystem {
 				return;
 			}
 		} else {
-	/*	    if (other.lastHost.equalsIgnoreCase(refer.lastHost) || refer.lastHost.equalsIgnoreCase(other.lastHost)) {
-				other.message("<col=FF0019>You were not rewarded since you share the same IP Address.");
-				refer.message("<col=FF0019>You were not rewarded since you share the same IP Address.");
-				return;
-			}*/
 		    other.totalRefferals += TOTAL_REFFERALS;
 			other.refferalpoint += TOTAL_POINTS;
 			other.sendMessage("You have been given " + TOTAL_POINTS + " for refering " + refer.getUsername() + ".");
-			other.donation.setCredits(other.donation.getCredits() + 10);
 			other.inventory.add(290, 1);
-			other.sendMessage("You have been given 10 Donation Credits!");
-			other.sendMessage("You have also been given an Inferno Box for reffering someone!");
+			other.sendMessage("You have also been given an AvO Box for reffering someone!");
 		}
 		refer.sendMessage("Thank you for setting a referal!");
 		refer.refferalpoint += TOTAL_POINTS;
 		refer.inventory.add(290, 1);
-		refer.inventory.add(13190, 1);
 		refer.donation.setCredits(100);
 		refer.donation.setSpent(10);
 		refer.sendMessage("You have recieved Inferno Box by Joining via an existing member on Runity!");

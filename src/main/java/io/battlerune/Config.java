@@ -485,6 +485,7 @@ public final class Config {
 			new Item(34, 1),
 			new Item(79, 1),
 			new Item(80, 1),
+			new Item(20151, 1),
 			
 			};
 	
