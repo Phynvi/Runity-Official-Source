@@ -36,6 +36,7 @@ import io.battlerune.game.world.entity.combat.strategy.player.PlayerMagicStrateg
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerMeleeStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.PlayerRangedStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.CrypticSword;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.DarkKarthCrossBow;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.DeathKatanaStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.DragonHunterCrossbowStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.FireyBowStrategy;
@@ -158,7 +159,7 @@ public class PlayerAssistant {
 		player.send(
 				new SendString(PlayerRight.isManagement(player) ? "Open management panel" : "www.runity.io", 29404));
 		player.send(new SendTooltip(
-				PlayerRight.isManagement(player) ? "Open management panel" : "Open website www.runity.io", 29404));
+				PlayerRight.isPriviledged(player) ? "Open management panel" : "Open website www.runity.io", 29404));
 		player.send(new SendSpecialAmount());
 		InterfaceWriter.write(new InformationWriter(player));
 	}
@@ -245,6 +246,9 @@ public class PlayerAssistant {
 			}
 			if (item.getId() == 21012) {
 				return DragonHunterCrossbowStrategy.get();
+			}
+			if(item.getId() == 13712) {
+				return DarkKarthCrossBow.get();
 			}
 			if (item.getId() == 4734) {
 				return KarilsStrategy.get();

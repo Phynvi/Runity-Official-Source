@@ -21,6 +21,17 @@
   },
   
   {
+	    "id": 13617,
+	    "name": "Portal",
+	    "type": 10,
+	    "rotation": "WEST",
+	    "position": {
+	      "x": 3157,
+	      "y": 4951
+	    }
+	  },
+  
+  {
 	    "id": 2919,
 	    "name": "Boulder",
 	    "type": 10,

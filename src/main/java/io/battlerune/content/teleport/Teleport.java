@@ -129,6 +129,13 @@ public enum Teleport {
     DAGGANOTHS("Dagannoth", TeleportType.BOSS_KILLING, new Position(1912, 4367, 0), false, new int[]{6731, 6737, 6733}, true, "", ""),
     LIZARD_SHAMAN("Lizard Shaman", TeleportType.BOSS_KILLING, new Position(1454, 3690, 0), false, new int[]{-1, 13576}, true, "Ever wanted to just murder a bunch of lizards?", "Well here is your chance, kill them all!"),
 
+    ICE_DEMON("Ice Demon", TeleportType.BOSS_KILLING, new Position(2525, 4656, 0), false, new int[]{11943, 11941, 13724}, true,
+    		"Take on a demon made of ice?", "...best of luck my dood."),
+    PORAZDIR("Porazdir", TeleportType.BOSS_KILLING, new Position(3230, 10198, 0), false, new int[]{12073, 22111, 21225}, true, "Zamorak's finest beast.", "He's dangerous..."),
+    REVS("Revenant Caves", TeleportType.BOSS_KILLING, new Position(3126, 3784, 0), false, new int[]{20035, 20038, 20044}, true, "They have no souls", "the undead is rising again"),
+    VORKATH("Vorkath", TeleportType.BOSS_KILLING, new Position(2271, 4046, 0), false, new int[]{21992, 12073, 11286}, true, "a Demonic dragon", "Scary af"),
+    TARN("Mutant Tarn", TeleportType.BOSS_KILLING, new Position(3037, 5346, 0), false, new int[]{13190, 13814, 20151}, true, "Ever wanted to just murder a bunch of mutant?", "Well here is your chance, kill them all!"),
+
 //    CERBERUS("Cerberus", TeleportType.BOSS_KILLING, new Position(2872, 9847, 0), 1500, false, "", ""),
 //    LIZARDMAN_SHAMAN("Lizardman Shaman", TeleportType.BOSS_KILLING, new Position(1495, 3700, 0), 1500, false, "", ""),
 //    GIANT_MOLE("Giant Mole", TeleportType.BOSS_KILLING, new Position(1761, 5186, 0), 1500, false, "", ""),;;

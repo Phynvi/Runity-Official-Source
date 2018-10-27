@@ -13,7 +13,7 @@ import io.battlerune.net.packet.out.SendTooltip;
 /**
  * Class handles writing on the quest tab itemcontainer.
  * 
- * @author Daniel
+ * @author Adam_#6723
  */
 public class QuestWriter extends InterfaceWriter {
 

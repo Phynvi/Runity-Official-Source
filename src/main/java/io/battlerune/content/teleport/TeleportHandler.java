@@ -31,7 +31,7 @@ public class TeleportHandler {
 
 	/** Holds the teleport titles names. */
 	private static final String[] TITLES = { "Favorites", "Minigames", "Skilling", "Monster Killing", "Player Killing",
-			"Cities" };
+			"Bosses" };
 
 	/** Opens the teleport itemcontainer. */
 	public static void open(Player player) {

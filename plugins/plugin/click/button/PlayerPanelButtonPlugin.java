@@ -39,6 +39,10 @@ public class PlayerPanelButtonPlugin extends PluginContext {
 			player.send(new SendMessage("You can't teleport above 20 wilderness!"));
 			return false;
 		}
+		if(player.getCombat().inCombat()) {
+			player.send(new SendMessage("You can't do this whilst in combat!"));
+			return false;
+		}
 		if (button == -5115) {
 			Teleportation.teleport(player, Config.STARTER_ZONE);
 			player.send(new SendMessage("You have teleported to Starter Zone!"));
@@ -48,6 +52,9 @@ public class PlayerPanelButtonPlugin extends PluginContext {
 		}
 		if(button == -5107) {
 			new PlayerGuideHandler().open(player);
+		}
+		if(button == -5111) {
+			player.message("@red@ This is scheduled to be finished off for next update!");
 		}
 		if(button == -5103) {
 			player.send(new SendForceTab(Config.MUSIC_TAB));
@@ -61,24 +68,20 @@ public class PlayerPanelButtonPlugin extends PluginContext {
 			player.dialogueFactory.sendOption("AFK-Mining", () -> {
 				player.dialogueFactory.onAction(() -> player.move(new Position(2910, 4832, 0)));
 			},  "AFK-Fishing", () -> {
-				player.dialogueFactory.onAction(() -> player.move(new Position(2910, 4832, 0)));
+				player.dialogueFactory.onAction(() -> Teleportation.teleport(player, Config.AFK_FISHING));
 			}, "AFK-Woodcutting", () -> {
-				player.dialogueFactory.onAction(() ->player.move(new Position(2910, 4832, 0)));
+				player.dialogueFactory.onAction(() -> Teleportation.teleport(player, Config.AFK_WOODCUTTING));
 			}, "AFK-Firemaking", () -> {
-				player.dialogueFactory.onAction(() -> player.move(new Position(2910, 4832, 0)));
-			}, "AFK-Thieving", () -> {
-				player.dialogueFactory.onAction(() -> player.move(new Position(2910, 4832, 0)));
+				player.dialogueFactory.onAction(() -> Teleportation.teleport(player, Config.AFK_FIREMAKING));
 			}).execute();
 		}
 		if(button == -5091) {
 			TeleportHandler.open(player);
 		}
 		if(button == -5803) {
-			player.interfaceManager.close();
-			player.interfaceManager.setSidebar(Config.WRENCH_TAB, 50000);
-			player.interfaceManager.close();
-            player.interfaceManager.close();
+			player.send(new SendForceTab(Config.MUSIC_TAB));
 		}
 		return false;
 	}
+	
 }

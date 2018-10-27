@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 import com.google.common.collect.ImmutableSet;
+import io.battlerune.util.Utility;
 
 import io.battlerune.content.activity.ActivityType;
 import io.battlerune.game.task.impl.DuelNotificationTask;
@@ -92,14 +93,18 @@ public abstract class ExchangeSession {
 			player.exchangeSession.reset();
 			return false;
 		}
-		/*
-		 * if (!PlayerRight.isDeveloper(player) && !PlayerRight.isDeveloper(other)) { if
-		 * (player.playTime < 3000) {
-		 * player.message("You cannot trade until you have 30 minutes of playtime. " +
-		 * Utility.getTime(3000 - player.playTime) + " minutes remaining."); return
-		 * false; } if (other.playTime < 3000) { player.message(other.getName() +
-		 * " cannot trade until they have 30 minutes of playtime."); return false; } }
-		 */
+		
+        if (!PlayerRight.isDeveloper(player) && !PlayerRight.isDeveloper(other)) {
+            if (player.playTime < 3000) {
+                player.message("You cannot trade until you have 30 minutes of playtime. " + Utility.getTime(3000 - player.playTime) + " minutes remaining.");
+                return false;
+            }
+            if (other.playTime < 3000) {
+                player.message(other.getName() + " cannot trade until they have 30 minutes of playtime.");
+                return false;
+            }
+        }
+		 
 		if (getSession(other).isPresent() && getSession(other).get().inAnySession()) {
 			player.message("This player is currently is a " + type.name + " with another player.");
 			return false;

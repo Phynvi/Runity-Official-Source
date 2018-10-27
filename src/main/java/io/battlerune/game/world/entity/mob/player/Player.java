@@ -388,6 +388,13 @@ public class Player extends Mob {
 	public int votePoints;
 	public int totalVotes;
 	public int totalRefferals;
+	
+	public int getTotalRefferals() {
+		return totalRefferals;
+	}
+	public void setTotalRefferals(int totalRefferals) {
+		this.totalRefferals = totalRefferals;
+	}
 	public int kolodionPoints;
 	public int chimeraPoints;
 	public int ringOfRecoil = 40;

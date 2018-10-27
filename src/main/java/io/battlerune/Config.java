@@ -267,6 +267,12 @@ public final class Config {
 	/** Easts. */
 	public static final Position BARROWS_CHEST = new Position(3551, 9691, 0);
 	
+	public static final Position AFK_FISHING = new Position(3094, 3468, 0);
+
+	public static final Position AFK_FIREMAKING = new Position(3093, 3464, 0);
+
+	public static final Position AFK_WOODCUTTING = new Position(3095, 3466, 0);
+
 	/** KARAMJA. */
 	public static final Position KARAMJA = new Position(2918, 3176, 0);
 
@@ -436,6 +442,7 @@ public final class Config {
 	/** TEMP VARS - WILL BE DELETED AFTER BETA IS FINISHED */
 	public final static int[] TAB_AMOUNT = { 7, 46, 19, 42, 41, 15, 21, 4, 0, 0, };
 	static int amount = 10000;
+
 	public final static Item[] SPEARS = { new Item(4726), new Item(11824), new Item(20161), new Item(7809),
 			new Item(11889)
 
@@ -478,6 +485,7 @@ public final class Config {
 			new Item(34, 1),
 			new Item(79, 1),
 			new Item(80, 1),
+			new Item(20151, 1),
 			
 			};
 	

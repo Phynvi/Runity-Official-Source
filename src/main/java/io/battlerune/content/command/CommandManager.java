@@ -219,7 +219,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "panel1", "panel2" }, new ManagementCommand());
 		PLUGIN.putIfAbsent(new String[] { "hp", "hp1" }, new HpEventCommand());
 
-		PLUGIN.putIfAbsent(new String[] { "enabledp", "drops" }, new EnableDoubleDrops());
+		PLUGIN.putIfAbsent(new String[] { "enabledp", "drops1" }, new EnableDoubleDrops());
 		PLUGIN.putIfAbsent(new String[] { "disabledp", "disabledrop" }, new DisableDoubleDrops());
 
 		PLUGIN.putIfAbsent(new String[] { "doublexp", "enabledxp" }, new EnableDoubleXP());

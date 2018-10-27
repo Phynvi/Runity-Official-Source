@@ -81,7 +81,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 			/* Grand exchange. */
 		case 26044:
-			player.message("Personal stores are currently undergoing testing!" + "You've been warned.");
+			player.message("Personal stores are currently undergoing testing!" + " You've been warned.");
+			player.message("There is a slight visual bug (tends to say 'FREE') with purchasing from POS");
+			player.message("just make sure to click on the item to find its actual Price");
+
 			if (PlayerRight.isIronman(player)) {
 				player.send(new SendMessage("As an iron man you may not access player owned stores!"));
 				return true;
@@ -1376,12 +1379,13 @@ public class ObjectFirstClickPlugin extends PluginContext {
 
 		/* Wilderness ditch. */
 		case 23271: {
-			/*
-			 * if (player.playTime < 3000) { player.
-			 * message("You cannot enter the wilderness until you have 30 minutes of playtime. "
-			 * + Utility.getTime((3000 - player.playTime) * 3 / 5) + " minutes remaining.");
-			 * return true; }
-			 */
+			
+			  if (player.playTime < 3000) { 
+				  player.message("You cannot enter the wilderness until you have 30 minutes of playtime. "
+			  + Utility.getTime((3000 - player.playTime) * 3 / 5) + " minutes remaining.");
+			  return true;
+			  }
+			 
 			if (player.pet != null) {
 				player.dialogueFactory
 						.sendNpcChat(player.pet.id, "I'm sorry #name,", "but I can not enter the wilderness with you!")
