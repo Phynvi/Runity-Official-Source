@@ -446,9 +446,11 @@ public class PersonalStore extends Store {
 		int lastItem = 0;
 		if (items.length != 0) {
 			for (int i = 0; i < items.length; i++) {
-				player.send(new SendString(items[i] == null ? "0" : items[i].getPrice() + "," + 0, 40052 + i));
-				lastItem = i;
-			}
+	            if (items[i] != null) {
+	                player.send(new SendString(items[i] == null ? "0" : items[i].getPrice() + "," + 0, 40052 + i));
+	                lastItem = i;
+	            }
+	        }
 		}
 		final int scrollBarSize = lastItem <= 32 ? 0 : (lastItem / 8) * 72;
 		player.send(new SendScrollbar(40050, scrollBarSize));
