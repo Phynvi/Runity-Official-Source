@@ -1180,6 +1180,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 			
 		case 13619:
+			if(player.skills.getLevel(Skill.SLAYER) <= 55){
+				player.message("@red@You need 55 Slayer to enter AvO One!"); 
+				return false;
+			}
 			player.locking.lock();
 			player.send(new SendFadeScreen("Welcome to the All Vs One!", 1, 3));
 			World.sendMessage(player.getName() + " Was brave enough to take on All Vs One!");

@@ -29,8 +29,8 @@ public enum PlayerRight {
 	HARDCORE_IRONMAN("Hardcore Ironman", "7A6F74", 14, -1, 4114), HELPER("Helper", "C900FF", 16, -1, 4115),
 //GRAPHIC("Graphic", "CE795A", 17, -1, 4112),
 	ONYX_RANK("Bug Tester", "E30b1A", 3, -1, 4117),
-	GAMBLE_MANAGER("Gambling Manager", "7A6F74", 15, -1, 4117),
-	DONATION_MANAGER("Donation Manager", "FFE7AB", 17, -1, 4114),
+	GAMBLE_MANAGER("Gambling Manager", "F9F1F1", 15, -1, 4117),
+	DONATION_MANAGER("Donation Manager", "FFCF40", 17, -1, 4114),
 
 	;
 
@@ -72,7 +72,7 @@ public enum PlayerRight {
 	
 	/** Checks if the player has developer status. */
 	public static boolean isGambleManager(Player player) {
-		return player.right.equals(GAMBLE_MANAGER) || player.right.equals(GAMBLE_MANAGER);
+		return player.right.equals(GAMBLE_MANAGER) || player.right.equals(GAMBLE_MANAGER) || player.right.equals(DONATION_MANAGER);
 	}
 	
 
@@ -82,7 +82,7 @@ public enum PlayerRight {
 	}
 	/** Checks if the player is a privileged member. */
 	public static boolean isPriviledged(Player player) {
-		return isDeveloper(player) || player.right.equals(ADMINISTRATOR) || player.right.equals(GAMBLE_MANAGER) || player.right.equals(DONATION_MANAGER);
+		return isDeveloper(player) || player.right.equals(ADMINISTRATOR) || player.right.equals(GAMBLE_MANAGER);
 	}
 
 	/** Checks if the player is a management member. */

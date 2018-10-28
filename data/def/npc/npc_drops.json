@@ -96710,7 +96710,28 @@
         "maximum": 1,
         "chance": 2000.0,
         "type": "VERY_RARE"
-      }
+      },
+      {
+          "item": 16648,
+          "minimum": 1,
+          "maximum": 1,
+          "chance": 20000.0,
+          "type": "VERY_RARE"
+       },
+      {
+           "item": 16647,
+           "minimum": 1,
+           "maximum": 1,
+           "chance": 20000.0,
+           "type": "VERY_RARE"
+       },
+      {
+           "item": 16649,
+           "minimum": 1,
+           "maximum": 1,
+           "chance": 20000.0,
+           "type": "VERY_RARE"
+       }
     ]
   },
   {

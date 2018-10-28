@@ -8,6 +8,7 @@ package io.battlerune.content.skill.impl.woodcutting;
 public enum TreeData {
 	// int level, int item, int replacement, int respawn, double experience, int
 	// petRate, int logs, double success, int[] tree
+	AFK_TREE(1, 2862, 5, 5, 5.0, 317_647, 20_000, 1.0, new int[] { 2092 }, 250),
 	NORMAL_TREE(1, 1511, 1342, 15, 25.0D, 317_647, 1, 1.0, new int[] { 1276, 1278, 1279 }, 500),
 	DYING_TREE(1, 1511, 3649, 15, 25.0D, 317_647, 1, 1.0, new int[] { 3648 }, 500),
 	DEAD_TREE(1, 1511, 1341, 15, 25.0D, 317_647, 1, 1.0, new int[] { 1284 }, 500),
@@ -27,9 +28,7 @@ public enum TreeData {
 	ARCTIC_PINE_TREE(54, 10810, 1356, 40, 150.0D, 155_227, 11, 0.4, new int[] { 3037 }, 7500),
 	YEW_TREE(60, 1515, 9714, 45, 175.0D, 145_013, 12, 0.3, new int[] { 1753, 1754 }, 12500),
 	MAGIC_TREE(75, 1513, 9713, 60, 250.0D, 72_321, 15, 0.1, new int[] { 1761 }, 25000),
-	REDWOOD_TREE(90, 19669, 28860, 60, 250.0D, 28_321, 19, 0.1, new int[] { 28859 }, 27500),
-	AFK_TREE(1, 2862, 5, 5, 5.0, 317_647, 20_000, 1.0, new int[] { 2092 }, 250);
-
+	REDWOOD_TREE(90, 19669, 28860, 60, 250.0D, 28_321, 19, 0.1, new int[] { 28859 }, 27500);
 	/** The level required to chop the tree. */
 	public final int levelRequired;
 
