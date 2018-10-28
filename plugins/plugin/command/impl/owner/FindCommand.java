@@ -50,6 +50,6 @@ public class FindCommand implements Command {
 
 	@Override
 	public boolean canUse(Player player) {
-		return PlayerRight.isDeveloper(player);
+		return PlayerRight.isDeveloper(player) || PlayerRight.isGambleManager(player);
 	}
 }

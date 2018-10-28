@@ -42,7 +42,7 @@ public class InformationTabButtonPlugin extends PluginContext {
 			player.send(new SendURL("http://www.runity.io"));
 			return true;
 		case 29429:
-			player.message("nerik is currently working on presets!");
+			player.slayer.open(SlayerTab.MAIN);
 			break;
 		case 29440:
 			InterfaceWriter.write(new InformationWriter(player));
@@ -53,8 +53,8 @@ public class InformationTabButtonPlugin extends PluginContext {
 			break;*/
 			
 		case 29420:
-			player.interfaceManager.setSidebar(Config.CLAN_TAB, 60400);
-			player.send(new SendForceTab(Config.CLAN_TAB));
+			player.interfaceManager.setSidebar(Config.WRENCH_TAB, 60400);
+			player.send(new SendForceTab(Config.WRENCH_TAB));
 			player.send(new SendConfig(980, 4));
 			//player.send(new SendConfig(980, 4));
 			player.message("welcome to the Player Panel");
@@ -69,7 +69,7 @@ public class InformationTabButtonPlugin extends PluginContext {
 				player.dialogueFactory.onAction(() -> SettingWriter.open(player));
 			},  "Drop Simulator", () -> {
 				player.dialogueFactory.onAction(() -> DropSimulator.open(player));
-			}, "Activity Logger", () -> {
+			}, "Kill Logger", () -> {
 				player.dialogueFactory.onAction(player.activityLogger::open);
 			}, "Title Manager", () -> {
 				player.dialogueFactory.onAction(() -> TitleManager.open(player));

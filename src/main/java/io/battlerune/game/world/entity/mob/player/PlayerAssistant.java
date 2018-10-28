@@ -42,6 +42,7 @@ import io.battlerune.game.world.entity.combat.strategy.player.custom.DragonHunte
 import io.battlerune.game.world.entity.combat.strategy.player.custom.FireyBowStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.IceKatanaStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.KarilsStrategy;
+import io.battlerune.game.world.entity.combat.strategy.player.custom.LavaScytheStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LeafbladeSword;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LimeWhipStrategy;
 import io.battlerune.game.world.entity.combat.strategy.player.custom.LongbowStrategy;
@@ -291,6 +292,9 @@ public class PlayerAssistant {
 			}
 			if (item.getId() == 22325) {
 				return ScytheOfVitur.get();
+			}
+			if (item.getId() == 13739) {
+				return LavaScytheStrategy.get();
 			}
 			if (item.getId() == 13111) {
 				return ValyrianSwordStrategy.get();

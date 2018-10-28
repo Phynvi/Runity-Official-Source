@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Optional;
 
 public enum FiremakingData {
-	AFK_LOGS(2862, 60, 1, 75.0D, 1000), 
+	AFK_LOGS(2862, 60, 1, 25.0D, 1000), 
 	TEAK_LOG(6333, 80, 35, 105.0D, 5000),
 	ARCTIC_PINE_LOG(10810, 100, 42, 150.0D, 12500), 
 	NORMAL_LOG(1511, 50, 1, 175.0D, 1000),
