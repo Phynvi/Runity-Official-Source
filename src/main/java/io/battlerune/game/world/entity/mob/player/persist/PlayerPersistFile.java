@@ -1915,6 +1915,18 @@ public final class PlayerPersistFile implements PlayerPersistable {
 				}
 			},
 			
+			new PlayerJSONProperty("registeredMacAddress") {
+				@Override
+				void read(Player player, JsonElement property) {
+					player.registeredMac = property.getAsString();
+				}
+
+				@Override
+				Object write(Player player) {
+					return player.registeredMac;
+				}
+			},
+			
 			
 	
 	};	

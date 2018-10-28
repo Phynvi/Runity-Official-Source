@@ -8,6 +8,7 @@ import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.dynamic.DynamicRegion.RegionType;
 import io.battlerune.game.world.region.dynamic.boss.impl.ZulrahRegionController;
+import io.battlerune.game.world.region.dynamic.minigames.AllForOne4Session;
 
 /**
  * 
@@ -41,6 +42,6 @@ public abstract class DynamicRegionHandler {
 	
 	static {
 		controllers.put(RegionType.ZULRAH, new ZulrahRegionController());
-		
+		controllers.put(RegionType.All_FOR_ONE_4, new AllForOne4Session());
 	}
 }

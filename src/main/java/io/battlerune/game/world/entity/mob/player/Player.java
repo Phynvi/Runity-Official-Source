@@ -118,6 +118,7 @@ import io.battlerune.net.packet.out.SendMultiIcon;
 import io.battlerune.net.packet.out.SendPlayerDetails;
 import io.battlerune.net.packet.out.SendPlayerOption;
 import io.battlerune.net.packet.out.SendRunEnergy;
+import io.battlerune.net.packet.out.SendSpecialAmount;
 import io.battlerune.net.packet.out.SendString;
 import io.battlerune.net.packet.out.SendWidget;
 import io.battlerune.net.session.GameSession;
@@ -152,6 +153,8 @@ public class Player extends Mob {
 	public StoreItem[] personalStoreTempItems;
 	
 	public long personalStoreTempEarnings;
+	
+	public String registeredMac, lastMac;
 
 	/**
 	 * Will make the floating teleport button appear on the player's screen
@@ -1014,6 +1017,40 @@ public class Player extends Mob {
 	
 	public double storedPrayerPoints;
 	public String lastIP;
+	
+	public Player partyLeader;
+
+	public Player allForOnePartner;
+
+	public long lastPartnerRequest;
+	
+	public Player getAllForOnePartner() {
+		return allForOnePartner;
+	}
+	
+	public void setAllForOnePartner(Player partner) {
+		this.allForOnePartner = partner;
+	}
+	
+	public boolean hasAllForOnePartner() {
+		return allForOnePartner != null;
+	}
+	
+	public void setAllForOnePartner(Player player, Player other) {
+		player.partyLeader = player;
+		other.partyLeader = player;
+		player.setAllForOnePartner(other);
+		other.setAllForOnePartner(player);
+	}
+	
+	public void sendPartnerMessage(Player player, Player other, String message) {
+		if (player.allForOnePartner == null || message == null)
+			return;
+		
+		player.sendMessage(message);
+		other.sendMessage(message);
+		
+	}
 
 	public void teleblock(int time) {
 		if (time <= 0 || (teleblockTimer.get() > 0)) {
@@ -1148,6 +1185,14 @@ public class Player extends Mob {
 		else if (PlayerRight.isDonator(this) || PlayerRight.isSuper(this))
 			return 2;
          return 1;
+	}
+
+	public void sendNewPlayerVariables() {
+		this.runEnergy = 100;
+		this.send(new SendRunEnergy());
+		CombatSpecial.restore(this, 100);
+		this.send(new SendSpecialAmount());
+		
 	}
 
 }

@@ -23,7 +23,7 @@ public class DynamicRegion {
 	private Position instancedPosition;
 	
 	/** Boolean check if the instance is for a Boss **/
-	private boolean npcInstance;
+	private boolean useController;
 	
 	/** Variable for the instanced controller **/
 	private DynamicRegionHandler handler;
@@ -35,7 +35,12 @@ public class DynamicRegion {
 	
 	public static enum RegionType {
 		
-		ZULRAH(new Position(2268, 3070, 0));
+		ZULRAH(new Position(2268, 3070, 0)),
+		
+		
+		All_FOR_ONE_4(new Position(2920, 4384, 0)),
+		
+		;
 		
 		public Position position;
 		
@@ -52,7 +57,7 @@ public class DynamicRegion {
 	public DynamicRegion(Player player, RegionType type) {
 		this.player = player;
 		this.type = type;
-		this.npcInstance = true;
+		this.useController = true;
 		createInstance();
 	}
 	
@@ -71,23 +76,22 @@ public class DynamicRegion {
 	 * Creates the instance
 	 */
 	private void createInstance() {
-		if (npcInstance) {
-		    this.handler = DynamicRegionHandler.controllers.get(type);
+		    this.handler = DynamicRegionHandler.controllers.get(type);//TODO
 		    
 		    if (!this.getHandler().metRequirements(player)) {
 		    	destroyInstance(true);
 		    	return;
 		    }
+		    player.move(useController ? getInstanceLocation() : player.partyLeader != null ? getLeaderPosition(player.partyLeader) : getInstancePosition());
 		    this.getHandler().onStart(player);
-		}
-		player.move(npcInstance ? getInstanceLocation() : getInstancePosition());
+		
+		
 	}
 	
 	public void destroyInstance(boolean failedRequirements) {
 		this.getHandler().onExit(player);
 		player.setDynamicRegion(null);
 		this.handler = null;
-			
 	}
 	
 	/***
@@ -96,6 +100,10 @@ public class DynamicRegion {
 	 */
 	public Position getInstancePosition() {
 		return new Position(instancedPosition.getX(), instancedPosition.getY(), instancedPosition.getDynamicHeight(player));
+	}
+	
+	public Position getLeaderPosition(Player leader) {
+		return new Position(instancedPosition.getX(), instancedPosition.getY(), instancedPosition.getDynamicHeight(leader));
 	}
 	
 	/**

@@ -15,8 +15,13 @@ import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.combat.magic.Autocast;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
+import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.position.Position;
+import io.battlerune.game.world.region.dynamic.DynamicRegion;
+import io.battlerune.game.world.region.dynamic.DynamicRegion.RegionType;
+import io.battlerune.game.world.region.dynamic.minigames.AllForOne4Session;
+import io.battlerune.net.packet.out.SendInputMessage;
 import io.battlerune.net.packet.out.SendMessage;
 
 public class ObjectSecondClickPlugin extends PluginContext {
@@ -49,6 +54,42 @@ public class ObjectSecondClickPlugin extends PluginContext {
 		}
 			break;
 
+		case 13617:
+			DialogueFactory f = player.dialogueFactory;
+			f.sendOption("Set Partner", () -> f.onAction(() -> {
+				player.send(new SendInputMessage("Enter name of partner:", 20, input -> {
+					player.dialogueFactory.clear();
+						Player other = World.getPlayerByName(input);
+						
+						if (other == player) {
+							player.sendMessage("You cannot send yourself a partner request!");
+							return;
+						}
+						if (!PlayerSerializer.saveExists(input)) {
+							player.sendMessage("This player doesn't exist!");
+							return;
+						}
+						if (other == null) {
+							player.sendMessage(input+" is not online.");
+							return;
+						}
+						if (other.hasAllForOnePartner()) {
+							player.sendMessage(input+" already has an All For One 4 partner!");
+							return;
+						}
+						if (player.lastPartnerRequest > System.currentTimeMillis()) {
+							player.sendMessage("You can only send a partner request every 15 seconds!");
+							return;
+						}
+						AllForOne4Session.sendPartnerRequest(player, other);
+					
+				}));
+			}), "Never Mind", () -> f.onAction(() -> {
+				player.dialogueFactory.clear();
+			})).execute();
+		
+			break;
+			
 		case 14826:
 		case 14827:
 		case 14828:

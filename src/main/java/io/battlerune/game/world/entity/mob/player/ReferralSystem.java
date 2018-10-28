@@ -3,10 +3,12 @@ package io.battlerune.game.world.entity.mob.player;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.net.packet.out.SendInputMessage;
+import io.battlerune.util.Referals;
 
 /**
  * 
  * @author Adam_#6723
+ * @author Teek
  *
  */
 
@@ -31,14 +33,19 @@ public class ReferralSystem {
 
 		if (!PlayerSerializer.saveExists(referalName) || referalName == null || referalName.isEmpty()) 
 			return;
-
+		
+		if (Referals.hasRefered(refer.registeredMac)) {
+			System.out.println("already refered");
+			return;
+		}
 		Player other = World.getPlayerByName(referalName);
-
+		
+		
 		if (other == null) {
 			try {
-				Player p = PlayerSerializer.loadPlayer(referalName);
-				p.setRefferalPoints(p.getReferralPoints() + 1);
-				PlayerSerializer.saveOffline(p);
+				other = PlayerSerializer.loadPlayer(referalName);
+				other.setRefferalPoints(other.getReferralPoints() + 1);
+				PlayerSerializer.saveOffline(other);
 			} catch (Exception e) {
 				System.out.println("error loading player..");
 				return;
@@ -50,6 +57,7 @@ public class ReferralSystem {
 			other.inventory.add(290, 1);
 			other.sendMessage("You have also been given an AvO Box for reffering someone!");
 		}
+		Referals.addToList(refer.registeredMac);
 		refer.sendMessage("Thank you for setting a referal!");
 		refer.refferalpoint += TOTAL_POINTS;
 		refer.inventory.add(290, 1);

@@ -40,6 +40,7 @@ import io.battlerune.game.world.items.ItemDefinition;
 import io.battlerune.io.PacketListenerLoader;
 import io.battlerune.util.GameSaver;
 import io.battlerune.util.Logger;
+import io.battlerune.util.Referals;
 import io.battlerune.util.Stopwatch;
 import io.battlerune.util.parser.impl.CombatProjectileParser;
 import io.battlerune.util.parser.impl.GlobalObjectParser;
@@ -108,6 +109,11 @@ public final class BattleRune {
 		new GlobalObjectParser().run();
 		PunishmentExecuter.init();
 		new DailyBonus(84600).execute();
+		try {
+			Referals.load();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	//	new NpcDefinitionParser().run();
 	//	new NpcDefParser().run();
 		//5 seconds of work, stfu shit amazon i get paid by 3 different servers 4ner

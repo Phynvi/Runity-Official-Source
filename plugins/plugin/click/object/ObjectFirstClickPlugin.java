@@ -51,6 +51,9 @@ import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.position.Position;
+import io.battlerune.game.world.region.dynamic.DynamicRegion;
+import io.battlerune.game.world.region.dynamic.DynamicRegion.RegionType;
+import io.battlerune.game.world.region.dynamic.minigames.AllForOne4Session;
 import io.battlerune.net.packet.out.SendFadeScreen;
 import io.battlerune.net.packet.out.SendInputAmount;
 import io.battlerune.net.packet.out.SendInputMessage;
@@ -1156,6 +1159,24 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				FightCaves.create(player);
 				player.locking.unlock();
 			});
+			break;
+			
+		case 13617:
+			if (!player.hasAllForOnePartner()) {
+				player.sendMessage("You need to an All For One partner to enter this portal!");
+				player.sendMessage("Right click this portal > Set Options and send a partner request!");
+				break;
+			}
+			if (player.partyLeader != player) {
+				player.sendMessage("Only your party leader can start All vs one v4!");
+				break;
+			}
+			if (!player.getPosition().isWithinDistance(player.allForOnePartner.getPosition(), 15)) {
+				player.sendMessage("Your partner needs to be with you in order to start this session!");
+				break;
+			}
+			player.setDynamicRegion(new DynamicRegion(player, RegionType.All_FOR_ONE_4));
+			player.getAllForOnePartner().setDynamicRegion(player.getDynamicRegion());
 			break;
 			
 		case 13619:

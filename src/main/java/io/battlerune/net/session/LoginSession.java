@@ -73,6 +73,9 @@ public final class LoginSession extends Session {
 
 		final Player player = new Player(packet.getUsername());
 		player.setPassword(packet.getPassword());
+		if (player.registeredMac != null)
+			player.registeredMac = packet.getMacAddress();
+		player.lastMac = packet.getMacAddress();
 
 		if (response == LoginResponse.NO_RESPONSE) {
 			response = evaluate(player);

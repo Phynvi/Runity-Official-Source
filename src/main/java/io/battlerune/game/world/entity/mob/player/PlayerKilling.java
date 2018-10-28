@@ -77,7 +77,7 @@ public class PlayerKilling {
 			killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
 					+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
 		} else {
-			if(Config.DOUBLE_PK_POINTS == true) {
+			if(Config.DOUBLE_PK_POINTS) {
 				killer.setpkPoints(killer.getpkPoints() + 5);
 				killer.message("<col=295EFF>You were rewarded with " + killer.getpkPoints()
 						+ " points for that kill. You now have: " + Utility.formatDigits(killer.pkPoints) + ".");
@@ -92,15 +92,12 @@ public class PlayerKilling {
 	}
 
 	public static void add(Player player, String host) {
-		if (host == null || host.isEmpty()) {
+		if (host == null || host.isEmpty()) 
 			return;
-		}
-		if (player.lastKilled.contains(host)) {
+		if (player.lastKilled.contains(host)) 
 			return;
-		}
-		if (player.lastKilled.size() >= 3) {
+		if (player.lastKilled.size() >= 3)
 			player.lastKilled.removeFirst();
-		}
 		player.lastKilled.add(host);
 	}
 

@@ -5,19 +5,15 @@ import static io.battlerune.content.StarterKit.refresh;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
-import io.battlerune.Config;
 import io.battlerune.content.StarterKit;
 import io.battlerune.content.clanchannel.channel.ClanChannelHandler;
 import io.battlerune.game.plugin.PluginContext;
 import io.battlerune.game.world.World;
-import io.battlerune.game.world.entity.combat.strategy.player.special.CombatSpecial;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.game.world.entity.mob.player.ReferralSystem;
 import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.net.packet.out.SendMessage;
-import io.battlerune.net.packet.out.SendSpecialAmount;
-import io.battlerune.util.MessageColor;
 import io.battlerune.util.Utility;
 
 public class StarterKitButtonPlugin extends PluginContext {
@@ -63,6 +59,7 @@ public class StarterKitButtonPlugin extends PluginContext {
 
 	/** Handles the confirmation of the starter kit. */
 	private static void confirm(Player player) {
+		player.sendNewPlayerVariables();
 		if (!player.buttonDelay.elapsed(1, TimeUnit.SECONDS)) {
 			return;
 		}
@@ -78,8 +75,7 @@ public class StarterKitButtonPlugin extends PluginContext {
 		// player.clanTag = "help";
 		// player.clanChannel.
 		player.right = kit.getRight();
-		CombatSpecial.restore(player, 100);
-		player.send(new SendSpecialAmount());
+		
 		Arrays.stream(kit.getItems()).forEach(player.inventory::add);
 
 		if (kit.getRight() != PlayerRight.PLAYER) {
@@ -93,7 +89,6 @@ public class StarterKitButtonPlugin extends PluginContext {
 		player.setVisible(true);
 		player.locking.unlock();
 		player.playerAssistant.setSidebar(false);
-		player.runEnergy = 100;
 		// EmailInputListener.input(player);
 		/*
 		 * player.dialogueFactory.sendNpcChat(306, Expression.HAPPY,
@@ -115,7 +110,6 @@ public class StarterKitButtonPlugin extends PluginContext {
 		World.sendStaffMessage(player.getName() + " Has just joined the server, all staff members make him feel welcomed.");
 		World.sendStaffMessage("As a staff member you are instructed to approach this player and help him out!");
 
-		player.runEnergy = +100;
 		player.buttonDelay.reset();
 		ClanChannelHandler.connect(player, "help", false);
 		PlayerSerializer.save(player);

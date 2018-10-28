@@ -141,8 +141,7 @@ public final class PlayerDeath extends MobDeath<Player> {
 
 			if (mob.isBot) {
 				playerKiller.setpkPoints(playerKiller.getpkPoints() + 1);
-				playerKiller.message("<col=295EFF>You were rewarded with " + playerKiller.getpkPoints()
-						+ " points for that kill. You now have: " + Utility.formatDigits(playerKiller.pkPoints) + ".");
+				playerKiller.message("<col=295EFF>You were rewarded with " + playerKiller.getpkPoints()+ " points for that kill. You now have: " + Utility.formatDigits(playerKiller.pkPoints) + ".");
 				return;
 			}
 
