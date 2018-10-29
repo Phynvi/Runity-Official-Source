@@ -61,6 +61,7 @@ import plugin.command.impl.owner.KillCommand;
 import plugin.command.impl.owner.MasterCommand;
 import plugin.command.impl.owner.NpcCommand;
 import plugin.command.impl.owner.ObjectCommand;
+import plugin.command.impl.owner.PetCommand;
 import plugin.command.impl.owner.PlayerGuideCommand;
 import plugin.command.impl.owner.PnpcCommand;
 import plugin.command.impl.owner.RandomEvent;
@@ -246,6 +247,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "master", "max" }, new MasterCommand());
 		PLUGIN.putIfAbsent(new String[] { "find", "finditem" }, new FindCommand());
 		PLUGIN.putIfAbsent(new String[] { "anim", "animation" }, new AnimationCommand());
+		PLUGIN.putIfAbsent(new String[] { "allpets", "allpet" }, new PetCommand());
 		PLUGIN.putIfAbsent(new String[] { "gfx", "graphic" }, new GraphicCommand());
 		PLUGIN.putIfAbsent(new String[] { "spec", "special" }, new SpecCommand());
 		PLUGIN.putIfAbsent(new String[] { "pnpc", "transform" }, new PnpcCommand());

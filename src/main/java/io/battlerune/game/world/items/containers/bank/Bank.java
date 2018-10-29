@@ -182,6 +182,44 @@ public class Bank extends ItemContainer {
 
 		refresh();
 	}
+	
+	/** Only use if from a reward */
+	public void deposit(Item item) {
+		
+		int id = item.getId();
+
+        int amount = item.getAmount();
+        
+		setFiringEvents(false);
+
+		if (item.isNoted())
+			id = item.getUnnotedId();
+
+		if (!contains(id)) {
+			if (size() + 1 > capacity()) {
+				player.message("Your bank is full! You need to clear some items from your bank.");
+				setFiringEvents(true);
+				return;
+			}
+
+			changeTabAmount(bankTab, 1);
+			add(id, amount);
+			int from = computeIndexForId(id);
+			int to = slotForTab(bankTab);
+			swap(true, from, to, false);
+		} else {
+			Item fucking = get(computeIndexForId(id));
+			if (Integer.MAX_VALUE - fucking.getAmount() < amount) {
+				amount = Integer.MAX_VALUE - fucking.getAmount();
+				player.send(new SendMessage("Your bank didn't have enough space to deposit all that!"));
+			}
+			fucking.incrementAmountBy(amount);
+		}
+		
+		setFiringEvents(true);
+
+		refresh();
+	}
 
 	/** Withdraws item from bank. */
 	public void withdraw(int itemId, int slot, int amount) {
