@@ -65,7 +65,8 @@ public class PersonalStore extends Store {
 	}
 
 	public static void add(Player player, PersonalStore store) {
-		STORES.put(player.getName(), store);
+		if (!player.personalStore.emptyStore())
+		     STORES.put(player.getName(), store);
 	}
 	
 	public long earnings;
@@ -73,8 +74,19 @@ public class PersonalStore extends Store {
 	public void loadData(Player player) {
 		if (player.personalStoreTempItems != null)
 		    this.container.set(player.personalStoreTempItems);
-		Store.STORES.put(player.getName(), player.personalStore);
+		if (!emptyStore())
+		    Store.STORES.put(player.getName(), player.personalStore);
 		this.earnings = player.personalStoreTempEarnings;
+	}
+	
+	private boolean emptyStore() {
+		Item[] items = this.container.getItems();
+		for (int i = 0; i < items.length; i++) {
+			if (items[i] != null) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/** Handles claiming coins from the personal store. */
