@@ -445,7 +445,7 @@ public class Player extends Mob {
 	public Stopwatch itemDelay = Stopwatch.start();
 	public Stopwatch foodDelay = Stopwatch.start();
 	public Stopwatch RejuvDelay = Stopwatch.start();
-
+	public Stopwatch boxClick = Stopwatch.start();
 	public Stopwatch takeobj = Stopwatch.start();
 	public Stopwatch revstele = Stopwatch.start();
 	public Stopwatch takeAntiFireshieldDelay = Stopwatch.start();
@@ -458,6 +458,8 @@ public class Player extends Mob {
 	public Stopwatch BankerPetDelay = Stopwatch.start();
 	public Stopwatch aggressionTimer = Stopwatch.start();
 	public Stopwatch databaseRequest = Stopwatch.start();
+	public Stopwatch referaltime = Stopwatch.start();
+
 	public Set<PetData> petInsurance = new ArraySet<>();
 	public Set<PetData> lostPets = new ArraySet<>();
 	public final ClanViewer clanViewer = new ClanViewer(this);
@@ -804,6 +806,9 @@ public class Player extends Mob {
 		
 		send(new SendLogout());
 		Activity.forActivity(this, minigame -> minigame.onLogout(this));
+		
+		
+		
 		relations.updateLists(false);
 		house.leave();
 		getFarming().save();

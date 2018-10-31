@@ -17,7 +17,8 @@ public enum AnnouncementData {
 	EVENTS_SUNDAY("Did you know on Sundays, we give all of our players Double Experience!"),
 	NORMAL_PRAYER("Having Unlimited prayer is completely intentional! We Implemented to make PvM'ing more easier"),
 	DISCORD("Join ::discord We tend to post our #updates and host multiple #giveaways a day!"),
-	
+	DID_YOUKNOW("Did you know we released Double threat! Duo instanced minigame! Use the portal at home!!"),
+
 
 
 	

@@ -1,6 +1,7 @@
 package io.battlerune.content.mysterybox.impl;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import io.battlerune.content.mysterybox.MysteryBoxListener;
 import io.battlerune.game.world.World;
@@ -140,23 +141,32 @@ public class AllVsOneBox implements MysteryBoxListener {
 	@Override
 	public void execute(Player player) {
 		Random random = new Random();
+		
+		if (!player.boxClick.elapsed(10, TimeUnit.MINUTES)) {
+			player.dialogueFactory.sendStatement("You can only do this once every 10 minutes!",
+					"Time Passed: " + Utility.getTime(player.godwarsDelay.elapsedTime())).execute();
+			return;
+		}
+
+		
 		player.inventory.remove(290, 1);
+		player.boxClick.reset();
 		/**
 		 * Utility.random(1, 150) <-- This generates a RANDOM number between 1 and 150.
 		 * Utility.random(1, 250) <= 10 <---- This generates a RANDOM NUMBER between 1
 		 * and 150 and if the RANDOM NUMBER is equal to 10 then it will execute.
 		 */
-		if (Utility.random(1, 150) <= 12) {
+		if (Utility.random(1, 400) <= 12) {
 			player.inventory.add(getUncommon()[random.nextInt(getUncommon().length)]);
 			player.message("You have recieved a Uncommon loot!");
 		}
-		if (Utility.random(1, 350) <= 2) {
+		if (Utility.random(1, 1500) <= 2) {
 			player.inventory.add(getRare()[random.nextInt(getRare().length)]);
 			player.message("@gre@You have recieved a Rare loot!");
 			World.sendMessage(player.getName() + " @red@Has received RARE LOOT!");
 
 		}
-		if (Utility.random(1, 750) <= 2) {
+		if (Utility.random(1, 2500) <= 2) {
 			player.inventory.add(getUltra()[random.nextInt(getUltra().length)]);
 			player.message("You have recieved a ULTRA RARE LOOT!");
 			World.sendMessage(player.getName() + " @red@Has received ULTRA RARE LOOT!");

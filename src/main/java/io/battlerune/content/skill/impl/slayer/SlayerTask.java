@@ -615,11 +615,11 @@ public enum SlayerTask implements TaskInterface<Player> {
 		case EASY:
 			return 20;
 		case MEDIUM:
-			return 30;
+			return 22;
 		case HARD:
-			return 35;
+			return 28;
 		case BOSS:
-			return 45;
+			return 30;
 		}
 		return 0;
 	}

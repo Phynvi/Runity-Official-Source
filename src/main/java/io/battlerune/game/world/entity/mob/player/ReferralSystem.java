@@ -1,5 +1,7 @@
 package io.battlerune.game.world.entity.mob.player;
 
+import java.util.concurrent.TimeUnit;
+
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.net.packet.out.SendInputMessage;
@@ -34,11 +36,10 @@ public class ReferralSystem {
 		if (!PlayerSerializer.saveExists(referalName) || referalName == null || referalName.isEmpty()) 
 			return;
 		
-		if (Referals.hasRefered(refer.registeredMac)) {
-			refer.message("<col=FF0019>You were not rewarded since you share the same IP Address.");
+		/*if (Referals.hasRefered(refer.registeredMac)) {
+			refer.message("<col=FF0019>You were not rewarded since you share the same Mac Address.");
 			return;
-		}
-		
+		}*/
 		Player other = World.getPlayerByName(referalName);
 		
 		
@@ -57,6 +58,11 @@ public class ReferralSystem {
 				refer.message("<col=FF0019>You were not rewarded since you share the same IP Address.");
 				return;
 			}
+			if (!other.referaltime.elapsed(1, TimeUnit.MINUTES)) {
+				other.message("You are getting spam refered, therefore it didn't count.");
+				return;
+			}
+			other.referaltime.reset();
 		    other.totalRefferals += TOTAL_REFFERALS;
 			other.refferalpoint += TOTAL_POINTS;
 			other.sendMessage("You have been given " + TOTAL_POINTS + " for refering " + refer.getUsername() + ".");

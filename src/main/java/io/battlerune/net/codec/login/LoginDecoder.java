@@ -66,7 +66,6 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 			final int handshake = in.readUnsignedByte();
 
 			if (handshake != LOGIN_HANDSHAKE) {
-				System.out.println("here 1..");
 				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
 				return;
 			}
@@ -87,7 +86,6 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 			buf.writeLong(RANDOM.nextLong());
 			ctx.writeAndFlush(buf);
 		} else {
-			System.out.println("here 2..");
 			sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
 		}
 	}
@@ -97,11 +95,9 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 			final int connectionType = in.readUnsignedByte();
 
 			if (connectionType != NEW_CONNECTION_OPCODE && connectionType != RECONNECTION_OPCODE) {
-				System.out.println("here 3..");
 				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
 			}
 		} else {
-			System.out.println("here 4..");
 			sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
 		}
 	}
@@ -117,7 +113,6 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 
 			if (magicId != MAGIC_NUMBER) {
 				logger.warn(String.format("[%s] wrong magic id: %d", host, magicId));
-				System.out.println("here 5..");
 				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
 				return;
 			}
@@ -150,7 +145,6 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 
 			if (memoryVersion != 0 && memoryVersion != 1) {
 				logger.warn(String.format("[%s] wrong memory version: %d", host, memoryVersion));
-				System.out.println("here 6..");
 				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
 				return;
 			}
@@ -166,7 +160,6 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 			if (expectedSize != loginBlockSize - LOGIN_BLOCK_HEADER_SIZE) {
 				logger.warn(String.format("[%s] wrong rsa block size: %d expecting: %d", host,
 						(loginBlockSize - LOGIN_BLOCK_HEADER_SIZE), expectedSize));
-				System.out.println("here 7..");
 				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
 				return;
 			}
@@ -179,7 +172,6 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 			final int rsa = rsaBuffer.readUnsignedByte();
 
 			if (rsa != Byte.MAX_VALUE) {
-				System.out.println("here 8..");
 				logger.warn(String.format("[%s] failed decrypt rsa %d", host, rsa));
 				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
 				return;

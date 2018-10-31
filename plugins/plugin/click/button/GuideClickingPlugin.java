@@ -77,6 +77,10 @@ public class GuideClickingPlugin extends PluginContext {
 			player.send(new SendURL("https://runity.io/forums/topic/165-most-efficient-agility-guide/"));
 			player.message("@red@ Opening All Vs One V2! credits to : Mason");
 		break;
+		case -9457:
+			player.send(new SendURL("https://runity.io/forums/topic/218-beginners-guide/"));
+			player.message("@red@ Opening Starter Guide credits to : Genesis");
+			break;
 		}
 		return false;
 	}

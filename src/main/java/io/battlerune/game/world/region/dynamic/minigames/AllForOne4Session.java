@@ -1,11 +1,14 @@
 package io.battlerune.game.world.region.dynamic.minigames;
 
+import io.battlerune.content.activity.impl.allvsone2.AllVsOne2;
 import io.battlerune.content.activity.impl.duovsall.DuoVsAll;
 import io.battlerune.content.dialogue.DialogueFactory;
+import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.region.dynamic.boss.DynamicRegionHandler;
+import io.battlerune.net.packet.out.SendFadeScreen;
 import io.battlerune.util.Utility;
 
 
@@ -22,8 +25,15 @@ public class AllForOne4Session extends DynamicRegionHandler {
 		this.player = player;
 		this.partner = player.allForOnePartner;
 		startTime = System.currentTimeMillis();
-		new DuoVsAll(player, player.playerAssistant.instance(), partner).create();
-		
+		partner.locking.lock();
+		player.locking.lock();
+		player.send(new SendFadeScreen("Welcome to the Double Threat!", 1, 3));
+		World.sendMessage(player.getName() + " Was Litty enough to take on Double Threat!");
+		World.schedule(5, () -> {
+			DuoVsAll.create(player, partner);
+			player.locking.unlock();
+			partner.locking.unlock();
+		});		
 	}
 
 	@Override
@@ -75,6 +85,13 @@ public class AllForOne4Session extends DynamicRegionHandler {
 		sendPartnerMessage("Time Elapsed: "+Utility.convertMsToTime(finishTime - startTime));
 		partner.setAllForOnePartner(null);
 		player.setAllForOnePartner(null);
+	}
+	
+	public void resetPartner() {
+		partner.setAllForOnePartner(null);
+		player.setAllForOnePartner(null);
+		player.message("You have reset your double threat partner!");
+		partner.message("You have reset your double threat partner!");
 	}
 	
 	private void sendPartnerMessage(String message) {

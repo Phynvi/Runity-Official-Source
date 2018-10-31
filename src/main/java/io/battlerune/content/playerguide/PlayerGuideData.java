@@ -137,6 +137,10 @@ public enum PlayerGuideData {
 			new String[] { "We have opened ", "the Agility Guide!",
 					"", "",
 					"", "", "", "", "", "", "", "", "", "" }),
+	Starter_Guide(-9457, PlayerGuideDifficulty.EASY, "Starter Guide",
+			new String[] { "We have opened ", "the Starter Guide!",
+					"", "",
+					"", "", "", "", "", "", "", "", "", "" }),
 	;
 	//TODO ADD MASON'S GUIDE ON TO THE INTERFACE
 

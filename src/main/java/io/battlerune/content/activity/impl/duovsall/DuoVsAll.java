@@ -31,9 +31,9 @@ import io.battlerune.util.Utility;
 public class DuoVsAll extends Activity {
 
 	/** The player in the All Vs One. */
-	private static Player player;
+	private  Player player;
 
-	private static Player other;
+	private  Player other;
 	
 	/** The activity completed flag. */
 	private boolean completed;
@@ -59,13 +59,13 @@ public class DuoVsAll extends Activity {
 	 */
 	public DuoVsAll(Player player, int instance, Player other) {
 		super(10, instance);
-		DuoVsAll.player = player;
-		DuoVsAll.other = other;
+		this.player = player;
+		this.other = other;
 	}
 	
 
 
-	public DuoVsAll create() {
+	public static DuoVsAll create(Player player, Player other) {
 		DuoVsAll minigame = new DuoVsAll(player, player.playerAssistant.instance(), other);
 
 		player.move(new Position(3169, 4958, player.getHeight()));
@@ -81,10 +81,10 @@ public class DuoVsAll extends Activity {
 				"There are a total of 69 waves, Galvek & Glod being the last.",
 				"Use your activity panel (bottom left tab) for wave information.", "Good luck!").execute();
 		
-		this.time = System.currentTimeMillis();
-		this.add(player);
-		this.add(other);
-		this.resetCooldown();
+		minigame.time = System.currentTimeMillis();
+		minigame.add(player);
+		minigame.add(other);
+		minigame.resetCooldown();
 		return minigame;
 	}
 	
@@ -101,7 +101,7 @@ public class DuoVsAll extends Activity {
 
 	/** Handles what happens to a mob when they die in the activity. */
 	void handleDeath(Mob dead) {
-		if (dead.isPlayer() && (dead.equals(player) || dead.equals(other))) {
+		if (dead.isPlayer() && (dead.equals(player) || dead.equals(other) && other.isPlayer())) {
 			finish();
 			return;
 		}
@@ -175,7 +175,7 @@ public class DuoVsAll extends Activity {
 				|| wave == WaveData.WAVE_25 || wave == WaveData.WAVE_32 || wave == WaveData.WAVE_40
 				|| wave == WaveData.WAVE_45 || wave == WaveData.WAVE_50 || wave == WaveData.WAVE_55
 				|| wave == WaveData.WAVE_60 || wave == WaveData.WAVE_67) {
-			createRandomGroundItems(player);
+			//createRandomGroundItems(player);
 		}
 		pause();
 	}
@@ -208,11 +208,8 @@ public class DuoVsAll extends Activity {
     		player.message("<img=8>You now have @red@" + rewards + " Double Threat Tickets!");
     		other.message("<img=8>You now have @red@" + rewards + " Double Threat Tickets!");
 
-			player.inventory.addOrDrop(new Item(6833, 2));
-			other.inventory.addOrDrop(new Item(6833, 2));
-
-			player.inventory.addOrDrop(new Item(290, 2));
-			other.inventory.addOrDrop(new Item(290, 2));
+			player.inventory.addOrDrop(new Item(6855, 1));
+			other.inventory.addOrDrop(new Item(6833, 1));
 
 			player.send(new SendMessage("You have completed the Double Threat activity. Final time: @red@"
 					+ Utility.getTime(time) + "</col>."));
@@ -282,7 +279,7 @@ public class DuoVsAll extends Activity {
 
 	@Override
 	public void onRegionChange(Player player) {
-		if (!Area.inDuoVsAll(player)) {
+		if (!Area.inDuoVsAll(player) || !Area.inDuoVsAll(other)) {
 			cleanup();
 			remove(player);
 			remove(other);

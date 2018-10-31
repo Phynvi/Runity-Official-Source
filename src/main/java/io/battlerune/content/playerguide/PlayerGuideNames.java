@@ -19,5 +19,6 @@ public enum PlayerGuideNames {
 	Cooking_Guide,
 	Woodcutting_Guide,
 	Agility_Guide,
+	Starter_Guide,
 	;
 }
