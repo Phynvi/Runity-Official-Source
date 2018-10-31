@@ -279,7 +279,7 @@ public class DuoVsAll extends Activity {
 
 	@Override
 	public void onRegionChange(Player player) {
-		if (!Area.inDuoVsAll(player) || !Area.inDuoVsAll(other)) {
+		if (!Area.inDuoVsAll(player)) {
 			cleanup();
 			remove(player);
 			remove(other);

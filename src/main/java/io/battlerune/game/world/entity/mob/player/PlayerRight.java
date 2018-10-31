@@ -82,7 +82,7 @@ public enum PlayerRight {
 	}
 	/** Checks if the player is a privileged member. */
 	public static boolean isPriviledged(Player player) {
-		return isDeveloper(player) || player.right.equals(ADMINISTRATOR) || player.right.equals(GAMBLE_MANAGER);
+		return isDeveloper(player) || player.right.equals(ADMINISTRATOR) || player.right.equals(GAMBLE_MANAGER) || player.right.equals(DONATION_MANAGER);
 	}
 
 	/** Checks if the player is a management member. */

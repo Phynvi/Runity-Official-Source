@@ -113,14 +113,14 @@ public abstract class ExchangeSession {
 			player.message("You cannot " + type.name + " with yourself.");
 			return false;
 		}
-		if (PlayerRight.isIronman(player) && !PlayerRight.isDeveloper(other) || !PlayerRight.isGambleManager(other)) {
-			player.message("You can not " + type.name + " as you are an iron man.");
-			return false;
-		}
-		if (PlayerRight.isIronman(other) && !PlayerRight.isDeveloper(player) || !PlayerRight.isGambleManager(player)) {
-			player.message(other.getName() + " can not be " + type.name + "d as they are an iron man.");
-			return false;
-		}
+        if (PlayerRight.isIronman(player) && !PlayerRight.isDeveloper(other)) {
+            player.message("You can not " + type.name + " as you are an iron man.");
+            return false;
+        }
+        if (PlayerRight.isIronman(other) && !PlayerRight.isDeveloper(player)) {
+            player.message(other.getName() + " can not be " + type.name + "d as they are an iron man.");
+            return false;
+        }
 		if (player.exchangeSession.requested_players.contains(other)) {
 			player.message("You have already sent a request to this player.");
 			return false;
