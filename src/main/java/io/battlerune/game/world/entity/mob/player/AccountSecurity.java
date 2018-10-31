@@ -12,7 +12,7 @@ import io.battlerune.game.world.entity.mob.player.profile.ProfileRepository;
 /**
  * Handles account security.
  *
- * @author Daniel
+ * @author Adam
  */
 public class AccountSecurity {
 
