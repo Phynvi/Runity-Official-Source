@@ -20,8 +20,6 @@ import io.battlerune.game.world.entity.combat.hit.Hit;
 import io.battlerune.game.world.entity.combat.strategy.CombatStrategy;
 import io.battlerune.game.world.entity.mob.Mob;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.game.world.position.Area;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.game.world.region.Region;
 import io.battlerune.net.packet.out.SendEntityFeed;
@@ -63,9 +61,6 @@ public class Combat<T extends Mob> {
 
 		if (attacker.isPlayer()) {
 			if (defender.isPlayer()) {
-				if(Area.inEventArena(defender) || Area.inEventArena(attacker)) {
-					return true;
-				}
 				if (attacker.getPlayer().equipment.containsAny(Config.NOT_ALLOWED)
 						|| attacker.getPlayer().inventory.containsAny(Config.NOT_ALLOWED)) {
 					attacker.getPlayer().send(new SendMessage("You can't attack anyone with customs."));
@@ -102,12 +97,8 @@ public class Combat<T extends Mob> {
 	}
 
 	public void tick() {
-		if (!checkDistances(target.getTarget())) 
+		if (!checkDistances(target.getTarget()))
 			reset();
-			
-/*			if (attacker.getCombat().isAttacking() && attacker.isPlayer() && PlayerRight.isDeveloper(attacker.getPlayer()))
-		        System.out.println("Ticking.. checking distance.."); teek	*/
-
 
 		updateListeners();
 
@@ -280,7 +271,6 @@ public class Combat<T extends Mob> {
 			if (defender.inTeleport)
 				defender.getCombat().damageQueue.clear();
 			reset();
-			System.out.println("invalid 1..");
 			return;
 		}
 
@@ -296,7 +286,6 @@ public class Combat<T extends Mob> {
 			if (defender.inTeleport)
 				defender.getCombat().damageQueue.clear();
 			reset();
-			System.out.println("invalid 2..");
 			return;
 		}
 
@@ -597,14 +586,11 @@ public class Combat<T extends Mob> {
 			return false;
 		}
 		if (!strategy.withinDistance(attacker, defender)) {
-			//System.out.println("running here.... 4");
 			return false;
 		}
 		for (CombatListener<? super T> listener : listeners) {
-			//if (!listener.withinDistance(attacker, defender)) {
-			//	System.out.println("running here.... 5");
-			//	return false;
-			//}
+			if (!listener.withinDistance(attacker, defender))
+				return false;
 		}
 		return true;
 	}
