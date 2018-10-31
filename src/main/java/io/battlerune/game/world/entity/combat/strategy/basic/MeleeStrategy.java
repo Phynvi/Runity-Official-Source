@@ -13,11 +13,8 @@ import io.battlerune.game.world.pathfinding.path.SimplePathChecker;
 import io.battlerune.util.Utility;
 
 /**
- * @author Michael | Chex
- * 
- * @author Teek
- * 
- *         For entity
+ * @author Michael | Chex <-- they did a pooop job with it.
+ * @edited by Adam_#6723 && Teek
  */
 public abstract class MeleeStrategy<T extends Mob> extends CombatStrategy<T> {
 
@@ -31,6 +28,7 @@ public abstract class MeleeStrategy<T extends Mob> extends CombatStrategy<T> {
 			if (defender.movement.isRunning())
 				distance++;
 		}
+
 		if (defender.id == 1739 || defender.id == 1740 || defender.id == 1741 || defender.id == 1742) {
 			return Utility.withinDistance(attacker, defender, distance);
 		}
@@ -40,9 +38,8 @@ public abstract class MeleeStrategy<T extends Mob> extends CombatStrategy<T> {
 	@Override
 	public int modifyDamage(T attacker, Mob defender, int damage) {
 		if (defender.prayer.isActive(Prayer.PROTECT_FROM_MELEE)) {
-			if (defender.attributes.has("VERACS-EFFECT"))
-				return damage;
 			return damage *= defender.isNpc() ? 0.1 : 0.6;
+
 		}
 		return damage;
 	}
