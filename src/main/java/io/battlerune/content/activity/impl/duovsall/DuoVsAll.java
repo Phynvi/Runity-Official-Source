@@ -210,6 +210,14 @@ public class DuoVsAll extends Activity {
 
 			player.inventory.addOrDrop(new Item(6855, 1));
 			other.inventory.addOrDrop(new Item(6833, 1));
+			if(Utility.random(1, 3) <= 1) {
+				player.inventory.addOrDrop(new Item(13190, 1));
+				other.inventory.addOrDrop(new Item(13190, 1));
+			}
+			if(Utility.random(1, 15) <= 1) {
+				player.inventory.addOrDrop(new Item(13191, 1));
+				other.inventory.addOrDrop(new Item(13191, 1));
+			}
 
 			player.send(new SendMessage("You have completed the Double Threat activity. Final time: @red@"
 					+ Utility.getTime(time) + "</col>."));

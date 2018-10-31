@@ -20,7 +20,7 @@ public class DoubleThreat extends MysteryBox {
 
     @Override
     protected int rareValue() {
-        return 3_000_000;
+        return 20_000_000;
     }
 
     @Override
@@ -38,8 +38,6 @@ public class DoubleThreat extends MysteryBox {
                 new Item(11830, 1), // ARMADYL_CHAINSKIRT
                 new Item(11785, 1), // ARMADYL_CROSSBOW
                 new Item(11838, 1), // SARADOMIN_SWORD
-                new Item(12924, 1), // TOXIC_BLOWPIPE
-                new Item(6585, 1), // AMULET_OF_FURY
                 new Item(11802, 1), // ARMADYL_GODSWORD
                 new Item(11804, 1), // BANDOS_GODSWORD
                 new Item(11806, 1), // SARADOMIN_GODSWORD
@@ -75,7 +73,6 @@ public class DoubleThreat extends MysteryBox {
 				new Item(20041, 1), // Samurai gloves
 				new Item(20047, 1), // Samurai boots
 				new Item(13576, 1), // Dragon warhammer
-				new Item(9923, 1), // skeleton leggings
 				new Item(1050, 1), // Santa hat
 				new Item(12890, 1), // santa gloves
 				new Item(13652, 1), // dragon claws
@@ -102,19 +99,13 @@ public class DoubleThreat extends MysteryBox {
 				new Item(21034, 1), // dexterous prayer scroll
 				new Item(1055, 1), // blue h'ween
 				new Item(1959, 1), // pumpkin
-				new Item(1961, 1), // easter egg
-				new Item(10507, 1), // reindeer hat
 				new Item(21012, 1), // Dragon hunter cbow
-				new Item(19553, 1), // Amulet of torture
 				new Item(11283, 1), // DFS
 				new Item(21021, 1), // ancestral top
 				new Item(21018, 1), // ancestral hat
 				new Item(12002, 1), // occult necklace
 				new Item(21024, 1), // ancestral robe bottom
 				new Item(11785, 1), // Arma crossbow
-				new Item(11926, 1), // odium ward
-				new Item(12691, 1), // tyrannical ring (i)
-				new Item(12692, 1), // treasonousnring (i)
 				new Item(13202, 1), // ring of gods (i)
 				new Item(19707, 1), // eternal glory
 				new Item(11889, 1), // zam hasta
@@ -125,16 +116,9 @@ public class DoubleThreat extends MysteryBox {
 		        new Item(19707, 1), // Amulet of eternal glory
 				new Item(12926, 1), // Toxic blowpipe
 				new Item(11283, 1), // DFS
-		        new Item(6199, 1), // Mummy's leg
 				new Item(12357, 1), // katana
 				new Item(21021, 1), // ancestral top
 				new Item(21018, 1), // ancestral hat
-				new Item(12002, 1), // occult necklace
-				new Item(11771, 1), // Archers ring (i)
-				new Item(11773, 1), // Berserker ring (i)
-				new Item(11772, 1), // warrior ring (i)
-				new Item(4151, 1), // Abyssal Whip
-				new Item(6585, 1), // Fury
 				new Item(11840, 1), // Dragon boots
 				new Item(12881, 1), // Ahrim set
 				new Item(12883, 1), // Kail's set
@@ -153,6 +137,13 @@ public class DoubleThreat extends MysteryBox {
 				new Item(21225 ,1),
 				new Item(13805 ,1),
 				new Item(13713 ,1),
+				new Item(13703, 1), new Item(13704, 1), new Item(13705, 1), new Item(13687, 1),
+				new Item(13686, 1),
+				new Item(17157, 1), new Item(17162, 1), new Item(17159, 1), new Item(17158, 1),
+				new Item(13207, 1), new Item(13209, 1), new Item(13210, 1), new Item(13213, 1),
+				new Item(13212, 1), new Item(13214, 1), new Item(13661, 1), new Item(13662, 1),
+				new Item(13190, 1),
+				new Item(13191, 1),
 
         };
     }

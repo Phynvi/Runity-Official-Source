@@ -62,7 +62,7 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 	private void decodeHandshake(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
 		ctx.channel().attr(Config.SESSION_KEY).set(new LoginSession(ctx.channel()));
 
-		if (in.readableBytes() == 10) {
+		if (in.readableBytes() >= 2) {
 			final int handshake = in.readUnsignedByte();
 
 			if (handshake != LOGIN_HANDSHAKE) {
@@ -72,13 +72,6 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 
 			@SuppressWarnings("unused")
 			int nameHash = in.readUnsignedByte();
-			
-			long randomId = in.readLong();
-			
-			if (randomId != 15) {
-				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-				return;
-			}
 
 			ByteBuf buf = ctx.alloc().buffer(17);
 			buf.writeLong(0);
@@ -105,7 +98,6 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 	private void decodePayload(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
 		final String host = ((InetSocketAddress) ctx.channel().remoteAddress()).getAddress().getHostAddress();
 
-		System.out.println(in.readableBytes());
 		final int loginBlockSize = in.readUnsignedByte();
 
 		if (in.isReadable(loginBlockSize)) {
@@ -119,27 +111,12 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 
 			final int gameVersion = in.readUnsignedShort();
 
-			if (gameVersion != 6) { //RENABLE THIS WHEN LAUNCHER IS READY.
-				logger.warn(String.format("[%s] outdated client: %d should be: %d", host, gameVersion, Config.GAME_VERSION));
+		/*	if (gameVersion != Config.GAME_VERSION) { //RENABLE THIS WHEN LAUNCHER IS READY.
+				logger.warn(String.format("[%s] outdated client: %d should be: %d", host, gameVersion,
+						Config.GAME_VERSION));
 				sendResponseCode(ctx, LoginResponse.GAME_UPDATED);
 				return;
-			} 
-			
-            final String macAddress = ByteBufUtils.readString(in);
-			
-			if (macAddress.isEmpty() || macAddress.length() != 17) {
-				System.out.println("invalid mac address! "+macAddress+" "+macAddress.length());
-				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-				return;
-			}
-			
-			
-			int shortInt = in.readShort();
-			
-			if (shortInt != 117) {
-				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
-				return;
-			}
+			} */
 
 			final int memoryVersion = in.readUnsignedByte();
 
@@ -167,11 +144,12 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 			final byte[] rsaBytes = new byte[loginBlockSize - LOGIN_BLOCK_HEADER_SIZE];
 			in.readBytes(rsaBytes);
 
-			ByteBuf rsaBuffer = Unpooled.wrappedBuffer(new BigInteger(rsaBytes).modPow(Config.RSA_EXPONENT, Config.RSA_MODULUS).toByteArray());
+			ByteBuf rsaBuffer = Unpooled.wrappedBuffer(
+					new BigInteger(rsaBytes).modPow(Config.RSA_EXPONENT, Config.RSA_MODULUS).toByteArray());
 
 			final int rsa = rsaBuffer.readUnsignedByte();
 
-			if (rsa != Byte.MAX_VALUE) {
+			if (rsa != 10) {
 				logger.warn(String.format("[%s] failed decrypt rsa %d", host, rsa));
 				sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
 				return;
@@ -180,7 +158,8 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 			final long clientHalf = rsaBuffer.readLong();
 			final long serverHalf = rsaBuffer.readLong();
 
-			int[] isaacSeed = { (int) (clientHalf >> 32), (int) clientHalf, (int) (serverHalf >> 32), (int) serverHalf };
+			int[] isaacSeed = { (int) (clientHalf >> 32), (int) clientHalf, (int) (serverHalf >> 32),
+					(int) serverHalf };
 
 			final IsaacCipher decryptor = new IsaacCipher(isaacSeed);
 
@@ -189,13 +168,16 @@ public final class LoginDecoder extends ByteToMessageDecoder {
 			}
 
 			final IsaacCipher encryptor = new IsaacCipher(isaacSeed);
-			final String z = ByteBufUtils.readString(rsaBuffer);
-			final String zz = ByteBufUtils.readString(rsaBuffer);
+
+			@SuppressWarnings("unused")
+			final int uid = rsaBuffer.readInt();
+
+			final String UUID = ByteBufUtils.readString(rsaBuffer);
+			final String macAddress = ByteBufUtils.readString(rsaBuffer);
 			final String username = ByteBufUtils.readString(rsaBuffer);
 			final String password = ByteBufUtils.readString(rsaBuffer);
-			
 
-			out.add(new LoginDetailsPacket(ctx, "", macAddress, username, password, encryptor, decryptor));
+			out.add(new LoginDetailsPacket(ctx, UUID, macAddress, username, password, encryptor, decryptor));
 		} else {
 			sendResponseCode(ctx, LoginResponse.LOGIN_SERVER_REJECTED_SESSION);
 		}
