@@ -133,7 +133,11 @@ public class PersonalStore extends Store {
 
 	/** Creates the player's shops if non-existent or will enter. */
 	public static void myShop(Player player) {
-		STORES.get(player.getName()).open(player);
+		if (!STORES.containsKey(player.getName())) {
+		     player.setPersonalStore(new PersonalStore(player.getName(), Optional.empty(), player.right.getCrown(), player.getName() + "'s Store", "No caption set", CurrencyType.COINS));
+		     player.personalStore.open(player);
+		} else
+			STORES.get(player.getUsername()).open(player);
 	}
 
 	/** Changes the name of the shop. */

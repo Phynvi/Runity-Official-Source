@@ -10,7 +10,7 @@ public class TestCommand implements Command {
 	@Override
 	public void execute(Player player, String command, String[] parts) {
 		   Player other = player.getAllForOnePartner();
-		   new DuoVsAll(player, player.playerAssistant.instance(), other).create();
+		   //new DuoVsAll(player, player.playerAssistant.instance(), other).create();
 		
 	}
 
