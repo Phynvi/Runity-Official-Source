@@ -289,11 +289,11 @@ public class Slayer {
 
 			new StoreItem(11941, 1, 18000), 
 			new StoreItem(12821, 1, 21000),
-			new StoreItem(13703, 1, 32500),
-			new StoreItem(13704, 1, 32500),
-			new StoreItem(13705, 1, 32500),
+			new StoreItem(13703, 1, 25750),
+			new StoreItem(13704, 1, 25750),
+			new StoreItem(13705, 1, 25750),
 			new StoreItem(21225, 1, 35000),
-			new StoreItem(11642, 1, 50000),
+			new StoreItem(11642, 1, 40000),
 
 	};
 

@@ -74,9 +74,11 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			break;
 			
 		case 620:
+			player.inventory.remove(620, 1);
 			player.setRight(PlayerRight.DONATOR);
 			player.donation.setCredits(100);
 			player.donation.setSpent(10);
+            player.message("@red@ Relog for your affects to take place & rank to update!");
 			break;
 			
 		case 455:

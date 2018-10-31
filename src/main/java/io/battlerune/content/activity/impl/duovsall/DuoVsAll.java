@@ -171,12 +171,6 @@ public class DuoVsAll extends Activity {
 			npc.locking.unlock();
 			//pause();
 		}
-		if (wave == WaveData.WAVE_7 || wave == WaveData.WAVE_11 || wave == WaveData.WAVE_15 || wave == WaveData.WAVE_23
-				|| wave == WaveData.WAVE_25 || wave == WaveData.WAVE_32 || wave == WaveData.WAVE_40
-				|| wave == WaveData.WAVE_45 || wave == WaveData.WAVE_50 || wave == WaveData.WAVE_55
-				|| wave == WaveData.WAVE_60 || wave == WaveData.WAVE_67) {
-			//createRandomGroundItems(player);
-		}
 		pause();
 	}
 

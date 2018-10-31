@@ -79,9 +79,9 @@ public enum SlayerTab {
 			}
 
 			for (int index = 0, string = 46753; index < player.slayer.getBlocked().size(); index++, string += 3) {
-				String name = player.slayer.getBlocked().get(index).getName();
-				player.send(new SendTooltip("Unblock <col=FF981F>" + name + "</col>", string - 1));
-				player.send(new SendString(name, string));
+				//String name = player.slayer.getBlocked().get(index).getName();
+				player.send(new SendTooltip("Unblock <col=FF981F>" + player.slayer.getBlocked() + "</col>", string - 1));
+				player.send(new SendString( player.slayer.getBlocked(), string));
 			}
 
 			player.send(new SendString(Utility.formatDigits(player.slayer.getPoints()) + "\\nPoints", 46714));

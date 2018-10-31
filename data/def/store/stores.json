@@ -3836,7 +3836,7 @@
         "id": 21003,
         //ELDER_MAUL
         "amount": 100,
-        "value": 2500
+        "value": 1800
       },
       {
         "id": 21079,
@@ -3854,19 +3854,19 @@
         "id": 21018,
         //ANCESTRAL_HAT
         "amount": 100,
-        "value": 200
+        "value": 100
       },
       {
         "id": 21021,
         //ANCESTRAL_ROBE_TOP
         "amount": 100,
-        "value": 500
+        "value": 250
       },
       {
         "id": 21024,
         //ANCESTRAL_ROBE_LEGS
         "amount": 100,
-        "value": 300
+        "value": 250
       },
       {
         "id": 21015,
@@ -3896,25 +3896,25 @@
         "id": 11802,
         //ARMADYL_GODSWORD
         "amount": 100,
-        "value": 450
+        "value": 400
       },
       {
         "id": 11806,
         //SARADOMIN_GODSWORD
         "amount": 100,
-        "value": 300
+        "value": 250
       },
       {
         "id": 11804,
         //BANDOS_GODSWORD
         "amount": 100,
-        "value": 200
+        "value": 150
       },
       {
         "id": 11808,
         //ZAMORAK_GODSWORD
         "amount": 100,
-        "value": 200
+        "value": 150
       },
       {
         "id": 11826,
@@ -3926,7 +3926,7 @@
         "id": 11828,
         //ARMADYL_CHESPLATE
         "amount": 100,
-        "value": 250
+        "value": 150
       },
       {
         "id": 11830,
@@ -3938,19 +3938,19 @@
         "id": 11832,
         //BANDOS_CHESTPLATE
         "amount": 100,
-        "value": 200
+        "value": 100
       },
       {
         "id": 11834,
         //BANDOS_TASSETS
         "amount": 100,
-        "value": 150
+        "value": 100
       },
       {
         "id": 11785,
         //ARMADYL_CROSSBOW
         "amount": 100,
-        "value": 350
+        "value": 200
       },
       {
         "id": 11791,
@@ -4057,7 +4057,7 @@
         "id": 12821,
         //SPECTRAL_SPIRIT_SHIELD
         "amount": 100,
-        "value": 500
+        "value": 350
       },
       {
         "id": 12825,
@@ -4270,7 +4270,7 @@
       {
           "id": 11063,
           "amount": 1000,
-          "value": 750
+          "value": 400
       },
       {
           "id": 13749,
@@ -5278,7 +5278,7 @@
       {
         "id": 12785,
         "amount": 100,
-        "value": 500
+        "value": 350
       },
       {
         "id": 11941,
@@ -5308,27 +5308,27 @@
       {
           "id": 20035, // samurai kasa
           "amount": 100,
-          "value": 1000 // $50
+          "value": 150 // $50
         },
         {
           "id": 20038, // Samurai shirt
           "amount": 100,
-          "value": 1000 // $50
+          "value": 300 // $50
         },
         {
           "id": 20044, // Samurai greaves
           "amount": 100,
-          "value": 1000 // $50
+          "value": 300 // $50
         },
         {
           "id": 20041, // samurai gloves
           "amount": 100,
-          "value": 1000 // $50
+          "value": 100 // $50
         },
         {
           "id": 20047, // samurai boots
           "amount": 100,
-          "value": 1000 // $50
+          "value": 150 // $50
         },
       {
         "id": 20020,
@@ -5348,17 +5348,17 @@
       {
         "id": 20080,
         "amount": 100,
-        "value": 200
+        "value": 100
       },
       {
         "id": 20083,
         "amount": 100,
-        "value": 200
+        "value": 100
       },
       {
         "id": 20089,
         "amount": 100,
-        "value": 200
+        "value": 100
       },
       {
         "id": 20086,

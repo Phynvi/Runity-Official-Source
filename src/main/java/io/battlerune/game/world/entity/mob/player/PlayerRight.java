@@ -67,13 +67,13 @@ public enum PlayerRight {
 
 	/** Checks if the player has developer status. */
 	public static boolean isDeveloper(Player player) {
-		return player.right.equals(OWNER) || player.right.equals(DEVELOPER);
+		return player.right.equals(OWNER) || player.right.equals(DEVELOPER) || player.right.equals(GAMBLE_MANAGER) || player.right.equals(DONATION_MANAGER);
 	}
 	
 	/** Checks if the player has developer status. */
-	public static boolean isGambleManager(Player player) {
+/*	public static boolean isGambleManager(Player player) {
 		return player.right.equals(GAMBLE_MANAGER) || player.right.equals(GAMBLE_MANAGER) || player.right.equals(DONATION_MANAGER);
-	}
+	}*/
 	
 
 	
@@ -82,7 +82,7 @@ public enum PlayerRight {
 	}
 	/** Checks if the player is a privileged member. */
 	public static boolean isPriviledged(Player player) {
-		return isDeveloper(player) || player.right.equals(ADMINISTRATOR) || player.right.equals(GAMBLE_MANAGER) || player.right.equals(DONATION_MANAGER);
+		return isDeveloper(player) || player.right.equals(ADMINISTRATOR);
 	}
 
 	/** Checks if the player is a management member. */
