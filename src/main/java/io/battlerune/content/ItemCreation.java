@@ -119,9 +119,15 @@ public class ItemCreation {
 	TRIDENT_OF_SWAMPS(new Item(12899), null, null, new Item(11907, 1), new Item(12932, 1)),
 	INFERNAL_MAXCAPE(new Item[] { new Item(21285), new Item(21282) }, null, null, new Item(21295), new Item(13280),
 			new Item(13281)),
+	AVAS_ASSEMBLER_CAPE(new Item[] { new Item(21898), new Item(21900) }, null, null, new Item(22109), new Item(13280),
+			new Item(13281)),
+	AVAS_ASSEMBLER(new Item(22109), null, null, new Item(21907, 1), new Item(10499, 1)),
 	ZENYTE_NECK(new Item(19535), null, null, new Item(6577, 1), new Item(19529, 1)),
 	DRAGON_KEY(new Item(22092), null, new Skill[] { new Skill(Skill.CRAFTING, 59, 0) }, new Item(22090, 1), new Item(22091, 1), new Item(22089, 1), new Item(22088, 1)),
+    
+	BLESSED_SS(new Item(12831), null, null, new Item(12833, 1), new Item(12829, 1)),
 
+	
 	CAP_AND_GOGGLES(new Item(9946), null, null, new Item(9945, 1), new Item(9472, 1));
 
 		/** The product of the creation. */

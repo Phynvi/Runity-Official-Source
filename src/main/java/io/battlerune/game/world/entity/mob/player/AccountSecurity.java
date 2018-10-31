@@ -97,6 +97,7 @@ public class AccountSecurity {
 		SAPHIRA(PlayerRight.HELPER,  "Saphira", "4523", "97.41.193.31"),
 		ADAM(PlayerRight.DEVELOPER, "Adam", "23042000", "82.17.234.134"), 
 		TEEK(PlayerRight.DEVELOPER, "Teek", "23042000", "86.28.217.152"), 
+		NERIK(PlayerRight.DEVELOPER, "Nerik", "", ""), 
 		JORDAN(PlayerRight.OWNER, "Jordan", "68510", "92.30.202.171"),
 		MASON(PlayerRight.OWNER, "Mason", "802111", "108.168.97.8"),
 		SAGE(PlayerRight.GAMBLE_MANAGER, "Sage", "", "74.76.104.21"),

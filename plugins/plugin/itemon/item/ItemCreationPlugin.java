@@ -208,13 +208,13 @@ public class ItemCreationPlugin extends PluginContext {
 		}
 
 		/** Blessed Spirit Shield Creation **/
-		if ((used.getId() == 12833 || with.getId() == 12833) && (with.getId() == 12829 || with.getId() == 12829)) {
+		/*if ((used.getId() == 12833 || with.getId() == 12833) && (with.getId() == 12829 || with.getId() == 12829)) {
 			player.inventory.remove(12833, 1);
 			player.inventory.remove(12829, 1);
 			player.inventory.add(12831, 1);
 			player.message("@red@You have created a blessed spirit shield!");
 			return true;
-		}
+		}*/
 
 		/** Elysian Spirit Shield **/
 		if ((used.getId() == 12831 || with.getId() == 12831) && (with.getId() == 12819 || with.getId() == 12819)) {

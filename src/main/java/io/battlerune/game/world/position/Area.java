@@ -250,6 +250,11 @@ public abstract class Area {
 		return inArea(entity, new Position(2496, 4990, 0), new Position(2623, 4919, 0));
 	}
 	
+	public static boolean inDuoVsAll(Interactable entity) {
+		return inArea(entity, new Position(3129, 4991, 0), new Position(3201, 4923, 0));
+	}
+	
+	
 	public static boolean inGodwars(Interactable entity) {
 		return inArea(entity, new Position(2816, 5243, 2), new Position(2960, 5400, 2));
 	}

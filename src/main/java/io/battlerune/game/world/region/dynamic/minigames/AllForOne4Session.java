@@ -1,22 +1,14 @@
 package io.battlerune.game.world.region.dynamic.minigames;
 
+import io.battlerune.content.activity.impl.duovsall.DuoVsAll;
 import io.battlerune.content.dialogue.DialogueFactory;
-import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
-import io.battlerune.content.teleport.TeleportHandler;
-import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.player.Player;
-import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.game.world.object.GameObject;
 import io.battlerune.game.world.region.dynamic.boss.DynamicRegionHandler;
-import io.battlerune.net.packet.out.SendInputMessage;
 import io.battlerune.util.Utility;
 
-/**
- * 
- * @author Teek
- *
- */
+
 public class AllForOne4Session extends DynamicRegionHandler {
 	
 	private long startTime, finishTime;
@@ -30,7 +22,7 @@ public class AllForOne4Session extends DynamicRegionHandler {
 		this.player = player;
 		this.partner = player.allForOnePartner;
 		startTime = System.currentTimeMillis();
-		partner.move(player.getPosition());
+		new DuoVsAll(player, player.playerAssistant.instance(), partner).create();
 		
 	}
 
@@ -59,18 +51,21 @@ public class AllForOne4Session extends DynamicRegionHandler {
 
 	@Override
 	public void onNPCDeath(Npc npc) {
+		
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void onPlayerDeath(Player player) {
+		partner.setAllForOnePartner(null);
+		player.setAllForOnePartner(null);
 		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public boolean allowTeleportation(Player player) {
-		player.getDynamicRegion().destroyInstance(false);
+		//player.getDynamicRegion().destroyInstance(false);
 		return true;
 	}
 
@@ -78,6 +73,8 @@ public class AllForOne4Session extends DynamicRegionHandler {
 	public void onExit(Player player) {
 		finishTime = System.currentTimeMillis();
 		sendPartnerMessage("Time Elapsed: "+Utility.convertMsToTime(finishTime - startTime));
+		partner.setAllForOnePartner(null);
+		player.setAllForOnePartner(null);
 	}
 	
 	private void sendPartnerMessage(String message) {

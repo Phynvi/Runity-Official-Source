@@ -321,18 +321,18 @@ public enum SlayerTask implements TaskInterface<Player> {
 			return true;
 		}
 	},
-	// CHAOS_ELEMENTAL("Chaos elemental", 1, 150, TaskDifficulty.HARD, new
-	// Position(1, 1), "Wilderness", 2054) {
-//        @Override
-//        public boolean canAssign(Player player) {
-//            return player.slayer.getUnlocked().contains(SlayerUnlockable.CHAOS_ELEMENT);
-//        }
-//
-//        @Override
-//        public boolean canAttack(Player player) {
-//            return true;
-//        }
-//    },
+	CHAOS_ELEMENTAL("Chaos elemental", 1, 150, TaskDifficulty.HARD, new
+	 Position(1, 1), "Wilderness", 2054) {
+        @Override
+        public boolean canAssign(Player player) {
+            return player.slayer.getUnlocked().contains(SlayerUnlockable.CHAOS_ELEMENT);
+        }
+
+        @Override
+        public boolean canAttack(Player player) {
+            return true;
+        }
+    },
 	// SPIRTUAL_RANGERS("Spiritual Ranger", 63, 50, TaskDifficulty.HARD, new
 	// Position(1, 1), "Godwars Dungeon", 2211) {
 //        @Override
@@ -447,40 +447,7 @@ public enum SlayerTask implements TaskInterface<Player> {
 			return true;
 		}
 	},
-	ICE_DEMON("Ice Demon", 1, 50, TaskDifficulty.BOSS, new Position(1, 1), "Ice Demon Teleport", 7585) {
-		@Override
-		public boolean canAssign(Player player) {
-			return player.skills.getMaxLevel(Skill.SLAYER) >= 92;
-		}
-
-		@Override
-		public boolean canAttack(Player player) {
-			return true;
-		}
-	},
 	GIANT_ROC("Giant Roc", 1, 50, TaskDifficulty.BOSS, new Position(1, 1), "Giant Roc Teleport", 763) {
-		@Override
-		public boolean canAssign(Player player) {
-			return player.skills.getMaxLevel(Skill.SLAYER) >= 92;
-		}
-
-		@Override
-		public boolean canAttack(Player player) {
-			return true;
-		}
-	},
-	GALVEK("Galvek", 1, 10, TaskDifficulty.BOSS, new Position(1, 1), "Wilderness", 8095) {
-		@Override
-		public boolean canAssign(Player player) {
-			return player.skills.getMaxLevel(Skill.SLAYER) >= 92;
-		}
-
-		@Override
-		public boolean canAttack(Player player) {
-			return true;
-		}
-	},
-	GLOD("Glod", 1, 10, TaskDifficulty.BOSS, new Position(1, 1), "Arena Event", 5129) {
 		@Override
 		public boolean canAssign(Player player) {
 			return player.skills.getMaxLevel(Skill.SLAYER) >= 92;

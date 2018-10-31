@@ -15,6 +15,9 @@ public enum AnnouncementData {
 	EVENTS_FRIDAY("Did you know on Fridays, we give all our players 30% Bonus Drop Rate Boost!"),
 	EVENTS_SATURDAY("Did you know on Saturdays, we give all of our players Double Experience!"),
 	EVENTS_SUNDAY("Did you know on Sundays, we give all of our players Double Experience!"),
+	NORMAL_PRAYER("Having Unlimited prayer is completely intentional! We Implemented to make PvM'ing more easier"),
+	DISCORD("Join ::discord We tend to post our #updates and host multiple #giveaways a day!"),
+	
 
 
 	

@@ -5208,8 +5208,9 @@
   },
   {
     "id": 620,
-    "name": "Paramaya ticket",
+    "name": "Donator Ticket",
     "stackable": true,
+	"tradeable": false,
     "low-alch": 2,
     "high-alch": 3,
     "base-value": 5
@@ -22313,6 +22314,30 @@
     "defence-magic": 6,
     "bonus-strength": 2
   },
+  
+  {
+	    "id": 13825,
+	    "name": "Sesimc staff",
+	    "low-alch": 32000,
+	    "high-alch": 48000,
+	    "base-value": 80000,
+	    "weight": 2.0,
+	    "stand-animation": 813,
+	    "walk-animation": 1146,
+	    "run-animation": 1210,
+	    "equipment-slot": "WEAPON",
+	    "weapon-interface": "MAGIC_STAFF",
+		"req-attack": 75,
+		"req-magic": 75,
+	    "attack-stab": 55,
+	    "attack-slash": 70,
+	    "attack-magic": 17,
+	    "defence-slash": 3,
+	    "defence-crush": 3,
+	    "defence-magic": 17,
+	    "bonus-strength": 72,
+	    "magic-damage": 15
+	  },
   {
     "id": 2416,
     "name": "Guthix staff",

@@ -20,7 +20,6 @@ import plugin.command.impl.moderator.DisableDoubleXP;
 import plugin.command.impl.moderator.DoubleAVO;
 import plugin.command.impl.moderator.Enable15DR;
 import plugin.command.impl.moderator.Enable30DR;
-import plugin.command.impl.moderator.EnableDoubleDrops;
 import plugin.command.impl.moderator.EnableDoubleXP;
 import plugin.command.impl.moderator.HpEventCommand;
 import plugin.command.impl.moderator.InvisibleCommand;
@@ -72,6 +71,7 @@ import plugin.command.impl.owner.SpawnCustomCommand;
 import plugin.command.impl.owner.SpecCommand;
 import plugin.command.impl.owner.TeleCommand;
 import plugin.command.impl.owner.TeleCommand1;
+import plugin.command.impl.owner.TestCommand;
 import plugin.command.impl.owner.UpCommand;
 import plugin.command.impl.owner.UpdateCommand;
 import plugin.command.impl.owner.posCommand;
@@ -82,6 +82,8 @@ import plugin.command.impl.player.BarrowsCommand;
 import plugin.command.impl.player.BarrowsFix;
 import plugin.command.impl.player.CashOutCommand;
 import plugin.command.impl.player.ChangePassword;
+import plugin.command.impl.player.CheckBank;
+import plugin.command.impl.player.CheckPlayers;
 import plugin.command.impl.player.ClaimDonationCommand;
 import plugin.command.impl.player.ClaimVote;
 import plugin.command.impl.player.Commands;
@@ -102,6 +104,7 @@ import plugin.command.impl.player.Helpcommand;
 import plugin.command.impl.player.HomeCommand;
 import plugin.command.impl.player.InfernoCommand;
 import plugin.command.impl.player.KeyCommand;
+import plugin.command.impl.player.KysCommand;
 import plugin.command.impl.player.MageBankCommand;
 import plugin.command.impl.player.MaxStatusCommand;
 import plugin.command.impl.player.PlayerCountCommand;
@@ -138,6 +141,7 @@ public class CommandManager {
 		
 		/*
 		 * @Player Commands
+		 * Join ::discord for huge giveaways! and to be kept upto date regarding updates!
 		 */
 		PLUGIN.putIfAbsent(new String[] { "plos" }, new PosCommand());
 		PLUGIN.putIfAbsent(new String[] { "thread" }, new ThreadCommand());
@@ -187,6 +191,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "barrowsfix", "bugfix" }, new BarrowsFix());
 		PLUGIN.putIfAbsent(new String[] { "revs", "revcave" }, new RevenantCaveCommand());
 		PLUGIN.putIfAbsent(new String[] { "moneyguide", "guide", "giveaway"}, new YouTubeCommand());
+		PLUGIN.putIfAbsent(new String[] { "kys", "jordan", "jack"}, new KysCommand());
 
 		/*
 		 * @Donator Command
@@ -201,7 +206,9 @@ public class CommandManager {
 		/**
 		 * @Moderator/Helper Commands
 		 */
-
+		
+		PLUGIN.putIfAbsent(new String[] { "check", "checkplayer", "investigate"}, new CheckPlayers());
+		PLUGIN.putIfAbsent(new String[] { "checkbank", "playerbank"}, new CheckBank());
 		PLUGIN.putIfAbsent(new String[] { "mute", "mutee" }, new MuteCommand());
 		PLUGIN.putIfAbsent(new String[] { "unmute", "unmutee" }, new UnmuteCommand());
 		PLUGIN.putIfAbsent(new String[] { "jail", "jaill" }, new JailCommand());
@@ -238,6 +245,7 @@ public class CommandManager {
 		 * Huge Giveaways/HnS/Gambling Events & 30% DR & Double AvO Ticks On 26th & 27th
 		 */
 		
+		PLUGIN.putIfAbsent(new String[] { "test", "create" }, new TestCommand());
 		PLUGIN.putIfAbsent(new String[] { "kickall", "kickeveryone" }, new KickAllCommand());
 		PLUGIN.putIfAbsent(new String[] { "item" }, new ItemCommand());
 		PLUGIN.putIfAbsent(new String[] { "master" }, new MasterCommand());

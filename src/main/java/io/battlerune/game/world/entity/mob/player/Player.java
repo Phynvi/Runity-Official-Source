@@ -1051,6 +1051,24 @@ public class Player extends Mob {
 		other.sendMessage(message);
 		
 	}
+	
+	/**
+	 * 
+	 * @param player
+	 * @param other
+	 * @param force
+	 * 
+	 * Forces both parties to an instance.
+	 * 
+	 */
+	public void createDuoInstance(Player player, Player other) {
+		if (player.allForOnePartner == null) {
+			player.message("You do not have a partner, therefore we could not create the instance!");
+			return;
+		}
+		player.playerAssistant.instance();
+		other.playerAssistant.instance();
+	}
 
 	public void teleblock(int time) {
 		if (time <= 0 || (teleblockTimer.get() > 0)) {

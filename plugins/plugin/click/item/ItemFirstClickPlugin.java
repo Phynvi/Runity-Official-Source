@@ -72,6 +72,13 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 			player.inventory.add(995, 25000000);
 			player.inventory.remove(21807, 1);
 			break;
+			
+		case 620:
+			player.setRight(PlayerRight.DONATOR);
+			player.donation.setCredits(100);
+			player.donation.setSpent(10);
+			break;
+			
 		case 455:
 			new ScratchCard(player).display();
 			break;

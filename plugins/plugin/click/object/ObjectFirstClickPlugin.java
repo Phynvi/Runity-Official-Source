@@ -1175,8 +1175,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.sendMessage("Your partner needs to be with you in order to start this session!");
 				break;
 			}
-			player.setDynamicRegion(new DynamicRegion(player, RegionType.All_FOR_ONE_4));
-			player.getAllForOnePartner().setDynamicRegion(player.getDynamicRegion());
+			AllForOne4Session session = new AllForOne4Session();
+			session.onStart(player);
+		//	player.setDynamicRegion(new DynamicRegion(player, RegionType.All_FOR_ONE_4));
+		//	player.getAllForOnePartner().setDynamicRegion(player.getDynamicRegion());
 			break;
 			
 		case 13619:

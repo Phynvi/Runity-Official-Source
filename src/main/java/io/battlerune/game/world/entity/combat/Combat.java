@@ -102,12 +102,12 @@ public class Combat<T extends Mob> {
 	}
 
 	public void tick() {
-		if (!checkDistances(target.getTarget())) {
+		if (!checkDistances(target.getTarget())) 
 			reset();
 			
-			if (attacker.getCombat().isAttacking() && attacker.isPlayer() && PlayerRight.isDeveloper(attacker.getPlayer()))
-		        System.out.println("Ticking.. checking distance..");	
-		}
+/*			if (attacker.getCombat().isAttacking() && attacker.isPlayer() && PlayerRight.isDeveloper(attacker.getPlayer()))
+		        System.out.println("Ticking.. checking distance.."); teek	*/
+
 
 		updateListeners();
 

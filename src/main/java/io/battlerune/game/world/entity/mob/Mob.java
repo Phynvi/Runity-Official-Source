@@ -147,6 +147,10 @@ public abstract class Mob extends Entity {
 		}
 	}
 
+	public void runTo(Position destination) {
+		movement.dijkstraPath(destination);
+	}
+
 	/** Plays a graphic. */
 	public void graphic(Graphic graphic, boolean override) {
 		Optional<Graphic> result = Optional.ofNullable(graphic);
@@ -255,7 +259,7 @@ public abstract class Mob extends Entity {
 		interactingWith = null;
 		this.updateFlags.add(UpdateFlag.INTERACT);
 	}
-	
+
 	public boolean isTeleporting() {
 		return teleportRegion;
 	}
@@ -278,11 +282,11 @@ public abstract class Mob extends Entity {
 		locking.lock(599, TimeUnit.MILLISECONDS, LockType.MASTER);
 		onStep();
 	}
-	
+
 	public void forceMove(Position position) {
-		
+
 		setPosition(position);
-		
+
 		if (Utility.isRegionChange(position, lastPosition)) {
 			regionChange = true;
 		} else {
@@ -357,13 +361,12 @@ public abstract class Mob extends Entity {
 			World.schedule(cachedWaypoint = waypoint);
 		}
 	}
-	
 
 	public void attack(Mob target) {
-		
-		//if (near(getPlayer().getPosition(), 2)) {
-		//	return;
-		//}
+
+		// if (near(getPlayer().getPosition(), 2)) {
+		// return;
+		// }
 		Waypoint waypoint = new CombatWaypoint(this, target);
 		if (cachedWaypoint == null || (!cachedWaypoint.isRunning() || !waypoint.equals(cachedWaypoint))) {
 			resetWaypoint();
@@ -566,24 +569,27 @@ public abstract class Mob extends Entity {
 		this.bonuses = bonuses;
 	}
 
-	
 	public void setIndexBonus(int i, int number) {
 		this.bonuses[i] = number;
 	}
 
-	public void appendBonus(int index, int amount, boolean add, Item item) { 
-		
+	public void appendBonus(int index, int amount, boolean add, Item item) {
+
 		if (item.isRangedEquipment() && add) {
-			if (this.getPlayer().equipment.get(Equipment.ARROWS_SLOT) != null && item.getEquipmentType().getSlot() == Equipment.WEAPON_SLOT || this.getPlayer().equipment.get(Equipment.WEAPON_SLOT) != null && this.getPlayer().equipment.get(Equipment.WEAPON_SLOT).isRangedEquipment() && item.getEquipmentType().getSlot() == Equipment.ARROWS_SLOT) 
+			if (this.getPlayer().equipment.get(Equipment.ARROWS_SLOT) != null
+					&& item.getEquipmentType().getSlot() == Equipment.WEAPON_SLOT
+					|| this.getPlayer().equipment.get(Equipment.WEAPON_SLOT) != null
+							&& this.getPlayer().equipment.get(Equipment.WEAPON_SLOT).isRangedEquipment()
+							&& item.getEquipmentType().getSlot() == Equipment.ARROWS_SLOT)
 				return;
 		}
-		
+
 		if (bonuses == EMPTY_BONUSES)
 			bonuses = new int[EMPTY_BONUSES.length];
-		
+
 		if (amount == 0)
 			return;
-		
+
 		if (add)
 			bonuses[index] += amount;
 		else

@@ -17,6 +17,8 @@ public enum DropChanceData {
 	dark6(13711, 5, 5), CHI_HELM(13703, 4, 12), CHI_BODY(13704, 4, 12), CHI_LEGS(13705, 4, 12), owl_head(34, 3, 13),
 	owl_plate(79, 3, 13), owl_legs(80, 3, 13), LAVABOW(13749, 7, 10), slayerhelm(21777, 4, 15),
 	slayerbody(22123, 4, 15), slayerlegs(21954, 4, 15), slayerkite(21895, 4, 15), SAM_HELM(20049, 3, 4),
+	VITUR(22325, 7, 25),
+	SILVER_CHAIN(13689, 5, 5),
 	SAM_PLATE(13284, 3, 4), SAM_LEGS(20058, 3, 4), SAM_GLOVES(20055, 3, 4), SAM_BOOTS(20061, 3, 4);
 
 	private int itemId;
