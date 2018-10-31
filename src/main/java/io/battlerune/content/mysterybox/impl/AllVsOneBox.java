@@ -141,16 +141,9 @@ public class AllVsOneBox implements MysteryBoxListener {
 	@Override
 	public void execute(Player player) {
 		Random random = new Random();
-		
-		if (!player.boxClick.elapsed(10, TimeUnit.MINUTES)) {
-			player.dialogueFactory.sendStatement("You can only do this once every 10 minutes!",
-					"Time Passed: " + Utility.getTime(player.godwarsDelay.elapsedTime())).execute();
-			return;
-		}
 
 		
 		player.inventory.remove(290, 1);
-		player.boxClick.reset();
 		/**
 		 * Utility.random(1, 150) <-- This generates a RANDOM number between 1 and 150.
 		 * Utility.random(1, 250) <= 10 <---- This generates a RANDOM NUMBER between 1

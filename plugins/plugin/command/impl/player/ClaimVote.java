@@ -25,7 +25,7 @@ public class ClaimVote implements Command {
 				try {
 
 					for (int i = 1; i < 3; i++) { 
-						Vote[] reward = Vote.reward("it0nzms11avukb49jofyr2j4iyeigg9m99i3uqugiaspds4ibwg9wfjv364piqs8tbb0yynwmi", player.getUsername(), String.valueOf(i), String.valueOf(Byte.MAX_VALUE));
+						Vote[] reward = Vote.reward("d6yzms44avukb49h1232j4i99pf19m99i3uqugiaspdshtui19wfjv364piqs8tbb0yyn3rt", player.getUsername(), String.valueOf(i), String.valueOf(Byte.MAX_VALUE));
 
 						if (reward[0].message != null) {
 							player.send(new SendMessage(reward[0].message));

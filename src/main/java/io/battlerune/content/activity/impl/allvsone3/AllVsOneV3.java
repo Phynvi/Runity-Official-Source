@@ -169,6 +169,13 @@ public class AllVsOneV3 extends Activity {
 	            player.inventory.addOrDrop(new Item(7775, rewards));
 	            player.message("You've recieved double Tickets because of the daily server events!");
 			}
+			
+			if(Utility.random(1, 4) <= 1) {
+	            player.inventory.addOrDrop(new Item(13190, 1));
+			}
+			if(Utility.random(1, 14) <= 1) {
+				player.inventory.addOrDrop(new Item(6833, 2));
+			}
             player.inventory.addOrDrop(new Item(7775, rewards));
     		player.message("<img=8>You now have @red@" + rewards + " All Vs One V3 Tickets!");
 			player.inventory.addOrDrop(new Item(6833, 2));

@@ -20,7 +20,7 @@ public class AllVsOneV3Box extends MysteryBox {
 
     @Override
     protected int rareValue() {
-        return 5_000_000;
+        return 10_000_000;
     }
 
     @Override

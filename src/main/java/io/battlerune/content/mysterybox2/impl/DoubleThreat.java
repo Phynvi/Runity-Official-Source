@@ -111,9 +111,6 @@ public class DoubleThreat extends MysteryBox {
 				new Item(11889, 1), // zam hasta
 				new Item(11791, 1), // SOTD
 				new Item(19710, 1), // ring of suffering (i)
-				new Item(12831, 1), // blessed ss
-		        new Item(2581, 1), // Robin hood hat
-		        new Item(19707, 1), // Amulet of eternal glory
 				new Item(12926, 1), // Toxic blowpipe
 				new Item(11283, 1), // DFS
 				new Item(12357, 1), // katana
