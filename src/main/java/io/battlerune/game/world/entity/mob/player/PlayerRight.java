@@ -274,4 +274,9 @@ public enum PlayerRight {
 	public final boolean lessOrEqual(PlayerRight other) {
 		return ordinal() <= other.ordinal();
 	}
+
+	public static boolean isGambleManager(Player player2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

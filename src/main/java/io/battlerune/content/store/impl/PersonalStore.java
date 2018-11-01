@@ -16,6 +16,7 @@ import io.battlerune.content.store.StoreType;
 import io.battlerune.content.store.currency.CurrencyType;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.InterfaceManager.Type;
 import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.items.containers.ItemContainer;
@@ -128,7 +129,7 @@ public class PersonalStore extends Store {
 				"<col=d38537>Total Sold Worth:</col> " + Utility.formatPrice(GameSaver.PERSONAL_ITEM_WORTH), 38213));
 
 		player.send(new SendString(player.personalStore.earnings < 1 ? "None" : player.personalStore.earnings, 38207));
-		player.interfaceManager.open(38200);
+		player.interfaceManager.open(Type.PLAYER_OWNED_STORE_MENU);
 	}
 
 	/** Creates the player's shops if non-existent or will enter. */

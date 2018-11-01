@@ -31,7 +31,9 @@ public class SendItemOnInterface extends OutgoingPacket {
 
 	@Override
 	public boolean encode(Player player) {
-		builder.writeShort(id).writeShort(items.length);
+		builder.writeShort(id).
+		writeShort(items.length);
+		
 		for (final Item item : items) {
 			if (item != null) {
 				if (item.getAmount() > 254) {

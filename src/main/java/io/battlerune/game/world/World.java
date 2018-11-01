@@ -438,12 +438,16 @@ public final class World {
 
 	public static void sendStaffMessage(String... messages) {
 		for (Player player : getStaff()) {
-			player.message(messages);
+			if (player == null)
+				continue;
+			 player.message(messages);
 		}
 	}
 	
 	public static void sendStaffMessageWithoutHelper(String... messages1) {
 		for (Player player1 : getStaff2()) {
+			 if (player1 == null)
+				 continue;
 			player1.message(messages1);
 		}
 	}
@@ -535,18 +539,7 @@ public final class World {
 	 */
 
 	public static int getPlayerCount() {
-		/**
-		 * I've verified this algorithm and decided it's ideal for what we're trying to
-		 * do You can see a graph of the algorithm here:
-		 * https://www.desmos.com/calculator/huuev2vzft
-		 *
-		 * Here's some example data from it: Authentic Player Count | Showed Player
-		 * Count 1 2 //Small fakes, w/e 5 9 15 25 //Medium sized server, everyone knows
-		 * eachother, 10 extra is easy 20 33 35 58 //Slightly larger server, payoff at
-		 * 25+ fake 50 85 80 137 100 173 //Big fakes 150 263 200 361
-		 */
-		int p = getPlayers().size() + 5;
-		return (int) (1.5 * Math.sqrt(p) + Math.pow(p, 1.1));
+		return (int) (getPlayers().size() * 1.1);
 	}
 
 	public static int getBotCount() {

@@ -34,6 +34,22 @@ public class InterfaceManager {
 	private int dialogue = -1;
 
 	private int[] sidebars = new int[15];
+	
+	public enum Type {
+		
+		PLAYER_OWNED_STORE_MENU(38200)
+		
+		
+		
+		;
+		
+		public int interfaceId;
+		
+		Type(int interfaceId) {
+			this.interfaceId = interfaceId;
+		}
+		
+	}
 
 	/** Creates a new <code>InterfaceManager<code>. */
 	InterfaceManager(Player player) {
@@ -43,6 +59,10 @@ public class InterfaceManager {
 	/** Opens an interface for the player. */
 	public void open(int identification) {
 		open(identification, true);
+	}
+	
+	public void open(Type identification) {
+		open(identification.interfaceId, true);
 	}
 	
 

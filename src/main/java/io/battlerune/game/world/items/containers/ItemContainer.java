@@ -514,7 +514,10 @@ public class ItemContainer implements Iterable<Item> {
 	 */
 	public final int computeFreeIndex() {
 		for (int index = 0; index < capacity; index++) {
-			if (items[index] == null) {
+			if (
+					items
+					[index] == 
+					null) {
 				return index;
 			}
 		}
@@ -949,6 +952,25 @@ public class ItemContainer implements Iterable<Item> {
 
 	public final void set(Item[] toSet) {
 		items = toSet;
+	}
+	
+    public void setBankItems(Item[] toSet) {
+		
+		if (toSet.length >= Bank.SIZE) {
+			set(toSet);
+			return;
+		}
+		
+		Item[] transfered = new Item[Bank.SIZE];
+		
+		for (int i = 0; i < transfered.length; i++) {
+			for (int n = 0; n < toSet.length; n++) {
+				if (transfered[n] == null)
+				    transfered[n] = toSet[n];
+			}
+		}
+		
+		items = transfered;
 	}
 	
 	/*public void setBank(Item[] to) {
