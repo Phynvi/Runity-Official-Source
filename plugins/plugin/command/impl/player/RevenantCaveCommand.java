@@ -21,6 +21,10 @@ public class RevenantCaveCommand implements Command {
 					.execute();
 			return;
 		}
+		if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+			player.message("@red@You can no longer take custom's into the wilderness!");
+			return;
+		}
 		player.dialogueFactory.sendOption("@red@Teleport me [Wilderness]", () -> {
 
 				Teleportation.teleport(player, Config.REV_CAVES);

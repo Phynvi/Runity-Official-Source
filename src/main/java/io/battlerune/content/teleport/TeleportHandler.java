@@ -157,7 +157,7 @@ public class TeleportHandler {
 			special(player, teleport);
 			return;
 		}
-/*
+
 		if (!teleport.getcustomsAllowed() == true && player.inventory.containsAny(Config.NOT_ALLOWED)) {
 			player.message("@red@You are not allowed to bring in custom items " + player.getName() + "!");
 			return;
@@ -166,7 +166,7 @@ public class TeleportHandler {
 			player.message(
 					"@red@You are not allowed to bring in custom items into this area " + player.getName() + "!");
 			return;
-		}*/
+		}
 
 		Teleportation.teleport(player, teleport.getPosition());
 		player.send(new SendMessage("You have teleported to " + teleport.getName() + "."));

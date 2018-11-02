@@ -33,6 +33,10 @@ public class BossInformationButtonPlugin extends PluginContext {
 			return false;
 		}
 		if (button == -14335) {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(2997, 3849, 0));
 			player.send(new SendMessage("You have teleported to King Black Dragon!"));
 		}
@@ -48,6 +52,10 @@ public class BossInformationButtonPlugin extends PluginContext {
 			//player.send(new SendMessage("You have teleported to Giant Mole!"));
 		}
 		if (button == -14305) {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(3195, 3865, 0));
 			player.send(new SendMessage("You have teleported to Lava Dragon!"));
 		}
@@ -77,14 +85,26 @@ public class BossInformationButtonPlugin extends PluginContext {
 		//	player.send(new SendMessage("You have teleported to Lizard Shamen!"));
 		}
 		if (button == -14245) {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(3217, 3781, 0));
 			player.send(new SendMessage("You have teleported to Vet'ion!"));
 		}
 		if (button == -14230) {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(2982, 3832, 0));
 			player.send(new SendMessage("You have teleported to Chaos Fanatic"));
 		}
 		if (button == -14215) {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(2966, 3698, 0));
 			player.send(new SendMessage("You have teleported to Crazy Archaeologist"));
 		}
@@ -132,19 +152,35 @@ public class BossInformationButtonPlugin extends PluginContext {
 			}, "Nevermind", factory::clear).execute();
 		}
 		if (button == -14155) {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(3307, 3916, 0));
 			player.send(new SendMessage("You have teleported to Chaos Elemental!"));
 		}
 		if (button == -14140) {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(3307, 3916, 0));
 			player.send(new SendMessage("You have teleported to Giant Roc!"));
 		}
 
 		if (button == -14110) {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(3217, 3944, 0));
 			player.send(new SendMessage("You have teleported to Scorpia!"));
 		}
 		if (button == -14125) {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			Teleportation.teleport(player, new Position(3274, 3847, 0));
 			player.send(new SendMessage("You have teleported to Callisto!"));
 		}
@@ -162,6 +198,10 @@ public class BossInformationButtonPlugin extends PluginContext {
 				factory.execute();
 			} 
 		if(button == -14050) {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			player.dialogueFactory.sendOption("@red@Teleport me [Wilderness]", () -> {
 
 				Teleportation.teleport(player, Config.PORAZDIR);
