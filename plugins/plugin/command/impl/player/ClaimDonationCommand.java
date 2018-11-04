@@ -18,7 +18,7 @@ public class ClaimDonationCommand implements Command {
 			public void run() {
 				try {
 					com.everythingrs.donate.Donation[] donations = com.everythingrs.donate.Donation.donations(
-							"it0nzms11avukb49jofyr2j4iyeigg9m99i3uqugiaspds4ibwg9wfjv364piqs8tbb0yynwmi",
+							"d6yzms44avukb49h1232j4i99pf19m99i3uqugiaspdshtui19wfjv364piqs8tbb0yyn3rt",
 							player.getUsername());
 					if (donations.length == 0) {
 						player.send(

@@ -92,6 +92,7 @@ public class PunishmentExecuter {
 		player = Utility.formatName(player.toLowerCase());
 		deleteFromFile(""+BAN_DIRECTORY+"Bans.txt", player);
 		AccountsBanned.remove(player);
+		System.out.println("Unbanned " + player.toString());
 	}
 
 	public static void unmute(String player) {

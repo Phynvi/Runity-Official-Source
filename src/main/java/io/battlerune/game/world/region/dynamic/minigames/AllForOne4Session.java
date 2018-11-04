@@ -109,10 +109,10 @@ public class AllForOne4Session extends DynamicRegionHandler {
 		player.sendMessage("Sending partner request to "+other.getUsername()+"...");
 		player.lastPartnerRequest += System.currentTimeMillis() + 15000;
 		DialogueFactory f = other.dialogueFactory;
-		f.sendOption("Accept "+player.getUsername()+"'s All For One 4 partner request", () -> f.onAction(() -> {
+		f.sendOption("Accept "+player.getUsername()+"'s Double Threat partner request", () -> f.onAction(() -> {
 			f.clear();
 			player.setAllForOnePartner(player, other);
-			player.sendPartnerMessage(player, other, "You have been partnered! make your way over to the All vs one v4 portal!");
+			player.sendPartnerMessage(player, other, "You have been partnered! make your way over to the Double Threat Portal!");
 			player.sendMessage(other.getUsername()+" has accepted your partner request.");
 		}), "Decline Request", () -> f.onAction(() -> {
 			f.clear();

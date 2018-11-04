@@ -75,16 +75,17 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		/* Player owned shops. */
 		case 3029:
 //                player.message("Personal stores are currently disabled!");
-			if (PlayerRight.isIronman(player)) {
+		/*	if (PlayerRight.isIronman(player)) {
 				player.send(new SendMessage("As an iron man you may not access player owned stores!"));
 				return true;
 			}
-			PersonalStore.openMenu(player);
+			PersonalStore.openMenu(player);*/
+			player.message("Currently disabled, undergoing testing");
 
 			break;
 			/* Grand exchange. */
 		case 26044:
-			player.message("Personal stores are currently undergoing testing!" + " You've been warned.");
+		/*	player.message("Personal stores are currently undergoing testing!" + " You've been warned.");
 			player.message("There is a slight visual bug (tends to say 'FREE') with purchasing from POS");
 			player.message("just make sure to click on the item to find its actual Price");
 
@@ -92,7 +93,8 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.send(new SendMessage("As an iron man you may not access player owned stores!"));
 				return true;
 			}
-			PersonalStore.openMenu(player);
+			PersonalStore.openMenu(player); */
+			player.message("Currently disabled, undergoing testing");
 
 			break;
 

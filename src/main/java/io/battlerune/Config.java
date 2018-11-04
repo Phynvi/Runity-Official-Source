@@ -19,6 +19,7 @@ import io.netty.util.ResourceLeakDetector;
  *
  * @author Daniel
  */
+
 public final class Config {
 
 	/** The latest announcement thread link. */
@@ -257,6 +258,8 @@ public final class Config {
 	
 	public static final Position STARTER_ZONE = new Position(2462, 4769, 0);
 
+	public static final Position MEDIUM_ZONE = new Position(1886, 5454, 0);
+
 
 	/** Wests. */
 	public static final Position WESTS = new Position(2980, 3594, 0);
@@ -372,7 +375,7 @@ public final class Config {
              "Did you know can play Runity in HD! Go to settings -> Advanced Settings!",
              "We have more settings you can change by going to extra settings",
              "do ::moneyguide or ::guide ",
-	"Saying you don't need privacy because you have nothing to hide is like saying you don't need free speech because you have nothing to say." };
+             };
 
 	/**
 	 * Holds the array of all the side-bar identification and their corresponding
@@ -486,7 +489,13 @@ public final class Config {
 			new Item(79, 1),
 			new Item(80, 1),
 			new Item(20151, 1),
-			
+			new Item(22325, 1),
+			new Item(3078 , 1),
+			new Item(3074 , 1),
+			new Item(3075 , 1),
+			new Item(13708 , 1),
+			new Item(3073, 1),
+
 			};
 	
 	

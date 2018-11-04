@@ -45,7 +45,7 @@ public class PlayerPanelButtonPlugin extends PluginContext {
 		}
 		if (button == -5115) {
 			Teleportation.teleport(player, Config.STARTER_ZONE);
-			player.send(new SendMessage("You have teleported to Starter Zone!"));
+			player.send(new SendMessage("@blu@You have teleported to Starter Zone! All NPC's share the same drop table!"));
 			player.send(new SendMessage("@red@ - 1/100 chance of starter V2 Box!"));
 			player.send(new SendMessage("@red@ - 1/200 chance of Mystery Box!"));
 			player.send(new SendMessage("@red@ - 1/500 chance of 10$ Bond!"));
@@ -54,7 +54,12 @@ public class PlayerPanelButtonPlugin extends PluginContext {
 			new PlayerGuideHandler().open(player);
 		}
 		if(button == -5111) {
-			player.message("@red@ This is scheduled to be finished off for next update!");
+			Teleportation.teleport(player, Config.MEDIUM_ZONE);
+			player.send(new SendMessage("You have teleported to Medium Zone!"));
+			player.send(new SendMessage("@red@ - 1/200 chance of Mbox!"));
+			player.send(new SendMessage("@red@ - 1/350 chance of Eto Armour!"));
+			player.send(new SendMessage("@red@ - 1/500 chance of 10$ Bond!"));
+
 		}
 		if(button == -5103) {
 			player.send(new SendForceTab(Config.MUSIC_TAB));

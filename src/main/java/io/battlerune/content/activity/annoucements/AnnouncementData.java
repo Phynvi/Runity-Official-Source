@@ -19,6 +19,8 @@ public enum AnnouncementData {
 	DISCORD("Join ::discord We tend to post our #updates and host multiple #giveaways a day!"),
 	DID_YOUKNOW("Did you know we released Double threat! Duo instanced minigame! Use the portal at home!!"),
 
+	POUCH("Did you know you can access your bank vault on the go? simply do ::pouch"),
+	vault("Did you know you can publicly show of your dank bank vault, by doing ::vault"),
 
 
 	

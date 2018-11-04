@@ -257,6 +257,9 @@ public class PlayerAssistant {
 			if(item.getId() == 3273) {
 				return IceKatanaStrategy.get();
 			}
+			if(item.getId() == 13708) {
+				return IceKatanaStrategy.get();
+			}
 			if(item.getId() == 13701) {
 				return CrypticSword.get();
 			}
