@@ -132,7 +132,7 @@ public class GoldMysteryBox implements MysteryBoxListener {
 
 	@Override
 	public Item[] getUltra() {
-		return new Item[] { new Item(995, Utility.random(5000000, 50000000)), new Item(13173, 11), // phat set
+		return new Item[] { new Item(995, Utility.random(5000000, 50000000)), new Item(13173, 1), // phat set
 				new Item(13175, 1), // h'ween set
 				new Item(21000, 1), // twisted buckler
 				new Item(21006, 1), // kodai wand
