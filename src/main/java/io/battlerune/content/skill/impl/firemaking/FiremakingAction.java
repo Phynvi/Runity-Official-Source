@@ -65,7 +65,7 @@ public final class FiremakingAction extends DestructionSkillAction {
 
 	@Override
 	public double experience() {
-		return firemaking.getExperience() * Config.FIREMAKING_MODIFICATION;
+		return firemaking.getExperience() * Config.FIREMAKING_MODIFICATION * 5;
 	}
 
 	@Override

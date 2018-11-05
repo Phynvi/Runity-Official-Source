@@ -45,11 +45,12 @@ public class ItemFirstClickPlugin extends PluginContext { // etest
 				return false;
 			}
 			player.inventory.add(7775, 125000);
-			player.message("@red@You've recieved 25,000 Tickets Extra for using the dragon key!");
+			player.message("@red@You've recieved 125,000 Tickets Extra for using the dragon key!");
+		if(Utility.random(1, 5) <= 1) {
+			player.message("@red@ You've been lucky and recieved a AvO 3 box!");
 			player.inventory.addOrDrop(new Item(6833, 1));
-			player.message("You've recieved x2 All Vs One Box V3 For using the dragon key!");
-			player.inventory.addOrDrop(new Item(290, 1));
-			player.inventory.remove(22092, 1);
+		 }
+		player.inventory.remove(22092, 1);
 			break;
 		case 21813:
 			player.pkPoints += 25;
