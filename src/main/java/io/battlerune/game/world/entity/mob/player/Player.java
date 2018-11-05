@@ -662,7 +662,7 @@ public class Player extends Mob {
 		//message(String.format("Double AvO & 30% Drop rate Boost!"));
 
 		if (Config.TRIPLE_VOTE) {
-			message("Triple vote's are currently active!");
+			message("@red@Triple vote's are currently active!");
 		}
 
 		if (Config.DOUBLE_EXPERIENCE) {
