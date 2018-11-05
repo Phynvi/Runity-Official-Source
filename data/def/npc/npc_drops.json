@@ -638,8 +638,8 @@
       },
       {
           "item": 21820,
-          "minimum": 8,
-          "maximum": 20,
+          "minimum": 10,
+          "maximum": 25,
           "type": "ALWAYS"
       },
       {
