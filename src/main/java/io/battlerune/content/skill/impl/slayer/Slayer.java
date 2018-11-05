@@ -183,6 +183,9 @@ public class Slayer {
 			if (task.valid(npc.id)) {
 				amount -= killAmount;
 				int rewardPts = SlayerTask.getPoints(task.getDifficulty());
+				
+				rewardPts *= 1.15;
+				
 				if (amount <= 0) {
 					task = null;
 					amount = 0;
@@ -207,14 +210,12 @@ public class Slayer {
 								+ rewardPts + " slayer points!");
 					} else if (totalCompleted % 5 == 0) {
 						rewardPts *= 3;
-						player.message("Congratulations, you have completed 5 tasks in a row! You have earned "
-								+ rewardPts + " slayer points!");
+						player.message("Congratulations, you have completed 5 tasks in a row! You have earned " + rewardPts + " slayer points!");
 					} else {
 						if (PlayerRight.isDonator(player)) {
 							rewardPts *= 2;
 						}
-						player.message("Congratulations, you have completed your assigned task! You have earned "
-								+ rewardPts + " slayer points!");
+						player.message("Congratulations, you have completed your assigned task! You have earned " + rewardPts + " slayer points!");
 					}
 					points += rewardPts;
 					if (partner != null) {

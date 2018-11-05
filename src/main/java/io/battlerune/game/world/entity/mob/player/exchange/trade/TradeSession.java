@@ -155,20 +155,18 @@ public final class TradeSession extends ExchangeSession {
 				
 				for(int i = 0; i < playerItems.length; i++) {
 					if(playerItems[i] != null) {
-						player_items += "[" +playerItems[i].getName() + " : " + playerItems[i].getAmount() + "]";
+						player_items += "[" +(playerItems[i].getName() == null ? "Id="+playerItems[i].getId() : playerItems[i].getName()) + " : " + playerItems[i].getAmount() + "]";
 					}
 				}
 				
 				for(int j = 0; j < otherItems.length; j++) {
 					if(otherItems[j] != null) {
-						other_items += "[" +otherItems[j].getName() + " : " + otherItems[j].getAmount() + "]";
+						
+						other_items += "[" +(otherItems[j].getName() == null ? "Id="+otherItems[j].getId() : otherItems[j].getName()) + " : " + otherItems[j].getAmount() + "]";
 					}
 				}
 				
-				new LoggerExecuter("trading", player, other, "["+player.getUsername()+"] ["+player_items+"] "
-						+ "- ["+other.getUsername()+"] ["+other_items+"]").execute();
-				
-				//World.getDataBus().publish(new TradeLogEvent(player, playerItems, other, otherItems));
+				new LoggerExecuter("trading", player, other, "["+player.getUsername()+"] ["+player_items+"] " + "- ["+other.getUsername()+"] ["+other_items+"]").execute();
 
 				forEach(p -> p.send(new SendMessage("Trade successfully completed with " + this.getOther(p).getName(), MessageColor.RED)));
 				
