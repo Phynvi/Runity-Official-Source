@@ -26,7 +26,7 @@ public final class Config {
 	public static final String LATEST_ANNOUNCEMENT_THREAD = "https://runity.io/forums/topic/145-the-future-of-runity/?tab=comments#comment-555";
 
 	/** The latest update thread link. */
-	public static final String LATEST_UPDATE_THREAD = "https://runity.io/forums/topic/152-patch-3-all-vs-one-upgrading-system-new-afk-able-skills";
+	public static final String LATEST_UPDATE_THREAD = "https://runity.io/forums/topic/233-patch-5-major-qol-updates-pking-double-threat-minigame/";
 
 	/** The welcome marquee. */
 	public static final String[] WELCOME_MARQUEE = { "There are currently #players players online!",
@@ -34,13 +34,13 @@ public final class Config {
 
 	/** The welcome dialogue. */
 	public static final String[] WELCOME_DIALOGUE = { "Update threads are released every friday",
-			"The Owners are Jordan & Adam", "The Developers are Adam & Nerik", "The Manager is Herb" };
+			"The Owners are Adam", "The Developers are Adam & Teek", "The Manager is Mason" };
 
 	/** The welcome announcement. */
-	public static final String[] WELCOME_ANNOUNCEMENT = { "Major Bug Fixes", "[ Oct 1st 2018 ]",
-			"Hello Runity community. On", "07/10/18, we will be pushing", "more bug fixes" };
+	public static final String[] WELCOME_ANNOUNCEMENT = { "New Minigame!", "[ Nov 5th 2018 ]",
+			"Hello Runity community. On", "05/11/18, we will be pushing", "more bug fixes" };
 
-	public static final String[] WELCOME_UPDATE = { "Game Updates", "[ Oct 1st 2018 ]", "Upgrading System & All Vs One V2,",
+	public static final String[] WELCOME_UPDATE = { "Game Updates", "[ Nov 5th 2018 ]", "QoL Updates! & Double Threat,",
 			"Numerous bug fixes", "& much more!" };
 
 	/** The amount of client packets that can be handled by the server each tick. */
@@ -130,6 +130,9 @@ public final class Config {
 	public static boolean DOUBLE_EXPERIENCE;
 	
 	public static boolean DOUBLE_DROPS;
+	
+	public static boolean TRIPLE_VOTE = true;
+
 	
 	public static boolean DR_15_BOOST;
 	
@@ -355,8 +358,8 @@ public final class Config {
 			"nardarh", "dreamscape", "imagineps", "vision317" };
 
 	/** Messages that are sent periodically to all players. */
-	public static final String[] MESSAGES = { "The owner & founder of Runity is Jordan & Adam.",
-			"Runity game developers are Adam & Harry", "Our website is located at: https://runity.io",
+	public static final String[] MESSAGES = { "The owner & founder of Runity is Adam.",
+			"Runity game developers are Adam & Teek", "Our website is located at: https://runity.io",
 			"Add more security to your account by setting a bank pin.", "Tired of constantly re-gearing? Set a preset!",
 			"Have any ideas on how we could improve our gameplay? Post on forums!.",
 			"Voting daily can be very beneficial & it supports the server!",
@@ -375,6 +378,11 @@ public final class Config {
              "Did you know can play Runity in HD! Go to settings -> Advanced Settings!",
              "We have more settings you can change by going to extra settings",
              "do ::moneyguide or ::guide ",
+             "Did you know you can now get TRIPLE VOTING REWARDS! Do ::vote *Limited Time Only*",
+             "Top voter will get LOADS of Bonds as rewards! do ::thread 147 for more information!",
+             "Top 5 voters of the month recieve 400$ In Bonds! & Custom designed item!",
+             "Did you know you can access your bank vault on the go? simply do ::pouch",
+             "Did you know you can now get TRIPLE VOTING REWARDS! Do ::vote *Limited Time Only*",
              };
 
 	/**

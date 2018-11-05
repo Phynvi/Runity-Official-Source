@@ -661,7 +661,9 @@ public class Player extends Mob {
 		//message(String.format("@red@[EVENT] On the 26th and 27th and 28th We will be enabling,"));
 		//message(String.format("Double AvO & 30% Drop rate Boost!"));
 
-
+		if (Config.TRIPLE_VOTE) {
+			message("Triple vote's are currently active!");
+		}
 
 		if (Config.DOUBLE_EXPERIENCE) {
 			message("Double experience is currently active!");

@@ -21,6 +21,7 @@ public enum AnnouncementData {
 
 	POUCH("Did you know you can access your bank vault on the go? simply do ::pouch"),
 	vault("Did you know you can publicly show of your dank bank vault, by doing ::vault"),
+	TRIPLE_VPTE("Did you know you can now get TRIPLE VOTING REWARDS! Do ::vote *Limited Time Only*"),
 
 
 	
