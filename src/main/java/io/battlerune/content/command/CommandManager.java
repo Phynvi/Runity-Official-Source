@@ -107,6 +107,7 @@ import plugin.command.impl.player.KeyCommand;
 import plugin.command.impl.player.KysCommand;
 import plugin.command.impl.player.MageBankCommand;
 import plugin.command.impl.player.MaxStatusCommand;
+import plugin.command.impl.player.MediumZone;
 import plugin.command.impl.player.PlayerCountCommand;
 import plugin.command.impl.player.PouchCommand;
 import plugin.command.impl.player.RevenantCaveCommand;
@@ -152,6 +153,7 @@ public class CommandManager {
 		PLUGIN.putIfAbsent(new String[] { "commands", "command" }, new Commands());
 		PLUGIN.putIfAbsent(new String[] { "home", "hom" }, new HomeCommand());
 		PLUGIN.putIfAbsent(new String[] { "train", "training" }, new TrainZone());
+		PLUGIN.putIfAbsent(new String[] { "medium", "mz", "mediumzone" }, new MediumZone());
 		PLUGIN.putIfAbsent(new String[] { "pouch" }, new PouchCommand());
 		PLUGIN.putIfAbsent(new String[] { "shops", "shop", }, new ShopCommand());
 		PLUGIN.putIfAbsent(new String[] { "drops", "drop", "droplist", "droptable" }, new DropsCommand());
