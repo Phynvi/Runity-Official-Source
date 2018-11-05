@@ -23,6 +23,10 @@ public class BossEventButtonPlugin extends PluginContext {
 	@Override
 	protected boolean onClick(Player player, int button) {
 		if (button == -19935) {
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}	
 			if (GalvekUtility.activated == true) {
 				SpawnData1 galvekpos = GalvekUtility.spawn;
 				Teleportation.teleport(player, galvekpos.getPosition());
@@ -41,6 +45,10 @@ public class BossEventButtonPlugin extends PluginContext {
 		}
 		if (button == -17935) {
 			if (JusticarUtility.activated == true) {
+				if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+					player.message("@red@You can no longer take custom's into the wilderness!");
+					return false;
+				}	
 				SpawnData2 justicar = JusticarUtility.spawn;
 				Teleportation.teleport(player, justicar.getPosition());
 				player.message("You have teleported to Justicar");
@@ -51,6 +59,10 @@ public class BossEventButtonPlugin extends PluginContext {
 		}
 		if (button == -16935) {
 			if (SkotizoUtility.activated == true) {
+				if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+					player.message("@red@You can no longer take custom's into the wilderness!");
+					return false;
+				}	
 				SpawnData skotizo = SkotizoUtility.spawn;
 				Teleportation.teleport(player, skotizo.getPosition());
 				player.message("You have teleported to Skotizo");

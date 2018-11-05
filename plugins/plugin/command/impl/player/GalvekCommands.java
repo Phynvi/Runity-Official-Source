@@ -1,5 +1,6 @@
 package plugin.command.impl.player;
 
+import io.battlerune.Config;
 import io.battlerune.content.command.Command;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
 import io.battlerune.game.world.entity.combat.strategy.npc.boss.galvek.GalvekUtility;
@@ -13,6 +14,10 @@ public class GalvekCommands implements Command {
 	public void execute(Player player, String command, String[] parts) {
 		SpawnData1 galvekpos = GalvekUtility.spawn;
 
+		if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+			player.message("@red@You can no longer take custom's into the wilderness!");
+			return;
+		}		
 		player.dialogueFactory.sendOption("@red@Teleport me [Wilderness]", () -> {
 
 			if (galvekpos != null) {
