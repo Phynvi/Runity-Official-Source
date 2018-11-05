@@ -5,16 +5,19 @@ import java.util.List;
 
 import io.battlerune.Config;
 import io.battlerune.content.activity.impl.barrows.Barrows;
+import io.battlerune.content.activity.impl.kraken.KrakenActivity;
 import io.battlerune.content.activity.impl.warriorguild.WarriorGuild;
+import io.battlerune.content.activity.impl.zulrah.ZulrahActivity;
 import io.battlerune.content.dialogue.DialogueFactory;
 import io.battlerune.content.skill.impl.magic.teleport.TeleportType;
 import io.battlerune.content.skill.impl.magic.teleport.Teleportation;
+import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
 import io.battlerune.game.world.entity.mob.player.PlayerRight;
-import io.battlerune.game.world.entity.skill.Skill;
 import io.battlerune.game.world.items.Item;
 import io.battlerune.game.world.position.Position;
 import io.battlerune.net.packet.out.SendConfig;
+import io.battlerune.net.packet.out.SendFadeScreen;
 import io.battlerune.net.packet.out.SendItemOnInterface;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.net.packet.out.SendScrollbar;
@@ -262,12 +265,29 @@ public class TeleportHandler {
 			}, "Nevermind", factory::clear).execute();
 			break;
 
-		case WARRIOR_GUILD:
-			Teleportation.teleport(player, new Position(2846, 3541, 0), 20, () -> WarriorGuild.create(player));
-			break;
-		case BARROWS:
-			Teleportation.teleport(player, new Position(3565, 3315, 0), 20, () -> Barrows.create(player));
-			break;
+        case KRAKEN:
+            Teleportation.teleport(player, new Position(2280, 10031, 0), 20, () -> KrakenActivity.create(player));
+            break;
+        case WARRIOR_GUILD:
+            Teleportation.teleport(player, new Position(2846, 3541, 0), 20, () -> WarriorGuild.create(player));
+            break;
+        case BARROWS:
+            Teleportation.teleport(player, new Position(3565, 3315, 0), 20, () -> Barrows.create(player));
+            break;
+        case ZULRAH:
+            if (player.isTeleblocked()) {
+                player.message("You are currently under the affects of a teleblock spell and can not teleport!");
+                break;
+            }
+
+            player.locking.lock();
+            player.send(new SendFadeScreen("You are teleporting to Zulrah's shrine...", 1, 3));
+            World.schedule(5, () -> {
+                player.move(new Position(2268, 3069, 0));
+                ZulrahActivity.create(player);
+                player.locking.unlock();
+            });
+            break;
 		default:
 			break;
 

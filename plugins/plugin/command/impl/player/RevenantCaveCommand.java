@@ -14,7 +14,6 @@ public class RevenantCaveCommand implements Command {
 
 	@Override
 	public void execute(Player player, String command, String[] parts) {
-
 		if (player.pet != null) {
 			player.dialogueFactory
 					.sendNpcChat(player.pet.id, "I'm sorry #name,", "but I can not enter the wilderness with you!")
