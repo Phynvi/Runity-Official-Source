@@ -655,7 +655,7 @@ public final class Equipment extends ItemContainer {
 
 	public static boolean hasAva(Player player) {
 		Item cape = player.equipment.getCape();
-		return cape != null && (cape.getId() == 13337 || cape.getId() == 10498 || cape.getId() == 10499);
+		return cape != null && (cape.getId() == 13337 || cape.getId() == 10498 || cape.getId() == 10499 || cape.getId() == 21898);
 	}
 
 	/**

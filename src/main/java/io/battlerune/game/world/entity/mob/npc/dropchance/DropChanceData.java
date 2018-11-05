@@ -19,6 +19,12 @@ public enum DropChanceData {
 	slayerbody(22123, 4, 15), slayerlegs(21954, 4, 15), slayerkite(21895, 4, 15), SAM_HELM(20049, 3, 4),
 	VITUR(22325, 7, 25),
 	SILVER_CHAIN(13689, 5, 5),
+	ETO1(3078, 2, 5),
+	ETO2(3074, 2, 5),
+	ETO3(3075, 2, 5),
+	ETO4(3073, 2, 5),
+	SWORD_HEARTS(13708, 2, 5),
+
 	SAM_PLATE(13284, 3, 4), SAM_LEGS(20058, 3, 4), SAM_GLOVES(20055, 3, 4), SAM_BOOTS(20061, 3, 4);
 
 	private int itemId;

@@ -136,7 +136,7 @@ public final class NpcDropManager {
 //                return;
 //            }
 
-			if (killer.settings.dropNotification && item.getValue() > 350000) {
+			if (killer.settings.dropNotification && item.getValue() > 250000) {
 				String name = item.getName();
 				killer.send(new SendMessage("<col=BA383E>Rare Drop Notification: </col>" + name + " ("
 						+ Utility.formatDigits(item.getValue()) + " coins)"));
@@ -146,13 +146,6 @@ public final class NpcDropManager {
 			} else if (killer.settings.untradeableNotification && !item.isTradeable()) {
 				killer.send(new SendMessage("<col=F5424B>Untradeable Drop Notification: </col>" + item.getName()));
 			}
-
-			if(Config.DOUBLE_DROPS == true) {
-				  GroundItem.create(killer, item, dropPosition);
-				  GroundItem.create(killer, item, dropPosition);
-	              killer.getPlayer().message("[DAILY EVENTS] @red@You've recieved double drops.");
-	              return;
-				}
 			
 			if (!item.isStackable()) {
 				Item single = item.createWithAmount(1);

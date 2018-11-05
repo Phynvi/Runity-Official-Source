@@ -18,19 +18,19 @@ public class PlayerHiscores {
 	public void execute() {//test2
 		switch (player.right) {
 		case ULTIMATE_IRONMAN:
-			Hiscores.update("it0nzms11avukb49jofyr2j4iyeigg9m99i3uqugiaspds4ibwg9wfjv364piqs8tbb0yynwmi",  
+			Hiscores.update("d6yzms44avukb49h1232j4i99pf19m99i3uqugiaspdshtui19wfjv364piqs8tbb0yyn3rt",  
 					"Ultimate Ironman", player.getUsername(), player.right.ordinal(), getExperience(), player.debug);
 			break;
 		case IRONMAN:
-			Hiscores.update("it0nzms11avukb49jofyr2j4iyeigg9m99i3uqugiaspds4ibwg9wfjv364piqs8tbb0yynwmi",  
+			Hiscores.update("d6yzms44avukb49h1232j4i99pf19m99i3uqugiaspdshtui19wfjv364piqs8tbb0yyn3rt",   
 					"Ironman", player.getUsername(), player.right.ordinal(), getExperience(), player.debug);
 			break;
 		case HARDCORE_IRONMAN:
-			com.everythingrs.hiscores.Hiscores.update("it0nzms11avukb49jofyr2j4iyeigg9m99i3uqugiaspds4ibwg9wfjv364piqs8tbb0yynwmi",  
+			com.everythingrs.hiscores.Hiscores.update("d6yzms44avukb49h1232j4i99pf19m99i3uqugiaspdshtui19wfjv364piqs8tbb0yyn3rt",   
 					"Hardcore Ironman", player.getUsername(), player.right.ordinal(), getExperience(), player.debug);
 			break;
 		default:
-			com.everythingrs.hiscores.Hiscores.update("it0nzms11avukb49jofyr2j4iyeigg9m99i3uqugiaspds4ibwg9wfjv364piqs8tbb0yynwmi",  
+			com.everythingrs.hiscores.Hiscores.update("d6yzms44avukb49h1232j4i99pf19m99i3uqugiaspdshtui19wfjv364piqs8tbb0yyn3rt",  
 					"Normal Mode", player.getUsername(), player.right.ordinal(), getExperience(), player.debug);
 			break;
 

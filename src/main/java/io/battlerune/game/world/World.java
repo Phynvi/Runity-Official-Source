@@ -539,8 +539,20 @@ public final class World {
 	 */
 
 	public static int getPlayerCount() {
-		return (int) (getPlayers().size() * 1.1);
+		/**
+		 * I've verified this algorithm and decided it's ideal for what we're trying to
+		 * do You can see a graph of the algorithm here:
+		 * https://www.desmos.com/calculator/huuev2vzft
+		 *
+		 * Here's some example data from it: Authentic Player Count | Showed Player
+		 * Count 1 2 //Small fakes, w/e 5 9 15 25 //Medium sized server, everyone knows
+		 * eachother, 10 extra is easy 20 33 35 58 //Slightly larger server, payoff at
+		 * 25+ fake 50 85 80 137 100 173 //Big fakes 150 263 200 361
+		 */
+		int p = getPlayers().size() + 10;
+		return (int) (1.5 * Math.sqrt(p) + Math.pow(p, 1.1));
 	}
+
 
 	public static int getBotCount() {
 		return PlayerBot.BOT_COUNT.get();

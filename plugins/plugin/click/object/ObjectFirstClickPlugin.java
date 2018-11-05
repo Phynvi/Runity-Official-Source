@@ -75,16 +75,17 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		/* Player owned shops. */
 		case 3029:
 //                player.message("Personal stores are currently disabled!");
-			if (PlayerRight.isIronman(player)) {
+		/*	if (PlayerRight.isIronman(player)) {
 				player.send(new SendMessage("As an iron man you may not access player owned stores!"));
 				return true;
 			}
-			PersonalStore.openMenu(player);
+			PersonalStore.openMenu(player);*/
+			player.message("Currently disabled, undergoing testing");
 
 			break;
 			/* Grand exchange. */
 		case 26044:
-			player.message("Personal stores are currently undergoing testing!" + " You've been warned.");
+		/*	player.message("Personal stores are currently undergoing testing!" + " You've been warned.");
 			player.message("There is a slight visual bug (tends to say 'FREE') with purchasing from POS");
 			player.message("just make sure to click on the item to find its actual Price");
 
@@ -92,7 +93,8 @@ public class ObjectFirstClickPlugin extends PluginContext {
 				player.send(new SendMessage("As an iron man you may not access player owned stores!"));
 				return true;
 			}
-			PersonalStore.openMenu(player);
+			PersonalStore.openMenu(player); */
+			player.message("Currently disabled, undergoing testing");
 
 			break;
 
@@ -763,18 +765,34 @@ public class ObjectFirstClickPlugin extends PluginContext {
 		}
 
 		case 1815:// WILDERNESS ARDY LEVER
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			player.action.execute(new LeverAction(player, object, new Position(2561, 3311, 0), Direction.WEST));
 			break;
 
 		case 1814:// ARDY WILDERNESS LEVER
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			player.action.execute(new LeverAction(player, object, new Position(3153, 3923, 0), Direction.WEST));
 			break;
 
 		case 5959:// MAGE BANK LEVER
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			player.action.execute(new LeverAction(player, object, new Position(2539, 4712, 0), Direction.WEST));
 			break;
 
 		case 9706:// MAGE BANK LEVER
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			player.action.execute(new LeverAction(player, object, new Position(3105, 3951, 0), Direction.WEST));
 			break;
 
@@ -783,22 +801,42 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			break;
 
 		case 5960:// MAGE BANK LEVER
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			player.action.execute(new LeverAction(player, object, new Position(3090, 3956, 0), Direction.SOUTH));
 			break;
 
 		case 18987:// KING BLACK DRAGON LADDER
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			player.action.execute(new LadderAction(player, object, new Position(3069, 10257, 0)));
 			break;
 
 		case 18988:// KING BLACK DRAGON LADDER
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			player.action.execute(new LadderAction(player, object, new Position(3017, 3850, 0)));
 			break;
 
 		case 1816:// KING BLACK DRAGON LEVER
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			player.action.execute(new LeverAction(player, object, new Position(2271, 4680, 0), Direction.SOUTH));
 			break;
 
 		case 1817:// KING BLACK DRAGON LEVER
+			if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+				player.message("@red@You can no longer take custom's into the wilderness!");
+				return false;
+			}
 			player.action.execute(new LeverAction(player, object, new Position(3067, 10253, 0), Direction.SOUTH));
 			break;
 
@@ -1412,6 +1450,10 @@ public class ObjectFirstClickPlugin extends PluginContext {
 			  + Utility.getTime((3000 - player.playTime) * 3 / 5) + " minutes remaining.");
 			  return true;
 			  }
+				if(player.inventory.containsAny(Config.NOT_ALLOWED) || player.equipment.containsAny(Config.NOT_ALLOWED)) {
+					player.message("@red@You can no longer take custom's into the wilderness!");
+					return true;
+				}
 			 
 			if (player.pet != null) {
 				player.dialogueFactory
