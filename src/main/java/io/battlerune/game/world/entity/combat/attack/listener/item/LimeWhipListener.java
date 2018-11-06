@@ -17,7 +17,7 @@ import io.battlerune.util.Utility;
  *
  * @author Adam_#6723
  */
-@ItemCombatListenerSignature(requireAll = false, items = {21225, 13749})
+@ItemCombatListenerSignature(requireAll = false, items = {21225, 13749, 21292})
 public class LimeWhipListener extends SimplifiedListener<Mob> {
 
 	public int healingGraphic = 1296;
