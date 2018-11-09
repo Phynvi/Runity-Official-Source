@@ -275,8 +275,8 @@ public class TeleportHandler {
             Teleportation.teleport(player, new Position(3565, 3315, 0), 20, () -> Barrows.create(player));
             break;
         case KURASK:
-        	if(player.prestige.totalPrestige <= 99) {
-        		player.message("You need a total of 100 prestige's to enter this boss!");
+        	if(player.prestige.totalPrestige <= 69) {
+        		player.message("You need a total of 70 prestige's to enter this boss!");
         		break;
         	} else {
         		Teleportation.teleport(player, (new Position(3061, 5485, 0)));
