@@ -288,6 +288,9 @@ public class PlayerAssistant {
 				return LimeWhipStrategy.get();
 			}
 			
+			if (item.getId() == 15011) {
+				return LimeWhipStrategy.get();
+			}
 			
 			
 			if (item.getId() == 21225) {

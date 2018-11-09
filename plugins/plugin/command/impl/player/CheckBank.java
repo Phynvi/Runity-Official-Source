@@ -4,6 +4,7 @@ import io.battlerune.content.command.Command;
 import io.battlerune.game.world.InterfaceConstants;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.PlayerRight;
 import io.battlerune.net.packet.out.SendItemOnInterface;
 import io.battlerune.net.packet.out.SendMessage;
 import io.battlerune.util.MessageColor;
@@ -36,7 +37,7 @@ public class CheckBank implements Command {
 	
 	@Override
 	public boolean canUse(Player player) {
-		return true;
+		return PlayerRight.isManagement(player);
 	}
 
 }

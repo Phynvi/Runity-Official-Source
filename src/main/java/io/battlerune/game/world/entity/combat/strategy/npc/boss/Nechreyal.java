@@ -114,14 +114,14 @@ public class Nechreyal extends MultiStrategy {
         spawnPets = true;
 
         if (!secondTrans) {
-            pet1 = new Npc(7036, RandomUtils.random(innerBoundary)) {
+            pet1 = new Npc(7036, new Position(3058, 5488, 0)) {
                 @Override
                 public void appendDeath() {
                     super.appendDeath();
                     pet1 = null;
                 }
             };
-            pet2 = new Npc(7036, RandomUtils.random(innerBoundary)) {
+            pet2 = new Npc(7036, new Position(3055, 5487, 0)) {
                 @Override
                 public void appendDeath() {
                     super.appendDeath();
@@ -129,7 +129,7 @@ public class Nechreyal extends MultiStrategy {
                 }
             };
         } else {
-            pet1 = new Npc(7036, RandomUtils.random(innerBoundary)) {
+            pet1 = new Npc(7036, new Position(3056, 5483, 0)) {
                 @Override
                 public void appendDeath() {
                     super.appendDeath();

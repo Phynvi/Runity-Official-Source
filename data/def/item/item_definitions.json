@@ -2561,13 +2561,21 @@
     "id": 290,
     "name": "Legendary Mystery Box",
     "base-value": 2,
-    "weight": 1.0
+    "weight": 1.0,
+    "low-alch": 350000,
+    "high-alch": 450000,
+    "base-value": 550000,
+    "street-value": 350000
   },
     {
     "id": 6508,
     "name": "Mega Mystery Box",
     "base-value": 2,
-    "weight": 1.0
+    "weight": 1.0,
+    "low-alch": 350000,
+    "high-alch": 450000,
+    "base-value": 550000,
+    "street-value": 350000
   },
   {
     "id": 291,
@@ -51256,7 +51264,11 @@
   {
     "id": 6199,
     "name": "Bronze mystery box",
-    "weight": 0.7
+    "weight": 0.7,
+    "low-alch": 350000,
+    "high-alch": 450000,
+    "base-value": 550000,
+    "street-value": 350000
   },
   {
     "id": 6200,
@@ -56453,27 +56465,51 @@
   },
   {
     "id": 6828,
-    "name": "Box bauble"
+    "name": "Box bauble",
+    "low-alch": 350000,
+    "high-alch": 450000,
+    "base-value": 550000,
+    "street-value": 350000
   },
   {
     "id": 6829,
-    "name": "Box bauble"
+    "name": "Box bauble",
+    "low-alch": 350000,
+    "high-alch": 450000,
+    "base-value": 550000,
+    "street-value": 350000
   },
   {
     "id": 6830,
-    "name": "Box bauble"
+    "name": "Box bauble",
+    "low-alch": 350000,
+    "high-alch": 450000,
+    "base-value": 550000,
+    "street-value": 350000
   },
   {
     "id": 6831,
-    "name": "Mime Box"
+    "name": "Mime Box",
+    "low-alch": 350000,
+    "high-alch": 450000,
+    "base-value": 550000,
+    "street-value": 350000
   },
   {
     "id": 6832,
-    "name": "Drill Demon Box"
+    "name": "Drill Demon Box",
+    "low-alch": 350000,
+    "high-alch": 450000,
+    "base-value": 550000,
+    "street-value": 350000
   },
   {
     "id": 6833,
-    "name": "All Vs One V3 Box"
+    "name": "All Vs One V3 Box",
+    "low-alch": 350000,
+    "high-alch": 450000,
+    "base-value": 550000,
+    "street-value": 350000
   },
   {
     "id": 6834,
@@ -84579,6 +84615,22 @@
     "defence-magic": 10
   },
   {
+	    "id": 22078,
+	    "name": "Dragon Slayer cape",
+	    "destroy-message": "Drop (Disappears without warning)",
+	    "low-alch": 40,
+	    "high-alch": 60,
+	    "base-value": 100,
+	    "weight": 0.4,
+	    "equipment-slot": "CAPE",
+	    "req-magic": 60,
+	    "attack-magic": 10,
+	    "defence-stab": 1,
+	    "defence-slash": 1,
+	    "defence-crush": 2,
+	    "defence-magic": 10
+	  },
+  {
     "id": 10721,
     "name": "Frog mask",
     "equipment-slot": "HAT"
@@ -104235,7 +104287,7 @@
     "low-alch": 31400,
     "high-alch": 47100,
     "base-value": 78500,
-    "street-value": 3159540,
+    "street-value": 78500,
     "weight": 1.0,
     "stand-animation": 813,
     "walk-animation": 1146,
@@ -104252,10 +104304,10 @@
     "id": 12900,
     "name": "Uncharged toxic trident",
     "noted-id": 12901,
-    "low-alch": 31200,
-    "high-alch": 46800,
-    "base-value": 78000,
-    "street-value": 3159540,
+    "low-alch": 400002,
+    "high-alch": 600003,
+    "base-value": 1000006,
+    "street-value": 8780431,
     "weight": 1.0,
     "equipment-slot": "WEAPON",
     "attack-magic": 25,
@@ -104269,10 +104321,10 @@
     "name": "Uncharged toxic trident",
     "stackable": true,
     "unnoted-id": 12900,
-    "low-alch": 31200,
-    "high-alch": 46800,
-    "base-value": 78000,
-    "street-value": 3159540,
+    "low-alch": 400002,
+    "high-alch": 600003,
+    "base-value": 1000006,
+    "street-value": 8780431,
     "weight": 1.0
   },
   {
@@ -104807,7 +104859,11 @@
   {
     "id": 12955,
     "weight": 0.0,
-    "name": "Silver mystery box"
+    "name": "Silver mystery box",
+    "low-alch": 350000,
+    "high-alch": 450000,
+    "base-value": 550000,
+    "street-value": 350000
   },
   {
     "id": 12956,
@@ -118741,7 +118797,7 @@
     "low-alch": 200004,
     "high-alch": 300006,
     "base-value": 500010,
-    "street-value": 121460056,
+    "street-value": 860010,
     "weight": 3.0,
     "stand-animation": 7518,
     "walk-animation": 7520,
@@ -125355,8 +125411,14 @@
     "low-alch": 39600,
     "high-alch": 59400,
     "base-value": 99000,
-    "weight": 0.4,
-    "equipment-slot": "CAPE"
+    "weight": -4.0,
+    "equipment-slot": "CAPE",
+    "defence-stab": 9,
+    "defence-slash": 9,
+    "defence-crush": 9,
+    "defence-magic": 9,
+    "defence-ranged": 9,
+    "bonus-prayer": 4
   },
   {
     "id": 21900,
@@ -128566,7 +128628,7 @@
 
 {
 		    "id": 3073,
-		    "name": "Dark Sirenic Helm",
+		    "name": "Eto's Helm",
 		    "low-alch": 1600,
 		    "high-alch": 2400,
 		    "base-value": 4000,
@@ -128590,7 +128652,7 @@
 
 		{
 		    "id": 3074,
-		    "name": "Dark Sirenic Platebody",
+		    "name": "Eto's Platebody",
 		    "low-alch": 2800,
 		    "high-alch": 4200,
 		    "base-value": 7000,
@@ -128613,7 +128675,7 @@
 		  },
 		{
 		    "id": 3075,
-		    "name": "Dark Sirenic legs",
+		    "name": "Eto's legs",
 		    "noted-id": 20045,
 		    "low-alch": 1280,
 		    "high-alch": 1920,
@@ -128637,7 +128699,7 @@
 		  },
 		 {
 			    "id": 3078,
-			    "name": "Dark Sirenic cape",
+			    "name": "Eto's cape",
 			    "destroy-message": "Destroy",
 			    "tradeable": true,
 			    "destroyable": true,

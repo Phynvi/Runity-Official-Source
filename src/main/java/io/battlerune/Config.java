@@ -346,6 +346,9 @@ public final class Config {
 
 	/** The Jail zone. */
 	public static final Position SKILL_ZONE = new Position(3090, 3483, 0);
+	
+	public static final Position KURASK_ZONE = new Position(3061, 5485, 0);
+
 
 	/** The default appearance of a player. */
 	public static final Appearance DEFAULT_APPEARANCE = new Appearance(Gender.MALE, 0, 10, 18, 26, 33, 36, 42, 0, 0, 0,
@@ -453,6 +456,8 @@ public final class Config {
 	/** TEMP VARS - WILL BE DELETED AFTER BETA IS FINISHED */
 	public final static int[] TAB_AMOUNT = { 7, 46, 19, 42, 41, 15, 21, 4, 0, 0, };
 	static int amount = 10000;
+	
+	public static int TOTAL_SERVER_VOTE = 0;
 
 	public final static Item[] SPEARS = { new Item(4726), new Item(11824), new Item(20161), new Item(7809),
 			new Item(11889)
@@ -504,6 +509,7 @@ public final class Config {
 			new Item(13708 , 1),
 			new Item(3073, 1),
 			new Item(22325, 1),
+			new Item(21292, 1),
 
 			};
 	

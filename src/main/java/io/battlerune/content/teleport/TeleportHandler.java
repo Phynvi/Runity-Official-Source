@@ -274,6 +274,15 @@ public class TeleportHandler {
         case BARROWS:
             Teleportation.teleport(player, new Position(3565, 3315, 0), 20, () -> Barrows.create(player));
             break;
+        case KURASK:
+        	if(player.prestige.totalPrestige <= 99) {
+        		player.message("You need a total of 100 prestige's to enter this boss!");
+        		break;
+        	} else {
+        		Teleportation.teleport(player, (new Position(3061, 5485, 0)));
+        		player.message("@red@ Welcome to Kurask! I'd recommend a group to take this beast down!");
+        	}
+        	break;
         case ZULRAH:
             if (player.isTeleblocked()) {
                 player.message("You are currently under the affects of a teleblock spell and can not teleport!");

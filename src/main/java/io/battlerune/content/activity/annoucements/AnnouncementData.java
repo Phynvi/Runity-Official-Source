@@ -23,6 +23,8 @@ public enum AnnouncementData {
 	vault("Did you know you can publicly show of your dank bank vault, by doing ::vault"),
 	TRIPLE_VPTE("Did you know you can now get TRIPLE VOTING REWARDS! Do ::vote *Limited Time Only*"),
 
+	INVITE("Did you know you can earn 100Mill OSRS & Huge amounts of bonds by inviting friends to runity?"),
+	INVITE2("Do ::discord and check #announcements for a huge invite competition on discord!"),
 
 	
 	

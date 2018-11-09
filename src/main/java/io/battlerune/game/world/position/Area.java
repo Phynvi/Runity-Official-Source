@@ -121,6 +121,7 @@ public abstract class Area {
 			new SquareArea("Revenant Cave", 3124, 10240, 3270, 10046),
 			new SquareArea("Inferno", 2243, 5372, 2300, 5314),
 			new SquareArea("All Vs One V3", 2496, 4990, 2623, 4919),
+			new SquareArea("Kurask's Lair", 3045, 5494, 3073, 5470),
 			new SquareArea("Dagannoth lair", 2890, 4425, 2942, 4466));
 
 	private static final ImmutableList<SquareArea> DUEL_ARENAS = ImmutableList
