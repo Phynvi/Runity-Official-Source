@@ -911,18 +911,7 @@ public class Player extends Mob {
 			send(new SendPlayerOption(PlayerOption.ATTACK, true));
 			send(new SendPlayerOption(PlayerOption.DUEL_REQUEST, false, true));
 		}
-	/*	if (Area.inEdgeville(this)) {
-			if (interfaceManager.getWalkable() != 23100) {//PUT  HERE
-				interfaceManager.openWalkable(23100);//PUT HERE
-				String[] CONTENT = {"Reward: Here", "Current Votes: " + Config.TOTAL_SERVER_VOTE, "Votes Needed: 120", "Duration: 00:00"};
-				for(int i = 0; i < CONTENT.length; i++) {
-				    send(new SendString(CONTENT[i], 23103 + i));
-				}
-            if(Config.TOTAL_SERVER_VOTE >= 120) {
-            	System.err.println("Total Votes : " + Config.TOTAL_SERVER_VOTE);
-                  }
-			}
-		}*/ else if (Area.inBattleRealm(this)) {
+		if (Area.inBattleRealm(this)) {
 			send(new SendPlayerOption(PlayerOption.ATTACK, true));
 			send(new SendPlayerOption(PlayerOption.DUEL_REQUEST, false, true));
 		} else if (Area.inWilderness(this)) {
