@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 import io.battlerune.game.event.impl.log.PrivateMessageChatLogEvent;
 import io.battlerune.game.world.World;
 import io.battlerune.game.world.entity.mob.player.Player;
+import io.battlerune.game.world.entity.mob.player.punishments.PunishmentExecuter;
 import io.battlerune.net.packet.out.SendAddFriend;
 import io.battlerune.net.packet.out.SendAddIgnore;
 import io.battlerune.net.packet.out.SendChatOption;
@@ -213,6 +214,11 @@ public final class PlayerRelation {
 				&& !friend.relations.friendList.contains(player.usernameLong)
 				|| friend.relations.privateChatMode.equals(PrivacyChatMode.OFF)) {
 			player.send(new SendMessage("This player is currently offline."));
+			return;
+		}
+		
+		if (PunishmentExecuter.muted(player.getUsername()) || PunishmentExecuter.IPMuted(player.lastHost)) {
+			player.send(new SendMessage("You are muted and cannot chat."));
 			return;
 		}
 
