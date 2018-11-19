@@ -91,12 +91,12 @@ public class AllVsOneV3 extends Activity {
 			return;
 		}
 		if (dead.isNpc() && npcs.contains(dead)) {
+			
 			if (dead.id == 3162) {
 				remove(dead);
 				npcs.remove(dead);
 				for (int index = 0; index < 2; index++) {
-					Position position = new Position(dead.getX() + (index == 0 ? -1 : +1), dead.getY(),
-							dead.getHeight());
+					Position position = new Position(dead.getX() + (index == 0 ? -1 : +1), dead.getY(), dead.getHeight());
 					Npc roc = new Npc(763, position);
 					add(roc);
 					npcs.add(roc);
@@ -143,7 +143,7 @@ public class AllVsOneV3 extends Activity {
 			npc.getCombat().attack(player);
 			npc.face(player);
 			player.face(npc.getPosition());
-			npc.locking.unlock();
+			npc.locking.unlock(); 
 			//pause();
 		}
 		if (wave == WaveData.WAVE_7 || wave == WaveData.WAVE_11 || wave == WaveData.WAVE_15 || wave == WaveData.WAVE_23
@@ -165,7 +165,7 @@ public class AllVsOneV3 extends Activity {
 			player.dialogueFactory.sendNpcChat(5567, "You have defeated All Vs One V3, I am most impressed!",
 					"Please accept this gift, young thug.").execute();
 			rewards += 20000;
-			if(Config.DOUBLE_AVO_POINTS == true) {
+			if(Config.DOUBLE_AVO_POINTS) {
 	            player.inventory.addOrDrop(new Item(7775, rewards));
 	            player.message("You've recieved double Tickets because of the daily server events!");
 			}
@@ -176,7 +176,7 @@ public class AllVsOneV3 extends Activity {
 			if(Utility.random(1, 14) <= 1) {
 				player.inventory.addOrDrop(new Item(6833, 2));
 			}
-            player.inventory.addOrDrop(new Item(7775, rewards));
+            player.inventory.addOrDrop(new Item(7775, rewards / 2));
     		player.message("<img=8>You now have @red@" + rewards + " All Vs One V3 Tickets!");
 			player.inventory.addOrDrop(new Item(6833, 2));
 			player.inventory.addOrDrop(new Item(290, 2));
