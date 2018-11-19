@@ -701,22 +701,11 @@ public class Player extends Mob {
 	 * agreed
 	 * }
 	 */
-	private void sendInitialPackets() {
-		playerAssistant.welcomeScreen();
-		
-		send(new SendRunEnergy());
-		send(new SendPlayerDetails());
-		send(new SendCameraReset());
-		send(new SendExpCounter(skills.getExpCounter()));
-		message(String.format("Welcome to %s. ", Config.SERVER_NAME + ""));
-		message(String.format("There are currently %s players online.", World.getPlayerCount()));
-		message(String.format("@red@Player Tip -@bla@ Do ::guide for an awesome money making guide! Get rich quick!!"));
-		//message(String.format("@red@[EVENT] On the 26th and 27th and 28th We will be enabling,"));
-		//message(String.format("Double AvO & 30% Drop rate Boost!"));
-
-		if (Config.TRIPLE_VOTE) {
-			message("@red@Triple vote's are currently active!");
-		}
+	
+	public void sendEventInfo() {
+		//if (Config.TRIPLE_VOTE) {
+		//	message("@red@Triple vote's are currently active!");
+		//}
 
 		if (Config.DOUBLE_EXPERIENCE) {
 			message("Double experience is currently active!");
@@ -736,9 +725,22 @@ public class Player extends Mob {
 		if(Config.DOUBLE_PK_POINTS) {
 			message("Double Pk Points is currently active!");
 		}
-		if (Config.X4_EXPERIENCE) {
-			// message("X4 experience is currently active!");
-		}
+	}
+	
+	private void sendInitialPackets() {
+		playerAssistant.welcomeScreen();
+		
+		send(new SendRunEnergy());
+		send(new SendPlayerDetails());
+		send(new SendCameraReset());
+		send(new SendExpCounter(skills.getExpCounter()));
+		message(String.format("Welcome to %s. ", Config.SERVER_NAME + ""));
+		message(String.format("There are currently %s players online.", World.getPlayerCount()));
+		message(String.format("@red@Player Tip -@bla@ Do ::guide for an awesome money making guide! Get rich quick!!"));
+		//message(String.format("@red@[EVENT] On the 26th and 27th and 28th We will be enabling,"));
+		//message(String.format("Double AvO & 30% Drop rate Boost!"));
+
+		sendEventInfo();
 		/***
 		 * personal store
 		 */

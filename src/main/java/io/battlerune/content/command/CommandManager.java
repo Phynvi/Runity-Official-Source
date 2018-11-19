@@ -96,6 +96,7 @@ import plugin.command.impl.player.DuelArenaCommand;
 import plugin.command.impl.player.DustiesCommand;
 import plugin.command.impl.player.Easts;
 import plugin.command.impl.player.EmptyInventoryCommand;
+import plugin.command.impl.player.EventsCommand;
 import plugin.command.impl.player.ForumCommand;
 import plugin.command.impl.player.GalvekCommands;
 import plugin.command.impl.player.GambleCommand;
@@ -144,6 +145,7 @@ public class CommandManager {
 		 * @Player Commands
 		 * Join ::discord for huge giveaways! and to be kept upto date regarding updates!
 		 */
+		PLUGIN.putIfAbsent(new String[] { "events" }, new EventsCommand());
 		PLUGIN.putIfAbsent(new String[] { "plos" }, new PosCommand());
 		PLUGIN.putIfAbsent(new String[] { "thread" }, new ThreadCommand());
 		PLUGIN.putIfAbsent(new String[] { "ancients" }, new AncientsCommand());
