@@ -31,13 +31,11 @@ import io.battlerune.util.Utility;
  */
 public class Skotizo extends MultiStrategy {
 	private static Magic MAGIC = new Magic();
-	private static LightingRain LIGHTNING_RAIN = new LightingRain();
 	private static TeleGrab TELE_GRAB = new TeleGrab();
 
 	private static final CombatStrategy<Npc>[] FULL_STRATEGIES = createStrategyArray(NpcMeleeStrategy.get(), MAGIC,
-			TELE_GRAB, LIGHTNING_RAIN);
-	private static final CombatStrategy<Npc>[] MAGIC_STRATEGIES = createStrategyArray(MAGIC, MAGIC, MAGIC, TELE_GRAB,
-			LIGHTNING_RAIN);
+			TELE_GRAB);
+	private static final CombatStrategy<Npc>[] MAGIC_STRATEGIES = createStrategyArray(MAGIC, MAGIC, MAGIC, TELE_GRAB);
 
 	private static final String[] SHOUTS = { "Feel the wrath of Skotizo!", "The dark times have come for you all!" };
 
@@ -64,20 +62,14 @@ public class Skotizo extends MultiStrategy {
 			defender.graphic(481);
 			defender.speak("ARHHHH! TIME TO SWITCH IT UP!!");
 
-			RegionManager.forNearbyPlayer(attacker, 20, other -> {
-				if (RandomUtils.success(.65))
-					return;
-				if(Utility.random(1, 15) <= 14) {
-					return;
-				}
+
 
 				World.schedule(2, () -> {
 					Position destination = Utility.randomElement(defender.boundaries);
 					World.sendGraphic(new Graphic(481), destination);
-					other.move(destination);
-					other.message("Skotizo has moved you around!");
+					attacker.move(destination);
+					attacker.getPlayer().message("Skotizo has moved you around!");
 				});
-			});
 		}
 	}
 
@@ -113,12 +105,10 @@ public class Skotizo extends MultiStrategy {
 		@Override
 		public void start(Npc attacker, Mob defender, Hit[] hits) {
 			Projectile projectile = new Projectile(1242, 50, 80, 85, 25);
-			attacker.animate(new Animation(69, UpdatePriority.VERY_HIGH));
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				projectile.send(attacker, other);
-				World.schedule(2, () -> other.damage(nextMagicHit(attacker, other, 38)));
-			});
-
+			attacker.animate(new Animation(69, UpdatePriority.VERY_HIGH));	
+			World.schedule(2, () -> attacker.damage(nextMagicHit(attacker, attacker, 38)));
+		    projectile.send(defender, attacker);
+       
 			if (Utility.random(0, 2) == 1)
 				attacker.speak(Utility.randomElement(SHOUTS));
 		}
@@ -155,55 +145,12 @@ public class Skotizo extends MultiStrategy {
 			attacker.graphic(481);
 			attacker.speak("ARHHHH! TIME TO SWITCH IT UP!!");
 if(Utility.random(1, 25) == 1) {
-			RegionManager.forNearbyPlayer(attacker, 16, other -> World.schedule(1, () -> {
+		//	RegionManager.forNearbyPlayer(attacker, 16, other -> World.schedule(1, () -> {
 				Position destination = Utility.randomElement(attacker.boundaries);
 				World.sendGraphic(new Graphic(481), destination);
-				other.move(destination);
-				other.message("Skotizo has moved you around!");
-			}));
+				attacker.move(destination);
+				attacker.getPlayer().message("Skotizo has moved you around!");
 }
-		}
-
-		@Override
-		public CombatHit[] getHits(Npc attacker, Mob defender) {
-			CombatHit hit = nextMagicHit(attacker, defender, 38);
-			hit.setAccurate(false);
-			return new CombatHit[] { hit };
-		}
-	}
-
-	private static class LightingRain extends NpcMagicStrategy {
-		LightingRain() {
-			super(CombatProjectile.getDefinition("Vet'ion"));
-		}
-
-		@Override
-		public void hit(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void attack(Npc attacker, Mob defender, Hit hit) {
-		}
-
-		@Override
-		public void start(Npc attacker, Mob defender, Hit[] hits) {
-			attacker.animate(new Animation(69, UpdatePriority.VERY_HIGH));
-			attacker.speak("YOU WILL NOW FEEL THE TRUE WRATH OF SKOTIZO!");
-
-			RegionManager.forNearbyPlayer(attacker, 16, other -> {
-				Position position = other.getPosition();
-				combatProjectile.getProjectile()
-						.ifPresent(projectile -> World.sendProjectile(attacker, position, projectile));
-
-				World.schedule(2, () -> {
-					World.sendGraphic(new Graphic(775), position);
-					if (other.getPosition().equals(position)) {
-						other.damage(new Hit(Utility.random(20, 50)));
-						other.speak("OUCH!");
-						other.message("Skotizo has just electrocuted your entire body! Don't stay in one spot!");
-					}
-				});
-			});
 		}
 
 		@Override

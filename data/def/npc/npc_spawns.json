@@ -19,6 +19,16 @@
 	      "height": 0
 	    }
 	  },
+  {
+		    "id": 7405,
+		    "radius": "0",
+		    "facing": "EAST",
+		    "position": {
+		      "x": 3057,
+		      "y": 5485,
+		      "height": 0
+		    }
+		  },
 	  {
 	    "id": 1672,
 	    "radius": "3",

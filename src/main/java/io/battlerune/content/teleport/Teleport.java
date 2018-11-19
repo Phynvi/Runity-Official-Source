@@ -135,6 +135,8 @@ public enum Teleport {
     REVS("Revenant Caves", TeleportType.BOSS_KILLING, new Position(3126, 3784, 0), false, new int[]{20035, 20038, 20044}, false, "They have no souls", "the undead is rising again"),
     VORKATH("Vorkath", TeleportType.BOSS_KILLING, new Position(2271, 4046, 0), false, new int[]{21992, 12073, 11286}, true, "a Demonic dragon", "Scary af"),
     TARN("Mutant Tarn", TeleportType.BOSS_KILLING, new Position(3037, 5346, 0), false, new int[]{13190, 13814, 20151}, true, "Ever wanted to just murder a bunch of mutant?", "Well here is your chance, kill them all!"),
+    KURASK("Kurask", TeleportType.BOSS_KILLING, new Position(0, 0, 0), true, new int[]{22301, 22304, 22307}, true, "Kurask is a beast...", "But you FEAR NO ONE!!!"),
+  //  ZULRAH("Zulrah", TeleportType.BOSS_KILLING, new Position(0, 0, 0), true, new int[]{12921, 12939, 12940}, true, "High range & magic is highly recommended", "Beware of her poisonous venom!"),
 
 //    CERBERUS("Cerberus", TeleportType.BOSS_KILLING, new Position(2872, 9847, 0), 1500, false, "", ""),
 //    LIZARDMAN_SHAMAN("Lizardman Shaman", TeleportType.BOSS_KILLING, new Position(1495, 3700, 0), 1500, false, "", ""),

@@ -152,7 +152,7 @@ public enum TriviaBotData {
 	_168("What skill is a tinderbox used for?", "firemaking"),
 	_169("What skill is used to make potions?", "herblore"),
 	_170("In what skill are you given tasks of monsters to kill?", "slayer"),
-	_172("What item for slayer helm do you get from cave horrors?", "black mask"),
+	_172("What item for slayer helm do you get from cave horrors?", "black mask", "mask", "blackmask"),
 	_175("What is the highest level stall you can thieve in edgeville?", "magic", "magic stall"),
 	_176("What altar switches prayers and curses?", "chaos", "chaos altar", "altar", "chaos"),
 	_177("What is the best whip you can get from the zombie minigame?", "barrows", "barrows whip"),

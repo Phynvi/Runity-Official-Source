@@ -570,10 +570,6 @@ public class ObjectFirstClickPlugin extends PluginContext {
 						.execute();
 				return true;
 			}
-			if (player.inventory.getFreeSlots() <= 12) {
-				player.message("You need atleast 12 free slots to enter this area.");
-				return true;
-			}
 
 			if (player.getCombat().isUnderAttack()) {
 				player.message("You can't do this until you are fully out of combat!");

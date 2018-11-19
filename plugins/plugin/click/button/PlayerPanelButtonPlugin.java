@@ -39,10 +39,10 @@ public class PlayerPanelButtonPlugin extends PluginContext {
 			player.send(new SendMessage("You can't teleport above 20 wilderness!"));
 			return false;
 		}
-		if(player.getCombat().inCombat()) {
+		/*if(player.getCombat().inCombat()) {
 			player.send(new SendMessage("You can't do this whilst in combat!"));
 			return false;
-		}
+		}*/
 		if (button == -5115) {
 			Teleportation.teleport(player, Config.STARTER_ZONE);
 			player.send(new SendMessage("@blu@You have teleported to Starter Zone! All NPC's share the same drop table!"));
