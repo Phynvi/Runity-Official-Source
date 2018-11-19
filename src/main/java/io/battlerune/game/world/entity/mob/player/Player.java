@@ -90,6 +90,7 @@ import io.battlerune.game.world.entity.mob.npc.Npc;
 import io.battlerune.game.world.entity.mob.npc.dropchance.DropChanceHandler;
 import io.battlerune.game.world.entity.mob.player.appearance.Appearance;
 import io.battlerune.game.world.entity.mob.player.exchange.ExchangeSessionManager;
+import io.battlerune.game.world.entity.mob.player.persist.PlayerSerializer;
 import io.battlerune.game.world.entity.mob.player.relations.ChatMessage;
 import io.battlerune.game.world.entity.mob.player.relations.PlayerRelation;
 import io.battlerune.game.world.entity.mob.player.requests.RequestManager;
@@ -142,6 +143,56 @@ public class Player extends Mob {
 	 */
 	public void sendTeleportButtonNpc(int npcId) {
 		send(new SendString("" + npcId, 45615));
+	}
+	
+	public String ironmanGroupLeader;
+	
+	public List<String> ironManGroup = new ArrayList<String>(3);
+	
+	public List<String> getIronmanGroup() {
+		return ironManGroup;
+	}
+	
+	public void linkIronManGroup(boolean login) {
+		//TODO
+		if (!this.hasIronmanGroup())
+			return;
+		
+		String name = this.ironmanGroupLeader;
+		
+		Player owner = World.getPlayerByName(name);
+		
+		if (owner == null)
+			owner = PlayerSerializer.loadPlayer(name);
+	
+		if (login)
+		    owner.ironManGroup.add(this.getUsername());
+		else
+			owner.ironManGroup.remove(this.getUsername());
+		
+		this.ironManGroup = owner.ironManGroup;
+		
+		this.sendIronmanGroupMessage("(Ironman Group): "+this.getUsername()+" has just "+(login ? "logged in" : "logged out"));
+	}
+	
+	public void sendIronmanGroupMessage(String msg) {
+		
+		Player iron = null;
+		
+		for (String name : ironManGroup) {
+			
+			if (name == null)
+			    continue;
+			
+			iron = World.getPlayerByName(name);
+			
+			if (iron != null)
+			    iron.sendMessage(msg);
+		}
+	}
+	
+	public boolean hasIronmanGroup() {
+		return this.ironmanGroupLeader != null;
 	}
 	
 	public PersonalStore personalStore;
@@ -630,6 +681,8 @@ public class Player extends Mob {
 		// joinclan(Player);
 		
 		this.configureStore();
+		
+		linkIronManGroup(true);
 	}
 
 	public void configureStore() {
@@ -732,7 +785,7 @@ public class Player extends Mob {
 		if (!canLogout() && !force) {
 			return;
 		}
-
+		linkIronManGroup(false);
 		send(new SendLogout());
 		setVisible(false);
 		World.queueLogout(this);
