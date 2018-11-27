@@ -14,7 +14,7 @@ By the following Users.
 
 To setup this server, simply place it on eclipse.
 
-<b>How to setup the server?<b>
+<b>How to setup the server?</b>
 
 Right click the file in project menu.
 Go down to --> configure --> Add Gradle Nature.
@@ -22,7 +22,7 @@ Go down to --> configure --> Add Gradle Nature.
 This code needs improvements, it was a great learning tool and was fun while it lasted.
 
 
-<b>How to use the runelite client?<b>
+<b>How to use the runelite client?</b>
 
 Install Lombok.jar
 Run Lombok.jar
