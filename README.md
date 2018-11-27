@@ -1,6 +1,6 @@
 Welcome to the official Release of Runity.
 
-
+Hosted and released by Adam/Naimur Rahman
 
 This server has been worked on for months.
 By the following Users.
