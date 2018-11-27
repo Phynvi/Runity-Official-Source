@@ -5,7 +5,7 @@ Hosted and released by Adam/Naimur Rahman
 This server has been worked on for months.
 By the following Users.
 
-- Adam (me) Founder, starting this project late 2017.
+- Adam (me) Founder/Head Developer, starting this project late 2017.
 - Ethan (developer) Worked on it for 3-4 Months.
 - Red Bracket Worked on it for 3-4 Months.
 - Harryl/Nerik.
