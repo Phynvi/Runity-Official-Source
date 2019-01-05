@@ -2,12 +2,11 @@ Welcome to the official Release of Runity.
 
 Hosted and released by Adam/Naimur Rahman
 
-This server has been worked on for months.
-By the following Users.
+This server has been worked on for months, by the following users:
 
-- Adam (me) Founder/Head Developer, starting this project late 2017.
-- Ethan (developer) Worked on it for 3-4 Months.
-- Red Bracket Worked on it for 3-4 Months.
+- [Adam](https://github.com/adamtrinity) - Founder/Head Developer, starting this project late 2017.
+- [Ethan](https://github.com/verinia) - Developer, worked on BattleRune for 3 months and Runity for 4.
+- [Daniel](https://github.com/dginovker) AKA Red Bracket - Developer, worked on BattleRune and Runity for 3 months each.
 - Harryl/Nerik.
 - Teek/DrHenny.
 
